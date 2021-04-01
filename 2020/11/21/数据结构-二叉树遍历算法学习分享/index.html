@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  
+  <title>&lt;[数据结构]二叉树遍历算法学习分享&gt; - GEISHA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  
+  <meta name="keywords" content=数据机构>
+  
+    <meta name="description" content="GEISHA">
+  
+  
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.02">
+  
+  
+    <link rel="alternate" href="../../../../atom.xml " title="GEISHA" type="application/atom+xml">
+  
+
+  
+<link rel="stylesheet" href="../../../../css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+  <body>
+    <div class="container">
+      <header class="header">
+  <div class="blog-title">
+    <a href="../../../../index.html" class="logo">GEISHA</a>
+    <div class="subtitle">穿梭时间的画面的钟，从反方向开始移动</div>
+  </div>
+  <nav class="navbar">
+    <ul class="menu">
+      
+        <li class="menu-item">
+          <a href="../../../../index.html" class="menu-item-link">Home</a>
+        </li>
+      
+        <li class="menu-item">
+          <a href="../../../../archives" class="menu-item-link">Archives</a>
+        </li>
+      
+        <li class="menu-item">
+          <a href="../../../../about" class="menu-item-link">About</a>
+        </li>
+      
+    </ul>
+  </nav>
+</header>
+<article class="post">
+  <div class="post-title">
+    <h1 class="article-title">&lt;[数据结构]二叉树遍历算法学习分享&gt;</h1>
+  </div>
+   <div class="post-meta">
+    <span class="post-time">2020-11-21</span>
+  </div>
+  <div class="post-content">
+    <h1 id="C语言-数据结构-二叉树实现、二叉树的三种遍历"><a href="#C语言-数据结构-二叉树实现、二叉树的三种遍历" class="headerlink" title="C语言 数据结构 二叉树实现、二叉树的三种遍历"></a>C语言 数据结构 二叉树实现、二叉树的三种遍历</h1><h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><p>在计算机科学中，二叉树（英语：Binary tree）是每个节点最多只有两个分支（即不存在分支度大于2的节点）的树结构。通常分支被称作“左子树”或“右子树”。二叉树的分支具有左右次序，不能随意颠倒。</p>
+<p><strong>二叉树的遍历：</strong></p>
+<p>前序遍历、中序遍历、后续遍历</p>
+<p><strong>以下代码的二叉树图形表示</strong><br><img src="https://img-blog.csdnimg.cn/2019012121523427.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzQyNDgzMzQx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">tag</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">char</span> c;<span class="comment">//数的一个节点包含多个数据类型，可定义结构体，赋值时用memcopy</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">tag</span> *<span class="title">pleft</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">tag</span> *<span class="title">pright</span>;</span></span><br><span class="line">&#125;Node, *pNode;</span><br><span class="line"><span class="comment">//前序遍历:if中要打印的放前面</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">preOrder</span><span class="params">(pNode p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (p != <span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">putchar</span>(p-&gt;c);<span class="comment">//等价于printf(&quot;%c&quot;,c);</span></span><br><span class="line">		preOrder(p-&gt;pleft);</span><br><span class="line">		preOrder(p-&gt;pright);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//中序遍历：if中要打印的放中间</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">midOrder</span><span class="params">(pNode p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (p != <span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		midOrder(p-&gt;pleft);</span><br><span class="line">		<span class="built_in">putchar</span>(p-&gt;c);</span><br><span class="line">		midOrder(p-&gt;pright);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//后序遍历：if中要打印的放后面</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">latOrder</span><span class="params">(pNode p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (p != <span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		latOrder(p-&gt;pleft);</span><br><span class="line">		latOrder(p-&gt;pright);</span><br><span class="line">		<span class="built_in">putchar</span>(p-&gt;c);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> c[N + <span class="number">1</span>] = <span class="string">&quot;ABCDEFGHIJ&quot;</span>;</span><br><span class="line">	pNode p[N];<span class="comment">//一共有N个节点，p[N]用于存储每一个节点的地址值</span></span><br><span class="line">	pNode tree;<span class="comment">//树的头指针</span></span><br><span class="line">	<span class="keyword">int</span> i, j;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; N; i++)<span class="comment">//把每个字母都放进树的节点中</span></span><br><span class="line">	&#123;</span><br><span class="line">		p[i] = (pNode)<span class="built_in">calloc</span>(<span class="number">1</span>, <span class="keyword">sizeof</span>(Node));</span><br><span class="line">		p[i]-&gt;c = c[i];</span><br><span class="line">	&#125;</span><br><span class="line">	tree = p[<span class="number">0</span>];<span class="comment">//树的头指针（树根）</span></span><br><span class="line">	<span class="comment">//以下实现节点的连结:广度优先遍历</span></span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; N; i++)<span class="comment">//外层循环控制往树坑里放的节点</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; i; j++)<span class="comment">//内层循环找空闲的树坑,放入节点</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (<span class="literal">NULL</span> == p[j]-&gt;pleft)</span><br><span class="line">			&#123;</span><br><span class="line">				p[j]-&gt;pleft = p[i];</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (<span class="literal">NULL</span> == p[j]-&gt;pright)</span><br><span class="line">			&#123;</span><br><span class="line">				p[j]-&gt;pright = p[i];</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//遍历打印</span></span><br><span class="line">	preOrder(p[<span class="number">0</span>]);<span class="comment">//前序遍历</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	midOrder(p[<span class="number">0</span>]);<span class="comment">//中序遍历</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	latOrder(p[<span class="number">0</span>]);<span class="comment">//后序遍历</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">	system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="number">123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>输出</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ABDHIEJCFG</span><br><span class="line">HDIBJEAFCG</span><br><span class="line">HIDJEBFGCA</span><br><span class="line">请按任意键继续. . .</span><br><span class="line"></span><br><span class="line">12345</span><br></pre></td></tr></table></figure>
+
+<h2 id="VS2017查看监视"><a href="#VS2017查看监视" class="headerlink" title="VS2017查看监视"></a>VS2017查看监视</h2><p><img src="https://img-blog.csdnimg.cn/20190121215534187.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzQyNDgzMzQx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+
+  </div>
+  <div class="post-footer">
+    
+      <ul class="post-tag-list" itemprop="keywords"><li class="post-tag-list-item"><a class="post-tag-list-link" href="../../../../tags/%E6%95%B0%E6%8D%AE%E6%9C%BA%E6%9E%84/" rel="tag">数据机构</a></li></ul>
+    
+
+    <a href="#top" class="top">Back to Top</a>
+  </div>
+</article>
+<footer>
+  &copy; 2021
+  <span class="author">
+    GEISHA
+  </span>
+</footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  
+  <title>hexo中添加鼠标右键功能&lt;hexo中添加鼠标右键功能&gt; - GEISHA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  
+  <meta name="keywords" content=生活,博客,前端,游戏>
+  
+    <meta name="description" content="GEISHA">
+  
+  
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.02">
+  
+  
+    <link rel="alternate" href="../../../../atom.xml " title="GEISHA" type="application/atom+xml">
+  
+
+  
+<link rel="stylesheet" href="../../../../css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+  <body>
+    <div class="container">
+      <header class="header">
+  <div class="blog-title">
+    <a href="../../../../index.html" class="logo">GEISHA</a>
+    <div class="subtitle">穿梭时间的画面的钟，从反方向开始移动</div>
+  </div>
+  <nav class="navbar">
+    <ul class="menu">
+      
+        <li class="menu-item">
+          <a href="../../../../index.html" class="menu-item-link">Home</a>
+        </li>
+      
+        <li class="menu-item">
+          <a href="../../../../archives" class="menu-item-link">Archives</a>
+        </li>
+      
+        <li class="menu-item">
+          <a href="../../../../about" class="menu-item-link">About</a>
+        </li>
+      
+    </ul>
+  </nav>
+</header>
+<article class="post">
+  <div class="post-title">
+    <h1 class="article-title">hexo中添加鼠标右键功能&lt;hexo中添加鼠标右键功能&gt;</h1>
+  </div>
+   <div class="post-meta">
+    <span class="post-time">2020-11-29</span>
+  </div>
+  <div class="post-content">
+    <h1 id="hexo中添加鼠标右键功能"><a href="#hexo中添加鼠标右键功能" class="headerlink" title="hexo中添加鼠标右键功能"></a>hexo中添加鼠标右键功能</h1><p><img src="https://gitee.com/zyoushuo/Blog/raw/master/images/rightmenu_2.png" alt="img"></p>
+<p>为你的博客添加鼠标右键菜单。此样式功能是在网上看到的，于是就整到hexo中。同样，由于本人使用Volantis主题，所以对Volantis作了些配置。通用的方法会在后文写到。也可按照自己使用的主题自行配置。</p>
+<h4 id="添加配置信息"><a href="#添加配置信息" class="headerlink" title="添加配置信息"></a>添加配置信息</h4><p>在主题配置文件volantis/_config.yml中添加配置信息：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Right_Click:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>  <span class="comment"># true or false  是否开启右键</span></span><br><span class="line">  <span class="attr">js:</span> <span class="string">https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/js/GalMenu.js</span></span><br><span class="line">  <span class="attr">audio:</span> <span class="literal">false</span>  <span class="comment"># true or false 是否开启点击音乐</span></span><br><span class="line"><span class="number">1234</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="添加配置文件"><a href="#添加配置文件" class="headerlink" title="添加配置文件"></a>添加配置文件</h4><p>在blog\themes\volantis\layout_partial中创建名为Right_Click.ejs的文件，添加以下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span>(theme.Right_Click.enable) &#123; %&gt;</span><br><span class="line">   	&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;GalMenu GalDropDown&quot;</span>&gt;</span><br><span class="line">	      &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;circle&quot;</span> id=<span class="string">&quot;gal&quot;</span>&gt;</span><br><span class="line">	        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;ring&quot;</span>&gt;</span><br><span class="line">	          &lt;a href=<span class="string">&quot;/&quot;</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;menuItem&quot;</span>&gt;首页&lt;/a&gt;</span><br><span class="line">	          &lt;a href=<span class="string">&quot;javascript:history.go(1);&quot;</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;menuItem&quot;</span>&gt;前进&lt;/a&gt;</span><br><span class="line">	          &lt;a href=<span class="string">&quot;javascript:$(&#x27;html,body&#x27;).animate(&#123;scrollTop:0&#125;,500);&quot;</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;menuItem&quot;</span>&gt;顶部&lt;/a&gt;</span><br><span class="line">	          &lt;a href=<span class="string">&quot;javascript:location.reload();&quot;</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;menuItem&quot;</span>&gt;刷新&lt;/a&gt;</span><br><span class="line">			  &lt;a href=<span class="string">&quot;/Message/&quot;</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;menuItem&quot;</span>&gt;留言&lt;/a&gt;</span><br><span class="line">	          &lt;a href=<span class="string">&quot;javascript:history.go(-1);&quot;</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;menuItem&quot;</span>&gt;后退&lt;/a&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">			&lt;% <span class="keyword">if</span>(theme.Right_Click.audio) &#123;%&gt;</span><br><span class="line">				&lt;audio id=<span class="string">&quot;audio&quot;</span> src=<span class="string">&quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/audio/niconiconi.mp3&quot;</span>&gt;&lt;/audio&gt;</span><br><span class="line">	        &lt;% &#125; %&gt;</span><br><span class="line">		  &lt;/div&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">	<span class="keyword">var</span> items = <span class="built_in">document</span>.querySelectorAll(<span class="string">&#x27;.menuItem&#x27;</span>); </span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, l = items.length; i &lt; l; i++) &#123;</span><br><span class="line">        items[i].style.left = (<span class="number">50</span> - <span class="number">35</span> * <span class="built_in">Math</span>.cos( - <span class="number">0.5</span> * <span class="built_in">Math</span>.PI - <span class="number">2</span> * (<span class="number">1</span> / l) * i * <span class="built_in">Math</span>.PI)).toFixed(<span class="number">4</span>) + <span class="string">&quot;%&quot;</span>;</span><br><span class="line">        items[i].style.top = (<span class="number">50</span> + <span class="number">35</span> * <span class="built_in">Math</span>.sin( - <span class="number">0.5</span> * <span class="built_in">Math</span>.PI - <span class="number">2</span> * (<span class="number">1</span> / l) * i * <span class="built_in">Math</span>.PI)).toFixed(<span class="number">4</span>) + <span class="string">&quot;%&quot;</span></span><br><span class="line">      &#125;</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">	&lt;script&gt;<span class="built_in">window</span>.jQuery || <span class="built_in">document</span>.write(<span class="string">&#x27;&lt;script src=&quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/js/jquery-2.1.1.min.js&quot;&gt;&lt;\/script&gt;&#x27;</span>)&lt;/script&gt;	</span><br><span class="line">	&lt;%- js(theme.Right_Click.js) %&gt;</span><br><span class="line">	&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">    	$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">&#x27;body&#x27;</span>).GalMenu(&#123;</span><br><span class="line">          <span class="string">&#x27;menu&#x27;</span>: <span class="string">&#x27;GalDropDown&#x27;</span></span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;);</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>其中右键菜单内容可在此处修改。</p>
+<h4 id="引入样式文件"><a href="#引入样式文件" class="headerlink" title="引入样式文件"></a>引入样式文件</h4><p>在blog\themes\volantis\layout_partial的head.ejs文件中引入样式文件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/css/GalMenu.css&quot;</span>&gt;</span></span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<p>右键菜单中的图片可在此处修改。</p>
+<h4 id="引入到页面"><a href="#引入到页面" class="headerlink" title="引入到页面"></a>引入到页面</h4><p>在blog\themes\volantis\layout的layout.ejs文件中的<code>&lt;/body&gt;</code>引入。（一定要在末尾引入)</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;%-<span class="ruby"> partial(<span class="string">&#x27;_partial/Right_Click&#x27;</span>) </span>%&gt;</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>最后别忘了一键三连。</p>
+<p>Volantis3.0版本已经添加了右键功能，使用本文中的右键别忘了关闭原主题中的右键。</p>
+<h3 id="其他主题"><a href="#其他主题" class="headerlink" title="其他主题"></a>其他主题</h3><h4 id="引入样式文件-1"><a href="#引入样式文件-1" class="headerlink" title="引入样式文件"></a>引入样式文件</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/css/GalMenu.css&quot;</span>&gt;</span></span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<h4 id="引入到页面-1"><a href="#引入到页面-1" class="headerlink" title="引入到页面"></a>引入到页面</h4><p>在<code>&lt;/body&gt;</code>上方添加以下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;GalMenu GalDropDown&quot;</span>&gt;</span><br><span class="line">      &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;circle&quot;</span> id=<span class="string">&quot;gal&quot;</span>&gt;</span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;ring&quot;</span>&gt;</span><br><span class="line">          &lt;a href=<span class="string">&quot;/&quot;</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;menuItem&quot;</span>&gt;首页&lt;/a&gt;</span><br><span class="line">          &lt;a href=<span class="string">&quot;javascript:history.go(1);&quot;</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;menuItem&quot;</span>&gt;前进&lt;/a&gt;</span><br><span class="line">          &lt;a href=<span class="string">&quot;javascript:$(&#x27;html,body&#x27;).animate(&#123;scrollTop:0&#125;,500);&quot;</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;menuItem&quot;</span>&gt;顶部&lt;/a&gt;</span><br><span class="line">          &lt;a href=<span class="string">&quot;javascript:location.reload();&quot;</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;menuItem&quot;</span>&gt;刷新&lt;/a&gt;</span><br><span class="line">		  &lt;a href=<span class="string">&quot;/Message/&quot;</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;menuItem&quot;</span>&gt;留言&lt;/a&gt;</span><br><span class="line">          &lt;a href=<span class="string">&quot;javascript:history.go(-1);&quot;</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;menuItem&quot;</span>&gt;后退&lt;/a&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">			&lt;audio id=<span class="string">&quot;audio&quot;</span> src=<span class="string">&quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/audio/niconiconi.mp3&quot;</span>&gt;&lt;/audio&gt;</span><br><span class="line">	  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line"><span class="keyword">var</span> items = <span class="built_in">document</span>.querySelectorAll(<span class="string">&#x27;.menuItem&#x27;</span>); </span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, l = items.length; i &lt; l; i++) &#123;</span><br><span class="line">       items[i].style.left = (<span class="number">50</span> - <span class="number">35</span> * <span class="built_in">Math</span>.cos( - <span class="number">0.5</span> * <span class="built_in">Math</span>.PI - <span class="number">2</span> * (<span class="number">1</span> / l) * i * <span class="built_in">Math</span>.PI)).toFixed(<span class="number">4</span>) + <span class="string">&quot;%&quot;</span>;</span><br><span class="line">       items[i].style.top = (<span class="number">50</span> + <span class="number">35</span> * <span class="built_in">Math</span>.sin( - <span class="number">0.5</span> * <span class="built_in">Math</span>.PI - <span class="number">2</span> * (<span class="number">1</span> / l) * i * <span class="built_in">Math</span>.PI)).toFixed(<span class="number">4</span>) + <span class="string">&quot;%&quot;</span></span><br><span class="line">     &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;script&gt;<span class="built_in">window</span>.jQuery || <span class="built_in">document</span>.write(<span class="string">&#x27;&lt;script src=&quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/js/jquery-2.1.1.min.js&quot;&gt;&lt;\/script&gt;&#x27;</span>)&lt;/script&gt;	</span><br><span class="line">&lt;script src=<span class="string">&quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/js/GalMenu.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">   	$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">       $(<span class="string">&#x27;body&#x27;</span>).GalMenu(&#123;</span><br><span class="line">         <span class="string">&#x27;menu&#x27;</span>: <span class="string">&#x27;GalDropDown&#x27;</span></span><br><span class="line">       &#125;)</span><br><span class="line">     &#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>目前只作了些简单的配置，后期期望加入更多的功能。</p>
+
+  </div>
+  <div class="post-footer">
+    
+
+    <a href="#top" class="top">Back to Top</a>
+  </div>
+</article>
+<footer>
+  &copy; 2021
+  <span class="author">
+    GEISHA
+  </span>
+</footer>
+    </div>
+  </body>
+</html>
