@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+    
+    
+    
+    
+
+
+    <!-- meta -->
+
+
+<title>springboot&lt;springboot入门&gt; | 截面樱</title>
+
+
+    <meta name="keywords" content="java leetcode mysql hexo">
+
+
+
+
+    <!-- OpenGraph -->
+ 
+    <meta name="description" content="Spring Boot -01- 快速入门篇（图文教程）今天开始不断整理 Spring Boot 2.0 版本学习笔记，大家可以在博客看到我的笔记，然后大家想看视频课程也可以到【慕课网】手机 app，去找【Spring Boot 2.0 深度实践】的课程，令人开心的是，课程完全免费！ 什么是 Spring Boot？ Spring Boot 是由 Pivotal 团队提供的全新框架。Spring">
+<meta property="og:type" content="article">
+<meta property="og:title" content="springboot&lt;springboot入门&gt;">
+<meta property="og:url" content="http://example.com/2020/11/21/springboot%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:site_name" content="截面樱">
+<meta property="og:description" content="Spring Boot -01- 快速入门篇（图文教程）今天开始不断整理 Spring Boot 2.0 版本学习笔记，大家可以在博客看到我的笔记，然后大家想看视频课程也可以到【慕课网】手机 app，去找【Spring Boot 2.0 深度实践】的课程，令人开心的是，课程完全免费！ 什么是 Spring Boot？ Spring Boot 是由 Pivotal 团队提供的全新框架。Spring">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181117220632243.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181117225158786.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181117222111238.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181117224859157.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181118094647638.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181118094701996.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2018111809395871.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181118095827943.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181117223306858.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2018111809500265.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181117223018703.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181118095134665.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181117223605792.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181118103359434.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181118095156516.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181118100821722.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181118101115334.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181118101551613.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181118101418750.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2018111810180249.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181118101947898.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181118105134569.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181118105520656.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181118111549383.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181118112021290.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181118112547922.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181118113038260.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181118113111788.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181118113538919.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181118121422492.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181118122317781.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2020-11-21T07:56:41.000Z">
+<meta property="article:modified_time" content="2020-11-21T07:58:42.000Z">
+<meta property="article:author" content="截面樱">
+<meta property="article:tag" content="java leetcode mysql hexo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20181117220632243.png">
+
+
+    
+<link rel="stylesheet" href="../../../../css/style/main.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="../../../../css/highlight/default.css" media="none">
+        
+    
+
+    
+    
+
+    
+
+     
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="../../../../index.html" class="button">
+            <span class="logo__text">Demo</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="../../../../index.html" class="navbar-menu button">首页</a>
+                
+                    <a href="../../../../tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="../../../../archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="../../../../friends/" class="navbar-menu button">友链</a>
+                
+                    <a href="../../../../page/" class="navbar-menu button">Page</a>
+                
+            </div>
+        
+        
+        
+
+        
+        
+
+        
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="../../../../index.html" class="dropdown-menu button">首页</a>
+                
+                    <a href="../../../../tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="../../../../archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="../../../../friends/" class="dropdown-menu button">友链</a>
+                
+                    <a href="../../../../page/" class="dropdown-menu button">Page</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        springboot&lt;springboot入门&gt;
+    </h1>
+    <div class="post-title__meta">
+        <a href="../../../../archives/2020/11/" class="post-meta__date button">2020-11-21</a>
+        
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+
+<article class="post content-card">
+    <div class="post__header"></div>
+    <div class="post__content">
+        <h3 id="Spring-Boot-01-快速入门篇（图文教程）"><a href="#Spring-Boot-01-快速入门篇（图文教程）" class="headerlink" title="Spring Boot -01- 快速入门篇（图文教程）"></a>Spring Boot -01- 快速入门篇（图文教程）</h3><p>今天开始不断整理 Spring Boot 2.0 版本学习笔记，大家可以在博客看到我的笔记，然后大家想看视频课程也可以到【慕课网】手机 app，去找【Spring Boot 2.0 深度实践】的课程，令人开心的是，课程完全免费！</p>
+<h3 id="什么是-Spring-Boot？"><a href="#什么是-Spring-Boot？" class="headerlink" title="什么是 Spring Boot？"></a>什么是 Spring Boot？</h3><p><img src="https://img-blog.csdnimg.cn/20181117220632243.png" alt="在这里插入图片描述"></p>
+<p>Spring Boot 是由 Pivotal 团队提供的全新框架。Spring Boot 是所有基于 Spring Framework 5.0 开发的项目的起点。Spring Boot 的设计是为了让你尽可能快的跑起来 Spring 应用程序并且尽可能减少你的配置文件。</p>
+<p><strong>设计目的：</strong> 用来简化新 Spring 应用的初始搭建以及开发过程。</p>
+<p>从最根本上来讲，Spring Boot 就是一些库的集合，它能够被任意项目的构建系统所使用。它使用 “习惯优于配置” （项目中存在大量的配置，此外还内置一个习惯性的配置）的理念让你的项目快速运行起来。用大佬的话来理解，就是 spring boot 其实不是什么新的框架，它默认配置了很多框架的使用方式，就像 maven 整合了所有的 jar 包，spring boot 整合了所有的框架，总结一下及几点：</p>
+<p>（1）为所有 Spring 开发提供一个更快更广泛的入门体验。</p>
+<p>（2）零配置。无冗余代码生成和XML 强制配置，遵循“约定大于配置” 。</p>
+<p>（3）集成了大量常用的第三方库的配置， Spring Boot 应用为这些第三方库提供了几乎可以零配置的开箱即用的能力。</p>
+<p>（4）提供一系列大型项目常用的非功能性特征，如嵌入式服务器、安全性、度量、运行状况检查、外部化配置等。</p>
+<p>（5）Spring Boot 不是Spring 的替代者，Spring 框架是通过 IOC 机制来管理 Bean 的。Spring Boot 依赖 Spring 框架来管理对象的依赖。Spring Boot 并不是Spring 的精简版本，而是为使用 Spring 做好各种产品级准备</p>
+<h3 id="Spring-Boot-在应用中的角色"><a href="#Spring-Boot-在应用中的角色" class="headerlink" title="Spring Boot 在应用中的角色"></a>Spring Boot 在应用中的角色</h3><p>Spring Boot 是基于 Spring Framework 来构建的，Spring Framework 是一种 J2EE 的框架（<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40147863/article/details/83011705">什么是 J2EE？</a>）<br>Spring Boot 是一种快速构建 Spring 应用<br>Spring Cloud 是构建 Spring Boot 分布式环境，也就是常说的云应用<br>Spring Boot 中流砥柱，承上启下</p>
+<p><img src="https://img-blog.csdnimg.cn/20181117225158786.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><ul>
+<li>（1）JDK 环境必须是 1.8 及以上，传送门：<a target="_blank" rel="noopener" href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">jdk1.8.191 下载</a></li>
+<li>（2）后面要使用到 Maven 管理工具 3.2.5 及以上版本，所以会先介绍 Maven 的安装与配置</li>
+<li>（3）开发工具建议使用 IDEA，也可以 MyEclipse，为了实现一站式服务，传送门：<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40147863/article/details/81356116">IDEA 破解（原文是PyCharm的，步骤完全一样，Webstorm 也可以破解）</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40147863/article/details/83017723">MyEclipse 2018 安装与破解</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="Maven-安装与环境变量配置"><a href="#Maven-安装与环境变量配置" class="headerlink" title="Maven 安装与环境变量配置"></a>Maven 安装与环境变量配置</h3><p><strong>（1）Maven 安装：</strong></p>
+<ul>
+<li>在官网下载：<a target="_blank" rel="noopener" href="http://maven.apache.org/download.cgi">http://maven.apache.org/download.cgi</a></li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/20181117222111238.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><strong>（2）Maven 配置环境变量：</strong></p>
+<p>解压到一个路径，然后配置环境变量：</p>
+<ul>
+<li>新建变量名：MAVEN_HOME 变量值：D:\server\apache-maven-3.6.0（这是我的 MAVEN 路径）</li>
+<li>编辑变量名：Path 在最前面加上：%MAVEN_HOME%\bin</li>
+</ul>
+<p><strong>（3）检查是否配置成功：</strong></p>
+<p>在命令行输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mvn -V</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<p>然后会一大堆东西：<br><img src="https://img-blog.csdnimg.cn/20181117224859157.png" alt="在这里插入图片描述"></p>
+<p><strong>（4）配置 maven 仓库：</strong></p>
+<p>1.打开 maven 文件夹下的 config 文件夹下的 settings.xml；<br>2.找到 localRepository 标签，此时是被注释掉的，我们解除注释，然后配置一个路径，例如：D:/space/MavenRepository/maven_jar，这样以后 MAVEN 管理下载的jar 包都会在这个路径下。<br>【注意】：注意结点的位置，先找到注释掉的部分，贴在下面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;localRepository&gt;D:\space\MavenRepository\maven_jar&lt;&#x2F;localRepository&gt;</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20181118094647638.png" alt="在这里插入图片描述"></p>
+<p>3.配置远程仓库，找到 mirrors 标签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--远程仓库--&gt;</span><br><span class="line">&lt;mirror&gt;</span><br><span class="line">　　&lt;id&gt;aliyun&lt;&#x2F;id&gt;</span><br><span class="line">　　&lt;name&gt;aliyun Maven&lt;&#x2F;name&gt;</span><br><span class="line">　　&lt;mirrorOf&gt;*&lt;&#x2F;mirrorOf&gt;</span><br><span class="line">   &lt;url&gt;http:&#x2F;&#x2F;maven.aliyun.com&#x2F;nexus&#x2F;content&#x2F;groups&#x2F;public&#x2F;&lt;&#x2F;url&gt;</span><br><span class="line">&lt;&#x2F;mirror&gt;</span><br><span class="line">1234567</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20181118094701996.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>4.当然我们需要先建这样一个目录结构，然后还要把settings.xml 复制一份到 D:/space/MavenRepository 下</p>
+<p><img src="https://img-blog.csdnimg.cn/2018111809395871.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><strong>（5）在 idea 配置 maven：</strong><br>点击【File】&gt;【Settings】&gt;搜索【Maven】，按截图配置安装目录和选择刚刚 settings 配置文件；<br><img src="https://img-blog.csdnimg.cn/20181118095827943.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>选择完settings之后，本地仓库自动改成settings文件中配置的；点击apply，再点击ok即配置完成。</p>
+<hr>
+<h3 id="使用-idea-快速搭建-Spring-Boot"><a href="#使用-idea-快速搭建-Spring-Boot" class="headerlink" title="使用 idea 快速搭建 Spring Boot"></a>使用 idea 快速搭建 Spring Boot</h3><p><strong>第一步：新建 Spring Initializr 项目：</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/20181117223306858.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>（1）选择 Spring Initializr<br>（2）选择 SDK，点击【new】这里就是使用 JAVA SDK 要求版本 1.8+，选择你默认安装在 C:\Program Files\Java\jdk1.8.0_191 目录：<br><img src="https://img-blog.csdnimg.cn/2018111809500265.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>（3）然后选择默认的 url （不用管）点击【Next】：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181117223018703.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>（4）然后填写一下项目的信息：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181118095134665.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>（5）先勾选上 Web 依赖：<br><img src="https://img-blog.csdnimg.cn/20181117223605792.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>（6）勾选 SQl 下的 MySQL，MyBatis 依赖：<br>（根据自己的项目选择，后面可加）<br><img src="https://img-blog.csdnimg.cn/20181118103359434.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>（7）选择好项目的位置，点击【Finish】：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181118095156516.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>（7）如果是第一次配置 Spring Boot 的话可能需要等待一会儿 IDEA 下载相应的 依赖包，默认创建好的项目结构如下：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181118100821722.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>项目结构还是看上去挺清爽的，少了很多配置文件，我们来了解一下默认生成的有什么：</p>
+<ul>
+<li>SpringbootApplication： 一个带有 main() 方法的类，用于启动应用程序</li>
+<li>SpringbootApplicationTests：一个空的 Junit 测试了，它加载了一个使用 Spring Boot 字典配置功能的 Spring 应用程序上下文</li>
+<li>application.properties：一个空的 properties 文件，可以根据需要添加配置属性</li>
+<li>pom.xml： Maven 构建说明文件</li>
+</ul>
+<p><strong>第二步：HelloController</strong></p>
+<p>在 【main/java/com.xpwi.springboot】包下新建一个【HelloController】：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181118101115334.png" alt="在这里插入图片描述"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">package com.xpwi.springboot;</span><br><span class="line"></span><br><span class="line">import org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line">import org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line">&#x2F;**</span><br><span class="line"> * 测试控制器</span><br><span class="line"> *</span><br><span class="line"> * @author: @肖朋伟CSDN</span><br><span class="line"> * @create: 2018-11-18</span><br><span class="line"> *&#x2F;</span><br><span class="line">@RestController</span><br><span class="line">public class HelloController &#123;</span><br><span class="line"></span><br><span class="line">    @RequestMapping(&quot;&#x2F;hello&quot;)</span><br><span class="line">    public String hello() &#123;</span><br><span class="line">        return &quot;Hello Spring Boot!&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">12345678910111213141516171819</span><br></pre></td></tr></table></figure>
+
+<p><strong>第三步：利用 IDEA 启动 Spring Boot</strong></p>
+<p>（1）我们回到 SpringbootApplication 这个类中，然后右键点击运行：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181118101551613.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>（2）会提示 Maven 导包，点击 import<br><img src="https://img-blog.csdnimg.cn/20181118101418750.png" alt="在这里插入图片描述"></p>
+<p>（3）注意：我们之所以在上面的项目中没有手动的去配置 Tomcat 服务器，是因为 Spring Boot 内置了 Tomcat<br>等待一会儿就会看到下方的成功运行的提示信息：</p>
+<p><img src="https://img-blog.csdnimg.cn/2018111810180249.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>（4）此时，可以看到我们的 Tomcat 运行在 8080 端口，我们来访问下面地址试一下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;localhost:8080&#x2F;hello</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20181118101947898.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="Spring-Boot-项目文件介绍"><a href="#Spring-Boot-项目文件介绍" class="headerlink" title="Spring Boot 项目文件介绍"></a>Spring Boot 项目文件介绍</h3><p><strong>一、解析 pom.xml 文件：</strong></p>
+<p>（1）让我们来看看默认生成的 pom.xml 文件中到底有些什么：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns&#x3D;&quot;http:&#x2F;&#x2F;maven.apache.org&#x2F;POM&#x2F;4.0.0&quot; xmlns:xsi&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation&#x3D;&quot;http:&#x2F;&#x2F;maven.apache.org&#x2F;POM&#x2F;4.0.0 http:&#x2F;&#x2F;maven.apache.org&#x2F;xsd&#x2F;maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;&#x2F;modelVersion&gt;</span><br><span class="line"></span><br><span class="line">    &lt;groupId&gt;com.xpwi&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;springboot&lt;&#x2F;artifactId&gt;</span><br><span class="line">    &lt;version&gt;0.0.1-SNAPSHOT&lt;&#x2F;version&gt;</span><br><span class="line">    &lt;packaging&gt;jar&lt;&#x2F;packaging&gt;</span><br><span class="line"></span><br><span class="line">    &lt;name&gt;springboot&lt;&#x2F;name&gt;</span><br><span class="line">    &lt;description&gt;Demo project for Spring Boot&lt;&#x2F;description&gt;</span><br><span class="line"></span><br><span class="line">    &lt;parent&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-starter-parent&lt;&#x2F;artifactId&gt;</span><br><span class="line">        &lt;version&gt;2.1.0.RELEASE&lt;&#x2F;version&gt;</span><br><span class="line">        &lt;relativePath&#x2F;&gt; &lt;!-- lookup parent from repository --&gt;</span><br><span class="line">    &lt;&#x2F;parent&gt;</span><br><span class="line"></span><br><span class="line">    &lt;properties&gt;</span><br><span class="line">        &lt;project.build.sourceEncoding&gt;UTF-8&lt;&#x2F;project.build.sourceEncoding&gt;</span><br><span class="line">        &lt;project.reporting.outputEncoding&gt;UTF-8&lt;&#x2F;project.reporting.outputEncoding&gt;</span><br><span class="line">        &lt;java.version&gt;1.8&lt;&#x2F;java.version&gt;</span><br><span class="line">    &lt;&#x2F;properties&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependencies&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-web&lt;&#x2F;artifactId&gt;</span><br><span class="line">        &lt;&#x2F;dependency&gt;</span><br><span class="line"></span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-test&lt;&#x2F;artifactId&gt;</span><br><span class="line">            &lt;scope&gt;test&lt;&#x2F;scope&gt;</span><br><span class="line">        &lt;&#x2F;dependency&gt;</span><br><span class="line">    &lt;&#x2F;dependencies&gt;</span><br><span class="line"></span><br><span class="line">    &lt;build&gt;</span><br><span class="line">        &lt;plugins&gt;</span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;spring-boot-maven-plugin&lt;&#x2F;artifactId&gt;</span><br><span class="line">            &lt;&#x2F;plugin&gt;</span><br><span class="line">        &lt;&#x2F;plugins&gt;</span><br><span class="line">    &lt;&#x2F;build&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;&#x2F;project&gt;</span><br><span class="line"></span><br><span class="line">123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051</span><br></pre></td></tr></table></figure>
+
+<p>（2）我们可以看到一个比较陌生一些的标签 ，这个标签是在配置 Spring Boot 的父级依赖：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;parent&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-starter-parent&lt;&#x2F;artifactId&gt;</span><br><span class="line">        &lt;version&gt;2.1.0.RELEASE&lt;&#x2F;version&gt;</span><br><span class="line">        &lt;relativePath&#x2F;&gt; &lt;!-- lookup parent from repository --&gt;</span><br><span class="line">    &lt;&#x2F;parent&gt;</span><br><span class="line">123456</span><br></pre></td></tr></table></figure>
+
+<p>有了这个，当前的项目才是 Spring Boot 项目，spring-boot-starter-parent 是一个特殊的 starter ，它用来提供相关的 Maven 默认依赖，使用它之后，常用的包依赖就可以省去 version 标签。</p>
+<p>关于具体 Spring Boot 提供了哪些 jar 包的依赖，我们可以查看本地 Maven 仓库下：\repository\org\springframework\boot\spring-boot-dependencies\2.1.0.RELEASE\spring-boot-dependencies-2.1.0.RELEASE.pom 文件来查看，挺长的…</p>
+<p><strong>二、应用入口类 SpringbootApplication.java</strong></p>
+<p>Spring Boot 项目通常有一个名为 *Application 的入口类，入口类里有一个 main 方法， 这个 main 方法其实就是一个标准的 Javay 应用的入口方法。</p>
+<p><strong>@SpringBootApplication</strong> 是 Spring Boot 的核心注解，它是一个组合注解，该注解组合了：**@Configuration<strong>、</strong>@EnableAutoConfiguration、@ComponentScan；** 若不是用 <strong>@SpringBootApplication</strong> 注解也可以使用这三个注解代替。</p>
+<ul>
+<li>其中，**@EnableAutoConfiguration 让 Spring Boot 根据类路径中的 jar 包依赖为当前项目进行自动配置**，例如，添加了 spring-boot-starter-web 依赖，会自动添加 Tomcat 和 Spring MVC 的依赖，那么 Spring Boot 会对 Tomcat 和 Spring MVC 进行自动配置。</li>
+<li><strong>Spring Boot 还会自动扫描 @SpringBootApplication 所在类的同级包以及下级包里的 Bean</strong> ，所以入口类建议就配置在 grounpID + arctifactID 组合的包名下（这里为 com.xpwi.springboot 包）</li>
+</ul>
+<p><strong>三、Spring Boot 的配置文件：</strong></p>
+<p>Spring Boot 使用一个全局的配置文件 application.properties 或 application.yml，放置在【src/main/resources】目录或者类路径的 /config 下。</p>
+<p>Spring Boot 不仅支持常规的 properties 配置文件，还支持 yaml 语言的配置文件。yaml 是以数据为中心的语言，在配置数据的时候具有面向对象的特征。</p>
+<p>Spring Boot 的全局配置文件的作用是对一些默认配置的配置值进行修改。</p>
+<p><strong>修改 properties 配置文件实例：</strong></p>
+<p>（1）打开 resources 下的 application.properties</p>
+<p><img src="https://img-blog.csdnimg.cn/20181118105134569.png" alt="在这里插入图片描述"></p>
+<p>（2）在这里我们可以设置访问的端口，将 Tomcat 默认端口设置为 8080 （默认的不修改） ，并将默认的访问路径从 “/” 修改为 “/cn” 时，再访问 <a target="_blank" rel="noopener" href="http://localhost:8080/">http://localhost:8080/</a> 是什么都没有的，此时要访问 hello 是要使用 <a target="_blank" rel="noopener" href="http://localhost:8080/cn/hello">http://localhost:8080/cn/hello</a></p>
+<p><img src="https://img-blog.csdnimg.cn/20181118105520656.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>注意：如果是 yml 需要在 “:” 后加一个空格，幸好 IDEA 很好地支持了 yml 文件的格式有良好的代码提示；<br>我们可以自己配置多个属性</p>
+</blockquote>
+<p>（3）<strong>使用 yml 文件作为配置文件</strong>，我们直接把 .properties 后缀的文件删掉，使用 .yml 文件来进行简单的配置</p>
+<p><img src="https://img-blog.csdnimg.cn/20181118111549383.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>（4）在然后使用在我们的 HelloController.java 类中使用 @Value 来获取配置属性，代码（请看注释）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">package com.xpwi.springboot;</span><br><span class="line"></span><br><span class="line">import org.springframework.beans.factory.annotation.Value;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line">import org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line">&#x2F;**</span><br><span class="line"> * 测试控制器</span><br><span class="line"> *</span><br><span class="line"> * @author: @肖朋伟CSDN</span><br><span class="line"> * @create: 2018-11-18</span><br><span class="line"> *&#x2F;</span><br><span class="line">@RestController</span><br><span class="line">public class HelloController &#123;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 获取.yml 文件中值</span><br><span class="line">    @Value(&quot;$&#123;name&#125;&quot;)</span><br><span class="line">    private String name;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 获取 age</span><br><span class="line">    @Value(&quot;$&#123;csdnUrl&#125;&quot;)</span><br><span class="line">    private String csdnUrl;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;路径映射，对应浏览器访问的地址，访问该路径则执行下面函数</span><br><span class="line">    @RequestMapping(&quot;&#x2F;hello&quot;)</span><br><span class="line">    public String hello() &#123;</span><br><span class="line">        return name + &quot; CSDN 博客：&quot;+ csdnUrl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">1234567891011121314151617181920212223242526272829</span><br></pre></td></tr></table></figure>
+
+<p>（5）重启 Spring Boot ，输入地址：<a target="_blank" rel="noopener" href="http://localhost:8080/hello">http://localhost:8080/hello</a> 能看到正确的结果：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181118112021290.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>【注意】：此时如果你第一次使用 idea 出现中文乱码，解决办法：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181118112547922.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>（6）【注意】： 我们并没有在 yml 文件中注明属性的类型，而是在使用的时候定义的。你也可以在配置文件中使用当前配置：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181118113038260.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>（7）任然可以得到正确结果：</p>
+<p><img src="https://img-blog.csdnimg.cn/20181118113111788.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>（8）【问题】： 这样写配置文件繁琐而且可能会造成类的臃肿，因为有许许多多的 @Value 注解。</p>
+<p>可以，封装配置信息</p>
+<h3 id="封装配置信息使用方法："><a href="#封装配置信息使用方法：" class="headerlink" title="封装配置信息使用方法："></a>封装配置信息使用方法：</h3><p>（1）application.yml 文件内容如下：<br><img src="https://img-blog.csdnimg.cn/20181118113538919.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>（2）新建 author.java 和 HelloController.java 同级，内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">package com.xpwi.springboot;</span><br><span class="line"></span><br><span class="line">import org.springframework.boot.context.properties.ConfigurationProperties;</span><br><span class="line">import org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line">@Component</span><br><span class="line">@ConfigurationProperties(prefix &#x3D; &quot;author&quot;)</span><br><span class="line">public class author &#123;</span><br><span class="line">    private  String name;</span><br><span class="line"></span><br><span class="line">    private  String csdnUrl;</span><br><span class="line"></span><br><span class="line">    public String getCsdnUrl() &#123;</span><br><span class="line">        return csdnUrl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setCsdnUrl(String csdnUrl) &#123;</span><br><span class="line">        this.csdnUrl &#x3D; csdnUrl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getName() &#123;</span><br><span class="line">        return name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setName(String name) &#123;</span><br><span class="line">        this.name &#x3D; name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">1234567891011121314151617181920212223242526272829</span><br></pre></td></tr></table></figure>
+
+<p>（3）此时可能会报错，如果报错，打开 pom.xml 文件，添加内容（注意位置）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-configuration-processor&lt;&#x2F;artifactId&gt;</span><br><span class="line">            &lt;optional&gt;true&lt;&#x2F;optional&gt;</span><br><span class="line">        &lt;&#x2F;dependency&gt;</span><br><span class="line">12345</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20181118121422492.png" alt="在这里插入图片描述"></p>
+<p>（4）重新编写 HelloController 类，内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">package com.xpwi.springboot;</span><br><span class="line"></span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.beans.factory.annotation.Value;</span><br><span class="line">import org.springframework.boot.context.properties.ConfigurationProperties;</span><br><span class="line">import org.springframework.stereotype.Component;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line">import org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line">&#x2F;**</span><br><span class="line"> * 测试控制器</span><br><span class="line"> *</span><br><span class="line"> * @author: @肖朋伟CSDN</span><br><span class="line"> * @create: 2018-11-18</span><br><span class="line"> *&#x2F;</span><br><span class="line">@RestController</span><br><span class="line">public class HelloController &#123;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 获取.yml 文件中值</span><br><span class="line">    &#x2F;&#x2F;@Value(&quot;$&#123;name&#125;&quot;)</span><br><span class="line">    &#x2F;&#x2F;private String name;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 获取 age</span><br><span class="line">    &#x2F;&#x2F;@Value(&quot;$&#123;csdnUrl&#125;&quot;)</span><br><span class="line">    &#x2F;&#x2F;private String csdnUrl;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private author author;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;路径映射，对应浏览器访问的地址，访问该路径则执行下面函数</span><br><span class="line">    @RequestMapping(&quot;&#x2F;hello&quot;)</span><br><span class="line">    public String hello() &#123;</span><br><span class="line">        return &quot;名字：&quot; + author.getName() + &quot; 地址：&quot; + author.getCsdnUrl();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">1234567891011121314151617181920212223242526272829303132333435</span><br></pre></td></tr></table></figure>
+
+<p>（5）重启 Spring Boot，访问浏览器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;localhost:8080&#x2F;hello</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20181118122317781.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwMTQ3ODYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>【提示】：我们可以把配置信息封装成一个类，首先在我们的 name 和 age 前加一个 student 前缀，然后新建一个 StudentProperties 的类用来封装这些信息，并用上两个注解：</p>
+<ul>
+<li>@Component：表明当前类是一个 Java Bean</li>
+<li>@ConfigurationProperties(prefix = “author”)：表示获取前缀为 author 的配置信息</li>
+</ul>
+<p><strong>转载请注明出处：肖朋伟：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40147863/article/details/84194493">https://blog.csdn.net/qq_40147863/article/details/84194493</a></strong></p>
+<h3 id="更多文章链接："><a href="#更多文章链接：" class="headerlink" title="更多文章链接："></a>更多文章链接：</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40147863/article/category/8378529">Spring Boot 学习笔记</a></li>
+</ul>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>updated at 2020-11-21</p></div> 
+    <div class="post-meta__cats"></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+                <a href="../../29/%E4%B8%BB%E9%A2%98%E5%AE%9E%E7%8E%B0%E5%85%A8%E5%B1%80%E6%92%AD%E6%94%BE%E8%83%8C%E6%99%AF%E9%9F%B3%E4%B9%90/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            主题实现全局播放背景音乐
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%88%86%E4%BA%AB/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            &lt;[数据结构]二叉树遍历算法学习分享&gt;
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+
+
+</main>
+
+            <footer class="footer">
+    
+
+
+    
+     
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2021 <a href="../../../../index.html">截面樱</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+         
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+
+    </body>
+</html>
