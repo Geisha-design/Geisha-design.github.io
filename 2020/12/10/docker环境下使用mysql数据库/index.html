@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Docker环境下使用mysql数据库 | Hexo</title>
+  <meta name="description" content="使用Docker搭建MySQL服务一、安装docker#windows 和 mac 版可以直接到官网下载 docker desktop linux 的安装方法可以参考 https:&#x2F;&#x2F;www.cnblogs.com&#x2F;myzony&#x2F;p&#x2F;9071210.html 可以在shell中输入以下命令检查是否成功安装： sudo docker version 二、建立镜像# 拉取官方镜像（我们这里选择5.7，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker环境下使用mysql数据库">
+<meta property="og:url" content="http://example.com/2020/12/10/docker%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8mysql%E6%95%B0%E6%8D%AE%E5%BA%93/index.html">
+<meta property="og:site_name" content="截面樱">
+<meta property="og:description" content="使用Docker搭建MySQL服务一、安装docker#windows 和 mac 版可以直接到官网下载 docker desktop linux 的安装方法可以参考 https:&#x2F;&#x2F;www.cnblogs.com&#x2F;myzony&#x2F;p&#x2F;9071210.html 可以在shell中输入以下命令检查是否成功安装： sudo docker version 二、建立镜像# 拉取官方镜像（我们这里选择5.7，">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdn.net/20180801090208199?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2pvcl9pdnk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180801090230920?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2pvcl9pdnk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="article:published_time" content="2020-12-10T07:51:19.000Z">
+<meta property="article:modified_time" content="2020-12-10T07:54:32.000Z">
+<meta property="article:author" content="截面樱">
+<meta property="article:tag" content="java leetcode mysql hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20180801090208199?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2pvcl9pdnk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://example.com/2020/12/10/docker%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8mysql%E6%95%B0%E6%8D%AE%E5%BA%93/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="截面樱" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="../../../../css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body class="main-center theme-purple" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/Geisha-design" target="_blank">
+          <img class="img-circle img-rotate" src="../../../../images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">截面樱🌸</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Web Developer &amp; Designer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> zhejiang, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="../../../../.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="../../../../archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="../../../../categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="../../../../tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="../../../../repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="../../../../books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">Books</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="../../../../links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="../../../../about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="../../../../https:/github.com/Geisha-design" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="../../../../http:/weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="../../../../https:/twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="../../../../https:/www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="../../../../atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>你顺手挽住火焰，化作漫天大雪</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" rel="tag">微服务</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%95%B0%E6%8D%AE%E6%9C%BA%E6%9E%84/" rel="tag">数据机构</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="../../../../tags/hexo/" style="font-size: 13px;">hexo</a> <a href="../../../../tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 13px;">微服务</a> <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E6%9C%BA%E6%9E%84/" style="font-size: 13px;">数据机构</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2021/04/">April 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2021/02/">February 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/12/">December 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/11/">November 2020</a><span class="archive-list-count">11</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="../../../../2021/04/02/iOS%E3%80%81macOS%E7%B3%BB%E7%BB%9F%E5%BA%94%E7%94%A8%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/" class="title">iOS、macOS系统应用管理机制</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-04-02T03:46:15.000Z" itemprop="datePublished">2021-04-02</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="../../../../2021/02/05/%E5%BA%94%E7%94%A8%E5%B1%82/" class="title">port&lt;应用层&gt;</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-02-05T00:04:02.000Z" itemprop="datePublished">2021-02-05</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="../../../../2021/02/05/%E4%BC%A0%E8%BE%93%E5%B1%82/" class="title">port&lt;传输层&gt;</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-02-05T00:03:36.000Z" itemprop="datePublished">2021-02-05</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="../../../../2021/02/05/%E7%BD%91%E7%BB%9C%E5%B1%82/" class="title">port&lt;网络层&gt;</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-02-05T00:03:14.000Z" itemprop="datePublished">2021-02-05</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="../../../../2021/02/05/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/" class="title">port&lt;数据链路层&gt;</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-02-05T00:01:48.000Z" itemprop="datePublished">2021-02-05</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post docker-docker环境下使用mysql数据库" class="article article-type-post docker" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Docker环境下使用mysql数据库
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="" class="article-date">
+	  <time datetime="2020-12-10T07:51:19.000Z" itemprop="datePublished">2020-12-10</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="使用Docker搭建MySQL服务"><a href="#使用Docker搭建MySQL服务" class="headerlink" title="使用Docker搭建MySQL服务"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/sablier/p/11605606.html">使用Docker搭建MySQL服务</a></h1><h3 id="一、安装docker"><a href="#一、安装docker" class="headerlink" title="一、安装docker#"></a>一、安装docker<a target="_blank" rel="noopener" href="https://www.cnblogs.com/sablier/p/11605606.html#1773318026">#</a></h3><p>windows 和 mac 版可以直接到官网下载 docker desktop</p>
+<p>linux 的安装方法可以参考 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/myzony/p/9071210.html">https://www.cnblogs.com/myzony/p/9071210.html</a></p>
+<p>可以在shell中输入以下命令检查是否成功安装： <code>sudo docker version</code></p>
+<h3 id="二、建立镜像"><a href="#二、建立镜像" class="headerlink" title="二、建立镜像#"></a>二、建立镜像<a target="_blank" rel="noopener" href="https://www.cnblogs.com/sablier/p/11605606.html#3520192223">#</a></h3><ol>
+<li><p>拉取官方镜像（我们这里选择5.7，如果不写后面的版本号则会自动拉取最新版）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Copydocker pull mysql:5.7   # 拉取 mysql 5.7</span><br><span class="line">docker pull mysql       # 拉取最新版mysql镜像</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://hub.docker.com/_/mysql/">MySQL文档地址</a></p>
+</li>
+<li><p>检查是否拉取成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Copy$ sudo docker images</span><br></pre></td></tr></table></figure></li>
+<li><p>一般来说数据库容器不需要建立目录映射</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Copysudo docker run -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>–name：容器名，此处命名为<code>mysql</code></li>
+<li>-e：配置信息，此处配置mysql的root用户的登陆密码</li>
+<li>-p：端口映射，此处映射 主机3306端口 到 容器的3306端口</li>
+</ul>
+</li>
+<li><p>如果要建立目录映射</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Copyduso docker run -p 3306:3306 --name mysql \</span><br><span class="line">-v /usr/local/docker/mysql/conf:/etc/mysql \</span><br><span class="line">-v /usr/local/docker/mysql/logs:/var/log/mysql \</span><br><span class="line">-v /usr/local/docker/mysql/data:/var/lib/mysql \</span><br><span class="line">-e MYSQL_ROOT_PASSWORD=123456 \</span><br><span class="line">-d mysql:5.7</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>-v：主机和容器的目录映射关系，”:”前为主机目录，之后为容器目录</li>
+</ul>
+</li>
+<li><p>检查容器是否正确运行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Copydocker container ls</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>可以看到容器ID，容器的源镜像，启动命令，创建时间，状态，端口映射信息，容器名字</li>
+</ul>
+</li>
+</ol>
+<h3 id="三、连接mysql"><a href="#三、连接mysql" class="headerlink" title="三、连接mysql#"></a>三、连接mysql<a target="_blank" rel="noopener" href="https://www.cnblogs.com/sablier/p/11605606.html#2972020989">#</a></h3><ol>
+<li><p>进入docker本地连接mysql客户端</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Copysudo docker exec -it mysql bash</span><br><span class="line">mysql -uroot -p123456</span><br></pre></td></tr></table></figure></li>
+<li><p>使用 Navicat 远程连接mysql</p>
+<p>我只找到了 mac 版本的 Navicat Premiun（如下），没有找到windows和linux的。大家可以自行寻找。</p>
+<p> <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1bcJVyIvFneiEoMZPU-oIbA#list/path=/">百度云连接</a> 密码: qps3 （该软件包来自著名分享网站 Pirate ，并感谢网友 chaosgod 和 jor_ivy）</p>
+<p><a target="_blank" rel="noopener" href="https://img-blog.csdn.net/20180801090208199?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2pvcl9pdnk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70"><img src="https://img-blog.csdn.net/20180801090208199?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2pvcl9pdnk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></a></p>
+<p><a target="_blank" rel="noopener" href="https://img-blog.csdn.net/20180801090230920?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2pvcl9pdnk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70"><img src="https://img-blog.csdn.net/20180801090230920?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2pvcl9pdnk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></a></p>
+<p>安装完之后：复制中文包”zh-Hans.lproj”放到 /Contents/Resources 即可。（应用程序右键显示包内容）</p>
+</li>
+<li><p>使用远程连接软件时要注意一个问题</p>
+<p>我们在创建容器的时候已经将容器的3306端口和主机的3306端口映射到一起，所以我们应该访问：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Copyhost: 127.0.0.1</span><br><span class="line">port: 3306</span><br><span class="line">user: root</span><br><span class="line">password: 123456</span><br></pre></td></tr></table></figure></li>
+<li><p>如果你的容器运行正常，但是无法访问到MySQL，一般有以下几个可能的原因：</p>
+<ul>
+<li><p>防火墙阻拦</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">Copy#</span><span class="bash"> 开放端口：</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> systemctl status firewalld</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> firewall-cmd  --zone=public --add-port=3306/tcp -permanent</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> firewall-cmd  --reload</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 关闭防火墙：</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo systemctl stop firewalld</span></span><br></pre></td></tr></table></figure></li>
+<li><p>需要进入docker本地客户端设置远程访问账号</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">Copy$</span><span class="bash"> sudo docker <span class="built_in">exec</span> -it mysql bash</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> mysql -uroot -p123456</span></span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> grant all privileges on *.* to root@<span class="string">&#x27;%&#x27;</span> identified by <span class="string">&quot;password&quot;</span>;</span></span><br></pre></td></tr></table></figure>
+
+<p>原理：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">Copy#</span><span class="bash"> mysql使用mysql数据库中的user表来管理权限，修改user表就可以修改权限（只有root账号可以修改）</span></span><br><span class="line"></span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> use mysql;</span></span><br><span class="line">Database changed</span><br><span class="line"></span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> select host,user,password from user;</span></span><br><span class="line">+--------------+------+-------------------------------------------+</span><br><span class="line">| host                    | user      | password                                                                 |</span><br><span class="line">+--------------+------+-------------------------------------------+</span><br><span class="line">| localhost              | root     | *A731AEBFB621E354CD41BAF207D884A609E81F5E      |</span><br><span class="line">| 192.168.1.1            | root     | *A731AEBFB621E354CD41BAF207D884A609E81F5E      |</span><br><span class="line">+--------------+------+-------------------------------------------+</span><br><span class="line">2 rows in set (0.00 sec)</span><br><span class="line"></span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> grant all privileges  on *.* to root@<span class="string">&#x27;%&#x27;</span> identified by <span class="string">&quot;password&quot;</span>;</span></span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br><span class="line"></span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> flush privileges;</span></span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br><span class="line"></span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> select host,user,password from user;</span></span><br><span class="line">+--------------+------+-------------------------------------------+</span><br><span class="line">| host                    | user      | password                                                                 |</span><br><span class="line">+--------------+------+-------------------------------------------+</span><br><span class="line">| localhost              | root      | *A731AEBFB621E354CD41BAF207D884A609E81F5E     |</span><br><span class="line">| 192.168.1.1            | root      | *A731AEBFB621E354CD41BAF207D884A609E81F5E     |</span><br><span class="line">| %                       | root      | *A731AEBFB621E354CD41BAF207D884A609E81F5E     |</span><br><span class="line">+--------------+------+-------------------------------------------+</span><br><span class="line">3 rows in set (0.00 sec)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h3 id="参考连接："><a href="#参考连接：" class="headerlink" title="参考连接：#"></a>参考连接：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/sablier/p/11605606.html#4141473237">#</a></h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/jor_ivy/article/details/81323199">https://blog.csdn.net/jor_ivy/article/details/81323199</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-727433-1-1.html">https://www.52pojie.cn/thread-727433-1-1.html</a></p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2020/12/10/docker%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8mysql%E6%95%B0%E6%8D%AE%E5%BA%93/" title="Docker环境下使用mysql数据库" target="_blank" rel="external">http://example.com/2020/12/10/docker%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8mysql%E6%95%B0%E6%8D%AE%E5%BA%93/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/Geisha-design" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="../../../../images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/Geisha-design" target="_blank"><span class="text-dark">截面樱🌸</span><small class="ml-1x">Web Developer &amp; Designer</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="../../../../2021/02/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0Part1%E6%A6%82%E8%BF%B0/" title="port&lt;计算机网络笔记Part1概述&gt;"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="../../07/%E7%AE%80%E8%BF%B0%E5%BE%AE%E6%9C%8D%E5%8A%A1%E8%AE%BE%E8%AE%A1/" title="port&lt;简述微服务设计&gt;"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="../../../../images/donate/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="../../../../images/donate/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="../../../../https:/github.com/Geisha-design" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="../../../../http:/weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="../../../../https:/twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="../../../../https:/www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="../../../../atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="../../../../js/plugin.min.js"></script>
+
+
+<script src="../../../../js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '../../../../content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="../../../../js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>

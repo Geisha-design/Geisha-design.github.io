@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>hexo博客优化之实用功能添加系列&lt;hexo博客优化之实用功能添加系列&gt; | Hexo</title>
+  <meta name="description" content="Hexo 博客优化之实用功能添加系列（持续更新） TRHX • 鲍勃 2019-12-08 00:12:07  32540  收藏 31 分类专栏： 【 Hexo 博客搭建 】 文章标签： 博客优化 博客实用功能添加 Hexo博客 版权  本文将讲述一些 Hexo 博客实用功能的添加，本文以作者 luuman 的 spfk 主题和作者 xaoxuu 的 Material X 主题为例，实际效果欢迎">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo博客优化之实用功能添加系列&lt;hexo博客优化之实用功能添加系列&gt;">
+<meta property="og:url" content="http://example.com/2020/11/21/hexo%E4%B9%8B%E5%88%86%E7%B1%BB%E9%9B%B7%E8%BE%BE/index.html">
+<meta property="og:site_name" content="截面樱">
+<meta property="og:description" content="Hexo 博客优化之实用功能添加系列（持续更新） TRHX • 鲍勃 2019-12-08 00:12:07  32540  收藏 31 分类专栏： 【 Hexo 博客搭建 】 文章标签： 博客优化 博客实用功能添加 Hexo博客 版权  本文将讲述一些 Hexo 博客实用功能的添加，本文以作者 luuman 的 spfk 主题和作者 xaoxuu 的 Material X 主题为例，实际效果欢迎">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://csdnimg.cn/release/blogv2/dist/pc/img/original.png">
+<meta property="og:image" content="https://csdnimg.cn/release/blogv2/dist/pc/img/articleReadEyes.png">
+<meta property="og:image" content="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCollect.png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzAvNWM5ZjkxZWQ4OTczYS5wbmc">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190807103722227.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzU5MjI0,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190807103745470.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzU5MjI0,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5ZjkyOWU3ZDYyYi5wbmc">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5ZjkyYjVlMjcwZi5wbmc">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5ZjkyZTNlZWJhYS5wbmc">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190807103817644.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzU5MjI0,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20191129201331969.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9pdHJoeC5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk1ZmU0ZTM2YS5wbmc">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190807104015998.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzU5MjI0,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk2ODkyZTRkYi5wbmc">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190807104042630.png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk3ZGRlY2E4YS5wbmc">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk4NTk0Yzg5NS5wbmc">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk4ODE1M2MzNS5wbmc">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk4YjBiYjRlZi5wbmc">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk4ZDQzNTQ5ZC5wbmc">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk5MDBiOWI4Ny5wbmc">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190807104140857.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzU5MjI0,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2020-11-21T06:04:20.000Z">
+<meta property="article:modified_time" content="2020-11-21T06:12:26.000Z">
+<meta property="article:author" content="截面樱">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://csdnimg.cn/release/blogv2/dist/pc/img/original.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://example.com/2020/11/21/hexo%E4%B9%8B%E5%88%86%E7%B1%BB%E9%9B%B7%E8%BE%BE/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="截面樱" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="../../../../css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body class="main-center theme-purple" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/Geisha-design" target="_blank">
+          <img class="img-circle img-rotate" src="../../../../images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">截面樱🌸</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Web Developer &amp; Designer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> zhejiang, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="../../../../.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="../../../../archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="../../../../categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="../../../../tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="../../../../repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="../../../../books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">Books</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="../../../../links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="../../../../about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="../../../../https:/github.com/Geisha-design" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="../../../../http:/weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="../../../../https:/twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="../../../../https:/www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="../../../../atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>你顺手挽住火焰，化作漫天大雪</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" rel="tag">微服务</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%95%B0%E6%8D%AE%E6%9C%BA%E6%9E%84/" rel="tag">数据机构</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="../../../../tags/hexo/" style="font-size: 13px;">hexo</a> <a href="../../../../tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 13px;">微服务</a> <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E6%9C%BA%E6%9E%84/" style="font-size: 13px;">数据机构</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2021/04/">April 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2021/02/">February 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/12/">December 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/11/">November 2020</a><span class="archive-list-count">11</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="../../../../2021/04/02/iOS%E3%80%81macOS%E7%B3%BB%E7%BB%9F%E5%BA%94%E7%94%A8%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/" class="title">iOS、macOS系统应用管理机制</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-04-02T03:46:15.000Z" itemprop="datePublished">2021-04-02</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="../../../../2021/02/05/%E5%BA%94%E7%94%A8%E5%B1%82/" class="title">port&lt;应用层&gt;</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-02-05T00:04:02.000Z" itemprop="datePublished">2021-02-05</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="../../../../2021/02/05/%E4%BC%A0%E8%BE%93%E5%B1%82/" class="title">port&lt;传输层&gt;</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-02-05T00:03:36.000Z" itemprop="datePublished">2021-02-05</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="../../../../2021/02/05/%E7%BD%91%E7%BB%9C%E5%B1%82/" class="title">port&lt;网络层&gt;</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-02-05T00:03:14.000Z" itemprop="datePublished">2021-02-05</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="../../../../2021/02/05/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/" class="title">port&lt;数据链路层&gt;</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-02-05T00:01:48.000Z" itemprop="datePublished">2021-02-05</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-hexo之分类雷达" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      hexo博客优化之实用功能添加系列&lt;hexo博客优化之实用功能添加系列&gt;
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="" class="article-date">
+	  <time datetime="2020-11-21T06:04:20.000Z" itemprop="datePublished">2020-11-21</time>
+	</a>
+</span>
+        
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="../../../../tags/hexo/" rel="tag">hexo</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="Hexo-博客优化之实用功能添加系列（持续更新）"><a href="#Hexo-博客优化之实用功能添加系列（持续更新）" class="headerlink" title="Hexo 博客优化之实用功能添加系列（持续更新）"></a>Hexo 博客优化之实用功能添加系列（持续更新）</h1><p><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/original.png" alt="img"></p>
+<p><a target="_blank" rel="noopener" href="https://me.csdn.net/qq_36759224">TRHX • 鲍勃</a> 2019-12-08 00:12:07 <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/articleReadEyes.png" alt="img"> 32540 <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCollect.png" alt="img"> 收藏 31</p>
+<p>分类专栏： <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36759224/category_9285510.html">【 Hexo 博客搭建 】</a> 文章标签： <a target="_blank" rel="noopener" href="https://www.csdn.net/gather_24/MtTaEg0sMzY5NDMtYmxvZwO0O0OO0O0O.html">博客优化</a> <a target="_blank" rel="noopener" href="https://so.csdn.net/so/search/s.do?q=%E5%8D%9A%E5%AE%A2%E5%AE%9E%E7%94%A8%E5%8A%9F%E8%83%BD%E6%B7%BB%E5%8A%A0&t=blog&o=vip&s=&l=&f=&viparticle=">博客实用功能添加</a> <a target="_blank" rel="noopener" href="https://www.csdn.net/gather_22/MtTaYg5sNTA0ODctYmxvZwO0O0OO0O0O.html">Hexo博客</a></p>
+<p>版权</p>
+<hr>
+<p>本文将讲述一些 Hexo 博客实用功能的添加，本文以作者 <a target="_blank" rel="noopener" href="https://luuman.github.io/Home/H1/index.html">luuman</a> 的 <a target="_blank" rel="noopener" href="https://github.com/luuman/hexo-theme-spfk">spfk</a> 主题和作者 <a target="_blank" rel="noopener" href="https://xaoxuu.com/">xaoxuu</a> 的 <a target="_blank" rel="noopener" href="https://xaoxuu.com/wiki/material-x/">Material X</a> 主题为例，实际效果欢迎访问<a target="_blank" rel="noopener" href="https://www.itrhx.com/">我的博客</a>进行查看，本文章会不定时进行更新。文章涉及有关参考资料、教程、链接如有侵权请联系我删除！</p>
+<p><strong>请注意：</strong>不同主题可能方法有些不同，相同主题不同版本，配置方法也有所差异！阅读主题文档非常重要！</p>
+<p><strong>博客功能添加前提条件：</strong>有一定的前端基础，了解 HTML、CSS、JS，了解 CSS 预处理语言 Sass、Less、Stylus，搞懂 hexo 的目录结构。</p>
+<p><strong>博客功能添加通用步骤：</strong>选定主题，认真阅读主题文档，大多数主题文档都有非常详细的配置设置，分析主题目录结构，了解每个文件是对应网页哪个部分的，认真阅读相关教程，教程本质上只为你提供核心代码和思路，具体代码要添加到哪个地方，需要你自己搞懂主题结构，添加到需要的、合适的位置！</p>
+<p>欢迎关注我的专栏：<a target="_blank" rel="noopener" href="https://itrhx.blog.csdn.net/column/info/34316">《Github/Coding Pages + Hexo》</a>，从前期搭建到后期美化一条龙，帮你解决 Hexo 常见问题！</p>
+<p>推荐阅读：<a target="_blank" rel="noopener" href="https://itrhx.blog.csdn.net/article/details/85420403">《Hexo 博客优化之博客美化系列（持续更新）》</a></p>
+<p>Hexo 交流群：924812033，有问题可以一起交流解决。</p>
+<hr>
+<h3 id="文章目录"><a href="#文章目录" class="headerlink" title="文章目录"></a>文章目录</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36759224/article/details/85010191?ops_request_misc=%7B%22request_id%22:%22160593899319725225019743%22,%22scm%22:%2220140713.130102334.pc_all.%22%7D&request_id=160593899319725225019743&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v28-6-85010191.pc_search_result_cache&utm_term=hexo&spm=1018.2118.3001.4449#font_colorFF000001_font_20">【01】添加评论系统</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36759224/article/details/85010191?ops_request_misc=%7B%22request_id%22:%22160593899319725225019743%22,%22scm%22:%2220140713.130102334.pc_all.%22%7D&request_id=160593899319725225019743&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v28-6-85010191.pc_search_result_cache&utm_term=hexo&spm=1018.2118.3001.4449#font_colorFF000002_font_68">【02】添加字数统计和阅读时长</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36759224/article/details/85010191?ops_request_misc=%7B%22request_id%22:%22160593899319725225019743%22,%22scm%22:%2220140713.130102334.pc_all.%22%7D&request_id=160593899319725225019743&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v28-6-85010191.pc_search_result_cache&utm_term=hexo&spm=1018.2118.3001.4449#font_colorFF000003_font_170">【03】添加网站运行时间</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36759224/article/details/85010191?ops_request_misc=%7B%22request_id%22:%22160593899319725225019743%22,%22scm%22:%2220140713.130102334.pc_all.%22%7D&request_id=160593899319725225019743&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v28-6-85010191.pc_search_result_cache&utm_term=hexo&spm=1018.2118.3001.4449#font_colorFF000004_font_199">【04】添加百度统计</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36759224/article/details/85010191?ops_request_misc=%7B%22request_id%22:%22160593899319725225019743%22,%22scm%22:%2220140713.130102334.pc_all.%22%7D&request_id=160593899319725225019743&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v28-6-85010191.pc_search_result_cache&utm_term=hexo&spm=1018.2118.3001.4449#font_colorFF000005RSS_font_219">【05】添加RSS订阅</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36759224/article/details/85010191?ops_request_misc=%7B%22request_id%22:%22160593899319725225019743%22,%22scm%22:%2220140713.130102334.pc_all.%22%7D&request_id=160593899319725225019743&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v28-6-85010191.pc_search_result_cache&utm_term=hexo&spm=1018.2118.3001.4449#font_colorFF000006_Fork_me_on_GitHub__font_251">【06】添加 Fork me on GitHub 效果</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36759224/article/details/85010191?ops_request_misc=%7B%22request_id%22:%22160593899319725225019743%22,%22scm%22:%2220140713.130102334.pc_all.%22%7D&request_id=160593899319725225019743&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v28-6-85010191.pc_search_result_cache&utm_term=hexo&spm=1018.2118.3001.4449#font_colorFF000007_font_259">【07】更改本地预览端口号</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36759224/article/details/85010191?ops_request_misc=%7B%22request_id%22:%22160593899319725225019743%22,%22scm%22:%2220140713.130102334.pc_all.%22%7D&request_id=160593899319725225019743&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v28-6-85010191.pc_search_result_cache&utm_term=hexo&spm=1018.2118.3001.4449#font_colorFF000008_HTTPS_font_277">【08】启用 HTTPS</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36759224/article/details/85010191?ops_request_misc=%7B%22request_id%22:%22160593899319725225019743%22,%22scm%22:%2220140713.130102334.pc_all.%22%7D&request_id=160593899319725225019743&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v28-6-85010191.pc_search_result_cache&utm_term=hexo&spm=1018.2118.3001.4449#font_colorFF000009_font_283">【09】博客备份</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36759224/article/details/85010191?ops_request_misc=%7B%22request_id%22:%22160593899319725225019743%22,%22scm%22:%2220140713.130102334.pc_all.%22%7D&request_id=160593899319725225019743&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v28-6-85010191.pc_search_result_cache&utm_term=hexo&spm=1018.2118.3001.4449#font_colorFF000010_font_289">【10】自定义一个不使用主题模板渲染的独立页面</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36759224/article/details/85010191?ops_request_misc=%7B%22request_id%22:%22160593899319725225019743%22,%22scm%22:%2220140713.130102334.pc_all.%22%7D&request_id=160593899319725225019743&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v28-6-85010191.pc_search_result_cache&utm_term=hexo&spm=1018.2118.3001.4449#font_colorFF0000__font_294">未完待续……</a></li>
+</ul>
+<hr>
+<h1 id="【01】添加评论系统"><a href="#【01】添加评论系统" class="headerlink" title="【01】添加评论系统"></a>【01】添加评论系统</h1><p>主流的评论系统有很多，比如：网易云跟帖、多说、友言、畅言、来必力（LiveRe）、Disqus、Valine、Gitalk 等等，目前网易云跟帖、多说、友言都已经关闭了，还有些可能国内还访问不了，比较麻烦，百度了一下，最后还是选择了来必力评论系统</p>
+<p>进入<a target="_blank" rel="noopener" href="https://livere.com/">来必力官网</a>，注册一个账号：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzAvNWM5ZjkxZWQ4OTczYS5wbmc" alt="img"></p>
+<p>注册完毕之后，登录，进入安装页面，选择 City 免费版安装，安装之后你会得到一段代码<br><img src="https://img-blog.csdnimg.cn/20190807103722227.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzU5MjI0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20190807103745470.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzU5MjI0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5ZjkyOWU3ZDYyYi5wbmc" alt="img"></p>
+<p>我们打开主题文件下的 _config.yml 文件，添加如下代码：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5ZjkyYjVlMjcwZi5wbmc" alt="img"></p>
+<p>在 \themes\hexo-theme-spfk\layout_partial\comments 文件夹下新建一个 livere.ejs 的文件，在里面填写来必力提供的代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 来必力City版安装代码 --&gt;</span><br><span class="line">&lt;div id=<span class="string">&quot;lv-container&quot;</span> data-id=<span class="string">&quot;city&quot;</span> data-uid=<span class="string">&quot;这里是你的uid&quot;</span>&gt;</span><br><span class="line">	&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">		(<span class="function"><span class="keyword">function</span>(<span class="params">d, s</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> j, e = d.getElementsByTagName(s)[<span class="number">0</span>];</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> LivereTower === <span class="string">&#x27;function&#x27;</span>) &#123; <span class="keyword">return</span>; &#125;</span><br><span class="line">    </span><br><span class="line">        j = d.createElement(s);</span><br><span class="line">        j.src = <span class="string">&#x27;https://cdn-city.livere.com/js/embed.dist.js&#x27;</span>;</span><br><span class="line">        j.async = <span class="literal">true</span>;</span><br><span class="line">    </span><br><span class="line">        e.parentNode.insertBefore(j, e);</span><br><span class="line">        &#125;)(<span class="built_in">document</span>, <span class="string">&#x27;script&#x27;</span>);</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">    &lt;noscript&gt;为正常使用来必力评论功能请激活JavaScript&lt;/noscript&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;!-- City版安装代码已完成 --&gt;</span><br><span class="line"><span class="number">123456789101112131415161718</span></span><br></pre></td></tr></table></figure>
+
+<p>打开 \themes\hexo-theme-spfk\layout_partial\article.ejs 文件，在适当位置添加如下红框中的代码：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5ZjkyZTNlZWJhYS5wbmc" alt="img"></p>
+<p>完成以上操作之后，我们就可以使用来必力评论系统了<br><img src="https://img-blog.csdnimg.cn/20190807103817644.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzU5MjI0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>另外推荐使用 <a target="_blank" rel="noopener" href="https://valine.js.org/">Valine</a> 评论系统，和 gitalk 评论系统</p>
+<hr>
+<h1 id="【02】添加字数统计和阅读时长"><a href="#【02】添加字数统计和阅读时长" class="headerlink" title="【02】添加字数统计和阅读时长"></a>【02】添加字数统计和阅读时长</h1><p>先在博客目录下执行以下命令安装 hexo-wordcount 插件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm i --save hexo-wordcount</span></span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<p>注意：在 <a target="_blank" rel="noopener" href="https://xaoxuu.com/wiki/material-x/">Material X</a> 主题中，字数统计和阅读时长的功能我已提交 PR，在最新版本中，只需要安装插件后，在主题 <code>config.yml</code> 配置文件里，将 <code>word_count</code> 关键字设置为 <code>true</code> 即可，对于旧版本，可以通过以下方法实现：</p>
+<p>以 <a target="_blank" rel="noopener" href="https://xaoxuu.com/wiki/material-x/">Material X</a> 主题（版本 1.2.1）为例，在 \themes\material-x\layout_meta 目录下创建 word.ejs 文件，在 word.ejs 文件中写入以下代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span>(isPostList || !isPostList)&#123; %&gt;</span><br><span class="line">  &lt;% <span class="keyword">if</span> (theme.word_count &amp;&amp; !post.no_word_count) &#123; %&gt;</span><br><span class="line">    &lt;div style=<span class="string">&quot;margin-right: 10px;&quot;</span>&gt;</span><br><span class="line">      &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;post-time&quot;</span>&gt;</span><br><span class="line">        &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;post-meta-item-icon&quot;</span>&gt;</span><br><span class="line">          &lt;i <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;fa fa-keyboard&quot;</span>&gt;&lt;/i&gt;</span><br><span class="line">          &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;post-meta-item-text&quot;</span>&gt;  字数统计: &lt;/span&gt;</span><br><span class="line">          &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;post-count&quot;</span>&gt;&lt;%= wordcount(post.content) %&gt;字&lt;/span&gt;</span><br><span class="line">        &lt;/span&gt;</span><br><span class="line">      &lt;/span&gt;</span><br><span class="line">      &amp;nbsp; | &amp;nbsp;</span><br><span class="line">      &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;post-time&quot;</span>&gt;</span><br><span class="line">        &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;post-meta-item-icon&quot;</span>&gt;</span><br><span class="line">          &lt;i <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;fa fa-hourglass-half&quot;</span>&gt;&lt;/i&gt;</span><br><span class="line">          &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;post-meta-item-text&quot;</span>&gt;  阅读时长≈&lt;/span&gt;</span><br><span class="line">          &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;post-count&quot;</span>&gt;&lt;%= min2read(post.content) %&gt;分&lt;/span&gt;</span><br><span class="line">        &lt;/span&gt;</span><br><span class="line">      &lt;/span&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;% &#125; %&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br><span class="line"><span class="number">123456789101112131415161718192021</span></span><br></pre></td></tr></table></figure>
+
+<p>然后在主题的配置文件 _config.yml 找到 meta 关键字，将 word 填入 header 中：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">meta:</span><br><span class="line">  header: [title, author, date, categories, tags, counter, word, top]</span><br><span class="line">  footer: [updated, share]</span><br><span class="line">123</span><br></pre></td></tr></table></figure>
+
+<p>最后在主题目录下的 _config.yml 添加以下配置即可</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">word_count:</span> <span class="literal">true</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>效果图：<br><img src="https://img-blog.csdnimg.cn/20191129201331969.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9pdHJoeC5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<hr>
+<p>同样的，以 <a target="_blank" rel="noopener" href="https://github.com/luuman/hexo-theme-spfk">spfk</a> 主题为例，在 \themes\hexo-theme-spfk\layout_partial\post 目录下创建 word.ejs 文件，在 word.ejs 文件中写入以下代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=<span class="string">&quot;margin-top:10px;&quot;</span>&gt;</span><br><span class="line">    &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;post-time&quot;</span>&gt;</span><br><span class="line">      &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;post-meta-item-icon&quot;</span>&gt;</span><br><span class="line">        &lt;i <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;fa fa-keyboard-o&quot;</span>&gt;&lt;/i&gt;</span><br><span class="line">        &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;post-meta-item-text&quot;</span>&gt;  字数统计: &lt;/span&gt;</span><br><span class="line">        &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;post-count&quot;</span>&gt;&lt;%= wordcount(post.content) %&gt;字&lt;/span&gt;</span><br><span class="line">      &lt;/span&gt;</span><br><span class="line">    &lt;/span&gt;</span><br><span class="line">    &amp;nbsp; | &amp;nbsp;</span><br><span class="line">    &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;post-time&quot;</span>&gt;</span><br><span class="line">      &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;post-meta-item-icon&quot;</span>&gt;</span><br><span class="line">        &lt;i <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;fa fa-hourglass-half&quot;</span>&gt;&lt;/i&gt;</span><br><span class="line">        &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;post-meta-item-text&quot;</span>&gt;  阅读时长: &lt;/span&gt;</span><br><span class="line">        &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;post-count&quot;</span>&gt;&lt;%= min2read(post.content) %&gt;分&lt;/span&gt;</span><br><span class="line">      &lt;/span&gt;</span><br><span class="line">    &lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"><span class="number">1234567891011121314151617</span></span><br></pre></td></tr></table></figure>
+
+<p>然后在 \themes\hexo-theme-spfk\layout_partial\article.ejs 中适当位置添加以下代码：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk1ZmU0ZTM2YS5wbmc" alt="img"></p>
+<p>最后在主题目录下的 _config.yml 添加以下配置即可</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">word_count:</span> <span class="literal">true</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>如果显示的位置不好，可以自行更改其位置，成功配置后的效果如下：<br><img src="https://img-blog.csdnimg.cn/20190807104015998.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzU5MjI0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk2ODkyZTRkYi5wbmc" alt="img"></p>
+<hr>
+<p>另外：要在博客底部显示所有文章的总字数，可以<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/hexo-wordcount">点击此处</a>，根据你博客底部文件的类型选择相应的代码放在适当的位置即可，前提是要安装好 hexo-wordcount 插件，例如我使用 <a target="_blank" rel="noopener" href="https://xaoxuu.com/wiki/material-x/">Material X</a> 主题，在 \themes\material-x\layout_partial 目录下的 footer.ejs 文件中添加如下代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;i <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;fas fa-chart-area&quot;</span>&gt;&lt;/i&gt;</span><br><span class="line">&lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;post-count&quot;</span>&gt;字数统计：&lt;%= totalcount(site) %&gt;&lt;/span&gt;</span><br><span class="line"><span class="number">12</span></span><br></pre></td></tr></table></figure>
+
+<p>实现效果如下：<br><img src="https://img-blog.csdnimg.cn/20190807104042630.png" alt="在这里插入图片描述"></p>
+<hr>
+<h1 id="【03】添加网站运行时间"><a href="#【03】添加网站运行时间" class="headerlink" title="【03】添加网站运行时间"></a>【03】添加网站运行时间</h1><p>一个比较好的小功能，可以看见自己的博客运行多久了，时间一天天的增加，成就感也会一天天增加的<br>在 \themes\hexo-theme-spfk\layout_partial\footer.ejs 文件下添加以下代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;span id=<span class="string">&quot;timeDate&quot;</span>&gt;载入天数...&lt;<span class="regexp">/span&gt;&lt;span id=&quot;times&quot;&gt;载入时分秒...&lt;/</span>span&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>(); </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">createtime</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">        <span class="keyword">var</span> grt= <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">&quot;08/10/2018 17:38:00&quot;</span>);<span class="comment">//在此处修改你的建站时间，格式：月/日/年 时:分:秒</span></span><br><span class="line">        now.setTime(now.getTime()+<span class="number">250</span>); </span><br><span class="line">        days = (now - grt ) / <span class="number">1000</span> / <span class="number">60</span> / <span class="number">60</span> / <span class="number">24</span>; dnum = <span class="built_in">Math</span>.floor(days); </span><br><span class="line">        hours = (now - grt ) / <span class="number">1000</span> / <span class="number">60</span> / <span class="number">60</span> - (<span class="number">24</span> * dnum); hnum = <span class="built_in">Math</span>.floor(hours); </span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">String</span>(hnum).length ==<span class="number">1</span> )&#123;hnum = <span class="string">&quot;0&quot;</span> + hnum;&#125; minutes = (now - grt ) / <span class="number">1000</span> /<span class="number">60</span> - (<span class="number">24</span> * <span class="number">60</span> * dnum) - (<span class="number">60</span> * hnum); </span><br><span class="line">        mnum = <span class="built_in">Math</span>.floor(minutes); <span class="keyword">if</span>(<span class="built_in">String</span>(mnum).length ==<span class="number">1</span> )&#123;mnum = <span class="string">&quot;0&quot;</span> + mnum;&#125; </span><br><span class="line">        seconds = (now - grt ) / <span class="number">1000</span> - (<span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * dnum) - (<span class="number">60</span> * <span class="number">60</span> * hnum) - (<span class="number">60</span> * mnum); </span><br><span class="line">        snum = <span class="built_in">Math</span>.round(seconds); <span class="keyword">if</span>(<span class="built_in">String</span>(snum).length ==<span class="number">1</span> )&#123;snum = <span class="string">&quot;0&quot;</span> + snum;&#125; </span><br><span class="line">        <span class="built_in">document</span>.getElementById(<span class="string">&quot;timeDate&quot;</span>).innerHTML = <span class="string">&quot;本站已安全运行 &quot;</span>+dnum+<span class="string">&quot; 天 &quot;</span>; </span><br><span class="line">        <span class="built_in">document</span>.getElementById(<span class="string">&quot;times&quot;</span>).innerHTML = hnum + <span class="string">&quot; 小时 &quot;</span> + mnum + <span class="string">&quot; 分 &quot;</span> + snum + <span class="string">&quot; 秒&quot;</span>; </span><br><span class="line">    &#125; </span><br><span class="line"><span class="built_in">setInterval</span>(<span class="string">&quot;createtime()&quot;</span>,<span class="number">250</span>);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"><span class="number">1234567891011121314151617</span></span><br></pre></td></tr></table></figure>
+
+<p>最后效果如下：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk3ZGRlY2E4YS5wbmc" alt="img"></p>
+<hr>
+<h1 id="【04】添加百度统计"><a href="#【04】添加百度统计" class="headerlink" title="【04】添加百度统计"></a>【04】添加百度统计</h1><p>百度统计是百度推出的一款免费的专业网站流量分析工具，能够告诉用户访客是如何找到并浏览用户的网站，在网站上做了些什么，非常有趣，接下来我们把百度统计添加到自己博客当中</p>
+<p>访问<a target="_blank" rel="noopener" href="https://tongji.baidu.com/">百度统计首页</a>，注册一个账号后登陆，添加你的博客网站<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk4NTk0Yzg5NS5wbmc" alt="img"><br>接着点击代码获取，复制该代码<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk4ODE1M2MzNS5wbmc" alt="img"></p>
+<p>然后到目录 \themes\hexo-theme-spfk\layout_partial 下新建一个 baidu-analytics.ejs 文件，里面粘贴你刚刚复制的代码<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk4YjBiYjRlZi5wbmc" alt="img"></p>
+<p>修改主题文件夹下的 _config.yml 文件，将你的key（图中涂掉部分）填写进去：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk4ZDQzNTQ5ZC5wbmc" alt="img"></p>
+<p>所有操作完成后可以在百度统计管理页面检查代码是否安装成功，如果代码安装正确，一般20分钟后，可以查看网站分析数据<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk5MDBiOWI4Ny5wbmc" alt="img"></p>
+<p>另外推荐：<a target="_blank" rel="noopener" href="https://web.umeng.com/main.php?c=user&a=index">友盟</a>，2010年4月在北京成立，安全、可靠、公正、第三方的网站流量统计分析系统</p>
+<hr>
+<h1 id="【05】添加RSS订阅"><a href="#【05】添加RSS订阅" class="headerlink" title="【05】添加RSS订阅"></a>【05】添加RSS订阅</h1><p>RSS订阅是站点用来和其他站点之间共享内容的一种简易方式，即Really Simple Syndication（简易信息聚合），如果不会使用，可以参见百度百科：<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/RSS%E8%AE%A2%E9%98%85/663114">https://baike.baidu.com/item/RSS%E8%AE%A2%E9%98%85/663114</a> ；首先我们安装feed插件，在本地hexo目录下右键<code>Git Bash Here</code>，输入以下命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install hexo-generator-feed</span></span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<p>等待安装完成后，打开hexo目录下的配置文件 _config.yml，在末尾添加以下配置：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: http://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">#RSS订阅</span></span><br><span class="line"><span class="attr">plugin:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">hexo-generator-feed</span></span><br><span class="line"><span class="comment">#Feed Atom</span></span><br><span class="line"><span class="attr">feed:</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">atom</span></span><br><span class="line"><span class="attr">path:</span> <span class="string">atom.xml</span></span><br><span class="line"><span class="attr">limit:</span> <span class="number">20</span></span><br><span class="line"><span class="number">12345678910</span></span><br></pre></td></tr></table></figure>
+
+<p>随后打开主题配置文件 _config.yml，添加以下配置：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">rss:</span> <span class="string">/atom.xml</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>至此，RSS订阅功能添加完成</p>
+<hr>
+<h1 id="【06】添加-Fork-me-on-GitHub-效果"><a href="#【06】添加-Fork-me-on-GitHub-效果" class="headerlink" title="【06】添加 Fork me on GitHub 效果"></a>【06】添加 Fork me on GitHub 效果</h1><p>效果图：<br><img src="https://img-blog.csdnimg.cn/20190807104140857.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzU5MjI0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><a target="_blank" rel="noopener" href="https://blog.github.com/2008-12-19-github-ribbons/">点击此处</a>可以查看更多样式，将相应样式的代码复制到你想要放的地方就OK了，代码里的链接也要替换成你的，更多创意，比如 Follow me on CSDN ，只需要用PS改掉图片里的文字，替换掉相应链接即可</p>
+<hr>
+<h1 id="【07】更改本地预览端口号"><a href="#【07】更改本地预览端口号" class="headerlink" title="【07】更改本地预览端口号"></a>【07】更改本地预览端口号</h1><p>hexo博客在执行<code>hexo s</code>进行本地预览的时候，默认端口号是4000，当该端口号被占用时会报错 <code>Error: listen EADDRINUSE 0.0.0.0:4000</code> ，此时可以关闭占用该端口的进程，也可以更换端口号，更换端口号可以通过以下两种方法实现：</p>
+<p>方法一：在根目录的<code>_config.yml</code>配置文件内加上如下代码更改<code>hexo s</code>运行时的端口号：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">5000</span></span><br><span class="line">  <span class="attr">compress:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">header:</span> <span class="literal">true</span></span><br><span class="line"><span class="number">1234</span></span><br></pre></td></tr></table></figure>
+
+<p>方法二：通过 <code>hexo server -p 5000</code> 命令来指定端口，这种方法只是本次执行有效</p>
+<hr>
+<h1 id="【08】启用-HTTPS"><a href="#【08】启用-HTTPS" class="headerlink" title="【08】启用 HTTPS"></a>【08】启用 HTTPS</h1><p>参考我的另一篇文章：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36759224/article/details/99228310">《利用官方支持为基于GitHub Pages的Hexo博客启用HTTPS》</a></p>
+<hr>
+<h1 id="【09】博客备份"><a href="#【09】博客备份" class="headerlink" title="【09】博客备份"></a>【09】博客备份</h1><p>参考我的另一篇文章：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36759224/article/details/101702153">《使用 hexo-git-backup 插件备份你的 Hexo 博客》</a></p>
+<hr>
+<h1 id="【10】自定义一个不使用主题模板渲染的独立页面"><a href="#【10】自定义一个不使用主题模板渲染的独立页面" class="headerlink" title="【10】自定义一个不使用主题模板渲染的独立页面"></a>【10】自定义一个不使用主题模板渲染的独立页面</h1><p>参考我的另一篇文章：<a target="_blank" rel="noopener" href="https://itrhx.blog.csdn.net/article/details/90320295">《Hexo 博客自定义一个不使用主题模板渲染的独立页面》</a></p>
+<hr>
+<h1 id="未完待续…https-www-itrhx-com-2018-08-27-A04-Hexo-blog-topic-personalization"><a href="#未完待续…https-www-itrhx-com-2018-08-27-A04-Hexo-blog-topic-personalization" class="headerlink" title="未完待续…https://www.itrhx.com/2018/08/27/A04-Hexo-blog-topic-personalization/)"></a>未完待续…<a target="_blank" rel="noopener" href="https://www.itrhx.com/2018/08/27/A04-Hexo-blog-topic-personalization/">https://www.itrhx.com/2018/08/27/A04-Hexo-blog-topic-personalization/</a>)</h1>
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2020/11/21/hexo%E4%B9%8B%E5%88%86%E7%B1%BB%E9%9B%B7%E8%BE%BE/" title="hexo博客优化之实用功能添加系列&lt;hexo博客优化之实用功能添加系列&gt;" target="_blank" rel="external">http://example.com/2020/11/21/hexo%E4%B9%8B%E5%88%86%E7%B1%BB%E9%9B%B7%E8%BE%BE/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/Geisha-design" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="../../../../images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/Geisha-design" target="_blank"><span class="text-dark">截面樱🌸</span><small class="ml-1x">Web Developer &amp; Designer</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="../%E5%88%9D%E5%A7%8B%E6%90%AD%E5%BB%BA/" title="hexo初始搭建&lt;初始搭建&gt;"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="../volantis%E4%B9%8B%E6%89%93%E8%B5%8F%E6%A8%A1%E5%9D%97/" title="volantis之打赏模块&lt;volantis之打赏模块&gt;"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="../../../../images/donate/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="../../../../images/donate/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="../../../../https:/github.com/Geisha-design" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="../../../../http:/weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="../../../../https:/twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="../../../../https:/www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="../../../../atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="../../../../js/plugin.min.js"></script>
+
+
+<script src="../../../../js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '../../../../content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="../../../../js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>

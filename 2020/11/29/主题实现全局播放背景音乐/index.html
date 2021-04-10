@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>主题实现全局播放背景音乐 | Hexo</title>
+  <meta name="description" content="Hexo + Next 主题实现全局播放背景音乐第一种方式：使用网易云音乐插件特点：  简单快捷 有版权保护的音乐无法播放（易造成歌单失效）  我们可以将此插件添加到博客界面，或者博客文章之中（直接粘贴网易云插件代码即可）。  如何获取网易云歌单外链音乐插件及注意事项  在此我们举例将音乐插件添加到侧边栏。打开我们主题文件：themes\next\layout\_macro\sidebar.swi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="主题实现全局播放背景音乐">
+<meta property="og:url" content="http://example.com/2020/11/29/%E4%B8%BB%E9%A2%98%E5%AE%9E%E7%8E%B0%E5%85%A8%E5%B1%80%E6%92%AD%E6%94%BE%E8%83%8C%E6%99%AF%E9%9F%B3%E4%B9%90/index.html">
+<meta property="og:site_name" content="截面樱">
+<meta property="og:description" content="Hexo + Next 主题实现全局播放背景音乐第一种方式：使用网易云音乐插件特点：  简单快捷 有版权保护的音乐无法播放（易造成歌单失效）  我们可以将此插件添加到博客界面，或者博客文章之中（直接粘贴网易云插件代码即可）。  如何获取网易云歌单外链音乐插件及注意事项  在此我们举例将音乐插件添加到侧边栏。打开我们主题文件：themes\next\layout\_macro\sidebar.swi">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020040902523955.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NzIwNTk0,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200409100541773.png#pic_center">
+<meta property="article:published_time" content="2020-11-29T07:25:10.000Z">
+<meta property="article:modified_time" content="2020-11-29T07:25:30.000Z">
+<meta property="article:author" content="截面樱">
+<meta property="article:tag" content="java leetcode mysql hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/2020040902523955.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NzIwNTk0,size_16,color_FFFFFF,t_70#pic_center">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://example.com/2020/11/29/%E4%B8%BB%E9%A2%98%E5%AE%9E%E7%8E%B0%E5%85%A8%E5%B1%80%E6%92%AD%E6%94%BE%E8%83%8C%E6%99%AF%E9%9F%B3%E4%B9%90/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="截面樱" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="../../../../css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body class="main-center theme-purple" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/Geisha-design" target="_blank">
+          <img class="img-circle img-rotate" src="../../../../images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">截面樱🌸</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Web Developer &amp; Designer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> zhejiang, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="../../../../.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="../../../../archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="../../../../categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="../../../../tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="../../../../repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="../../../../books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">Books</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="../../../../links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="../../../../about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="../../../../https:/github.com/Geisha-design" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="../../../../http:/weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="../../../../https:/twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="../../../../https:/www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="../../../../atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>你顺手挽住火焰，化作漫天大雪</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" rel="tag">微服务</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%95%B0%E6%8D%AE%E6%9C%BA%E6%9E%84/" rel="tag">数据机构</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="../../../../tags/hexo/" style="font-size: 13px;">hexo</a> <a href="../../../../tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 13px;">微服务</a> <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E6%9C%BA%E6%9E%84/" style="font-size: 13px;">数据机构</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2021/04/">April 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2021/02/">February 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/12/">December 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/11/">November 2020</a><span class="archive-list-count">11</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="../../../../2021/04/02/iOS%E3%80%81macOS%E7%B3%BB%E7%BB%9F%E5%BA%94%E7%94%A8%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/" class="title">iOS、macOS系统应用管理机制</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-04-02T03:46:15.000Z" itemprop="datePublished">2021-04-02</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="../../../../2021/02/05/%E5%BA%94%E7%94%A8%E5%B1%82/" class="title">port&lt;应用层&gt;</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-02-05T00:04:02.000Z" itemprop="datePublished">2021-02-05</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="../../../../2021/02/05/%E4%BC%A0%E8%BE%93%E5%B1%82/" class="title">port&lt;传输层&gt;</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-02-05T00:03:36.000Z" itemprop="datePublished">2021-02-05</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="../../../../2021/02/05/%E7%BD%91%E7%BB%9C%E5%B1%82/" class="title">port&lt;网络层&gt;</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-02-05T00:03:14.000Z" itemprop="datePublished">2021-02-05</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="../../../../2021/02/05/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/" class="title">port&lt;数据链路层&gt;</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-02-05T00:01:48.000Z" itemprop="datePublished">2021-02-05</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="porthexo-主题实现全局播放背景音乐" class="article article-type-porthexo" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      主题实现全局播放背景音乐
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="" class="article-date">
+	  <time datetime="2020-11-29T07:25:10.000Z" itemprop="datePublished">2020-11-29</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="Hexo-Next-主题实现全局播放背景音乐"><a href="#Hexo-Next-主题实现全局播放背景音乐" class="headerlink" title="Hexo + Next 主题实现全局播放背景音乐"></a>Hexo + Next 主题实现全局播放背景音乐</h1><h2 id="第一种方式：使用网易云音乐插件"><a href="#第一种方式：使用网易云音乐插件" class="headerlink" title="第一种方式：使用网易云音乐插件"></a>第一种方式：使用网易云音乐插件</h2><p>特点：</p>
+<ul>
+<li>简单快捷</li>
+<li>有版权保护的音乐无法播放（易造成歌单失效）</li>
+</ul>
+<p>我们可以将此插件添加到博客界面，或者博客文章之中（直接粘贴网易云插件代码即可）。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39720594/article/details/105423726">如何获取网易云歌单外链音乐插件及注意事项</a></p>
+</blockquote>
+<h3 id="在此我们举例将音乐插件添加到侧边栏。"><a href="#在此我们举例将音乐插件添加到侧边栏。" class="headerlink" title="在此我们举例将音乐插件添加到侧边栏。"></a>在此我们举例将音乐插件添加到侧边栏。</h3><p>打开我们主题文件：<code>themes\next\layout\_macro\sidebar.swig</code>找到<code>sidebar-inner</code>，将网易云插件代码代码粘贴到此<code>&lt;div&gt;</code>标签后即可。</p>
+<p>演示：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;aside <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;sidebar&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;sidebar-inner&quot;</span>&gt; <span class="comment">//从下面开始复制，粘贴到这里</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  &lt;!--网易云插件--&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  &lt;iframe frameborder=<span class="string">&quot;no&quot;</span> border=<span class="string">&quot;0&quot;</span> marginwidth=<span class="string">&quot;0&quot;</span> marginheight=<span class="string">&quot;0&quot;</span> width=<span class="number">330</span> height=<span class="number">86</span> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      src=<span class="string">&quot;//music.163.com/outchain/player?type=2&amp;id=463352828&amp;auto=0&amp;height=66&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  &lt;/iframe&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在博客文件夹打开<code>GitBash</code>执行<code>hexo clean</code>、<code>hexo g</code>、<code>hexo s</code>，即可看到效果。</p>
+<p>效果图：</p>
+<p><img src="https://img-blog.csdnimg.cn/2020040902523955.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NzIwNTk0,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="第二种方式：使用Aplayer-MetingJS插件"><a href="#第二种方式：使用Aplayer-MetingJS插件" class="headerlink" title="第二种方式：使用Aplayer + MetingJS插件"></a>第二种方式：使用Aplayer + MetingJS插件</h2><p>特点：</p>
+<ul>
+<li>可以播放<strong>大部分音乐</strong>。</li>
+<li>还可以添加其他音乐平台的歌单，如：<code>QQ音乐...</code></li>
+</ul>
+<h3 id="在此我们举例将音乐插件添加到侧边栏。-1"><a href="#在此我们举例将音乐插件添加到侧边栏。-1" class="headerlink" title="在此我们举例将音乐插件添加到侧边栏。"></a>在此我们举例将音乐插件添加到侧边栏。</h3><blockquote>
+<p>点击绿色框线处就会打开播放列表</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20200409100541773.png#pic_center" alt="在这里插入图片描述"></p>
+<h3 id="有两种实现方式"><a href="#有两种实现方式" class="headerlink" title="有两种实现方式"></a>有两种实现方式</h3><p>打开我们主题文件：<code>themes\next\layout\_macro\sidebar.swig</code>找到<code>sidebar-inner</code>，复制下面代码粘贴到此<code>&lt;div&gt;</code>标签后即可。</p>
+<h4 id="简单方式"><a href="#简单方式" class="headerlink" title="简单方式"></a>简单方式</h4><blockquote>
+<p>经测试：此方式，有时会失效，留作研究。【不推荐】 【要求<code>MetingJS</code>版本：@2.0.1】</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line">&lt;aside <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;sidebar&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;sidebar-inner&quot;</span>&gt;   <span class="comment">//从下面开始复制，粘贴到这里</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;!-- <span class="built_in">require</span> APlayer --&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;link rel=<span class="string">&quot;stylesheet&quot;</span> href=<span class="string">&quot;https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;script src=<span class="string">&quot;https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;!-- <span class="built_in">require</span> MetingJS--&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;script src=<span class="string">&quot;https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js&quot;</span>&gt;&lt;/script&gt; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;!--网易云--&gt;   </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;meting-js</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      server=<span class="string">&quot;netease&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      id=<span class="string">&quot;4916164702&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	  type=<span class="string">&quot;playlist&quot;</span> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	  mini=<span class="string">&quot;false&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      fixed=<span class="string">&quot;false&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      list-folded=<span class="string">&quot;true&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      autoplay=<span class="string">&quot;false&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      volume=<span class="string">&quot;0.4&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      theme=<span class="string">&quot;#FADFA3&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      order=<span class="string">&quot;random&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	  loop=<span class="string">&quot;all&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      preload=<span class="string">&quot;auto&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      mutex=<span class="string">&quot;true&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;/meting-js&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>属性</strong></p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>默认值</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td><strong>必须值</strong></td>
+<td>歌曲 id / 播放列表 id / 相册 id / 搜索关键字</td>
+</tr>
+<tr>
+<td>server</td>
+<td><strong>必须值</strong></td>
+<td>音乐平台: <code>netease</code>, <code>tencent</code>, <code>kugou</code>, <code>xiami</code>, <code>baidu</code></td>
+</tr>
+<tr>
+<td>type</td>
+<td><strong>必须值</strong></td>
+<td><code>song</code>, <code>playlist</code>, <code>album</code>, <code>search</code>, `artist</td>
+</tr>
+<tr>
+<td>auto</td>
+<td>options</td>
+<td>music link, support: <code>netease</code>, <code>tencent</code>, <code>xiami</code></td>
+</tr>
+<tr>
+<td>fixed</td>
+<td><code>false</code></td>
+<td>开启固定模式</td>
+</tr>
+<tr>
+<td>mini</td>
+<td><code>false</code></td>
+<td>开启迷你模式</td>
+</tr>
+<tr>
+<td>autoplay</td>
+<td><code>false</code></td>
+<td>自动播放，移动端浏览器暂时不支持此功能</td>
+</tr>
+<tr>
+<td>theme</td>
+<td><code>#2980b9</code></td>
+<td>播放器风格色彩设置</td>
+</tr>
+<tr>
+<td>loop</td>
+<td><code>all</code></td>
+<td>列表循环模式：<code>all</code>, <code>one</code>,<code>none</code></td>
+</tr>
+<tr>
+<td>order</td>
+<td><code>list</code></td>
+<td>列表播放模式： <code>list</code>, <code>random</code></td>
+</tr>
+<tr>
+<td>preload</td>
+<td><code>auto</code></td>
+<td>音乐文件预载入模式，可选项： <code>none</code>, <code>metadata</code>, <code>auto</code></td>
+</tr>
+<tr>
+<td>volume</td>
+<td><code>0.7</code></td>
+<td>播放器音量</td>
+</tr>
+<tr>
+<td>mutex</td>
+<td><code>true</code></td>
+<td>该选项开启时，如果同页面有其他 aplayer 播放，该播放器会暂停</td>
+</tr>
+<tr>
+<td>lrc-type</td>
+<td><code>0</code></td>
+<td>lyric type</td>
+</tr>
+<tr>
+<td>list-folded</td>
+<td><code>false</code></td>
+<td>歌词格式类型</td>
+</tr>
+<tr>
+<td>list-max-height</td>
+<td><code>340px</code></td>
+<td>播放列表的最大长度</td>
+</tr>
+<tr>
+<td>storage-name</td>
+<td><code>metingjs</code></td>
+<td>LocalStorage 中存储播放器设定的键名</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>其他属性请参照：<a target="_blank" rel="noopener" href="https://github.com/metowolf/MetingJS">MetingJS</a></strong></p>
+</blockquote>
+<h4 id="添加QQ音乐歌单"><a href="#添加QQ音乐歌单" class="headerlink" title="添加QQ音乐歌单"></a>添加QQ音乐歌单</h4><p>将<code>meting-js</code>换成下面即可。 <code>auto</code>后为歌单网址。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;meting-js</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   auto=<span class="string">&quot;https://y.qq.com/n/yqq/playlist/1790504159.html#stat=y_new.playlist.pic_click&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/meting-js&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="复杂方式"><a href="#复杂方式" class="headerlink" title="复杂方式"></a>复杂方式</h4><p>在<code>data-</code>后添加属性及属性值即可实现相同功能</p>
+<blockquote>
+<p>【要求<code>MetingJS</code>版本：@1.2】</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">&lt;aside <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;sidebar&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;sidebar-inner&quot;</span>&gt;   <span class="comment">//从下面开始复制，粘贴到这里</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!-- <span class="built_in">require</span> APlayer --&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;link rel=<span class="string">&quot;stylesheet&quot;</span> href=<span class="string">&quot;https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;script src=<span class="string">&quot;https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;!-- <span class="built_in">require</span> MetingJS--&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;script src=<span class="string">&quot;https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js&quot;</span>&gt;&lt;/script&gt; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	&lt;!--网易云--&gt;   </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;aplayer&quot;</span> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      data-id=<span class="string">&quot;4916164702&quot;</span> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      data-server=<span class="string">&quot;netease&quot;</span> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      data-type=<span class="string">&quot;playlist&quot;</span> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      data-fixed=<span class="string">&quot;false&quot;</span> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      data-autoplay=<span class="string">&quot;false&quot;</span> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      data-list-folded=<span class="string">&quot;true&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      data-mutex=<span class="string">&quot;true&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      data-order=<span class="string">&quot;random&quot;</span> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      data-loop=<span class="string">&quot;all&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      data-volume=<span class="string">&quot;0.4&quot;</span> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      data-theme=<span class="string">&quot;#FADFA3&quot;</span> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      date-preload=<span class="string">&quot;auto&quot;</span> &gt; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>其他属性请参照：<a target="_blank" rel="noopener" href="https://aplayer.js.org/#/zh-Hans/">APlayer</a></strong></p>
+</blockquote>
+<h2 id="第三种方式：使用Aplayer添加本地音乐"><a href="#第三种方式：使用Aplayer添加本地音乐" class="headerlink" title="第三种方式：使用Aplayer添加本地音乐"></a>第三种方式：使用Aplayer添加本地音乐</h2><p>此方式有些麻烦和复杂，界面相关属性都需要自己设置和修改，不做具体阐述，参考以下链接</p>
+<blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/3fb29cc7a00b">feilong4659196</a>：使用Aplayer + LeanCloud方式</li>
+<li>[Y`s BLOG](<a target="_blank" rel="noopener" href="https://blog.yleao.com/2018/0902/hexo%E4%B8%8A%E7%9A%84aplayer%E5%BA%94%E7%94%A8.html)%EF%BC%9A%E4%BD%BF%E7%94%A8Aplayer">https://blog.yleao.com/2018/0902/hexo上的aplayer应用.html)：使用Aplayer</a> + 纯代码方式（Aplay官方文档也有描述）</li>
+</ul>
+</blockquote>
+<h2 id="使用-Pajx-实现背景音乐全局播放"><a href="#使用-Pajx-实现背景音乐全局播放" class="headerlink" title="使用 Pajx 实现背景音乐全局播放"></a>使用 <code>Pajx</code> 实现背景音乐全局播放</h2><p>即实现页面跳转刷新后音乐不间断播放</p>
+<blockquote>
+<p>经测试，在博客文章中的网易云插件无法实现全局播放。（留作研究）</p>
+</blockquote>
+<ul>
+<li>打开<code>themes\next\layout</code>文件夹找到<code>_layout.swig</code></li>
+<li>在<code>&lt;\head&gt;</code>标签前添加下面代码，并保存。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;   <span class="comment">//粘贴到这里</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  &lt;!--pjax：防止跳转页面音乐暂停--&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  &lt;script src=<span class="string">&quot;https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js&quot;</span>&gt;&lt;/script&gt; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/head&gt; </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在主题的配置文件中找到<code>pajx</code>，将它设置为<code>true</code>，并保存。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># Easily enable fast Ajax navigation on your website.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># Dependencies: https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;theme-next-pjax</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">pjax: true</span><br></pre></td></tr></table></figure>
+
+<p>在博客文件夹打开<code>GitBash</code>执行<code>hexo clean</code>、<code>hexo g</code>、<code>hexo s</code>，跳转页面时即可看到效果。</p>
+<h4 id="参考文章-【鸣谢】"><a href="#参考文章-【鸣谢】" class="headerlink" title="参考文章 【鸣谢】"></a>参考文章 【鸣谢】</h4><blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://aplayer.js.org/#/zh-Hans/">Aplay官方文档(中文版)</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/theme-next/theme-next-pjax">Pjax</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/metowolf/MetingJS">MetingJS</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/yjwan521/article/details/80899992">Sourc0d</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/hushhw/article/details/88092728">hushhw</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/3fb29cc7a00b">feilong4659196</a></li>
+<li>[Y`s BLOG](<a target="_blank" rel="noopener" href="https://blog.yleao.com/2018/0902/hexo%E4%B8%8A%E7%9A%84aplayer%E5%BA%94%E7%94%A8.html">https://blog.yleao.com/2018/0902/hexo上的aplayer应用.html</a>)</li>
+</ul>
+</blockquote>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2020/11/29/%E4%B8%BB%E9%A2%98%E5%AE%9E%E7%8E%B0%E5%85%A8%E5%B1%80%E6%92%AD%E6%94%BE%E8%83%8C%E6%99%AF%E9%9F%B3%E4%B9%90/" title="主题实现全局播放背景音乐" target="_blank" rel="external">http://example.com/2020/11/29/%E4%B8%BB%E9%A2%98%E5%AE%9E%E7%8E%B0%E5%85%A8%E5%B1%80%E6%92%AD%E6%94%BE%E8%83%8C%E6%99%AF%E9%9F%B3%E4%B9%90/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/Geisha-design" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="../../../../images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/Geisha-design" target="_blank"><span class="text-dark">截面樱🌸</span><small class="ml-1x">Web Developer &amp; Designer</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="../%E5%9B%9B%E7%A7%8DJavaEE%E6%9E%B6%E6%9E%84%E7%AE%80%E4%BB%8B/" title="&lt;[四种JavaEE架构简介]&gt;"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="../../21/springboot%E5%85%A5%E9%97%A8/" title="springboot&lt;springboot入门&gt;"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="../../../../images/donate/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="../../../../images/donate/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="../../../../https:/github.com/Geisha-design" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="../../../../http:/weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="../../../../https:/twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="../../../../https:/www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="../../../../atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="../../../../js/plugin.min.js"></script>
+
+
+<script src="../../../../js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '../../../../content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="../../../../js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
