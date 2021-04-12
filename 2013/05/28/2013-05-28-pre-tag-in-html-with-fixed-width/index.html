@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="多浏览器支持pre固定宽度"/>
+
+
+
+
+  <meta name="keywords" content="CSS,HTML," />
+
+
+
+
+
+    <link rel="alternate" href="../../../../default" title="截面樱" >
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.1"/>
+
+
+
+<link rel="canonical" href="http://example.com/2013/05/28/2013-05-28-pre-tag-in-html-with-fixed-width/"/>
+
+
+<meta name="description" content="之前将pre设置css属性width：xpx，一直使用的chrome来测试，还没发现有问题，放到ie下就没用了，通过以下解决： 1234567pre &amp;#123;    white-space: -moz-pre-wrap; &#x2F;* Mozilla, supported since 1999 *&#x2F;    white-space: -pre-wrap; &#x2F;* Opera *&#x2F;    white-spa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多浏览器支持pre固定宽度">
+<meta property="og:url" content="http://example.com/2013/05/28/2013-05-28-pre-tag-in-html-with-fixed-width/index.html">
+<meta property="og:site_name" content="截面樱">
+<meta property="og:description" content="之前将pre设置css属性width：xpx，一直使用的chrome来测试，还没发现有问题，放到ie下就没用了，通过以下解决： 1234567pre &amp;#123;    white-space: -moz-pre-wrap; &#x2F;* Mozilla, supported since 1999 *&#x2F;    white-space: -pre-wrap; &#x2F;* Opera *&#x2F;    white-spa">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2013-05-28T03:18:00.000Z">
+<meta property="article:modified_time" content="2021-04-12T02:12:58.326Z">
+<meta property="article:author" content="截面樱">
+<meta property="article:tag" content="CSS">
+<meta property="article:tag" content="HTML">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="stylesheet" type="text/css" href="../../../../css/style.css?v=1.1"/>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    <title> 多浏览器支持pre固定宽度 - 截面樱 </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="../../../../." class="logo">截面樱</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                Unsplash
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        
+    </nav>
+
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          多浏览器支持pre固定宽度
+        
+      </h1>
+
+      <time class="post-time">
+          May 28 2013
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>之前将pre设置css属性width：xpx，一直使用的chrome来测试，还没发现有问题，放到ie下就没用了，通过以下解决：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pre &#123;</span><br><span class="line">    <span class="attribute">white-space</span>: -moz-pre-wrap; <span class="comment">/* Mozilla, supported since 1999 */</span></span><br><span class="line">    <span class="attribute">white-space</span>: -pre-wrap; <span class="comment">/* Opera */</span></span><br><span class="line">    <span class="attribute">white-space</span>: -o-pre-wrap; <span class="comment">/* Opera */</span></span><br><span class="line">    <span class="attribute">white-space</span>: pre-wrap; <span class="comment">/* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */</span></span><br><span class="line">    <span class="attribute">word-wrap</span>: break-word; <span class="comment">/* IE 5.5+ */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="../../../../tags/CSS/">CSS</a>
+          
+            <a href="../../../../tags/HTML/">HTML</a>
+          
+        </div>
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="../../../06/05/2013-06-05-say-about-app-ui-design/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">随便说说应用的界面</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="../../21/2013-05-21-running/">
+        <span class="next-text nav-default">跑出第一步</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2012 -
+    
+    2021
+    <span class="footer-author">截面樱.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="../../../../lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="../../../../js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
+
+    
+
+  
+  <script type="application/ld+json">
+  {
+  "@context": "http://www.schema.org",
+  "@type": "Person",
+  "@id": "https://huangyijie.com/about/",
+  "name": "黄奕杰",
+  "alternateName": "Henry Huang",
+  "nationality": "中国",
+  "birthPlace" : {
+    "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+      "addressLocality": "汕头市",
+      "addressRegion": "广东省",
+          "addressCountry": "中国"
+    }
+  },
+  "gender": "Male",
+  "Description": "Software Engineer",
+  "disambiguatingDescription": "Full stack software engineer, focus on Java and JavaScript.",
+  "jobTitle": "Software Engineer",
+  "url": "https://huangyijie.com",
+  "image": "https://s.gravatar.com/avatar/4e0e61fdf1b2bcfb4ee31da27601fe6b?s=512&r=g",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "深圳市",
+    "addressRegion": "广东省",
+    "addressCountry": "中国"
+  },
+  "sameAs": [
+    "http://weibo.com/626242034",
+    "https://github.com/henryhuang",
+    "https://unsplash.com/@henryhh"
+    ]
+  }
+  </script>
+  </body>
+</html>

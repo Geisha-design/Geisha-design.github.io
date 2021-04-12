@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="MYSQL主从同步错误解决"/>
+
+
+
+
+  <meta name="keywords" content="IT,MYSQL,数据库," />
+
+
+
+
+
+    <link rel="alternate" href="../../../../default" title="截面樱" >
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.1"/>
+
+
+
+<link rel="canonical" href="http://example.com/2012/11/15/2013-05-16-mysql-slave-1/"/>
+
+
+<meta name="description" content="首先，如果遇到主键冲突：Last_SQL_Error: Error &#39;Duplicate entry &#39;1001-164761-0&#39; for key &#39;PRIMARY&#39;&#39; on query. Default database: &#39;bug&#39;. Query: &#39;insert into misdata (uid,mid,pid,st">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MYSQL主从同步错误解决">
+<meta property="og:url" content="http://example.com/2012/11/15/2013-05-16-mysql-slave-1/index.html">
+<meta property="og:site_name" content="截面樱">
+<meta property="og:description" content="首先，如果遇到主键冲突：Last_SQL_Error: Error &#39;Duplicate entry &#39;1001-164761-0&#39; for key &#39;PRIMARY&#39;&#39; on query. Default database: &#39;bug&#39;. Query: &#39;insert into misdata (uid,mid,pid,st">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2012-11-15T11:57:00.000Z">
+<meta property="article:modified_time" content="2021-04-12T02:12:58.325Z">
+<meta property="article:author" content="截面樱">
+<meta property="article:tag" content="IT">
+<meta property="article:tag" content="MYSQL">
+<meta property="article:tag" content="数据库">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="stylesheet" type="text/css" href="../../../../css/style.css?v=1.1"/>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    <title> MYSQL主从同步错误解决 - 截面樱 </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="../../../../." class="logo">截面樱</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                Unsplash
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        
+    </nav>
+
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          MYSQL主从同步错误解决
+        
+      </h1>
+
+      <time class="post-time">
+          Nov 15 2012
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>首先，如果遇到主键冲突：<br><code>Last_SQL_Error: Error &#39;Duplicate entry &#39;1001-164761-0&#39; for key &#39;PRIMARY&#39;&#39; on query. Default database: &#39;bug&#39;. Query: &#39;insert into misdata (uid,mid,pid,state,mtime) values (164761,1001,0,-1,1262623560)&#39;</code> </p>
+<p><strong>A.可以先将冲突的记录删除，然后再进行一下方法：</strong></p>
+<p>进入主库锁表，</p>
+<p>FLUSH TABLES WITH READ LOCK;</p>
+<span id="more"></span>
+<p>mysql&gt;show master status;</p>
+<p>+——————-+———–+————–+——————+</p>
+<p>| File | Position | Binlog_Do_DB | Binlog_Ignore_DB |</p>
+<p>+——————-+———–+————–+——————+</p>
+<p>| ufo.000063 | 159164526 | | |</p><br>+——————-+———–+————–+——————+</p>
+<p>1 row in set (0.00 sec)</p><br>进入从库</p>
+<p>mysql&gt;slave stop;</p>
+<p>mysql&gt;change master to master_log_file=’ufo.000063’, master_log_pos=159164526;</p>
+<p>完成上面这些后</p>
+<p>mysql&gt;slave start;</p>
+<p>回到主库</p>
+<p>unlock tables; 解锁</p>
+<p>回到从库查看</p>
+<p>show slave status \G;</p>
+<p><strong>B.另外，可以在热备时跳过冲突的记录：</strong></p>
+<p>slave stop;</p>
+<p>set global sql_slave_skip_counter=10;  //跳过10个错误</p>
+<p>slave start;</p>
+<p>show slave status \G;</p>
+<p><strong>C.修改从库的/etc/my.cnf文件</strong></p>
+<p>在[mysqld]下面加入slave-skip-errors = 1062 (忽略所有的1062错误)</p>
+<p>重启下从库的mysql</p>
+<p><strong>D.修改binlog_format的格式为mixed</strong></p>
+<p>进入从库查看show global variables like ‘binlog_format’，如果是statement，修改从库的 my.cfg，在[mysqld]下面添加binlog_format=mixed，然后重启数据库</p>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="../../../../tags/IT/">IT</a>
+          
+            <a href="../../../../tags/MYSQL/">MYSQL</a>
+          
+            <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+          
+        </div>
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="../../../12/07/2013-05-16-list-cannot-remove/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">JAVAList不能使用remove()</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="../../10/2013-05-15-moganshan/">
+        <span class="next-text nav-default">临街莫干山路走一走</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2012 -
+    
+    2021
+    <span class="footer-author">截面樱.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="../../../../lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="../../../../js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
+
+    
+
+  
+  <script type="application/ld+json">
+  {
+  "@context": "http://www.schema.org",
+  "@type": "Person",
+  "@id": "https://huangyijie.com/about/",
+  "name": "黄奕杰",
+  "alternateName": "Henry Huang",
+  "nationality": "中国",
+  "birthPlace" : {
+    "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+      "addressLocality": "汕头市",
+      "addressRegion": "广东省",
+          "addressCountry": "中国"
+    }
+  },
+  "gender": "Male",
+  "Description": "Software Engineer",
+  "disambiguatingDescription": "Full stack software engineer, focus on Java and JavaScript.",
+  "jobTitle": "Software Engineer",
+  "url": "https://huangyijie.com",
+  "image": "https://s.gravatar.com/avatar/4e0e61fdf1b2bcfb4ee31da27601fe6b?s=512&r=g",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "深圳市",
+    "addressRegion": "广东省",
+    "addressCountry": "中国"
+  },
+  "sameAs": [
+    "http://weibo.com/626242034",
+    "https://github.com/henryhuang",
+    "https://unsplash.com/@henryhh"
+    ]
+  }
+  </script>
+  </body>
+</html>

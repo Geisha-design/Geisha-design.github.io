@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="Tomcat安装CA证书（详细过程篇）"/>
+
+
+
+
+  <meta name="keywords" content="IT,JAVA,TOMCAT," />
+
+
+
+
+
+    <link rel="alternate" href="../../../../default" title="截面樱" >
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.1"/>
+
+
+
+<link rel="canonical" href="http://example.com/2012/10/29/2013-05-16-tomcat-install-cert/"/>
+
+
+<meta name="description" content="1.创建一个本地证书：&amp;nbsp;C:\j2sdk1.4.2_05\bin&gt;;keytool&amp;nbsp;-genkey&amp;nbsp;-alias&amp;nbsp;tomcat&amp;nbsp;-keyalg&amp;nbsp;RSA&amp;nbsp;-keystore&amp;nbsp;keystore&amp;nbsp;输入keystore密码：&amp;nbsp;&amp;nbsp;12345678&amp;nbsp;您的名字与姓氏是什么？&amp;nbsp;&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tomcat安装CA证书（详细过程篇）">
+<meta property="og:url" content="http://example.com/2012/10/29/2013-05-16-tomcat-install-cert/index.html">
+<meta property="og:site_name" content="截面樱">
+<meta property="og:description" content="1.创建一个本地证书：&amp;nbsp;C:\j2sdk1.4.2_05\bin&gt;;keytool&amp;nbsp;-genkey&amp;nbsp;-alias&amp;nbsp;tomcat&amp;nbsp;-keyalg&amp;nbsp;RSA&amp;nbsp;-keystore&amp;nbsp;keystore&amp;nbsp;输入keystore密码：&amp;nbsp;&amp;nbsp;12345678&amp;nbsp;您的名字与姓氏是什么？&amp;nbsp;&amp;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2012-10-29T09:06:00.000Z">
+<meta property="article:modified_time" content="2021-04-12T02:12:58.325Z">
+<meta property="article:author" content="截面樱">
+<meta property="article:tag" content="IT">
+<meta property="article:tag" content="JAVA">
+<meta property="article:tag" content="TOMCAT">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="stylesheet" type="text/css" href="../../../../css/style.css?v=1.1"/>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    <title> Tomcat安装CA证书（详细过程篇） - 截面樱 </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="../../../../." class="logo">截面樱</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                Unsplash
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        
+    </nav>
+
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Tomcat安装CA证书（详细过程篇）
+        
+      </h1>
+
+      <time class="post-time">
+          Oct 29 2012
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p><strong>1.创建一个本地证书：&nbsp;</strong><br /><br />C:\j2sdk1.4.2_05\bin&gt;;keytool&nbsp;-genkey&nbsp;-alias&nbsp;tomcat&nbsp;-keyalg&nbsp;RSA&nbsp;-keystore&nbsp;keystore&nbsp;<br />输入keystore密码：&nbsp;&nbsp;12345678&nbsp;<br />您的名字与姓氏是什么？&nbsp;<br />&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;www.test.com&nbsp;<br />您的组织单位名称是什么？&nbsp;<br />&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;system&nbsp;<br />您的组织名称是什么？&nbsp;<br />&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;test&nbsp;<br />您所在的城市或区域名称是什么？&nbsp;<br />&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;beijing&nbsp;<br />您所在的州或省份名称是什么？&nbsp;<br />&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;beijing&nbsp;<br />该单位的两字母国家代码是什么&nbsp;<br />&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;cn&nbsp;<br />CN=liujx,&nbsp;OU=system,&nbsp;O=test,&nbsp;L=beijing,&nbsp;ST=beijing,&nbsp;C=cn&nbsp;正确吗？&nbsp;<br />&nbsp;&nbsp;[否]：&nbsp;&nbsp;y&nbsp;<br /><br />输入&lt;tomcat&gt;;的主密码&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（如果和&nbsp;keystore&nbsp;密码相同，按回车）：&nbsp;</p>
+<p><span id="more"></span><br /><br />查看证书&nbsp;<br />C:\j2sdk1.4.2_05\bin&gt;;keytool&nbsp;-list&nbsp;-keystore&nbsp;keystore&nbsp;<br />输入keystore密码：&nbsp;&nbsp;12345678&nbsp;<br /><br />Keystore&nbsp;类型：&nbsp;jks&nbsp;<br />Keystore&nbsp;提供者：&nbsp;SUN&nbsp;<br /><br />您的&nbsp;keystore&nbsp;包含&nbsp;1&nbsp;输入&nbsp;<br /><br />tomcat,&nbsp;2004-11-26,&nbsp;keyEntry,&nbsp;<br />认证指纹&nbsp;(MD5)：&nbsp;B8:44:A1:A2:C7:9A:09:EE:A0:CF:5B:AA:DC:F7:0F:80&nbsp;<br /><br /><br /><strong>2.然后创建CSR：&nbsp;</strong><br /><br />C:\j2sdk1.4.2_05\bin&gt;;keytool&nbsp;-certreq&nbsp;-keyalg&nbsp;RSA&nbsp;-alias&nbsp;tomcat&nbsp;-file&nbsp;certreq.csr&nbsp;-keystore&nbsp;keystore&nbsp;<br /><br />输入keystore密码：&nbsp;&nbsp;12345678&nbsp;<br /><br />现在，你有了一个叫certreq.csr的文件，你可以将它提交到CA（参考CA网站上的文档怎样做）。然后就得到了证书。&nbsp;<br />例如：我们申请了个Verisign.com的测试证书保存为：client.cer&nbsp;<br /><br /><strong>3.从你获得证书的CA下载Chain&nbsp;Certificate:&nbsp;</strong><br /><br />例如：&nbsp;<br />Verisign.com正式证书：去http://www.verisign.com/support/install/intermediate.html&nbsp;<br />Verisign&nbsp;Test&nbsp;CA&nbsp;Root证书：去http://www.verisign.com/server2/trial/faq/index.html&nbsp;<br /><br /><br /><strong>4.将Chain&nbsp;Certificate导入到keystore：&nbsp;</strong><br /><br />例如：导入Verisign&nbsp;Test&nbsp;CA&nbsp;Root证书getcacert.cer&nbsp;<br />C:\j2sdk1.4.2_05\bin&gt;;keytool&nbsp;-import&nbsp;-trustcacerts&nbsp;-alias&nbsp;root&nbsp;-file&nbsp;getcacert.cer&nbsp;-keystore&nbsp;keystore&nbsp;<br />输入keystore密码：&nbsp;&nbsp;12345678&nbsp;<br />Owner:&nbsp;OU=For&nbsp;VeriSign&nbsp;authorized&nbsp;testing&nbsp;only.&nbsp;No&nbsp;assurances&nbsp;(C)VS1997,&nbsp;OU=www.verisign.com/repository/TestCPS&nbsp;Incorp.&nbsp;By&nbsp;Ref.&nbsp;Liab.&nbsp;LTD.,&nbsp;O="VeriSign,&nbsp;Inc"&nbsp;<br />发照者：&nbsp;OU=For&nbsp;VeriSign&nbsp;authorized&nbsp;testing&nbsp;only.&nbsp;No&nbsp;assurances&nbsp;(C)VS1997,&nbsp;OU=www.verisign.com/repository/TestCPS&nbsp;Incorp.&nbsp;By&nbsp;Ref.&nbsp;Liab.&nbsp;LTD.,&nbsp;O="VeriSign,&nbsp;Inc"&nbsp;<br />序号：&nbsp;52a9f424da674c9daf4f537852abef6e&nbsp;<br />有效期间：&nbsp;Sun&nbsp;Jun&nbsp;07&nbsp;08:00:00&nbsp;CST&nbsp;1998&nbsp;至：&nbsp;Wed&nbsp;Jun&nbsp;07&nbsp;07:59:59&nbsp;CST&nbsp;2006&nbsp;<br />认证指纹：&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MD5：&nbsp;&nbsp;40:06:53:11:FD:B3:3E:88:0A:6F:7D:D1:4E:22:91:87&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SHA1：&nbsp;93:71:C9:EE:57:09:92:5D:0A:8E:FA:02:0B:E2:F5:E6:98:6C:60:DE&nbsp;<br />信任这个认证？&nbsp;[否]：&nbsp;&nbsp;y&nbsp;<br />认证已添加至keystore中&nbsp;<br /><br />查看证书&nbsp;<br />C:\j2sdk1.4.2_05\bin&gt;;keytool&nbsp;-list&nbsp;-keystore&nbsp;keystore&nbsp;<br />输入keystore密码：&nbsp;&nbsp;12345678&nbsp;<br /><br />Keystore&nbsp;类型：&nbsp;jks&nbsp;<br />Keystore&nbsp;提供者：&nbsp;SUN&nbsp;<br /><br />您的&nbsp;keystore&nbsp;包含&nbsp;2&nbsp;输入&nbsp;<br /><br />root,&nbsp;2004-11-26,&nbsp;trustedCertEntry,&nbsp;<br />认证指纹&nbsp;(MD5)：&nbsp;40:06:53:11:FD:B3:3E:88:0A:6F:7D:D1:4E:22:91:87&nbsp;<br />tomcat,&nbsp;2004-11-26,&nbsp;keyEntry,&nbsp;<br />认证指纹&nbsp;(MD5)：&nbsp;B8:44:A1:A2:C7:9A:09:EE:A0:CF:5B:AA:DC:F7:0F:80&nbsp;<br /><br /><br /><br /><strong>5.最后，导入你的新证书：&nbsp;&nbsp;</strong><br /><br />C:\j2sdk1.4.2_05\bin&gt;;keytool&nbsp;-import&nbsp;-trustcacerts&nbsp;-alias&nbsp;tomcat&nbsp;-file&nbsp;client.crt&nbsp;-keystore&nbsp;keystore&nbsp;<br />.old&nbsp;<br />输入keystore密码：&nbsp;&nbsp;12345678&nbsp;<br />认证回复已安装在&nbsp;keystore中&nbsp;<br /><br />查看证书&nbsp;<br />C:\j2sdk1.4.2_05\bin&gt;;keytool&nbsp;-list&nbsp;-keystore&nbsp;keystore&nbsp;<br />输入keystore密码：&nbsp;&nbsp;12345678&nbsp;<br /><br />Keystore&nbsp;类型：&nbsp;jks&nbsp;<br />Keystore&nbsp;提供者：&nbsp;SUN&nbsp;<br /><br />您的&nbsp;keystore&nbsp;包含&nbsp;2&nbsp;输入&nbsp;<br /><br />root,&nbsp;2004-11-26,&nbsp;trustedCertEntry,&nbsp;<br />认证指纹&nbsp;(MD5)：&nbsp;40:06:53:11:FD:B3:3E:88:0A:6F:7D:D1:4E:22:91:87&nbsp;<br />tomcat,&nbsp;2004-11-26,&nbsp;keyEntry,&nbsp;<br />认证指纹&nbsp;(MD5)：&nbsp;68:33:EE:6C:5C:5B:70:B5:0D:85:3B:6D:AF:00:91:24&nbsp;<br /><br />注意：仔细观察tomcat项的认证指纹与导入之前是不同的。&nbsp;<br /><br /><strong>6.安装证书&nbsp;</strong><br /><br />把最后生成的keystore文件，复制到tomcat安装路径的conf目录下&nbsp;<br /><br /><br /><strong>7.修改Tomcat的配置文件server.xml&nbsp;</strong><br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Define&nbsp;a&nbsp;SSL&nbsp;Coyote&nbsp;HTTP/1.1&nbsp;Connector&nbsp;on&nbsp;port&nbsp;8443&nbsp;--&gt;;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;Connector&nbsp;port="8443"&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maxThreads="150"&nbsp;minSpareThreads="25"&nbsp;maxSpareThreads="75"&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enableLookups="false"&nbsp;disableUploadTimeout="true"&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;acceptCount="100"&nbsp;debug="0"&nbsp;scheme="https"&nbsp;secure="true"&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clientAuth="false"&nbsp;sslProtocol="TLS"&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;keystoreFile="/conf/keystore"&nbsp;keystorePass="12345678"/&gt;;&nbsp;<br /><br /><strong>8.重新启动Tomcat&nbsp;</strong><br /><br /><strong>9.为IE浏览器安装测试根证书：</strong>&nbsp;<br /><br />双击getcacert.cer，安装测试根证书&nbsp;<br /><br /><strong>10.测试SSL&nbsp;</strong><br /><br />打开IE输入https://www.test.com:8443/&nbsp;</p>
+<p>&nbsp;</p>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="../../../../tags/IT/">IT</a>
+          
+            <a href="../../../../tags/JAVA/">JAVA</a>
+          
+            <a href="../../../../tags/TOMCAT/">TOMCAT</a>
+          
+        </div>
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="../../30/2013-05-16-photo-sushe-hezhao/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">宿舍毕业合照</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="../../23/2013-05-16-hibernate-load-get-compare/">
+        <span class="next-text nav-default">Hibernate的load和get比较</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2012 -
+    
+    2021
+    <span class="footer-author">截面樱.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="../../../../lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="../../../../js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
+
+    
+
+  
+  <script type="application/ld+json">
+  {
+  "@context": "http://www.schema.org",
+  "@type": "Person",
+  "@id": "https://huangyijie.com/about/",
+  "name": "黄奕杰",
+  "alternateName": "Henry Huang",
+  "nationality": "中国",
+  "birthPlace" : {
+    "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+      "addressLocality": "汕头市",
+      "addressRegion": "广东省",
+          "addressCountry": "中国"
+    }
+  },
+  "gender": "Male",
+  "Description": "Software Engineer",
+  "disambiguatingDescription": "Full stack software engineer, focus on Java and JavaScript.",
+  "jobTitle": "Software Engineer",
+  "url": "https://huangyijie.com",
+  "image": "https://s.gravatar.com/avatar/4e0e61fdf1b2bcfb4ee31da27601fe6b?s=512&r=g",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "深圳市",
+    "addressRegion": "广东省",
+    "addressCountry": "中国"
+  },
+  "sameAs": [
+    "http://weibo.com/626242034",
+    "https://github.com/henryhuang",
+    "https://unsplash.com/@henryhh"
+    ]
+  }
+  </script>
+  </body>
+</html>

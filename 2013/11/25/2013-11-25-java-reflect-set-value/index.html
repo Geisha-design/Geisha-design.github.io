@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="Java使用反射设置值"/>
+
+
+
+
+  <meta name="keywords" content="java,reflect,Field," />
+
+
+
+
+
+    <link rel="alternate" href="../../../../default" title="截面樱" >
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.1"/>
+
+
+
+<link rel="canonical" href="http://example.com/2013/11/25/2013-11-25-java-reflect-set-value/"/>
+
+
+<meta name="description" content="今天敲代码，遇到个问题，需要实现一个方法：给一个类的成员变量设置值，数字类型的设置为0，布尔类型的设置为false，其他设置为null，变量不知道是什么类型的。 这里面有几个要点：  给变量设值 区分变量是什么类型（数字，布尔或其他） 基本类型的处理情况">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java使用反射设置值">
+<meta property="og:url" content="http://example.com/2013/11/25/2013-11-25-java-reflect-set-value/index.html">
+<meta property="og:site_name" content="截面樱">
+<meta property="og:description" content="今天敲代码，遇到个问题，需要实现一个方法：给一个类的成员变量设置值，数字类型的设置为0，布尔类型的设置为false，其他设置为null，变量不知道是什么类型的。 这里面有几个要点：  给变量设值 区分变量是什么类型（数字，布尔或其他） 基本类型的处理情况">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2013-11-25T09:37:00.000Z">
+<meta property="article:modified_time" content="2021-04-12T02:12:58.328Z">
+<meta property="article:author" content="截面樱">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="reflect">
+<meta property="article:tag" content="Field">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="stylesheet" type="text/css" href="../../../../css/style.css?v=1.1"/>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    <title> Java使用反射设置值 - 截面樱 </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="../../../../." class="logo">截面樱</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                Unsplash
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        
+    </nav>
+
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Java使用反射设置值
+        
+      </h1>
+
+      <time class="post-time">
+          Nov 25 2013
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>今天敲代码，遇到个问题，需要实现一个方法：给一个类的成员变量设置值，数字类型的设置为0，布尔类型的设置为false，其他设置为null，变量不知道是什么类型的。</p>
+<p>这里面有几个要点：</p>
+<ul>
+<li>给变量设值</li>
+<li>区分变量是什么类型（数字，布尔或其他）</li>
+<li>基本类型的处理情况</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="1-给变量设值"><a href="#1-给变量设值" class="headerlink" title="1. 给变量设值"></a>1. 给变量设值</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">java.lang.reflect.Field.set(Object obj, Object value);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-区分变量是什么类型（数字，布尔或其他）"><a href="#2-区分变量是什么类型（数字，布尔或其他）" class="headerlink" title="2. 区分变量是什么类型（数字，布尔或其他）"></a>2. 区分变量是什么类型（数字，布尔或其他）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Class&lt;?&gt; clazz = field.getType();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断是否是数字的, 查看java源码可以知道基本类型里面除了char和boolean，其他的都是	// java.lang。Number 的子类</span></span><br><span class="line"><span class="keyword">if</span>(Number.class.isAssignableFrom(type))</span><br><span class="line">	field.set(cfg, <span class="number">0</span>);</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(Boolean.class.isAssignableFrom(type))</span><br><span class="line">	field.set(cfg, <span class="keyword">false</span>);</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	field.set(cfg, <span class="keyword">null</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>Class.isAssignableFrom(Class&lt;?&gt; cls)查看源码，得知：</p>
+<pre><code>判定此 Class 对象所表示的类或接口与指定的 Class 参数所表示的类或接口是否相同，或是否是其超类或超接口。如果是则返回 true；否则返回 false。如果该 Class 表示一个基本类型，且指定的 Class 参数正是该 Class 对象，则该方法返回 true；否则返回 false。 
+
+特别地，通过身份转换或扩展引用转换，此方法能测试指定 Class 参数所表示的类型能否转换为此 Class 对象所表示的类型。有关详细信息，请参阅 Java Language Specification 的第 5.1.1 和 5.1.4 节。 
+
+
+参数：
+cls - 要检查的 Class 对象 
+返回：
+表明 cls 类型的对象能否赋予此类对象的 boolean 值 
+抛出： 
+NullPointerException - 如果指定的 Class 参数为 null。
+</code></pre>
+<h3 id="3-基本类型的处理情况"><a href="#3-基本类型的处理情况" class="headerlink" title="3. 基本类型的处理情况"></a>3. 基本类型的处理情况</h3><p>使用 Class.isAssignableFrom，并不能处理基本类型的情况，找来找去，并没有发现相关的方法，所以就自己写了个方法，来转换基本类型和包装类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> Class&lt;?&gt; getWrapperClass(Class&lt;?&gt; primitiveClass) &#123;</span><br><span class="line">	<span class="keyword">if</span>(!primitiveClass.isPrimitive())</span><br><span class="line">		<span class="keyword">return</span> primitiveClass;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(primitiveClass == Boolean.TYPE)</span><br><span class="line">		<span class="keyword">return</span> Boolean.class;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(primitiveClass == Character.TYPE)</span><br><span class="line">		<span class="keyword">return</span> Character.class;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(primitiveClass == Byte.TYPE)</span><br><span class="line">		<span class="keyword">return</span> Byte.class;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(primitiveClass == Short.TYPE)</span><br><span class="line">		<span class="keyword">return</span> Short.class;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(primitiveClass == Integer.TYPE)</span><br><span class="line">		<span class="keyword">return</span> Integer.class;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(primitiveClass == Long.TYPE)</span><br><span class="line">		<span class="keyword">return</span> Long.class;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(primitiveClass == Float.TYPE)</span><br><span class="line">		<span class="keyword">return</span> Float.class;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(primitiveClass == Double.TYPE)</span><br><span class="line">		<span class="keyword">return</span> Double.class;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> Void.class;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>这样，在获取到Field的类型（Field.getType()）后，可以根据Class.isPrimitive()来判断是不是基本类型，然后再使用此方法进行转换</p>
+<h3 id="4-完整示例"><a href="#4-完整示例" class="headerlink" title="4. 完整示例"></a>4. 完整示例</h3><p>以上是关键点的代码，下面是具体的代码实现：</p>
+<p>Config.class</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * cnhalo.mrhuang.field.Config &lt;示例&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>	huangyijie</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span>	2013年11月25日 下午3:35:57</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Config</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">double</span> doubleVar = <span class="number">0.1</span>;</span><br><span class="line">	<span class="keyword">public</span> Integer integerWrapperVar = <span class="number">14</span>;</span><br><span class="line">	<span class="keyword">public</span> String stringVar = <span class="string">&quot;stringVar&quot;</span>;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">boolean</span> booleanVar = <span class="keyword">true</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Config instance = <span class="keyword">null</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Config <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(instance == <span class="keyword">null</span>)</span><br><span class="line">			instance = <span class="keyword">new</span> Config();</span><br><span class="line">		<span class="keyword">return</span> instance;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * Config. &lt;说明&gt;</span></span><br><span class="line"><span class="comment">	 *</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="title">Config</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> doubleVar + <span class="string">&quot;, &quot;</span> + integerWrapperVar + <span class="string">&quot;, &quot;</span> + stringVar + <span class="string">&quot;, &quot;</span> + booleanVar;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>Main.class</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * cnhalo.mrhuang.field.Main &lt;示例&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>	huangyijie</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span>	2013年11月25日 下午3:35:04</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * main: 实现的功能： &lt;br&gt;</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * 给一个类的成员变量设置值，数字类型的设置为0，布尔类型的设置为false，其他设置为null，变量不知道是什么类型的 &lt;br&gt;</span></span><br><span class="line"><span class="comment">	 *</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> args</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> SecurityException</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> NoSuchFieldException</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> IllegalArgumentException</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> IllegalAccessException</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> SecurityException, NoSuchFieldException, IllegalArgumentException, IllegalAccessException </span>&#123;</span><br><span class="line">		</span><br><span class="line">		Config cfg = Config.getInstance();</span><br><span class="line">		<span class="comment">// 打印一下初始值</span></span><br><span class="line">		System.out.println(cfg);</span><br><span class="line">		</span><br><span class="line">		Field[] fields = cfg.getClass().getFields();</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(Field field : fields) &#123;</span><br><span class="line">			Class&lt;?&gt; clazz = field.getType();</span><br><span class="line">			<span class="comment">// 如果是基本类型</span></span><br><span class="line">			<span class="keyword">if</span>(clazz.isPrimitive())</span><br><span class="line">				<span class="comment">// 转换为包装类</span></span><br><span class="line">				clazz = getWrapperClass(clazz);</span><br><span class="line">			<span class="comment">// 判断为数字类型</span></span><br><span class="line">			<span class="keyword">if</span>(Number.class.isAssignableFrom(clazz))</span><br><span class="line">				field.set(cfg, <span class="number">0</span>);</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(Boolean.class.isAssignableFrom(clazz))</span><br><span class="line">				field.set(cfg, <span class="keyword">false</span>);</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				field.set(cfg, <span class="keyword">null</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 打印一下修改后的值</span></span><br><span class="line">		System.out.println(cfg);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * getWrapperClass: 将基本类型转换为包装类 &lt;br&gt;</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * 我暂时找不到java中相关的方法，如果有的话可以替换，现在先自己写一个 &lt;br&gt;</span></span><br><span class="line"><span class="comment">	 *</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> primitiveClass</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Class&lt;?&gt; getWrapperClass(Class&lt;?&gt; primitiveClass) &#123;</span><br><span class="line">		<span class="keyword">if</span>(!primitiveClass.isPrimitive())</span><br><span class="line">			<span class="keyword">return</span> primitiveClass;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(primitiveClass == Boolean.TYPE)</span><br><span class="line">			<span class="keyword">return</span> Boolean.class;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(primitiveClass == Character.TYPE)</span><br><span class="line">			<span class="keyword">return</span> Character.class;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(primitiveClass == Byte.TYPE)</span><br><span class="line">			<span class="keyword">return</span> Byte.class;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(primitiveClass == Short.TYPE)</span><br><span class="line">			<span class="keyword">return</span> Short.class;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(primitiveClass == Integer.TYPE)</span><br><span class="line">			<span class="keyword">return</span> Integer.class;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(primitiveClass == Long.TYPE)</span><br><span class="line">			<span class="keyword">return</span> Long.class;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(primitiveClass == Float.TYPE)</span><br><span class="line">			<span class="keyword">return</span> Float.class;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(primitiveClass == Double.TYPE)</span><br><span class="line">			<span class="keyword">return</span> Double.class;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> Void.class;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="5-相关扩展"><a href="#5-相关扩展" class="headerlink" title="5. 相关扩展"></a>5. 相关扩展</h3><h4 id="5-1-转-Java中判断字符串是否为数字的三种方法"><a href="#5-1-转-Java中判断字符串是否为数字的三种方法" class="headerlink" title="5.1 [转]Java中判断字符串是否为数字的三种方法"></a>5.1 [转]Java中判断字符串是否为数字的三种方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 用JAVA自带的函数</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isNumeric</span><span class="params">(String str)</span></span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = str.length();--i&gt;=<span class="number">0</span>;)&#123;   </span><br><span class="line">   <span class="keyword">if</span> (!Character.isDigit(str.charAt(i)))&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">   &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 用正则表达式</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isNumeric</span><span class="params">(String str)</span></span>&#123; </span><br><span class="line">    Pattern pattern = Pattern.compile(<span class="string">&quot;[0-9]*&quot;</span>); </span><br><span class="line">    <span class="keyword">return</span> pattern.matcher(str).matches();    </span><br><span class="line"> &#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">// 用ascii码</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isNumeric</span><span class="params">(String str)</span></span>&#123;</span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i=str.length();--i&gt;=<span class="number">0</span>;)&#123;</span><br><span class="line">      <span class="keyword">int</span> chr=str.charAt(i);</span><br><span class="line">      <span class="keyword">if</span>(chr&lt;<span class="number">48</span> || chr&gt;<span class="number">57</span>)</span><br><span class="line">         <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+            </div>
+          
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="../../../../tags/java/">java</a>
+          
+            <a href="../../../../tags/reflect/">reflect</a>
+          
+            <a href="../../../../tags/Field/">Field</a>
+          
+        </div>
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="../../../12/02/2013-12-02-jdk-version-switch-in-mac/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">MAC下JDK版本的切换</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="../../18/2013-11-18-vim-encoding-convert/">
+        <span class="next-text nav-default">VIM对于文件字符编码的转换</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2012 -
+    
+    2021
+    <span class="footer-author">截面樱.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="../../../../lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="../../../../js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
+
+    
+
+  
+  <script type="application/ld+json">
+  {
+  "@context": "http://www.schema.org",
+  "@type": "Person",
+  "@id": "https://huangyijie.com/about/",
+  "name": "黄奕杰",
+  "alternateName": "Henry Huang",
+  "nationality": "中国",
+  "birthPlace" : {
+    "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+      "addressLocality": "汕头市",
+      "addressRegion": "广东省",
+          "addressCountry": "中国"
+    }
+  },
+  "gender": "Male",
+  "Description": "Software Engineer",
+  "disambiguatingDescription": "Full stack software engineer, focus on Java and JavaScript.",
+  "jobTitle": "Software Engineer",
+  "url": "https://huangyijie.com",
+  "image": "https://s.gravatar.com/avatar/4e0e61fdf1b2bcfb4ee31da27601fe6b?s=512&r=g",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "深圳市",
+    "addressRegion": "广东省",
+    "addressCountry": "中国"
+  },
+  "sameAs": [
+    "http://weibo.com/626242034",
+    "https://github.com/henryhuang",
+    "https://unsplash.com/@henryhh"
+    ]
+  }
+  </script>
+  </body>
+</html>

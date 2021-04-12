@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="Java是编译型语言还是解释型语言"/>
+
+
+
+
+  <meta name="keywords" content="it,java," />
+
+
+
+
+
+    <link rel="alternate" href="../../../../default" title="截面樱" >
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.1"/>
+
+
+
+<link rel="canonical" href="http://example.com/2014/12/04/2014-12-04-java-is-compiled-or-interpreted/"/>
+
+
+<meta name="description" content="大多数开发人员都知道，Java源文件需要编译成.class文件才能在JVM中运行。如果继续追问，许多开发人员还会告诉你说.class中的字节码首先会被JVM解释，但是在稍后即时（JIT）编译。然而很多人将字节码含糊地理解为“在某种虚构的或者简化的CPU上运行的机器码”。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java是编译型语言还是解释型语言">
+<meta property="og:url" content="http://example.com/2014/12/04/2014-12-04-java-is-compiled-or-interpreted/index.html">
+<meta property="og:site_name" content="截面樱">
+<meta property="og:description" content="大多数开发人员都知道，Java源文件需要编译成.class文件才能在JVM中运行。如果继续追问，许多开发人员还会告诉你说.class中的字节码首先会被JVM解释，但是在稍后即时（JIT）编译。然而很多人将字节码含糊地理解为“在某种虚构的或者简化的CPU上运行的机器码”。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2014-12-04T15:20:04.000Z">
+<meta property="article:modified_time" content="2021-04-12T02:12:58.329Z">
+<meta property="article:author" content="截面樱">
+<meta property="article:tag" content="it">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="stylesheet" type="text/css" href="../../../../css/style.css?v=1.1"/>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    <title> Java是编译型语言还是解释型语言 - 截面樱 </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="../../../../." class="logo">截面樱</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                Unsplash
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        
+    </nav>
+
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Java是编译型语言还是解释型语言
+        
+      </h1>
+
+      <time class="post-time">
+          Dec 4 2014
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>大多数开发人员都知道，Java源文件需要编译成.class文件才能在JVM中运行。如果继续追问，许多开发人员还会告诉你说.class中的字节码首先会被JVM解释，但是在稍后即时（JIT）编译。然而很多人将字节码含糊地理解为“在某种虚构的或者简化的CPU上运行的机器码”。</p>
+<span id="more"></span>
+
+<p>实际上，JVM字节码更像是中途的驿站，是一种从人类可读的源码向机器码过度的中间状态。用编译原理术语讲，字节码实际上是一种中间语言（IL）形态，不是真正的机器码。也就是说，将Java源码变成变成字节码的过程不是C或C++程序员所理解的那种编译。Java所谓的编译器javac也不同于gcc，实际上它只是一种针对java源码生成类文件的工具。Java体系中真正的编译器是JIT:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">        javac              类加载器</span><br><span class="line">.java ----------&gt; .class ------------&gt; </span><br><span class="line">              </span><br><span class="line">               解释器                JIT编译器</span><br><span class="line">转换后的.class ---------&gt; 可执行代码 ------------&gt; 101011机器码</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>有人说Java是“动态编译”的，他们说的编译是指JIT的运行时编译，不是指构建时创建类文件的过程。</p>
+<p>所以如果被问及“Java是编译型语言还是解释型语言”，你可以回答“都是”。</p>
+<hr>
+<blockquote>
+<p>2015年2月5日</p>
+</blockquote>
+<p>昨天和同事突然又讨论到这个问题，然后又想了一下这个问题。</p>
+<p>有很多人倾向于避开将语言按照解释型和编译型还区分，应该区分得更细化一点了，强类型的、弱类型的，静态的、动态的，GC-based的、手工管理内存的，有没有VM…</p>
+<p>从某个科学的角度（书读得少，不知道怎么描述这个角度= =）来说，编译型和解释型可以说相同，因为都是从文本形式的代码转换到最终的相同目的。</p>
+<p>一段来自知乎的文字：</p>
+<p>现在关于解释和编译的界限也不是特别清晰了。</p>
+<ul>
+<li>Java需要预先把代码编译成虚拟机指令的，然后在运行这些虚拟机指令，有的教科书上会成为混合型或者半编译型。</li>
+<li>像Python和lua这样就更不好分了，可以直接解释源代码运行，也可以编译为虚拟机指令然后再运行。</li>
+<li>php编译之后的结果可以被Web Server缓存起来，甚至还可以先被翻译为C++，然后再编译。</li>
+<li>.NET 的CLR运行时是Windows的组成部分，编译好的.NET 系列语言的代码直接生成可执行文件，然后被“直接”执行，看起来跟C没有什么太大的差别。</li>
+<li>JavaScript可以被V8引擎编译为机器码然后执行，如果在node.js下，这个编译结果被缓存起来了，你说这跟编译好再执行的C有什么区别？- </li>
+</ul>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="../../../../tags/it/">it</a>
+          
+            <a href="../../../../tags/java/">java</a>
+          
+        </div>
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="../../../../2015/01/30/2015-01-30-diffrence-between-mvn-clean-install-and-mvn-install/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">mvn打包的时候为什么用clean</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="../../../11/01/2014-11-01-octopress-to-hexo/">
+        <span class="next-text nav-default">从Octopress转到Hexo</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2012 -
+    
+    2021
+    <span class="footer-author">截面樱.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="../../../../lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="../../../../js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
+
+    
+
+  
+  <script type="application/ld+json">
+  {
+  "@context": "http://www.schema.org",
+  "@type": "Person",
+  "@id": "https://huangyijie.com/about/",
+  "name": "黄奕杰",
+  "alternateName": "Henry Huang",
+  "nationality": "中国",
+  "birthPlace" : {
+    "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+      "addressLocality": "汕头市",
+      "addressRegion": "广东省",
+          "addressCountry": "中国"
+    }
+  },
+  "gender": "Male",
+  "Description": "Software Engineer",
+  "disambiguatingDescription": "Full stack software engineer, focus on Java and JavaScript.",
+  "jobTitle": "Software Engineer",
+  "url": "https://huangyijie.com",
+  "image": "https://s.gravatar.com/avatar/4e0e61fdf1b2bcfb4ee31da27601fe6b?s=512&r=g",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "深圳市",
+    "addressRegion": "广东省",
+    "addressCountry": "中国"
+  },
+  "sameAs": [
+    "http://weibo.com/626242034",
+    "https://github.com/henryhuang",
+    "https://unsplash.com/@henryhh"
+    ]
+  }
+  </script>
+  </body>
+</html>

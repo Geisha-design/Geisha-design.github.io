@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="设计模式Mediator"/>
+
+
+
+
+  <meta name="keywords" content="设计模式,中介者,mediator," />
+
+
+
+
+
+    <link rel="alternate" href="../../../../default" title="截面樱" >
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.1"/>
+
+
+
+<link rel="canonical" href="http://example.com/2015/04/10/2015-04-10-design-patterns-mediator/"/>
+
+
+<meta name="description" content="Mediator中介者模式定义用一个中介对象来封装一系列关于对象交互行为。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式Mediator">
+<meta property="og:url" content="http://example.com/2015/04/10/2015-04-10-design-patterns-mediator/index.html">
+<meta property="og:site_name" content="截面樱">
+<meta property="og:description" content="Mediator中介者模式定义用一个中介对象来封装一系列关于对象交互行为。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2015-04-10T05:11:04.000Z">
+<meta property="article:modified_time" content="2021-04-12T02:12:58.329Z">
+<meta property="article:author" content="截面樱">
+<meta property="article:tag" content="设计模式">
+<meta property="article:tag" content="中介者">
+<meta property="article:tag" content="mediator">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="stylesheet" type="text/css" href="../../../../css/style.css?v=1.1"/>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    <title> 设计模式Mediator - 截面樱 </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="../../../../." class="logo">截面樱</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                Unsplash
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        
+    </nav>
+
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          设计模式Mediator
+        
+      </h1>
+
+      <time class="post-time">
+          Apr 10 2015
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <h3 id="Mediator中介者模式定义"><a href="#Mediator中介者模式定义" class="headerlink" title="Mediator中介者模式定义"></a>Mediator中介者模式定义</h3><p>用一个中介对象来封装一系列关于对象交互行为。</p>
+<span id="more"></span>
+
+<h3 id="为何使用Mediator"><a href="#为何使用Mediator" class="headerlink" title="为何使用Mediator"></a>为何使用Mediator</h3><p>各个对象之间的交互操作非常多;每个对象的行为操作都依赖彼此对方，修改一个对象的行为，同时会涉及到修改很多其他对象的行为，如果使用Mediator模式，可以使各个对象间的耦合松散，只需关心和 Mediator的关系，使多对多的关系变成了一对多的关系，可以降低系统的复杂性，提高可修改扩展性。</p>
+<p>如何使用?</p>
+<p>首先，有一个接口，用来定义成员对象之间的交互联系方式:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public interface Mediator &#123; </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Meiator具体实现，真正实现交互操作的内容:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class ConcreteMediator implements Mediator &#123;</span><br><span class="line"></span><br><span class="line">　　 &#x2F;&#x2F;假设当前有两个成员.</span><br><span class="line">　　 private ConcreteColleague1 colleague1 &#x3D; new ConcreteColleague1(); </span><br><span class="line">　　 private ConcreteColleague2 colleague2 &#x3D; new ConcreteColleague2();</span><br><span class="line"></span><br><span class="line">　　 ...</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>再看看另外一个参与者:成员，因为是交互行为，都需要双方提供一些共同接口，这种要求在Visitor Observer等模式中都是相同的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">public class Colleague &#123;</span><br><span class="line">　　 private Mediator mediator;</span><br><span class="line">　　 public Mediator getMediator() &#123; </span><br><span class="line">　　 　　 return mediator;</span><br><span class="line">　　 &#125;</span><br><span class="line"></span><br><span class="line">　　 public void setMediator( Mediator mediator ) &#123; </span><br><span class="line">　　 　　 this.mediator &#x3D; mediator; </span><br><span class="line">　　 &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class ConcreteColleague1 &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class ConcreteColleague2 &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>每个成员都必须知道Mediator，并且和 Mediator联系，而不是和其他成员联系。</p>
+<p>至此，Mediator模式框架完成，可以发现Mediator模式规定不是很多，大体框架也比较简单，但实际使用起来就非常灵活。</p>
+<p>Mediator模式在事件驱动类应用中比较多，例如界面设计GUI.;聊天，消息传递等，在聊天应用中，需要有一个MessageMediator，专门负责request/reponse之间任务的调节。</p>
+<p>MVC是J2EE的一个基本模式，View Controller是一种Mediator，它是Jsp和服务器上应用程序间的Mediator。</p>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="../../../../tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+          
+            <a href="../../../../tags/%E4%B8%AD%E4%BB%8B%E8%80%85/">中介者</a>
+          
+            <a href="../../../../tags/mediator/">mediator</a>
+          
+        </div>
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="../../15/2015-04-15-a-lunch/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">一顿午饭</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="../../../02/19/2015-02-19-runner-of-kite/">
+        <span class="next-text nav-default">说点关于《追风筝的人》</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2012 -
+    
+    2021
+    <span class="footer-author">截面樱.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="../../../../lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="../../../../js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
+
+    
+
+  
+  <script type="application/ld+json">
+  {
+  "@context": "http://www.schema.org",
+  "@type": "Person",
+  "@id": "https://huangyijie.com/about/",
+  "name": "黄奕杰",
+  "alternateName": "Henry Huang",
+  "nationality": "中国",
+  "birthPlace" : {
+    "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+      "addressLocality": "汕头市",
+      "addressRegion": "广东省",
+          "addressCountry": "中国"
+    }
+  },
+  "gender": "Male",
+  "Description": "Software Engineer",
+  "disambiguatingDescription": "Full stack software engineer, focus on Java and JavaScript.",
+  "jobTitle": "Software Engineer",
+  "url": "https://huangyijie.com",
+  "image": "https://s.gravatar.com/avatar/4e0e61fdf1b2bcfb4ee31da27601fe6b?s=512&r=g",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "深圳市",
+    "addressRegion": "广东省",
+    "addressCountry": "中国"
+  },
+  "sameAs": [
+    "http://weibo.com/626242034",
+    "https://github.com/henryhuang",
+    "https://unsplash.com/@henryhh"
+    ]
+  }
+  </script>
+  </body>
+</html>

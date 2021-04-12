@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="错误排查：非ROOT用户使用密钥进行ssh登录提示输入密码"/>
+
+
+
+
+  <meta name="keywords" content="linux,ssh,git,gogs," />
+
+
+
+
+
+    <link rel="alternate" href="../../../../default" title="截面樱" >
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.1"/>
+
+
+
+<link rel="canonical" href="http://example.com/2017/07/07/2017-07-07-non-root-user-config-for-ssh-key-login/"/>
+
+
+<meta name="description" content="由于个人的需要，需要搭建一个私有的git服务器，当然还需要有完善的操作界面，综合下来，我选择了Gogs。 1234问：为什么不用GitHub呢？答：我们不想让别人看到我们的代码。问：GitHub有private的呀！答：那要钱，我们没钱。。。  很顺序按照官网的步骤一步一步搭建完成了（其实早就用过了，这是第N次的搭建），然后另一个人上传了代码（注意这是通过http的方式的），于是我去下载。 我不喜">
+<meta property="og:type" content="article">
+<meta property="og:title" content="错误排查：非ROOT用户使用密钥进行ssh登录提示输入密码">
+<meta property="og:url" content="http://example.com/2017/07/07/2017-07-07-non-root-user-config-for-ssh-key-login/index.html">
+<meta property="og:site_name" content="截面樱">
+<meta property="og:description" content="由于个人的需要，需要搭建一个私有的git服务器，当然还需要有完善的操作界面，综合下来，我选择了Gogs。 1234问：为什么不用GitHub呢？答：我们不想让别人看到我们的代码。问：GitHub有private的呀！答：那要钱，我们没钱。。。  很顺序按照官网的步骤一步一步搭建完成了（其实早就用过了，这是第N次的搭建），然后另一个人上传了代码（注意这是通过http的方式的），于是我去下载。 我不喜">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2017-07-07T14:36:06.000Z">
+<meta property="article:modified_time" content="2021-04-12T02:12:58.331Z">
+<meta property="article:author" content="截面樱">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="ssh">
+<meta property="article:tag" content="git">
+<meta property="article:tag" content="gogs">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="stylesheet" type="text/css" href="../../../../css/style.css?v=1.1"/>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    <title> 错误排查：非ROOT用户使用密钥进行ssh登录提示输入密码 - 截面樱 </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="../../../../." class="logo">截面樱</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                Unsplash
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        
+    </nav>
+
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          错误排查：非ROOT用户使用密钥进行ssh登录提示输入密码
+        
+      </h1>
+
+      <time class="post-time">
+          Jul 7 2017
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>由于个人的需要，需要搭建一个私有的git服务器，当然还需要有完善的操作界面，综合下来，我选择了<strong>Gogs</strong>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">问：为什么不用GitHub呢？</span><br><span class="line">答：我们不想让别人看到我们的代码。</span><br><span class="line">问：GitHub有private的呀！</span><br><span class="line">答：那要钱，我们没钱。。。</span><br></pre></td></tr></table></figure>
+
+<p>很顺序按照官网的步骤一步一步搭建完成了（其实早就用过了，这是第N次的搭建），然后另一个人上传了代码（注意这是通过http的方式的），于是我去下载。</p>
+<p>我不喜欢用http的方式，因为要输入密码，而且也不安全，所以一直保持着使用ssh的方式。首先我配置了个人的公钥，但是执行<strong>git clone</strong>以后一直都提示我输入密码！</p>
+<p>于是我就开始了一步一步排查！</p>
+<h3 id="客户端私钥配置"><a href="#客户端私钥配置" class="headerlink" title="客户端私钥配置"></a>客户端私钥配置</h3><p>一般情况下，ssh 会拿 <strong>~/.ssh/id_rsa</strong> 去连接，但是如果多个密钥对连接不同的域名的话，就需要在 <strong>~/.ssh/config</strong> 里进行指定域名的配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">host &#123;&#123;domain&#125;&#125;</span><br><span class="line">user git</span><br><span class="line">hostname &#123;&#123;domian&#125;&#125;</span><br><span class="line">port 22</span><br><span class="line">identityfile ~&#x2F;.ssh&#x2F;id_rsa_2</span><br></pre></td></tr></table></figure>
+
+<p>这里的 <strong>~/.ssh/id_rsa_2</strong> 就是我配置在 Gogs 的公钥所对应的私钥，这样我进行 <strong>git clone git@domian:username/repo.git</strong> 的时候就会去拿 <strong>~/.ssh/id_rsa_2</strong> 了。</p>
+<h3 id="文件权限问题"><a href="#文件权限问题" class="headerlink" title="文件权限问题"></a>文件权限问题</h3><p>首先确认了一下，以下文件和文件夹都是属于 Gogs 的运行用户和用户组（git:git）的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;home&#x2F;git&#x2F;.ssh</span><br><span class="line">&#x2F;home&#x2F;git&#x2F;.ssh&#x2F;authorized_keys</span><br></pre></td></tr></table></figure>
+
+<p>我们使用 ssh 的方式 clone repository, 其实所使用的 ssh 用户 是 git，git用户相对于系统的root用户就是个非root用户了。</p>
+<p>ssh对于非root用户的密钥限制是非常严格的，它不允许以上的文件夹和文件有太大的权限，.ssh只需要700，而authorized_keys只需要600。执行以下命令确认权限问题：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod 700 /home/git/.ssh</span><br><span class="line">chmod 600 /home/git/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+
+<p>可是，再运行 git clone 还是提示需要密码！</p>
+<h3 id="sshd-config配置问题"><a href="#sshd-config配置问题" class="headerlink" title="sshd_config配置问题"></a>sshd_config配置问题</h3><p>首先打开日志进行错误跟踪：</p>
+<blockquote>
+<p>注意先把 <strong>/etc/ssh/sshd_config</strong> 的 <strong>LogLevel</strong> 改成 <strong>DEBUG</strong>，不然看不到debug级别的日志。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -f /var/<span class="built_in">log</span>/auth.log</span><br></pre></td></tr></table></figure>
+
+<p>然后在客户端执行 git clone 命令，看到了 /var/log/auth.log里：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Jul  7 22:57:24 localhost sshd[13061]: debug1: temporarily_use_uid: 1003&#x2F;1003 (e&#x3D;0&#x2F;0)</span><br><span class="line">Jul  7 22:57:24 localhost sshd[13061]: debug1: trying public key file &#x2F;root&#x2F;.ssh&#x2F;authorized_keys</span><br><span class="line">Jul  7 22:57:24 localhost sshd[13061]: debug1: Could not open authorized keys &#39;&#x2F;root&#x2F;.ssh&#x2F;authorized_keys&#39;: Permission denied</span><br><span class="line">Jul  7 22:57:24 localhost sshd[13061]: debug1: restore_uid: 0&#x2F;0</span><br><span class="line">Jul  7 22:57:24 localhost sshd[13061]: Failed publickey for git from 180.158.160.234 port 50987 ssh2: RSA ......</span><br></pre></td></tr></table></figure>
+
+<p>上面的这一条引起了注意：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Jul  7 22:57:24 localhost sshd[13061]: debug1: Could not open authorized keys &#39;&#x2F;root&#x2F;.ssh&#x2F;authorized_keys&#39;: Permission denied</span><br></pre></td></tr></table></figure>
+
+<p>很奇怪ssh为什么去读root用户的authorized_keys，而不是git用户的。</p>
+<p>于是打开 <strong>/etc/ssh/sshd_config</strong>，找到：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AuthorizedKeysFile      ~&#x2F;.ssh&#x2F;authorized_keys</span><br></pre></td></tr></table></figure>
+<p>这里错了，应该是 <strong>.ssh/authorized_keys</strong>！改完以后是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AuthorizedKeysFile      .ssh&#x2F;authorized_keys</span><br></pre></td></tr></table></figure>
+
+<p>如果是 <strong>~/.ssh/authorized_keys</strong> ，那么ssh就去拿了 <strong>/root/.ssh/authorized_keys</strong>，而不是所请求的用户（git）的 <strong>~/.ssh/authorized_keys</strong> 了，为什么呢？这是我自己的理解：首先ssh在获取到了请求用户的用户名后（使用git clone的话一般是git用户），然后ssh就会设置当前目录在git用户的home目录下，如果配置 <strong>.ssh/authorized_keys</strong> ，就能拿到 git 用户所需要的 <strong>authorized_keys</strong> 了，但是如果配置 <strong>~/.ssh/authorized_keys</strong>，则去拿了ssh service的执行者root用户的home下面的 <strong>.ssh/authorized_keys</strong> 了。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>一般出现使用 ssh 的方式进行 git 远程操作（比如 git clone），出现需要密码的情况，或者配置了密钥进行 ssh 登录，但是还是需要密码的情况，可以先从以下三点进行错误排查：</p>
+<ul>
+<li>客户端私钥是否指定正确</li>
+<li>非root用户的文件权限是否有问题</li>
+<li>sshd_config配置是否有问题</li>
+</ul>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="../../../../tags/linux/">linux</a>
+          
+            <a href="../../../../tags/ssh/">ssh</a>
+          
+            <a href="../../../../tags/git/">git</a>
+          
+            <a href="../../../../tags/gogs/">gogs</a>
+          
+        </div>
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="../../../08/28/2017-08-28-i18next/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">i18next</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="../../../06/22/2017-06-22-blog-with-github-travis-ci-and-coding-net-3/">
+        <span class="next-text nav-default">使用Github、Travis-CI和Coding.net自动部署博客［三］</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2012 -
+    
+    2021
+    <span class="footer-author">截面樱.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="../../../../lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="../../../../js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
+
+    
+
+  
+  <script type="application/ld+json">
+  {
+  "@context": "http://www.schema.org",
+  "@type": "Person",
+  "@id": "https://huangyijie.com/about/",
+  "name": "黄奕杰",
+  "alternateName": "Henry Huang",
+  "nationality": "中国",
+  "birthPlace" : {
+    "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+      "addressLocality": "汕头市",
+      "addressRegion": "广东省",
+          "addressCountry": "中国"
+    }
+  },
+  "gender": "Male",
+  "Description": "Software Engineer",
+  "disambiguatingDescription": "Full stack software engineer, focus on Java and JavaScript.",
+  "jobTitle": "Software Engineer",
+  "url": "https://huangyijie.com",
+  "image": "https://s.gravatar.com/avatar/4e0e61fdf1b2bcfb4ee31da27601fe6b?s=512&r=g",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "深圳市",
+    "addressRegion": "广东省",
+    "addressCountry": "中国"
+  },
+  "sameAs": [
+    "http://weibo.com/626242034",
+    "https://github.com/henryhuang",
+    "https://unsplash.com/@henryhh"
+    ]
+  }
+  </script>
+  </body>
+</html>
