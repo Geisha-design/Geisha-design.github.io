@@ -1,41 +1,24 @@
 <!DOCTYPE html>
-<html lang="">
-  <head>
-    
-<meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-  <meta name="description" content="时间协议"/>
-
-
-
-
-  <meta name="keywords" content="小知识点,网络," />
-
-
-
-
-
-    <link rel="alternate" href="../../../../default" title="齐雨争" >
-
-
-
-
-    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.1"/>
-
-
-
-<link rel="canonical" href="http://example.com/2020/01/18/2020-01-18-time-protocol/"/>
-
-
-<meta name="description" content="时间协议前两天在看Netty的hello world的时候，里面举了个例子—创建时间协议服务器。通过学习，才知道这个协议很老的，甚至已经被网络时间替代了。但是这个协议很简单，所以学习一下也无碍。 什么是时间协议时间协议（英语：TIME protocol）是一个在RFC 868内定义的网络传输协议。它用作提供机器可读的日期时间信息。 这是时间协议（Time Protocol）在RFC868上的定义（">
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>时间协议 | Hexo</title>
+  <meta name="description" content="时间协议前两天在看Netty的hello world的时候，里面举了个例子—创建时间协议服务器。通过学习，才知道这个协议很老的，甚至已经被网络时间替代了。但是这个协议很简单，所以学习一下也无碍。 什么是时间协议时间协议（英语：TIME protocol）是一个在RFC 868内定义的网络传输协议。它用作提供机器可读的日期时间信息。 这是时间协议（Time Protocol）在RFC868上的定义（">
 <meta property="og:type" content="article">
 <meta property="og:title" content="时间协议">
 <meta property="og:url" content="http://example.com/2020/01/18/2020-01-18-time-protocol/index.html">
@@ -48,106 +31,360 @@
 <meta property="article:tag" content="小知识点">
 <meta property="article:tag" content="网络">
 <meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://example.com/2020/01/18/2020-01-18-time-protocol/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="齐雨争" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="../../../../css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
-<link rel="stylesheet" type="text/css" href="../../../../css/style.css?v=1.1"/>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+<body class="main-center theme-purple" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/Geisha-design" target="_blank">
+          <img class="img-circle img-rotate" src="../../../../images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">截面樱🌸</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Web Developer &amp; Designer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> zhejiang, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
 
-
-
-
-
-<script type="text/javascript">
-  var themeConfig = {
-    fancybox: {
-      enable: false
-    },
-  };
-</script>
-
-
-
-
-    
-
-
-
-
-
-    
-
-
-
-    <link rel="stylesheet" type="text/css" href="../../../../css/search.css?v=1.1"/>
-
-
-
-    <title> 时间协议 - 齐雨争 </title>
-  <meta name="generator" content="Hexo 5.4.0"></head>
-
-  <body>
-    <div id="page">
-      <header id="masthead"><div class="site-header-inner">
-    <h1 class="site-title">
-        <a href="../../../../." class="logo">齐雨争</a>
-    </h1>
-
-    <nav id="nav-top">
-        
-            <ul id="menu-top" class="nav-top-items">
-                
-                    <li class="menu-item">
-                        <a href="">
-                            
-                            
-                                Unsplash
-                            
-                        </a>
-                    </li>
-                
-                    <li class="menu-item">
-                        <a href="">
-                            
-                            
-                                About
-                            
-                        </a>
-                    </li>
-                
-                
-                    <li class="menu-item">
-                        <a id="search" href="">Search</a>
-                    </li>
-                
-            </ul>
-        
-    </nav>
-
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
 </div>
 
-      </header>
-      <div id="content">
-        
-    <div id="primary">
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          时间协议
-        
-      </h1>
 
-      <time class="post-time">
-          Jan 18 2020
-      </time>
-    </header>
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="../../../../.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="../../../../%E5%BD%92%E6%A1%A3">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="../../../../%E5%88%86%E7%B1%BB">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="../../../../%E6%A0%87%E7%AD%BE">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="../../../../%E9%A1%B9%E7%9B%AEy">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="../../../../%E9%98%85%E8%AF%BB">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">Books</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="../../../../%E5%8F%8B%E9%93%BE">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="../../../../%E5%85%B3%E4%BA%8E">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="../../../../https:/github.com/Geisha-design" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="../../../../http:/weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="../../../../https:/twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="../../../../https:/www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="../../../../atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
 
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>你顺手挽住火焰，化作漫天大雪</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/basic/">basic</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/helloworld/">helloworld</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/introduction/">introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%94%9F%E6%B4%BB/">生活</a><span class="category-list-count">18</span></li></ul>
+    </div>
+  </div>
 
 
     
-            <div class="post-content">
-            <h1 id="时间协议"><a href="#时间协议" class="headerlink" title="时间协议"></a>时间协议</h1><p>前两天在看Netty的hello world的时候，里面举了个例子—创建时间协议服务器。通过学习，才知道这个协议很老的，甚至已经被网络时间替代了。但是这个协议很简单，所以学习一下也无碍。</p>
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/CSS/" rel="tag">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Eclipse/" rel="tag">Eclipse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Field/" rel="tag">Field</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Groovy/" rel="tag">Groovy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/IDE/" rel="tag">IDE</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/IT/" rel="tag">IT</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/JAVA/" rel="tag">JAVA</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/JVM/" rel="tag">JVM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Java/" rel="tag">Java</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/MYSQL/" rel="tag">MYSQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Maven/" rel="tag">Maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/NoSql/" rel="tag">NoSql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Node-js/" rel="tag">Node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Python/" rel="tag">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/TOMCAT/" rel="tag">TOMCAT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/UI/" rel="tag">UI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/VMware/" rel="tag">VMware</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Wicket/" rel="tag">Wicket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/coding/" rel="tag">coding</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/coding-net/" rel="tag">coding.net</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/css/" rel="tag">css</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/date/" rel="tag">date</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/debug/" rel="tag">debug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/decorator/" rel="tag">decorator</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/eclipse/" rel="tag">eclipse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/editor/" rel="tag">editor</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/equals/" rel="tag">equals</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/express/" rel="tag">express</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/github/" rel="tag">github</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/gogs/" rel="tag">gogs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/https/" rel="tag">https</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/i18n/" rel="tag">i18n</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/ini/" rel="tag">ini</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/it/" rel="tag">it</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/jar/" rel="tag">jar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/java/" rel="tag">java</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/javascript/" rel="tag">javascript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/jdk/" rel="tag">jdk</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/jvm/" rel="tag">jvm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/less/" rel="tag">less</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/linux/" rel="tag">linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/mac/" rel="tag">mac</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/macvim/" rel="tag">macvim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/markdown/" rel="tag">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/maven/" rel="tag">maven</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/mediator/" rel="tag">mediator</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/nginx/" rel="tag">nginx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/object/" rel="tag">object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/observer/" rel="tag">observer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/qcloud/" rel="tag">qcloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/rails/" rel="tag">rails</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/reflect/" rel="tag">reflect</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/remote/" rel="tag">remote</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/ssh/" rel="tag">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/ssl/" rel="tag">ssl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/tomcat/" rel="tag">tomcat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/travis/" rel="tag">travis</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/vim/" rel="tag">vim</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/web/" rel="tag">web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/webjars/" rel="tag">webjars</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/wicket/" rel="tag">wicket</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E4%B8%8D%E8%AF%B4%E6%8A%80%E6%9C%AF/" rel="tag">不说技术</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E4%B8%AD%E4%BB%8B%E8%80%85/" rel="tag">中介者</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%81%87%E6%9C%9F/" rel="tag">假期</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%88%86%E5%B8%83%E5%BC%8F/" rel="tag">分布式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%91%A8%E6%9C%AB/" rel="tag">周末</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BE%E5%83%8F/" rel="tag">图像</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BE%E7%89%87/" rel="tag">图片</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%A5%BD%E6%96%87/" rel="tag">好文</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9/" rel="tag">小知识点</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%B7%A5%E4%BD%9C/" rel="tag">工作</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BC%80%E5%8F%91/" rel="tag">开发</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" rel="tag">微服务</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BF%83%E6%83%85/" rel="tag">心情</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%95%B0%E6%8D%AE%E6%9C%BA%E6%9E%84/" rel="tag">数据机构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%96%87%E7%AB%A0/" rel="tag">文章</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%97%85%E8%A1%8C/" rel="tag">旅行</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%97%A0%E5%9B%BE/" rel="tag">无图</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%82%E4%BA%8B/" rel="tag">杂事</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%82%E6%96%87/" rel="tag">杂文</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%82%E8%B0%88/" rel="tag">杂谈</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%B2%B9%E6%BC%86%E5%B7%A5/" rel="tag">油漆工</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%B3%B0%E5%9B%BD/" rel="tag">泰国</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%94%B5%E5%BD%B1/" rel="tag">电影</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%80%81%E5%AE%B6/" rel="tag">老家</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%88%B6%E6%9D%A5%E5%93%81/" rel="tag">舶来品</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%A7%82%E5%AF%9F%E8%80%85/" rel="tag">观察者</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%AE%B0%E5%BD%95/" rel="tag">记录</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%AF%B4%E7%82%B9%E5%95%A5/" rel="tag">说点啥</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B7%91%E6%AD%A5/" rel="tag">跑步</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%BF%90%E5%8A%A8/" rel="tag">运动</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%A3%8E%E6%99%AF/" rel="tag">风景</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%AB%98%E6%95%B0%E4%B9%8B%E6%97%85/" rel="tag">高数之旅</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="../../../../tags/CSS/" style="font-size: 13.11px;">CSS</a> <a href="../../../../tags/Eclipse/" style="font-size: 13px;">Eclipse</a> <a href="../../../../tags/Field/" style="font-size: 13px;">Field</a> <a href="../../../../tags/Groovy/" style="font-size: 13px;">Groovy</a> <a href="../../../../tags/HTML/" style="font-size: 13.11px;">HTML</a> <a href="../../../../tags/Hexo/" style="font-size: 13px;">Hexo</a> <a href="../../../../tags/IDE/" style="font-size: 13.11px;">IDE</a> <a href="../../../../tags/IT/" style="font-size: 13.67px;">IT</a> <a href="../../../../tags/JAVA/" style="font-size: 13.22px;">JAVA</a> <a href="../../../../tags/JVM/" style="font-size: 13px;">JVM</a> <a href="../../../../tags/Java/" style="font-size: 13.44px;">Java</a> <a href="../../../../tags/JavaScript/" style="font-size: 13.11px;">JavaScript</a> <a href="../../../../tags/MYSQL/" style="font-size: 13px;">MYSQL</a> <a href="../../../../tags/Maven/" style="font-size: 13px;">Maven</a> <a href="../../../../tags/NoSql/" style="font-size: 13px;">NoSql</a> <a href="../../../../tags/Node-js/" style="font-size: 13px;">Node.js</a> <a href="../../../../tags/Python/" style="font-size: 13px;">Python</a> <a href="../../../../tags/TOMCAT/" style="font-size: 13px;">TOMCAT</a> <a href="../../../../tags/UI/" style="font-size: 13px;">UI</a> <a href="../../../../tags/VMware/" style="font-size: 13px;">VMware</a> <a href="../../../../tags/Wicket/" style="font-size: 13px;">Wicket</a> <a href="../../../../tags/coding/" style="font-size: 13px;">coding</a> <a href="../../../../tags/coding-net/" style="font-size: 13.22px;">coding.net</a> <a href="../../../../tags/css/" style="font-size: 13.33px;">css</a> <a href="../../../../tags/date/" style="font-size: 13px;">date</a> <a href="../../../../tags/debug/" style="font-size: 13px;">debug</a> <a href="../../../../tags/decorator/" style="font-size: 13px;">decorator</a> <a href="../../../../tags/eclipse/" style="font-size: 13px;">eclipse</a> <a href="../../../../tags/editor/" style="font-size: 13px;">editor</a> <a href="../../../../tags/equals/" style="font-size: 13px;">equals</a> <a href="../../../../tags/express/" style="font-size: 13px;">express</a> <a href="../../../../tags/git/" style="font-size: 13px;">git</a> <a href="../../../../tags/github/" style="font-size: 13.22px;">github</a> <a href="../../../../tags/gogs/" style="font-size: 13px;">gogs</a> <a href="../../../../tags/hexo/" style="font-size: 13px;">hexo</a> <a href="../../../../tags/https/" style="font-size: 13px;">https</a> <a href="../../../../tags/i18n/" style="font-size: 13px;">i18n</a> <a href="../../../../tags/ini/" style="font-size: 13px;">ini</a> <a href="../../../../tags/it/" style="font-size: 13.56px;">it</a> <a href="../../../../tags/jar/" style="font-size: 13px;">jar</a> <a href="../../../../tags/java/" style="font-size: 14px;">java</a> <a href="../../../../tags/javascript/" style="font-size: 13.22px;">javascript</a> <a href="../../../../tags/jdk/" style="font-size: 13px;">jdk</a> <a href="../../../../tags/jvm/" style="font-size: 13px;">jvm</a> <a href="../../../../tags/less/" style="font-size: 13px;">less</a> <a href="../../../../tags/linux/" style="font-size: 13.11px;">linux</a> <a href="../../../../tags/mac/" style="font-size: 13.22px;">mac</a> <a href="../../../../tags/macvim/" style="font-size: 13px;">macvim</a> <a href="../../../../tags/markdown/" style="font-size: 13px;">markdown</a> <a href="../../../../tags/maven/" style="font-size: 13.11px;">maven</a> <a href="../../../../tags/mediator/" style="font-size: 13px;">mediator</a> <a href="../../../../tags/nginx/" style="font-size: 13px;">nginx</a> <a href="../../../../tags/object/" style="font-size: 13px;">object</a> <a href="../../../../tags/observer/" style="font-size: 13px;">observer</a> <a href="../../../../tags/qcloud/" style="font-size: 13px;">qcloud</a> <a href="../../../../tags/rails/" style="font-size: 13px;">rails</a> <a href="../../../../tags/reflect/" style="font-size: 13px;">reflect</a> <a href="../../../../tags/remote/" style="font-size: 13px;">remote</a> <a href="../../../../tags/ssh/" style="font-size: 13px;">ssh</a> <a href="../../../../tags/ssl/" style="font-size: 13px;">ssl</a> <a href="../../../../tags/tomcat/" style="font-size: 13px;">tomcat</a> <a href="../../../../tags/travis/" style="font-size: 13.22px;">travis</a> <a href="../../../../tags/vim/" style="font-size: 13.11px;">vim</a> <a href="../../../../tags/web/" style="font-size: 13.11px;">web</a> <a href="../../../../tags/webjars/" style="font-size: 13.11px;">webjars</a> <a href="../../../../tags/wicket/" style="font-size: 13.11px;">wicket</a> <a href="../../../../tags/%E4%B8%8D%E8%AF%B4%E6%8A%80%E6%9C%AF/" style="font-size: 13.22px;">不说技术</a> <a href="../../../../tags/%E4%B8%AD%E4%BB%8B%E8%80%85/" style="font-size: 13px;">中介者</a> <a href="../../../../tags/%E5%81%87%E6%9C%9F/" style="font-size: 13px;">假期</a> <a href="../../../../tags/%E5%88%86%E5%B8%83%E5%BC%8F/" style="font-size: 13px;">分布式</a> <a href="../../../../tags/%E5%89%8D%E7%AB%AF/" style="font-size: 13.11px;">前端</a> <a href="../../../../tags/%E5%91%A8%E6%9C%AB/" style="font-size: 13.11px;">周末</a> <a href="../../../../tags/%E5%9B%BE%E5%83%8F/" style="font-size: 13.11px;">图像</a> <a href="../../../../tags/%E5%9B%BE%E7%89%87/" style="font-size: 13.11px;">图片</a> <a href="../../../../tags/%E5%A5%BD%E6%96%87/" style="font-size: 13px;">好文</a> <a href="../../../../tags/%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9/" style="font-size: 13px;">小知识点</a> <a href="../../../../tags/%E5%B7%A5%E4%BD%9C/" style="font-size: 13px;">工作</a> <a href="../../../../tags/%E5%BC%80%E5%8F%91/" style="font-size: 13px;">开发</a> <a href="../../../../tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 13px;">微服务</a> <a href="../../../../tags/%E5%BF%83%E6%83%85/" style="font-size: 13.11px;">心情</a> <a href="../../../../tags/%E6%8A%80%E6%9C%AF/" style="font-size: 13px;">技术</a> <a href="../../../../tags/%E6%95%99%E7%A8%8B/" style="font-size: 13px;">教程</a> <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 13px;">数据库</a> <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E6%9C%BA%E6%9E%84/" style="font-size: 13px;">数据机构</a> <a href="../../../../tags/%E6%96%87%E7%AB%A0/" style="font-size: 13px;">文章</a> <a href="../../../../tags/%E6%97%85%E8%A1%8C/" style="font-size: 13.22px;">旅行</a> <a href="../../../../tags/%E6%97%A0%E5%9B%BE/" style="font-size: 13px;">无图</a> <a href="../../../../tags/%E6%97%A5%E5%BF%97/" style="font-size: 13.89px;">日志</a> <a href="../../../../tags/%E6%97%A5%E8%AE%B0/" style="font-size: 13px;">日记</a> <a href="../../../../tags/%E6%9D%82%E4%BA%8B/" style="font-size: 13.78px;">杂事</a> <a href="../../../../tags/%E6%9D%82%E6%96%87/" style="font-size: 13px;">杂文</a> <a href="../../../../tags/%E6%9D%82%E8%B0%88/" style="font-size: 13px;">杂谈</a> <a href="../../../../tags/%E6%B2%B9%E6%BC%86%E5%B7%A5/" style="font-size: 13px;">油漆工</a> <a href="../../../../tags/%E6%B3%B0%E5%9B%BD/" style="font-size: 13.22px;">泰国</a> <a href="../../../../tags/%E7%94%9F%E6%B4%BB/" style="font-size: 13.22px;">生活</a> <a href="../../../../tags/%E7%94%B5%E5%BD%B1/" style="font-size: 13px;">电影</a> <a href="../../../../tags/%E7%BD%91%E7%BB%9C/" style="font-size: 13px;">网络</a> <a href="../../../../tags/%E8%80%81%E5%AE%B6/" style="font-size: 13.11px;">老家</a> <a href="../../../../tags/%E8%88%B6%E6%9D%A5%E5%93%81/" style="font-size: 13px;">舶来品</a> <a href="../../../../tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 13px;">虚拟机</a> <a href="../../../../tags/%E8%A7%82%E5%AF%9F%E8%80%85/" style="font-size: 13px;">观察者</a> <a href="../../../../tags/%E8%AE%B0%E5%BD%95/" style="font-size: 13px;">记录</a> <a href="../../../../tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.44px;">设计模式</a> <a href="../../../../tags/%E8%AF%B4%E7%82%B9%E5%95%A5/" style="font-size: 13px;">说点啥</a> <a href="../../../../tags/%E8%B7%91%E6%AD%A5/" style="font-size: 13px;">跑步</a> <a href="../../../../tags/%E8%BF%90%E5%8A%A8/" style="font-size: 13px;">运动</a> <a href="../../../../tags/%E9%A3%8E%E6%99%AF/" style="font-size: 13.33px;">风景</a> <a href="../../../../tags/%E9%AB%98%E6%95%B0%E4%B9%8B%E6%97%85/" style="font-size: 13px;">高数之旅</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2021/04/">April 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2021/02/">February 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/12/">December 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/11/">November 2020</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/02/">February 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/01/">January 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2019/10/">October 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2019/06/">June 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2019/03/">March 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2019/02/">February 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2017/08/">August 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2017/07/">July 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2017/06/">June 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2016/10/">October 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2016/03/">March 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2015/04/">April 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2015/02/">February 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2015/01/">January 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2014/08/">August 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2014/05/">May 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/12/">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/11/">November 2013</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/10/">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/08/">August 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/07/">July 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/06/">June 2013</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/05/">May 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/04/">April 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/03/">March 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/02/">February 2013</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2012/11/">November 2012</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2012/10/">October 2012</a><span class="archive-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="../../../../2021/04/13/%E8%AE%BA%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" class="title">论微分方程</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-04-13T11:48:20.000Z" itemprop="datePublished">2021-04-13</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="../../../../2021/04/13/mac%E4%B8%8A%E5%AE%89%E8%A3%85%E8%99%9A%E6%8B%9F%E6%9C%BA/" class="title">mac上安装虚拟机</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-04-13T11:12:31.000Z" itemprop="datePublished">2021-04-13</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="../../../../2021/04/13/%E5%BE%AE%E5%88%86%E4%B8%8E%E5%AF%BC%E6%95%B0%E7%9A%84%E5%8C%BA%E5%88%AB/" class="title">微分与导数的区别</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-04-13T09:35:17.000Z" itemprop="datePublished">2021-04-13</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="../../../../2021/04/13/%E5%BE%AE%E5%88%86%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88/" class="title">微分到底是什么</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-04-13T08:49:16.000Z" itemprop="datePublished">2021-04-13</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="../../../../2021/04/02/iOS%E3%80%81macOS%E7%B3%BB%E7%BB%9F%E5%BA%94%E7%94%A8%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/" class="title">iOS、macOS系统应用管理机制</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2021-04-02T03:46:15.000Z" itemprop="datePublished">2021-04-02</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-2020-01-18-time-protocol" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      时间协议
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="" class="article-date">
+	  <time datetime="2020-01-18T10:01:05.000Z" itemprop="datePublished">2020-01-18</time>
+	</a>
+</span>
+        
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="../../../../tags/%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9/" rel="tag">小知识点</a>, <a class="article-tag-link-link" href="../../../../tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="时间协议"><a href="#时间协议" class="headerlink" title="时间协议"></a>时间协议</h1><p>前两天在看Netty的hello world的时候，里面举了个例子—创建时间协议服务器。通过学习，才知道这个协议很老的，甚至已经被网络时间替代了。但是这个协议很简单，所以学习一下也无碍。</p>
 <h2 id="什么是时间协议"><a href="#什么是时间协议" class="headerlink" title="什么是时间协议"></a>什么是时间协议</h2><p>时间协议（英语：TIME protocol）是一个在RFC 868内定义的网络传输协议。它用作提供机器可读的日期时间信息。</p>
 <p>这是时间协议（Time Protocol）在<a target="_blank" rel="noopener" href="https://tools.ietf.org/html/rfc868">RFC868</a>上的定义（中文由我自己翻译的）：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line">                             Time Protocol</span><br><span class="line">                                时间协议</span><br><span class="line"></span><br><span class="line">This RFC specifies a standard for the ARPA Internet community.  Hosts on</span><br><span class="line">the ARPA Internet that choose to implement a Time Protocol are expected</span><br><span class="line">to adopt and implement this standard.</span><br><span class="line">这个RFC的标准给ARPA（美国国防部国防高等研究计划署）英特网定义的。在ARPA英特网上，</span><br><span class="line">要实现时间协议的主机，则希望采用并且实现这个标准。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">This protocol provides a site-independent, machine readable date and</span><br><span class="line">time.  The Time service sends back to the originating source the time in</span><br><span class="line">seconds since midnight on January first 1900.</span><br><span class="line">这个协议提供了一个独立的，机器可读的日期和时间。时间服务将回复给客户端一个从</span><br><span class="line">格林威治时间1900年1月1日开始计算，到请求时刻的总秒数。</span><br><span class="line"></span><br><span class="line">One motivation arises from the fact that not all systems have a</span><br><span class="line">date&#x2F;time clock, and all are subject to occasional human or machine</span><br><span class="line">error.  The use of time-servers makes it possible to quickly confirm or</span><br><span class="line">correct a system&#39;s idea of the time, by making a brief poll of several</span><br><span class="line">independent sites on the network.</span><br><span class="line">现实中，并不是所有的系统都有时间功能，而且偶尔会受到人为的或者机器错误的影响。</span><br><span class="line">那么时间服务器就可以快速地提供正确的时间来让其他系统确认，或者用来纠正时间，</span><br><span class="line">只需要在网络上简单地查询就可以。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">This protocol may be used either above the Transmission Control Protocol</span><br><span class="line">(TCP) or above the User Datagram Protocol (UDP).</span><br><span class="line">这个协议可以用在TCP和UDP协议上。</span><br><span class="line"></span><br><span class="line">When used via TCP the time service works as follows:</span><br><span class="line">当通过TCP协议使用时，时间服务器将执行以下步骤：</span><br><span class="line"></span><br><span class="line">   S: Listen on port 37 (45 octal).</span><br><span class="line">   服务端：监听37端口</span><br><span class="line"></span><br><span class="line">   U: Connect to port 37.</span><br><span class="line">   客户端：连接到37端口</span><br><span class="line"></span><br><span class="line">   S: Send the time as a 32 bit binary number.</span><br><span class="line">   服务端：发送32位二进制的时间</span><br><span class="line"></span><br><span class="line">   U: Receive the time.</span><br><span class="line">   客户端：接收到时间</span><br><span class="line"></span><br><span class="line">   U: Close the connection.</span><br><span class="line">   客户端：断开连接</span><br><span class="line"></span><br><span class="line">   S: Close the connection.</span><br><span class="line">   服务端：断开连接</span><br><span class="line"></span><br><span class="line">   The server listens for a connection on port 37.  When the connection</span><br><span class="line">   is established, the server returns a 32-bit time value and closes the</span><br><span class="line">   connection.  If the server is unable to determine the time at its</span><br><span class="line">   site, it should either refuse the connection or close it without</span><br><span class="line">   sending anything.</span><br><span class="line">   服务器监听端口37的连接。当连接建立，服务器将返回32位的时间值，然后关闭连接。</span><br><span class="line">   如果服务器无法确定时间，它需要拒绝连接，或者不发送任何信息，直接关闭连接。</span><br><span class="line"></span><br><span class="line">When used via UDP the time service works as follows:</span><br><span class="line">当通过UDP协议使用时，时间服务器将执行以下步骤：</span><br><span class="line"></span><br><span class="line">   S: Listen on port 37 (45 octal).</span><br><span class="line">   服务端：监听37端口</span><br><span class="line"></span><br><span class="line">   U: Send an empty datagram to port 37.</span><br><span class="line">   客户端：发送空数据报到37端口</span><br><span class="line"></span><br><span class="line">   S: Receive the empty datagram.</span><br><span class="line">   服务端：接受到空的数据报</span><br><span class="line"></span><br><span class="line">   S: Send a datagram containing the time as a 32 bit binary number.</span><br><span class="line">   服务端：发送32位二进制的时间的数据报</span><br><span class="line"></span><br><span class="line">   U: Receive the time datagram.</span><br><span class="line">   客户端：接收时间数据报</span><br><span class="line"></span><br><span class="line">   The server listens for a datagram on port 37.  When a datagram</span><br><span class="line">   arrives, the server returns a datagram containing the 32-bit time</span><br><span class="line">   value.  If the server is unable to determine the time at its site, it</span><br><span class="line">   should discard the arriving datagram and make no reply.</span><br><span class="line">   服务器用37端口监听数据报。当接收到数据报，服务器就返回包含32位二进制的时间的数据报。</span><br><span class="line">   如果服务器无法确定时间，则它应该丢弃接收到的数据报，不作回复。</span><br><span class="line"></span><br><span class="line">The Time</span><br><span class="line">时间</span><br><span class="line"></span><br><span class="line">The time is the number of seconds since 00:00 (midnight) 1 January 1900</span><br><span class="line">GMT, such that the time 1 is 12:00:01 am on 1 January 1900 GMT; this</span><br><span class="line">base will serve until the year 2036.</span><br><span class="line">这里的时间，时从格林威治时间1900年1月1日0点0分0秒开始计算，</span><br><span class="line">比如1就表示时格林威治时间1900年1月1日上午12点0分1秒；但是，这种计算方式到2036年将不再适用。</span><br><span class="line"></span><br><span class="line">For example:</span><br><span class="line">示例：</span><br><span class="line"></span><br><span class="line">   the time  2,208,988,800 corresponds to 00:00  1 Jan 1970 GMT,</span><br><span class="line"></span><br><span class="line">             2,398,291,200 corresponds to 00:00  1 Jan 1976 GMT,</span><br><span class="line"></span><br><span class="line">             2,524,521,600 corresponds to 00:00  1 Jan 1980 GMT,</span><br><span class="line"></span><br><span class="line">             2,629,584,000 corresponds to 00:00  1 May 1983 GMT,</span><br><span class="line"></span><br><span class="line">        and -1,297,728,000 corresponds to 00:00 17 Nov 1858 GMT.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -157,164 +394,229 @@
 
 <h3 id="Client"><a href="#Client" class="headerlink" title="Client"></a>Client</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TPClient</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> PORT = <span class="number">37</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> OFF_SET = <span class="number">2208988800L</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Long time = <span class="keyword">new</span> TPClient(<span class="string">&quot;localhost&quot;</span>).seekTime();</span><br><span class="line">        <span class="keyword">if</span> (time != <span class="keyword">null</span>) &#123;</span><br><span class="line">            System.out.println(<span class="keyword">new</span> Date((time - OFF_SET) * <span class="number">1000L</span>));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String host;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">TPClient</span><span class="params">(String host)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.host = host;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Long <span class="title">seekTime</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> (Socket socket = <span class="keyword">new</span> Socket(<span class="keyword">this</span>.host, PORT);</span><br><span class="line">            DataInputStream is = <span class="keyword">new</span> DataInputStream(socket.getInputStream())) &#123;</span><br><span class="line">            <span class="keyword">int</span> length = is.readInt();</span><br><span class="line">            <span class="keyword">byte</span>[] bytes = <span class="keyword">new</span> <span class="keyword">byte</span>[length];</span><br><span class="line">            is.readFully(bytes);</span><br><span class="line">            <span class="keyword">return</span> Long.valueOf(<span class="keyword">new</span> String(bytes));</span><br><span class="line">        &#125; <span class="keyword">catch</span> (UnknownHostException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-            </div>
-          
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2020/01/18/2020-01-18-time-protocol/" title="时间协议" target="_blank" rel="external">http://example.com/2020/01/18/2020-01-18-time-protocol/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
 
-    
-      <footer class="post-footer">
-        <div class="post-tags">
-          
-            <a href="../../../../tags/%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9/">小知识点</a>
-          
-            <a href="../../../../tags/%E7%BD%91%E7%BB%9C/">网络</a>
-          
-        </div>
 
-        
-        
-  <nav class="post-nav">
-    
-      <a class="prev" href="../../../02/12/2013-02-12-railsxue-xi-bi-ji/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">Rails学习笔记-11.2</span>
-        <span class="prev-text nav-mobile">Prev</span>
-      </a>
-    
-    
-      <a class="next" href="../../../../2019/10/23/2019-10-23-talk-spring-stereotype/">
-        <span class="next-text nav-default">聊聊Spring的stereotype注解</span>
-        <span class="prev-text nav-mobile">Next</span>
-        <i class="iconfont icon-right"></i>
-      </a>
-    
-  </nav>
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/Geisha-design" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="../../../../images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/Geisha-design" target="_blank"><span class="text-dark">截面樱🌸</span><small class="ml-1x">Web Developer &amp; Designer</small></a></h3>
+        <div>永恒之女性，引我等向上</div>
+      </div>
+    </figure>
+  </div>
+</div>
 
-        
-  <div class="comments" id="comments">
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="../../../02/12/2013-02-12-railsxue-xi-bi-ji/" title="Rails学习笔记-11.2"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="../../../../2019/10/23/2019-10-23-talk-spring-stereotype/" title="聊聊Spring的stereotype注解"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
     
   </div>
-
-
-      </footer>
-    
-  </article>
-
-    </div>
-
-      </div>
-
-      <footer id="colophon"><span class="copyright-year">
-    
-        &copy;
-    
-        2012 -
-    
-    2021
-    <span class="footer-author">齐雨争.</span>
-    <span class="power-by">
-        Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
-    </span>
-</span>
-
-      </footer>
-
-      <div class="back-to-top" id="back-to-top">
-        <i class="iconfont icon-up"></i>
-      </div>
-    </div>
-    
-    <div id="search-container" class="search-container">
-        <input type="hidden" id="algolia_index" value="<INDEX_NAME>"/>
-        <input type="hidden" id="algolia_app_id" value="<APP_ID>"/>
-        <input type="hidden" id="algolia_token" value="<API_KEY>"/>
-        <div class="section">
-            <div class="container">
-
-                <div class="panel">
-                    <div class="panel-heading">
-                        Search
-                        <a id="close" href="" style="float: right; color: #363636;">
-                            <i class="fas fa-times-circle" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                    <div class="panel-block">
-                        <div id="searchContainer" class="control has-icons-left">
-                            <input id="searchField" class="input" type="text" placeholder="Enter anything...">
-                            <span class="icon is-small is-left">
-            <i class="fas fa-search" aria-hidden="true"></i>
-          </span>
-                        </div>
-                    </div>
-                    <div id="result">
-
-                    </div>
-                </div>
-
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="../../../../images/donate/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
             </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="../../../../images/donate/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="../../../../https:/github.com/Geisha-design" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="../../../../http:/weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="../../../../https:/twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="../../../../https:/www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="../../../../atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
         </div>
     </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="../../../../js/plugin.min.js"></script>
+
+
+<script src="../../../../js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '../../../../content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="../../../../js/insight.js"></script>
 
 
 
+
+
+
+   
+
+
+
+
+   
     
-
-
-    
-
-
-
-
-  
-    <script type="text/javascript" src="../../../../lib/jquery/jquery-3.1.1.min.js"></script>
-  
-
-  
-
-    <script type="text/javascript" src="../../../../js/src/theme.js?v=1.1"></script>
-<script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
-
-    
-    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <script type="text/javascript" src="../../../../js/src/search.js"></script>
-
-
-  
-  <script type="application/ld+json">
-  {
-  "@context": "http://www.schema.org",
-  "@type": "Person",
-  "@id": "https://huangyijie.com/about/",
-  "name": "黄奕杰",
-  "alternateName": "Henry Huang",
-  "nationality": "中国",
-  "birthPlace" : {
-    "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-      "addressLocality": "汕头市",
-      "addressRegion": "广东省",
-          "addressCountry": "中国"
-    }
-  },
-  "gender": "Male",
-  "Description": "Software Engineer",
-  "disambiguatingDescription": "Full stack software engineer, focus on Java and JavaScript.",
-  "jobTitle": "Software Engineer",
-  "url": "https://huangyijie.com",
-  "image": "https://s.gravatar.com/avatar/4e0e61fdf1b2bcfb4ee31da27601fe6b?s=512&r=g",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "深圳市",
-    "addressRegion": "广东省",
-    "addressCountry": "中国"
-  },
-  "sameAs": [
-    "http://weibo.com/626242034",
-    "https://github.com/henryhuang",
-    "https://unsplash.com/@henryhh"
-    ]
-  }
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
   </script>
-  </body>
+
+     
+
+
+
+
+
+
+
+</body>
 </html>
