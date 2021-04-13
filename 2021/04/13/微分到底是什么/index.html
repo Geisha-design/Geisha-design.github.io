@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="微分到底是什么"/>
+
+
+
+
+
+
+
+
+    <link rel="alternate" href="../../../../default" title="截面樱" >
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.1"/>
+
+
+
+<link rel="canonical" href="http://example.com/2021/04/13/微分到底是什么/"/>
+
+
+<meta name="description" content="单变量微积分、线性代数的概念很多，我们的“带你学”系列：  “单变量微积分”（主要覆盖《高等数学同济版上》的内容） “线性代数”（主要覆盖《线性代数同济版》的内容）  通过通俗易懂的方式进行讲解，感兴趣可以加微信公众号“马同学图解数学”，然后在菜单“付费课程”中点击购买。 本文是付费课程“单变量微积分”中的一课，目前还在连载中，如果想了解更多的前置内容，可以先看下另外两篇前面章节的免费内容：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微分到底是什么">
+<meta property="og:url" content="http://example.com/2021/04/13/%E5%BE%AE%E5%88%86%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88/index.html">
+<meta property="og:site_name" content="截面樱">
+<meta property="og:description" content="单变量微积分、线性代数的概念很多，我们的“带你学”系列：  “单变量微积分”（主要覆盖《高等数学同济版上》的内容） “线性代数”（主要覆盖《线性代数同济版》的内容）  通过通俗易懂的方式进行讲解，感兴趣可以加微信公众号“马同学图解数学”，然后在菜单“付费课程”中点击购买。 本文是付费课程“单变量微积分”中的一课，目前还在连载中，如果想了解更多的前置内容，可以先看下另外两篇前面章节的免费内容：">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-1796b656d29ddebd0093f828f59b66f2_1440w.jpg?source=172ae18b">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-8a18b6f11f4d3fe637fe67ff89d6386b_r.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-275f27678e8133040ceb372b2d1ffbe2_r.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5CDelta+x">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-a3563c54cb05529fa15ec97f18fd84c0_r.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=f(x)=x%5E2">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5B0,a%5D,a+%3E+0">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-4b9ba3ea8946d68ceeaafcf6754d0a01_r.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5B0,a%5D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=n">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5CDelta+x=%5Cfrac%7Ba-0%7D%7Bn%7D=%5Cfrac%7Ba%7D%7Bn%7D">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-59a05ca213271957837a3942894152af_r.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5C%7Ba_i%5C%7D=%5Cleft%5C%7B%5Cfrac%7Ba%7D%7Bn%7D,+%5Cfrac%7B2a%7D%7Bn%7D,%5Ccdots,+%5Cfrac%7B(n-1)a%7D%7Bn%7D,+%5Cfrac%7Bna%7D%7Bn%7D%5Cright%5C%7D,i=1,2,%5Ccdots,n%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5CDelta+x=%5Cfrac%7Ba%7D%7Bn%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5C%7Ba_i%5C%7D=%5Cleft%5C%7B%5CDelta+x,+2%5CDelta+x,+%5Ccdots,+(n-1)%5CDelta+x,+n%5CDelta+x%5Cright%5C%7D%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5CDelta+x">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=f(a_i)">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-ed17e20d61a14f75444f6dfbc7da9282_r.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=f(a_i)%5CDelta+x">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=+%5Cbegin%7Baligned%7D+++++S_n+++++++++&=%5Csum_%7Bi=1%7D%5En+f(a_i)%5CDelta+x%5C%5C+++++++++%5C%5C+++++++++&=(%5CDelta+x)%5E2%5CDelta+x+(2%5CDelta+x)%5E2%5CDelta+x+%5Ccdots+%5B(n-1)%5CDelta+x%5D%5E2%5CDelta+x+(n%5CDelta+x)%5E2%5CDelta+x%5C%5C+++++++++%5C%5C+++++++++&=%5B1+2%5E2+%5Ccdots+(n-1)%5E2+n%5E2%5D(%5CDelta+x)%5E3+%5Cend%7Baligned%7D+%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=1+2%5E2+%5Ccdots+(n-1)%5E2+n%5E2=%5Cfrac%7Bn(n+1)(2n+1)%7D%7B6%7D%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=+%5Cbegin%7Baligned%7D+++++S_n+++++++++&=%5Cfrac%7Bn(n+1)(2n+1)%7D%7B6%7D(%5CDelta+x)%5E3%5C%5C+++++++++%5C%5C+++++++++&=%5Cleft(%5Cfrac%7B2n%5E3+3n%5E2+n%7D%7B6%7D%5Cright)(%5CDelta+x)%5E3+%5Cend%7Baligned%7D+%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5CDelta+x=%5Cfrac%7Ba%7D%7Bn%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=S_n=%5Csum_%7Bi=1%7D%5En+f(a_i)%5CDelta+x=a%5E3%5Cleft(%5Cfrac%7B1%7D%7B3%7D+%5Cfrac%7B1%7D%7B2n%7D+%5Cfrac%7B1%7D%7B6n%5E2%7D%5Cright)%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=n%5Cto%5Cinfty">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-2d74728e927833d859a0c0bc02b0e84e_b.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=S">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=+%5Cbegin%7Baligned%7D+++++S=%5Clim_%7Bn%5Cto%5Cinfty%7DS_n+++++++++&=%5Clim_%7Bn%5Cto%5Cinfty%7D%5Cleft%5Ba%5E3%5Cleft(%5Cfrac%7B1%7D%7B3%7D+%5Cfrac%7B1%7D%7B2n%7D+%5Cfrac%7B1%7D%7B6n%5E2%7D%5Cright)%5Cright%5D%5C%5C+++++++++%5C%5C+++++++++&=%5Cfrac%7B1%7D%7B3%7Da%5E3+%5Cend%7Baligned%7D%5C%5C">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-ba0c809545852173f0cb0f30f28c010d_1440w.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=n">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=a%5E3%5Cleft(%5Cfrac%7B1%7D%7B3%7D-%5Cunderbrace%7B%5Cfrac%7B1%7D%7B2n%7D+%5Cfrac%7B1%7D%7B6n%5E2%7D%7D_%7B%E5%8F%AF%E4%BB%A5%E5%BF%BD%E7%95%A5%7D%5Cright)=%5Cfrac%7B1%7D%7B3%7Da%5E3%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5B0,%5Cpi%5D">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-b747c520f8b5a72ba532e2892c898042_r.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-dc83d49413813be31e4caedacc161e8d_b.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-2cb5cb466a531a06d95c250ca3ca9ef8_b.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-1dd2d92a6e159627d25200d6597cc514_r.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ba,b%5D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=f(x)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=S">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-7e0317973fca0c3ed23ac6579ed43c7f_r.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ba,b%5D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=n">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5CDelta+x=%5Cfrac%7Ba-b%7D%7Bn%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5CDelta+x">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5CDelta+S_i">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-908bf0755b3b888f45beadefbbd0f973_r.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=S=%5Csum_%7Bi=1%7D%5En+%5CDelta+S_i%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5CDelta+S">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-5bd694ab4694b7ae5149e127a77ac77a_r.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5CDelta+x">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=f(x_0)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ctextrm%7Bd%7DS">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-fcc65f80a6db3fe158d03c6cee502bc2_r.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5CDelta+x%5Cto+0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5CDelta+S">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ctextrm%7Bd%7DS">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-50cc14e4f9b03cf887e9ea0ed8dfd46c_r.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=+%5Clim_%7B%5CDelta+x%5Cto+0%7D%5CDelta+S=0=%5Clim_%7B%5CDelta+x%5Cto+0%7D%5Ctextrm%7Bd%7DS+%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5CDelta+S">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ctextrm%7Bd%7DS">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-2480480a27db5c145c840c61990cefe5_r.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%E5%BE%AE%E5%88%86%5Capprox+%E5%B7%AE%E5%88%86%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5CDelta+x=%5Cfrac%7Ba-b%7D%7Bn%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5CDelta+x%5Cto+0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=n%5Cto%5Cinfty">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=S=%5Clim_%7B%5CDelta+x%5Cto+0%7D%5Csum_%7Bi=1%7D%5En+%5Ctextrm%7Bd%7DS_i%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ctextrm%7Bd%7DS_i">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5CDelta+S_i">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=+%5Cbegin%7Barray%7D%7Bc%7Cc%7D+++++%5Chline+++++%5Cquad%5Cquad&%5Cquad%5Ccolor%7Bblue%7D%7B%E5%B7%AE%E5%88%86%7D%5Cquad&%5Cquad%5Ccolor%7Borange%7D%7B%E5%BE%AE%E5%88%86%7D%5Cquad+%5C%5C+++++%5Chline+%5C%5C+++++%5Cquad%E7%AC%A6%E5%8F%B7+%5Cquad&%5Cquad+%5CDelta+S+%5Cquad&%5Cquad+%5Ctextrm%7Bd%7DS%5Cquad%5C%5C++++++%5Cquad%E6%B1%82%E5%92%8C+%5Cquad&%5Cquad+%5Cdisplaystyle+S=%5Csum_%7Bi=1%7D%5En+%5CDelta+S_i+%5Cquad&%5Cquad+%5Cdisplaystyle++S=%5Clim_%7B%5CDelta+x%5Cto+0%7D%5Csum_%7Bi=1%7D%5En+%5Ctextrm%7Bd%7DS_i%5Cquad%5C%5C+++++%5C%5C%5Chline+%5Cend%7Barray%7D+%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=S">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-4d871334cb29946b1748136448c5794e_r.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=n">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-981eea345692069b0a67ed787663d442_r.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-86c903f72b50af1f07012bfb8f325405_r.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-d6cb661250d8b04d649fa082c7651588_r.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=n">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-5ec44b658b088cd55e65509f92675ea0_r.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-60af822987419816cfb37e1d54a7da91_r.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-0620c1efc29be818af69edcab853f708_b.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=+%E7%A7%AF%E5%88%86=%5Clim%5Csum+%E5%BE%AE%E5%88%86%5C%5C">
+<meta property="article:published_time" content="2021-04-13T08:49:16.000Z">
+<meta property="article:modified_time" content="2021-04-13T08:49:25.513Z">
+<meta property="article:author" content="截面樱">
+<meta property="article:tag" content="java leetcode mysql hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic1.zhimg.com/v2-1796b656d29ddebd0093f828f59b66f2_1440w.jpg?source=172ae18b">
+
+
+<link rel="stylesheet" type="text/css" href="../../../../css/style.css?v=1.1"/>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    <title> 微分到底是什么 - 截面樱 </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="../../../../." class="logo">截面樱</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                Unsplash
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        
+    </nav>
+
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          微分到底是什么
+        
+      </h1>
+
+      <time class="post-time">
+          Apr 13 2021
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p><img src="https://pic1.zhimg.com/v2-1796b656d29ddebd0093f828f59b66f2_1440w.jpg?source=172ae18b" alt="微分是什么？"></p>
+<p>单变量微积分、线性代数的概念很多，我们的“带你学”系列：</p>
+<ul>
+<li>“单变量微积分”（主要覆盖《高等数学同济版上》的内容）</li>
+<li>“线性代数”（主要覆盖《线性代数同济版》的内容）</li>
+</ul>
+<p>通过通俗易懂的方式进行讲解，感兴趣可以加微信公众号“马同学图解数学”，然后在菜单“付费课程”中点击购买。</p>
+<p>本文是付费课程“单变量微积分”中的一课，目前还在连载中，如果想了解更多的前置内容，可以先看下另外两篇前面章节的免费内容：</p>
+<ul>
+<li><a href="https://link.zhihu.com/?target=https://www.matongxue.com/madocs/845">微积分是什么？</a></li>
+<li><a href="https://link.zhihu.com/?target=https://www.matongxue.com/madocs/851">柯西的数列极限</a></li>
+</ul>
+<p>最开始我们就提到了，曲线下微小的矩形是“微分”：</p>
+<p><img src="https://pic4.zhimg.com/v2-8a18b6f11f4d3fe637fe67ff89d6386b_r.jpg" alt="img"></p>
+<p>把这些“微分”加起来就是“积分”，就可以得到曲线下的面积：</p>
+<p><img src="https://pic3.zhimg.com/v2-275f27678e8133040ceb372b2d1ffbe2_r.jpg" alt="img"></p>
+<p>上一章定义了极限，解决了微积分中的第一个问题，什么是“<img src="https://www.zhihu.com/equation?tex=%5CDelta+x" alt="[公式]"> 无限接近0”：</p>
+<p><img src="https://pic1.zhimg.com/v2-a3563c54cb05529fa15ec97f18fd84c0_r.jpg" alt="img"></p>
+<p>下面我们开始研究数学上什么是“微分”，怎么把“微分”加起来完成“积分”。</p>
+<p><strong>1 积分</strong></p>
+<p>比如要求<img src="https://www.zhihu.com/equation?tex=f(x)=x%5E2" alt="[公式]"> ，在<img src="https://www.zhihu.com/equation?tex=%5B0,a%5D,a+%3E+0" alt="[公式]"> 下的面积：</p>
+<p><img src="https://pic2.zhimg.com/v2-4b9ba3ea8946d68ceeaafcf6754d0a01_r.jpg" alt="img"></p>
+<p>把<img src="https://www.zhihu.com/equation?tex=%5B0,a%5D" alt="[公式]"> 平均分成<img src="https://www.zhihu.com/equation?tex=n" alt="[公式]"> 份，每份长为<img src="https://www.zhihu.com/equation?tex=%5CDelta+x=%5Cfrac%7Ba-0%7D%7Bn%7D=%5Cfrac%7Ba%7D%7Bn%7D" alt="[公式]"> ：</p>
+<p><img src="https://pic4.zhimg.com/v2-59a05ca213271957837a3942894152af_r.jpg" alt="img"></p>
+<p>这些点的坐标是这么一个数列（把<img src="https://www.zhihu.com/equation?tex=0" alt="[公式]"> 点去掉）：</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5C%7Ba_i%5C%7D=%5Cleft%5C%7B%5Cfrac%7Ba%7D%7Bn%7D,+%5Cfrac%7B2a%7D%7Bn%7D,%5Ccdots,+%5Cfrac%7B(n-1)a%7D%7Bn%7D,+%5Cfrac%7Bna%7D%7Bn%7D%5Cright%5C%7D,i=1,2,%5Ccdots,n%5C%5C" alt="[公式]"></p>
+<p>点之间的间隔为<img src="https://www.zhihu.com/equation?tex=%5CDelta+x=%5Cfrac%7Ba%7D%7Bn%7D" alt="[公式]"> ，所以上述数列可以简写为：</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5C%7Ba_i%5C%7D=%5Cleft%5C%7B%5CDelta+x,+2%5CDelta+x,+%5Ccdots,+(n-1)%5CDelta+x,+n%5CDelta+x%5Cright%5C%7D%5C%5C" alt="[公式]"></p>
+<p>以这些坐标为终点，宽为<img src="https://www.zhihu.com/equation?tex=%5CDelta+x" alt="[公式]"> ，高为<img src="https://www.zhihu.com/equation?tex=f(a_i)" alt="[公式]"> 作矩形：</p>
+<p><img src="https://pic3.zhimg.com/v2-ed17e20d61a14f75444f6dfbc7da9282_r.jpg" alt="img"></p>
+<p>每个矩形面积为<img src="https://www.zhihu.com/equation?tex=f(a_i)%5CDelta+x" alt="[公式]"> ，它们的面积和为：</p>
+<p><img src="https://www.zhihu.com/equation?tex=+%5Cbegin%7Baligned%7D+++++S_n+++++++++&=%5Csum_%7Bi=1%7D%5En+f(a_i)%5CDelta+x%5C%5C+++++++++%5C%5C+++++++++&=(%5CDelta+x)%5E2%5CDelta+x+(2%5CDelta+x)%5E2%5CDelta+x+%5Ccdots+%5B(n-1)%5CDelta+x%5D%5E2%5CDelta+x+(n%5CDelta+x)%5E2%5CDelta+x%5C%5C+++++++++%5C%5C+++++++++&=%5B1+2%5E2+%5Ccdots+(n-1)%5E2+n%5E2%5D(%5CDelta+x)%5E3+%5Cend%7Baligned%7D+%5C%5C" alt="[公式]"></p>
+<p>已知其中的级数：</p>
+<p><img src="https://www.zhihu.com/equation?tex=1+2%5E2+%5Ccdots+(n-1)%5E2+n%5E2=%5Cfrac%7Bn(n+1)(2n+1)%7D%7B6%7D%5C%5C" alt="[公式]"></p>
+<p>所以上面的式子继续算下去：</p>
+<p><img src="https://www.zhihu.com/equation?tex=+%5Cbegin%7Baligned%7D+++++S_n+++++++++&=%5Cfrac%7Bn(n+1)(2n+1)%7D%7B6%7D(%5CDelta+x)%5E3%5C%5C+++++++++%5C%5C+++++++++&=%5Cleft(%5Cfrac%7B2n%5E3+3n%5E2+n%7D%7B6%7D%5Cright)(%5CDelta+x)%5E3+%5Cend%7Baligned%7D+%5C%5C" alt="[公式]"></p>
+<p>因为<img src="https://www.zhihu.com/equation?tex=%5CDelta+x=%5Cfrac%7Ba%7D%7Bn%7D" alt="[公式]"> ，代入上式可得：</p>
+<p><img src="https://www.zhihu.com/equation?tex=S_n=%5Csum_%7Bi=1%7D%5En+f(a_i)%5CDelta+x=a%5E3%5Cleft(%5Cfrac%7B1%7D%7B3%7D+%5Cfrac%7B1%7D%7B2n%7D+%5Cfrac%7B1%7D%7B6n%5E2%7D%5Cright)%5C%5C" alt="[公式]"></p>
+<p>当<img src="https://www.zhihu.com/equation?tex=n%5Cto%5Cinfty" alt="[公式]"> 的时候，矩形面积和就是曲面下的面积：</p>
+<p><img src="https://pic3.zhimg.com/v2-2d74728e927833d859a0c0bc02b0e84e_b.jpg" alt="img"></p>
+<p>从数学上就是，曲面下面积<img src="https://www.zhihu.com/equation?tex=S" alt="[公式]"> 为：</p>
+<p><img src="https://www.zhihu.com/equation?tex=+%5Cbegin%7Baligned%7D+++++S=%5Clim_%7Bn%5Cto%5Cinfty%7DS_n+++++++++&=%5Clim_%7Bn%5Cto%5Cinfty%7D%5Cleft%5Ba%5E3%5Cleft(%5Cfrac%7B1%7D%7B3%7D+%5Cfrac%7B1%7D%7B2n%7D+%5Cfrac%7B1%7D%7B6n%5E2%7D%5Cright)%5Cright%5D%5C%5C+++++++++%5C%5C+++++++++&=%5Cfrac%7B1%7D%7B3%7Da%5E3+%5Cend%7Baligned%7D%5C%5C" alt="[公式]"></p>
+<p>在极限的帮助下，算出了曲面下的面积。</p>
+<p><strong>2 新的开始</strong></p>
+<p>既然得到了曲面下的面积了，是不是微积分课程完了？并没有，实际上刚刚开始。</p>
+<p><strong>2.1 计算复杂</strong></p>
+<p>上述计算方法早在微积分这门学科正式成立之前就有了。</p>
+<p><img src="https://pic2.zhimg.com/80/v2-ba0c809545852173f0cb0f30f28c010d_1440w.jpg" alt="img"></p>
+<p>博纳文图拉·弗兰切斯科·卡瓦列里（1598 －1647），意大利几何学家。在他的著作中就提到了上面这个求解方法，那时候还没有极限，他是直觉地认为当<img src="https://www.zhihu.com/equation?tex=n" alt="[公式]"> 足够大时：</p>
+<p><img src="https://www.zhihu.com/equation?tex=a%5E3%5Cleft(%5Cfrac%7B1%7D%7B3%7D-%5Cunderbrace%7B%5Cfrac%7B1%7D%7B2n%7D+%5Cfrac%7B1%7D%7B6n%5E2%7D%7D_%7B%E5%8F%AF%E4%BB%A5%E5%BF%BD%E7%95%A5%7D%5Cright)=%5Cfrac%7B1%7D%7B3%7Da%5E3%5C%5C" alt="[公式]"></p>
+<p>这种计算方法简单粗暴，比如，想求正弦函数曲线下<img src="https://www.zhihu.com/equation?tex=%5B0,%5Cpi%5D" alt="[公式]"> 之间的面积，也可以通过矩形和来计算，但是计算起来并不简单（详细计算步骤可以查看<a href="https://link.zhihu.com/?target=https://www.matongxue.com/madocs/847/">这里</a>）：</p>
+<p><img src="https://pic3.zhimg.com/v2-b747c520f8b5a72ba532e2892c898042_r.jpg" alt="img"></p>
+<p>把矩形面积加起来就需要计算级数（级数就是数列的和），但级数的计算往往很复杂。</p>
+<p>欧拉就是一个级数计算大师，当时很多数学家求“积分”时，算不出级数就向欧拉求救，所以有句话是这么说的：“欧拉，他是所有人的老师”（出自另外一位数学家拉普拉斯之口）。</p>
+<p><strong>2.2 不够抽象</strong></p>
+<p>之前说了，可以用内接多边形来逼近圆的面积：</p>
+<p><img src="https://pic2.zhimg.com/v2-dc83d49413813be31e4caedacc161e8d_b.jpg" alt="img"></p>
+<p>也可以换个思路，用小三角形的和来逼近圆的面积：</p>
+<p><img src="https://pic1.zhimg.com/v2-2cb5cb466a531a06d95c250ca3ca9ef8_b.jpg" alt="img"></p>
+<p>“圆内小三角形的和”与“曲线下的矩形和”看起来异曲同工，但毕竟三角形和矩形还是不一样，能否把这两者统一起来？</p>
+<p>还有，能不能用微积分来计算一段曲线的长度（马上就可以看到如何去做）：</p>
+<p><img src="https://pic1.zhimg.com/v2-1dd2d92a6e159627d25200d6597cc514_r.jpg" alt="img"></p>
+<p>例子可能举得还不够好、不够多，但可以看出目前所学的微积分还不够抽象，不足以解决更多问题。</p>
+<p><strong>2.3 小结</strong></p>
+<p>不管是为了计算更加简便，还是为了扩大微积分的应用范围，我们都需要开始新的学习。</p>
+<p><strong>3 微分</strong></p>
+<p>不管为了计算的便利性，还是覆盖更多的应用场景，都需要把“微分”这个概念抽象出来。</p>
+<p><strong>3.1 矩形微分</strong></p>
+<p>比如，想求<img src="https://www.zhihu.com/equation?tex=%5Ba,b%5D" alt="[公式]"> 区间内<img src="https://www.zhihu.com/equation?tex=f(x)" alt="[公式]"> 曲线下的面积<img src="https://www.zhihu.com/equation?tex=S" alt="[公式]"> ：</p>
+<p><img src="https://pic4.zhimg.com/v2-7e0317973fca0c3ed23ac6579ed43c7f_r.jpg" alt="img"></p>
+<p>把<img src="https://www.zhihu.com/equation?tex=%5Ba,b%5D" alt="[公式]"> 平均分成<img src="https://www.zhihu.com/equation?tex=n" alt="[公式]"> 份，每份长为<img src="https://www.zhihu.com/equation?tex=%5CDelta+x=%5Cfrac%7Ba-b%7D%7Bn%7D" alt="[公式]"> ，每个<img src="https://www.zhihu.com/equation?tex=%5CDelta+x" alt="[公式]"> 对应一个<img src="https://www.zhihu.com/equation?tex=%5CDelta+S_i" alt="[公式]"> ：</p>
+<p><img src="https://pic4.zhimg.com/v2-908bf0755b3b888f45beadefbbd0f973_r.jpg" alt="img"></p>
+<p>很显然：</p>
+<p><img src="https://www.zhihu.com/equation?tex=S=%5Csum_%7Bi=1%7D%5En+%5CDelta+S_i%5C%5C" alt="[公式]"></p>
+<p>从里面随便选一份，为了表示一般性，其面积记为<img src="https://www.zhihu.com/equation?tex=%5CDelta+S" alt="[公式]"> ：</p>
+<p><img src="https://pic3.zhimg.com/v2-5bd694ab4694b7ae5149e127a77ac77a_r.jpg" alt="img"></p>
+<p>在同样的位置，以<img src="https://www.zhihu.com/equation?tex=%5CDelta+x" alt="[公式]"> 为底、<img src="https://www.zhihu.com/equation?tex=f(x_0)" alt="[公式]"> 为高作矩形，其面积记为<img src="https://www.zhihu.com/equation?tex=%5Ctextrm%7Bd%7DS" alt="[公式]"> ：</p>
+<p><img src="https://pic3.zhimg.com/v2-fcc65f80a6db3fe158d03c6cee502bc2_r.jpg" alt="img"></p>
+<p>很显然，随着<img src="https://www.zhihu.com/equation?tex=%5CDelta+x%5Cto+0" alt="[公式]"> ，<img src="https://www.zhihu.com/equation?tex=%5CDelta+S" alt="[公式]"> 与<img src="https://www.zhihu.com/equation?tex=%5Ctextrm%7Bd%7DS" alt="[公式]"> 会无限接近：</p>
+<p><img src="https://pic1.zhimg.com/v2-50cc14e4f9b03cf887e9ea0ed8dfd46c_r.jpg" alt="img"></p>
+<p>实际上两者都是无穷小：</p>
+<p><img src="https://www.zhihu.com/equation?tex=+%5Clim_%7B%5CDelta+x%5Cto+0%7D%5CDelta+S=0=%5Clim_%7B%5CDelta+x%5Cto+0%7D%5Ctextrm%7Bd%7DS+%5C%5C" alt="[公式]"></p>
+<p><img src="https://www.zhihu.com/equation?tex=%5CDelta+S" alt="[公式]"> 与<img src="https://www.zhihu.com/equation?tex=%5Ctextrm%7Bd%7DS" alt="[公式]"> 有各自的名字（命名的来由可以查看<a href="https://link.zhihu.com/?target=https://www.matongxue.com/madocs/847/">这里</a>）：</p>
+<p><img src="https://pic2.zhimg.com/v2-2480480a27db5c145c840c61990cefe5_r.jpg" alt="img"></p>
+<p>“微分”是对“差分”的近似，以“直”代“曲”（“微分”就是“直”，“差分”就是“曲”），也叫做线性近似：</p>
+<p><img src="https://www.zhihu.com/equation?tex=%E5%BE%AE%E5%88%86%5Capprox+%E5%B7%AE%E5%88%86%5C%5C" alt="[公式]"></p>
+<p>在极限下有（因为<img src="https://www.zhihu.com/equation?tex=%5CDelta+x=%5Cfrac%7Ba-b%7D%7Bn%7D" alt="[公式]"> ，所以<img src="https://www.zhihu.com/equation?tex=%5CDelta+x%5Cto+0" alt="[公式]"> 相当于<img src="https://www.zhihu.com/equation?tex=n%5Cto%5Cinfty" alt="[公式]"> ）：</p>
+<p><img src="https://www.zhihu.com/equation?tex=S=%5Clim_%7B%5CDelta+x%5Cto+0%7D%5Csum_%7Bi=1%7D%5En+%5Ctextrm%7Bd%7DS_i%5C%5C" alt="[公式]"></p>
+<p>其中，<img src="https://www.zhihu.com/equation?tex=%5Ctextrm%7Bd%7DS_i" alt="[公式]"> 对应之前的<img src="https://www.zhihu.com/equation?tex=%5CDelta+S_i" alt="[公式]"> 。</p>
+<p>稍微总结下：</p>
+<p><img src="https://www.zhihu.com/equation?tex=+%5Cbegin%7Barray%7D%7Bc%7Cc%7D+++++%5Chline+++++%5Cquad%5Cquad&%5Cquad%5Ccolor%7Bblue%7D%7B%E5%B7%AE%E5%88%86%7D%5Cquad&%5Cquad%5Ccolor%7Borange%7D%7B%E5%BE%AE%E5%88%86%7D%5Cquad+%5C%5C+++++%5Chline+%5C%5C+++++%5Cquad%E7%AC%A6%E5%8F%B7+%5Cquad&%5Cquad+%5CDelta+S+%5Cquad&%5Cquad+%5Ctextrm%7Bd%7DS%5Cquad%5C%5C++++++%5Cquad%E6%B1%82%E5%92%8C+%5Cquad&%5Cquad+%5Cdisplaystyle+S=%5Csum_%7Bi=1%7D%5En+%5CDelta+S_i+%5Cquad&%5Cquad+%5Cdisplaystyle++S=%5Clim_%7B%5CDelta+x%5Cto+0%7D%5Csum_%7Bi=1%7D%5En+%5Ctextrm%7Bd%7DS_i%5Cquad%5C%5C+++++%5C%5C%5Chline+%5Cend%7Barray%7D+%5C%5C" alt="[公式]"></p>
+<p><strong>3.2 三角形微分</strong></p>
+<p>要求圆的面积<img src="https://www.zhihu.com/equation?tex=S" alt="[公式]"> ：</p>
+<p><img src="https://pic3.zhimg.com/v2-4d871334cb29946b1748136448c5794e_r.jpg" alt="img"></p>
+<p>同样的可以把它均分为<img src="https://www.zhihu.com/equation?tex=n" alt="[公式]"> 个扇形：</p>
+<p><img src="https://pic3.zhimg.com/v2-981eea345692069b0a67ed787663d442_r.jpg" alt="img"></p>
+<p>很显然，也可以用三角形去近似这些扇形：</p>
+<p><img src="https://pic2.zhimg.com/v2-86c903f72b50af1f07012bfb8f325405_r.jpg" alt="img"></p>
+<p>这里，小扇形就是“差分”，小三角形就是“微分”，以三角形的“直”去代替扇形的“曲”。</p>
+<p><strong>3.3 切线微分</strong></p>
+<p>要求这条曲线的长度：</p>
+<p><img src="https://pic1.zhimg.com/v2-d6cb661250d8b04d649fa082c7651588_r.jpg" alt="img"></p>
+<p>可以把它均分为<img src="https://www.zhihu.com/equation?tex=n" alt="[公式]"> 个曲线段：</p>
+<p><img src="https://pic1.zhimg.com/v2-5ec44b658b088cd55e65509f92675ea0_r.jpg" alt="img"></p>
+<p>也可以用切线段（切线之后就会介绍）来近似这些曲线段：</p>
+<p><img src="https://pic2.zhimg.com/v2-60af822987419816cfb37e1d54a7da91_r.jpg" alt="img"></p>
+<p>划分细点的话，更容易看出两者的相似性：</p>
+<p><img src="https://pic1.zhimg.com/v2-0620c1efc29be818af69edcab853f708_b.jpg" alt="img"></p>
+<p>这里，曲线段就是“差分”，切线段就是“微分”，以切线段的“直”去代替曲线段的“曲”。</p>
+<p><strong>3.4 小结</strong></p>
+<p>“微分”是“差分”的线性近似，是对“以直代曲”思想的数学表达。</p>
+<p>有了“微分”之后，上述几种“积分”（包括面积、曲线长度等）就可以统一表示为：</p>
+<p><img src="https://www.zhihu.com/equation?tex=+%E7%A7%AF%E5%88%86=%5Clim%5Csum+%E5%BE%AE%E5%88%86%5C%5C" alt="[公式]"></p>
+<p>上述几种“微分”的严格定义不尽相同，这里暂不给出，后面不断完善。</p>
+
+            </div>
+          
+
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2012 -
+    
+    2021
+    <span class="footer-author">截面樱.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="../../../../lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="../../../../js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
+
+    
+
+  
+  <script type="application/ld+json">
+  {
+  "@context": "http://www.schema.org",
+  "@type": "Person",
+  "@id": "https://huangyijie.com/about/",
+  "name": "黄奕杰",
+  "alternateName": "Henry Huang",
+  "nationality": "中国",
+  "birthPlace" : {
+    "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+      "addressLocality": "汕头市",
+      "addressRegion": "广东省",
+          "addressCountry": "中国"
+    }
+  },
+  "gender": "Male",
+  "Description": "Software Engineer",
+  "disambiguatingDescription": "Full stack software engineer, focus on Java and JavaScript.",
+  "jobTitle": "Software Engineer",
+  "url": "https://huangyijie.com",
+  "image": "https://s.gravatar.com/avatar/4e0e61fdf1b2bcfb4ee31da27601fe6b?s=512&r=g",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "深圳市",
+    "addressRegion": "广东省",
+    "addressCountry": "中国"
+  },
+  "sameAs": [
+    "http://weibo.com/626242034",
+    "https://github.com/henryhuang",
+    "https://unsplash.com/@henryhh"
+    ]
+  }
+  </script>
+  </body>
+</html>
