@@ -1,24 +1,41 @@
 <!DOCTYPE html>
-<html lang=en>
-<head>
-  <meta charset="utf-8">
-  
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="renderer" content="webkit">
-  <meta http-equiv="Cache-Control" content="no-transform" />
-  <meta http-equiv="Cache-Control" content="no-siteapp" />
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="format-detection" content="telephone=no,email=no,adress=no">
-  <!-- Color theme for statusbar -->
-  <meta name="theme-color" content="#000000" />
-  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
-  <meta http-equiv="window-target" content="_top" />
-  
-  
-  <title>&lt;简述微服务设计&gt; | Hexo</title>
-  <meta name="description" content="一文详解微服务架构本文将介绍微服务架构和相关的组件，介绍他们是什么以及为什么要使用微服务架构和这些组件。本文侧重于简明地表达微服务架构的全局图景，因此不会涉及具体如何使用组件等细节。要理解微服务，首先要先理解不是微服务的那些。通常跟微服务相对的是单体应用，即将所有功能都打包成在一个独立单元的应用程序。从单体应用到微服务并不是一蹴而就的，这是一个逐渐演变的过程。本文将以一个网上超市应用为例来说明这一">
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="<简述微服务设计>"/>
+
+
+
+
+  <meta name="keywords" content="微服务," />
+
+
+
+
+
+    <link rel="alternate" href="../../../../default" title="齐雨争" >
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.1"/>
+
+
+
+<link rel="canonical" href="http://example.com/2020/12/07/简述微服务设计/"/>
+
+
+<meta name="description" content="一文详解微服务架构本文将介绍微服务架构和相关的组件，介绍他们是什么以及为什么要使用微服务架构和这些组件。本文侧重于简明地表达微服务架构的全局图景，因此不会涉及具体如何使用组件等细节。要理解微服务，首先要先理解不是微服务的那些。通常跟微服务相对的是单体应用，即将所有功能都打包成在一个独立单元的应用程序。从单体应用到微服务并不是一蹴而就的，这是一个逐渐演变的过程。本文将以一个网上超市应用为例来说明这一">
 <meta property="og:type" content="article">
 <meta property="og:title" content="&lt;简述微服务设计&gt;">
 <meta property="og:url" content="http://example.com/2020/12/07/%E7%AE%80%E8%BF%B0%E5%BE%AE%E6%9C%8D%E5%8A%A1%E8%AE%BE%E8%AE%A1/index.html">
@@ -114,588 +131,267 @@
 <meta property="article:tag" content="微服务">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://pic2.zhimg.com/50/v2-72023eb73961d33d560cd4419f803103_hd.jpg?source=1940ef5c">
-  <!-- Canonical links -->
-  <link rel="canonical" href="http://example.com/2020/12/07/%E7%AE%80%E8%BF%B0%E5%BE%AE%E6%9C%8D%E5%8A%A1%E8%AE%BE%E8%AE%A1/index.html">
-  
-    <link rel="alternate" href="/atom.xml" title="齐雨争" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png" type="image/x-icon">
-  
-  
-<link rel="stylesheet" href="../../../../css/style.css">
-
-  
-  
-  
-  
-<meta name="generator" content="Hexo 5.4.0"></head>
 
 
-<body class="main-center theme-purple" itemscope itemtype="http://schema.org/WebPage">
-  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-  <div class="slimContent">
-    <div class="navbar-header">
-      
-      
-      <div class="profile-block text-center">
-        <a id="avatar" href="https://github.com/Geisha-design" target="_blank">
-          <img class="img-circle img-rotate" src="../../../../images/avatar.jpg" width="200" height="200">
-        </a>
-        <h2 id="name" class="hidden-xs hidden-sm">截面樱🌸</h2>
-        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Web Developer &amp; Designer</h3>
-        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> zhejiang, China</small>
-      </div>
-      
-      <div class="search" id="search-form-wrap">
-
-    <form class="search-form sidebar-form">
-        <div class="input-group">
-            <input type="text" class="search-form-input form-control" placeholder="Search" />
-            <span class="input-group-btn">
-                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
-            </span>
-        </div>
-    </form>
-    <div class="ins-search">
-  <div class="ins-search-mask"></div>
-  <div class="ins-search-container">
-    <div class="ins-input-wrapper">
-      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
-      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-    </div>
-    <div class="ins-section-wrapper">
-      <div class="ins-section-container"></div>
-    </div>
-  </div>
-</div>
+<link rel="stylesheet" type="text/css" href="../../../../css/style.css?v=1.1"/>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
 
 
-</div>
-      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
-      <ul class="nav navbar-nav main-nav menu-highlight">
-        
-        
-        <li class="menu-item menu-item-home">
-          <a href="../../../../.">
-            
-            <i class="icon icon-home-fill"></i>
-            
-            <span class="menu-title">Home</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-archives">
-          <a href="../../../../%E5%BD%92%E6%A1%A3">
-            
-            <i class="icon icon-archives-fill"></i>
-            
-            <span class="menu-title">Archives</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-categories">
-          <a href="../../../../%E5%88%86%E7%B1%BB">
-            
-            <i class="icon icon-folder"></i>
-            
-            <span class="menu-title">Categories</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-tags">
-          <a href="../../../../%E6%A0%87%E7%AD%BE">
-            
-            <i class="icon icon-tags"></i>
-            
-            <span class="menu-title">Tags</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-repository">
-          <a href="../../../../%E9%A1%B9%E7%9B%AEy">
-            
-            <i class="icon icon-project"></i>
-            
-            <span class="menu-title">Repository</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-books">
-          <a href="../../../../%E9%98%85%E8%AF%BB">
-            
-            <i class="icon icon-book-fill"></i>
-            
-            <span class="menu-title">Books</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-links">
-          <a href="../../../../%E5%8F%8B%E9%93%BE">
-            
-            <i class="icon icon-friendship"></i>
-            
-            <span class="menu-title">Links</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-about">
-          <a href="../../../../%E5%85%B3%E4%BA%8E">
-            
-            <i class="icon icon-cup-fill"></i>
-            
-            <span class="menu-title">About</span>
-          </a>
-        </li>
-        
-      </ul>
-      
-	
-    <ul class="social-links">
-    	
-        <li><a href="../../../../https:/github.com/Geisha-design" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
-        
-        <li><a href="../../../../http:/weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
-        
-        <li><a href="../../../../https:/twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
-        
-        <li><a href="../../../../https:/www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
-        
-        <li><a href="../../../../atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
-        
-    </ul>
 
-    </nav>
-  </div>
-</header>
 
-  
-    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
-  <div class="slimContent">
-    
-      <div class="widget">
-    <h3 class="widget-title">Board</h3>
-    <div class="widget-body">
-        <div id="board">
-            <div class="content">
-                <p>你顺手挽住火焰，化作漫天大雪</p>
-            </div>
-        </div>
-    </div>
-</div>
 
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/basic/">basic</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/helloworld/">helloworld</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/introduction/">introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%94%9F%E6%B4%BB/">生活</a><span class="category-list-count">18</span></li></ul>
-    </div>
-  </div>
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
 
 
     
-      
-  <div class="widget">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/CSS/" rel="tag">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Eclipse/" rel="tag">Eclipse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Field/" rel="tag">Field</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Groovy/" rel="tag">Groovy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/IDE/" rel="tag">IDE</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/IT/" rel="tag">IT</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/JAVA/" rel="tag">JAVA</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/JVM/" rel="tag">JVM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Java/" rel="tag">Java</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/MYSQL/" rel="tag">MYSQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Maven/" rel="tag">Maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/NoSql/" rel="tag">NoSql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Node-js/" rel="tag">Node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Python/" rel="tag">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/TOMCAT/" rel="tag">TOMCAT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/UI/" rel="tag">UI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/VMware/" rel="tag">VMware</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Wicket/" rel="tag">Wicket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/coding/" rel="tag">coding</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/coding-net/" rel="tag">coding.net</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/css/" rel="tag">css</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/date/" rel="tag">date</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/debug/" rel="tag">debug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/decorator/" rel="tag">decorator</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/eclipse/" rel="tag">eclipse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/editor/" rel="tag">editor</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/equals/" rel="tag">equals</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/express/" rel="tag">express</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/github/" rel="tag">github</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/gogs/" rel="tag">gogs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/https/" rel="tag">https</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/i18n/" rel="tag">i18n</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/ini/" rel="tag">ini</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/it/" rel="tag">it</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/jar/" rel="tag">jar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/java/" rel="tag">java</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/javascript/" rel="tag">javascript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/jdk/" rel="tag">jdk</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/jvm/" rel="tag">jvm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/less/" rel="tag">less</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/linux/" rel="tag">linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/mac/" rel="tag">mac</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/macvim/" rel="tag">macvim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/markdown/" rel="tag">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/maven/" rel="tag">maven</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/mediator/" rel="tag">mediator</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/nginx/" rel="tag">nginx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/object/" rel="tag">object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/observer/" rel="tag">observer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/qcloud/" rel="tag">qcloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/rails/" rel="tag">rails</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/reflect/" rel="tag">reflect</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/remote/" rel="tag">remote</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/ssh/" rel="tag">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/ssl/" rel="tag">ssl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/tomcat/" rel="tag">tomcat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/travis/" rel="tag">travis</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/vim/" rel="tag">vim</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/web/" rel="tag">web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/webjars/" rel="tag">webjars</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/wicket/" rel="tag">wicket</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E4%B8%8D%E8%AF%B4%E6%8A%80%E6%9C%AF/" rel="tag">不说技术</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E4%B8%AD%E4%BB%8B%E8%80%85/" rel="tag">中介者</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%81%87%E6%9C%9F/" rel="tag">假期</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%88%86%E5%B8%83%E5%BC%8F/" rel="tag">分布式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%91%A8%E6%9C%AB/" rel="tag">周末</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BE%E5%83%8F/" rel="tag">图像</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BE%E7%89%87/" rel="tag">图片</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%A5%BD%E6%96%87/" rel="tag">好文</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9/" rel="tag">小知识点</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%B7%A5%E4%BD%9C/" rel="tag">工作</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BC%80%E5%8F%91/" rel="tag">开发</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" rel="tag">微服务</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BF%83%E6%83%85/" rel="tag">心情</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%95%B0%E6%8D%AE%E6%9C%BA%E6%9E%84/" rel="tag">数据机构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%96%87%E7%AB%A0/" rel="tag">文章</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%97%85%E8%A1%8C/" rel="tag">旅行</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%97%A0%E5%9B%BE/" rel="tag">无图</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%82%E4%BA%8B/" rel="tag">杂事</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%82%E6%96%87/" rel="tag">杂文</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%82%E8%B0%88/" rel="tag">杂谈</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%B2%B9%E6%BC%86%E5%B7%A5/" rel="tag">油漆工</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%B3%B0%E5%9B%BD/" rel="tag">泰国</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%94%B5%E5%BD%B1/" rel="tag">电影</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%80%81%E5%AE%B6/" rel="tag">老家</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%88%B6%E6%9D%A5%E5%93%81/" rel="tag">舶来品</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%A7%82%E5%AF%9F%E8%80%85/" rel="tag">观察者</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%AE%B0%E5%BD%95/" rel="tag">记录</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%AF%B4%E7%82%B9%E5%95%A5/" rel="tag">说点啥</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B7%91%E6%AD%A5/" rel="tag">跑步</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%BF%90%E5%8A%A8/" rel="tag">运动</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%A3%8E%E6%99%AF/" rel="tag">风景</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%AB%98%E6%95%B0%E4%B9%8B%E6%97%85/" rel="tag">高数之旅</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
+
+
+
 
 
     
-      
-  <div class="widget">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget-body tagcloud">
-      <a href="../../../../tags/CSS/" style="font-size: 13.11px;">CSS</a> <a href="../../../../tags/Eclipse/" style="font-size: 13px;">Eclipse</a> <a href="../../../../tags/Field/" style="font-size: 13px;">Field</a> <a href="../../../../tags/Groovy/" style="font-size: 13px;">Groovy</a> <a href="../../../../tags/HTML/" style="font-size: 13.11px;">HTML</a> <a href="../../../../tags/Hexo/" style="font-size: 13px;">Hexo</a> <a href="../../../../tags/IDE/" style="font-size: 13.11px;">IDE</a> <a href="../../../../tags/IT/" style="font-size: 13.67px;">IT</a> <a href="../../../../tags/JAVA/" style="font-size: 13.22px;">JAVA</a> <a href="../../../../tags/JVM/" style="font-size: 13px;">JVM</a> <a href="../../../../tags/Java/" style="font-size: 13.44px;">Java</a> <a href="../../../../tags/JavaScript/" style="font-size: 13.11px;">JavaScript</a> <a href="../../../../tags/MYSQL/" style="font-size: 13px;">MYSQL</a> <a href="../../../../tags/Maven/" style="font-size: 13px;">Maven</a> <a href="../../../../tags/NoSql/" style="font-size: 13px;">NoSql</a> <a href="../../../../tags/Node-js/" style="font-size: 13px;">Node.js</a> <a href="../../../../tags/Python/" style="font-size: 13px;">Python</a> <a href="../../../../tags/TOMCAT/" style="font-size: 13px;">TOMCAT</a> <a href="../../../../tags/UI/" style="font-size: 13px;">UI</a> <a href="../../../../tags/VMware/" style="font-size: 13px;">VMware</a> <a href="../../../../tags/Wicket/" style="font-size: 13px;">Wicket</a> <a href="../../../../tags/coding/" style="font-size: 13px;">coding</a> <a href="../../../../tags/coding-net/" style="font-size: 13.22px;">coding.net</a> <a href="../../../../tags/css/" style="font-size: 13.33px;">css</a> <a href="../../../../tags/date/" style="font-size: 13px;">date</a> <a href="../../../../tags/debug/" style="font-size: 13px;">debug</a> <a href="../../../../tags/decorator/" style="font-size: 13px;">decorator</a> <a href="../../../../tags/eclipse/" style="font-size: 13px;">eclipse</a> <a href="../../../../tags/editor/" style="font-size: 13px;">editor</a> <a href="../../../../tags/equals/" style="font-size: 13px;">equals</a> <a href="../../../../tags/express/" style="font-size: 13px;">express</a> <a href="../../../../tags/git/" style="font-size: 13px;">git</a> <a href="../../../../tags/github/" style="font-size: 13.22px;">github</a> <a href="../../../../tags/gogs/" style="font-size: 13px;">gogs</a> <a href="../../../../tags/hexo/" style="font-size: 13px;">hexo</a> <a href="../../../../tags/https/" style="font-size: 13px;">https</a> <a href="../../../../tags/i18n/" style="font-size: 13px;">i18n</a> <a href="../../../../tags/ini/" style="font-size: 13px;">ini</a> <a href="../../../../tags/it/" style="font-size: 13.56px;">it</a> <a href="../../../../tags/jar/" style="font-size: 13px;">jar</a> <a href="../../../../tags/java/" style="font-size: 14px;">java</a> <a href="../../../../tags/javascript/" style="font-size: 13.22px;">javascript</a> <a href="../../../../tags/jdk/" style="font-size: 13px;">jdk</a> <a href="../../../../tags/jvm/" style="font-size: 13px;">jvm</a> <a href="../../../../tags/less/" style="font-size: 13px;">less</a> <a href="../../../../tags/linux/" style="font-size: 13.11px;">linux</a> <a href="../../../../tags/mac/" style="font-size: 13.22px;">mac</a> <a href="../../../../tags/macvim/" style="font-size: 13px;">macvim</a> <a href="../../../../tags/markdown/" style="font-size: 13px;">markdown</a> <a href="../../../../tags/maven/" style="font-size: 13.11px;">maven</a> <a href="../../../../tags/mediator/" style="font-size: 13px;">mediator</a> <a href="../../../../tags/nginx/" style="font-size: 13px;">nginx</a> <a href="../../../../tags/object/" style="font-size: 13px;">object</a> <a href="../../../../tags/observer/" style="font-size: 13px;">observer</a> <a href="../../../../tags/qcloud/" style="font-size: 13px;">qcloud</a> <a href="../../../../tags/rails/" style="font-size: 13px;">rails</a> <a href="../../../../tags/reflect/" style="font-size: 13px;">reflect</a> <a href="../../../../tags/remote/" style="font-size: 13px;">remote</a> <a href="../../../../tags/ssh/" style="font-size: 13px;">ssh</a> <a href="../../../../tags/ssl/" style="font-size: 13px;">ssl</a> <a href="../../../../tags/tomcat/" style="font-size: 13px;">tomcat</a> <a href="../../../../tags/travis/" style="font-size: 13.22px;">travis</a> <a href="../../../../tags/vim/" style="font-size: 13.11px;">vim</a> <a href="../../../../tags/web/" style="font-size: 13.11px;">web</a> <a href="../../../../tags/webjars/" style="font-size: 13.11px;">webjars</a> <a href="../../../../tags/wicket/" style="font-size: 13.11px;">wicket</a> <a href="../../../../tags/%E4%B8%8D%E8%AF%B4%E6%8A%80%E6%9C%AF/" style="font-size: 13.22px;">不说技术</a> <a href="../../../../tags/%E4%B8%AD%E4%BB%8B%E8%80%85/" style="font-size: 13px;">中介者</a> <a href="../../../../tags/%E5%81%87%E6%9C%9F/" style="font-size: 13px;">假期</a> <a href="../../../../tags/%E5%88%86%E5%B8%83%E5%BC%8F/" style="font-size: 13px;">分布式</a> <a href="../../../../tags/%E5%89%8D%E7%AB%AF/" style="font-size: 13.11px;">前端</a> <a href="../../../../tags/%E5%91%A8%E6%9C%AB/" style="font-size: 13.11px;">周末</a> <a href="../../../../tags/%E5%9B%BE%E5%83%8F/" style="font-size: 13.11px;">图像</a> <a href="../../../../tags/%E5%9B%BE%E7%89%87/" style="font-size: 13.11px;">图片</a> <a href="../../../../tags/%E5%A5%BD%E6%96%87/" style="font-size: 13px;">好文</a> <a href="../../../../tags/%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9/" style="font-size: 13px;">小知识点</a> <a href="../../../../tags/%E5%B7%A5%E4%BD%9C/" style="font-size: 13px;">工作</a> <a href="../../../../tags/%E5%BC%80%E5%8F%91/" style="font-size: 13px;">开发</a> <a href="../../../../tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 13px;">微服务</a> <a href="../../../../tags/%E5%BF%83%E6%83%85/" style="font-size: 13.11px;">心情</a> <a href="../../../../tags/%E6%8A%80%E6%9C%AF/" style="font-size: 13px;">技术</a> <a href="../../../../tags/%E6%95%99%E7%A8%8B/" style="font-size: 13px;">教程</a> <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 13px;">数据库</a> <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E6%9C%BA%E6%9E%84/" style="font-size: 13px;">数据机构</a> <a href="../../../../tags/%E6%96%87%E7%AB%A0/" style="font-size: 13px;">文章</a> <a href="../../../../tags/%E6%97%85%E8%A1%8C/" style="font-size: 13.22px;">旅行</a> <a href="../../../../tags/%E6%97%A0%E5%9B%BE/" style="font-size: 13px;">无图</a> <a href="../../../../tags/%E6%97%A5%E5%BF%97/" style="font-size: 13.89px;">日志</a> <a href="../../../../tags/%E6%97%A5%E8%AE%B0/" style="font-size: 13px;">日记</a> <a href="../../../../tags/%E6%9D%82%E4%BA%8B/" style="font-size: 13.78px;">杂事</a> <a href="../../../../tags/%E6%9D%82%E6%96%87/" style="font-size: 13px;">杂文</a> <a href="../../../../tags/%E6%9D%82%E8%B0%88/" style="font-size: 13px;">杂谈</a> <a href="../../../../tags/%E6%B2%B9%E6%BC%86%E5%B7%A5/" style="font-size: 13px;">油漆工</a> <a href="../../../../tags/%E6%B3%B0%E5%9B%BD/" style="font-size: 13.22px;">泰国</a> <a href="../../../../tags/%E7%94%9F%E6%B4%BB/" style="font-size: 13.22px;">生活</a> <a href="../../../../tags/%E7%94%B5%E5%BD%B1/" style="font-size: 13px;">电影</a> <a href="../../../../tags/%E7%BD%91%E7%BB%9C/" style="font-size: 13px;">网络</a> <a href="../../../../tags/%E8%80%81%E5%AE%B6/" style="font-size: 13.11px;">老家</a> <a href="../../../../tags/%E8%88%B6%E6%9D%A5%E5%93%81/" style="font-size: 13px;">舶来品</a> <a href="../../../../tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 13px;">虚拟机</a> <a href="../../../../tags/%E8%A7%82%E5%AF%9F%E8%80%85/" style="font-size: 13px;">观察者</a> <a href="../../../../tags/%E8%AE%B0%E5%BD%95/" style="font-size: 13px;">记录</a> <a href="../../../../tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.44px;">设计模式</a> <a href="../../../../tags/%E8%AF%B4%E7%82%B9%E5%95%A5/" style="font-size: 13px;">说点啥</a> <a href="../../../../tags/%E8%B7%91%E6%AD%A5/" style="font-size: 13px;">跑步</a> <a href="../../../../tags/%E8%BF%90%E5%8A%A8/" style="font-size: 13px;">运动</a> <a href="../../../../tags/%E9%A3%8E%E6%99%AF/" style="font-size: 13.33px;">风景</a> <a href="../../../../tags/%E9%AB%98%E6%95%B0%E4%B9%8B%E6%97%85/" style="font-size: 13px;">高数之旅</a>
-    </div>
-  </div>
-
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">Archive</h3>
-    <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2021/04/">April 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2021/02/">February 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/12/">December 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/11/">November 2020</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/02/">February 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/01/">January 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2019/10/">October 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2019/06/">June 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2019/03/">March 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2019/02/">February 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2017/08/">August 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2017/07/">July 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2017/06/">June 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2016/10/">October 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2016/03/">March 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2015/04/">April 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2015/02/">February 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2015/01/">January 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2014/08/">August 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2014/05/">May 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/12/">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/11/">November 2013</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/10/">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/08/">August 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/07/">July 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/06/">June 2013</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/05/">May 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/04/">April 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/03/">March 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/02/">February 2013</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2012/11/">November 2012</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2012/10/">October 2012</a><span class="archive-list-count">3</span></li></ul>
-    </div>
-  </div>
 
 
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget-body">
-      <ul class="recent-post-list list-unstyled no-thumbnail">
-        
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="../../../../2021/04/13/%E8%AE%BA%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" class="title">论微分方程</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2021-04-13T11:48:20.000Z" itemprop="datePublished">2021-04-13</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="../../../../2021/04/13/mac%E4%B8%8A%E5%AE%89%E8%A3%85%E8%99%9A%E6%8B%9F%E6%9C%BA/" class="title">mac上安装虚拟机</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2021-04-13T11:12:31.000Z" itemprop="datePublished">2021-04-13</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="../../../../2021/04/13/%E5%BE%AE%E5%88%86%E4%B8%8E%E5%AF%BC%E6%95%B0%E7%9A%84%E5%8C%BA%E5%88%AB/" class="title">微分与导数的区别</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2021-04-13T09:35:17.000Z" itemprop="datePublished">2021-04-13</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="../../../../2021/04/13/%E5%BE%AE%E5%88%86%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88/" class="title">微分到底是什么</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2021-04-13T08:49:16.000Z" itemprop="datePublished">2021-04-13</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="../../../../2021/04/02/iOS%E3%80%81macOS%E7%B3%BB%E7%BB%9F%E5%BA%94%E7%94%A8%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/" class="title">iOS、macOS系统应用管理机制</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2021-04-02T03:46:15.000Z" itemprop="datePublished">2021-04-02</time>
-              </p>
-            </div>
-          </li>
-          
-      </ul>
-    </div>
-  </div>
-  
 
-    
-  </div>
-</aside>
+    <link rel="stylesheet" type="text/css" href="../../../../css/search.css?v=1.1"/>
 
-  
-  
-<main class="main" role="main">
-  <div class="content">
-  <article id="post-简述微服务设计" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-    
-    <div class="article-header">
-      
-        
-  
-    <h1 class="article-title" itemprop="name">
-      &lt;简述微服务设计&gt;
+
+
+    <title> <简述微服务设计> - 齐雨争 </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="../../../../." class="logo">齐雨争</a>
     </h1>
-  
 
-      
-      <div class="article-meta">
-        <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="" class="article-date">
-	  <time datetime="2020-12-07T05:10:19.000Z" itemprop="datePublished">2020-12-07</time>
-	</a>
-</span>
+    <nav id="nav-top">
         
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                Unsplash
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                
+                    <li class="menu-item">
+                        <a id="search" href="">Search</a>
+                    </li>
+                
+            </ul>
         
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="../../../../tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" rel="tag">微服务</a>
-  </span>
+    </nav>
+
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <简述微服务设计>
+        
+      </h1>
+
+      <time class="post-time">
+          Dec 7 2020
+      </time>
+    </header>
 
 
-        
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="#comments" class="article-comment-link">Comments</a></span>
-        
-      </div>
-    </div>
-    <div class="article-entry marked-body" itemprop="articleBody">
-      
-        <p>一文详解微服务架构本文将介绍微服务架构和相关的组件，介绍他们是什么以及为什么要使用微服务架构和这些组件。本文侧重于简明地表达微服务架构的全局图景，因此不会涉及具体如何使用组件等细节。要理解微服务，首先要先理解不是微服务的那些。通常跟微服务相对的是单体应用，即将所有功能都打包成在一个独立单元的应用程序。从单体应用到微服务并不是一蹴而就的，这是一个逐渐演变的过程。本文将以一个网上超市应用为例来说明这一过程。<strong>最初的需求</strong>几年前，小明和小皮一起创业做网上超市。小明负责程序开发，小皮负责其他事宜。当时互联网还不发达，网上超市还是蓝海。只要功能实现了就能随便赚钱。所以他们的需求很简单，只需要一个网站挂在公网，用户能够在这个网站上浏览商品、购买商品；另外还需一个管理后台，可以管理商品、用户、以及订单数据。我们整理一下功能清单：网站：用户注册、登录功能商品展示下单管理后台：用户管理商品管理订单管理由于需求简单，小明左手右手一个慢动作，网站就做好了。管理后台出于安全考虑，不和网站做在一起，小明右手左手慢动作重播，管理网站也做好了。总体架构图如下：<img src="https://pic2.zhimg.com/50/v2-72023eb73961d33d560cd4419f803103_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic2.zhimg.com/80/v2-72023eb73961d33d560cd4419f803103_1440w.jpg?source=1940ef5c" alt="img"></p>
+    
+            <div class="post-content">
+            <p>一文详解微服务架构本文将介绍微服务架构和相关的组件，介绍他们是什么以及为什么要使用微服务架构和这些组件。本文侧重于简明地表达微服务架构的全局图景，因此不会涉及具体如何使用组件等细节。要理解微服务，首先要先理解不是微服务的那些。通常跟微服务相对的是单体应用，即将所有功能都打包成在一个独立单元的应用程序。从单体应用到微服务并不是一蹴而就的，这是一个逐渐演变的过程。本文将以一个网上超市应用为例来说明这一过程。<strong>最初的需求</strong>几年前，小明和小皮一起创业做网上超市。小明负责程序开发，小皮负责其他事宜。当时互联网还不发达，网上超市还是蓝海。只要功能实现了就能随便赚钱。所以他们的需求很简单，只需要一个网站挂在公网，用户能够在这个网站上浏览商品、购买商品；另外还需一个管理后台，可以管理商品、用户、以及订单数据。我们整理一下功能清单：网站：用户注册、登录功能商品展示下单管理后台：用户管理商品管理订单管理由于需求简单，小明左手右手一个慢动作，网站就做好了。管理后台出于安全考虑，不和网站做在一起，小明右手左手慢动作重播，管理网站也做好了。总体架构图如下：<img src="https://pic2.zhimg.com/50/v2-72023eb73961d33d560cd4419f803103_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic2.zhimg.com/80/v2-72023eb73961d33d560cd4419f803103_1440w.jpg?source=1940ef5c" alt="img"></p>
 <p>小明挥一挥手，找了家云服务部署上去，网站就上线了。上线后好评如潮，深受各类肥宅喜爱。小明小皮美滋滋地开始躺着收钱。<strong>随着业务发展……</strong>好景不长，没过几天，各类网上超市紧跟着拔地而起，对小明小皮造成了强烈的冲击。在竞争的压力下，小明小皮决定开展一些营销手段：开展促销活动。比如元旦全场打折，春节买二送一，情人节狗粮优惠券等等。拓展渠道，新增移动端营销。除了网站外，还需要开发移动端APP，微信小程序等。精准营销。利用历史数据对用户进行分析，提供个性化服务。……这些活动都需要程序开发的支持。小明拉了同学小红加入团队。小红负责数据分析以及移动端相关开发。小明负责促销活动相关功能的开发。因为开发任务比较紧迫，小明小红没有好好规划整个系统的架构，随便拍了拍脑袋，决定把促销管理和数据分析放在管理后台里，微信和移动端APP另外搭建。通宵了几天后，新功能和新应用基本完工。这时架构图如下：<img src="https://pic1.zhimg.com/50/v2-1292f5a391142ac8da195787e28291bf_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic1.zhimg.com/80/v2-1292f5a391142ac8da195787e28291bf_1440w.jpg?source=1940ef5c" alt="img">这一阶段存在很多不合理的地方：网站和移动端应用有很多相同业务逻辑的重复代码。数据有时候通过数据库共享，有时候通过接口调用传输。接口调用关系杂乱。单个应用为了给其他应用提供接口，渐渐地越改越大，包含了很多本来就不属于它的逻辑。应用边界模糊，功能归属混乱。管理后台在一开始的设计中保障级别较低。加入数据分析和促销管理相关功能后出现性能瓶颈，影响了其他应用。数据库表结构被多个应用依赖，无法重构和优化。所有应用都在一个数据库上操作，数据库出现性能瓶颈。特别是数据分析跑起来的时候，数据库性能急剧下降。开发、测试、部署、维护愈发困难。即使只改动一个小功能，也需要整个应用一起发布。有时候发布会不小心带上了一些未经测试的代码，或者修改了一个功能后，另一个意想不到的地方出错了。为了减轻发布可能产生的问题的影响和线上业务停顿的影响，所有应用都要在凌晨三四点执行发布。发布后为了验证应用正常运行，还得盯到第二天白天的用户高峰期……团队出现推诿扯皮现象。关于一些公用的功能应该建设在哪个应用上的问题常常要争论很久，最后要么干脆各做各的，或者随便放个地方但是都不维护。尽管有着诸多问题，但也不能否认这一阶段的成果：快速地根据业务变化建设了系统。不过<strong>紧迫且繁重的任务容易使人陷入局部、短浅的思维方式，从而做出妥协式的决策</strong>。在这种架构中，每个人都只关注在自己的一亩三分地，缺乏全局的、长远的设计。长此以往，系统建设将会越来越困难，甚至陷入不断推翻、重建的循环。<strong>是时候做出改变了</strong>幸好小明和小红是有追求有理想的好青年。意识到问题后，小明和小红从琐碎的业务需求中腾出了一部分精力，开始梳理整体架构，针对问题准备着手改造。<em>要做改造，首先你需要有足够的精力和资源。如果你的需求方（业务人员、项目经理、上司等）很强势地一心追求需求进度，以致于你无法挪出额外的精力和资源的话，那么你可能无法做任何事……</em>在编程的世界中，最重要的便是<strong>抽象能力</strong>。微服务改造的过程实际上也是个抽象的过程。小明和小红整理了网上超市的业务逻辑，抽象出公用的业务能力，做成几个公共服务：用户服务商品服务促销服务订单服务数据分析服务各个应用后台只需从这些服务获取所需的数据，从而删去了大量冗余的代码，就剩个轻薄的控制层和前端。这一阶段的架构如下：<img src="https://pic2.zhimg.com/50/v2-0882bc64f3f20939876d3433e51fad72_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic2.zhimg.com/80/v2-0882bc64f3f20939876d3433e51fad72_1440w.jpg?source=1940ef5c" alt="img">这个阶段只是将服务分开了，数据库依然是共用的，所以一些烟囱式系统的缺点仍然存在：数据库成为性能瓶颈，并且有单点故障的风险。数据管理趋向混乱。即使一开始有良好的模块化设计，随着时间推移，总会有一个服务直接从数据库取另一个服务的数据的现象。数据库表结构可能被多个服务依赖，牵一发而动全身，很难调整。如果一直保持共用数据库的模式，则整个架构会越来越僵化，失去了微服务架构的意义。因此小明和小红一鼓作气，把数据库也拆分了。所有持久化层相互隔离，由各个服务自己负责。另外，为了提高系统的实时性，加入了消息队列机制。架构如下：<img src="https://pic3.zhimg.com/50/v2-90388920d31fe35b791c6a92f758db18_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic3.zhimg.com/80/v2-90388920d31fe35b791c6a92f758db18_1440w.jpg?source=1940ef5c" alt="img">完全拆分后各个服务可以采用异构的技术。比如数据分析服务可以使用数据仓库作为持久化层，以便于高效地做一些统计计算；商品服务和促销服务访问频率比较大，因此加入了缓存机制等。<em>还有一种抽象出公共逻辑的方法是把这些公共逻辑做成公共的框架库。这种方法可以减少服务调用的性能损耗。但是这种方法的管理成本非常高昂，很难保证所有应用版本的一致性。</em><br><em>数据库拆分也有一些问题和挑战：比如说跨库级联的需求，通过服务查询数据颗粒度的粗细问题等。但是这些问题可以通过合理的设计来解决。总体来说，数据库拆分是一个利大于弊的。</em>微服务架构还有一个技术外的好处，它使整个系统的分工更加明确，责任更加清晰，每个人专心负责为其他人提供更好的服务。在单体应用的时代，公共的业务功能经常没有明确的归属。最后要么各做各的，每个人都重新实现了一遍；要么是随机一个人（一般是能力比较强或者比较热心的人）做到他负责的应用里面。在后者的情况下，这个人在负责自己应用之外，还要额外负责给别人提供这些公共的功能——而这个功能本来是无人负责的，仅仅因为他能力较强/比较热心，就莫名地背锅（这种情况还被美其名曰能者多劳）。结果最后大家都不愿意提供公共的功能。长此以往，团队里的人渐渐变得各自为政，不再关心全局的架构设计。从这个角度上看，使用微服务架构同时也需要组织结构做相应的调整。所以说做微服务改造需要管理者的支持。改造完成后，小明和小红分清楚各自的锅。两人十分满意，一切就像是麦克斯韦方程组一样漂亮完美。然而……<strong>没有银弹</strong>春天来了，万物复苏，又到了一年一度的购物狂欢节。眼看着日订单数量蹭蹭地上涨，小皮小明小红喜笑颜开。可惜好景不长，乐极生悲，突然嘣的一下，系统挂了。以往单体应用，排查问题通常是看一下日志，研究错误信息和调用堆栈。而<strong>微服务架构整个应用分散成多个服务，定位故障点非常困难</strong>。小明一个台机器一台机器地查看日志，一个服务一个服务地手工调用。经过十几分钟的查找，小明终于定位到故障点：促销服务由于接收的请求量太大而停止响应了。其他服务都直接或间接地会调用促销服务，于是也跟着宕机了。<strong>在微服务架构中，一个服务故障可能会产生雪崩效用，导致整个系统故障</strong>。其实在节前，小明和小红是有做过请求量评估的。按照预计，服务器资源是足以支持节日的请求量的，所以肯定是哪里出了问题。不过形势紧急，随着每一分每一秒流逝的都是白花花的银子，因此小明也没时间排查问题，当机立断在云上新建了几台虚拟机，然后一台一台地部署新的促销服务节点。几分钟的操作后，系统总算是勉强恢复正常了。整个故障时间内估计损失了几十万的销售额，三人的心在滴血……事后，小明简单写了个日志分析工具（量太大了，文本编辑器几乎打不开，打开了肉眼也看不过来），统计了促销服务的访问日志，发现在故障期间，商品服务由于代码问题，在某些场景下会对促销服务发起大量请求。这个问题并不复杂，小明手指抖一抖，修复了这个价值几十万的Bug。问题是解决了，但谁也无法保证不会再发生类似的其他问题。微服务架构虽然逻辑设计上看是完美的，但就像积木搭建的华丽宫殿一样，经不起风吹草动。微服务架构虽然解决了旧问题，也引入了新的问题：微服务架构整个应用分散成多个服务，定位故障点非常困难。稳定性下降。服务数量变多导致其中一个服务出现故障的概率增大，并且一个服务故障可能导致整个系统挂掉。事实上，在大访问量的生产场景下，故障总是会出现的。服务数量非常多，部署、管理的工作量很大。开发方面：如何保证各个服务在持续开发的情况下仍然保持协同合作。测试方面：服务拆分后，几乎所有功能都会涉及多个服务。原本单个程序的测试变为服务间调用的测试。测试变得更加复杂。小明小红痛定思痛，决心好好解决这些问题。对故障的处理一般从两方面入手，一方面尽量减少故障发生的概率，另一方面降低故障造成的影响。<img src="https://pic2.zhimg.com/50/v2-9e24974c29f3a57ef1bdc5ea47c59566_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic2.zhimg.com/80/v2-9e24974c29f3a57ef1bdc5ea47c59566_1440w.jpg?source=1940ef5c" alt="img"><strong>监控 - 发现故障的征兆</strong>在高并发分布式的场景下，故障经常是突然间就雪崩式爆发。所以必须建立完善的监控体系，尽可能发现故障的征兆。微服务架构中组件繁多，各个组件所需要监控的指标不同。比如Redis缓存一般监控占用内存值、网络流量，数据库监控连接数、磁盘空间，业务服务监控并发数、响应延迟、错误率等。因此如果做一个大而全的监控系统来监控各个组件是不大现实的，而且扩展性会很差。一般的做法是让各个组件提供报告自己当前状态的接口（metrics接口），这个接口输出的数据格式应该是一致的。然后部署一个指标采集器组件，定时从这些接口获取并保持组件状态，同时提供查询服务。最后还需要一个UI，从指标采集器查询各项指标，绘制监控界面或者根据阈值发出告警。大部分组件都不需要自己动手开发，网络上有开源组件。小明下载了RedisExporter和MySQLExporter，这两个组件分别提供了Redis缓存和MySQL数据库的指标接口。微服务则根据各个服务的业务逻辑实现自定义的指标接口。然后小明采用Prometheus作为指标采集器，Grafana配置监控界面和邮件告警。这样一套微服务监控系统就搭建起来了：<img src="https://pic4.zhimg.com/50/v2-ab2479317923472e06d5f3e0b8943944_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic4.zhimg.com/80/v2-ab2479317923472e06d5f3e0b8943944_1440w.jpg?source=1940ef5c" alt="img"><strong>定位问题 - 链路跟踪</strong>在微服务架构下，一个用户的请求往往涉及多个内部服务调用。为了方便定位问题，需要能够记录每个用户请求时，微服务内部产生了多少服务调用，及其调用关系。这个叫做链路跟踪。我们用一个Istio文档里的链路跟踪例子来看看效果：<img src="https://pic2.zhimg.com/50/v2-c1e791200de645b39ed670f9b86109e8_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic2.zhimg.com/80/v2-c1e791200de645b39ed670f9b86109e8_1440w.jpg?source=1940ef5c" alt="img"><em>图片来自<a href="https://link.zhihu.com/?target=https://istio.io/zh/docs/tasks/telemetry/distributed-tracing/zipkin/">Istio文档</a><em>从图中可以看到，这是一个用户访问productpage页面的请求。在请求过程中，productpage服务顺序调用了details和reviews服务的接口。而reviews服务在响应过程中又调用了ratings的接口。整个链路跟踪的记录是一棵树：<img src="https://pic2.zhimg.com/50/v2-da001bd5ae83cd8fbcca1dec0db8dc24_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic2.zhimg.com/80/v2-da001bd5ae83cd8fbcca1dec0db8dc24_1440w.jpg?source=1940ef5c" alt="img">要实现链路跟踪，每次服务调用会在HTTP的HEADERS中记录至少记录四项数据：traceId：traceId标识一个用户请求的调用链路。具有相同traceId的调用属于同一条链路。spanId：标识一次服务调用的ID，即链路跟踪的节点ID。parentId：父节点的spanId。requestTime &amp; responseTime：请求时间和响应时间。另外，还需要调用日志收集与存储的组件，以及展示链路调用的UI组件。<img src="https://pic1.zhimg.com/50/v2-c1ac0f0772b5ddedafa44636e75b3ded_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic1.zhimg.com/80/v2-c1ac0f0772b5ddedafa44636e75b3ded_1440w.jpg?source=1940ef5c" alt="img">以上只是一个极简的说明，关于链路跟踪的理论依据可详见Google的<a href="https://link.zhihu.com/?target=http://bigbully.github.io/Dapper-translation/">Dapper</a>了解了理论基础后，小明选用了Dapper的一个开源实现Zipkin。然后手指一抖，写了个HTTP请求的拦截器，在每次HTTP请求时生成这些数据注入到HEADERS，同时异步发送调用日志到Zipkin的日志收集器中。这里额外提一下，HTTP请求的拦截器，可以在微服务的代码中实现，也可以使用一个网络代理组件来实现（不过这样子每个微服务都需要加一层代理）。链路跟踪只能定位到哪个服务出现问题，不能提供具体的错误信息。查找具体的错误信息的能力则需要由日志分析组件来提供。<strong>分析问题 - 日志分析</strong>日志分析组件应该在微服务兴起之前就被广泛使用了。即使单体应用架构，当访问数变大、或服务器规模增多时，日志文件的大小会膨胀到难以用文本编辑器进行访问，更糟的是它们分散在多台服务器上面。排查一个问题，需要登录到各台服务器去获取日志文件，一个一个地查找（而且打开、查找都很慢）想要的日志信息。因此，在应用规模变大时，我们需要一个日志的“<strong>搜索引擎</strong>”。以便于能准确的找到想要的日志。另外，数据源一侧还需要收集日志的组件和展示结果的UI组件：<img src="https://pic4.zhimg.com/50/v2-b721b26bd974169cffd107ba4eec54f0_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic4.zhimg.com/80/v2-b721b26bd974169cffd107ba4eec54f0_1440w.jpg?source=1940ef5c" alt="img">小明调查了一下，使用了大名鼎鼎地ELK日志分析组件。ELK是Elasticsearch、Logstash和Kibana三个组件的缩写。Elasticsearch：搜索引擎，同时也是日志的存储。Logstash：日志采集器，它接收日志输入，对日志进行一些预处理，然后输出到Elasticsearch。Kibana：UI组件，通过Elasticsearch的API查找数据并展示给用户。最后还有一个小问题是如何将日志发送到Logstash。一种方案是在日志输出的时候直接调用Logstash接口将日志发送过去。这样一来又（咦，为啥要用“又”）要修改代码……于是小明选用了另一种方案：日志仍然输出到文件，每个服务里再部署个Agent扫描日志文件然后输出给Logstash。<strong>网关 - 权限控制，服务治理</strong>拆分成微服务后，出现大量的服务，大量的接口，使得整个调用关系乱糟糟的。经常在开发过程中，写着写着，忽然想不起某个数据应该调用哪个服务。或者写歪了，调用了不该调用的服务，本来一个只读的功能结果修改了数据……为了应对这些情况，微服务的调用需要一个把关的东西，也就是网关。在调用者和被调用者中间加一层网关，每次调用时进行权限校验。另外，网关也可以作为一个提供服务接口文档的平台。使用网关有一个问题就是要决定在多大粒度上使用：最粗粒度的方案是整个微服务一个网关，微服务外部通过网关访问微服务，微服务内部则直接调用；最细粒度则是所有调用，不管是微服务内部调用或者来自外部的调用，都必须通过网关。折中的方案是按照业务领域将微服务分成几个区，区内直接调用，区间通过网关调用。由于整个网上超市的服务数量还不算特别多，小明采用的最粗粒度的方案：<img src="https://pic4.zhimg.com/50/v2-84a6eee84a5dc3f2e97f56b4148bbc66_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic4.zhimg.com/80/v2-84a6eee84a5dc3f2e97f56b4148bbc66_1440w.jpg?source=1940ef5c" alt="img"><strong>服务注册于发现 - 动态扩容</strong>前面的组件，都是旨在降低故障发生的可能性。然而故障总是会发生的，所以另一个需要研究的是如何降低故障产生的影响。最粗暴的（也是最常用的）故障处理策略就是冗余。一般来说，一个服务都会部署多个实例，这样一来能够分担压力提高性能，二来即使一个实例挂了其他实例还能响应。冗余的一个问题是使用几个冗余？这个问题在时间轴上并没有一个切确的答案。根据服务功能、时间段的不同，需要不同数量的实例。比如在平日里，可能4个实例已经够用；而在促销活动时，流量大增，可能需要40个实例。因此冗余数量并不是一个固定的值，而是根据需要实时调整的。一般来说新增实例的操作为：部署新实例将新实例注册到负载均衡或DNS上操作只有两步，但如果注册到负载均衡或DNS的操作为人工操作的话，那事情就不简单了。想想新增40个实例后，要手工输入40个IP的感觉……解决这个问题的方案是服务自动注册与发现。首先，需要部署一个服务发现服务，它提供所有已注册服务的地址信息的服务。DNS也算是一种服务发现服务。然后各个应用服务在启动时自动将自己注册到服务发现服务上。并且应用服务启动后会实时（定期）从服务发现服务同步各个应用服务的地址列表到本地。服务发现服务也会定期检查应用服务的健康状态，去掉不健康的实例地址。这样新增实例时只需要部署新实例，实例下线时直接关停服务即可，服务发现会自动检查服务实例的增减。<img src="https://pic1.zhimg.com/50/v2-5b0fea85e31caa7b6ed88cb6fbdf5005_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic1.zhimg.com/80/v2-5b0fea85e31caa7b6ed88cb6fbdf5005_1440w.jpg?source=1940ef5c" alt="img">服务发现还会跟客户端负载均衡配合使用。由于应用服务已经同步服务地址列表在本地了，所以访问微服务时，可以自己决定负载策略。甚至可以在服务注册时加入一些元数据（服务版本等信息），客户端负载则根据这些元数据进行流量控制，实现A/B测试、蓝绿发布等功能。服务发现有很多组件可以选择，比如说Zookeeper 、Eureka、Consul、Etcd等。不过小明觉得自己水平不错，想炫技，于是基于Redis自己写了一个……<strong>熔断、服务降级、限流</strong></em></em>熔断<strong>当一个服务因为各种原因停止响应时，调用方通常会等待一段时间，然后超时或者收到错误返回。如果调用链路比较长，可能会导致请求堆积，整条链路占用大量资源一直在等待下游响应。所以当多次访问一个服务失败时，应熔断，标记该服务已停止工作，直接返回错误。直至该服务恢复正常后再重新建立连接。<img src="https://pic4.zhimg.com/50/v2-1fbc686e2aeef234b9cfe096274e0206_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic4.zhimg.com/80/v2-1fbc686e2aeef234b9cfe096274e0206_1440w.jpg?source=1940ef5c" alt="img"><em>图片来自《<a href="https://link.zhihu.com/?target=https://book.douban.com/subject/26772677/">微服务设计</a>》</em></strong>服务降级<strong>当下游服务停止工作后，如果该服务并非核心业务，则上游服务应该降级，以保证核心业务不中断。比如网上超市下单界面有一个推荐商品凑单的功能，当推荐模块挂了后，下单功能不能一起挂掉，只需要暂时关闭推荐功能即可。</strong>限流<strong>一个服务挂掉后，上游服务或者用户一般会习惯性地重试访问。这导致一旦服务恢复正常，很可能因为瞬间网络流量过大又立刻挂掉，在棺材里重复着仰卧起坐。因此服务需要能够自我保护——限流。限流策略有很多，最简单的比如当单位时间内请求数过多时，丢弃多余的请求。另外，也可以考虑分区限流。仅拒绝来自产生大量请求的服务的请求。例如商品服务和订单服务都需要访问促销服务，商品服务由于代码问题发起了大量请求，促销服务则只限制来自商品服务的请求，来自订单服务的请求则正常响应。<img src="https://pic4.zhimg.com/50/v2-9a4737be63222fb4928ac6a26b60c92b_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic4.zhimg.com/80/v2-9a4737be63222fb4928ac6a26b60c92b_1440w.jpg?source=1940ef5c" alt="img"><strong>测试</strong>微服务架构下，测试分为三个层次：端到端测试：覆盖整个系统，一般在用户界面机型测试。服务测试：针对服务接口进行测试。单元测试：针对代码单元进行测试。三种测试从上到下实施的容易程度递增，但是测试效果递减。端到端测试最费时费力，但是通过测试后我们对系统最有信心。单元测试最容易实施，效率也最高，但是测试后不能保证整个系统没有问题。<img src="https://pic2.zhimg.com/50/v2-7da95a84f6c0dfd889ceb96acdf98b88_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic2.zhimg.com/80/v2-7da95a84f6c0dfd889ceb96acdf98b88_1440w.jpg?source=1940ef5c" alt="img">由于端到端测试实施难度较大，一般只对核心功能做端到端测试。一旦端到端测试失败，则需要将其分解到单元测试：则分析失败原因，然后编写单元测试来重现这个问题，这样未来我们便可以更快地捕获同样的错误。服务测试的难度在于服务会经常依赖一些其他服务。这个问题可以通过Mock Server解决：<img src="https://pic1.zhimg.com/50/v2-3f13157528d14462e26d08d1d6be0817_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic1.zhimg.com/80/v2-3f13157528d14462e26d08d1d6be0817_1440w.jpg?source=1940ef5c" alt="img">单元测试大家都很熟悉了。我们一般会编写大量的单元测试（包括回归测试）尽量覆盖所有代码。</strong>微服务框架<strong>指标接口、链路跟踪注入、日志引流、服务注册发现、路由规则等组件以及熔断、限流等功能都需要在应用服务上添加一些对接代码。如果让每个应用服务自己实现是非常耗时耗力的。基于DRY的原则，小明开发了一套微服务框架，将与各个组件对接的代码和另外一些公共代码抽离到框架中，所有的应用服务都统一使用这套框架进行开发。使用微服务框架可以实现很多自定义的功能。甚至可以将程序调用堆栈信息注入到链路跟踪，实现代码级别的链路跟踪。或者输出线程池、连接池的状态信息，实时监控服务底层状态。使用统一的微服务框架有一个比较严重的问题：框架更新成本很高。每次框架升级，都需要所有应用服务配合升级。当然，一般会使用兼容方案，留出一段并行时间等待所有应用服务升级。但是如果应用服务非常多时，升级时间可能会非常漫长。并且有一些很稳定几乎不更新的应用服务，其负责人可能会拒绝升级……因此，使用统一微服务框架需要完善的版本管理方法和开发管理规范。</strong>另一条路 - Service Mesh*<em>另一种抽象公共代码的方法是直接将这些代码抽象到一个反向代理组件。每个服务都额外部署这个代理组件，所有出站入站的流量都通过该组件进行处理和转发。这个组件被称为Sidecar。</em>Sidecar不会产生额外网络成本。Sidecar会和微服务节点部署在同一台主机上并且共用相同的虚拟网卡。所以sidecar和微服务节点的通信实际上都只是通过内存拷贝实现的。*<img src="https://pic1.zhimg.com/50/v2-567a3bd63e4894d1358c6141fca7ba72_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic1.zhimg.com/80/v2-567a3bd63e4894d1358c6141fca7ba72_1440w.jpg?source=1940ef5c" alt="img">*图片来自：<a href="https://link.zhihu.com/?target=http://philcalcado.com/2017/08/03/pattern_service_mesh.html">Pattern: Service Mesh</a>*Sidecar只负责网络通信。还需要有个组件来统一管理所有sidecar的配置。在Service Mesh中，负责网络通信的部分叫数据平面（data plane），负责配置管理的部分叫控制平面（control plane）。数据平面和控制平面构成了Service Mesh的基本架构。<img src="https://pic2.zhimg.com/50/v2-c79af0ff0b1b11ed4586701a3a2e314c_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic2.zhimg.com/80/v2-c79af0ff0b1b11ed4586701a3a2e314c_1440w.jpg?source=1940ef5c" alt="img">*图片来自：<a href="https://link.zhihu.com/?target=http://philcalcado.com/2017/08/03/pattern_service_mesh.html">Pattern: Service Mesh</a>*Sevice Mesh相比于微服务框架的优点在于它不侵入代码，升级和维护更方便。它经常被诟病的则是性能问题。即使回环网络不会产生实际的网络请求，但仍然有内存拷贝的额外成本。另外有一些集中式的流量处理也会影响性能。<strong>结束、也是开始</strong>微服务不是架构演变的终点。往细走还有Serverless、FaaS等方向。另一方面也有人在唱合久必分分久必合，重新发现单体架构……不管怎样，微服务架构的改造暂时告一段落了。小明满足地摸了摸日益光滑的脑袋，打算这个周末休息一下约小红喝杯咖啡。</p>
 <p>微服务架构区别于传统的单体软件架构，是一种为了适应当前互联网后台服务的「<strong>三高需求：高并发、高性能、高可用</strong>」而产生的的软件架构。由于工作需要，本人曾调研过微服务相关内容，其实微服务也没什么神秘的，今天就用图解的形式了来和大家唠唠<strong>什么是微服务？****单体式应用程序</strong>与微服务相对的另一个概念是传统的<strong>单体式应用程序</strong>( Monolithic application )，单体式应用内部包含了所有需要的服务。而且各个服务功能模块有很强的耦合性，也就是相互依赖彼此，很难拆分和扩容。说在做的各位都写过单体程序，大家都没意见吧？给大家举个栗子，刚开始写代码你写的helloworld程序就是单体程序，一个程序包含所有功能，虽然 helloworld 功能很简单。单体应用程序的优点开发简洁，功能都在单个程序内部，便于软件设计和开发规划。容易部署，程序单一不存在分布式集群的复杂部署环境，降低了部署难度。容易测试，没有各种复杂的服务调用关系，都是内部调用方便测试。<br><strong>单体应用程序的缺点</strong>单体程序的缺点一开始不是特别明显，项目刚开始需求少，业务逻辑简单，写代码一时爽，一直爽。噩梦从业务迭代更新，系统日益庞大开始，前期的爽没有了，取而代之的是软件维护和迭代更新的无尽痛苦。<br><img src="https://pic4.zhimg.com/50/v2-28abdbf63886720b624e7d72f9bdb418_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic4.zhimg.com/80/v2-28abdbf63886720b624e7d72f9bdb418_1440w.jpg?source=1940ef5c" alt="img"><br>由于单体式应用程序就像一个大型容器一样，里面放置了许多服务，且他们都是密不可分的，这导致应用程序在扩展时必须以「应用程序」为单位。当里面有个业务模块负载过高时，并不能够单独扩展该服务，必须扩展整个应用程序（就是这么霸道），这可能导致额外的资源浪费。此外，单体式应用程序由于服务之间的紧密度、相依性过高，这将导致测试、升级有所困难，且开发曲线有可能会在后期大幅度地上升，令开发不易。相较之下「微服务架构」能够解决这个问题。<br><strong>微服务</strong>微服务 (Microservices) 就是一些协同工作小而自治的服务。2014年，<a href="https://link.zhihu.com/?target=https://zh.wikipedia.org/wiki/Martin_Fowler">Martin Fowler</a> 与 <a href="https://link.zhihu.com/?target=https://zh.wikipedia.org/w/index.php?title=James_Lewis&action=edit&redlink=1">James Lewis</a> 共同提出了微服务的概念，定义了微服务是由以单一应用程序构成的小服务，自己拥有自己的行程与轻量化处理，服务依业务功能设计，以全自动的方式部署，与其他服务使用 HTTP API 通信。同时服务会使用最小的规模的集中管理 (例如 <a href="https://link.zhihu.com/?target=https://zh.wikipedia.org/wiki/Docker">Docker</a>) 能力，服务可以用不同的编程语言与数据库等组件实现 。「维基百科」<br><strong>举例</strong><br><img src="https://pic4.zhimg.com/50/v2-e4a1491d321a9389cd1e6585d354f3b7_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic4.zhimg.com/80/v2-e4a1491d321a9389cd1e6585d354f3b7_1440w.jpg?source=1940ef5c" alt="img"><br>还是拿前面的 helloworld 程序来举栗子，想象一下你是 helloworld 公司的 CTO（老板还缺人吗？会写代码的那种），假设你们公司的 helloworld 业务遍布全球，需要编写不同语种的 helloworld 版本，分别输出英语、日语、法语、俄语…现在世界有6000多种语言（奇怪的知识又增加了）。有人会说这还不简单我用<code>switch case</code>语句就完事了，同学，不要较真我就是举个例子，现实中的业务比 helloworld 复杂多了。好了，我们姑且认为按语言输出是个庞大复杂的工作，这时候就可以用微服务架构了，架构图如下：<br><img src="https://pic2.zhimg.com/50/v2-10ffb1a815476a629c526ae66a510c3b_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic2.zhimg.com/80/v2-10ffb1a815476a629c526ae66a510c3b_1440w.jpg?source=1940ef5c" alt="img"><br><strong>微服务与SOA****面向服务的体系结构</strong> <code>SOA (Service-Oriented Architecture)</code> 听起来和微服务很像，但 <code>SOA</code> 早期均使用了总线模式，这种总线模式是与某种技术栈强绑定的，比如：<code>J2EE</code>。这导致很多企业的遗留系统很难对接，切换时间太长，成本太高，新系统稳定性的收敛也需要一些时间，最终 <code>SOA</code> 看起来很美，但却成为了企业级奢侈品，中小公司都望而生畏。 此外，实施<code>SOA</code>时会遇到很多问题，比如通信协议（例如SOAP)的选择、第三方中间件如何选择、服务粒度如何确定等，目前也存在一些关于如何划分系统的指导性原则，但其中有很多都是错误的。<code>SOA</code>并没有告诉你如何划分单体应用成微服务，所以在实施<code>SOA</code>时会遇到很多问题。这些问题再微服务框架中得到很好的解决，你可以认为微服务架构是<code>SOA</code>的一种特定方法。<strong>微服务架构</strong>合久必分，鉴于「单体应用程序」有上述的缺点，单个应用程序被划分成各种小的、互相连接的微服务，一个微服务完成一个比较单一的功能，相互之间保持独立和解耦合，这就是微服务架构。<strong>微服务优点</strong>相对于单体服务，微服务有很多优点，这里列举几个主要的好处技术异构性不同服务内部的开发技术可以不一致，你可以用java来开发helloworld服务A，用golang来开发helloworld服务B，大家再也不用为哪种语言是世界上最好的语言而争论不休。 <img src="https://pic1.zhimg.com/50/v2-7562b0be8f63c7823e09d7a295d9cf99_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic1.zhimg.com/80/v2-7562b0be8f63c7823e09d7a295d9cf99_1440w.jpg?source=1940ef5c" alt="img"><br>为不同的服务选择最适合该服务的技术，系统中不同部分也可以使用不同的存储技术，比如A服务可以选择redis存储，B服务你可以选择用MySQL存储，这都是允许的，你的服务你做主。<br>隔离性一个服务不可用不会导致另一个服务也瘫痪，因为各个服务是相互独立和自治的系统。这在单体应用程序中是做不到的，单体应用程序中某个模块瘫痪，必将导致整个系统不可用，当然，单体程序也可以在不同机器上部署同样的程序来实现备份，不过，同样存在上面说的资源浪费问题。可扩展性庞大的单体服务如果出现性能瓶颈只能对软件整体进行扩展，可能真正影响性能的只是其中一个很小的模块，我们也不得不付出升级整个应用的代价。这在微服务架构中得到了改善，你可以只对那些影响性能的服务做扩展升级，这样对症下药的效果是很好的。简化部署如果你的服务是一个超大的单体服务，有几百万行代码，即使修改了几行代码也要重新编译整个应用，这显然是非常繁琐的，而且软件变更带来的不确定性非常高，软件部署的影响也非常大。在微服务架构中，各个服务的部署是独立的，如果真出了问题也只是影响单个服务，可以快速回滚版本解决。易优化微服务架构中单个服务的代码量不会很大，这样当你需要重构或者优化这部分服务的时候，就会容易很多，毕竟，代码量越少意味着代码改动带来的影响越可控。<br><strong>微服务缺点</strong>我们上面一直在强调微服务的好处，但是，微服务架构不是万能的，并不能解决所有问题，其实这也是微服务把单体应用拆分成很多小的分布式服务导致的，所谓人多手杂，服务多起来管理的不好各种问题就来了。为了解决微服务的缺点，前辈们提出了下面这些概念。服务注册与发现微服务之间相互调用完成整体业务功能，如何在众多微服务中找到正确的目标服务地址，这就是所谓「服务发现」功能。常用的做法是服务提供方启动的时候把自己的地址上报给「服务注册中心」，这就是「服务注册」。服务调用方「订阅」服务变更「通知」，动态的接收服务注册中心推送的服务地址列表，以后想找哪个服务直接发给他就可以。<br><img src="https://pic4.zhimg.com/50/v2-3578297e7768e6c99d1fa1f33ebde659_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic4.zhimg.com/80/v2-3578297e7768e6c99d1fa1f33ebde659_1440w.jpg?source=1940ef5c" alt="img"><br>服务监控单体程序的监控运维还好说，大型微服务架构的服务运维是一大挑战。服务运维人员需要实时的掌握服务运行中的各种状态，最好有个控制面板能看到服务的内存使用率、调用次数、健康状况等信息。这就需要我们有一套完备的服务监控体系，包括拓扑关系、监控（Metrics）、日志监控（Logging）、调用追踪（Trace）、告警通知、健康检查等，防患于未然。服务容错任何服务都不能保证100%不出问题，生产环境复杂多变，服务运行过程中不可避免的发生各种故障（宕机、过载等等），工程师能够做的是在故障发生时尽可能降低影响范围、尽快恢复正常服务。程序员为此避免被祭天，需要引入「熔断、隔离、限流和降级、超时机制」等「服务容错」机制来保证服务持续可用性。服务安全有些服务的敏感数据存在安全问题，「服务安全」就是对敏感服务采用安全鉴权机制，对服务的访问需要进行相应的身份验证和授权，防止数据泄露的风险，安全是一个长久的话题，在微服务中也有很多工作要做。<strong>服务治理</strong>说到「治理」一般都是有问题才需要治理，我们平常说环境治理、污染治理一个意思，微服务架构中的微服务越来越多，上面说的那些问题就更加显现，为了解决上面微服务架构缺陷「服务治理」就出现了。<br><img src="https://pic4.zhimg.com/50/v2-238e741a39592caeb236a001013580a0_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic4.zhimg.com/80/v2-238e741a39592caeb236a001013580a0_1440w.jpg?source=1940ef5c" alt="img"><br>微服务的那些问题都要公司技术团队自己解决的话，如果不是大型公司有成熟的技术团队，估计会很头大。幸好，有巨人的肩膀可以借给我们站上去，通过引入「微服务框架」来帮助我们完成服务治理。<strong>微服务框架</strong>介绍一些业界比较成熟的微服务框架。<strong>Dubbo</strong>是阿里巴巴公司开源的一个Java高性能优秀的服务框架，使得应用可通过高性能的 RPC 实现服务的输出和输入功能，可以和 Spring框架无缝集成。 Apache Dubbo |ˈdʌbəʊ| 是一款高性能、轻量级的开源Java RPC框架，它提供了三大核心能力：面向接口的远程方法调用，智能容错和负载均衡，以及服务自动注册和发现 。2011 年末对外开源，仅支持 Java 语言。官网：<code>http://dubbo.apache.org/zh-cn/</code><br><strong>Tars</strong>腾讯内部使用的微服务架构 TAF（Total Application Framework）多年的实践成果总结而成的开源项目。 仅支持 C++ 语言，目前在腾讯内部应用也非常广泛。2017 年对外开源，仅支持 C++ 语言。源码： <code>https://github.com/TarsCloud/Tars/</code><br><img src="https://pic1.zhimg.com/50/v2-8fe78be188c0577ec94e2fb443ec09e2_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic1.zhimg.com/80/v2-8fe78be188c0577ec94e2fb443ec09e2_1440w.jpg?source=1940ef5c" alt="img"><br><strong>本命鹅厂 TARS 框架介绍 PPT 已下载，不想自己麻烦去找的同学，拉到文末阅读原文链接获取****Motan</strong>是新浪微博开源的一个Java 框架。Motan 在微博平台中已经广泛应用，每天为数百个服务完成近千亿次的调用。于 2016 年对外开源，仅支持 Java 语言。官方指南： <code>https://github.com/weibocom/motan/wiki/zh_userguide</code><img src="https://pic2.zhimg.com/50/v2-8980cffbcf69b0987418b0b003d2a1a2_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic2.zhimg.com/80/v2-8980cffbcf69b0987418b0b003d2a1a2_1440w.jpg?source=1940ef5c" alt="img"><br><strong>gRPC</strong>是Google开发的高性能、通用的开源RPC框架，其由Google主要面向移动应用开发并基于HTTP/2协议标准而设计，基于ProtoBuf(Protocol Buffers)序列化协议开发。本身它不是分布式的，所以要实现上面的框架的功能需要进一步的开发。2015 年对外开源的跨语言 RPC 框架，支持多种语言。中文教程：<code>https://doc.oschina.net/grpc?t=58008</code><img src="https://pic4.zhimg.com/50/v2-c0eb4a1e7411af2da9ffa76b9969ef33_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic4.zhimg.com/80/v2-c0eb4a1e7411af2da9ffa76b9969ef33_1440w.jpg?source=1940ef5c" alt="img"><strong>thrift</strong>最初是由 Facebook 开发的内部系统跨语言的高性能 RPC 框架，2007 年贡献给了 Apache 基金，成为 Apache 开源项目之一， 跟 gRPC 一样，Thrift 也有一套自己的接口定义语言 IDL，可以通过代码生成器，生成各种编程语言的 Client 端和 Server 端的 SDK 代码，支持多种语言。<img src="https://pic2.zhimg.com/50/v2-08205252ae7a4b5632c3087ff7167a85_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic2.zhimg.com/80/v2-08205252ae7a4b5632c3087ff7167a85_1440w.jpg?source=1940ef5c" alt="img"><strong>微服务框架和RPC</strong>很多人对这两个概念有点混淆，微服务框架上面我们说过了，我们再来看下RPC的概念。<strong>什么是RPC</strong><code>RPC (Remote Procedure Call)</code>远程过程调用是一个计算机通信协议。我们一般的程序调用是本地程序内部的调用，<code>RPC</code>允许你像调用本地函数一样去调用另一个程序的函数，这中间会涉及网络通信和进程间通信，但你无需知道实现细节，<code>RPC</code>框架为你屏蔽了底层实现。RPC是一种服务器-客户端（Client/Server）模式，经典实现是一个通过<strong>发送请求-接受回应</strong>进行信息交互的系统。 <strong>两者关系</strong><code>RPC</code>和微服务框架的关系我的理解，微服务框架一般都包含了<code>RPC</code>的实现和一系列「服务治理」能力，是一套软件开发框架。我们可以基于这个框架之上实现自己的微服务，方便的利用微服务框架提供的「服务治理」能力和<code>RPC能力</code>，所以微服务框架也被有些人称作<code>RPC框架</code>。<br><strong>下一代微服务架构</strong><code>Service Mesh</code>（服务网格）被认为是下一代微服务架构，<code>Service Mesh</code>并没有给我们带来新的功能，它是用于解决其他工具已经解决过的服务网络调用、限流、熔断和监控等问题，只不过这次是在<code>Cloud Native</code> 的 <code>kubernetes</code> 环境下的实现。 <strong>特点</strong>Service Mesh 有如下几个特点：应用程序间通讯的中间层轻量级网络代理应用程序无感知解耦应用程序的重试/超时、监控、追踪和服务发现目前两款流行的 <code>Service Mesh</code> 开源软件 <code>[Istio](https://istio.io/)</code> 和 <code>[Linkerd](https://linkerd.io/)</code>都可以直接在<code>kubernetes</code> 中集成，其中<code>Linkerd</code>已经成为<code>云原生计算基金会 CNCF (Cloud Native Computing Foundation)</code> 成员。<strong>Why Service Mesh</strong>为什么现有微服务架构已经解决的问题还要用<code>Service Mesh</code>呢？这个问题问的好。<br><img src="https://pic1.zhimg.com/50/v2-a7de7ff7d10faf4f58b8bee244d50e60_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic1.zhimg.com/80/v2-a7de7ff7d10faf4f58b8bee244d50e60_1440w.jpg?source=1940ef5c" alt="img"><br>回答问题之前，先看下<code>istio.io</code>上对<code>service mesh</code>的解释，我觉得挺好的，摘抄出来：As a service mesh grows in size and complexity, it can become harder to understand and manage. Its requirements can include discovery, load balancing, failure recovery, metrics, and monitoring. A service mesh also often has more complex operational requirements, like A/B testing, canary rollouts, rate limiting, access control, and end-to-end authentication.<br>makes it easy to create a network of deployed services with load balancing, service-to-service authentication, monitoring, and more, <strong>with few or no code changes in service code.</strong>  试着总结一下：随着微服务的增多复杂程度也增加，管理变得更加困难，微服务架构虽然解决了「网络调用、限流、熔断和监控」等问题，但大多数框架和开源软件对原有业务是<code>侵入式</code>的，也就是需要在业务服务程序中集成相关的「服务治理」组件。<code>Service Mesh</code>之于微服务，就像<code>TCP/IP</code>之于互联网，<code>TCP/IP</code>为网络通信提供了面向连接的、可靠的、基于字节流的基础通信功能，你不再需要关心底层的重传、校验、流量控制、拥塞控制。用了<code>Service Mesh</code>你也不必去操心「服务治理」的细节，不需要对服务做特殊的改造，所有业务之外的功能都由<code>Service Mesh</code>帮你去做了。它就像一个<code>轻量级网络代理</code> 对应用程序来说是透明，所有应用程序间的流量都会通过它，所以对应用程序流量的控制都可以在 <code>serivce mesh</code> 中实现 。<img src="https://pic2.zhimg.com/50/v2-2a2e5b537c564ad8cf1dcd1b47d5d68a_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic2.zhimg.com/80/v2-2a2e5b537c564ad8cf1dcd1b47d5d68a_1440w.jpg?source=1940ef5c" alt="img"><strong>写在最后</strong>在IT世界没有什么技术是永不过时的，微服务架构的演进就是一个例子，从单体程序到微服务架构，再到<code>service mesh</code>架构，我不知道下一个技术迭代点是什么时候，但我知道微服务架构肯定还会更新，IT人更应该建立终身学习习惯。   当然更重要的是拥有对技术的热情，热于拥抱变化、接受新技术，当我看到新技术我是兴奋的，内心os是<code>厉害了，还能这么玩！</code>，希望你也有这般热情，而不仅仅是面向工资编程，生活会有趣很多。   </p>
 <p>“微服务架构是一种架构模式，它提倡将单一应用程序划分成一组小的服务，服务之间相互协调、互相配合，为用户提供最终价值。每个服务运行在其独立的进程中，服务和服务之间采用轻量级的通信机制相互沟通（通常是基于HTTP的Restful API).每个服务都围绕着具体的业务进行构建，并且能够被独立的部署到生产环境、类生产环境等。另外，应尽量避免统一的、集中的服务管理机制，对具体的一个服务而言，应根据业务上下文，选择合适的语言、工具对其进行构”—- Martin Fowler的博客<strong>微服务的特征与界定**</strong><img src="https://pic1.zhimg.com/50/v2-ccdb9ae2fec048e0ed02beb5156dff2e_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic1.zhimg.com/80/v2-ccdb9ae2fec048e0ed02beb5156dff2e_1440w.jpg?source=1940ef5c" alt="img">*<strong><em>单体应用*</em> <strong>vs</strong> <strong>微服务架构</strong> <strong>优点</strong>提升开发交流，每个服务足够内聚，足够小，代码容易理解；服务独立测试、部署、升级、发布；按需定制的DFX，资源利用率，每个服务可以各自进行x扩展和z扩展，而且，每个服务可以根据自己的需要部署到合适的硬件服务器上；每个服务按需要选择HA的模式，选择接受服务的实例个数；容易扩大开发团队，可以针对每个服务（service）组件开发团队；提高容错性（fault isolation），一个服务的内存泄露并不会让整个系统瘫痪；新技术的应用，系统不会被长期限制在某个技术栈上；</strong>缺点<strong>没有银弹，微服务提高了系统的复杂度；开发人员要处理分布式系统的复杂性；服务之间的分布式通信问题；服务的注册与发现问题；服务之间的分布式事务问题；数据隔离再来的报表处理问题；服务之间的分布式一致性问题；服务管理的复杂性，服务的编排；不同服务实例的管理。<img src="https://pic4.zhimg.com/50/v2-559b6e5b1a8d1b4460bf2ccd7493f7b6_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic4.zhimg.com/80/v2-559b6e5b1a8d1b4460bf2ccd7493f7b6_1440w.jpg?source=1940ef5c" alt="img">Chris Richardson提出的微服务的三维扩展模型：X轴，服务实例水平扩展，保证可靠性与性能；Y轴，功能的扩展，服务单一职责，功能独立；Z轴，数据分区，数据独立，可靠性保证；<img src="https://pic1.zhimg.com/50/v2-f592c2d646822ddeceea1b145526ccdd_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic1.zhimg.com/80/v2-f592c2d646822ddeceea1b145526ccdd_1440w.jpg?source=1940ef5c" alt="img"><strong>通信问题</strong>微服务的拆分一般会带来IPC通信的问题。通信机制需要完备可靠，服务之间的通信选择应尽量单一，从两个维度对通信的模式进行划分：第一个维度是一对一还是一对多：一对一：每个客户端请求有一个服务实例来响应。一对多：每个客户端请求有多个服务实例来响应。第二个维度是这些交互式同步还是异步：同步模式：客户端请求需要服务端即时响应，甚至可能由于等待而阻塞。异步模式：客户端请求不会阻塞进程，服务端的响应可以是非即时的。<img src="https://pic1.zhimg.com/50/v2-10882e9f6662309eb137c6767faa381c_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic1.zhimg.com/80/v2-10882e9f6662309eb137c6767faa381c_1440w.jpg?source=1940ef5c" alt="img">微服务架构认为，服务间通信应该就只有这几种模式。AC出于时延、编程模型等方面的考虑，提供了一套通信机制，业务之间的通信要按需选用。</strong>服务的发现与注册<strong>一般的微服务架构里都有两层API GetWay，一层是外部API GetWay，用于用户访问系统；一层是内部API GetWay，内部服务之间的API GetWay。内部API GetWay要解决的问题就是服务发现和服务注册。从这也能看出来，为什么通信的方式要尽量单一，API GetWay有一项工作就是协议转换。微服务可能是HA主备的，也可能是LB的，怎么找到一个服务？有两种思路，客户端发现（左图）,客户端去注册中心查询服务实例列表，自行选择；另一种是服务端发现（右图），添加LB模块，客户端把请求发向LB，由LB根据负载均衡策略选择服务实例；<img src="https://pic3.zhimg.com/50/v2-a9e55ce3d4c3bebe6353001a1733ca76_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic3.zhimg.com/80/v2-a9e55ce3d4c3bebe6353001a1733ca76_1440w.jpg?source=1940ef5c" alt="img"><img src="https://pic1.zhimg.com/50/v2-8c1c5389e15b55f08d81696810dc39fb_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic1.zhimg.com/80/v2-8c1c5389e15b55f08d81696810dc39fb_1440w.jpg?source=1940ef5c" alt="img">微服务注册表的典型实现： ETCD : 是一个高可用，分布式的，一致性的，键值表，用于共享配置和服务发现。两个著名案例包括Kubernetes和Cloud Foundry。<br> ZK: 是一个广泛使用，为分布式应用提供高性能整合的服务。Apache ZooKeeper最初是Hadoop的子项目，现在已经变成顶级项目。</strong>微服务架构的部署*<strong>*微服务架构对于部署的要求**：部署速率，Amazon与NetFlix都有千个服务，每个服务都有持续部署的要求，Amazon的服务每秒都会部署一次；部署自动化，一切都要自动化，IaaS与PaaS解决I层与P层自动化部署，微服务有自动部署与运维工具，并实现Auto-Scaling；部署提供基础机制，为实现分布式部署要求，部署机制一般都有资源池化、服务的生命周期来看，部署服务 与服务注册是一体的； <strong>部署的粒度：</strong>VM: 部署系统管理的VM的生命周期，如当前AC的iDeploy部署，把AC部署拆分为每个VM的安装、配置与启动；这种方式粒度粗，支撑不了微服务的部署(除非一个服务占用一个VM); App: 管理应用的生命周期及部署形态，生命周期分为部署、配置、启动、升级等，部署形态有主备、LB、Daemon等；Container: 相比于APP，容器有更好的隔离性和移植性；微服务：一般的微服务要么是APP，要么是Container，但AC就不是。受限于ONOS架构，我们的服务是一组feature；</strong>MS部署的解决方案：<strong>TOSCA: 云应用拓扑标准，一种描述云化部署的DSL，我司主推一个标准，PaaS的部署系统和MANO用的都是TOSCA；Kubernetes:Google开源的容器管理系统，提出了Pod/Service/Labels等概念，以ETCD为中心，PaaS基于K8S开发出了我司的云化部署平台；Mesosphere:DCOS，数据中心操作系统，基于mesos实现资源池化，有自身的编排工具；分布式LAB基于DCOS的思想做出了一套部署与集群管理系统(HASEN)；</strong>微服务的划分<strong>微服务的划分主要是保证微服务功能内聚，职责单一。一般使用DDD(Domain Drive Design)的思想与方法对微服务进行划分，这种方法有点类似于数据库ER图的划分，不断分解数据，保证关系型数据库符合原子性、冗余性的范式要求。当然，微服务的划分比数据表划分更复杂，也没有微服务范式的概念，但思想是一致的。更多的内容，请参考《领域驱动设计》这本书。</strong>分布式一致性<strong>有两个大的思路：全局的分布式事务；事件驱动；分布式事务就是现在AC的思路，在设计开发中；事件驱动，忽略了事务的概念，由每个服务在应用层面保存服务的状态，服务之间的通信使用事件机制通知；此种方法可以保证微服务间的独立性，但把问题交给了服务的设计者；具体事件驱动的案例见参考材料；</strong>数据隔离问题<strong>微服务之间数据隔离可以保证服务的独立升级与部署，数据隔离有三个维度：数据表级隔离；数据表之间独立，没有外键关系；数据库级隔离；不同服务有不同的数据库；DBMS级隔离；不同服务有不同的数据库管理系统；一般做到数据库级隔离就可以了，服务之间的数据交换使用服务间接口。</strong>从单体到微服务<strong>微服务架构是一个衍生架构，都是从单体架构演化而来的。因为微服务架构本身的复杂性，初创系统出于快速开发、快速验证的考虑，很少在一开始就使用微服务架构。加之微服务的概念在这两年才火，大型单体应用也是看到了开发与维护的成本在不断增加，才会有转型微服务的动力。因此，如何从单体到微服务是一个普遍问题。从单体到微服务的原则：</strong>逐步演进，不要全部重构**。全部重构，带来极大的成本和风险，系统会有很长的不稳定期。而且，最终的效果也不会很好，在设计时很难想到所有问题。微服务架构的演化思路应该是一步步铺基础设施，一点点拆分微服务。 <strong>DevOps与微服务架构</strong>DevOps是09年提出来的概念，但一直没有太火。直到14年，容器与微服务架构的提出，DevOps才得到了快速的发展。DevOps不单是一个实现自动化的工具链，而是组织、流程与技术的结合。组织上强调全栈团队、团队特性专一、团队自治；技术上打通开发与运维；流程上强调端到端、可视化、灰度升级、A/B测试等。对于DevOps，MS不是必须的，但MS为DevOps提供了最好的架构支撑，对于组织和流程的要求也是一致的。所以，也有人称MS是DevOps架构。<img src="https://pic2.zhimg.com/50/v2-a60c186935f935b2af0bec9226a67097_hd.jpg?source=1940ef5c" alt="img"><br> 我观察业界这么多年，做微服务没几个好死的。据说马丁是微服务最初的提出者，但是我看了他的提法，狗屁不通。1， 微服务的起因是服务化普及以后带来的高开发成本、协作成本2， 但服务化本身是正确的，所以只能在降低成本、轻量级上做改进；而不是推翻。微服务的命名大概就是这么个初衷。3， 但独立部署比内部jar性能高？成本低？运维成本低？Restful比RPC性能高？成本低？运维成本低？拆分比合并成本低？效率高？这些全是增加成本的。他病看对了，药开错了。只有名字是对的，药方基本全错。尽管如此，我依然推崇微服务。不过不推荐大家去拥抱他——仅仅用，但是不要深入用，不要拥抱。比如框架换个皮，从以前框架换成微服务，你就能立即享受微服务的优势了。但是如果你进一步拥抱，拆分，独立部署。。。。。麻烦等着你呢（restful相对没那么重要，仅仅10%以内的性能消耗，并没有带来其他太大的弊病，但是带来了体系开放性——虽然99%的情况下没什么用。但是也凑合吧）本世纪初，IT圈面临的问题是信息化死局：上ERP是找死，不上是等死。为啥上了找死，不上等死？早期的信息化系统都是全家桶式的全套解决方案。比如买了个ERP挺合适，但是OA，财务什么的可能不合适。但是不能分开用，因为是封闭体系、不开放（闭环？）于是财务、OA什么的就得捏着鼻子用。业务不兼容？业务改造啊。。。。客户不接受？……这是找死。不上呢，你得想清楚了。未来的企业是不是还用算盘，容得下老古董。那是等死。SOA解决了这个问题。SOA在08年-10年左右开始大热、成熟。其中是走了一些“弯路”的。比如早起SOA方案疯狂推荐的时ESB，但今天ESB罕有人用。用的多数是拆分+RPC（dubbo等）这种P2PRPC的方案。这个“弯路”加引号是因为今天再去审视dubbo/springcloud等这些P2PRC的SOA架构普及以后，发现了很多问题，比如服务粒度细、体系架构复杂、开发效率低、服务治理难，监控维护难等……需要一大堆基础设施建设或者说擦屁股方案打补丁。这么看起来，ESB看起来更优秀，只不过门槛高，但是和那一大堆擦屁股方案比起来，他简单到极致了。P2PRPC才是弯路啊。其实这种弯路，OSGI（支付宝要不要给我点个赞，顺便把你们的弯路分享一下，还有你们在DDD上的“成就”），RIA，RCP，WEBSERVICE一样都走过。我们今天的微服务、中台一样正在走这个弯路。回顾所有这些曲折的话，你会发现并不一定道路是曲折的，前途是光明的。比如有些就一路曲折到火葬场。但是，对一个人成长最大的其实是弯路。走弯路之前你想了什么？是不是狐狸精勾引你了？还是你有什么心魔？你为什么做了这个选择 ？其中关键的要素是什么？我们漏掉了什么？自己还有哪些缺点？我们对现实世界的规律有没有多一点认识？以后怎么改进？所以其实相比现在业界各种效果不确定的所谓技术盛宴营销，我其实更想听他们走了啥弯路，开心开心，也更有收获一点。我在某宝的时候，就发现有个规律，内部最核心的最有用的技术架构和思想，从来不分享。外界几乎一个字都搜索不到，那些没什么用，但是看起来特别难，特别高大上的，分享的特别欢乐。外面趋之若鹜。这其实是一种很委婉的劝降行为：嗨，这事太难了，你不行，赶紧投降吧。我很牛逼的，都用我的。当然，绝大多数人都不会投降，但是的确会认可某里技术牛逼的现实。并且上进的人会追求进步，然后走了弯路。不过人家并没有说谎啊。所以，现在技术圈的文章，技术上看一半，信只能信1/4；还得多琢磨琢磨技术以外的因素。只是 看看，寻个思路，想还是要自己想，以自己为主。微服务、中台等，一样的 古人说圣人不止，大盗不止；原理就是大家推崇什么，就坏人一定就伪装什么，推崇的越厉害，坏人就越具有破坏性。技术这词，现在就这意思。现代人说：钱多的地方是非多。IT圈就能例外？每个人脸上写着他是天生的技术人？技术是纯粹的，但是技术后面的人是不纯粹的。技术不会自己张嘴说话。</p>
 <p>一、全面了解微服务a : 4个典型特点1.单个服务尽量专注一件事情，高内聚、低耦合；2.进程隔离；3.每个服务可以独立的开发、测试、构建、部署；4.小且灵活；<br><img src="https://pic4.zhimg.com/50/v2-2f5ac5ac2dbbc17431e4539a5a22ffa0_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic4.zhimg.com/80/v2-2f5ac5ac2dbbc17431e4539a5a22ffa0_1440w.jpg?source=1940ef5c" alt="img"><br>b : 无与伦比的优点1.交付周期每个服务可以独立的开发、测试和交付，降低周期；2.快速沟通小团队开发，降低代码耦合度导致的沟通成本；业务按服务拆分，新人不需要了解整体架构，上手快；3.定制化可以根据市场需求，灵活多变的组合出新的业务场景；4.隔离性进程隔离方式，故障范围有效控制；5.技术栈可以根据需求按服务选择不同技术栈；6.演进优化可以按照服务粒度进行演进优化；二、微服务基础架构关键点下面脑图中芒果色标注的七个模块，被认为认为是构建微服务 2.0 技术栈的核心模块，本文后面的选型会分别基于这些模块展开。对于每个模块我也列出一些核心架构关注点，在选择具体产品时，需要尽可能覆盖到这些关注点。下图是我近期工作总结和参考的一个微服务技术体系，我想同时分享给一线架构师或者工程师参考，其中粉红色标注的模块是和微服务关系最密切的模块，大家在做技术选型时，可以同时对照这个体系。<br><img src="https://pic2.zhimg.com/50/v2-b802789f34a329d524f11075bb2a45b6_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic2.zhimg.com/80/v2-b802789f34a329d524f11075bb2a45b6_1440w.jpg?source=1940ef5c" alt="img"><br>三、 服务框架选型服务框架是一个比较成熟的领域，有太多可选项。Spring Boot/Cloud 由于 Spring 社区的影响力和 Netflix 的背书，目前可以认为是构建 Java 微服务的一个社区标准，Spring Boot 目前在 GitHub 上有超过 20k 星。基于 Spring 的框架本质上可以认为是一种 RESTful 框架（不是 RPC 框架），序列化协议主要采用基于文本的 JSON，通讯协议一般基于 HTTP。RESTful 框架天然支持跨语言，任何语言只要有 HTTP 客户端都可以接入调用，但是客户端一般需要自己解析 payload。目前 Spring 框架也支持 Swagger 契约编程模型，能够基于契约生成各种语言的强类型客户端，极大方便不同语言栈的应用接入，但是因为 RESTful 框架和 Swagger 规范的弱契约特性，生成的各种语言客户端的互操作性还是有不少坑的。Dubbo 是阿里多年构建生产级分布式微服务的技术结晶，服务治理能力非常丰富，在国内技术社区具有很大影响力，目前 github 上有超过 16k 星。Dubbo 本质上是一套基于 Java 的 RPC 框架，当当 Dubbox 扩展了 Dubbo 支持 RESTful 接口暴露能力。Dubbo 主要面向 Java 技术栈，跨语言支持不足是它的一个弱项，另外因为治理能力太丰富，以至于这个框架比较重，完全用好这个框架的门槛比较高，但是如果你的企业基本上投资在 Java 技术栈上，选 Dubbo 可以让你在服务框架一块站在较高的起点上，不管是性能还是企业级的服务治理能力，Dubbo 都做的很出色。新浪微博开源的 Motan（GitHub 4k stars）也不错，功能和 Dubbo 类似，可以认为是一个轻量裁剪版的 Dubbo。gRPC 是谷歌近年新推的一套 RPC 框架，基于 protobuf 的强契约编程模型，能自动生成各种语言客户端，且保证互操作。支持 HTTP2 是 gRPC 的一大亮点，通讯层性能比 HTTP 有很大改进。Protobuf 是在社区具有悠久历史和良好口碑的高性能序列化协议，加上 Google 公司的背书和社区影响力，目前 gRPC 也比较火，GitHub 上有超过 13.4k 星。目前看 gRPC 更适合内部服务相互调用场景，对外暴露 RESTful 接口可以实现，但是比较麻烦（需要 gRPC Gateway 配合），所以对于对外暴露 API 场景可能还需要引入第二套 RESTful 框架作为补充。总体上 gRPC 这个东西还比较新，社区对于 HTTP2 带来的好处还未形成一致认同，建议谨慎投入，可以做一些试点。四、 运行时支撑服务选型运行时支撑服务主要包括服务注册中心，服务路由网关和集中式配置中心三个产品。服务注册中心，如果采用 Spring Cloud 体系，则选择 Eureka 是最佳搭配，Eureka 在 Netflix 经过大规模生产验证，支持跨数据中心，客户端配合 Ribbon 可以实现灵活的客户端软负载，Eureka 目前在 GitHub 上有超过 4.7k 星；Consul 也是不错选择，天然支持跨数据中心，还支持 KV 模型存储和灵活健康检查能力，目前在 GitHub 上有超过 11k 星。服务网关也是一个比较成熟的领域，有很多可选项。如果采用 Spring Cloud 体系，则选择 Zuul 是最佳搭配，Zuul 在 Netflix 经过大规模生产验证，支持灵活的动态过滤器脚本机制，异步性能不足（基于 Netty 的异步 Zuul 迟迟未能推出正式版）。Zuul 网关目前在 github 上有超过 3.7k 星。基于 Nginx/OpenResty 的 API 网关 Kong 目前在 github 上比较火，有超过 14.1k 星。因为采用 Nginx 内核，Kong 的异步性能较强，另外基于 lua 的插件机制比较灵活，社区插件也比较丰富，从安全到限流熔断都有，还有不少开源的管理界面，能够集中管理 Kong 集群。配置中心，Spring Cloud 自带 Spring Cloud Config（GitHub 0.75k stars），个人认为算不上生产级，很多治理能力缺失，小规模场景可以试用。个人比较推荐携程的 Apollo 配置中心，在携程经过生产级验证，具备高可用，配置实时生效（推拉结合），配置审计和版本化，多环境多集群支持等生产级特性，建议中大规模需要对配置集中进行治理的企业采用。Apollo 目前在 github 上有超过 3.4k 星。五、服务监控选型主要包括日志监控，调用链监控，Metrics 监控，健康检查和告警通知等产品。ELK 目前可以认为是日志监控的标配，功能完善开箱即用，ElasticSearch 目前在 GitHub 上有超过 28.4k 星。Elastalert(GitHub 4k stars) 是 Yelp 开源的针对 ELK 的告警通知模块。调用链监控目前社区主流是点评 CAT（GitHub 4.3k stars），Twitter 之前开源现在由 OpenZipkin 社区维护的 Zipkin（GitHub 7.5k stars）和 Naver 开源的 Pinpoint（GitHub 5.3k stars）。个人比较推荐点评开源的 CAT，在点评和国内多家互联网公司有落地案例，生产级特性和治理能力较完善，另外 CAT 自带告警模块。下面是我之前对三款产品的评估表，供参考。<br><img src="https://pic1.zhimg.com/50/v2-faa4396cd0713be12053052f349d0c2e_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic1.zhimg.com/80/v2-faa4396cd0713be12053052f349d0c2e_1440w.jpg?source=1940ef5c" alt="img"><br>Metrics 监控主要依赖于时间序列数据库 (TSDB)，目前较成熟的产品是 StumbleUpon 公司开源的基于 HBase 的 OpenTSDB（基于 Cassandra 的 KariosDB 也是一个选择，GitHub 1.1k stars，它基本上是 OpenTSDB 针对 Cassandra 的一个改造版），OpenTSDB 具有分布式能力可以横向扩展，但是相对较重，适用于中大规模企业，OpenTSDB 目前在 GitHub 上有近 2.9k 星。OpenTSDB 本身不提供告警模块，Argus（GitHub 0.29k 星）是 Salesforce 开源的基于 OpenTSDB 的统一监控告警平台，支持丰富的告警函数和灵活的告警配置，可以作为 OpenTSDB 的告警补充。近年也出现一些轻量级的 TSDB，如 InfluxDB（GitHub 12.4k stars）和 Prometheus（GitHub 14.3k stars），这些产品函数报表能力丰富，自带告警模块，但是分布式能力不足，适用于中小规模企业。Grafana（GitHub 19.9k stars）是 Metrics 报表展示的社区标配。社区还有一些通用的健康检查和告警产品，例如 Sensu（GitHub 2.7k stars），能够对各种服务（例如 Spring Boot 暴露的健康检查端点，时间序列数据库中的 metrics，ELK 中的错误日志等）定制灵活的健康检查 (check)，然后用户可以针对 check 结果设置灵活的告警通知策略。Sensu 在 Yelp 等公司有落地案例。其它类似产品还有 Esty 开源的 411（GitHub 0.74k 星）和 Zalando 的 ZMon(GitHub 0.15k 星)，它们是分别在 Esty 和 Zalando 落地的产品，但是定制 check 和告警配置的使用门槛比较高，社区不热，建议有定制自研能力的团队试用。ZMon 后台采用 KairosDB 存储，如果企业已经采用 KariosDB 作为时间序列数据库，则可以考虑 ZMon 作为告警通知模块。六、服务容错选型针对 Java 技术栈，Netflix 的 Hystrix（github 12.4k stars）把熔断、隔离、限流和降级等能力封装成组件，任何依赖调用（数据库，服务，缓存）都可以封装在 Hystrix Command 之内，封装后自动具备容错能力。Hystrix 起源于 Netflix 的弹性工程项目，经过 Netflix 大规模生产验证，目前是容错组件的社区标准，GitHub 上有超 12k 星。其它语言栈也有类似 Hystrix 的简化版本组件。Hystrix 一般需要在应用端或者框架内埋点，有一定的使用门槛。对于采用集中式反向代理（边界和内部）做服务路由的公司，则可以集中在反向代理上做熔断限流，例如采用 Nginx（GitHub 5.1k stars）或者 Kong（GitHub 11.4k stars）这类反向代理，它们都插件支持灵活的限流容错配置。Zuul 网关也可以集成 Hystrix 实现网关层集中式限流容错。集中式反向代理需要有一定的研发和运维能力，但是可以对限流容错进行集中治理，可以简化客户端。七、 后台服务选型后台服务主要包括消息系统，分布式缓存，分布式数据访问层和任务调度系统。后台服务是一个相对比较成熟的领域，很多开源产品基本可以开箱即用。消息系统，对于日志等可靠性要求不高的场景，则 Apache 顶级项目 Kafka（GitHub 7.2k stars）是社区标配。对于可靠性要求较高的业务场景，Kafka 其实也是可以胜任，但企业需要根据具体场景，对 Kafka 的监控和治理能力进行适当定制完善，Allegro 公司开源的 hermes（GitHub 0.3k stars）是一个可参考项目，它在 Kafka 基础上封装了适合业务场景的企业级治理能力。阿里开源的 RocketMQ（GitHub 3.5k 星）也是一个不错选择，具备更多适用于业务场景的特性，目前也是 Apache 顶级项目。RabbitMQ（GitHub 3.6k 星）是老牌经典的 MQ，队列特性和文档都很丰富，性能和分布式能力稍弱，中小规模场景可选。对于缓存治理，如果倾向于采用客户端直连模式（个人认为缓存直连更简单轻量），则 SohuTv 开源的 cachecloud（GitHub 2.5k stars）是一款不错的 Redis 缓存治理平台，提供诸如监控统计，一键开启，自动故障转移，在线伸缩，自动化运维等生产级治理能力，另外其文档也比较丰富。如果倾向采用中间层 Proxy 模式，则 Twitter 开源的 twemproxy（GitHub 7.5k stars）和 CodisLab 开源的 codis（GitHub 6.9k stars）是社区比较热的选项。对于分布式数据访问层，如果采用 Java 技术栈，则当当开源的 shardingjdbc（GitHub 3.5k stars）是一个不错的选项，分库分表逻辑做在客户端 jdbc driver 中，客户端直连数据库比较简单轻量，建议中小规模场景采用。如果倾向采用数据库访问中间层 proxy 模式，则从阿里 Cobar 演化出来的社区开源分库分表中间件 MyCAT（GitHub 3.6k stars）是一个不错选择 。proxy 模式运维成本较高，建议中大规模场景，有一定框架自研和运维能力的团队采用。任务调度系统，个人推荐徐雪里开源的 xxl-job（GitHub 3.4k stars），部署简单轻量，大部分场景够用。当当开源的 elastic-job（GitHub 3.2k stars）也是一个不错选择，相比 xxl-job 功能更强一些也更复杂。八、 服务安全选型对于微服务安全认证授权机制一块，目前业界虽然有 OAuth 和 OpenID connect 等标准协议，但是各家具体实现的做法都不太一样，企业一般有很多特殊的定制需求，整个社区还没有形成通用生产级开箱即用的产品。有一些开源授权服务器产品，比较知名的如 Apereo CAS（GitHub 3.6k stars），JBoss 开源的 keycloak（GitHub 1.9 stars），spring cloud security 等，大都是 opinionated（一家观点和做法）的产品，同时因支持太多协议造成产品复杂，也缺乏足够灵活性。个人建议基于 OAuth 和 OpenID connect 标准，在参考一些开源产品的基础上（例如 Mitre 开源的 OpenID-Connect-Java-Spring-Server，GitHub 0.62k stars），定制自研轻量级授权服务器。Wso2 提出了一种微服务安全的参考方案，建议参考，该方案的关键步骤如下：<br><img src="https://pic4.zhimg.com/50/v2-79a24c7c2bd4e81812c35bc6947fae30_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic4.zhimg.com/80/v2-79a24c7c2bd4e81812c35bc6947fae30_1440w.jpg?source=1940ef5c" alt="img"><br>\1. 使用支持 OAuth 2.0 和 OpenID Connect 标准协议的授权服务器（个人建议定制自研）；2. 使用 API 网关作为单一访问入口，统一实现安全治理；3. 客户在访问微服务之前，先通过授权服务器登录获取 access token，然后将 access token 和请求一起发送到网关；4. 网关获取 access token，通过授权服务器校验 token，同时做 token 转换获取 JWT token。5. 网关将 JWT Token 和请求一起转发到后台微服务。6. JWT 中可以存储用户会话信息，该信息可以传递给后台的微服务，也可以在微服务之间传递，用作认证授权等用途；7. 每个微服务包含 JWT 客户端，能够解密 JWT 并获取其中的用户会话信息。8. 整个方案中，access token 是一种 by reference token，不包含用户信息可以直接暴露在公网上；JWT token 是一种 by value token，可以包含用户信息但不暴露在公网上。九、 服务部署平台选型容器已经被社区接受为交付微服务的一种理想手段，可以实现不可变（immutable）发布模式。一个轻量级的基于容器的服务部署平台主要包括容器资源调度，发布系统，镜像治理，资源治理和 IAM 等模块。<strong>集群资源调度系统</strong>：屏蔽容器细节，将整个集群抽象成容器资源池，支持按需申请和释放容器资源，物理机发生故障时能够实现自动故障迁移 (fail over)。目前 Google 开源的 Kubernetes，在 Google 背书和社区的强力推动下，基本已经形成市场领导者地位，GitHub 上有 31.8k 星，社区的活跃度已经远远超过了 mesos（GitHub 3.5k stars）和 swarm 等竞争产品，所以容器资源调度建议首选 K8s。当然如果你的团队有足够定制自研能力，想深度把控底层调度算法，也可以基于 Mesos 做定制自研。<strong>镜像治理</strong>：基于 Docker Registry，封装一些轻量级的治理功能。VMware 开源的 harbor(GitHub 3.5k stars) 是目前社区比较成熟的企业级产品，在 Docker Registry 基础上扩展了权限控制，审计，镜像同步，管理界面等治理能力，可以考虑采用。<strong>资源治理</strong>：类似于 CMDB 思路，在容器云环境中，企业仍然需要对应用 app，组织 org，容器配额和数量等相关信息进行轻量级的治理。目前这块还没有生产级的开源产品，一般企业需要根据自己的场景定制自研。<strong>发布平台</strong>：面向用户的发布管理控制台，支持发布流程编排。它和其它子系统对接交互，实现基本的应用发布能力，也实现如蓝绿，金丝雀和灰度等高级发布机制。目前这块生产级的开源产品很少，Netflix 开源的 spinnaker（github 4.2k stars）是一个，但是这个产品比较复杂重量（因为它既要支持适配对接各种 CI 系统，同时还要适配对接各种公有云和容器云，使得整个系统异常复杂），一般企业建议根据自己的场景定制自研轻量级的解决方案。<strong>IAM</strong>：是 identity &amp; access management 的简称，对发布平台各个组件进行身份认证和安全访问控制。社区有不少开源的 IAM 产品，比较知名的有 Apereo CAS（GitHub 3.6k stars），JBoss 开源的 keycloak（GitHub 1.9 stars）等。但是这些产品一般都比较复杂重量，很多企业考虑到内部各种系统灵活对接的需求，都会考虑定制自研轻量级的解决方案。考虑到服务部署平台目前还没有端到端生产级解决方案，企业一般需要定制集成，下面给出一个可以参考的具备轻量级治理能力的发布体系：<br><img src="https://pic2.zhimg.com/50/v2-60b0dd7124de19e4553c47a3bcd152be_hd.jpg?source=1940ef5c" alt="img"><img src="https://pic2.zhimg.com/80/v2-60b0dd7124de19e4553c47a3bcd152be_1440w.jpg?source=1940ef5c" alt="img"><br>简化发布流程如下：1. 应用通过 CI 集成后生成镜像，用户将镜像推到镜像治理中心；2. 用户在资产治理中心申请发布，填报应用，发布和配额相关信息，然后等待审批通过；3. 发布审批通过，开发人员通过发布控制台发布应用；4. 发布系统通过查询资产治理中心获取发布规格信息；5. 发布系统向容器云发出启动容器实例指令；6. 容器云从镜像治理中心拉取镜像并启动容器；7. 容器内服务启动后自注册到服务注册中心，并保持定期心跳；8. 用户通过发布系统调用服务注册中心调拨流量，实现蓝绿，金丝雀或灰度发布等机制；9. 网关和内部微服务客户端定期同步服务注册中心上的服务路由表，将流量按负载均衡策略分发到新的服务实例上。另外，持续交付流水线（CD Pipeline）也是微服务发布重要环节，这块主要和研发流程相关，一般需要企业定制，下面是一个可供参考的流水线模型，在镜像治理中心上封装一些轻量级的治理流程，例如只有通过测试环境测试的镜像才能升级发布到 UAT 环境，只有通过 UAT 环境测试的镜像才能升级发布到生产环境，通过在流水线上设置一些质量门，保障应用高质量交付到生产。十、总结注意，本文限于篇幅，对测试和 CI 等环节没有涉及，但它们同样是构建微服务架构的重要环节，也有众多成熟的开源产品可选。技术选型虽然重要，但还只是微服务建设的一小部分工作，选型后的产品要在企业内部真正落地，形成完整的微服务技术栈体系，则后续还有大量集成、定制、治理、运维和推广等工作。以上是理论部分，具体实践请详细参照各大公司的系统微服务演进，包括华为、阿里、百度、滴滴、豆瓣、七牛、小米、360、58等公司的实践案例以及两本最佳学习微服务的电子书，王磊著的《微服务架构与实践》以及国外Sam Newman著的《微服务设计》。</p>
 
-      
-    </div>
-    <div class="article-footer">
-      <blockquote class="mt-2x">
-  <ul class="post-copyright list-unstyled">
-    
-    <li class="post-copyright-link hidden-xs">
-      <strong>本文链接：</strong>
-      <a href="http://example.com/2020/12/07/%E7%AE%80%E8%BF%B0%E5%BE%AE%E6%9C%8D%E5%8A%A1%E8%AE%BE%E8%AE%A1/" title="&lt;简述微服务设计&gt;" target="_blank" rel="external">http://example.com/2020/12/07/%E7%AE%80%E8%BF%B0%E5%BE%AE%E6%9C%8D%E5%8A%A1%E8%AE%BE%E8%AE%A1/</a>
-    </li>
-    
-    <li class="post-copyright-license">
-      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
-    </li>
-  </ul>
-</blockquote>
+            </div>
+          
 
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="../../../../tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">微服务</a>
+          
+        </div>
 
-<div class="panel panel-default panel-badger">
-  <div class="panel-body">
-    <figure class="media">
-      <div class="media-left">
-        <a href="https://github.com/Geisha-design" target="_blank" class="img-burn thumb-sm visible-lg">
-          <img src="../../../../images/avatar.jpg" class="img-rounded w-full" alt="">
-        </a>
-      </div>
-      <div class="media-body">
-        <h3 class="media-heading"><a href="https://github.com/Geisha-design" target="_blank"><span class="text-dark">截面樱🌸</span><small class="ml-1x">Web Developer &amp; Designer</small></a></h3>
-        <div>永恒之女性，引我等向上</div>
-      </div>
-    </figure>
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="../../10/docker%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8mysql%E6%95%B0%E6%8D%AE%E5%BA%93/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Docker环境下使用mysql数据库</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="../../../11/29/hexo%E4%B8%AD%E6%B7%BB%E5%8A%A0%E9%BC%A0%E6%A0%87%E5%8F%B3%E9%94%AE%E5%8A%9F%E8%83%BD/">
+        <span class="next-text nav-default">hexo中添加鼠标右键功能<hexo中添加鼠标右键功能></span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
   </div>
-</div>
 
 
-    </div>
+      </footer>
+    
   </article>
-  
-    
-  <section id="comments">
-  	
-      <div id="vcomments"></div>
-    
-  </section>
 
+    </div>
 
-  
-</div>
+      </div>
 
-  <nav class="bar bar-footer clearfix" data-stick-bottom>
-  <div class="bar-inner">
-  
-  <ul class="pager pull-left">
+      <footer id="colophon"><span class="copyright-year">
     
-    <li class="prev">
-      <a href="../../10/docker%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8mysql%E6%95%B0%E6%8D%AE%E5%BA%93/" title="Docker环境下使用mysql数据库"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
-    </li>
+        &copy;
     
+        2012 -
     
-    <li class="next">
-      <a href="../../../11/29/hexo%E4%B8%AD%E6%B7%BB%E5%8A%A0%E9%BC%A0%E6%A0%87%E5%8F%B3%E9%94%AE%E5%8A%9F%E8%83%BD/" title="hexo中添加鼠标右键功能&lt;hexo中添加鼠标右键功能&gt;"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
-    </li>
-    
-    
-  </ul>
-  
-  
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
-  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
-    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
-  </div> -->
-  
-  
-  <div class="bar-right">
-    
-    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
-    
-  </div>
-  </div>
-</nav>
-  
-<!-- Modal -->
-<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content donate">
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <div class="modal-body">
-        <div class="donate-box">
-          <div class="donate-head">
-            <p>Maybe you could buy me a cup of coffee.</p>
-          </div>
-          <div class="tab-content">
-            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
-              <div class="donate-payimg">
-                <img src="../../../../images/donate/alipayimg.png" alt="Scan Qrcode" title="Scan" />
-              </div>
-              <p class="text-muted mv">Scan this qrcode</p>
-              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
-            </div>
-            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
-              <div class="donate-payimg">
-                <img src="../../../../images/donate/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
-              </div>
-              <p class="text-muted mv">Scan this qrcode</p>
-              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
-            </div>
-          </div>
-          <div class="donate-footer">
-            <ul class="nav nav-tabs nav-justified" role="tablist">
-              <li role="presentation" class="active">
-                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
-              </li>
-              <li role="presentation" class="">
-                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
-              </li>
-            </ul>
-          </div>
-        </div>
+    2021
+    <span class="footer-author">齐雨争.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
       </div>
     </div>
-  </div>
-</div>
+    
+    <div id="search-container" class="search-container">
+        <input type="hidden" id="algolia_index" value="<INDEX_NAME>"/>
+        <input type="hidden" id="algolia_app_id" value="<APP_ID>"/>
+        <input type="hidden" id="algolia_token" value="<API_KEY>"/>
+        <div class="section">
+            <div class="container">
 
+                <div class="panel">
+                    <div class="panel-heading">
+                        Search
+                        <a id="close" href="" style="float: right; color: #363636;">
+                            <i class="fas fa-times-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="panel-block">
+                        <div id="searchContainer" class="control has-icons-left">
+                            <input id="searchField" class="input" type="text" placeholder="Enter anything...">
+                            <span class="icon is-small is-left">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </span>
+                        </div>
+                    </div>
+                    <div id="result">
 
+                    </div>
+                </div>
 
-</main>
-
-  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
-	
-	
-    <ul class="social-links">
-    	
-        <li><a href="../../../../https:/github.com/Geisha-design" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
-        
-        <li><a href="../../../../http:/weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
-        
-        <li><a href="../../../../https:/twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
-        
-        <li><a href="../../../../https:/www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
-        
-        <li><a href="../../../../atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
-        
-    </ul>
-
-    <div class="copyright">
-    	
-        <div class="publishby">
-        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+            </div>
         </div>
     </div>
-</footer>
-  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-<script>
-window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
-</script>
-
-<script src="../../../../js/plugin.min.js"></script>
-
-
-<script src="../../../../js/application.js"></script>
-
-
-    <script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '../../../../content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-
-<script src="../../../../js/insight.js"></script>
 
 
 
-
-
-
-   
-
-
-
-
-   
     
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/valine"></script>
-  <script type="text/javascript">
-  var GUEST = ['nick', 'mail', 'link'];
-  var meta = 'nick,mail,link';
-  meta = meta.split(',').filter(function(item) {
-    return GUEST.indexOf(item) > -1;
-  });
-  new Valine({
-    el: '#vcomments',
-    verify: false,
-    notify: false,
-    appId: '',
-    appKey: '',
-    placeholder: 'Just go go',
-    avatar: 'mm',
-    meta: meta,
-    pageSize: '10' || 10,
-    visitor: false
-  });
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="../../../../lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="../../../../js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
+
+    
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script type="text/javascript" src="../../../../js/src/search.js"></script>
+
+
+  
+  <script type="application/ld+json">
+  {
+  "@context": "http://www.schema.org",
+  "@type": "Person",
+  "@id": "https://huangyijie.com/about/",
+  "name": "黄奕杰",
+  "alternateName": "Henry Huang",
+  "nationality": "中国",
+  "birthPlace" : {
+    "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+      "addressLocality": "汕头市",
+      "addressRegion": "广东省",
+          "addressCountry": "中国"
+    }
+  },
+  "gender": "Male",
+  "Description": "Software Engineer",
+  "disambiguatingDescription": "Full stack software engineer, focus on Java and JavaScript.",
+  "jobTitle": "Software Engineer",
+  "url": "https://huangyijie.com",
+  "image": "https://s.gravatar.com/avatar/4e0e61fdf1b2bcfb4ee31da27601fe6b?s=512&r=g",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "深圳市",
+    "addressRegion": "广东省",
+    "addressCountry": "中国"
+  },
+  "sameAs": [
+    "http://weibo.com/626242034",
+    "https://github.com/henryhuang",
+    "https://unsplash.com/@henryhh"
+    ]
+  }
   </script>
-
-     
-
-
-
-
-
-
-
-</body>
+  </body>
 </html>

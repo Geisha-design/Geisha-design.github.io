@@ -1,24 +1,41 @@
 <!DOCTYPE html>
-<html lang=en>
-<head>
-  <meta charset="utf-8">
-  
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-  <meta name="renderer" content="webkit">
-  <meta http-equiv="Cache-Control" content="no-transform" />
-  <meta http-equiv="Cache-Control" content="no-siteapp" />
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="format-detection" content="telephone=no,email=no,adress=no">
-  <!-- Color theme for statusbar -->
-  <meta name="theme-color" content="#000000" />
-  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
-  <meta http-equiv="window-target" content="_top" />
-  
-  
-  <title>macvim配置 | Hexo</title>
-  <meta name="description" content="虽然我还没用，但是记下总是好的吧，这种东西网站一输如就能找到，就不放到笔记里了。">
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="macvim配置"/>
+
+
+
+
+  <meta name="keywords" content="it,macvim,vim," />
+
+
+
+
+
+    <link rel="alternate" href="../../../../default" title="齐雨争" >
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.1"/>
+
+
+
+<link rel="canonical" href="http://example.com/2013/08/01/2013-08-01-macvim-config/"/>
+
+
+<meta name="description" content="虽然我还没用，但是记下总是好的吧，这种东西网站一输如就能找到，就不放到笔记里了。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="macvim配置">
 <meta property="og:url" content="http://example.com/2013/08/01/2013-08-01-macvim-config/index.html">
@@ -32,586 +49,269 @@
 <meta property="article:tag" content="macvim">
 <meta property="article:tag" content="vim">
 <meta name="twitter:card" content="summary">
-  <!-- Canonical links -->
-  <link rel="canonical" href="http://example.com/2013/08/01/2013-08-01-macvim-config/index.html">
-  
-    <link rel="alternate" href="/atom.xml" title="齐雨争" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png" type="image/x-icon">
-  
-  
-<link rel="stylesheet" href="../../../../css/style.css">
-
-  
-  
-  
-  
-<meta name="generator" content="Hexo 5.4.0"></head>
 
 
-<body class="main-center theme-purple" itemscope itemtype="http://schema.org/WebPage">
-  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-  <div class="slimContent">
-    <div class="navbar-header">
-      
-      
-      <div class="profile-block text-center">
-        <a id="avatar" href="https://github.com/Geisha-design" target="_blank">
-          <img class="img-circle img-rotate" src="../../../../images/avatar.jpg" width="200" height="200">
-        </a>
-        <h2 id="name" class="hidden-xs hidden-sm">截面樱🌸</h2>
-        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Web Developer &amp; Designer</h3>
-        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> zhejiang, China</small>
-      </div>
-      
-      <div class="search" id="search-form-wrap">
-
-    <form class="search-form sidebar-form">
-        <div class="input-group">
-            <input type="text" class="search-form-input form-control" placeholder="Search" />
-            <span class="input-group-btn">
-                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
-            </span>
-        </div>
-    </form>
-    <div class="ins-search">
-  <div class="ins-search-mask"></div>
-  <div class="ins-search-container">
-    <div class="ins-input-wrapper">
-      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
-      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-    </div>
-    <div class="ins-section-wrapper">
-      <div class="ins-section-container"></div>
-    </div>
-  </div>
-</div>
+<link rel="stylesheet" type="text/css" href="../../../../css/style.css?v=1.1"/>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
 
 
-</div>
-      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
-      <ul class="nav navbar-nav main-nav menu-highlight">
-        
-        
-        <li class="menu-item menu-item-home">
-          <a href="../../../../.">
-            
-            <i class="icon icon-home-fill"></i>
-            
-            <span class="menu-title">Home</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-archives">
-          <a href="../../../../%E5%BD%92%E6%A1%A3">
-            
-            <i class="icon icon-archives-fill"></i>
-            
-            <span class="menu-title">Archives</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-categories">
-          <a href="../../../../%E5%88%86%E7%B1%BB">
-            
-            <i class="icon icon-folder"></i>
-            
-            <span class="menu-title">Categories</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-tags">
-          <a href="../../../../%E6%A0%87%E7%AD%BE">
-            
-            <i class="icon icon-tags"></i>
-            
-            <span class="menu-title">Tags</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-repository">
-          <a href="../../../../%E9%A1%B9%E7%9B%AEy">
-            
-            <i class="icon icon-project"></i>
-            
-            <span class="menu-title">Repository</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-books">
-          <a href="../../../../%E9%98%85%E8%AF%BB">
-            
-            <i class="icon icon-book-fill"></i>
-            
-            <span class="menu-title">Books</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-links">
-          <a href="../../../../%E5%8F%8B%E9%93%BE">
-            
-            <i class="icon icon-friendship"></i>
-            
-            <span class="menu-title">Links</span>
-          </a>
-        </li>
-        
-        
-        <li class="menu-item menu-item-about">
-          <a href="../../../../%E5%85%B3%E4%BA%8E">
-            
-            <i class="icon icon-cup-fill"></i>
-            
-            <span class="menu-title">About</span>
-          </a>
-        </li>
-        
-      </ul>
-      
-	
-    <ul class="social-links">
-    	
-        <li><a href="../../../../https:/github.com/Geisha-design" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
-        
-        <li><a href="../../../../http:/weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
-        
-        <li><a href="../../../../https:/twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
-        
-        <li><a href="../../../../https:/www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
-        
-        <li><a href="../../../../atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
-        
-    </ul>
 
-    </nav>
-  </div>
-</header>
 
-  
-    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
-  <div class="slimContent">
-    
-      <div class="widget">
-    <h3 class="widget-title">Board</h3>
-    <div class="widget-body">
-        <div id="board">
-            <div class="content">
-                <p>你顺手挽住火焰，化作漫天大雪</p>
-            </div>
-        </div>
-    </div>
-</div>
 
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/basic/">basic</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/helloworld/">helloworld</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/introduction/">introduction</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%94%9F%E6%B4%BB/">生活</a><span class="category-list-count">18</span></li></ul>
-    </div>
-  </div>
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
 
 
     
-      
-  <div class="widget">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/CSS/" rel="tag">CSS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Eclipse/" rel="tag">Eclipse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Field/" rel="tag">Field</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Groovy/" rel="tag">Groovy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/HTML/" rel="tag">HTML</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/IDE/" rel="tag">IDE</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/IT/" rel="tag">IT</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/JAVA/" rel="tag">JAVA</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/JVM/" rel="tag">JVM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Java/" rel="tag">Java</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/JavaScript/" rel="tag">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/MYSQL/" rel="tag">MYSQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Maven/" rel="tag">Maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/NoSql/" rel="tag">NoSql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Node-js/" rel="tag">Node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Python/" rel="tag">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/TOMCAT/" rel="tag">TOMCAT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/UI/" rel="tag">UI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/VMware/" rel="tag">VMware</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/Wicket/" rel="tag">Wicket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/coding/" rel="tag">coding</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/coding-net/" rel="tag">coding.net</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/css/" rel="tag">css</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/date/" rel="tag">date</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/debug/" rel="tag">debug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/decorator/" rel="tag">decorator</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/eclipse/" rel="tag">eclipse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/editor/" rel="tag">editor</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/equals/" rel="tag">equals</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/express/" rel="tag">express</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/github/" rel="tag">github</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/gogs/" rel="tag">gogs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/https/" rel="tag">https</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/i18n/" rel="tag">i18n</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/ini/" rel="tag">ini</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/it/" rel="tag">it</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/jar/" rel="tag">jar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/java/" rel="tag">java</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/javascript/" rel="tag">javascript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/jdk/" rel="tag">jdk</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/jvm/" rel="tag">jvm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/less/" rel="tag">less</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/linux/" rel="tag">linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/mac/" rel="tag">mac</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/macvim/" rel="tag">macvim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/markdown/" rel="tag">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/maven/" rel="tag">maven</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/mediator/" rel="tag">mediator</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/nginx/" rel="tag">nginx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/object/" rel="tag">object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/observer/" rel="tag">observer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/qcloud/" rel="tag">qcloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/rails/" rel="tag">rails</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/reflect/" rel="tag">reflect</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/remote/" rel="tag">remote</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/ssh/" rel="tag">ssh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/ssl/" rel="tag">ssl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/tomcat/" rel="tag">tomcat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/travis/" rel="tag">travis</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/vim/" rel="tag">vim</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/web/" rel="tag">web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/webjars/" rel="tag">webjars</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/wicket/" rel="tag">wicket</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E4%B8%8D%E8%AF%B4%E6%8A%80%E6%9C%AF/" rel="tag">不说技术</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E4%B8%AD%E4%BB%8B%E8%80%85/" rel="tag">中介者</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%81%87%E6%9C%9F/" rel="tag">假期</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%88%86%E5%B8%83%E5%BC%8F/" rel="tag">分布式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%91%A8%E6%9C%AB/" rel="tag">周末</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BE%E5%83%8F/" rel="tag">图像</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%9B%BE%E7%89%87/" rel="tag">图片</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%A5%BD%E6%96%87/" rel="tag">好文</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9/" rel="tag">小知识点</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%B7%A5%E4%BD%9C/" rel="tag">工作</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BC%80%E5%8F%91/" rel="tag">开发</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" rel="tag">微服务</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E5%BF%83%E6%83%85/" rel="tag">心情</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%95%B0%E6%8D%AE%E6%9C%BA%E6%9E%84/" rel="tag">数据机构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%96%87%E7%AB%A0/" rel="tag">文章</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%97%85%E8%A1%8C/" rel="tag">旅行</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%97%A0%E5%9B%BE/" rel="tag">无图</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%82%E4%BA%8B/" rel="tag">杂事</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%82%E6%96%87/" rel="tag">杂文</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%9D%82%E8%B0%88/" rel="tag">杂谈</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%B2%B9%E6%BC%86%E5%B7%A5/" rel="tag">油漆工</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E6%B3%B0%E5%9B%BD/" rel="tag">泰国</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%94%B5%E5%BD%B1/" rel="tag">电影</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%80%81%E5%AE%B6/" rel="tag">老家</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%88%B6%E6%9D%A5%E5%93%81/" rel="tag">舶来品</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%A7%82%E5%AF%9F%E8%80%85/" rel="tag">观察者</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%AE%B0%E5%BD%95/" rel="tag">记录</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%AF%B4%E7%82%B9%E5%95%A5/" rel="tag">说点啥</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%B7%91%E6%AD%A5/" rel="tag">跑步</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E8%BF%90%E5%8A%A8/" rel="tag">运动</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%A3%8E%E6%99%AF/" rel="tag">风景</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="../../../../tags/%E9%AB%98%E6%95%B0%E4%B9%8B%E6%97%85/" rel="tag">高数之旅</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
+
+
+
 
 
     
-      
-  <div class="widget">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget-body tagcloud">
-      <a href="../../../../tags/CSS/" style="font-size: 13.11px;">CSS</a> <a href="../../../../tags/Eclipse/" style="font-size: 13px;">Eclipse</a> <a href="../../../../tags/Field/" style="font-size: 13px;">Field</a> <a href="../../../../tags/Groovy/" style="font-size: 13px;">Groovy</a> <a href="../../../../tags/HTML/" style="font-size: 13.11px;">HTML</a> <a href="../../../../tags/Hexo/" style="font-size: 13px;">Hexo</a> <a href="../../../../tags/IDE/" style="font-size: 13.11px;">IDE</a> <a href="../../../../tags/IT/" style="font-size: 13.67px;">IT</a> <a href="../../../../tags/JAVA/" style="font-size: 13.22px;">JAVA</a> <a href="../../../../tags/JVM/" style="font-size: 13px;">JVM</a> <a href="../../../../tags/Java/" style="font-size: 13.44px;">Java</a> <a href="../../../../tags/JavaScript/" style="font-size: 13.11px;">JavaScript</a> <a href="../../../../tags/MYSQL/" style="font-size: 13px;">MYSQL</a> <a href="../../../../tags/Maven/" style="font-size: 13px;">Maven</a> <a href="../../../../tags/NoSql/" style="font-size: 13px;">NoSql</a> <a href="../../../../tags/Node-js/" style="font-size: 13px;">Node.js</a> <a href="../../../../tags/Python/" style="font-size: 13px;">Python</a> <a href="../../../../tags/TOMCAT/" style="font-size: 13px;">TOMCAT</a> <a href="../../../../tags/UI/" style="font-size: 13px;">UI</a> <a href="../../../../tags/VMware/" style="font-size: 13px;">VMware</a> <a href="../../../../tags/Wicket/" style="font-size: 13px;">Wicket</a> <a href="../../../../tags/coding/" style="font-size: 13px;">coding</a> <a href="../../../../tags/coding-net/" style="font-size: 13.22px;">coding.net</a> <a href="../../../../tags/css/" style="font-size: 13.33px;">css</a> <a href="../../../../tags/date/" style="font-size: 13px;">date</a> <a href="../../../../tags/debug/" style="font-size: 13px;">debug</a> <a href="../../../../tags/decorator/" style="font-size: 13px;">decorator</a> <a href="../../../../tags/eclipse/" style="font-size: 13px;">eclipse</a> <a href="../../../../tags/editor/" style="font-size: 13px;">editor</a> <a href="../../../../tags/equals/" style="font-size: 13px;">equals</a> <a href="../../../../tags/express/" style="font-size: 13px;">express</a> <a href="../../../../tags/git/" style="font-size: 13px;">git</a> <a href="../../../../tags/github/" style="font-size: 13.22px;">github</a> <a href="../../../../tags/gogs/" style="font-size: 13px;">gogs</a> <a href="../../../../tags/hexo/" style="font-size: 13px;">hexo</a> <a href="../../../../tags/https/" style="font-size: 13px;">https</a> <a href="../../../../tags/i18n/" style="font-size: 13px;">i18n</a> <a href="../../../../tags/ini/" style="font-size: 13px;">ini</a> <a href="../../../../tags/it/" style="font-size: 13.56px;">it</a> <a href="../../../../tags/jar/" style="font-size: 13px;">jar</a> <a href="../../../../tags/java/" style="font-size: 14px;">java</a> <a href="../../../../tags/javascript/" style="font-size: 13.22px;">javascript</a> <a href="../../../../tags/jdk/" style="font-size: 13px;">jdk</a> <a href="../../../../tags/jvm/" style="font-size: 13px;">jvm</a> <a href="../../../../tags/less/" style="font-size: 13px;">less</a> <a href="../../../../tags/linux/" style="font-size: 13.11px;">linux</a> <a href="../../../../tags/mac/" style="font-size: 13.22px;">mac</a> <a href="../../../../tags/macvim/" style="font-size: 13px;">macvim</a> <a href="../../../../tags/markdown/" style="font-size: 13px;">markdown</a> <a href="../../../../tags/maven/" style="font-size: 13.11px;">maven</a> <a href="../../../../tags/mediator/" style="font-size: 13px;">mediator</a> <a href="../../../../tags/nginx/" style="font-size: 13px;">nginx</a> <a href="../../../../tags/object/" style="font-size: 13px;">object</a> <a href="../../../../tags/observer/" style="font-size: 13px;">observer</a> <a href="../../../../tags/qcloud/" style="font-size: 13px;">qcloud</a> <a href="../../../../tags/rails/" style="font-size: 13px;">rails</a> <a href="../../../../tags/reflect/" style="font-size: 13px;">reflect</a> <a href="../../../../tags/remote/" style="font-size: 13px;">remote</a> <a href="../../../../tags/ssh/" style="font-size: 13px;">ssh</a> <a href="../../../../tags/ssl/" style="font-size: 13px;">ssl</a> <a href="../../../../tags/tomcat/" style="font-size: 13px;">tomcat</a> <a href="../../../../tags/travis/" style="font-size: 13.22px;">travis</a> <a href="../../../../tags/vim/" style="font-size: 13.11px;">vim</a> <a href="../../../../tags/web/" style="font-size: 13.11px;">web</a> <a href="../../../../tags/webjars/" style="font-size: 13.11px;">webjars</a> <a href="../../../../tags/wicket/" style="font-size: 13.11px;">wicket</a> <a href="../../../../tags/%E4%B8%8D%E8%AF%B4%E6%8A%80%E6%9C%AF/" style="font-size: 13.22px;">不说技术</a> <a href="../../../../tags/%E4%B8%AD%E4%BB%8B%E8%80%85/" style="font-size: 13px;">中介者</a> <a href="../../../../tags/%E5%81%87%E6%9C%9F/" style="font-size: 13px;">假期</a> <a href="../../../../tags/%E5%88%86%E5%B8%83%E5%BC%8F/" style="font-size: 13px;">分布式</a> <a href="../../../../tags/%E5%89%8D%E7%AB%AF/" style="font-size: 13.11px;">前端</a> <a href="../../../../tags/%E5%91%A8%E6%9C%AB/" style="font-size: 13.11px;">周末</a> <a href="../../../../tags/%E5%9B%BE%E5%83%8F/" style="font-size: 13.11px;">图像</a> <a href="../../../../tags/%E5%9B%BE%E7%89%87/" style="font-size: 13.11px;">图片</a> <a href="../../../../tags/%E5%A5%BD%E6%96%87/" style="font-size: 13px;">好文</a> <a href="../../../../tags/%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9/" style="font-size: 13px;">小知识点</a> <a href="../../../../tags/%E5%B7%A5%E4%BD%9C/" style="font-size: 13px;">工作</a> <a href="../../../../tags/%E5%BC%80%E5%8F%91/" style="font-size: 13px;">开发</a> <a href="../../../../tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 13px;">微服务</a> <a href="../../../../tags/%E5%BF%83%E6%83%85/" style="font-size: 13.11px;">心情</a> <a href="../../../../tags/%E6%8A%80%E6%9C%AF/" style="font-size: 13px;">技术</a> <a href="../../../../tags/%E6%95%99%E7%A8%8B/" style="font-size: 13px;">教程</a> <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 13px;">数据库</a> <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E6%9C%BA%E6%9E%84/" style="font-size: 13px;">数据机构</a> <a href="../../../../tags/%E6%96%87%E7%AB%A0/" style="font-size: 13px;">文章</a> <a href="../../../../tags/%E6%97%85%E8%A1%8C/" style="font-size: 13.22px;">旅行</a> <a href="../../../../tags/%E6%97%A0%E5%9B%BE/" style="font-size: 13px;">无图</a> <a href="../../../../tags/%E6%97%A5%E5%BF%97/" style="font-size: 13.89px;">日志</a> <a href="../../../../tags/%E6%97%A5%E8%AE%B0/" style="font-size: 13px;">日记</a> <a href="../../../../tags/%E6%9D%82%E4%BA%8B/" style="font-size: 13.78px;">杂事</a> <a href="../../../../tags/%E6%9D%82%E6%96%87/" style="font-size: 13px;">杂文</a> <a href="../../../../tags/%E6%9D%82%E8%B0%88/" style="font-size: 13px;">杂谈</a> <a href="../../../../tags/%E6%B2%B9%E6%BC%86%E5%B7%A5/" style="font-size: 13px;">油漆工</a> <a href="../../../../tags/%E6%B3%B0%E5%9B%BD/" style="font-size: 13.22px;">泰国</a> <a href="../../../../tags/%E7%94%9F%E6%B4%BB/" style="font-size: 13.22px;">生活</a> <a href="../../../../tags/%E7%94%B5%E5%BD%B1/" style="font-size: 13px;">电影</a> <a href="../../../../tags/%E7%BD%91%E7%BB%9C/" style="font-size: 13px;">网络</a> <a href="../../../../tags/%E8%80%81%E5%AE%B6/" style="font-size: 13.11px;">老家</a> <a href="../../../../tags/%E8%88%B6%E6%9D%A5%E5%93%81/" style="font-size: 13px;">舶来品</a> <a href="../../../../tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 13px;">虚拟机</a> <a href="../../../../tags/%E8%A7%82%E5%AF%9F%E8%80%85/" style="font-size: 13px;">观察者</a> <a href="../../../../tags/%E8%AE%B0%E5%BD%95/" style="font-size: 13px;">记录</a> <a href="../../../../tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.44px;">设计模式</a> <a href="../../../../tags/%E8%AF%B4%E7%82%B9%E5%95%A5/" style="font-size: 13px;">说点啥</a> <a href="../../../../tags/%E8%B7%91%E6%AD%A5/" style="font-size: 13px;">跑步</a> <a href="../../../../tags/%E8%BF%90%E5%8A%A8/" style="font-size: 13px;">运动</a> <a href="../../../../tags/%E9%A3%8E%E6%99%AF/" style="font-size: 13.33px;">风景</a> <a href="../../../../tags/%E9%AB%98%E6%95%B0%E4%B9%8B%E6%97%85/" style="font-size: 13px;">高数之旅</a>
-    </div>
-  </div>
-
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">Archive</h3>
-    <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2021/04/">April 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2021/02/">February 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/12/">December 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/11/">November 2020</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/02/">February 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/01/">January 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2019/10/">October 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2019/06/">June 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2019/03/">March 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2019/02/">February 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2017/08/">August 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2017/07/">July 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2017/06/">June 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2016/10/">October 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2016/03/">March 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2015/04/">April 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2015/02/">February 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2015/01/">January 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2014/08/">August 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2014/05/">May 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/12/">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/11/">November 2013</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/10/">October 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/08/">August 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/07/">July 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/06/">June 2013</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/05/">May 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/04/">April 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/03/">March 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/02/">February 2013</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2012/12/">December 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2012/11/">November 2012</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2012/10/">October 2012</a><span class="archive-list-count">3</span></li></ul>
-    </div>
-  </div>
 
 
-    
-      
-  <div class="widget">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget-body">
-      <ul class="recent-post-list list-unstyled no-thumbnail">
-        
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="../../../../2021/04/13/%E8%AE%BA%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" class="title">论微分方程</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2021-04-13T11:48:20.000Z" itemprop="datePublished">2021-04-13</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="../../../../2021/04/13/mac%E4%B8%8A%E5%AE%89%E8%A3%85%E8%99%9A%E6%8B%9F%E6%9C%BA/" class="title">mac上安装虚拟机</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2021-04-13T11:12:31.000Z" itemprop="datePublished">2021-04-13</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="../../../../2021/04/13/%E5%BE%AE%E5%88%86%E4%B8%8E%E5%AF%BC%E6%95%B0%E7%9A%84%E5%8C%BA%E5%88%AB/" class="title">微分与导数的区别</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2021-04-13T09:35:17.000Z" itemprop="datePublished">2021-04-13</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="../../../../2021/04/13/%E5%BE%AE%E5%88%86%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88/" class="title">微分到底是什么</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2021-04-13T08:49:16.000Z" itemprop="datePublished">2021-04-13</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="../../../../2021/04/02/iOS%E3%80%81macOS%E7%B3%BB%E7%BB%9F%E5%BA%94%E7%94%A8%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/" class="title">iOS、macOS系统应用管理机制</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2021-04-02T03:46:15.000Z" itemprop="datePublished">2021-04-02</time>
-              </p>
-            </div>
-          </li>
-          
-      </ul>
-    </div>
-  </div>
-  
 
-    
-  </div>
-</aside>
+    <link rel="stylesheet" type="text/css" href="../../../../css/search.css?v=1.1"/>
 
-  
-  
-<main class="main" role="main">
-  <div class="content">
-  <article id="post-2013-08-01-macvim-config" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-    
-    <div class="article-header">
-      
-        
-  
-    <h1 class="article-title" itemprop="name">
-      macvim配置
+
+
+    <title> macvim配置 - 齐雨争 </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="../../../../." class="logo">齐雨争</a>
     </h1>
-  
 
-      
-      <div class="article-meta">
-        <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="" class="article-date">
-	  <time datetime="2013-08-01T09:04:00.000Z" itemprop="datePublished">2013-08-01</time>
-	</a>
-</span>
+    <nav id="nav-top">
         
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                Unsplash
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                
+                    <li class="menu-item">
+                        <a id="search" href="">Search</a>
+                    </li>
+                
+            </ul>
         
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="../../../../tags/it/" rel="tag">it</a>, <a class="article-tag-link-link" href="../../../../tags/macvim/" rel="tag">macvim</a>, <a class="article-tag-link-link" href="../../../../tags/vim/" rel="tag">vim</a>
-  </span>
+    </nav>
+
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          macvim配置
+        
+      </h1>
+
+      <time class="post-time">
+          Aug 1 2013
+      </time>
+    </header>
 
 
-        
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="#comments" class="article-comment-link">Comments</a></span>
-        
-      </div>
-    </div>
-    <div class="article-entry marked-body" itemprop="articleBody">
-      
-        <p>虽然我还没用，但是记下总是好的吧，这种东西网站一输如就能找到，就不放到笔记里了。</p>
+    
+            <div class="post-content">
+            <p>虽然我还没用，但是记下总是好的吧，这种东西网站一输如就能找到，就不放到笔记里了。</p>
 <span id="more"></span>
 
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;设置菜单语言</span></span><br><span class="line"><span class="string">setlangmenu=zh_cn</span></span><br><span class="line"><span class="string">&quot;</span> =========</span><br><span class="line"><span class="string">&quot; 功能函数</span></span><br><span class="line"><span class="string">&quot;</span> =========</span><br><span class="line"><span class="string">&quot; 获取当前目录</span></span><br><span class="line"><span class="string">func GetPWD()</span></span><br><span class="line"><span class="string">returnsubstitute(getcwd(), &quot;</span><span class="string">&quot;, &quot;</span><span class="string">&quot;, &quot;</span>g<span class="string">&quot;)</span></span><br><span class="line"><span class="string">endf</span></span><br><span class="line"><span class="string">&quot;</span> =========</span><br><span class="line"><span class="string">&quot; 环境配置</span></span><br><span class="line"><span class="string">&quot;</span> =========</span><br><span class="line"><span class="string">&quot; 保留历史记录</span></span><br><span class="line"><span class="string">sethistory=400</span></span><br><span class="line"><span class="string">&quot;</span> 命令行于状态行</span><br><span class="line">setch=1</span><br><span class="line">setstl=\ [File]\ %F%m%r%h%y[%&#123;&amp;fileformat&#125;,%&#123;&amp;fileencoding&#125;]\ %w\ \ [PWD]\ %r%&#123;GetPWD()&#125;%h\ %=\ [Line]\ %l,%c\ %=\ %P</span><br><span class="line">setls=2 <span class="string">&quot; 始终显示状态行</span></span><br><span class="line"><span class="string">&quot;</span> 制表符</span><br><span class="line">settabstop=4</span><br><span class="line">setexpandtab</span><br><span class="line">setsmarttab</span><br><span class="line">setshiftwidth=4</span><br><span class="line">setsofttabstop=4</span><br><span class="line"><span class="string">&quot; 状态栏显示目前所执行的指令</span></span><br><span class="line"><span class="string">setshowcmd</span></span><br><span class="line"><span class="string">&quot;</span> 行控制</span><br><span class="line">setlinebreak</span><br><span class="line">setnocompatible</span><br><span class="line">settextwidth=80</span><br><span class="line">setwrap</span><br><span class="line"><span class="string">&quot; 行号和标尺</span></span><br><span class="line"><span class="string">setnumber</span></span><br><span class="line"><span class="string">setruler</span></span><br><span class="line"><span class="string">setrulerformat=%15(%c%V\ %p%%%)</span></span><br><span class="line"><span class="string">&quot;</span> 控制台响铃</span><br><span class="line">:setnoerrorbells</span><br><span class="line">:setnovisualbell</span><br><span class="line">:sett_vb= <span class="string">&quot;close visual bell</span></span><br><span class="line"><span class="string">&quot;</span> 插入模式下使用 、</span><br><span class="line">setbackspace=indent,eol,start</span><br><span class="line"><span class="string">&quot; 标签页</span></span><br><span class="line"><span class="string">settabpagemax=20</span></span><br><span class="line"><span class="string">setshowtabline=2</span></span><br><span class="line"><span class="string">&quot;</span> 缩进</span><br><span class="line">setautoindent</span><br><span class="line">setcindent</span><br><span class="line">setsmartindent</span><br><span class="line"><span class="string">&quot; 自动重新读入</span></span><br><span class="line"><span class="string">setautoread</span></span><br><span class="line"><span class="string">&quot;</span> 代码折叠</span><br><span class="line">setfoldmethod=manual</span><br><span class="line"><span class="string">&quot;setfoldmethod=indent</span></span><br><span class="line"><span class="string">&quot;</span> 自动切换到文件当前目录</span><br><span class="line">setautochdir</span><br><span class="line"><span class="string">&quot;在查找时忽略大小写</span></span><br><span class="line"><span class="string">setignorecase</span></span><br><span class="line"><span class="string">setincsearch</span></span><br><span class="line"><span class="string">sethlsearch</span></span><br><span class="line"><span class="string">&quot;</span>显示匹配的括号</span><br><span class="line">setshowmatch</span><br><span class="line"><span class="string">&quot;实现全能补全功能，需要打开文件类型检测</span></span><br><span class="line"><span class="string">&quot;</span>filetype plugin indent on</span><br><span class="line"><span class="string">&quot;打开vim的文件类型自动检测功能</span></span><br><span class="line"><span class="string">filetype on</span></span><br><span class="line"><span class="string">&quot;</span>在所有模式下都允许使用鼠标，还可以是n,v,i,c等</span><br><span class="line">setmouse=a</span><br><span class="line"><span class="string">&quot; 恢复上次文件打开位置</span></span><br><span class="line"><span class="string">setviminfo=&#x27;10,\&quot;100,:20,%,n~/.viminfo</span></span><br><span class="line"><span class="string">&quot;</span> =====================</span><br><span class="line"><span class="string">&quot; 多语言环境</span></span><br><span class="line"><span class="string">&quot;</span>    默认为 UTF-8 编码</span><br><span class="line"><span class="string">&quot; =====================</span></span><br><span class="line"><span class="string">ifhas(&quot;</span>multi_byte<span class="string">&quot;)</span></span><br><span class="line"><span class="string">setencoding=utf-8</span></span><br><span class="line"><span class="string">&quot;</span> English messages only</span><br><span class="line"><span class="string">&quot;language messages zh_CN.utf-8</span></span><br><span class="line"><span class="string">ifhas(&#x27;win32&#x27;)</span></span><br><span class="line"><span class="string">language english</span></span><br><span class="line"><span class="string">let&amp;termencoding=&amp;encoding</span></span><br><span class="line"><span class="string">endif</span></span><br><span class="line"><span class="string">setfencs=ucs-bom,utf-8,gbk,cp936,latin1</span></span><br><span class="line"><span class="string">setformatoptions+=mM</span></span><br><span class="line"><span class="string">setnobomb &quot;</span> 不使用 Unicode 签名</span><br><span class="line">ifv:lang =~? <span class="string">&#x27;^\(zh\)\|\(ja\)\|\(ko\)&#x27;</span></span><br><span class="line">setambiwidth=double</span><br><span class="line">endif</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">echoerr <span class="string">&quot;Sorry, this version of (g)vim was not compiled with +multi_byte&quot;</span></span><br><span class="line">endif</span><br><span class="line"><span class="string">&quot; =========</span></span><br><span class="line"><span class="string">&quot;</span> 图形界面</span><br><span class="line"><span class="string">&quot; =========</span></span><br><span class="line"><span class="string">ifhas(&#x27;gui_running&#x27;)</span></span><br><span class="line"><span class="string">&quot;</span> 只显示菜单</span><br><span class="line">setguioptions=mcr</span><br><span class="line"><span class="string">&quot; 高亮光标所在的行</span></span><br><span class="line"><span class="string">setcursorline</span></span><br><span class="line"><span class="string">&quot;</span> 编辑器配色</span><br><span class="line"><span class="string">&quot;colorscheme zenburn</span></span><br><span class="line"><span class="string">&quot;</span>colorscheme dusk</span><br><span class="line">ifhas(<span class="string">&quot;win32&quot;</span>)</span><br><span class="line"><span class="string">&quot; Windows 兼容配置</span></span><br><span class="line"><span class="string">source<span class="variable">$VIMRUNTIME</span>/mswin.vim</span></span><br><span class="line"><span class="string">&quot;</span> f11 最大化</span><br><span class="line">nmap :call libcallnr(<span class="string">&#x27;fullscreen.dll&#x27;</span>, <span class="string">&#x27;ToggleFullScreen&#x27;</span>, 0)</span><br><span class="line">nmap ff :call libcallnr(<span class="string">&#x27;fullscreen.dll&#x27;</span>, <span class="string">&#x27;ToggleFullScreen&#x27;</span>, 0)</span><br><span class="line"><span class="string">&quot; 自动最大化窗口</span></span><br><span class="line"><span class="string">au GUIEnter * simalt ~x</span></span><br><span class="line"><span class="string">&quot;</span> 给 Win32 下的 gVim 窗口设置透明度</span><br><span class="line">au GUIEnter * call libcallnr(<span class="string">&quot;vimtweak.dll&quot;</span>, <span class="string">&quot;SetAlpha&quot;</span>, 250)</span><br><span class="line"><span class="string">&quot; 字体配置</span></span><br><span class="line"><span class="string">exec&#x27;set guifont=&#x27;.iconv(&#x27;Courier_New&#x27;, &amp;enc, &#x27;gbk&#x27;).&#x27;:h11:cANSI&#x27;</span></span><br><span class="line"><span class="string">exec&#x27;set guifontwide=&#x27;.iconv(&#x27;微软雅黑&#x27;, &amp;enc, &#x27;gbk&#x27;).&#x27;:h11&#x27;</span></span><br><span class="line"><span class="string">endif</span></span><br><span class="line"><span class="string">ifhas(&quot;</span>unix<span class="string">&quot;) &amp;&amp; !has(&#x27;gui_macvim&#x27;)</span></span><br><span class="line"><span class="string">setguifont=Courier\ 10\ Pitch\ 11</span></span><br><span class="line"><span class="string">setguifontwide=YaHei\ Consolas\ Hybrid\ 11</span></span><br><span class="line"><span class="string">endif</span></span><br><span class="line"><span class="string">ifhas(&quot;</span>gui_macvim<span class="string">&quot;)</span></span><br><span class="line"><span class="string">&quot;</span> MacVim 下的字体配置</span><br><span class="line">setguifont=Menlo:h12</span><br><span class="line">setguifontwide=Hei:h12</span><br><span class="line"><span class="string">&quot; 半透明和窗口大小</span></span><br><span class="line"><span class="string">settransparency=2</span></span><br><span class="line"><span class="string">setlines=40 columns=110</span></span><br><span class="line"><span class="string">&quot;</span> 使用MacVim原生的全屏幕功能</span><br><span class="line">lets:lines=&amp;lines</span><br><span class="line">lets:columns=&amp;columns</span><br><span class="line">func! FullScreenEnter()</span><br><span class="line">setlines=999 columns=999</span><br><span class="line">setfu</span><br><span class="line">endf</span><br><span class="line">func! FullScreenLeave()</span><br><span class="line"><span class="built_in">let</span>&amp;lines=s:lines</span><br><span class="line"><span class="built_in">let</span>&amp;columns=s:columns</span><br><span class="line">setnofu</span><br><span class="line">endf</span><br><span class="line">func! FullScreenToggle()</span><br><span class="line"><span class="keyword">if</span>&amp;fullscreen</span><br><span class="line">call FullScreenLeave()</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">call FullScreenEnter()</span><br><span class="line">endif</span><br><span class="line">endf</span><br><span class="line"><span class="string">&quot; Mac 下，按 \\ 切换全屏</span></span><br><span class="line"><span class="string">nmap   :call FullScreenToggle()</span></span><br><span class="line"><span class="string">&quot;</span> Set input method off</span><br><span class="line">setimdisable</span><br><span class="line"><span class="string">&quot; Set QuickTemplatePath</span></span><br><span class="line"><span class="string">letguickTemplatePath = <span class="variable">$HOME</span>.&#x27;/.vim/templates/&#x27;</span></span><br><span class="line"><span class="string">&quot;</span> 如果为空文件，则自动设置当前目录为桌面</span><br><span class="line">lcd ~/Desktop/</span><br><span class="line"><span class="string">&quot; 自动切换到文件当前目录</span></span><br><span class="line"><span class="string">setautochdir</span></span><br><span class="line"><span class="string">&quot;</span> Set QuickTemplatePath</span><br><span class="line">letguickTemplatePath = <span class="variable">$HOME</span>.<span class="string">&#x27;/.vim/templates/&#x27;</span></span><br><span class="line">endif</span><br><span class="line">endif</span><br><span class="line"><span class="string">&quot; =========</span></span><br><span class="line"><span class="string">&quot;</span> 插件</span><br><span class="line"><span class="string">&quot; =========</span></span><br><span class="line"><span class="string">filetype plugin indent on</span></span><br><span class="line"><span class="string">&quot;</span> =========</span><br><span class="line"><span class="string">&quot; AutoCmd</span></span><br><span class="line"><span class="string">&quot;</span> =========</span><br><span class="line">ifhas(<span class="string">&quot;autocmd&quot;</span>)</span><br><span class="line">filetype plugin indent on</span><br><span class="line"><span class="string">&quot; 括号自动补全</span></span><br><span class="line"><span class="string">func! AutoClose()</span></span><br><span class="line"><span class="string">:inoremap ( ()i</span></span><br><span class="line"><span class="string">:inoremap &quot;</span> <span class="string">&quot;&quot;</span>i</span><br><span class="line">:inoremap <span class="string">&#x27; &#x27;</span><span class="string">&#x27;i</span></span><br><span class="line"><span class="string">:inoremap &#123; &#123;&#125;i</span></span><br><span class="line"><span class="string">:inoremap [ []i</span></span><br><span class="line"><span class="string">:inoremap &#125; =ClosePair(&#x27;</span>&#125;<span class="string">&#x27;)</span></span><br><span class="line"><span class="string">:inoremap ] =ClosePair(&#x27;</span>]<span class="string">&#x27;)</span></span><br><span class="line"><span class="string">:inoremap ) =ClosePair(&#x27;</span>)<span class="string">&#x27;)</span></span><br><span class="line"><span class="string">endf</span></span><br><span class="line"><span class="string">func! ClosePair(char)</span></span><br><span class="line"><span class="string">ifgetline(&#x27;</span>.<span class="string">&#x27;)[col(&#x27;</span>.<span class="string">&#x27;) - 1] == a:char</span></span><br><span class="line"><span class="string">return&quot;\&quot;</span></span><br><span class="line"><span class="string">else</span></span><br><span class="line"><span class="string">returna:char</span></span><br><span class="line"><span class="string">endif</span></span><br><span class="line"><span class="string">endf</span></span><br><span class="line"><span class="string">&quot;auto close quotation marks forPHP, Javascript, etc, file</span></span><br><span class="line"><span class="string">au FileType php,c,python,javascript exe AutoClose()</span></span><br><span class="line"><span class="string">&quot; Auto Check Syntax</span></span><br><span class="line"><span class="string">&quot;au BufWritePost,FileWritePost *.js,*.php call CheckSyntax(1)</span></span><br><span class="line"><span class="string">&quot; JavaScript 语法高亮</span></span><br><span class="line"><span class="string">au FileType html,javascript letg:javascript_enable_domhtmlcss = 1</span></span><br><span class="line"><span class="string">&quot; 给 Javascript 文件添加 Dict</span></span><br><span class="line"><span class="string">ifhas(&#x27;</span>gui_macvim<span class="string">&#x27;) || has(&#x27;</span>unix<span class="string">&#x27;)</span></span><br><span class="line"><span class="string">au FileType javascript setlocal dict+=~/.vim/dict/javascript.dict</span></span><br><span class="line"><span class="string">else</span></span><br><span class="line"><span class="string">au FileType javascript setlocal dict+=$VIM/vimfiles/dict/javascript.dict</span></span><br><span class="line"><span class="string">endif</span></span><br><span class="line"><span class="string">&quot; 格式化 JavaScript 文件</span></span><br><span class="line"><span class="string">&quot;au FileType javascript map :call g:Jsbeautify()</span></span><br><span class="line"><span class="string">au FileType javascript setomnifunc=javascriptcomplete#CompleteJS</span></span><br><span class="line"><span class="string">&quot; 给 CSS 文件添加 Dict</span></span><br><span class="line"><span class="string">ifhas(&#x27;</span>gui_macvim<span class="string">&#x27;) || has(&#x27;</span>unix<span class="string">&#x27;)</span></span><br><span class="line"><span class="string">au FileType css setlocal dict+=~/.vim/dict/css.dict</span></span><br><span class="line"><span class="string">else</span></span><br><span class="line"><span class="string">au FileType css setlocal dict+=$VIM/vimfiles/dict/css.dict</span></span><br><span class="line"><span class="string">endif</span></span><br><span class="line"><span class="string">&quot; 增加 ActionScript 语法支持</span></span><br><span class="line"><span class="string">au BufNewFile,BufRead *.as setf actionscript</span></span><br><span class="line"><span class="string">&quot; CSS3 语法支持</span></span><br><span class="line"><span class="string">au BufRead,BufNewFile *.css setft=css syntax=css3</span></span><br><span class="line"><span class="string">&quot; 增加 Objective-C 语法支持</span></span><br><span class="line"><span class="string">au BufNewFile,BufRead,BufEnter,WinEnter,FileType *.m,*.h setf objc</span></span><br><span class="line"><span class="string">&quot; 将指定文件的换行符转换成 UNIX 格式</span></span><br><span class="line"><span class="string">au FileType php,javascript,html,css,python,vim,vimwiki setff=unix</span></span><br><span class="line"><span class="string">&quot; 保存编辑状态</span></span><br><span class="line"><span class="string">au BufWinLeave * ifexpand(&#x27;</span>%<span class="string">&#x27;) != &#x27;</span><span class="string">&#x27;&amp;&amp; &amp;buftype == &#x27;</span><span class="string">&#x27;| mkview | endif</span></span><br><span class="line"><span class="string">au BufRead     * ifexpand(&#x27;</span>%<span class="string">&#x27;) != &#x27;</span><span class="string">&#x27;&amp;&amp; &amp;buftype == &#x27;</span><span class="string">&#x27;| silent loadview | syntax on | endif</span></span><br><span class="line"><span class="string">&quot; 自动最大化窗口</span></span><br><span class="line"><span class="string">ifhas(&#x27;</span>gui_running<span class="string">&#x27;)</span></span><br><span class="line"><span class="string">ifhas(&quot;win32&quot;)</span></span><br><span class="line"><span class="string">au GUIEnter * simalt ~x</span></span><br><span class="line"><span class="string">&quot;elseif has(&quot;unix&quot;)</span></span><br><span class="line"><span class="string">&quot;au GUIEnter * winpos 0 0</span></span><br><span class="line"><span class="string">&quot;setlines=999 columns=999</span></span><br><span class="line"><span class="string">endif</span></span><br><span class="line"><span class="string">endif</span></span><br><span class="line"><span class="string">endif</span></span><br><span class="line"><span class="string">&quot;acp 自动补全插件</span></span><br><span class="line"><span class="string">letg:AutoComplPop_Behavior = &#123;</span></span><br><span class="line"><span class="string">\ &#x27;</span>c<span class="string">&#x27;: [ &#123;&#x27;</span><span class="built_in">command</span><span class="string">&#x27;: &quot;\\&quot;,</span></span><br><span class="line"><span class="string">\ &#x27;</span>pattern<span class="string">&#x27;: &quot;.&quot;,</span></span><br><span class="line"><span class="string">\ &#x27;</span>repeat<span class="string">&#x27;: 0&#125;</span></span><br><span class="line"><span class="string">\ ]</span></span><br><span class="line"><span class="string">\&#125;</span></span><br><span class="line"><span class="string">&quot; =========</span></span><br><span class="line"><span class="string">&quot; 快捷键</span></span><br><span class="line"><span class="string">&quot; =========</span></span><br><span class="line"><span class="string">map cal:Calendar</span></span><br><span class="line"><span class="string">letNERDTreeWinSize=22</span></span><br><span class="line"><span class="string">map ntree :NERDTree</span></span><br><span class="line"><span class="string">map nk :NERDTreeClose</span></span><br><span class="line"><span class="string">map n :NERDTreeToggle</span></span><br><span class="line"><span class="string">map cse :ColorSchemeExplorer</span></span><br><span class="line"><span class="string">&quot; 标签相关的快捷键 Ctrl</span></span><br><span class="line"><span class="string">map tn :tabnext</span></span><br><span class="line"><span class="string">map tp :tabprevious</span></span><br><span class="line"><span class="string">map tc :tabclose</span></span><br><span class="line"><span class="string">map :tabnew</span></span><br><span class="line"><span class="string">map :tabprevious</span></span><br><span class="line"><span class="string">map :tabnext</span></span><br><span class="line"><span class="string">map :tabclose</span></span><br><span class="line"><span class="string">map :tabnext</span></span><br><span class="line"><span class="string">&quot; 新建 XHTML 、PHP、Javascript 文件的快捷键</span></span><br><span class="line"><span class="string">nmap :NewQuickTemplateTab xhtml</span></span><br><span class="line"><span class="string">nmap :NewQuickTemplateTab php</span></span><br><span class="line"><span class="string">nmap :NewQuickTemplateTab javascript</span></span><br><span class="line"><span class="string">nmap :NewQuickTemplateTab css</span></span><br><span class="line"><span class="string">&quot; 在文件名上按gf时，在新的tab中打开</span></span><br><span class="line"><span class="string">map gf :tabnew</span></span><br><span class="line"><span class="string">&quot;jquery 配色</span></span><br><span class="line"><span class="string">au BufRead,BufNewFile *.js setsyntax=jquery</span></span><br><span class="line"><span class="string">&quot; jsLint forVim</span></span><br><span class="line"><span class="string">letg:jslint_highlight_color  = &#x27;</span><span class="comment">#996600&#x27;</span></span><br><span class="line"><span class="string">&quot; 指定 jsLint 调用路径，通常不用更改</span></span><br><span class="line"><span class="string">letg:jslint_command = <span class="variable">$HOME</span> . &#x27;\/.vim\/jsl\/jsl&#x27;</span></span><br><span class="line"><span class="string">&quot;</span> 指定 jsLint 的启动参数，可以指定相应的配置文件</span><br><span class="line">letg:jslint_command_options = <span class="string">&#x27;-nofilelisting -nocontext -nosummary -nologo -process&#x27;</span></span><br><span class="line"><span class="string">&quot; 返回当前时间</span></span><br><span class="line"><span class="string">func! GetTimeInfo()</span></span><br><span class="line"><span class="string">&quot;</span>returnstrftime(<span class="string">&#x27;%Y-%m-%d %A %H:%M:%S&#x27;</span>)</span><br><span class="line">returnstrftime(<span class="string">&#x27;%Y-%m-%d %H:%M:%S&#x27;</span>)</span><br><span class="line">endfunction</span><br><span class="line"><span class="string">&quot; 插入模式按 Ctrl + D(ate) 插入当前时间</span></span><br><span class="line"><span class="string">imap =GetTimeInfo()</span></span><br><span class="line"><span class="string">&quot;</span> ==================</span><br><span class="line"><span class="string">&quot; plugin list</span></span><br><span class="line"><span class="string">&quot;</span> ==================</span><br><span class="line"><span class="string">&quot;Color Scheme Explorer</span></span><br><span class="line"><span class="string">&quot;</span>jsbeauty \ff</span><br><span class="line"><span class="string">&quot;NERDTree</span></span><br><span class="line"><span class="string">&quot;</span>Calendar</span><br><span class="line"><span class="string">&quot;conquer_term</span></span><br><span class="line"><span class="string">&quot;</span>nerd_commenter</span><br><span class="line"><span class="string">&quot;setup forC and C++</span></span><br><span class="line"><span class="string">filetype plugin on</span></span><br><span class="line"><span class="string">setnocp</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <div class="article-footer">
-      <blockquote class="mt-2x">
-  <ul class="post-copyright list-unstyled">
-    
-    <li class="post-copyright-link hidden-xs">
-      <strong>本文链接：</strong>
-      <a href="http://example.com/2013/08/01/2013-08-01-macvim-config/" title="macvim配置" target="_blank" rel="external">http://example.com/2013/08/01/2013-08-01-macvim-config/</a>
-    </li>
-    
-    <li class="post-copyright-license">
-      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
-    </li>
-  </ul>
-</blockquote>
+            </div>
+          
 
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="../../../../tags/it/">it</a>
+          
+            <a href="../../../../tags/macvim/">macvim</a>
+          
+            <a href="../../../../tags/vim/">vim</a>
+          
+        </div>
 
-<div class="panel panel-default panel-badger">
-  <div class="panel-body">
-    <figure class="media">
-      <div class="media-left">
-        <a href="https://github.com/Geisha-design" target="_blank" class="img-burn thumb-sm visible-lg">
-          <img src="../../../../images/avatar.jpg" class="img-rounded w-full" alt="">
-        </a>
-      </div>
-      <div class="media-body">
-        <h3 class="media-heading"><a href="https://github.com/Geisha-design" target="_blank"><span class="text-dark">截面樱🌸</span><small class="ml-1x">Web Developer &amp; Designer</small></a></h3>
-        <div>永恒之女性，引我等向上</div>
-      </div>
-    </figure>
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="../2013-08-01-java-date-am-or-pm/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">JAVA中判断日期是上午还是下午</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="../../../07/21/2013-07-21-sudden-rain/">
+        <span class="next-text nav-default">怎么突然下雨了</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
   </div>
-</div>
 
 
-    </div>
+      </footer>
+    
   </article>
-  
-    
-  <section id="comments">
-  	
-      <div id="vcomments"></div>
-    
-  </section>
 
+    </div>
 
-  
-</div>
+      </div>
 
-  <nav class="bar bar-footer clearfix" data-stick-bottom>
-  <div class="bar-inner">
-  
-  <ul class="pager pull-left">
+      <footer id="colophon"><span class="copyright-year">
     
-    <li class="prev">
-      <a href="../2013-08-01-java-date-am-or-pm/" title="JAVA中判断日期是上午还是下午"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
-    </li>
+        &copy;
     
+        2012 -
     
-    <li class="next">
-      <a href="../../../07/21/2013-07-21-sudden-rain/" title="怎么突然下雨了"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
-    </li>
-    
-    
-  </ul>
-  
-  
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
-  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
-    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
-  </div> -->
-  
-  
-  <div class="bar-right">
-    
-    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
-    
-  </div>
-  </div>
-</nav>
-  
-<!-- Modal -->
-<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content donate">
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <div class="modal-body">
-        <div class="donate-box">
-          <div class="donate-head">
-            <p>Maybe you could buy me a cup of coffee.</p>
-          </div>
-          <div class="tab-content">
-            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
-              <div class="donate-payimg">
-                <img src="../../../../images/donate/alipayimg.png" alt="Scan Qrcode" title="Scan" />
-              </div>
-              <p class="text-muted mv">Scan this qrcode</p>
-              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
-            </div>
-            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
-              <div class="donate-payimg">
-                <img src="../../../../images/donate/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
-              </div>
-              <p class="text-muted mv">Scan this qrcode</p>
-              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
-            </div>
-          </div>
-          <div class="donate-footer">
-            <ul class="nav nav-tabs nav-justified" role="tablist">
-              <li role="presentation" class="active">
-                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
-              </li>
-              <li role="presentation" class="">
-                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
-              </li>
-            </ul>
-          </div>
-        </div>
+    2021
+    <span class="footer-author">齐雨争.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
       </div>
     </div>
-  </div>
-</div>
+    
+    <div id="search-container" class="search-container">
+        <input type="hidden" id="algolia_index" value="<INDEX_NAME>"/>
+        <input type="hidden" id="algolia_app_id" value="<APP_ID>"/>
+        <input type="hidden" id="algolia_token" value="<API_KEY>"/>
+        <div class="section">
+            <div class="container">
 
+                <div class="panel">
+                    <div class="panel-heading">
+                        Search
+                        <a id="close" href="" style="float: right; color: #363636;">
+                            <i class="fas fa-times-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="panel-block">
+                        <div id="searchContainer" class="control has-icons-left">
+                            <input id="searchField" class="input" type="text" placeholder="Enter anything...">
+                            <span class="icon is-small is-left">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </span>
+                        </div>
+                    </div>
+                    <div id="result">
 
+                    </div>
+                </div>
 
-</main>
-
-  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
-	
-	
-    <ul class="social-links">
-    	
-        <li><a href="../../../../https:/github.com/Geisha-design" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
-        
-        <li><a href="../../../../http:/weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
-        
-        <li><a href="../../../../https:/twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
-        
-        <li><a href="../../../../https:/www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
-        
-        <li><a href="../../../../atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
-        
-    </ul>
-
-    <div class="copyright">
-    	
-        <div class="publishby">
-        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+            </div>
         </div>
     </div>
-</footer>
-  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-<script>
-window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
-</script>
-
-<script src="../../../../js/plugin.min.js"></script>
-
-
-<script src="../../../../js/application.js"></script>
-
-
-    <script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '../../../../content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-
-<script src="../../../../js/insight.js"></script>
 
 
 
-
-
-
-   
-
-
-
-
-   
     
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/valine"></script>
-  <script type="text/javascript">
-  var GUEST = ['nick', 'mail', 'link'];
-  var meta = 'nick,mail,link';
-  meta = meta.split(',').filter(function(item) {
-    return GUEST.indexOf(item) > -1;
-  });
-  new Valine({
-    el: '#vcomments',
-    verify: false,
-    notify: false,
-    appId: '',
-    appKey: '',
-    placeholder: 'Just go go',
-    avatar: 'mm',
-    meta: meta,
-    pageSize: '10' || 10,
-    visitor: false
-  });
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="../../../../lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="../../../../js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
+
+    
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script type="text/javascript" src="../../../../js/src/search.js"></script>
+
+
+  
+  <script type="application/ld+json">
+  {
+  "@context": "http://www.schema.org",
+  "@type": "Person",
+  "@id": "https://huangyijie.com/about/",
+  "name": "黄奕杰",
+  "alternateName": "Henry Huang",
+  "nationality": "中国",
+  "birthPlace" : {
+    "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+      "addressLocality": "汕头市",
+      "addressRegion": "广东省",
+          "addressCountry": "中国"
+    }
+  },
+  "gender": "Male",
+  "Description": "Software Engineer",
+  "disambiguatingDescription": "Full stack software engineer, focus on Java and JavaScript.",
+  "jobTitle": "Software Engineer",
+  "url": "https://huangyijie.com",
+  "image": "https://s.gravatar.com/avatar/4e0e61fdf1b2bcfb4ee31da27601fe6b?s=512&r=g",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "深圳市",
+    "addressRegion": "广东省",
+    "addressCountry": "中国"
+  },
+  "sameAs": [
+    "http://weibo.com/626242034",
+    "https://github.com/henryhuang",
+    "https://unsplash.com/@henryhh"
+    ]
+  }
   </script>
-
-     
-
-
-
-
-
-
-
-</body>
+  </body>
 </html>
