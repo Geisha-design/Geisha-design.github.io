@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="微分与导数的区别"/>
+
+
+
+
+  <meta name="keywords" content="高数之旅," />
+
+
+
+
+
+    <link rel="alternate" href="../../../../default" title="齐雨争" >
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.1"/>
+
+
+
+<link rel="canonical" href="http://example.com/2021/04/13/微分与导数的区别/"/>
+
+
+<meta name="description" content="说来惭愧，学到现在，我才真正的慢慢意会到这个最基础的定义 微分是 [公式] 微商是 [公式] 导数是微商在某一点 [公式] 的值 [公式] 微分是说一个函数在自变量做无穷小变化时函数值的变化。如果我们给定x的变化dx，将它对应到f（x）的变化df，df就等于f的导数乘以dx。但是dx是一个不严谨的概念（无穷小变化是变化多少？），因此严谨的表述是：df是一个把一个数（自变量的变化 delta x）映">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微分与导数的区别">
+<meta property="og:url" content="http://example.com/2021/04/13/%E5%BE%AE%E5%88%86%E4%B8%8E%E5%AF%BC%E6%95%B0%E7%9A%84%E5%8C%BA%E5%88%AB/index.html">
+<meta property="og:site_name" content="齐雨争">
+<meta property="og:description" content="说来惭愧，学到现在，我才真正的慢慢意会到这个最基础的定义 微分是 [公式] 微商是 [公式] 导数是微商在某一点 [公式] 的值 [公式] 微分是说一个函数在自变量做无穷小变化时函数值的变化。如果我们给定x的变化dx，将它对应到f（x）的变化df，df就等于f的导数乘以dx。但是dx是一个不严谨的概念（无穷小变化是变化多少？），因此严谨的表述是：df是一个把一个数（自变量的变化 delta x）映">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cdfrac%7Bdy%7D%7Bdx%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cepsilon%3E0%EF%BC%8CM%3E0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cepsilon">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=n%5Cepsilon+%3E+M">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=a%3Cb%E6%88%96a%3Eb%E6%88%96a=b">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cepsilon">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cforall+n+%5Cin+N+,+%5Cepsilon+%3C+%5Cdfrac%7B1%7D%7Bn%7D,+%E5%8D%B3+n%5Cepsilon+%3C+1">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=(a,f(a))">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=(a+dx,f(a+dx))">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=(a+dx,f(a+dx))">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Clim_%7Bh+%5Crightarrow+0%7D+%5Cdfrac%7Bf(x+h)-f(x)%7D%7Bh%7D+">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cdfrac%7Bdy%7D%7Bdx%7D+=+%5Cdfrac%7Bdy%7D%7Bdu%7D+%5Cdfrac%7Bdu%7D%7Bdx%7D+">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=+%5Cdfrac%7Bdx%7D%7Bdy%7D+=+%5Cdfrac%7B1%7D%7B%5Cdfrac%7Bdy%7D%7Bdx%7D%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cdfrac%7Bdy%7D%7Bdx%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cdfrac%7Bdy%7D%7Bdx%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cdfrac%7Bdy%7D%7Bdx%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cdfrac%7Bdy%7D%7Bdx%7D">
+<meta property="article:published_time" content="2021-04-13T09:35:17.000Z">
+<meta property="article:modified_time" content="2021-04-13T10:25:39.822Z">
+<meta property="article:author" content="齐雨争">
+<meta property="article:tag" content="高数之旅">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.zhihu.com/equation?tex=%5Cdfrac%7Bdy%7D%7Bdx%7D">
+
+
+<link rel="stylesheet" type="text/css" href="../../../../css/style.css?v=1.1"/>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+    <link rel="stylesheet" type="text/css" href="../../../../css/search.css?v=1.1"/>
+
+
+
+    <title> 微分与导数的区别 - 齐雨争 </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="../../../../." class="logo">齐雨争</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                Unsplash
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                
+                    <li class="menu-item">
+                        <a id="search" href="">Search</a>
+                    </li>
+                
+            </ul>
+        
+    </nav>
+
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          微分与导数的区别
+        
+      </h1>
+
+      <time class="post-time">
+          Apr 13 2021
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>说来惭愧，学到现在，我才真正的慢慢意会到这个最基础的定义</p>
+<p>微分是 [公式]</p>
+<p>微商是 [公式]</p>
+<p>导数是微商在某一点 [公式] 的值 [公式]</p>
+<p>微分是说一个函数在自变量做无穷小变化时函数值的变化。如果我们给定x的变化dx，将它对应到f（x）的变化df，df就等于f的导数乘以dx。但是dx是一个不严谨的概念（无穷小变化是变化多少？），因此严谨的表述是：df是一个把一个数（自变量的变化 delta x）映射成 f’ delta x的映射，映射的值能近似表达函数值的变化delta f。从这个意义上说，df是一个将数轴上的一个矢量（delta x）映射成实数的线性映射，在微分几何中这种映射称为1-form，又叫协变矢量或对偶矢量。补充：可以形象化理解，微分就是曲线的切线。给定一个横坐标，我们可以在切线上找到纵坐标。df就是这样一个映射。而f的导数就是这条切线的斜率。</p>
+<p>数学复习第一遍的理解是，导数是曲线在那个点的切线斜率，而微分是那个切线的一元线性方程。<br>微分的几何意义是用局部切线段近似代替曲线段，即非线性函数局部线性化。</p>
+<p>我来讲个历史课。</p>
+<p>历史上，莱布尼茨想到d这个微分表示符号时， <img src="https://www.zhihu.com/equation?tex=%5Cdfrac%7Bdy%7D%7Bdx%7D" alt="[公式]"> 本是商，它是y的无穷小变化量与x的无穷小变化量的商。</p>
+<p>然而，这个公式放在实际情况中，应用到实数上，导致了一系列问题，这里主要讲两个：</p>
+<p>1、其中一个是，“无穷小”这个定义不能存在于实数的应用中！因为实数必须满足阿基米德性质：</p>
+<p> 给定任意两个正实数 <img src="https://www.zhihu.com/equation?tex=%5Cepsilon%3E0%EF%BC%8CM%3E0" alt="[公式]"> ，无论 <img src="https://www.zhihu.com/equation?tex=%5Cepsilon" alt="[公式]"> 多小，M多大，总存在一个自然数n，使得 <img src="https://www.zhihu.com/equation?tex=n%5Cepsilon+%3E+M" alt="[公式]">          （1）</p>
+<p>无穷小的通俗定义：我们通常认识的实数，是属于实数空间R的，这是一个可以进行加减乘除运算的空间，是不包括无穷小和无穷大的。在实数空间中，任何两个数a,b,一定存在<img src="https://www.zhihu.com/equation?tex=a%3Cb%E6%88%96a%3Eb%E6%88%96a=b" alt="[公式]">。将正无穷小 <img src="https://www.zhihu.com/equation?tex=%5Cepsilon" alt="[公式]"> 加到实数空间中，存在 <img src="https://www.zhihu.com/equation?tex=%5Cforall+n+%5Cin+N+,+%5Cepsilon+%3C+%5Cdfrac%7B1%7D%7Bn%7D,+%E5%8D%B3+n%5Cepsilon+%3C+1" alt="[公式]"> 。这与（1）矛盾</p>
+<p>2、莱布尼茨对于函数y=f(x)在x=a切线定义为：</p>
+<p>有一个点 <img src="https://www.zhihu.com/equation?tex=(a,f(a))" alt="[公式]"> ;给a加一个无穷小量 a+dx，得到另一个点 <img src="https://www.zhihu.com/equation?tex=(a+dx,f(a+dx))" alt="[公式]"> ,这两个点的连线即为切线。(2)</p>
+<p>但是无穷小并不属于实数空间，无法与实数a进行加减运算。所以如果实数加一个无穷小dx，并不能得到一个实数， <img src="https://www.zhihu.com/equation?tex=(a+dx,f(a+dx))" alt="[公式]"> 也就不能成为另一个点。我们也就不能通过这样的定义得到切线。</p>
+<p>所以为了防止这样的矛盾，在接下来的200年间，微分本质上被重新定义了，极限这个定义实际上就是在这种情况下产生的。</p>
+<p>导数不再是商，而变成了极限：</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Clim_%7Bh+%5Crightarrow+0%7D+%5Cdfrac%7Bf(x+h)-f(x)%7D%7Bh%7D+" alt="[公式]"> </p>
+<p>而且因为我们不能将商的极限表达为极限的商（极限中分子分母都趋近于0）,所以导数不是商。</p>
+<p>然而，莱布尼茨定的符号“d”很有启发性，很有用；及时导数不是真正的商，很多情况下，他们表现的就像商一样。例如链式法则：</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Cdfrac%7Bdy%7D%7Bdx%7D+=+%5Cdfrac%7Bdy%7D%7Bdu%7D+%5Cdfrac%7Bdu%7D%7Bdx%7D+" alt="[公式]"> </p>
+<p>如果你看作是分数，也很自然~还有逆函数定理</p>
+<p><img src="https://www.zhihu.com/equation?tex=+%5Cdfrac%7Bdx%7D%7Bdy%7D+=+%5Cdfrac%7B1%7D%7B%5Cdfrac%7Bdy%7D%7Bdx%7D%7D" alt="[公式]"> </p>
+<p>如果你将导数看作分数，也很明显。所以，因为这种符号很好，很有启发性，即使该符号不再代表实际商，我们仍然保留该符号，现在它代表一个极限。</p>
+<p>很久以前，dy和dx确实与他们在 <img src="https://www.zhihu.com/equation?tex=%5Cdfrac%7Bdy%7D%7Bdx%7D" alt="[公式]"> 中代表的符号含义相同，但是这会导致各种逻辑问题，所以他们不再代表这些含义了，即使他们表现的像。</p>
+<p>所以，即使我们将 <img src="https://www.zhihu.com/equation?tex=%5Cdfrac%7Bdy%7D%7Bdx%7D" alt="[公式]"> 写作分数，并且很多计算法则跟分数很像，它仍然不是真正的“分数”。</p>
+<hr>
+<p>回到问题，微分和导数的区别</p>
+<p>微分d，代表一个无穷小变化量。在<img src="https://www.zhihu.com/equation?tex=%5Cdfrac%7Bdy%7D%7Bdx%7D" alt="[公式]">中，dy(or df)代表y的无穷小变化量，dx代表x的无穷小变化量。</p>
+<p>导数，是建立在一个映射关系之上的，即映射前的变化量很小的情况下，引起映射后的变化量的大小。也就是比例<img src="https://www.zhihu.com/equation?tex=%5Cdfrac%7Bdy%7D%7Bdx%7D" alt="[公式]">。</p>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="../../../../tags/%E9%AB%98%E6%95%B0%E4%B9%8B%E6%97%85/">高数之旅</a>
+          
+        </div>
+
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="../%E5%BE%AE%E5%88%86%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88/">
+        <span class="next-text nav-default">微分到底是什么</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2012 -
+    
+    2021
+    <span class="footer-author">齐雨争.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+    <div id="search-container" class="search-container">
+        <input type="hidden" id="algolia_index" value="<INDEX_NAME>"/>
+        <input type="hidden" id="algolia_app_id" value="<APP_ID>"/>
+        <input type="hidden" id="algolia_token" value="<API_KEY>"/>
+        <div class="section">
+            <div class="container">
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        Search
+                        <a id="close" href="" style="float: right; color: #363636;">
+                            <i class="fas fa-times-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="panel-block">
+                        <div id="searchContainer" class="control has-icons-left">
+                            <input id="searchField" class="input" type="text" placeholder="Enter anything...">
+                            <span class="icon is-small is-left">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </span>
+                        </div>
+                    </div>
+                    <div id="result">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="../../../../lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="../../../../js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
+
+    
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script type="text/javascript" src="../../../../js/src/search.js"></script>
+
+
+  
+  <script type="application/ld+json">
+  {
+  "@context": "http://www.schema.org",
+  "@type": "Person",
+  "@id": "https://huangyijie.com/about/",
+  "name": "黄奕杰",
+  "alternateName": "Henry Huang",
+  "nationality": "中国",
+  "birthPlace" : {
+    "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+      "addressLocality": "汕头市",
+      "addressRegion": "广东省",
+          "addressCountry": "中国"
+    }
+  },
+  "gender": "Male",
+  "Description": "Software Engineer",
+  "disambiguatingDescription": "Full stack software engineer, focus on Java and JavaScript.",
+  "jobTitle": "Software Engineer",
+  "url": "https://huangyijie.com",
+  "image": "https://s.gravatar.com/avatar/4e0e61fdf1b2bcfb4ee31da27601fe6b?s=512&r=g",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "深圳市",
+    "addressRegion": "广东省",
+    "addressCountry": "中国"
+  },
+  "sameAs": [
+    "http://weibo.com/626242034",
+    "https://github.com/henryhuang",
+    "https://unsplash.com/@henryhh"
+    ]
+  }
+  </script>
+  </body>
+</html>
