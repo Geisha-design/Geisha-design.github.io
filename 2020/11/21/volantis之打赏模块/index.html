@@ -21,7 +21,7 @@
 
 
 
-    <link rel="alternate" href="../../../../default" title="截面樱" >
+    <link rel="alternate" href="../../../../default" title="齐雨争" >
 
 
 
@@ -37,12 +37,12 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="volantis之打赏模块&lt;volantis之打赏模块&gt;">
 <meta property="og:url" content="http://example.com/2020/11/21/volantis%E4%B9%8B%E6%89%93%E8%B5%8F%E6%A8%A1%E5%9D%97/index.html">
-<meta property="og:site_name" content="截面樱">
+<meta property="og:site_name" content="齐雨争">
 <meta property="og:description" content="hexo博客打赏随着支付宝和微信转账支付的日益深入人心，有时候我们甚至可以在很多博客文章后面看到小编和文章作者自己添加的DIY打赏功能，包括微信、支付宝等扫描支付转账，本篇文章就是为hexo优化，在每篇文章后面添加打赏功能。 打赏模块的代码layout\_partial 下新建 donate.ejs 输入如下内容： 123456789101112131415161718192021222324&amp;l">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-21T02:03:08.000Z">
 <meta property="article:modified_time" content="2020-11-21T02:05:48.000Z">
-<meta property="article:author" content="截面樱">
+<meta property="article:author" content="齐雨争">
 <meta property="article:tag" content="java leetcode mysql hexo">
 <meta name="twitter:card" content="summary">
 
@@ -75,16 +75,18 @@
 
 
 
+    <link rel="stylesheet" type="text/css" href="../../../../css/search.css?v=1.1"/>
 
 
-    <title> volantis之打赏模块<volantis之打赏模块> - 截面樱 </title>
+
+    <title> volantis之打赏模块<volantis之打赏模块> - 齐雨争 </title>
   <meta name="generator" content="Hexo 5.4.0"></head>
 
   <body>
     <div id="page">
       <header id="masthead"><div class="site-header-inner">
     <h1 class="site-title">
-        <a href="../../../../." class="logo">截面樱</a>
+        <a href="../../../../." class="logo">齐雨争</a>
     </h1>
 
     <nav id="nav-top">
@@ -109,6 +111,10 @@
                         </a>
                     </li>
                 
+                
+                    <li class="menu-item">
+                        <a id="search" href="">Search</a>
+                    </li>
                 
             </ul>
         
@@ -169,7 +175,7 @@
         2012 -
     
     2021
-    <span class="footer-author">截面樱.</span>
+    <span class="footer-author">齐雨争.</span>
     <span class="power-by">
         Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
     </span>
@@ -182,6 +188,37 @@
       </div>
     </div>
     
+    <div id="search-container" class="search-container">
+        <input type="hidden" id="algolia_index" value="<INDEX_NAME>"/>
+        <input type="hidden" id="algolia_app_id" value="<APP_ID>"/>
+        <input type="hidden" id="algolia_token" value="<API_KEY>"/>
+        <div class="section">
+            <div class="container">
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        Search
+                        <a id="close" href="" style="float: right; color: #363636;">
+                            <i class="fas fa-times-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="panel-block">
+                        <div id="searchContainer" class="control has-icons-left">
+                            <input id="searchField" class="input" type="text" placeholder="Enter anything...">
+                            <span class="icon is-small is-left">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </span>
+                        </div>
+                    </div>
+                    <div id="result">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 
 
     
@@ -202,6 +239,10 @@
 <script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
 
     
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script type="text/javascript" src="../../../../js/src/search.js"></script>
+
 
   
   <script type="application/ld+json">

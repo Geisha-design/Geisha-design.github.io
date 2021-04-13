@@ -21,7 +21,7 @@
 
 
 
-    <link rel="alternate" href="../../../../default" title="截面樱" >
+    <link rel="alternate" href="../../../../default" title="齐雨争" >
 
 
 
@@ -37,14 +37,14 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="主题实现全局播放背景音乐">
 <meta property="og:url" content="http://example.com/2020/11/29/%E4%B8%BB%E9%A2%98%E5%AE%9E%E7%8E%B0%E5%85%A8%E5%B1%80%E6%92%AD%E6%94%BE%E8%83%8C%E6%99%AF%E9%9F%B3%E4%B9%90/index.html">
-<meta property="og:site_name" content="截面樱">
+<meta property="og:site_name" content="齐雨争">
 <meta property="og:description" content="Hexo + Next 主题实现全局播放背景音乐第一种方式：使用网易云音乐插件特点：  简单快捷 有版权保护的音乐无法播放（易造成歌单失效）  我们可以将此插件添加到博客界面，或者博客文章之中（直接粘贴网易云插件代码即可）。  如何获取网易云歌单外链音乐插件及注意事项  在此我们举例将音乐插件添加到侧边栏。打开我们主题文件：themes\next\layout\_macro\sidebar.swi">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/2020040902523955.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NzIwNTk0,size_16,color_FFFFFF,t_70#pic_center">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200409100541773.png#pic_center">
 <meta property="article:published_time" content="2020-11-29T07:25:10.000Z">
 <meta property="article:modified_time" content="2020-11-29T07:25:30.000Z">
-<meta property="article:author" content="截面樱">
+<meta property="article:author" content="齐雨争">
 <meta property="article:tag" content="java leetcode mysql hexo">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/2020040902523955.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NzIwNTk0,size_16,color_FFFFFF,t_70#pic_center">
@@ -78,16 +78,18 @@
 
 
 
+    <link rel="stylesheet" type="text/css" href="../../../../css/search.css?v=1.1"/>
 
 
-    <title> 主题实现全局播放背景音乐 - 截面樱 </title>
+
+    <title> 主题实现全局播放背景音乐 - 齐雨争 </title>
   <meta name="generator" content="Hexo 5.4.0"></head>
 
   <body>
     <div id="page">
       <header id="masthead"><div class="site-header-inner">
     <h1 class="site-title">
-        <a href="../../../../." class="logo">截面樱</a>
+        <a href="../../../../." class="logo">齐雨争</a>
     </h1>
 
     <nav id="nav-top">
@@ -112,6 +114,10 @@
                         </a>
                     </li>
                 
+                
+                    <li class="menu-item">
+                        <a id="search" href="">Search</a>
+                    </li>
                 
             </ul>
         
@@ -334,7 +340,7 @@
         2012 -
     
     2021
-    <span class="footer-author">截面樱.</span>
+    <span class="footer-author">齐雨争.</span>
     <span class="power-by">
         Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
     </span>
@@ -347,6 +353,37 @@
       </div>
     </div>
     
+    <div id="search-container" class="search-container">
+        <input type="hidden" id="algolia_index" value="<INDEX_NAME>"/>
+        <input type="hidden" id="algolia_app_id" value="<APP_ID>"/>
+        <input type="hidden" id="algolia_token" value="<API_KEY>"/>
+        <div class="section">
+            <div class="container">
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        Search
+                        <a id="close" href="" style="float: right; color: #363636;">
+                            <i class="fas fa-times-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="panel-block">
+                        <div id="searchContainer" class="control has-icons-left">
+                            <input id="searchField" class="input" type="text" placeholder="Enter anything...">
+                            <span class="icon is-small is-left">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </span>
+                        </div>
+                    </div>
+                    <div id="result">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 
 
     
@@ -367,6 +404,10 @@
 <script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
 
     
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script type="text/javascript" src="../../../../js/src/search.js"></script>
+
 
   
   <script type="application/ld+json">

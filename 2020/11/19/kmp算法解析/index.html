@@ -21,7 +21,7 @@
 
 
 
-    <link rel="alternate" href="../../../../default" title="截面樱" >
+    <link rel="alternate" href="../../../../default" title="齐雨争" >
 
 
 
@@ -37,7 +37,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="kmp算法解析&lt;kmp算法解析&gt;">
 <meta property="og:url" content="http://example.com/2020/11/19/kmp%E7%AE%97%E6%B3%95%E8%A7%A3%E6%9E%90/index.html">
-<meta property="og:site_name" content="截面樱">
+<meta property="og:site_name" content="齐雨争">
 <meta property="og:description" content="有些算法，适合从它产生的动机，如何设计与解决问题这样正向地去介绍。但KMP算法真的不适合这样去学。最好的办法是先搞清楚它所用的数据结构是什么，再搞清楚怎么用，最后为什么的问题就会有恍然大悟的感觉。我试着从这个思路再介绍一下。大家只需要记住一点，PMT是什么东西。然后自己临时推这个算法也是能推出来的，完全不需要死记硬背。 KMP算法的核心，是一个被称为部分匹配表(Partial Match Tabl">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://pic1.zhimg.com/50/v2-e905ece7e7d8be90afc62fe9595a9b0f_hd.jpg?source=1940ef5c">
@@ -58,7 +58,7 @@
 <meta property="og:image" content="https://pic4.zhimg.com/80/v2-bd42e34a9266717b63706087a81092ac_1440w.jpg?source=1940ef5c">
 <meta property="article:published_time" content="2020-11-19T12:33:03.000Z">
 <meta property="article:modified_time" content="2020-11-19T13:51:18.000Z">
-<meta property="article:author" content="截面樱">
+<meta property="article:author" content="齐雨争">
 <meta property="article:tag" content="java leetcode mysql hexo">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://pic1.zhimg.com/50/v2-e905ece7e7d8be90afc62fe9595a9b0f_hd.jpg?source=1940ef5c">
@@ -92,16 +92,18 @@
 
 
 
+    <link rel="stylesheet" type="text/css" href="../../../../css/search.css?v=1.1"/>
 
 
-    <title> kmp算法解析<kmp算法解析> - 截面樱 </title>
+
+    <title> kmp算法解析<kmp算法解析> - 齐雨争 </title>
   <meta name="generator" content="Hexo 5.4.0"></head>
 
   <body>
     <div id="page">
       <header id="masthead"><div class="site-header-inner">
     <h1 class="site-title">
-        <a href="../../../../." class="logo">截面樱</a>
+        <a href="../../../../." class="logo">齐雨争</a>
     </h1>
 
     <nav id="nav-top">
@@ -126,6 +128,10 @@
                         </a>
                     </li>
                 
+                
+                    <li class="menu-item">
+                        <a id="search" href="">Search</a>
+                    </li>
                 
             </ul>
         
@@ -201,7 +207,7 @@
         2012 -
     
     2021
-    <span class="footer-author">截面樱.</span>
+    <span class="footer-author">齐雨争.</span>
     <span class="power-by">
         Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
     </span>
@@ -214,6 +220,37 @@
       </div>
     </div>
     
+    <div id="search-container" class="search-container">
+        <input type="hidden" id="algolia_index" value="<INDEX_NAME>"/>
+        <input type="hidden" id="algolia_app_id" value="<APP_ID>"/>
+        <input type="hidden" id="algolia_token" value="<API_KEY>"/>
+        <div class="section">
+            <div class="container">
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        Search
+                        <a id="close" href="" style="float: right; color: #363636;">
+                            <i class="fas fa-times-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="panel-block">
+                        <div id="searchContainer" class="control has-icons-left">
+                            <input id="searchField" class="input" type="text" placeholder="Enter anything...">
+                            <span class="icon is-small is-left">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </span>
+                        </div>
+                    </div>
+                    <div id="result">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 
 
     
@@ -234,6 +271,10 @@
 <script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
 
     
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script type="text/javascript" src="../../../../js/src/search.js"></script>
+
 
   
   <script type="application/ld+json">

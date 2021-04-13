@@ -23,7 +23,7 @@
 
 
 
-    <link rel="alternate" href="../../../../default" title="截面樱" >
+    <link rel="alternate" href="../../../../default" title="齐雨争" >
 
 
 
@@ -39,12 +39,12 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用EditorConfig">
 <meta property="og:url" content="http://example.com/2017/06/21/2017-06-21-use-editorconfig/index.html">
-<meta property="og:site_name" content="截面樱">
+<meta property="og:site_name" content="齐雨争">
 <meta property="og:description" content="使用不同编辑器，比如IDE（Eclipse，Intellij IDEA），又使用不同OS（Mac，Windows等），难免会碰到编码风格不一致的情况，那怎么办？ 使用 EditorConfig！ 有什么好处？当你将代码推送到GitHub时，你可以避免Mac和Windows之间的换行符冲突，以及其他多人协作开发中遇到的事情。 什么是EditorConfig？这段摘自官方网站。 EditorConfi">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2017-06-21T12:56:27.000Z">
 <meta property="article:modified_time" content="2021-04-12T02:12:58.331Z">
-<meta property="article:author" content="截面樱">
+<meta property="article:author" content="齐雨争">
 <meta property="article:tag" content="coding">
 <meta property="article:tag" content="IDE">
 <meta property="article:tag" content="editor">
@@ -79,16 +79,18 @@
 
 
 
+    <link rel="stylesheet" type="text/css" href="../../../../css/search.css?v=1.1"/>
 
 
-    <title> 使用EditorConfig - 截面樱 </title>
+
+    <title> 使用EditorConfig - 齐雨争 </title>
   <meta name="generator" content="Hexo 5.4.0"></head>
 
   <body>
     <div id="page">
       <header id="masthead"><div class="site-header-inner">
     <h1 class="site-title">
-        <a href="../../../../." class="logo">截面樱</a>
+        <a href="../../../../." class="logo">齐雨争</a>
     </h1>
 
     <nav id="nav-top">
@@ -113,6 +115,10 @@
                         </a>
                     </li>
                 
+                
+                    <li class="menu-item">
+                        <a id="search" href="">Search</a>
+                    </li>
                 
             </ul>
         
@@ -217,7 +223,7 @@
         2012 -
     
     2021
-    <span class="footer-author">截面樱.</span>
+    <span class="footer-author">齐雨争.</span>
     <span class="power-by">
         Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
     </span>
@@ -230,6 +236,37 @@
       </div>
     </div>
     
+    <div id="search-container" class="search-container">
+        <input type="hidden" id="algolia_index" value="<INDEX_NAME>"/>
+        <input type="hidden" id="algolia_app_id" value="<APP_ID>"/>
+        <input type="hidden" id="algolia_token" value="<API_KEY>"/>
+        <div class="section">
+            <div class="container">
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        Search
+                        <a id="close" href="" style="float: right; color: #363636;">
+                            <i class="fas fa-times-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="panel-block">
+                        <div id="searchContainer" class="control has-icons-left">
+                            <input id="searchField" class="input" type="text" placeholder="Enter anything...">
+                            <span class="icon is-small is-left">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </span>
+                        </div>
+                    </div>
+                    <div id="result">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 
 
     
@@ -250,6 +287,10 @@
 <script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
 
     
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script type="text/javascript" src="../../../../js/src/search.js"></script>
+
 
   
   <script type="application/ld+json">

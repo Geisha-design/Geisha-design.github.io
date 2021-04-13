@@ -23,7 +23,7 @@
 
 
 
-    <link rel="alternate" href="../../../../default" title="截面樱" >
+    <link rel="alternate" href="../../../../default" title="齐雨争" >
 
 
 
@@ -39,12 +39,12 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="错误排查：非ROOT用户使用密钥进行ssh登录提示输入密码">
 <meta property="og:url" content="http://example.com/2017/07/07/2017-07-07-non-root-user-config-for-ssh-key-login/index.html">
-<meta property="og:site_name" content="截面樱">
+<meta property="og:site_name" content="齐雨争">
 <meta property="og:description" content="由于个人的需要，需要搭建一个私有的git服务器，当然还需要有完善的操作界面，综合下来，我选择了Gogs。 1234问：为什么不用GitHub呢？答：我们不想让别人看到我们的代码。问：GitHub有private的呀！答：那要钱，我们没钱。。。  很顺序按照官网的步骤一步一步搭建完成了（其实早就用过了，这是第N次的搭建），然后另一个人上传了代码（注意这是通过http的方式的），于是我去下载。 我不喜">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2017-07-07T14:36:06.000Z">
 <meta property="article:modified_time" content="2021-04-12T02:12:58.331Z">
-<meta property="article:author" content="截面樱">
+<meta property="article:author" content="齐雨争">
 <meta property="article:tag" content="linux">
 <meta property="article:tag" content="ssh">
 <meta property="article:tag" content="git">
@@ -80,16 +80,18 @@
 
 
 
+    <link rel="stylesheet" type="text/css" href="../../../../css/search.css?v=1.1"/>
 
 
-    <title> 错误排查：非ROOT用户使用密钥进行ssh登录提示输入密码 - 截面樱 </title>
+
+    <title> 错误排查：非ROOT用户使用密钥进行ssh登录提示输入密码 - 齐雨争 </title>
   <meta name="generator" content="Hexo 5.4.0"></head>
 
   <body>
     <div id="page">
       <header id="masthead"><div class="site-header-inner">
     <h1 class="site-title">
-        <a href="../../../../." class="logo">截面樱</a>
+        <a href="../../../../." class="logo">齐雨争</a>
     </h1>
 
     <nav id="nav-top">
@@ -114,6 +116,10 @@
                         </a>
                     </li>
                 
+                
+                    <li class="menu-item">
+                        <a id="search" href="">Search</a>
+                    </li>
                 
             </ul>
         
@@ -244,7 +250,7 @@
         2012 -
     
     2021
-    <span class="footer-author">截面樱.</span>
+    <span class="footer-author">齐雨争.</span>
     <span class="power-by">
         Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
     </span>
@@ -257,6 +263,37 @@
       </div>
     </div>
     
+    <div id="search-container" class="search-container">
+        <input type="hidden" id="algolia_index" value="<INDEX_NAME>"/>
+        <input type="hidden" id="algolia_app_id" value="<APP_ID>"/>
+        <input type="hidden" id="algolia_token" value="<API_KEY>"/>
+        <div class="section">
+            <div class="container">
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        Search
+                        <a id="close" href="" style="float: right; color: #363636;">
+                            <i class="fas fa-times-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="panel-block">
+                        <div id="searchContainer" class="control has-icons-left">
+                            <input id="searchField" class="input" type="text" placeholder="Enter anything...">
+                            <span class="icon is-small is-left">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </span>
+                        </div>
+                    </div>
+                    <div id="result">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 
 
     
@@ -277,6 +314,10 @@
 <script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
 
     
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script type="text/javascript" src="../../../../js/src/search.js"></script>
+
 
   
   <script type="application/ld+json">

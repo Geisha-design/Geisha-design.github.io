@@ -23,7 +23,7 @@
 
 
 
-    <link rel="alternate" href="../../../../default" title="截面樱" >
+    <link rel="alternate" href="../../../../default" title="齐雨争" >
 
 
 
@@ -39,12 +39,12 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="JAVAList不能使用remove()">
 <meta property="og:url" content="http://example.com/2012/12/07/2013-05-16-list-cannot-remove/index.html">
-<meta property="og:site_name" content="截面樱">
+<meta property="og:site_name" content="齐雨争">
 <meta property="og:description" content="List是不能使用remove()的， 看以下代码： 123456String [] a &#x3D; new String[4];a[0] &#x3D; &quot;1&quot;;a[1] &#x3D; &quot;2&quot;;List&lt;String&gt; list &#x3D; Arrays.asList(a);list.remove(0);System.out.println(list.get(0));  这是会报错">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2012-12-07T02:01:00.000Z">
 <meta property="article:modified_time" content="2021-04-12T02:12:58.325Z">
-<meta property="article:author" content="截面樱">
+<meta property="article:author" content="齐雨争">
 <meta property="article:tag" content="IT">
 <meta property="article:tag" content="JAVA">
 <meta name="twitter:card" content="summary">
@@ -78,16 +78,18 @@
 
 
 
+    <link rel="stylesheet" type="text/css" href="../../../../css/search.css?v=1.1"/>
 
 
-    <title> JAVAList不能使用remove() - 截面樱 </title>
+
+    <title> JAVAList不能使用remove() - 齐雨争 </title>
   <meta name="generator" content="Hexo 5.4.0"></head>
 
   <body>
     <div id="page">
       <header id="masthead"><div class="site-header-inner">
     <h1 class="site-title">
-        <a href="../../../../." class="logo">截面樱</a>
+        <a href="../../../../." class="logo">齐雨争</a>
     </h1>
 
     <nav id="nav-top">
@@ -112,6 +114,10 @@
                         </a>
                     </li>
                 
+                
+                    <li class="menu-item">
+                        <a id="search" href="">Search</a>
+                    </li>
                 
             </ul>
         
@@ -182,9 +188,9 @@
         
   <nav class="post-nav">
     
-      <a class="prev" href="../../../../2013/02/12/2013-02-12-railsxue-xi-bi-ji/">
+      <a class="prev" href="../../../../2013/02/13/2013-02-13-shui-ku-zou-yi-zou/">
         <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">Rails学习笔记-11.2</span>
+        <span class="prev-text nav-default">水库走一走</span>
         <span class="prev-text nav-mobile">Prev</span>
       </a>
     
@@ -218,7 +224,7 @@
         2012 -
     
     2021
-    <span class="footer-author">截面樱.</span>
+    <span class="footer-author">齐雨争.</span>
     <span class="power-by">
         Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
     </span>
@@ -231,6 +237,37 @@
       </div>
     </div>
     
+    <div id="search-container" class="search-container">
+        <input type="hidden" id="algolia_index" value="<INDEX_NAME>"/>
+        <input type="hidden" id="algolia_app_id" value="<APP_ID>"/>
+        <input type="hidden" id="algolia_token" value="<API_KEY>"/>
+        <div class="section">
+            <div class="container">
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        Search
+                        <a id="close" href="" style="float: right; color: #363636;">
+                            <i class="fas fa-times-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="panel-block">
+                        <div id="searchContainer" class="control has-icons-left">
+                            <input id="searchField" class="input" type="text" placeholder="Enter anything...">
+                            <span class="icon is-small is-left">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </span>
+                        </div>
+                    </div>
+                    <div id="result">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 
 
     
@@ -251,6 +288,10 @@
 <script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
 
     
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script type="text/javascript" src="../../../../js/src/search.js"></script>
+
 
   
   <script type="application/ld+json">

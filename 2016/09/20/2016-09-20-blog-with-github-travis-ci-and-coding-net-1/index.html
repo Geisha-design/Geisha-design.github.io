@@ -23,7 +23,7 @@
 
 
 
-    <link rel="alternate" href="../../../../default" title="截面樱" >
+    <link rel="alternate" href="../../../../default" title="齐雨争" >
 
 
 
@@ -39,14 +39,14 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Github、Travis-CI和Coding.net自动部署博客［一］">
 <meta property="og:url" content="http://example.com/2016/09/20/2016-09-20-blog-with-github-travis-ci-and-coding-net-1/index.html">
-<meta property="og:site_name" content="截面樱">
+<meta property="og:site_name" content="齐雨争">
 <meta property="og:description" content="在从前，我在本地写一篇文章后要将它不熟到服务器并且提交源码，需要这么几个步骤： 1234$ hexo clean &amp;&amp; hexo deploy &#x2F;&#x2F; 我的博客是用hexo构建的，其他的静态博客构件工具还有jekyll等$ git add .$ git commit -m &quot;xxxx&quot;$ git push origin source &#x2F;&#x2F; 保存博客源码  这里主要">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://githubimg.wxio.club/blog-with-github-travis-ci-SequenceDiagram.jpg">
 <meta property="og:image" content="http://githubimg.wxio.club/blog/blog-with-github-travis-ci-and-coding-net/travis-sign-in.png">
 <meta property="article:published_time" content="2016-09-20T14:38:41.000Z">
 <meta property="article:modified_time" content="2021-04-12T02:12:58.331Z">
-<meta property="article:author" content="截面樱">
+<meta property="article:author" content="齐雨争">
 <meta property="article:tag" content="github">
 <meta property="article:tag" content="travis">
 <meta property="article:tag" content="coding.net">
@@ -82,16 +82,18 @@
 
 
 
+    <link rel="stylesheet" type="text/css" href="../../../../css/search.css?v=1.1"/>
 
 
-    <title> 使用Github、Travis-CI和Coding.net自动部署博客［一］ - 截面樱 </title>
+
+    <title> 使用Github、Travis-CI和Coding.net自动部署博客［一］ - 齐雨争 </title>
   <meta name="generator" content="Hexo 5.4.0"></head>
 
   <body>
     <div id="page">
       <header id="masthead"><div class="site-header-inner">
     <h1 class="site-title">
-        <a href="../../../../." class="logo">截面樱</a>
+        <a href="../../../../." class="logo">齐雨争</a>
     </h1>
 
     <nav id="nav-top">
@@ -116,6 +118,10 @@
                         </a>
                     </li>
                 
+                
+                    <li class="menu-item">
+                        <a id="search" href="">Search</a>
+                    </li>
                 
             </ul>
         
@@ -245,7 +251,7 @@
         2012 -
     
     2021
-    <span class="footer-author">截面樱.</span>
+    <span class="footer-author">齐雨争.</span>
     <span class="power-by">
         Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
     </span>
@@ -258,6 +264,37 @@
       </div>
     </div>
     
+    <div id="search-container" class="search-container">
+        <input type="hidden" id="algolia_index" value="<INDEX_NAME>"/>
+        <input type="hidden" id="algolia_app_id" value="<APP_ID>"/>
+        <input type="hidden" id="algolia_token" value="<API_KEY>"/>
+        <div class="section">
+            <div class="container">
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        Search
+                        <a id="close" href="" style="float: right; color: #363636;">
+                            <i class="fas fa-times-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="panel-block">
+                        <div id="searchContainer" class="control has-icons-left">
+                            <input id="searchField" class="input" type="text" placeholder="Enter anything...">
+                            <span class="icon is-small is-left">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </span>
+                        </div>
+                    </div>
+                    <div id="result">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 
 
     
@@ -278,6 +315,10 @@
 <script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
 
     
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script type="text/javascript" src="../../../../js/src/search.js"></script>
+
 
   
   <script type="application/ld+json">

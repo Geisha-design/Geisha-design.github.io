@@ -21,7 +21,7 @@
 
 
 
-    <link rel="alternate" href="../../../../default" title="截面樱" >
+    <link rel="alternate" href="../../../../default" title="齐雨争" >
 
 
 
@@ -37,7 +37,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="&lt;[四种JavaEE架构简介]&gt;">
 <meta property="og:url" content="http://example.com/2020/11/29/%E5%9B%9B%E7%A7%8DJavaEE%E6%9E%B6%E6%9E%84%E7%AE%80%E4%BB%8B/index.html">
-<meta property="og:site_name" content="截面樱">
+<meta property="og:site_name" content="齐雨争">
 <meta property="og:description" content="四种JavaEE架构简介1. 传统三层架构配图是一个基于MVC的三层架构, 大致可以分成表现层, 业务层和持久层 表现层负责接收请求和转发请求 业务层主要负责处理请求, 值得注意的是事务管理, 日志记录等操作通常也是封装在这层中 持久层主要负责数据库与实体之间的操作 我们可以使用框架来简化各层的开发, 例如表现层使用SpringMVC或Strut2, 持久层使用Mybatis或Hibernate,">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://images2018.cnblogs.com/blog/1471979/201808/1471979-20180829105155049-481908758.png">
@@ -48,8 +48,8 @@
 <meta property="og:image" content="https://images2018.cnblogs.com/blog/1471979/201808/1471979-20180829105514263-1906080560.png">
 <meta property="og:image" content="https://images2018.cnblogs.com/blog/1471979/201808/1471979-20180829105035906-521553459.png">
 <meta property="article:published_time" content="2020-11-29T12:05:25.000Z">
-<meta property="article:modified_time" content="2020-11-29T12:08:10.000Z">
-<meta property="article:author" content="截面樱">
+<meta property="article:modified_time" content="2021-04-13T09:07:15.026Z">
+<meta property="article:author" content="齐雨争">
 <meta property="article:tag" content="java leetcode mysql hexo">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://images2018.cnblogs.com/blog/1471979/201808/1471979-20180829105155049-481908758.png">
@@ -83,16 +83,18 @@
 
 
 
+    <link rel="stylesheet" type="text/css" href="../../../../css/search.css?v=1.1"/>
 
 
-    <title> <[四种JavaEE架构简介]> - 截面樱 </title>
+
+    <title> <[四种JavaEE架构简介]> - 齐雨争 </title>
   <meta name="generator" content="Hexo 5.4.0"></head>
 
   <body>
     <div id="page">
       <header id="masthead"><div class="site-header-inner">
     <h1 class="site-title">
-        <a href="../../../../." class="logo">截面樱</a>
+        <a href="../../../../." class="logo">齐雨争</a>
     </h1>
 
     <nav id="nav-top">
@@ -117,6 +119,10 @@
                         </a>
                     </li>
                 
+                
+                    <li class="menu-item">
+                        <a id="search" href="">Search</a>
+                    </li>
                 
             </ul>
         
@@ -186,7 +192,7 @@
         2012 -
     
     2021
-    <span class="footer-author">截面樱.</span>
+    <span class="footer-author">齐雨争.</span>
     <span class="power-by">
         Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
     </span>
@@ -199,6 +205,37 @@
       </div>
     </div>
     
+    <div id="search-container" class="search-container">
+        <input type="hidden" id="algolia_index" value="<INDEX_NAME>"/>
+        <input type="hidden" id="algolia_app_id" value="<APP_ID>"/>
+        <input type="hidden" id="algolia_token" value="<API_KEY>"/>
+        <div class="section">
+            <div class="container">
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        Search
+                        <a id="close" href="" style="float: right; color: #363636;">
+                            <i class="fas fa-times-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="panel-block">
+                        <div id="searchContainer" class="control has-icons-left">
+                            <input id="searchField" class="input" type="text" placeholder="Enter anything...">
+                            <span class="icon is-small is-left">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </span>
+                        </div>
+                    </div>
+                    <div id="result">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 
 
     
@@ -219,6 +256,10 @@
 <script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
 
     
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script type="text/javascript" src="../../../../js/src/search.js"></script>
+
 
   
   <script type="application/ld+json">

@@ -21,7 +21,7 @@
 
 
 
-    <link rel="alternate" href="../../../../default" title="截面樱" >
+    <link rel="alternate" href="../../../../default" title="齐雨争" >
 
 
 
@@ -37,7 +37,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo初始搭建&lt;初始搭建&gt;">
 <meta property="og:url" content="http://example.com/2020/11/21/%E5%88%9D%E5%A7%8B%E6%90%AD%E5%BB%BA/index.html">
-<meta property="og:site_name" content="截面樱">
+<meta property="og:site_name" content="齐雨争">
 <meta property="og:description" content="hexo搭建博客以及next主题的各种特效合集 Capricorn322 2020-02-20 21:45:13  487  收藏 版权 hexo搭建博客1、安装node和npm，这个自己百度一下node官网下载即可就不在这多说了，node下载后npm也会一起下载，下载完成后终端测试： 1234567891011121314151617node -v npm -v 检测版本号  2、全局安装hex">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://csdnimg.cn/release/blogv2/dist/pc/img/original.png">
@@ -53,7 +53,7 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200220214311547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d1Z3VpZGlhbjExMTQ=,size_16,color_FFFFFF,t_70">
 <meta property="article:published_time" content="2020-11-21T06:37:24.000Z">
 <meta property="article:modified_time" content="2020-11-21T06:38:10.000Z">
-<meta property="article:author" content="截面樱">
+<meta property="article:author" content="齐雨争">
 <meta property="article:tag" content="java leetcode mysql hexo">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://csdnimg.cn/release/blogv2/dist/pc/img/original.png">
@@ -87,16 +87,18 @@
 
 
 
+    <link rel="stylesheet" type="text/css" href="../../../../css/search.css?v=1.1"/>
 
 
-    <title> hexo初始搭建<初始搭建> - 截面樱 </title>
+
+    <title> hexo初始搭建<初始搭建> - 齐雨争 </title>
   <meta name="generator" content="Hexo 5.4.0"></head>
 
   <body>
     <div id="page">
       <header id="masthead"><div class="site-header-inner">
     <h1 class="site-title">
-        <a href="../../../../." class="logo">截面樱</a>
+        <a href="../../../../." class="logo">齐雨争</a>
     </h1>
 
     <nav id="nav-top">
@@ -121,6 +123,10 @@
                         </a>
                     </li>
                 
+                
+                    <li class="menu-item">
+                        <a id="search" href="">Search</a>
+                    </li>
                 
             </ul>
         
@@ -227,7 +233,7 @@
         2012 -
     
     2021
-    <span class="footer-author">截面樱.</span>
+    <span class="footer-author">齐雨争.</span>
     <span class="power-by">
         Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
     </span>
@@ -240,6 +246,37 @@
       </div>
     </div>
     
+    <div id="search-container" class="search-container">
+        <input type="hidden" id="algolia_index" value="<INDEX_NAME>"/>
+        <input type="hidden" id="algolia_app_id" value="<APP_ID>"/>
+        <input type="hidden" id="algolia_token" value="<API_KEY>"/>
+        <div class="section">
+            <div class="container">
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        Search
+                        <a id="close" href="" style="float: right; color: #363636;">
+                            <i class="fas fa-times-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="panel-block">
+                        <div id="searchContainer" class="control has-icons-left">
+                            <input id="searchField" class="input" type="text" placeholder="Enter anything...">
+                            <span class="icon is-small is-left">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </span>
+                        </div>
+                    </div>
+                    <div id="result">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 
 
     
@@ -260,6 +297,10 @@
 <script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
 
     
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script type="text/javascript" src="../../../../js/src/search.js"></script>
+
 
   
   <script type="application/ld+json">
