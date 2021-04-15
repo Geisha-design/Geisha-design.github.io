@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="论数据库连接池"/>
+
+
+
+
+
+
+
+
+    <link rel="alternate" href="../../../../default" title="齐雨争" >
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.1"/>
+
+
+
+<link rel="canonical" href="http://example.com/2021/04/15/port论数据库连接池/"/>
+
+
+<meta name="description" content="数据库连接是一种关键的有限的昂贵的资源，这一点企业级应用程序中体现得尤为突出。对数据库连接的管理能显著影响到整个应用程序的伸缩性和健壮性，影响到程序的性能指标。数据库连接池正是针对这个问题提出来的。   数据库连接池负责分配、管理和释放数据库连接，它允许应用程序重复使用一个现有的数据库连接，而再不是重新建立一个；释放空闲时间超过最大空闲时间的数据库连接来避免因为没有释放数据库连接而引起的数据库连接">
+<meta property="og:type" content="article">
+<meta property="og:title" content="论数据库连接池">
+<meta property="og:url" content="http://example.com/2021/04/15/port%E8%AE%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0/index.html">
+<meta property="og:site_name" content="齐雨争">
+<meta property="og:description" content="数据库连接是一种关键的有限的昂贵的资源，这一点企业级应用程序中体现得尤为突出。对数据库连接的管理能显著影响到整个应用程序的伸缩性和健壮性，影响到程序的性能指标。数据库连接池正是针对这个问题提出来的。   数据库连接池负责分配、管理和释放数据库连接，它允许应用程序重复使用一个现有的数据库连接，而再不是重新建立一个；释放空闲时间超过最大空闲时间的数据库连接来避免因为没有释放数据库连接而引起的数据库连接">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-04-15T00:40:28.000Z">
+<meta property="article:modified_time" content="2021-04-15T00:44:25.830Z">
+<meta property="article:author" content="齐雨争">
+<meta property="article:tag" content="java leetcode mysql hexo">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="stylesheet" type="text/css" href="../../../../css/style.css?v=1.1"/>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+    <link rel="stylesheet" type="text/css" href="../../../../css/search.css?v=1.1"/>
+
+
+
+    <title> 论数据库连接池 - 齐雨争 </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="../../../../." class="logo">齐雨争</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                Unsplash
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                
+                    <li class="menu-item">
+                        <a id="search" href="">Search</a>
+                    </li>
+                
+            </ul>
+        
+    </nav>
+
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          论数据库连接池
+        
+      </h1>
+
+      <time class="post-time">
+          Apr 15 2021
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>数据库连接是一种关键的有限的昂贵的资源，这一点企业级应用程序中体现得尤为突出。对数据库连接的管理能显著影响到整个应用程序的伸缩性和健壮性，影响到程序的性能指标。数据库连接池正是针对这个问题提出来的。</p>
+<p>  数据库连接池负责分配、管理和释放数据库连接，它允许应用程序重复使用一个现有的数据库连接，而再不是重新建立一个；释放空闲时间超过最大空闲时间的数据库连接来避免因为没有释放数据库连接而引起的数据库连接遗漏。这项技术能明显提高对数据库操作的性能。</p>
+<p>具体工作机制如下：</p>
+<p>数据库连接池在初始化时将创建一定数量的数据库连接放到连接池中，这些数据库连接的数量是由最小数据库连接数来设定的。无论这些数据库连接是否被使用，连接池都将一直保证至少拥有这么多的连接数量。连接池的最大数据库连接数量限定了这个连接池能占有的最大连接数，当应用程序向连接池请求的连接数超过最大连接数量时，这些请求将被加入到等待队列中。</p>
+<p>数据库连接池的最小连接数和最大连接数的设置要考虑到下列几个因素：</p>
+<ol>
+<li><p>最小连接数是连接池一直保持的数据库连接，所以如果应用程序对数据库连接的使用量不大，将会有大量的数据库连接资源被浪费；</p>
+</li>
+<li><p>最大连接数是连接池能申请的最大连接数，如果数据库连接请求超过此数，后面的数据库连接请求将被加入到等待队列中，这会影响之后的数据库操作。</p>
+</li>
+<li><p>如果最小连接数与最大连接数相差太大，那么最先的连接请求将会获利，之后超过最小连接数量的连接请求等价于建立一个新的数据库连接。不过，这些大于最小连接数的数据库连接在使用完不会马上被释放，它将被放到连接池中等待重复使用或是空闲超时后被释放。</p>
+</li>
+</ol>
+<p>===================================================================</p>
+<p>J2EE服务器启动时会建立一定数量的池连接，并一直维持不少于此数目的池连接。</p>
+<p>  调用：客户端程序需要连接时，池驱动程序会返回一个未使用的池连接并将其表记为 忙。如果当前没有空闲连接，池驱动程序就新建一定数量的连接，新建连接的数量有配置参数决定。</p>
+<p>释放：当使用的池连接调用完成后，池驱动程序将此连接表记为空闲， 其他调用就可以使用这个连接。</p>
+<p>最大维持连接数：没有任何请求时在连接池中可以存在的连接数</p>
+<p>最大连接数：连接池中最多可以存在的连接个数。</p>
+<p>最大等待时间：当断开连接时，超过最大维持连接数的连接不会马上销毁，最大等待时间过后它才会销毁。</p>
+<p>连接池是将已经创建好的连接保存在池中，当有请求来时，直接使用已经创建好的连接对数据库进行访问。这样省略了创建连接和销毁连接的过程。</p>
+<p>现在假设：最大维持连接数是10，最大连接数是20，最大等待时间是10000（毫秒）</p>
+<p>其过程：最开始在连接池中有10个连接（最大连接数），当有用户申请连接时，其将一个连接分配用户，直到连接池中的10个连接全都分配出去，当第11个用户申请连接时，它将创建第11个连接并分配给该用户，直到把第20个连接（最大连接数）分配给第20个用户，当第21个用户申请连接时，它需要等待，直到前面的20个用户中某一个断开了连接，才会把那个连接分配给第21个用户，当用户断开连接时（第11至20个连接），该连接不会立刻被释放而是需要等待10000毫秒（最大等待时间），才被释放，当没有用户连接时，连接池内还保持10个连接。</p>
+<p>在开发中，使用连接池时若没有关闭连接（调用连接的close方法）会出现“连接池疲劳的错误”。</p>
+<p>数据连接池的主要作用是什么?</p>
+<p>数据连接池是把数据库连接放到中间服务器上,比如tomcat上,那么相当于每次你操作数据库的时候就不需要再”连接”到数据库再进行相关操作,而是直接操作服务器上的”连接池”,你可以根据字面意思进行理解,把数据库当做一条小溪,那么”连接池”就是一个”水池”,这个水池里面的水是由事先架好的通向”小溪”的水管引进来的,所以,你想喝水的时候不必大老远地跑到小溪边上,而只要到这个水池就可以.这样的话就可以提高”效率”.但是数据池一般是用在数据量比较大的项目,这样可以提高程序的效率,想一想这样的话是不是就把相关的负荷加在了服务器上,因为这个”池”是在服务器上的,对于小数据量处理的项目不推荐使用,应为过于频繁的请求会使得服务器负载加重</p>
+<p>关系:</p>
+<p> 你 –&gt;”水池”–&gt;小溪(快速喝水)</p>
+<p> 程序–&gt;”数据池”–&gt;数据库(快速存取)</p>
+<p>就是这样,也不用把它想神秘了,我是这样理解的,也就这样说了,希望对你有帮助</p>
+<p>数据连接池怎么设置？</p>
+<p>在数据库连接字段的时候可以设置</p>
+<p>比如：“DataSource=Server;Initial;Catalog=db;UserID=test;Password=test;</p>
+<p> MaxPoolSize = 100;MinPoolSize= 15”</p>
+<p>这样 连接池 最大为100，最小为15</p>
+
+            </div>
+          
+
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2012 -
+    
+    2021
+    <span class="footer-author">齐雨争.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+    <div id="search-container" class="search-container">
+        <input type="hidden" id="algolia_index" value="<INDEX_NAME>"/>
+        <input type="hidden" id="algolia_app_id" value="<APP_ID>"/>
+        <input type="hidden" id="algolia_token" value="<API_KEY>"/>
+        <div class="section">
+            <div class="container">
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        Search
+                        <a id="close" href="" style="float: right; color: #363636;">
+                            <i class="fas fa-times-circle" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="panel-block">
+                        <div id="searchContainer" class="control has-icons-left">
+                            <input id="searchField" class="input" type="text" placeholder="Enter anything...">
+                            <span class="icon is-small is-left">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </span>
+                        </div>
+                    </div>
+                    <div id="result">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="../../../../lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="../../../../js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
+
+    
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script type="text/javascript" src="../../../../js/src/search.js"></script>
+
+
+  
+  <script type="application/ld+json">
+  {
+  "@context": "http://www.schema.org",
+  "@type": "Person",
+  "@id": "https://huangyijie.com/about/",
+  "name": "黄奕杰",
+  "alternateName": "Henry Huang",
+  "nationality": "中国",
+  "birthPlace" : {
+    "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+      "addressLocality": "汕头市",
+      "addressRegion": "广东省",
+          "addressCountry": "中国"
+    }
+  },
+  "gender": "Male",
+  "Description": "Software Engineer",
+  "disambiguatingDescription": "Full stack software engineer, focus on Java and JavaScript.",
+  "jobTitle": "Software Engineer",
+  "url": "https://huangyijie.com",
+  "image": "https://s.gravatar.com/avatar/4e0e61fdf1b2bcfb4ee31da27601fe6b?s=512&r=g",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "深圳市",
+    "addressRegion": "广东省",
+    "addressCountry": "中国"
+  },
+  "sameAs": [
+    "http://weibo.com/626242034",
+    "https://github.com/henryhuang",
+    "https://unsplash.com/@henryhh"
+    ]
+  }
+  </script>
+  </body>
+</html>
