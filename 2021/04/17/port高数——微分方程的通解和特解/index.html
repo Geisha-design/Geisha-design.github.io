@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="微分方程中通解与特解的定义：y''+py'+qy=0，等式右边为零，为二阶常系数齐次线性方程；y''+py'+qy=f（x），等式右边为一个函数式，为二阶常系数非齐次线性方程。可见，后一个方程可以看为前一个方程添加了一个约束条件。对于第一个微分方程，目标为求出y的表达式。由此得到的解，称为【通解】，通解代表着这是解的集合。"/>
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="../../../../default" title="齐雨争" >
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="http://example.com/2021/04/17/port高数——微分方程的通解和特解/"/>
+
+
+<meta name="description" content="微分方程中通解与特解的定义：y&#39;&#39;+py&#39;+qy&#x3D;0，等式右边为零，为二阶常系数齐次线性方程；y&#39;&#39;+py&#39;+qy&#x3D;f（x），等式右边为一个函数式，为二阶常系数非齐次线性方程。可见，后一个方程可以看为前一个方程添加了一个约束条件。对于第一个微分方程，目标为求出y的表达式。由此得到的解，称为【通解】，通解代表着这是解的集合。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高数——微分方程的通解和特解">
+<meta property="og:url" content="http://example.com/2021/04/17/port%E9%AB%98%E6%95%B0%E2%80%94%E2%80%94%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%9A%84%E9%80%9A%E8%A7%A3%E5%92%8C%E7%89%B9%E8%A7%A3/index.html">
+<meta property="og:site_name" content="齐雨争">
+<meta property="og:description" content="微分方程中通解与特解的定义：y&#39;&#39;+py&#39;+qy&#x3D;0，等式右边为零，为二阶常系数齐次线性方程；y&#39;&#39;+py&#39;+qy&#x3D;f（x），等式右边为一个函数式，为二阶常系数非齐次线性方程。可见，后一个方程可以看为前一个方程添加了一个约束条件。对于第一个微分方程，目标为求出y的表达式。由此得到的解，称为【通解】，通解代表着这是解的集合。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=+%5Cfrac%7Bdy%7D%7Bdx%7D+P(x)y=Q(x)%5C+%5C+%5C+%5C+%5C+%5C+%5C+%5C+(1)+%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=y">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=Q(x)%5Cequiv0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=Q(x)%5Cnot%5Cequiv0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=Q(x)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=++%5Cfrac%7Bdy%7D%7Bdx%7D+P(x)y=0%5C+%5C+%5C+%5C+%5C+%5C+%5C+%5C+(2).+%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=++%5Cfrac%7Bdy%7D%7By%7D=-P(x)dx,+%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=++%5Cln%7Cy%7C=-%5Cint+P(x)dx+C_1,+%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=y=Ce%5E%7B-%5Cint+P(x)dx%7D,~~%5Ctext%7B%E5%85%B6%E4%B8%AD%7DC=%5Cpm+e%5E%7BC_1%7D.+%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=u(x)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=++y=ue%5E%7B-%5Cint+P(x)dx%7D%5C+%5C+%5C+%5C+%5C+%5C+%5C+%5C+(3).+%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=++%5Cfrac%7Bdy%7D%7Bdx%7D=u%27e%5E%7B-%5Cint+P(x)dx%7D-uP(x)e%5E%7B-%5Cint+P(x)dx%7D%5C+%5C+%5C+%5C+%5C+%5C+%5C+%5C+(4).+%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=++u%27e%5E%7B-%5Cint+P(x)dx%7D-uP(x)e%5E%7B-%5Cint+P(x)dx%7D+P(x)ue%5E%7B-%5Cint+P(x)dx%7D=Q(x),+%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=++u%27e%5E%7B-%5Cint+P(x)dx%7D=Q(x),u%27=Q(x)e%5E%7B%5Cint+P(x)dx%7D.+%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=++u=%5Cint+Q(x)e%5E%7B%5Cint+P(x)dx%7Ddx+C.+%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=++y=e%5E%7B-%5Cint+P(x)dx%7D(%5Cint+Q(x)e%5E%7B%5Cint+P(x)dx%7Ddx+C)%5C+%5C+%5C+%5C+%5C+%5C+%5C+%5C+(5).+%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=++y=Ce%5E%7B-%5Cint+P(x)dx%7D+e%5E%7B-%5Cint+P(x)dx%7D%5Cint+Q(x)e%5E%7B%5Cint+P(x)dx%7Ddx.+%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=C=0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=++%5Cfrac%7Bdy%7D%7Bdx%7D-%5Cfrac%7B2y%7D%7Bx+1%7D=(x+1)%5E%7B%5Cfrac%7B5%7D%7B2%7D%7D+%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=++%5Cfrac%7Bdy%7D%7Bdx%7D-%5Cfrac%7B2%7D%7Bx+1%7Dy=0,+%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=++%5Cfrac%7Bdy%7D%7By%7D=%5Cfrac%7B2dx%7D%7Bx+1%7D,+%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=++%5Cln%7Cy%7C=2%5Cln%7Cx+1%7C+%5Cln%7CC_1%7C,+%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=++y=C_1(x+1)%5E2.+%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=C_1">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=u">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=++y=u(x+1)%5E2%5C+%5C+%5C+%5C+%5C+%5C+%5C+%5C+(6),+%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=++%5Cfrac%7Bdy%7D%7Bdx%7D=u%27(x+1)%5E2+2u(x+1).+%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=++u%27=(x+1)%5E%7B%5Cfrac%7B1%7D%7B2%7D%7D.+%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=u=%5Cfrac%7B2%7D%7B3%7D(x+1)%5E%7B%5Cfrac%7B3%7D%7B2%7D%7D+C.+%5C%5C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=y=(x+1)%5E2%5B%5Cfrac%7B2%7D%7B3%7D(x+1)%5E%7B%5Cfrac%7B3%7D%7B2%7D%7D+C%5D.+%5C%5C">
+<meta property="article:published_time" content="2021-04-17T06:33:02.000Z">
+<meta property="article:modified_time" content="2021-04-17T06:39:03.469Z">
+<meta property="article:author" content="齐雨争">
+<meta property="article:tag" content="java leetcode mysql hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.zhihu.com/equation?tex=+%5Cfrac%7Bdy%7D%7Bdx%7D+P(x)y=Q(x)%5C+%5C+%5C+%5C+%5C+%5C+%5C+%5C+(1)+%5C%5C">
+
+
+<link rel="stylesheet" type="text/css" href="../../../../css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+  <link rel="stylesheet" type="text/css" href="../../../../lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: true
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> 高数——微分方程的通解和特解 - 齐雨争 </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="../../../../." class="logo">齐雨争</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                life
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                github
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          高数——微分方程的通解和特解
+        
+      </h1>
+
+      <time class="post-time">
+          Apr 17 2021
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>微分方程中通解与特解的定义：</p>
+<p>y’’+py’+qy=0，等式右边为零，为二阶常系数齐次线性方程；</p>
+<p>y’’+py’+qy=f（x），等式右边为一个函数式，为二阶常系数非齐次线性方程。</p>
+<p>可见，后一个方程可以看为前一个方程添加了一个约束条件。</p>
+<p>对于第一个微分方程，目标为求出y的表达式。由此得到的解，称为【通解】，通解代表着这是解的集合。</p>
+<p>因为M个变量，需要M个个约束条件才能全部解出。由此，在变量相同的条件下，多一个约束条件f（y），就可以多确定一个解，此解就称为【特解】。</p>
+<p>求微分方程通解的方法：</p>
+<blockquote>
+<p>方程<br><img src="https://www.zhihu.com/equation?tex=+%5Cfrac%7Bdy%7D%7Bdx%7D+P(x)y=Q(x)%5C+%5C+%5C+%5C+%5C+%5C+%5C+%5C+(1)+%5C%5C" alt="[公式]"> 叫做<strong>一阶线性微分方程</strong>，因为它对于未知函数<img src="https://www.zhihu.com/equation?tex=y" alt="[公式]">及其导数是一次方程. 如果<img src="https://www.zhihu.com/equation?tex=Q(x)%5Cequiv0" alt="[公式]">，则方程（1）称为<strong>齐次的</strong>；如果<img src="https://www.zhihu.com/equation?tex=Q(x)%5Cnot%5Cequiv0" alt="[公式]">，则方程（1）称为<strong>非齐次的</strong>.</p>
+</blockquote>
+<ul>
+<li>为了求出非齐次线性方程（1）的解，我们先把<img src="https://www.zhihu.com/equation?tex=Q(x)" alt="[公式]"> 换成零而写成方程</li>
+</ul>
+<p><img src="https://www.zhihu.com/equation?tex=++%5Cfrac%7Bdy%7D%7Bdx%7D+P(x)y=0%5C+%5C+%5C+%5C+%5C+%5C+%5C+%5C+(2).+%5C%5C" alt="[公式]"></p>
+<p>方程（2）叫做<strong>对应于非齐次线性方程（1）的齐次线性方程</strong>.</p>
+<ul>
+<li>齐次方程（2）<strong>分离变量</strong>后，得</li>
+</ul>
+<p><img src="https://www.zhihu.com/equation?tex=++%5Cfrac%7Bdy%7D%7By%7D=-P(x)dx,+%5C%5C" alt="[公式]"></p>
+<p>两端积分，得</p>
+<p><img src="https://www.zhihu.com/equation?tex=++%5Cln%7Cy%7C=-%5Cint+P(x)dx+C_1,+%5C%5C" alt="[公式]"></p>
+<p>或</p>
+<p><img src="https://www.zhihu.com/equation?tex=y=Ce%5E%7B-%5Cint+P(x)dx%7D,~~%5Ctext%7B%E5%85%B6%E4%B8%AD%7DC=%5Cpm+e%5E%7BC_1%7D.+%5C%5C" alt="[公式]"></p>
+<p>这便是对应的齐次线性方程（2）的通解.</p>
+<ul>
+<li><strong>常数变易法</strong>：把（2）的通解中的<img src="https://www.zhihu.com/equation?tex=C" alt="[公式]">换成<img src="https://www.zhihu.com/equation?tex=x" alt="[公式]"> 的未知函数<img src="https://www.zhihu.com/equation?tex=u(x)" alt="[公式]">，作变换</li>
+</ul>
+<p><img src="https://www.zhihu.com/equation?tex=++y=ue%5E%7B-%5Cint+P(x)dx%7D%5C+%5C+%5C+%5C+%5C+%5C+%5C+%5C+(3).+%5C%5C" alt="[公式]"></p>
+<p>于是</p>
+<p><img src="https://www.zhihu.com/equation?tex=++%5Cfrac%7Bdy%7D%7Bdx%7D=u%27e%5E%7B-%5Cint+P(x)dx%7D-uP(x)e%5E%7B-%5Cint+P(x)dx%7D%5C+%5C+%5C+%5C+%5C+%5C+%5C+%5C+(4).+%5C%5C" alt="[公式]"></p>
+<p>将（3）和（4）代入方程（1），得</p>
+<p><img src="https://www.zhihu.com/equation?tex=++u%27e%5E%7B-%5Cint+P(x)dx%7D-uP(x)e%5E%7B-%5Cint+P(x)dx%7D+P(x)ue%5E%7B-%5Cint+P(x)dx%7D=Q(x),+%5C%5C" alt="[公式]"></p>
+<p>等号左边中间两项抵消掉，得</p>
+<p><img src="https://www.zhihu.com/equation?tex=++u%27e%5E%7B-%5Cint+P(x)dx%7D=Q(x),u%27=Q(x)e%5E%7B%5Cint+P(x)dx%7D.+%5C%5C" alt="[公式]"></p>
+<p>两端积分，得</p>
+<p><img src="https://www.zhihu.com/equation?tex=++u=%5Cint+Q(x)e%5E%7B%5Cint+P(x)dx%7Ddx+C.+%5C%5C" alt="[公式]"></p>
+<ul>
+<li>把上式代入（3），便得非齐次线性方程（1）的通解</li>
+</ul>
+<p><img src="https://www.zhihu.com/equation?tex=++y=e%5E%7B-%5Cint+P(x)dx%7D(%5Cint+Q(x)e%5E%7B%5Cint+P(x)dx%7Ddx+C)%5C+%5C+%5C+%5C+%5C+%5C+%5C+%5C+(5).+%5C%5C" alt="[公式]"></p>
+<ul>
+<li>将（5）式改写成两项之和</li>
+</ul>
+<p><img src="https://www.zhihu.com/equation?tex=++y=Ce%5E%7B-%5Cint+P(x)dx%7D+e%5E%7B-%5Cint+P(x)dx%7D%5Cint+Q(x)e%5E%7B%5Cint+P(x)dx%7Ddx.+%5C%5C" alt="[公式]"></p>
+<ul>
+<li>第一项是对应的齐次线性方程（2）的<strong>通解</strong>，</li>
+<li>第二项是非齐次线性方程（1）的一个<strong>特解</strong>（在通解（5）中取<img src="https://www.zhihu.com/equation?tex=C=0" alt="[公式]">便得到这个特解）.</li>
+</ul>
+<blockquote>
+<p><strong>一阶非齐次线性方程的通解等于对应的齐次方程的通解与非齐次方程的一个特解之和.</strong></p>
+</blockquote>
+<ul>
+<li>求方程</li>
+</ul>
+<p><img src="https://www.zhihu.com/equation?tex=++%5Cfrac%7Bdy%7D%7Bdx%7D-%5Cfrac%7B2y%7D%7Bx+1%7D=(x+1)%5E%7B%5Cfrac%7B5%7D%7B2%7D%7D+%5C%5C" alt="[公式]"></p>
+<p>的通解.</p>
+<ul>
+<li>先用<strong>分离变量法</strong>求对应的齐次方程</li>
+</ul>
+<p><img src="https://www.zhihu.com/equation?tex=++%5Cfrac%7Bdy%7D%7Bdx%7D-%5Cfrac%7B2%7D%7Bx+1%7Dy=0,+%5C%5C" alt="[公式]"></p>
+<p>的通解.</p>
+<p><img src="https://www.zhihu.com/equation?tex=++%5Cfrac%7Bdy%7D%7By%7D=%5Cfrac%7B2dx%7D%7Bx+1%7D,+%5C%5C" alt="[公式]"></p>
+<p>两边求不定积分，得</p>
+<p><img src="https://www.zhihu.com/equation?tex=++%5Cln%7Cy%7C=2%5Cln%7Cx+1%7C+%5Cln%7CC_1%7C,+%5C%5C" alt="[公式]"></p>
+<p>也即</p>
+<p><img src="https://www.zhihu.com/equation?tex=++y=C_1(x+1)%5E2.+%5C%5C" alt="[公式]"></p>
+<ul>
+<li>用<strong>常数变易法</strong>，把<img src="https://www.zhihu.com/equation?tex=C_1" alt="[公式]">换成<img src="https://www.zhihu.com/equation?tex=u" alt="[公式]">，即令</li>
+</ul>
+<p><img src="https://www.zhihu.com/equation?tex=++y=u(x+1)%5E2%5C+%5C+%5C+%5C+%5C+%5C+%5C+%5C+(6),+%5C%5C" alt="[公式]"></p>
+<p>则</p>
+<p><img src="https://www.zhihu.com/equation?tex=++%5Cfrac%7Bdy%7D%7Bdx%7D=u%27(x+1)%5E2+2u(x+1).+%5C%5C" alt="[公式]"></p>
+<p>代入所给非齐次方程，得</p>
+<p><img src="https://www.zhihu.com/equation?tex=++u%27=(x+1)%5E%7B%5Cfrac%7B1%7D%7B2%7D%7D.+%5C%5C" alt="[公式]"></p>
+<p>两端积分，得</p>
+<p><img src="https://www.zhihu.com/equation?tex=u=%5Cfrac%7B2%7D%7B3%7D(x+1)%5E%7B%5Cfrac%7B3%7D%7B2%7D%7D+C.+%5C%5C" alt="[公式]"></p>
+<ul>
+<li>再把上式代入(6)式，即得所求方程的通解为</li>
+</ul>
+<p><img src="https://www.zhihu.com/equation?tex=y=(x+1)%5E2%5B%5Cfrac%7B2%7D%7B3%7D(x+1)%5E%7B%5Cfrac%7B3%7D%7B2%7D%7D+C%5D.+%5C%5C" alt="[公式]"></p>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+		
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="../port/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">线性代数思维导图</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="../../16/port%E5%9D%82%E6%9C%AC%E9%BE%99%E4%B8%80%E5%85%88%E7%94%9F%E5%AF%B9%E6%88%91%E7%9A%84%E5%BD%B1%E5%93%8D/">
+        <span class="next-text nav-default">坂本龙一先生对我的影响</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2018 -
+    
+    2021
+    <span class="footer-author">齐雨争.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="../../../../lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="../../../../lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+    <script type="text/javascript" src="../../../../js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>

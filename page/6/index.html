@@ -134,40 +134,12 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="../../2016/03/29/2016-03-29-maven-build-jar-no-class-file/">Maven打jar包内容出错</a>
+          <a class="post-link" href="../../2012/11/10/2013-05-15-moganshan/">临街莫干山路走一走</a>
         
       </h1>
 
       <time class="post-time">
-          Mar 29 2016
-      </time>
-    </header>
-
-
-
-    
-        <div class="post-excerpt post-content">
-            
-            
-
-            
-          
-
-    
-  </article>
-
-        
-            
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="../../2016/03/26/2016-03-26-distributed-data-model/">数据分布式模型</a>
-        
-      </h1>
-
-      <time class="post-time">
-          Mar 26 2016
+          Nov 10 2012
       </time>
     </header>
 
@@ -181,15 +153,15 @@
             
 
             
-              <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>数据的分布有两种途径：</p>
-<ul>
-<li><p>复制（replication）：</p>
-<p>  将同一份数据拷贝至多个节点；复制又分为：<strong>主从式</strong>（master-slave）和<strong>对等式</strong>（peer-to-peer）。</p>
-</li>
-<li><p>分片（sharding）：</p>
-<p>  将不同数据存放在不同节点。</p>
-</li>
-</ul>
+              <p>又是一天周六，盼星星盼月亮终于盼来了，虽然我只是想在白天的条件下拍点东西。</p>
+<p>有点遗憾，昨晚查了天气，今天会下小雨。</p>
+<p>本来想着今天去甜爱路看看，感觉那里氛围不错，当然我只是顾名思义的，不过我还真想去瞧一瞧，看一下那几首古今中外有名的爱情诗。</p>
+<p>话题还是回到&ldquo;莫干山路&rdquo;吧。我来现在住的地方的第一天，就和某人走过这里。&ldquo;莫干山路&rdquo;这几个字我上班的日子基本每天都见，因为每天早上坐76路都要路过这个路口，所以写着这几个字的路牌就吸引我的眼球，可惜不是很吸引我眼球，很吸引我眼球的是那满墙的涂鸦。</p>
+<p>这么有名的艺术区，就离我这么近，再加上这灰蒙蒙的天，那我就决定走一走了。</p>
+<p>特此声明，我只是刚入门，望摄影高手误喷啊！</p>
+<p><img src="http://cnhaloimg.wxio.club/20121110/moganshan_1.jpg" alt="第一张" /></p>
+<p style="text-align: left;">其实墙的后面是一堆废墟。</p>
+<p style="text-align: left;">&nbsp;
         </div>
             
           
@@ -203,12 +175,40 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="../../2016/03/13/2016-03-13-Wicket-Hello-World/">Wicket的HelloWorld</a>
+          <a class="post-link" href="../../2012/10/30/2013-05-16-photo-sushe-hezhao/">宿舍毕业合照</a>
         
       </h1>
 
       <time class="post-time">
-          Mar 13 2016
+          Oct 30 2012
+      </time>
+    </header>
+
+
+
+    
+        <div class="post-excerpt post-content">
+            
+            
+
+            
+          
+
+    
+  </article>
+
+        
+            
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="../../2012/10/29/2013-05-16-tomcat-install-cert/">Tomcat安装CA证书（详细过程篇）</a>
+        
+      </h1>
+
+      <time class="post-time">
+          Oct 29 2012
       </time>
     </header>
 
@@ -222,11 +222,8 @@
             
 
             
-              <p>在公司用了4年的Wicket了，竟然发现没有写个HelloWorld。</p>
-<p>Wicket，全称Apache Wicket， 它是个基于组件的Web应用框架，更多的解释看<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Apache_Wicket">Wikipedia</a>。</p>
-<p>官方网站：<a target="_blank" rel="noopener" href="http://wicket.apache.org/">wicket.apache.org</a>。</p>
-<p>很遗憾，由于Wicket在国内的普及程度不够，中文相关的文档很少，有的话也就是基于1.2版本的，官方最新的release版本已经是7.x，SNAPSHOT是8.x（Wicket的版本规则从1.5以后就为6.x，7.x，8.x，有点像Java的版本规则）。</p>
-<p>这里的HelloWorld是结合Gradle，Jettty完成的，在Eclipse IDE上开发。</p>
+              <p><strong>1.创建一个本地证书：&nbsp;</strong><br /><br />C:\j2sdk1.4.2_05\bin&gt;;keytool&nbsp;-genkey&nbsp;-alias&nbsp;tomcat&nbsp;-keyalg&nbsp;RSA&nbsp;-keystore&nbsp;keystore&nbsp;<br />输入keystore密码：&nbsp;&nbsp;12345678&nbsp;<br />您的名字与姓氏是什么？&nbsp;<br />&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;www.test.com&nbsp;<br />您的组织单位名称是什么？&nbsp;<br />&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;system&nbsp;<br />您的组织名称是什么？&nbsp;<br />&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;test&nbsp;<br />您所在的城市或区域名称是什么？&nbsp;<br />&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;beijing&nbsp;<br />您所在的州或省份名称是什么？&nbsp;<br />&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;beijing&nbsp;<br />该单位的两字母国家代码是什么&nbsp;<br />&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;cn&nbsp;<br />CN=liujx,&nbsp;OU=system,&nbsp;O=test,&nbsp;L=beijing,&nbsp;ST=beijing,&nbsp;C=cn&nbsp;正确吗？&nbsp;<br />&nbsp;&nbsp;[否]：&nbsp;&nbsp;y&nbsp;<br /><br />输入&lt;tomcat&gt;;的主密码&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（如果和&nbsp;keystore&nbsp;密码相同，按回车）：&nbsp;</p>
+<p>
         </div>
             
           
@@ -240,12 +237,12 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="../../2016/03/09/2016-03-09-java-memory-area-structure/">Java运行时内存结构</a>
+          <a class="post-link" href="../../2012/10/23/2013-05-16-hibernate-load-get-compare/">Hibernate的load和get比较</a>
         
       </h1>
 
       <time class="post-time">
-          Mar 09 2016
+          Oct 23 2012
       </time>
     </header>
 
@@ -259,198 +256,15 @@
             
 
             
-              <p><img src="http://77fkdd.com1.z0.glb.clouddn.com/it%2Fjava%2Fjava-memory-stracture.png" alt="Java内存结构图"></p>
-<p>由图所示，Java运行时内存区域分为：<strong>虚拟机栈</strong>、<strong>方法区</strong>、<strong>本地方法栈</strong>、<strong>程序计数器</strong>和<strong>堆</strong>。</p>
-        </div>
-            
-          
-
-    
-  </article>
-
-        
-            
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="../../2016/02/29/2016-02-29-rules-of-front-end-optimization/">前端优化法则</a>
-        
-      </h1>
-
-      <time class="post-time">
-          Feb 29 2016
-      </time>
-    </header>
-
-
-
-    
-        <div class="post-excerpt post-content">
-            
-            
-              
-            
-
-            
-              <p>前两天被人问到前端的优化有哪些，我支支吾吾也只能说出两三条，表示很惭愧。</p>
-<p>说到前端优化的必修课，那就是<a target="_blank" rel="noopener" href="https://developer.yahoo.com/performance/rules.html">Yahoo的前端优化性能规则</a>，里面都是别人的经验总结，有 <strong>35</strong> 条之多，这是先分类在文章最后，之后会个别阐述我针对最初的 <strong>14</strong> 条，借鉴别人的翻译成果和我自己的解读。</p>
-        </div>
-            
-          
-
-    
-  </article>
-
-        
-            
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="../../2015/04/15/2015-04-15-a-lunch/">一顿午饭</a>
-        
-      </h1>
-
-      <time class="post-time">
-          Apr 15 2015
-      </time>
-    </header>
-
-
-
-    
-        <div class="post-excerpt post-content">
-            
-            
-
-            
-          
-
-    
-  </article>
-
-        
-            
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="../../2015/04/10/2015-04-10-design-patterns-mediator/">设计模式Mediator</a>
-        
-      </h1>
-
-      <time class="post-time">
-          Apr 10 2015
-      </time>
-    </header>
-
-
-
-    
-        <div class="post-excerpt post-content">
-            
-            
-              
-            
-
-            
-              <h3 id="Mediator中介者模式定义"><a href="#Mediator中介者模式定义" class="headerlink" title="Mediator中介者模式定义"></a>Mediator中介者模式定义</h3><p>用一个中介对象来封装一系列关于对象交互行为。</p>
-        </div>
-            
-          
-
-    
-  </article>
-
-        
-            
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="../../2015/02/19/2015-02-19-runner-of-kite/">说点关于《追风筝的人》</a>
-        
-      </h1>
-
-      <time class="post-time">
-          Feb 19 2015
-      </time>
-    </header>
-
-
-
-    
-        <div class="post-excerpt post-content">
-            
-            
-              
-            
-
-            
-              <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在节前（春节）开始看《追风筝的人》，是在kindle手机app上看的，都是在忙里偷闲的情况下看的。</p>
-<p>过节了，终于狠下心给自己买了kindle paper white 2，于是一口气看完了这本书。</p>
-        </div>
-            
-          
-
-    
-  </article>
-
-        
-            
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="../../2015/01/30/2015-01-30-diffrence-between-mvn-clean-install-and-mvn-install/">mvn打包的时候为什么用clean</a>
-        
-      </h1>
-
-      <time class="post-time">
-          Jan 30 2015
-      </time>
-    </header>
-
-
-
-    
-        <div class="post-excerpt post-content">
-            
-            
-
-            
-          
-
-    
-  </article>
-
-        
-            
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="../../2014/12/04/2014-12-04-java-is-compiled-or-interpreted/">Java是编译型语言还是解释型语言</a>
-        
-      </h1>
-
-      <time class="post-time">
-          Dec 04 2014
-      </time>
-    </header>
-
-
-
-    
-        <div class="post-excerpt post-content">
-            
-            
-              
-            
-
-            
-              <p>大多数开发人员都知道，Java源文件需要编译成.class文件才能在JVM中运行。如果继续追问，许多开发人员还会告诉你说.class中的字节码首先会被JVM解释，但是在稍后即时（JIT）编译。然而很多人将字节码含糊地理解为“在某种虚构的或者简化的CPU上运行的机器码”。</p>
+              <div><strong>get和load的实现</strong></div>
+<div>
+<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;load event(产生) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;onLoad Event</div>
+<div>&nbsp; &nbsp; &nbsp;&nbsp;Hibernate&nbsp;--------------------&gt;LoadEventListener---------------&gt;event<strong>①</strong>------&gt;return event-----&gt;getResult()</div>
+<div>&nbsp; &nbsp;<strong>&nbsp;其中：①</strong>:------&gt;setResult(event.session(查找))</div>
+</div>
+<p><span style="background-color: #ffffff;"><strong>未使用二级缓存</strong> <strong></strong>&nbsp;</span> &nbsp;&nbsp;</p>
+<p>load 先从缓存（一级）中查找，如果没有查询结果，就到数据库中查找，不管查询结果如何，都返回XX_$$_javassist_0对象（代理类实例）。</p>
+<p>
         </div>
             
           
@@ -467,11 +281,6 @@
         <span class="prev-text">Prev</span>
       </a>
     
-    
-      <a class="next" href="../7/">
-        <span class="next-text">Next</span>
-        <i class="iconfont icon-right"></i>
-      </a>
     
   </nav>
 
