@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
   <head>
     
 <meta charset="UTF-8"/>
@@ -23,12 +23,12 @@
 
 
 
-    <link rel="alternate" href="../../../../default" title="齐雨争" >
+  <link rel="alternate" href="../../../../default" title="齐雨争" >
 
 
 
 
-    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.1"/>
+  <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.1" />
 
 
 
@@ -53,9 +53,11 @@
 <meta name="twitter:image" content="http://githubimg.wxio.club/pics/ui_design_principles.png">
 
 
-<link rel="stylesheet" type="text/css" href="../../../../css/style.css?v=1.1"/>
+<link rel="stylesheet" type="text/css" href="../../../../css/style.css?v=1.1" />
 <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
 
+
+  <link rel="stylesheet" type="text/css" href="../../../../lib/fancybox/jquery.fancybox.css" />
 
 
 
@@ -63,7 +65,7 @@
 <script type="text/javascript">
   var themeConfig = {
     fancybox: {
-      enable: false
+      enable: true
     },
   };
 </script>
@@ -71,17 +73,7 @@
 
 
 
-    
-
-
-
-
-
-    
-
-
-
-    <link rel="stylesheet" type="text/css" href="../../../../css/search.css?v=1.1"/>
+  
 
 
 
@@ -103,7 +95,7 @@
                         <a href="">
                             
                             
-                                Unsplash
+                                Archives
                             
                         </a>
                     </li>
@@ -117,15 +109,27 @@
                         </a>
                     </li>
                 
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                life
+                            
+                        </a>
+                    </li>
                 
                     <li class="menu-item">
-                        <a id="search" href="">Search</a>
+                        <a href="">
+                            
+                            
+                                github
+                            
+                        </a>
                     </li>
                 
             </ul>
         
-    </nav>
-
+  </nav>
 </div>
 
       </header>
@@ -142,7 +146,7 @@
       </h1>
 
       <time class="post-time">
-          May 8 2013
+          May 08 2013
       </time>
     </header>
 
@@ -182,15 +186,17 @@
 
     
       <footer class="post-footer">
-        <div class="post-tags">
-          
-            <a href="../../../../tags/%E6%96%87%E7%AB%A0/">文章</a>
-          
-            <a href="../../../../tags/%E8%88%B6%E6%9D%A5%E5%93%81/">舶来品</a>
-          
-            <a href="../../../../tags/%E5%A5%BD%E6%96%87/">好文</a>
-          
-        </div>
+		
+		<div class="post-tags">
+		  
+			<a href="../../../../tags/%E6%96%87%E7%AB%A0/">文章</a>
+		  
+			<a href="../../../../tags/%E8%88%B6%E6%9D%A5%E5%93%81/">舶来品</a>
+		  
+			<a href="../../../../tags/%E5%A5%BD%E6%96%87/">好文</a>
+		  
+		</div>
+		
 
         
         
@@ -229,12 +235,12 @@
     
         &copy;
     
-        2012 -
+        2018 -
     
     2021
     <span class="footer-author">齐雨争.</span>
     <span class="power-by">
-        Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
+        Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
     </span>
 </span>
 
@@ -245,43 +251,11 @@
       </div>
     </div>
     
-    <div id="search-container" class="search-container">
-        <input type="hidden" id="algolia_index" value="<INDEX_NAME>"/>
-        <input type="hidden" id="algolia_app_id" value="<APP_ID>"/>
-        <input type="hidden" id="algolia_token" value="<API_KEY>"/>
-        <div class="section">
-            <div class="container">
-
-                <div class="panel">
-                    <div class="panel-heading">
-                        Search
-                        <a id="close" href="" style="float: right; color: #363636;">
-                            <i class="fas fa-times-circle" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                    <div class="panel-block">
-                        <div id="searchContainer" class="control has-icons-left">
-                            <input id="searchField" class="input" type="text" placeholder="Enter anything...">
-                            <span class="icon is-small is-left">
-            <i class="fas fa-search" aria-hidden="true"></i>
-          </span>
-                        </div>
-                    </div>
-                    <div id="result">
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
 
 
     
+  
 
-
-    
 
 
 
@@ -291,52 +265,11 @@
   
 
   
+    <script type="text/javascript" src="../../../../lib/fancybox/jquery.fancybox.pack.js"></script>
+  
 
     <script type="text/javascript" src="../../../../js/src/theme.js?v=1.1"></script>
 <script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
 
-    
-    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <script type="text/javascript" src="../../../../js/src/search.js"></script>
-
-
-  
-  <script type="application/ld+json">
-  {
-  "@context": "http://www.schema.org",
-  "@type": "Person",
-  "@id": "https://huangyijie.com/about/",
-  "name": "黄奕杰",
-  "alternateName": "Henry Huang",
-  "nationality": "中国",
-  "birthPlace" : {
-    "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-      "addressLocality": "汕头市",
-      "addressRegion": "广东省",
-          "addressCountry": "中国"
-    }
-  },
-  "gender": "Male",
-  "Description": "Software Engineer",
-  "disambiguatingDescription": "Full stack software engineer, focus on Java and JavaScript.",
-  "jobTitle": "Software Engineer",
-  "url": "https://huangyijie.com",
-  "image": "https://s.gravatar.com/avatar/4e0e61fdf1b2bcfb4ee31da27601fe6b?s=512&r=g",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "深圳市",
-    "addressRegion": "广东省",
-    "addressCountry": "中国"
-  },
-  "sameAs": [
-    "http://weibo.com/626242034",
-    "https://github.com/henryhuang",
-    "https://unsplash.com/@henryhh"
-    ]
-  }
-  </script>
   </body>
 </html>

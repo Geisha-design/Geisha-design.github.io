@@ -443,9 +443,6 @@ h6 {
   border: 1px solid rgba(0, 0, 0, 0.75);
   text-decoration: none; }
 
-p {
-  margin: 0 0 20px 0; }
-
 #content {
   margin: 0 auto;
   width: 90%;
@@ -499,10 +496,8 @@ p {
   display: inline-block;
   margin: 0 auto;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 22px;
   color: rgba(0, 0, 0, 0.7); }
-  .site-title a {
-    color: rgba(0, 0, 0, 0.6); }
 
 #nav-top {
   float: right; }
@@ -1067,29 +1062,3 @@ p {
 @media only screen and (max-width: 750px) {
   .back-to-top {
     display: none !important; } }
-
-body {
-  min-height: 100%; }
-  body .search-container-active {
-    top: 0 !important; }
-  body .search-container {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    overflow: scroll;
-    overflow-x: hidden;
-    background: rgba(255, 255, 255, 0.97);
-    z-index: 3;
-    top: -100%;
-    -webkit-transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    -moz-transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-    body .search-container .panel-block a {
-      color: #363636;
-      width: 100%; }
-    body .search-container .panel-block em {
-      background: rgba(84, 104, 255, 0.1);
-      color: #5468ff;
-      font-style: normal; }
-    body .search-container .modal-content {
-      background: white; }
