@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="前端优化法则"/>
+
+
+
+
+  <meta name="keywords" content="css,前端,javascript," />
+
+
+
+
+
+  <link rel="alternate" href="../../../../default" title="齐雨争" >
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="http://example.com/2020/02/29/2016-02-29-rules-of-front-end-optimization/"/>
+
+
+<meta name="description" content="前两天被人问到前端的优化有哪些，我支支吾吾也只能说出两三条，表示很惭愧。 说到前端优化的必修课，那就是Yahoo的前端优化性能规则，里面都是别人的经验总结，有 35 条之多，这是先分类在文章最后，之后会个别阐述我针对最初的 14 条，借鉴别人的翻译成果和我自己的解读。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端优化法则">
+<meta property="og:url" content="http://example.com/2020/02/29/2016-02-29-rules-of-front-end-optimization/index.html">
+<meta property="og:site_name" content="齐雨争">
+<meta property="og:description" content="前两天被人问到前端的优化有哪些，我支支吾吾也只能说出两三条，表示很惭愧。 说到前端优化的必修课，那就是Yahoo的前端优化性能规则，里面都是别人的经验总结，有 35 条之多，这是先分类在文章最后，之后会个别阐述我针对最初的 14 条，借鉴别人的翻译成果和我自己的解读。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-29T15:50:41.000Z">
+<meta property="article:modified_time" content="2021-04-19T12:49:56.261Z">
+<meta property="article:author" content="齐雨争">
+<meta property="article:tag" content="css">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="javascript">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="stylesheet" type="text/css" href="../../../../css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+  <link rel="stylesheet" type="text/css" href="../../../../lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: true
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> 前端优化法则 - 齐雨争 </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="../../../../." class="logo">齐雨争</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                life
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                github
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          前端优化法则
+        
+      </h1>
+
+      <time class="post-time">
+          Feb 29 2020
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>前两天被人问到前端的优化有哪些，我支支吾吾也只能说出两三条，表示很惭愧。</p>
+<p>说到前端优化的必修课，那就是<a target="_blank" rel="noopener" href="https://developer.yahoo.com/performance/rules.html">Yahoo的前端优化性能规则</a>，里面都是别人的经验总结，有 <strong>35</strong> 条之多，这是先分类在文章最后，之后会个别阐述我针对最初的 <strong>14</strong> 条，借鉴别人的翻译成果和我自己的解读。</p>
+<span id="more"></span>
+
+<h3 id="35条分类"><a href="#35条分类" class="headerlink" title="35条分类"></a>35条分类</h3><blockquote>
+<p>标注 ＊ 号的是最初的14条</p>
+</blockquote>
+<ul>
+<li>内容<ul>
+<li>减少HTTP请求 * </li>
+<li>减少DNS查询 *</li>
+<li>避免重定向 *</li>
+<li>Ajax缓存化 *</li>
+<li>后载入组件</li>
+<li>预先载入组件</li>
+<li>减少DOM元素数量</li>
+<li>跨域分离组件</li>
+<li>最少化iframe</li>
+<li>避免404错误</li>
+</ul>
+</li>
+<li>服务端<ul>
+<li>使用CDN（内容分布网络） *</li>
+<li>增加过期时间或者可控制缓存的请求头 *</li>
+<li>使用Gzip组件 *</li>
+<li>配置ETags（实体标签） *</li>
+<li>提前刷新缓冲区</li>
+<li>Ajax请求使用Get方法</li>
+<li>避免空的图片src</li>
+</ul>
+</li>
+<li>Cookie<ul>
+<li>减少Cookie大小</li>
+<li>为组件使用无Cookie域</li>
+</ul>
+</li>
+<li>CSS<ul>
+<li>将样式放在顶部 *</li>
+<li>避免使用CSS表达式 *</li>
+<li>选择<link>而不要@import</li>
+<li>避免过滤器</li>
+</ul>
+</li>
+<li>JavaScript    <ul>
+<li>将JS放在底部 *</li>
+<li>使用外部的JS和CSS *</li>
+<li>压缩JS和CSS *</li>
+<li>去掉重复的脚本 *</li>
+<li>最小化Dom读取</li>
+<li>开发灵活的事件处理器</li>
+</ul>
+</li>
+<li>图片<ul>
+<li>优化图片</li>
+<li>优化CSS Sprites（CSS精灵）</li>
+<li>在HTML中不要缩放图片</li>
+<li>制作小的和可缓存的favicon.ico</li>
+</ul>
+</li>
+<li>移动<ul>
+<li>组件维持在25kb以下</li>
+<li>将组件放入复合的文档中</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+		
+		<div class="post-tags">
+		  
+			<a href="../../../../tags/css/">css</a>
+		  
+			<a href="../../../../tags/%E5%89%8D%E7%AB%AF/">前端</a>
+		  
+			<a href="../../../../tags/javascript/">javascript</a>
+		  
+		</div>
+		
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="../../../03/18/2013-03-18-need-a-list/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">需要一个好的计划</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="../../26/2013-02-26-beijing-first-time/">
+        <span class="next-text nav-default">第一次来北京</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2018 -
+    
+    2021
+    <span class="footer-author">齐雨争.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="../../../../lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="../../../../lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+    <script type="text/javascript" src="../../../../js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>

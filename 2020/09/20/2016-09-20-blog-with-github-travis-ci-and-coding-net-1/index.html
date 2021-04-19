@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="使用Github、Travis-CI和Coding.net自动部署博客［一］"/>
+
+
+
+
+  <meta name="keywords" content="github,travis,coding.net," />
+
+
+
+
+
+  <link rel="alternate" href="../../../../default" title="齐雨争" >
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="http://example.com/2020/09/20/2016-09-20-blog-with-github-travis-ci-and-coding-net-1/"/>
+
+
+<meta name="description" content="在从前，我在本地写一篇文章后要将它不熟到服务器并且提交源码，需要这么几个步骤： 1234$ hexo clean &amp;&amp; hexo deploy &#x2F;&#x2F; 我的博客是用hexo构建的，其他的静态博客构件工具还有jekyll等$ git add .$ git commit -m &quot;xxxx&quot;$ git push origin source &#x2F;&#x2F; 保存博客源码  这里主要">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Github、Travis-CI和Coding.net自动部署博客［一］">
+<meta property="og:url" content="http://example.com/2020/09/20/2016-09-20-blog-with-github-travis-ci-and-coding-net-1/index.html">
+<meta property="og:site_name" content="齐雨争">
+<meta property="og:description" content="在从前，我在本地写一篇文章后要将它不熟到服务器并且提交源码，需要这么几个步骤： 1234$ hexo clean &amp;&amp; hexo deploy &#x2F;&#x2F; 我的博客是用hexo构建的，其他的静态博客构件工具还有jekyll等$ git add .$ git commit -m &quot;xxxx&quot;$ git push origin source &#x2F;&#x2F; 保存博客源码  这里主要">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://githubimg.wxio.club/blog-with-github-travis-ci-SequenceDiagram.jpg">
+<meta property="og:image" content="http://githubimg.wxio.club/blog/blog-with-github-travis-ci-and-coding-net/travis-sign-in.png">
+<meta property="article:published_time" content="2020-09-20T14:38:41.000Z">
+<meta property="article:modified_time" content="2021-04-19T12:45:27.260Z">
+<meta property="article:author" content="齐雨争">
+<meta property="article:tag" content="github">
+<meta property="article:tag" content="travis">
+<meta property="article:tag" content="coding.net">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://githubimg.wxio.club/blog-with-github-travis-ci-SequenceDiagram.jpg">
+
+
+<link rel="stylesheet" type="text/css" href="../../../../css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+  <link rel="stylesheet" type="text/css" href="../../../../lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: true
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> 使用Github、Travis-CI和Coding.net自动部署博客［一］ - 齐雨争 </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="../../../../." class="logo">齐雨争</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                life
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                github
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          使用Github、Travis-CI和Coding.net自动部署博客［一］
+        
+      </h1>
+
+      <time class="post-time">
+          Sep 20 2020
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>在从前，我在本地写一篇文章后要将它不熟到服务器并且提交源码，需要这么几个步骤：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo clean &amp;&amp; hexo deploy // 我的博客是用hexo构建的，其他的静态博客构件工具还有jekyll等</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git add .</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">&quot;xxxx&quot;</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git push origin <span class="built_in">source</span> // 保存博客源码</span></span><br></pre></td></tr></table></figure>
+
+<p>这里主要做了两个操作，而这两个操作又是 <strong>捆绑</strong> 的，什么意思呢？就是每次写一篇文章我 <strong>都要</strong> 在本地执行进行部署，<strong>并且</strong>提交源码，这是很费劲的。</p>
+<p>我可不可以像代码开发一样，在本地写完代码，然后提交代码，就这么结束了？当然可以了！</p>
+<p>下面开始一步一步的讲解，过程虽然有些繁琐，但是记住这种事情只要做一次，正可谓功在当代，利在千秋啊！</p>
+<h2 id="持续集成（CI）"><a href="#持续集成（CI）" class="headerlink" title="持续集成（CI）"></a>持续集成（CI）</h2><p>来到新公司，接触到了**<a target="_blank" rel="noopener" href="http://baike.baidu.com/view/5253255.htm">持续集成（CI）</a>**的概念，提供 CI 的开源工具有 Jenkins，但是我总不能自己跑个机器来运行 Jenkins 对我的博客源码变化进行监控吧？那么，就想到了有没有开源、免费的、提供 CI 功能的在线工具服务呢？当然有，<a target="_blank" rel="noopener" href="https://travis-ci.org/"><strong>Travis CI</strong></a> 是目前比较火的开源持续集成构建工具，而且它对github的集成支持非常好。</p>
+<h2 id="怎么自动部署"><a href="#怎么自动部署" class="headerlink" title="怎么自动部署"></a>怎么自动部署</h2><p>那么，具体是怎么个自动部署法？这是时序图：</p>
+<p><img src="http://githubimg.wxio.club/blog-with-github-travis-ci-SequenceDiagram.jpg" alt="自动部署是时序图" title="自动部署时序图"></p>
+<ol>
+<li>创建文章；</li>
+<li>将代码 push 到远程仓库，这里是 Github；</li>
+<li>Github 调用 Travis 的 webhook，关于什么是 webhook，这里不具体说明了，大体上就是一个链接，Travis 在 Github 上配置以后，Github 每发生一些事件（就比如我这里的 push）就会掉用访问这个链接以<strong>起到通知 Travis 的作用</strong>；</li>
+<li>Travis 从 github 获取代码；</li>
+<li>Travis build 代码；</li>
+<li>Travis 部署博客到 Coding.net。</li>
+</ol>
+<p>可以看到，在本地只需要执行两步操作，剩下的我完全不用管。</p>
+<p>最右边的 <strong><a target="_blank" rel="noopener" href="https://coding.net/">Coding.net</a></strong> 是我用来部署博客的，它是类似  Github 的代码托管，并且也提供 pages 的服务，最关键的一点是它是<strong>中国本地</strong>的。最开始我部署在 Github 上，但是由于国内访问实在太慢而且不稳定，所以就选择了 **<a target="_blank" rel="noopener" href="https://coding.net/">Coding.net</a>**。</p>
+<p>下一篇将会着重讲 Travis CI 的配置和使用，在这之前先得注册 Travis CI 和安装一个 Travis 官方提供的命令行工具 <strong>Travis CI Command Line Client</strong>，它可以快捷地使用一些功能，比如生成 Travis 的加密文件等。</p>
+<h2 id="注册-Travis-CI"><a href="#注册-Travis-CI" class="headerlink" title="注册 Travis CI"></a>注册 Travis CI</h2><p>Travis CI 不需要单独注册，直接使用 GitHub 账号登录就可以了。</p>
+<p>上官网会发现有 Sign in with GitHub（使用GitHUb登录）和 Sign Up（注册），其实这俩做的事情都一样，就是用 GitHub 账号登录。</p>
+<p>登录后界面会显示你的 GitHub repository，默认全部全部没有勾选（“叉号”），选择你的博客的 repository（使之变成“对号”） 后完成第一步，如图：</p>
+<p><img src="http://githubimg.wxio.club/blog/blog-with-github-travis-ci-and-coding-net/travis-sign-in.png" alt="注册Travis CI" title="注册Travis CI"></p>
+<p>接下来是添加配置文件 .travis.yml 和 进行第一次 push 代码触发工作，这两部再下一篇再讲。</p>
+<h2 id="安装-Travis-CI-Command-Line-Client"><a href="#安装-Travis-CI-Command-Line-Client" class="headerlink" title="安装 Travis CI Command Line Client"></a>安装 Travis CI Command Line Client</h2><p>以下的安装教程是我直接翻译的<a target="_blank" rel="noopener" href="https://github.com/travis-ci/travis.rb#installation">官方安装说明</a>。</p>
+<p>请确保本地已经安装**<a target="_blank" rel="noopener" href="http://www.ruby-lang.org/en/downloads/">Ruby</a>**，并且版本不低于1.9.3，推荐2.0.0版。</p>
+<p>可以通过执行以下命令验证 Ruby 的版本：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ruby -v</span><br><span class="line">ruby 2.0.0p195 (2013-05-14 revision 40734) [x86_64-darwin12.3.0]</span><br></pre></td></tr></table></figure>
+
+<p>然后执行:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gem install travis -v 1.8.2 --no-rdoc --no-ri</span><br></pre></td></tr></table></figure>
+
+<p>最后验证一下是否安装成功:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ travis version</span><br><span class="line">1.8.2</span><br></pre></td></tr></table></figure>
+
+<p>如上，如果出现 1.8.2 这样的版本信息，则说明 Travis CI Command Line Client 安装成功。之后进行登录，执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ travis login</span><br></pre></td></tr></table></figure>
+
+<p>按照提示依次输入用户名、密码，Two-factor码（如果你有设置的话），以下是登录成功的反馈：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ travis login</span><br><span class="line">We need your GitHub login to identify you.</span><br><span class="line">This information will not be sent to Travis CI, only to api.github.com.</span><br><span class="line">The password will not be displayed.</span><br><span class="line"></span><br><span class="line">Try running with --github-token or --auto if you don&#39;t want to enter your password anyway.</span><br><span class="line"></span><br><span class="line">Username: henryhuang</span><br><span class="line">Password for henryhuang: *************</span><br><span class="line">Two-factor authentication code for henryhuang: 403317</span><br><span class="line">Successfully logged in as henryhuang!</span><br></pre></td></tr></table></figure>
+
+<p>使用 <strong>gem</strong> 需要安装 <strong>ruby 环境</strong>，作为一个开发人员，不要嫌麻烦。</p>
+<p><em>未完待续，还有第二篇。</em></p>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+		
+		<div class="post-tags">
+		  
+			<a href="../../../../tags/github/">github</a>
+		  
+			<a href="../../../../tags/travis/">travis</a>
+		  
+			<a href="../../../../tags/coding-net/">coding.net</a>
+		  
+		</div>
+		
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="../../../10/01/2016-10-01-yushiji/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">寓食记</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="../../../08/28/2017-08-28-i18next/">
+        <span class="next-text nav-default">i18next</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2018 -
+    
+    2021
+    <span class="footer-author">齐雨争.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="../../../../lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="../../../../lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+    <script type="text/javascript" src="../../../../js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>

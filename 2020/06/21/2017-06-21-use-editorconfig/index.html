@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="使用EditorConfig"/>
+
+
+
+
+  <meta name="keywords" content="coding,IDE,editor," />
+
+
+
+
+
+  <link rel="alternate" href="../../../../default" title="齐雨争" >
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="http://example.com/2020/06/21/2017-06-21-use-editorconfig/"/>
+
+
+<meta name="description" content="使用不同编辑器，比如IDE（Eclipse，Intellij IDEA），又使用不同OS（Mac，Windows等），难免会碰到编码风格不一致的情况，那怎么办？ 使用 EditorConfig！ 有什么好处？当你将代码推送到GitHub时，你可以避免Mac和Windows之间的换行符冲突，以及其他多人协作开发中遇到的事情。 什么是EditorConfig？这段摘自官方网站。 EditorConfi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用EditorConfig">
+<meta property="og:url" content="http://example.com/2020/06/21/2017-06-21-use-editorconfig/index.html">
+<meta property="og:site_name" content="齐雨争">
+<meta property="og:description" content="使用不同编辑器，比如IDE（Eclipse，Intellij IDEA），又使用不同OS（Mac，Windows等），难免会碰到编码风格不一致的情况，那怎么办？ 使用 EditorConfig！ 有什么好处？当你将代码推送到GitHub时，你可以避免Mac和Windows之间的换行符冲突，以及其他多人协作开发中遇到的事情。 什么是EditorConfig？这段摘自官方网站。 EditorConfi">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-21T12:56:27.000Z">
+<meta property="article:modified_time" content="2021-04-19T12:42:47.001Z">
+<meta property="article:author" content="齐雨争">
+<meta property="article:tag" content="coding">
+<meta property="article:tag" content="IDE">
+<meta property="article:tag" content="editor">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="stylesheet" type="text/css" href="../../../../css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+  <link rel="stylesheet" type="text/css" href="../../../../lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: true
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> 使用EditorConfig - 齐雨争 </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="../../../../." class="logo">齐雨争</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                life
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                github
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          使用EditorConfig
+        
+      </h1>
+
+      <time class="post-time">
+          Jun 21 2020
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>使用不同编辑器，比如IDE（Eclipse，Intellij IDEA），又使用不同OS（Mac，Windows等），难免会碰到编码风格不一致的情况，那怎么办？</p>
+<p>使用 <strong>EditorConfig</strong>！</p>
+<h2 id="有什么好处？"><a href="#有什么好处？" class="headerlink" title="有什么好处？"></a>有什么好处？</h2><p>当你将代码推送到GitHub时，你可以避免Mac和Windows之间的<strong>换行符冲突</strong>，以及其他多人协作开发中遇到的事情。</p>
+<h2 id="什么是EditorConfig？"><a href="#什么是EditorConfig？" class="headerlink" title="什么是EditorConfig？"></a>什么是EditorConfig？</h2><p>这段摘自官方网站。</p>
+<p>EditorConfig帮助开发人员在不同的编辑器和IDE之间定义和维护一致的编码风格。 EditorConfig项目包括<strong>用于定义编码样式的文件格式</strong>和<strong>文本编辑器插件</strong>，使编辑器能够读取文件格式并遵守定义的样式。 EditorConfig文件易于阅读，可以使<strong>版本控制系统</strong>（Git等）保持良好的工作环境。</p>
+<h2 id="示例配置文件"><a href="#示例配置文件" class="headerlink" title="示例配置文件"></a>示例配置文件</h2><p>EditorConfig的配置文件名称是 **.editorconfig **，将以下内容添加到此文件中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[*]</span><br><span class="line">end_of_line &#x3D; lf</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>然后当你打开一个文件时，EditorConfig插件将使文件的**换行符换成 LF **。</p>
+<h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><p>1.在你的编辑器或者IDE中添加插件</p>
+<p><a target="_blank" rel="noopener" href="http://editorconfig.org/#download">http://editorconfig.org/#download</a></p>
+<p>以上链接的eclipse插件需要从Eclipse Marketplace进行安装。如果没有Eclipse Marketplace入口，你可以使用<strong>https：//editorconfig-eclipse.github.io/repository</strong>进行安装。</p>
+<p>2.将.editorconfig文件添加到项目的<strong>根目录</strong>（对于Windows用户：要在Windows资源管理器中创建.editorconfig文件，你需要创建一个名为**.editorconfig.**的文件，Windows资源管理器将自动重命名为.editorconfig）</p>
+<p>并添加内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root &#x3D; true</span><br><span class="line"></span><br><span class="line">[*]</span><br><span class="line">end_of_line &#x3D; lf</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>更多配置参见<a target="_blank" rel="noopener" href="https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties%E3%80%82">https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties。</a></p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>请注意，EditorConfig不仅可以避免换行冲突，还可以避免<strong>缩进样式，缩进大小，字符集等冲突</strong>。</p>
+<p>对于git的autocrlf配置，这个博文<a target="_blank" rel="noopener" href="https://github.com/cssmagic/blog/issues/22%E5%8F%AF%E8%83%BD%E5%AF%B9%E4%BD%A0%E6%9C%89%E7%94%A8%E3%80%82">https://github.com/cssmagic/blog/issues/22可能对你有用。</a></p>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+		
+		<div class="post-tags">
+		  
+			<a href="../../../../tags/coding/">coding</a>
+		  
+			<a href="../../../../tags/IDE/">IDE</a>
+		  
+			<a href="../../../../tags/editor/">editor</a>
+		  
+		</div>
+		
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="../2013-06-21-wicket-link-confirm/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Wicket使用Link加JS的Confirm</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="../../05/2013-06-05-say-about-app-ui-design/">
+        <span class="next-text nav-default">随便说说应用的界面</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2018 -
+    
+    2021
+    <span class="footer-author">齐雨争.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="../../../../lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="../../../../lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+    <script type="text/javascript" src="../../../../js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>

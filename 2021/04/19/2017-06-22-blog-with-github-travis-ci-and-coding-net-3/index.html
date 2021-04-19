@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="使用Github、Travis-CI和Coding.net自动部署博客［三］"/>
+
+
+
+
+  <meta name="keywords" content="github,travis,coding.net," />
+
+
+
+
+
+  <link rel="alternate" href="../../../../default" title="齐雨争" >
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="http://example.com/2021/04/19/2017-06-22-blog-with-github-travis-ci-and-coding-net-3/"/>
+
+
+<meta name="description" content="迟迟到来的第三篇，也就是最后一篇。 123456deploy:  provider: script  script: sh .travis&#x2F;deploy.sh  skip_cleanup: true  on:    branch: master  这是 Travis CI 的部署步骤的配置，“部署” 是整个工作流的最后一步，这里只注意 branch: master，道理和上一个说明一样，其他照抄；">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Github、Travis-CI和Coding.net自动部署博客［三］">
+<meta property="og:url" content="http://example.com/2021/04/19/2017-06-22-blog-with-github-travis-ci-and-coding-net-3/index.html">
+<meta property="og:site_name" content="齐雨争">
+<meta property="og:description" content="迟迟到来的第三篇，也就是最后一篇。 123456deploy:  provider: script  script: sh .travis&#x2F;deploy.sh  skip_cleanup: true  on:    branch: master  这是 Travis CI 的部署步骤的配置，“部署” 是整个工作流的最后一步，这里只注意 branch: master，道理和上一个说明一样，其他照抄；">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-04-19T14:32:47.000Z">
+<meta property="article:modified_time" content="2021-04-19T12:35:35.849Z">
+<meta property="article:author" content="齐雨争">
+<meta property="article:tag" content="github">
+<meta property="article:tag" content="travis">
+<meta property="article:tag" content="coding.net">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="stylesheet" type="text/css" href="../../../../css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+  <link rel="stylesheet" type="text/css" href="../../../../lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: true
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> 使用Github、Travis-CI和Coding.net自动部署博客［三］ - 齐雨争 </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="../../../../." class="logo">齐雨争</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                life
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                github
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          使用Github、Travis-CI和Coding.net自动部署博客［三］
+        
+      </h1>
+
+      <time class="post-time">
+          Apr 19 2021
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>迟迟到来的第三篇，也就是最后一篇。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">provider:</span> <span class="string">script</span></span><br><span class="line">  <span class="attr">script:</span> <span class="string">sh</span> <span class="string">.travis/deploy.sh</span></span><br><span class="line">  <span class="attr">skip_cleanup:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">on:</span></span><br><span class="line">    <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<p>这是 Travis CI 的部署步骤的配置，“部署” 是整个工作流的最后一步，这里只注意 <strong>branch: master</strong>，道理和上一个说明一样，其他照抄；</p>
+<h3 id="编写部署脚本"><a href="#编写部署脚本" class="headerlink" title="编写部署脚本"></a>编写部署脚本</h3><p><strong>Travis CI</strong> 的工作流最后一步是<strong>部署</strong>的功能，我们利用它本身的配置需求进行配置，并且编写相关脚本，这样就可以达到部署博客的需求了。</p>
+<p>在博客根目录下添加 <strong>.travis</strong> 文件夹，文件目录结构为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">blogroot &#x2F;&#x2F; 博客根目录</span><br><span class="line">└── .travis</span><br><span class="line">    ├── deploy.sh</span><br><span class="line">    ├── private_key.enc</span><br><span class="line">    └── ssh_config</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>deploy.sh 是执行脚本</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Decrypt the private key</span></span><br><span class="line">openssl aes-256-cbc -K $encrypted_adc0b7f2dba9_key -iv $encrypted_adc0b7f2dba9_iv -in .travis/private_key.enc -out ~/.ssh/id_rsa -d</span><br><span class="line"><span class="meta">#</span><span class="bash"> Set the permission of the key</span></span><br><span class="line">chmod 600 ~/.ssh/id_rsa</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Start SSH agent</span></span><br><span class="line">eval $(ssh-agent)</span><br><span class="line"><span class="meta">#</span><span class="bash"> Add the private key to the system</span></span><br><span class="line">ssh-add ~/.ssh/id_rsa</span><br><span class="line"><span class="meta">#</span><span class="bash"> Copy SSH config</span></span><br><span class="line">cp .travis/ssh_config ~/.ssh/config</span><br><span class="line"><span class="meta">#</span><span class="bash"> Set Git config</span></span><br><span class="line">git config --global user.name &quot;henryhuang&quot;</span><br><span class="line">git config --global user.email h1886@outlook.com</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Deploy to GitHub</span></span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>这个脚本的功能就是执行 <strong>hexo deploy</strong>，有人说那直接执行不就完了吗？</p>
+<p>非也！我们要部署代码，就是要执行 <strong>git push</strong> 的操作，而这一步是需要 <strong>ssh key</strong> 的，否则你是没有权限给一个 git repository push 代码的，而这个脚本除了最后一步，其他所有的代码都是在构建这个带 ssh key 的上下文环境。</p>
+<p>什么都不用管，照抄就行，只用管以下两个配置。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Decrypt the private key</span></span><br><span class="line">openssl aes-256-cbc -K $encrypted_adc0b7f2dba9_key -iv $encrypted_adc0b7f2dba9_iv -in .travis/private_key.enc -out </span><br></pre></td></tr></table></figure>
+
+<p>这行代码的作用就是获取你的key，毕竟私钥是不能放到代码里了，要是被别人看到了怎么办？所以Travis让你在本地用Travis知道的key对你的私钥进行加密，得到这个 <strong>private_key.enc</strong>，而这个key是由你自己配置到Travis上的，而这个key的名字是什么呢？就是上面的 $encrypted_adc0b7f2dba9_key 和 $encrypted_adc0b7f2dba9_iv，具体怎么配置，可以查看官网的说明 <a target="_blank" rel="noopener" href="https://docs.travis-ci.com/user/encrypting-files/#Automated-Encryption">https://docs.travis-ci.com/user/encrypting-files/#Automated-Encryption</a>.</p>
+<p>最后编写完成脚本后，上传代码到GitHub就可以了。</p>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+		
+		<div class="post-tags">
+		  
+			<a href="../../../../tags/github/">github</a>
+		  
+			<a href="../../../../tags/travis/">travis</a>
+		  
+			<a href="../../../../tags/coding-net/">coding.net</a>
+		  
+		</div>
+		
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="../../../10/23/2013-05-16-hibernate-load-get-compare/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Hibernate的load和get比较</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="../../18/qcloud-nginx-ssl/">
+        <span class="next-text nav-default">Nginx使用SSL证书配置https</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2018 -
+    
+    2021
+    <span class="footer-author">齐雨争.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="../../../../lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="../../../../lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+    <script type="text/javascript" src="../../../../js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>

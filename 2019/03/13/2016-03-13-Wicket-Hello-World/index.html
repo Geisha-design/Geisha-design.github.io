@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="Wicket的HelloWorld"/>
+
+
+
+
+  <meta name="keywords" content="web,java,wicket," />
+
+
+
+
+
+  <link rel="alternate" href="../../../../default" title="齐雨争" >
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="http://example.com/2019/03/13/2016-03-13-Wicket-Hello-World/"/>
+
+
+<meta name="description" content="用了2年的Wicket了，竟然发现没有写个HelloWorld。 Wicket，全称Apache Wicket， 它是个基于组件的Web应用框架，更多的解释看Wikipedia。 官方网站：wicket.apache.org。 很遗憾，由于Wicket在国内的普及程度不够，中文相关的文档很少，有的话也就是基于1.2版本的，官方最新的release版本已经是7.x，SNAPSHOT是8.x（Wick">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Wicket的HelloWorld">
+<meta property="og:url" content="http://example.com/2019/03/13/2016-03-13-Wicket-Hello-World/index.html">
+<meta property="og:site_name" content="齐雨争">
+<meta property="og:description" content="用了2年的Wicket了，竟然发现没有写个HelloWorld。 Wicket，全称Apache Wicket， 它是个基于组件的Web应用框架，更多的解释看Wikipedia。 官方网站：wicket.apache.org。 很遗憾，由于Wicket在国内的普及程度不够，中文相关的文档很少，有的话也就是基于1.2版本的，官方最新的release版本已经是7.x，SNAPSHOT是8.x（Wick">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://77fkdd.com1.z0.glb.clouddn.com/wicket-hello-worldproject-structure2.png">
+<meta property="og:image" content="http://77fkdd.com1.z0.glb.clouddn.com/wicket-hello-worldgradle-dep.png">
+<meta property="og:image" content="http://77fkdd.com1.z0.glb.clouddn.com/wicket-hello-worldwebxml.png">
+<meta property="article:published_time" content="2019-03-13T12:44:06.000Z">
+<meta property="article:modified_time" content="2021-04-19T12:55:51.362Z">
+<meta property="article:author" content="齐雨争">
+<meta property="article:tag" content="web">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="wicket">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://77fkdd.com1.z0.glb.clouddn.com/wicket-hello-worldproject-structure2.png">
+
+
+<link rel="stylesheet" type="text/css" href="../../../../css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+  <link rel="stylesheet" type="text/css" href="../../../../lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: true
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> Wicket的HelloWorld - 齐雨争 </title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="../../../../." class="logo">齐雨争</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                life
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="">
+                            
+                            
+                                github
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Wicket的HelloWorld
+        
+      </h1>
+
+      <time class="post-time">
+          Mar 13 2019
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>用了2年的Wicket了，竟然发现没有写个HelloWorld。</p>
+<p>Wicket，全称Apache Wicket， 它是个基于组件的Web应用框架，更多的解释看<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Apache_Wicket">Wikipedia</a>。</p>
+<p>官方网站：<a target="_blank" rel="noopener" href="http://wicket.apache.org/">wicket.apache.org</a>。</p>
+<p>很遗憾，由于Wicket在国内的普及程度不够，中文相关的文档很少，有的话也就是基于1.2版本的，官方最新的release版本已经是7.x，SNAPSHOT是8.x（Wicket的版本规则从1.5以后就为6.x，7.x，8.x，有点像Java的版本规则）。</p>
+<p>这里的HelloWorld是结合Gradle，Jettty完成的，在Eclipse IDE上开发。</p>
+<span id="more"></span>
+
+<blockquote>
+<p>什么是Gradle？</p>
+</blockquote>
+<p>Gradle是一个基于Apache Ant和Apache Maven概念的项目自动化建构工具。它使用一种基于Groovy的特定领域语言来声明项目设置，而不是传统的XML。</p>
+<p>其他的自动化构建工具还有Ant和Maven等。</p>
+<p>它有丰富的插件机制。</p>
+<p>Eclipse上Gradle的配置请先看<a target="_blank" rel="noopener" href="http://www.cnphp6.com/archives/42868">http://www.cnphp6.com/archives/42868</a>。</p>
+<blockquote>
+<p>什么是Jetty？</p>
+</blockquote>
+<p>Jetty是一个纯粹的基于Java的网页服务器和Java Servlet容器。</p>
+<p>其他的容器还有Tomcat，JBoss等。</p>
+<p>这里使用Jetty是使用Gradle的Jetty插件。</p>
+<p>下面开始HelloWorld。</p>
+<h3 id="创建Eclipse项目"><a href="#创建Eclipse项目" class="headerlink" title="创建Eclipse项目"></a>创建Eclipse项目</h3><p>以此选择File-&gt;Other，搜索 Gradle，选择 Gradle Project，输入Project name为 wicket-helloworld，Sample project选择 Java Quickstart，然后Finish。</p>
+<h3 id="调整项目文件结构"><a href="#调整项目文件结构" class="headerlink" title="调整项目文件结构"></a>调整项目文件结构</h3><p>由于我们使用Java Quickstart的Sample project，会生成一些我们不需要的文件，所有我们需要调整文件结构（我这里都以<strong>cnhalo</strong>为包名前缀），调整后的结构为：</p>
+<p><img src="http://77fkdd.com1.z0.glb.clouddn.com/wicket-hello-worldproject-structure2.png" alt="文件结构"></p>
+<h3 id="加入Wicket依赖"><a href="#加入Wicket依赖" class="headerlink" title="加入Wicket依赖"></a>加入Wicket依赖</h3><p>我们向Gradle中加入Wicket依赖，在build.gradle中dependencies里加入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile ‘org.apache.wicket:wicket-core:7.2.0’</span><br></pre></td></tr></table></figure>
+
+<p>我写这遍文章的时候，使用最新的release版本7.2.0，更新的版本可在<a target="_blank" rel="noopener" href="http://mvnrepository.com/artifact/org.apache.wicket/wicket-core">mvnrepository.com</a>查看。</p>
+<p>加入依赖后，在项目的右键，依次点击Gradle-&gt;Refresh All，让Gradle去下载依赖的包，等待下载完成后，项目的Gradle Dependencies为：</p>
+<p><img src="http://77fkdd.com1.z0.glb.clouddn.com/wicket-hello-worldgradle-dep.png" alt="Gradle Dependencies"></p>
+<h3 id="配置Jetty"><a href="#配置Jetty" class="headerlink" title="配置Jetty"></a>配置Jetty</h3><p>在build.gradle最上面加入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: &#39;war&#39;</span><br><span class="line">apply plugin: &#39;jetty&#39;</span><br></pre></td></tr></table></figure>
+<p>在Eclipse项目的的 src/main 下依次创建 webapp/WEB-INF/web.xml：</p>
+<p><img src="http://77fkdd.com1.z0.glb.clouddn.com/wicket-hello-worldwebxml.png" alt="web.xml"></p>
+<p>web.xml的内容为：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">id</span>=<span class="string">&quot;WebApp_ID&quot;</span> <span class="attr">version</span>=<span class="string">&quot;2.4&quot;</span></span></span><br><span class="line"><span class="tag"><span class="attr">xmlns</span>=<span class="string">&quot;http://java.sun.com/xml/ns/j2ee&quot;</span> <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag"><span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">display-name</span>&gt;</span>Wicket Hello World<span class="tag">&lt;/<span class="name">display-name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">filter</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>App<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>org.apache.wicket.protocol.http.WicketFilter<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>applicationClassName<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>cnhalo.CHApp<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>configuration<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>DEPLOYMENT<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>App<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dispatcher</span>&gt;</span>REQUEST<span class="tag">&lt;/<span class="name">dispatcher</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dispatcher</span>&gt;</span>INCLUDE<span class="tag">&lt;/<span class="name">dispatcher</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>注意，这里的 cnhalo.CHApp 这个类这里还未创建，org.apache.wicket.protocol.http.WicketFilter 这个过滤器是请求进入Web容器后再进入Wicket的入口。</p>
+<h3 id="创建Wicket相关代码"><a href="#创建Wicket相关代码" class="headerlink" title="创建Wicket相关代码"></a>创建Wicket相关代码</h3><p>创建 cnhalo.CHApp 类，继承org.apache.wicket.protocol.http.WebApplication，全部代码为：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">package</span> cnhalo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.wicket.Page;</span><br><span class="line"><span class="keyword">import</span> org.apache.wicket.protocol.http.WebApplication;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>	HuangYijie</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span>	Mar 13, 2016 9:49:43 PM</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CHApp</span> <span class="keyword">extends</span> <span class="title">WebApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">public</span> Class&lt;? extends Page&gt; getHomePage() &#123;</span><br><span class="line">    <span class="keyword">return</span> IndexPage.class;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>创建 cnhalo.IndexPage 类，继承 org.apache.wicket.markup.html.WebPage，全部代码为：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">package</span> cnhalo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.wicket.markup.html.WebPage;</span><br><span class="line"><span class="keyword">import</span> org.apache.wicket.markup.html.basic.Label;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>	HuangYijie</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span>	Mar 13, 2016 9:51:10 PM</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IndexPage</span> <span class="keyword">extends</span> <span class="title">WebPage</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = -<span class="number">2856887644490684320L</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">IndexPage</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    add(<span class="keyword">new</span> Label(“helloworld”, “Wicket Hello World”)); <span class="comment">// 在IndexPage.html中对wicket:id=“helloworld”的组件进行匹配</span></span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>在 cnhalo.IndexPage 的同级目录中创建 IndexPage.html：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">xmlns:wicket</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">“UTF-8”</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Wicket Hello World<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">wicket:id</span>=<span class="string">“helloworld”</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>在Eclipse项目右键，依次选择 Run As -&gt; Run with Jetty，然后浏览器访问 localhost:8080，即可看到 <strong>Wicket Hello World</strong>。</p>
+<h3 id="在Tomcat下运行"><a href="#在Tomcat下运行" class="headerlink" title="在Tomcat下运行"></a>在Tomcat下运行</h3><p>要在Tomcat下运行，只要打成war包就可以，依次在Eclipse项目右键执行 Gradle -&gt; Task Quick Launcher，输入 war 后回车。Gradle将会打出 war 包，等 Eclipse 的 Console 显示：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">[sts] -----------------------------------------------------</span><br><span class="line">[sts] Starting Gradle build for the following tasks: </span><br><span class="line">[sts]      war</span><br><span class="line">[sts] -----------------------------------------------------</span><br><span class="line">:compileJava UP-TO-DATE</span><br><span class="line">:processResources UP-TO-DATE</span><br><span class="line">:classes UP-TO-DATE</span><br><span class="line">:war UP-TO-DATE</span><br><span class="line"></span><br><span class="line">BUILD SUCCESSFUL</span><br><span class="line"></span><br><span class="line">Total time: 0.276 secs</span><br><span class="line">[sts] -----------------------------------------------------</span><br><span class="line">[sts] Build finished succesfully!</span><br><span class="line">[sts] Time taken: 0 min, 0 sec</span><br><span class="line">[sts] -----------------------------------------------------</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>刷新Eclipse项目的build，build/libs/wicket-helloworld-1.0.war 即可放入Tomcat的webapps下。</p>
+<hr>
+<p>文章中使用软件的版本：</p>
+<p>JDK: 1.8.0_45<br>Gradle: 2.0<br>Eclipse: Luna Release (4.4.0)</p>
+<p>项目源码地址：<a target="_blank" rel="noopener" href="https://github.com/henryhuang/WicketHelloWorld">https://github.com/henryhuang/WicketHelloWorld</a>。</p>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+		
+		<div class="post-tags">
+		  
+			<a href="../../../../tags/web/">web</a>
+		  
+			<a href="../../../../tags/java/">java</a>
+		  
+			<a href="../../../../tags/wicket/">wicket</a>
+		  
+		</div>
+		
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="../../../05/05/2013-05-05-after-film-iron-man/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">写在《钢铁侠3》之后</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="../../10/2013-03-10-yi-ge-zhou-mo/">
+        <span class="next-text nav-default">一个周末的随感</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2018 -
+    
+    2021
+    <span class="footer-author">齐雨争.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="../../../../lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="../../../../lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+    <script type="text/javascript" src="../../../../js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>
