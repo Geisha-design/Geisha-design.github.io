@@ -1,0 +1,1829 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script> 
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_click.js"></script>
+
+
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.2'>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/css/GalMenu.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@latest/hexo/css/loading_style_2.css" >
+
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+  <title>iOS、macOS系统应用管理机制 - 齐雨争</title>
+  
+    <meta name="keywords" content="计算机常识">
+  
+
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  
+    
+<link rel="stylesheet" href="../../../../https:/cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css">
+
+  
+  
+
+  
+
+  
+    <link rel="shortcut icon" type='image/x-icon' href="../../../../https:/www.cncrush.cn/images/favicon.ico">
+  
+
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="../../../../css/style.css">
+
+  
+
+  <script id="loadcss"></script>
+
+</head>
+
+<body>
+  
+
+<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+  <div class='container'>
+  <div id='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='../../../../index.html'>
+          
+            <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../index.html
+                  
+                  
+                  
+                    id="indexhtml"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="雨争能有什么坏心思呢？" />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../index.html
+                  
+                  
+                  
+                    id="indexhtml"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  <div id="l_body">
+    <div id="l_cover">
+	
+  
+    
+        <div id="half" class='cover-wrapper post dock' style="display: ;">
+          
+            <div class='cover-bg lazyload placeholder' data-bg="https://gitee.com/boyqi/jpg/raw/master/4.jpg"></div>
+          
+          <div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title">GEISHA</p>
+    
+    
+      <p class="subtitle">你顺手挽住火焰，化作漫天大雪</p>
+    
+  </div>
+  <div class='bottom'>
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a href="../../../../v4/getting-started/"
+              
+              
+              id="v4getting-started">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg'><p>文档</p>
+            </a>
+          
+            <a href="../../../../faqs/"
+              
+              
+              id="faqs">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg'><p>帮助</p>
+            </a>
+          
+            <a href="../../../../examples/"
+              
+              
+              id="examples">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg'><p>示例</p>
+            </a>
+          
+            <a href="../../../../contributors/"
+              
+              
+              id="contributors">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f389.svg'><p>社区</p>
+            </a>
+          
+            <a href="../../../../archives/"
+              
+              
+              id="archives">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg'><p>博客</p>
+            </a>
+          
+            <a href="../../../../https:/github.com/Geisha-design"
+              
+              
+              id="https:githubcomGeisha-design">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg'><p>GitHub</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+        </div>
+    
+  
+  </div>
+
+    <div id='safearea'>
+      <div class='body-wrapper' id="pjax-container">
+        
+
+<div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+	  
+
+	  
+  
+
+
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title">
+        iOS、macOS系统应用管理机制
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>小天才齐雨争</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="../../../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/">计算机常识</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Apr 2, 2021</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="iOS、macOS系统应用管理机制" data-path="">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+    
+  </div>
+
+
+  
+  <p><em><strong>*iOS、macOS系统应用管理机制*</strong></em></p>
+<p>　　苹果系统包括：iOS、macOS、watchOS、tvOS。应用软件的生命周期为：开发、上线、安装、使用、卸载。这篇文档将从应用生命周期的各个环节介绍苹果系统对应用的管理机制，主要详细介绍iOS和macOS，watchOS与tvOS由于用户数量少，以及流程与iOS相似度较高，只作了简单介绍。</p>
+<h2 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h2><h3 id="一、开发"><a href="#一、开发" class="headerlink" title="一、开发"></a>一、开发</h3><p><strong>注册账号：</strong></p>
+<p>　　单纯开发是不用付费的，使用模拟器就可以。如果要真机调试，或者提交appstore，需要申请开发者帐号。</p>
+<p><img src="https://img2018.cnblogs.com/common/1946378/202002/1946378-20200219133730047-695216427.png" class="lazyload" data-srcset="https://img2018.cnblogs.com/common/1946378/202002/1946378-20200219133730047-695216427.png" srcset="data:image/png;base64,666" alt="img"> </p>
+<p>　　需要提交：1、注册一个苹果账号作为开发者账号。2、个人或企业的姓名、地址、联系方式等相应资料。3、能够做美金结算的信用卡账。4、支付99美金给苹果公司。</p>
+<p>　　另外，申请企业账号需要提供DUNS（邓白氏编码）以及税务等相应资料。D-U-N-S Number 是一组唯一的九位数字，用于检查所在组织的身份和法人实体状态。如果未拥有此识别码，需要将信息提交给 Dun &amp; Bradstreet，以获取一个免费的 D-U-N-S Number。</p>
+<p>　　Apple 开发者到期 App 是会下架，但是已经安装 App 的用户，手机仍能使用App，App Store里面搜索不到。续费 Apple 开发者后，App 会在当天上线App Store。Apple开发者到期时不能转让App。</p>
+<p><strong>开发工具：</strong></p>
+<p>　　苹果应用开发需要使用mac系统下的Xcode，使用Objective-C和Swift语言。Xcode由苹果公司开发的集成开发环境，免费对用户使用，可以开发iOS、macOS、watchOS、tvOS四个系统应用。</p>
+<h3 id="二、上线"><a href="#二、上线" class="headerlink" title="二、上线"></a>二、上线</h3><p>应用开发完成后，如要发布上架App store，大致经过以下8个步骤。</p>
+<p>　　1. 登录Apple开发者中心网站，选择certificates，Identifiers and profiles，在APP IDs选项里注册一个APP ID，用于标识一个或一组APP，需要填写APP的描述和需要注册的服务功能。</p>
+<p>　　2.创建开发证书，证书分为iOS Development（开发证书）和iOS Distribution（发布证书），开发证书用于真机调试，有一年使用期限。发布证书用于APP的发布。</p>
+<p>　　3.配置iOS Provisoning Profiles（debug）描述文件，Provisoning Profiles是苹果签名认证的Plist文件，列举了开发证书、APP ID、以及授权运行设备的UDID（为一个设备的唯一标识）。</p>
+<p>　　4.在Xcode中进行应用证书注册并打包APP。在工程里将Provisoning Profiles配置导入，完成后就可以打包APP了，导出APP包。</p>
+<p>　　5.真机调试。可以在授权的设备上进行真机调试，将打包导出的APP包安装于设备上，安装时系统会对开发证书进行认证，成功后app会安装在设备上，可以在设备上对app进行测试。</p>
+<p>　　6.真机测试没问题后，可以对APP进行上架发布。这里需要进入开发者中心创建发布证书，并配置Provisoning Profiles 描述文件。</p>
+<p>　　7.需要在itunes connect 上创建本应用的项目。在开发者中心的itunes connect管理界面创建一个新APP项目，填写APP的相关信息包括描述、销售范围、版本信息、关键词等。</p>
+<p>　　8.提交审核。需要提供一个测试账号用于审核人员进行测试。应用提交之后审核人员对应用进行审核。审核针对安全、性能、业务、设计、法律五个层面。</p>
+<p>　　　　安全：不包含不良内容，不造成人身安全隐患、数据安全、不得在指定容器范围外读写数据、不具有特殊权限</p>
+<p>　　　　性能：APP完成度、硬件兼容性、能耗、占用系统资源量、网络性能</p>
+<p>　　　　业务：付款、广告合乎标准</p>
+<p>　　　　设计：不涉抄袭、有价值、</p>
+<p>　　　　法律：隐私、知识产权</p>
+<p>　　苹果官方要求，开发和上线应用必须通过Xcode这一集成开发工具，也就是只能在mac电脑下完成。但如果想在windows环境下完成开发，也可以通过一些其它途径。借助LBuilder、HBuilder、APICLoud、APPCan等工具，可以把网站打包成APP，之后通过上架辅助软件Appuploader进行windows下APP的上架。Appuploader是ios上架辅助工具，可以直接得到.p12和.mobileprovision证书文件，上传ipa到App store，打破了上架ios只能在苹果电脑用Xcode的限制，使用费用100元/年。</p>
+<h3 id="三、安装"><a href="#三、安装" class="headerlink" title="三、安装"></a>三、安装</h3><p>　　在 iOS 出来之前，在主流操作系统(Mac/Windows/Linux)上开发和运行软件是不需要签名的，软件随便从哪里下载都能运行，导致平台对第三方软件难以控制，盗版流行。苹果希望解决这样的问题，在 iOS 平台对第三方 APP 有绝对的控制权，一定要保证每一个安装到 iOS 上的 APP 都是经过苹果官方允许的，怎样保证呢？就是通过签名机制。</p>
+<p><strong>ios****正规的应用安装方式分为三种：</strong></p>
+<p>1.通过APP store安装</p>
+<p>　　对于通过APP store安装的应用，iOS为了确保所有的应用程序没有被修改，要求必须使用苹果颁发的证书对可执行代码进行签名。开发者使用苹果颁发的发布证书签名后，将应用题叫道APPstore审核，审核成功后，苹果使用其私钥对程序进行签名。用户从APPstore下载安装应用，iOS调用系统进程获取provisioning profile文件，对应用程序进行证书校验。</p>
+<p>2.开发 App 时直接把开发中的应用安装进手机进行调试，即在上线时的真机调试</p>
+<p>　　开发时安装APP，它有两个需求，1）安装包不需要传到苹果服务器，可以直接安装到手机上。2）苹果必须对这里的安装有控制权，包括a.经过苹果允许才可以这样安装。b.不能被滥用导致非开发app也能被安装。苹果使用双层签名的机制，</p>
+<p>　　1）在你 Mac 开发机器生成一对公私钥，这里称为公钥L，私钥L。</p>
+<p>　　2）苹果自己有固定的一对公私钥，跟上面 AppStore 例子一样，私钥在苹果后台，公钥在每个 iOS 设备上。这里称为公钥A，私钥A。</p>
+<p>　　3）把公钥 L 传到苹果后台，用苹果后台里的私钥 A 去签名公钥 L。得到一份数据包含了公钥 L 以及其签名，把这份数据称为证书。</p>
+<p>　　4）在苹果后台申请 AppID，配置好设备 ID 列表和 APP 可使用的权限，再加上第③步的证书，组成的数据用私钥 A 签名，把数据和签名一起组成一个 Provisioning Profile 文件，下载到本地 Mac 开发机。</p>
+<p>　　5）在开发时，编译完一个 APP 后，用本地的私钥 L 对这个 APP 进行签名，同时把第④步得到的 Provisioning Profile 文件打包进 APP 里，文件名为embedded.mobileprovision，把 APP 安装到手机上。</p>
+<p>　　6）在安装时，iOS 系统取得证书，通过系统内置的公钥 A，去验证embedded.mobileprovision的数字签名是否正确，里面的证书签名也会再验一遍。</p>
+<p>　　7）确保了embedded.mobileprovision里的数据都是苹果授权以后，就可以取出里面的数据，做各种验证，包括用公钥 L 验证APP签名，验证设备 ID 是否在 ID 列表上，AppID 是否对应得上，权限开关是否跟 APP 里的 Entitlements 对应等。</p>
+<p><img src="https://img2018.cnblogs.com/common/1946378/202002/1946378-20200219134045464-265946927.png" class="lazyload" data-srcset="https://img2018.cnblogs.com/common/1946378/202002/1946378-20200219134045464-265946927.png" srcset="data:image/png;base64,666" alt="img"></p>
+<p>3.企业内部分发，可以直接安装企业证书签名后的 APP</p>
+<p>　　企业内部应用，即只在企业部门和员工内部使用、不对外公开的应用。苹果提供了专门的In-House证书用来发布这种应用，可以分发给任意的手机，只要通过一个URL即可下载安装，不用上传到App Store审核。In-House应用，有时需要根据部门需求进行版本的快速迭代，因为不需要App Store审核，所以可以做到随时修改，随时发布，节省了大量的时间。</p>
+<p>　　在打包安装时同样需要创建证书，证书类型为In-House型，之后创建配置文件(Distribution Provisioning Profiles)，过程和其他证书创建过程类似。在Xcode中导入配置文件，打包程序，可以导出ipa和plist文件。Plist文件中包含ipa的URL、安装时显示的 icon 的url、bundle id、版本号、安装前的提示信息。将plist文件上传至服务器，企业员工在safari浏览器中输入链接即可安装。Safari操作的具体流程是：</p>
+<p>　　1）Safari解析输入的字符串，找到plist文件</p>
+<p>　　2）根据plist文件里面提供的信息下载并安装ipa包，还会访问大小图标，大小图标在ipa包正在下载时显示，当下载完毕后显示程序自带的图标</p>
+<p>　　3）下载安装后，如果想打开程序还需要在手机 设置-&gt;通用-&gt;描述文件与设备管理，在“企业级应用”分组下，点击 信任 开发者的证书里面选择相应的证书信任后，方可打开程序。</p>
+<p>　　综上，3种安装方式归根结底，都是通过验证安装程序的provisioning profile文件。安装应用程序时，Provisioning Profile 文件被拷贝到 iOS 设备中，运行该 iOS App 的设备通过它来认证安装的程序。Provisioning Profile 把AppID、签名证书、设备授权这些信息全部打包在一起，方便我们在调试和发布程序打包时使用。这样，只要在不同的情况下选择不同的 Provisioning Profile 文件就可以了。</p>
+<p>　　除了在正规途径下安装应用以外，通过“打破”原有权限，获取更高权限，可以实现脱离官方平台，自由安装第三方的应用，即我们口中的“越狱”。</p>
+<p>　　iOS系统具有封闭性，通过代码签名机制限制未经签名的代码在iOS系统中执行。用户不能访问系统资源，也无权修改，只能使用苹果颁发证书的正规途径的应用或程序接口完成系统允许的操作。越狱后，用户可以获得权限访问与修改系统文件，继而获得更多的权限，完成之前未被iOS允许的功能。越狱的原理是通过漏洞。至少需要2个漏洞，第一个漏洞用来完成专有代码执行，第二个漏洞用来使内核的安全措施失效，提升权限。</p>
+<p>　　越狱之后安装应用可不通过APP store，有一些越狱者制作的类似APP store的应用安装商店，APP store默认安装位置为/var/mobile/Applications目录里，越狱后可安装在根目录下，所以墙纸、主题、铃声等一些个性化应用在越狱后可以得到安装。</p>
+<h3 id="四、使用"><a href="#四、使用" class="headerlink" title="四、使用"></a>四、使用</h3><p><strong>iOS<strong><strong>程序</strong></strong>5****种状态：</strong></p>
+<p>\1. Not running：</p>
+<p>　　应用还没有启动，或者应用正在运行但是途中被系统停止</p>
+<p>2.Inactive:</p>
+<p>　　当前应用正在前台运行，但是并不接收事件（当前或许正在执行其它代码）。一般每当应用要从一个状态切换到另一个不同的状态时，中途过渡会短暂停留在此状态。唯一在此状态停留时间比较长的情况是：当用户锁屏时，或者系统提示用户去响应某些（诸如电话来电、有未读短信等）事件的时候。</p>
+<p>3.Active:</p>
+<p>　　当前应用正在前台运行，并且接收事件。这是应用正在前台运行时所处的正常状态。</p>
+<p>4.Background:</p>
+<p>　　应用处在后台，并且还在执行代码。大多数将 要进入Suspended状态的应用，会先短暂进入此状态。然而，对于请求需要额外的执行时间的应用，会在此状态保持更长一段时间。另外，如果一个应用要求启动时直接进入后台运行，这样的应用会直接从Notrunning状态进入Background状态，中途不会经过Inactive状态。比如没有界面的应用。注此处并不特指没有界面的应用，其实也可以是有界面的应用，只是如果要直接进入background状态的话，该应用界面不会被显示。</p>
+<p>5.Suspended:</p>
+<p>　　应用处在后台，并且已停止执行代码。系统自动的将应用移入此状态，且在此举之前不会对应用做任何通知。当处在此状态时，应用依然驻留内存但不执行任何程序代码。当系统发生低内存告警时，系统将会将处 于Suspended状态的应用清除出内存以为正在前台运行的应用提供足够的内存。</p>
+<p><strong>应用启动过程：</strong></p>
+<p>1、执行main函数</p>
+<p>2、在此方法中调用UIApplicationMain</p>
+<p>2.1 创建UIApplication对象（UIApplication对象是应用程序的象征，一个UIApplication对象就代表一个应用程序。每一个应用都有自己的UIApplication对象，而且是单例的，如果试图在程序中新建一个UIApplication对象，那么将报错提示。一个iOS程序启动后创建的第一个对象就是UIApplication对象，且只有一个。利用UIApplication对象，能进行一些应用级别的操作。）</p>
+<p>2.2 创建UIApplication的delegate对象。（UIApplication Delegate的作用是当应用程序发出一系列系统事件如来电或锁屏等，做出相应的反应。新建完项目，都有个带有“AppDelegate”字眼的类，它就是UIApplication的代理,AppDelegate默认已经遵守了UIApplicationDelegate协议，已经是UIApplication的代理。系统事件如程序降将要启动、程序启动完成、程序进入后台、程序进入前台、程序退出等。）</p>
+<p>2.3 开启消息循环</p>
+<p>3、delegate对象开始监听系统事件</p>
+<p>3.1 app启动完成后会调用delegate对象的程序加载完成的方法</p>
+<p>3.2 如果app的plist设置了main storyboard 会创建UIWindow对象(如 果没有设置则不创建)</p>
+<p>3.3 创建main storyboard中绑定的controller对象(stroyboard中箭 头指向的控制器)</p>
+<p>3.4 设置给window对象的rootViewController</p>
+<p>3.5 设置window对象可见</p>
+<p><img src="https://img2018.cnblogs.com/common/1946378/202002/1946378-20200219134137096-1924649162.png" class="lazyload" data-srcset="https://img2018.cnblogs.com/common/1946378/202002/1946378-20200219134137096-1924649162.png" srcset="data:image/png;base64,666" alt="img"></p>
+<p><strong>屏幕响应顺序</strong></p>
+<p>　　iOS和安卓系统具有不同的屏幕响应顺序，IOS对屏幕的响应顺序是：触摸→媒体→服务→架构，而安卓是：程序→框架→屏幕显示资源→架构。所以在视觉效果上，iOS会有更流畅的感觉。</p>
+<p><strong>后台管理机制</strong></p>
+<p>　　从iOS 3开始，苹 果为iPhone引进了push notification，不启动应用也 能收到推送消息，原理是 消息由APNS(Apple Push Notification Service， Apple Push服务器)统一管 理，随着iOS 4的发布，iOS也开始有了 多任务功能，当你点击H o m e键后，当前 程序转入后台(iOS 4之前按Home键就 直接干掉应用了)，后台应用以墓碑的形 式(退出前的状态)保存在内存中，用户 可以快速恢复。但是苹果对后台的限制非 常严格，只有一些特殊应用可以在后台 真正运行，比如音频播放类、VoIP类、 newsstand、位置服务等。</p>
+<p>　　如果不做任何配置的话，你的应用最 多只能在后台运行5秒，之后就会被挂起 (存于内存但不运行)，如果你配置了后 台运行(如需下载)，大概在594秒(9.9 分钟)时进程停止，程序同样也会被挂 起，一旦系统需要内存了，最早的后台进 程就会被杀掉以释放内存。</p>
+<p>　　从 iOS 7 开始， 一旦手机锁屏， 后台应用将会很快被暂停， 之后当系统被唤醒时，那些暂停的后台应用会一起继续运行。现在的iOS后台管理很智能， 他会记忆你每天什么时段打开什么应用， 经过一段时间后， 他会在适当时间唤醒相应的应用。iOS7新增三种后台模式：</p>
+<p><strong>Baxkground Fetch 后台应用刷新</strong></p>
+<p>　　iOS 7 之前的应用必须在打开时才能联网获取数据， 而它可以让应用在后台直接获取数据。</p>
+<p><strong>Silent Remote Notifications 静默推送唤醒</strong></p>
+<p>　　iOS 7 之前当收到消息后， 只有打开应用才能从APNS获取推送的具体消息， 现在在收到消息后， 会自动唤醒相应的APP ， 让该APP在后台获取消息， 再通知用户。</p>
+<p><strong>Background Transfer Servce 后台传输</strong></p>
+<p>　　以前一旦下载被转移到后台最多只能持续运行549秒（9.9分钟）， 现在所有的下载任务会交给系统独立的进程去完成， 不管APP在前台、挂起还是被杀掉， 下载都在继续进行。</p>
+<p><strong>自动清理机制</strong></p>
+<p>　　iOS系统在安装应用或者使用过程中存储空间不足时，会自动清理一些应用的缓存以释放空间。</p>
+<p><img src="https://img2018.cnblogs.com/common/1946378/202002/1946378-20200219134247771-1247696105.png" class="lazyload" data-srcset="https://img2018.cnblogs.com/common/1946378/202002/1946378-20200219134247771-1247696105.png" srcset="data:image/png;base64,666" alt="img"></p>
+<p><strong>APP****更新推送</strong></p>
+<p>　　当app有新版本时，可以在APP store里更新应用。APP在安装的时候，会在数据库里appid对应的列表下新增版本号的关键字。用户在【更新】界面刷新操作后，发送请求查询用户表，并关联APP信息表获取到用户安装过的每一款APP的最新版本号列表。然后把最新版本号列表中的app版本号，与本地的app版本进行比对，如果最新版本号列表中的版本号大于本地版本号，则会有更新提示。</p>
+<h3 id="五、卸载"><a href="#五、卸载" class="headerlink" title="五、卸载"></a>五、卸载</h3><p><strong>iOS****文件目录结构：</strong></p>
+<p>/：为根目录</p>
+<p>Applications： 存放所有的系统 APP 和来自 Cydia 的 APP,不包括从 App Store 下载的APP</p>
+<p>Developer： 供开发者使用</p>
+<p>Library：系统资源，用户设置</p>
+<p>System：系统的重要组成部分</p>
+<p>User：用户目录，实际指向 /var/mobile</p>
+<p>bin：存放用户级可执行文件，如 ls、mv 等</p>
+<p>dev：设备文件</p>
+<p>etc：存放系统脚本、hosts 配置、SSH 配置文件等</p>
+<p>sbin：存放系统二进制文件</p>
+<p>usr：用户工具和程序</p>
+<p>var：变量文件，在正常运行的系统中其内容不断变化的文件</p>
+<p>　　应用都是安装在/var/mobile/Applications目录下，且应用沙盒机制，每一个应用分配自身的存储空间，不能越界访问。应用程序沙盒目录下有三个文件夹Documents、Library（下面有Caches和Preferences目录）、tmp。Documents：保存应用运行时生成的需要持久化的数据iTunes会自动备份该目录。Library/Caches：一般存储的是缓存文件，例如图片视频等，此目录下的文件不会再应用程序退出时删除，在手机备份的时候，iTunes不会备份该目录。Library/Preferences：保存应用程序的所有偏好设置iOS的Settings(设置)，iTunes会自动备份该文件目录下的内容。tmp：临时文件目录，在程序重新运行的时候，和开机的时候，会清空tmp文件夹。</p>
+<p>　　iOS 中 app 对本地存储只能访问到自己的根目录，再往上就没有权限了。在删除应用时，app自身的存储空间的根目录会直接删除，在机制内不会留下残留文件。</p>
+<h2 id="Mac-OS"><a href="#Mac-OS" class="headerlink" title="Mac OS"></a>Mac OS</h2><p>　　Mac OS是基于Unix内核的图形化操作系统；由苹果自行开发，不对外销售，一般情况下在普通PC上无法安装，只安装于苹果的设备中。mac OS虽然也对应用有较严格的管理机制，但与手机端iOS系统相比，用户具有更多的权限。</p>
+<h3 id="一、开发-1"><a href="#一、开发-1" class="headerlink" title="一、开发"></a>一、开发</h3><p>　　mac OS应用的开发过程与iOS的开发类似，需要付费注册开发者账号，同样使用Xcode作为开发工具。</p>
+<h3 id="二、发布"><a href="#二、发布" class="headerlink" title="二、发布"></a>二、发布</h3><p>　　应用开发完成后，发布方式与iOS下有所不同。除了在app store线上发布，还可以在平台以外发布。mac开发下的证书有5种：</p>
+<p>开发证书：</p>
+<p>（1）Mac Development：用于开发和测试的证书，跟iOS development证书一样；运行在指定设备上需要把设备的UUID添加到devices里面去。</p>
+<p>发布证书：</p>
+<p>Mac App Store</p>
+<p>（2）Mac App Distribution：这个用于 Xcode 自己把.app 文件上传到 Mac App Store，具体的上线过程与iOS应用类似。</p>
+<p>（3）Mac Installer Distribution：这是用于开发者自己把.app 文件打包成 .pkg 文件，再用 Xcode 自带的 App Application Loader 上传到 Mac App Store ，可用于上传到store前模拟真实的store环境。</p>
+<p>Developer ID</p>
+<p>（4）Developer ID Application：这个用于开发者使用开发者帐号签名，导出一个线下发布版本的 .app 文件，但是由于脱离了苹果的 Mac App Store，还是加上许可协议打包成 .pkg 文件再发布比较好，给用户一个决定是否安装的机会。这就要用到第5个证书。</p>
+<p>（5）Developer ID Installer：用于开发者打包，同时加上开发者帐号签名，打包生成一个.pkg的安装包，可以装到任意一台Mac电脑上执行安装过程。</p>
+<p>　　5种证书，开发证书用于开发和测试，发布证书就对应着app store和线下两种发布形式。根据需要的发布形式创建对应的证书，证书的创建过程可参考iOS应用的证书创建，发布的具体过程可以按照官方文档和Xcode的提示一步步来。当然如果不想用证书也不担心用户拒绝来源不明的应用的话，也可以不用任何证书签名打包应用，用默认的签名方式就可以。</p>
+<p><img src="https://img2018.cnblogs.com/common/1946378/202002/1946378-20200219134320743-1455512401.png" class="lazyload" data-srcset="https://img2018.cnblogs.com/common/1946378/202002/1946378-20200219134320743-1455512401.png" srcset="data:image/png;base64,666" alt="img"></p>
+<h3 id="三、安装-1"><a href="#三、安装-1" class="headerlink" title="三、安装"></a>三、安装</h3><p>mac OS上对于应用的不同发布形式，也有不同的安装方法，可以分为三种。</p>
+<p>　　1.对于app store上的应用，即上一部分的（2）（3）发布方式，用户可以直接登录自己的苹果账户，进行购买或者获取资源下载，对软件的购买在平台完成，苹果会抽取一部分分成。app store上的应用经过苹果内部人员的审核和测试，本身会具有更高的完整度、质量和运行稳定性。但是国内应用的很多软件app store都没有，需要线下的方式进行安装。</p>
+<p>　　2.第二种安装方式是线下的.app格式的应用的安装，即上一部分的（4）发布方式。这种用户可以自行从网上搜索下载源，一般下下来的安装文件是一个.dmg格式的磁盘映像，dmg 是苹果的压缩镜像文件，类似于 Windows 下的 ISO，双击打开后会给系统挂上一个类似移动硬盘的虚拟磁盘，安装完后可以右键弹出。它是 macOS 应用软件通用的打包格式，里面一般包含“应用程序名.app”的图标和一个应用程序文件夹（/Applications）快捷方式。直接将图标拖曳至应用程序文件夹，即可完成安装，非常快捷。</p>
+<p>　　3.第三种是.pkg安装包的安装，即上一部分的（5）发布方式。.pkg属于系统级软件的安装程序，类似于windows中的.exe安装程序，会阅读许可协议并选择安装位置、安装内容，一般会修改系统配置，权限较高，需要sudo授权。</p>
+<p>　　对于一些来源不明或没有证书的应用，在打开安装程序时有时会出现“文件已损坏，打不开”。这是由于系统的安全机制对来源不明的软件的限制。可以通过在命令行里修改权限，在系统偏好设置的安全性与隐私设置里，改成允许任何来源的应用。</p>
+<p><img src="https://img2018.cnblogs.com/common/1946378/202002/1946378-20200219134354012-1699646313.png" class="lazyload" data-srcset="https://img2018.cnblogs.com/common/1946378/202002/1946378-20200219134354012-1699646313.png" srcset="data:image/png;base64,666" alt="img"></p>
+<p><img src="https://img2018.cnblogs.com/common/1946378/202002/1946378-20200219134418488-779634983.png" class="lazyload" data-srcset="https://img2018.cnblogs.com/common/1946378/202002/1946378-20200219134418488-779634983.png" srcset="data:image/png;base64,666" alt="img"></p>
+<p>　　有时还会提示“来自身份不明的开发者”，这时同样在偏好设置的安全性与隐私设置里，可以看到要打开的应用被阻止的提示，点击“仍要打开”即可。</p>
+<p><img src="https://img2018.cnblogs.com/common/1946378/202002/1946378-20200219134442501-741311560.png" class="lazyload" data-srcset="https://img2018.cnblogs.com/common/1946378/202002/1946378-20200219134442501-741311560.png" srcset="data:image/png;base64,666" alt="img"></p>
+<p><img src="https://img2018.cnblogs.com/common/1946378/202002/1946378-20200219134500003-1198084874.png" class="lazyload" data-srcset="https://img2018.cnblogs.com/common/1946378/202002/1946378-20200219134500003-1198084874.png" srcset="data:image/png;base64,666" alt="img"></p>
+<p>　　苹果的应用为.app的格式，既是一个包，包含应用的全部内容，可以右键显示包内容，对里面的文件或配置进行修改（具有比iOS更高的权限），同时也是一个可执行文件，安装在Applications文件夹后会自动出现在系统的Launchpad（启动台）里。</p>
+<h3 id="四、卸载"><a href="#四、卸载" class="headerlink" title="四、卸载"></a>四、卸载</h3><p>　　mac上对于应用的卸载，由于安装方式不同，卸载方式也不同。app store里安装的应用，类似于iOS，在Launchpad（启动台）里长按图标，点叉号即可卸载。线下的app store平台外自己安装的应用极少数会自带卸载程序，多数直接在Applications文件夹里右键删除即可。只是对于.pkg安装包安装的应用，由于有时具有较高权限，可能会修改系统配置，所以删除应用后有时可能会有卸载残留，可以通过第三方卸载软件或手动删除。</p>
+<h2 id="watchOS"><a href="#watchOS" class="headerlink" title="watchOS"></a>watchOS</h2><p>　　watchOS是苹果公司基于iOS 系统开发的一套使用于Apple watch的手表操作系统。它的应用的开发与上线与iOS相同，用户只能通过App store来安装应用。在2019年6月之前，对应用程序的安装不能在apple watch上直接进行，只能结合iphone使用。连接之后在iPhone上打开Apple Watch应用程序，来安装需要的表上应用。安装完成后，会首先在iPhone上面显示。需要说明的是，Apple Watch APP应用程序都是必须要配合iPhone使用的，因此所有安装到Apple Watch上面的应用程序，都会同时安装到iPhone上。2019年6月之后发布的新的watchOS系统，自带app store，不用再连接iphone来安装应用，可以直接在app store里获取安装。</p>
+<p>　　卸载应用也是两种方式，既可以在apple watch内直接卸载，也可以与iPhone配对，通过iPhone里的apple watch应用来管理手表应用。</p>
+<h2 id="tvOS"><a href="#tvOS" class="headerlink" title="tvOS"></a>tvOS</h2><p>　　tvOS是苹果公司专门为Apple TV设计的操作系统，基于 iOS。2016年3月发布了 tvOS 9.2 操作系统。Apple TV是苹果公司推出的一款高清电视机顶盒产品，用户可以通过Apple TV在线收看电视节目，也可以通过Airplay功能，将iPad、iPhone、iPod和PC中的照片、视频和音乐传输到电视上进行播放。tvOS也可以安装一些应用，具有独立的应用生态，通过自带的app store进行搜索和安装。</p>
+<p>　　tvOS应用的开发与发布也与iOS类似，需要注册成为开发者，使用官方的开发工具xcode进行开发，开发与发布同样需要创建证书。具体过程均与iOS相同。</p>
+<p>　　在国内目前用户不多，不能直接收看国内的有线卫视节目，需要联网安装app来收看电视台。</p>
+<h2 id="苹果系统与其他系统比较"><a href="#苹果系统与其他系统比较" class="headerlink" title="苹果系统与其他系统比较"></a>苹果系统与其他系统比较</h2><h3 id="iOS与macOS对比"><a href="#iOS与macOS对比" class="headerlink" title="iOS与macOS对比"></a>iOS与macOS对比</h3><p>　　两个系统都是苹果自主研发的系统，但我们也可以看出，macOS的用户比起iOS拥有更广的权限，可以访问系统资源，读写系统目录、系统文件，也可以访问应用内部目录，对其配置文件进行修改，还可以下载安装来自任何来源的应用。相比之下，iOS的系统生态就更加封闭，使用者无法查看系统文件资源，也不能访问应用内部，只能通过应用的接口来使用和管理应用。而对于广大苹果手机用户而言，他们所使用的唯一的应用安装方式就是通过官方的APP store。</p>
+<h3 id="iOS系统应用与安卓对比"><a href="#iOS系统应用与安卓对比" class="headerlink" title="iOS系统应用与安卓对比"></a>iOS系统应用与安卓对比</h3><p>　　具有安装来源不同、用户权限不同、运行机制不同、后台机制不同、响应处理指令权限不同几大区别。相比之下优点：1）所有上线应用经过审核，具有更高的稳定性、流畅度、安全指数、优化性，且可以保护版权，安卓应用开发者随意开发，参差不齐。2）应用具有较低的权限，可以更好的保护用户隐私，相比之下，安卓许多应用如不开放权限则不让用户使用。3）通过优先响应屏幕和独特的对内存管理的方式使其具有更流畅的运行效果。4）iOS软硬件垂直整合，只运行在苹果设备上，安卓可以运行在多种设备上，所以iOS上的应用有更好的兼容性。</p>
+<p>　　缺点：1）安卓系统开放，且开发门槛低，所以资源多，开发者多，创新也多。2）安卓系统用户权限大，所以操作更灵活，也更加个性化。</p>
+<h3 id="windows与macOS应用对比"><a href="#windows与macOS应用对比" class="headerlink" title="windows与macOS应用对比"></a>windows与macOS应用对比</h3><p>　　开发门槛不同：mac应用开发成本大，windows程序任意开发者均可以免费开发。</p>
+<p>　　安装来源不同：windows可以随意安装程序，mac的可以通过app平台或平台之外，均会验证证书，质量更高。</p>
+<p>　　安装方法不同：windows安装包进行安装，mac可以应用商店直接获取，或者直接复制app到应用程序，或者安装包安装。</p>
+<p>　　应用文件结构不同，windows除了安装根目录，还会写入注册表信息，通过exe执行文件启动。mac的app文件既是整个应用包，同时是启动入口。</p>
+<p>　　卸载方式不同：windows通过卸载程序，mac直接删除。</p>
+<h2 id="苹果系统中的安全机制"><a href="#苹果系统中的安全机制" class="headerlink" title="苹果系统中的安全机制"></a>苹果系统中的安全机制</h2><h3 id="Apple-ID双重认证"><a href="#Apple-ID双重认证" class="headerlink" title="Apple ID双重认证"></a>Apple ID双重认证</h3><p>　　首次登录一台新设备时，除输入密码外，还需要在信任设备上的授权才可以登录。输入验证码后，即确认信任这台新设备。由于只输入密码不再能够访问帐户，因此双重认证显著增强了 Apple ID 以及所有通过 Apple 储存的个人信息的安全性。登录成功后，系统将不会再次要求信任设备的验证，除非完全退出登录帐户、抹掉设备数据或出于安全原因而需要更改密码。受信任设备是已使用双重认证登录的设备，可以是装有 iOS 9 及更高版本的 iPhone、iPad 或 iPod touch 或者装有 OS X El Capitan 及更高版本的 Mac。受信任电话号码是指可通过短信或自动语音电话接收验证码的号码。您必须至少验证一个受信任电话号码才能注册双重认证。</p>
+<h3 id="代码签名"><a href="#代码签名" class="headerlink" title="代码签名"></a>代码签名</h3><p>　　苹果也是通过代码签名来保证每一个安装到iOS上的APP都是经过苹果官方允许的，防止盗版软件、病毒入侵、静默安装等。苹果也是通过代码签名来保证每一个安装到iOS上的APP都是经过苹果官方允许的，防止盗版软件、病毒入侵、静默安装等。</p>
+<h3 id="可信引导"><a href="#可信引导" class="headerlink" title="可信引导"></a>可信引导</h3><p>　　iOS设备开机后采用一种称为可信引导的方式进入系统。引导过程中，安全只读内存 (SecureROM) 是首先被引导的部分，其中嵌入了根证书 (Root Certificate)用以检查下一步所加载组件的RSA签名。 在随后的每个步骤中，系统校验下一步骤所要加载组件的 RSA 签名。这一信任链 (Chain of Trust) 保证了系统启动过 程中的所有组件没有被破坏和修改。</p>
+<h3 id="沙盒机制"><a href="#沙盒机制" class="headerlink" title="沙盒机制"></a>沙盒机制</h3><p>　　沙盒也叫沙箱，英文standbox，其原理是通过重定向技术，把程序生成和修改的文件定向到自身文件夹中。在沙盒机制下，每个应用程序都有自己的存储空间，程序之间的文件夹不能互相访问。iOS系统为了保证系统安全，采用了这种机制。iOS 应用程序在安装时，会创建属于自己的沙盒文件，应用程序不能直接访问其他应用程序的沙盒文件，当应用程序需要向外部请求或接收数据时，都需要经过权限认证，否则，无法获取到数据。应用程序中所有的非代码文件都保存在沙盒中，比如图片、声音、属性列表，sqlite数据库和文本文件等。</p>
+<h3 id="数据加密"><a href="#数据加密" class="headerlink" title="数据加密"></a>数据加密</h3><p>　　iOS4 及以后的系统使用数据加密机制来保护文件系 统中的系统和数据分区。系统和数据分区中的数据将由一 个基于硬件设备的密钥进行加密。在 iPhone3GS 以后的设 备上，该密钥存储于一个AES加密加速硬件上。这个基 于硬件的密钥不能被 CPU 所访问，只有在加解密时才能 由该加速器获取。通过这种机制，直接从硬盘上被取走的 原始数据就无法被正确解密。同时，数据加密机制还提供 了多种加密策略供应用程序选择。应用程序可以选择对一 些敏感文件使用NSFileProtectionComplete 策略而不是默认 的 NSFileProtectionNone 策略加密数据。</p>
+<p>　　疯狂肆虐的电脑病毒几乎都是针对Windows的，由于MAC的架构与Windows不同，沙盒机制、使用人数少、研究成本大、对应用安装的管控力度，所以很少受到病毒的袭击。</p>
+<h2 id><a href="#" class="headerlink" title></a></h2><h2 id="-1"><a href="#-1" class="headerlink" title></a></h2><h2 id="-2"><a href="#-2" class="headerlink" title></a></h2><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>【1】Bucicoiu M, Davi L, Deaconescu R, et al. XiOS: Extended application sandboxing on iOS[C]//Proceedings of the 10th ACM Symposium on Information, Computer and Communications Security. ACM, 2015: 43-54.</p>
+<p>【2】Mohamed I, Patel D. Android vs iOS security: A comparative study[C]//2015 12th International Conference on Information Technology-New Generations. IEEE, 2015: 725-730.</p>
+<p>【3】Ahmad M S, Musa N E, Nadarajah R, et al. Comparison between android and iOS Operating System in terms of security[C]//2013 8th International Conference on Information Technology in Asia (CITA). IEEE, 2013: 1-4.</p>
+<p>【4】安迪. iOS真的是“伪后台”吗?[J]. 个人电脑, 2016(2):86-88.</p>
+<p>【5】刘乐廷, 李敬兆, LIULe-ting, et al. IOS内存开发管理机制的研究[J]. 计算机与现代化, 2013(3):196-199.</p>
+<p>【6】陈佳霖, 王轶骏, 薛质. iOS系统数据安全研究[J]. 信息安全与通信保密, 2012(8):100-102.</p>
+<p>【7】Apple官方开发者账户帮助<a target="_blank" rel="noopener" href="https://help.apple.com/developer-account/?lang=zh-cn#/dev7a05c5ce1">https://help.apple.com/developer-account/?lang=zh-cn#/dev7a05c5ce1</a></p>
+<p>【8】iOS最新应用上架App Store流程<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/e5ac7b05750a">https://www.jianshu.com/p/e5ac7b05750a</a></p>
+<p>【9】Apple Developer-App Store 审核指南<a target="_blank" rel="noopener" href="https://developer.apple.com/cn/app-store/review/guidelines/#in-app-purchase">https://developer.apple.com/cn/app-store/review/guidelines/#in-app-purchase</a></p>
+<p>【10】windows使用Appuploader上架应用<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/6f50130b6950">https://www.jianshu.com/p/6f50130b6950</a></p>
+<p>【11】苹果企业账号发布APP详解<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/0418f5051185">https://www.jianshu.com/p/0418f5051185</a></p>
+<p>【12】Provisioning Profile <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/0affef7cef69">https://www.jianshu.com/p/0affef7cef69</a></p>
+<p>【13】iOS包签名原理<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/b7416aef5f5c">https://www.jianshu.com/p/b7416aef5f5c</a></p>
+<p>【14】Mac App 发布的最后 1km <a target="_blank" rel="noopener" href="https://sspai.com/post/40269">https://sspai.com/post/40269</a></p>
+
+  
+  
+    
+    <div class='footer'>
+      
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://example.com/2021/04/02/iOS%E3%80%81macOS%E7%B3%BB%E7%BB%9F%E5%BA%94%E7%94%A8%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/>http://example.com/2021/04/02/iOS%E3%80%81macOS%E7%B3%BB%E7%BB%9F%E5%BA%94%E7%94%A8%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/</a></p>
+              
+            
+          </blockquote>
+        </div>
+      
+      
+        <div class='donate'>
+          <div class='imgs'>
+            
+              <img src='../../../../https:/gitee.com/boyqi/jpg/raw/master/541957334755484884.jpg'>
+            
+              <img src='../../../../https:/gitee.com/boyqi/jpg/raw/master/60626648564436122.jpg'>
+            
+          </div>
+        </div>
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-04-19T20:19:51+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Apr 19, 2021</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="../../../../tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>计算机常识</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/04/02/iOS%E3%80%81macOS%E7%B3%BB%E7%BB%9F%E5%BA%94%E7%94%A8%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/&title=iOS、macOS系统应用管理机制 - 齐雨争&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/04/02/iOS%E3%80%81macOS%E7%B3%BB%E7%BB%9F%E5%BA%94%E7%94%A8%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/&title=iOS、macOS系统应用管理机制 - 齐雨争&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/04/02/iOS%E3%80%81macOS%E7%B3%BB%E7%BB%9F%E5%BA%94%E7%94%A8%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/&title=iOS、macOS系统应用管理机制 - 齐雨争&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='../../08/2013-05-08-ui-design-principles/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>好文用户接口（UI）设计的 20 条原则</p>
+          <p class='content'>
+世界级图形设计大师Paul Rand（保罗.兰德）曾经说过：“设计绝不是简单的排列组合与简单地再编辑，它应当充满着价值和意义，去说明道理，去删繁就简，去阐明演绎，去修饰美 化，去赞美褒扬，使其...</p>
+        </a>
+      
+      
+        <a class='next' href='../../../03/26/2016-03-26-distributed-data-model/'>
+          <p class='title'>数据分布式模型<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>概述数据的分布有两种途径：
+
+复制（replication）：
+  将同一份数据拷贝至多个节点；复制又分为：主从式（master-slave）和对等式（peer-to-peer）。
+
+分片（sh...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#iOS"><span class="toc-text">iOS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%BC%80%E5%8F%91"><span class="toc-text">一、开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%B8%8A%E7%BA%BF"><span class="toc-text">二、上线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%AE%89%E8%A3%85"><span class="toc-text">三、安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E4%BD%BF%E7%94%A8"><span class="toc-text">四、使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%8D%B8%E8%BD%BD"><span class="toc-text">五、卸载</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mac-OS"><span class="toc-text">Mac OS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%BC%80%E5%8F%91-1"><span class="toc-text">一、开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%8F%91%E5%B8%83"><span class="toc-text">二、发布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%AE%89%E8%A3%85-1"><span class="toc-text">三、安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%8D%B8%E8%BD%BD"><span class="toc-text">四、卸载</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#watchOS"><span class="toc-text">watchOS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tvOS"><span class="toc-text">tvOS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8B%B9%E6%9E%9C%E7%B3%BB%E7%BB%9F%E4%B8%8E%E5%85%B6%E4%BB%96%E7%B3%BB%E7%BB%9F%E6%AF%94%E8%BE%83"><span class="toc-text">苹果系统与其他系统比较</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#iOS%E4%B8%8EmacOS%E5%AF%B9%E6%AF%94"><span class="toc-text">iOS与macOS对比</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#iOS%E7%B3%BB%E7%BB%9F%E5%BA%94%E7%94%A8%E4%B8%8E%E5%AE%89%E5%8D%93%E5%AF%B9%E6%AF%94"><span class="toc-text">iOS系统应用与安卓对比</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#windows%E4%B8%8EmacOS%E5%BA%94%E7%94%A8%E5%AF%B9%E6%AF%94"><span class="toc-text">windows与macOS应用对比</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8B%B9%E6%9E%9C%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6"><span class="toc-text">苹果系统中的安全机制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Apple-ID%E5%8F%8C%E9%87%8D%E8%AE%A4%E8%AF%81"><span class="toc-text">Apple ID双重认证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E7%AD%BE%E5%90%8D"><span class="toc-text">代码签名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E4%BF%A1%E5%BC%95%E5%AF%BC"><span class="toc-text">可信引导</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B2%99%E7%9B%92%E6%9C%BA%E5%88%B6"><span class="toc-text">沙盒机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86"><span class="toc-text">数据加密</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-1"><span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-2"><span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+
+        
+        
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+<script>
+  window.pdata={}
+  pdata.ispage=true;
+  pdata.postTitle="iOS、macOS系统应用管理机制";
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+
+  var l_header=document.getElementById("l_header");
+  
+  l_header.classList.remove("show");
+  
+</script>
+
+        
+      </div>
+      
+  
+  <footer class="footer clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+          
+            
+          
+            
+          
+        </div>
+      
+    
+      
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+      
+    
+      
+        
+          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+</div>
+        
+      
+    
+      
+        Use
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.2" target="_blank" class="codename">Volantis</a>
+        as theme
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="/">Copyright © 2017-2020 XXX</a></p>
+
+        </div>
+      
+    
+  </footer>
+  
+  <iframe frameborder="no" border="1500" marginwidth="1500" marginheight="1500" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=546724667&auto=1&height=66"></iframe>
+  
+
+
+
+
+
+      <a id="s-top" class="fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+    </div>
+  </div>
+  <div>
+    <script>
+window.volantis={};
+/********************脚本懒加载函数********************************/
+function loadScript(src, cb) {
+var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+var script = document.createElement('script');
+script.setAttribute('type','text/javascript');
+if (cb) script.onload = cb;
+script.setAttribute('src', src);
+HEAD.appendChild(script);
+}
+//https://github.com/filamentgroup/loadCSS
+var loadCSS = function( href, before, media, attributes ){
+	var doc = window.document;
+	var ss = doc.createElement( "link" );
+	var ref;
+	if( before ){
+		ref = before;
+	}
+	else {
+		var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
+		ref = refs[ refs.length - 1];
+	}
+	var sheets = doc.styleSheets;
+	if( attributes ){
+		for( var attributeName in attributes ){
+			if( attributes.hasOwnProperty( attributeName ) ){
+				ss.setAttribute( attributeName, attributes[attributeName] );
+			}
+		}
+	}
+	ss.rel = "stylesheet";
+	ss.href = href;
+	ss.media = "only x";
+	function ready( cb ){
+		if( doc.body ){
+			return cb();
+		}
+		setTimeout(function(){
+			ready( cb );
+		});
+	}
+	ready( function(){
+		ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
+	});
+	var onloadcssdefined = function( cb ){
+		var resolvedHref = ss.href;
+		var i = sheets.length;
+		while( i-- ){
+			if( sheets[ i ].href === resolvedHref ){
+				return cb();
+			}
+		}
+		setTimeout(function() {
+			onloadcssdefined( cb );
+		});
+	};
+	function loadCB(){
+		if( ss.addEventListener ){
+			ss.removeEventListener( "load", loadCB );
+		}
+		ss.media = media || "all";
+	}
+	if( ss.addEventListener ){
+		ss.addEventListener( "load", loadCB);
+	}
+	ss.onloadcssdefined = onloadcssdefined;
+	onloadcssdefined( loadCB );
+	return ss;
+};
+</script>
+<!-- required -->
+
+<script src="../../../../https:/cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+<script>
+  function pjax_fancybox() {
+    $(".md .gallery").find("img").each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".md .gallery").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  function SCload_fancybox() {
+    if ($(".md .gallery").find("img").length == 0) return;
+    loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css", document.getElementById("loadcss"));
+    setTimeout(function() {
+      loadScript('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', pjax_fancybox)
+    }, 1);
+  };
+  $(function () {
+    SCload_fancybox();
+  });
+</script>
+
+
+<!-- internal -->
+
+
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+  
+    <script>
+      window.FPConfig = {
+        delay: 0,
+        ignoreKeywords: [],
+        maxRPS: 5,
+        hoverDelay: 25
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+<script src="../../../../js/valine.js"></script>
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+
+    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
+
+    let path = pdata.commentPath;
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: path,
+      appId: "",
+      appKey: "",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      recordIP: 'false',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });
+</script>
+
+
+
+
+
+  
+<script src="../../../../js/app.js"></script>
+
+
+
+
+  
+    
+<script src="../../../../js/search.js"></script>
+
+  
+
+
+<!-- optional -->
+
+  <script>
+const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
+const ROOT =  ("/Geisha-design.github.io/" || "/").endsWith('/') ? ("/Geisha-design.github.io/" || "/") : ("/Geisha-design.github.io//" || "/" );
+(function ($) {
+  
+    customSearch = new HexoSearch({
+      imagePath: SearchServiceimagePath
+    });
+  
+})(jQuery);
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  <script defer>
+
+  const LCCounter = {
+    app_id: 'u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI',
+    app_key: 'jfHtEKVE24j0IVCGHbvuFClp',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'http://example.com' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'http://example.com' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'http://example.com' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              let curPath = window.location.pathname;
+              if (curPath.includes('index.html')) {
+                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
+              }
+              if (pv.getAttribute('data-path') == curPath) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == curPath) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });
+</script>
+
+
+
+
+  <script>
+const rootElement = document.documentElement;
+const darkModeStorageKey = "user-color-scheme";
+const rootElementDarkModeAttributeName = "data-user-color-scheme";
+
+const setLS = (k, v) => {
+  try {
+    localStorage.setItem(k, v);
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+const removeLS = (k) => {
+  try {
+    localStorage.removeItem(k);
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+const getLS = (k) => {
+  try {
+    return localStorage.getItem(k);
+  } catch (e) {
+    console.log(e.message);
+    return null;
+  }
+};
+
+const getModeFromCSSMediaQuery = () => {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+};
+
+const resetRootDarkModeAttributeAndLS = () => {
+  rootElement.removeAttribute(rootElementDarkModeAttributeName);
+  removeLS(darkModeStorageKey);
+};
+
+const validColorModeKeys = {
+  dark: true,
+  light: true,
+};
+
+const applyCustomDarkModeSettings = (mode) => {
+  const currentSetting = mode || getLS(darkModeStorageKey);
+
+  if (currentSetting === getModeFromCSSMediaQuery()) {
+    resetRootDarkModeAttributeAndLS();
+  } else if (validColorModeKeys[currentSetting]) {
+    rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
+  } else {
+    resetRootDarkModeAttributeAndLS();
+  }
+};
+
+const invertDarkModeObj = {
+  dark: "light",
+  light: "dark",
+};
+
+/**
+ * get target mode
+ */
+const toggleCustomDarkMode = () => {
+  let currentSetting = getLS(darkModeStorageKey);
+
+  if (validColorModeKeys[currentSetting]) {
+    currentSetting = invertDarkModeObj[currentSetting];
+  } else if (currentSetting === null) {
+    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
+  } else {
+    return;
+  }
+  setLS(darkModeStorageKey, currentSetting);
+  return currentSetting;
+};
+
+/**
+ * bind click event for toggle button
+ */
+function bindToggleButton() {
+	var btn=$("#wrapper .toggle-mode-btn");
+    btn.on('click',(e) => {
+      const mode = toggleCustomDarkMode();
+      applyCustomDarkModeSettings(mode);
+    });
+}
+
+applyCustomDarkModeSettings();
+document.addEventListener("DOMContentLoaded", bindToggleButton);
+document.addEventListener("pjax:success", bindToggleButton);
+var now = new Date();
+var hour = now.getHours();
+if (hour < 7 && hour >= 19) {
+	var mode = toggleCustomDarkMode();
+	if (mode === "dark") {
+	  applyCustomDarkModeSettings(mode);
+	}
+}
+</script>
+
+
+
+
+
+
+<script>
+function listennSidebarTOC() {
+  const navItems = document.querySelectorAll(".toc li");
+  if (!navItems.length) return;
+  const sections = [...navItems].map((element) => {
+    const link = element.querySelector(".toc-link");
+    const target = document.getElementById(
+      decodeURI(link.getAttribute("href")).replace("#", "")
+    );
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({
+		top: target.offsetTop + 100,
+		
+		behavior: "smooth"
+		
+	  });
+    });
+    return target;
+  });
+
+  function activateNavByIndex(target) {
+    if (target.classList.contains("active-current")) return;
+
+    document.querySelectorAll(".toc .active").forEach((element) => {
+      element.classList.remove("active", "active-current");
+    });
+    target.classList.add("active", "active-current");
+    let parent = target.parentNode;
+    while (!parent.matches(".toc")) {
+      if (parent.matches("li")) parent.classList.add("active");
+      parent = parent.parentNode;
+    }
+  }
+
+  function findIndex(entries) {
+    let index = 0;
+    let entry = entries[index];
+    if (entry.boundingClientRect.top > 0) {
+      index = sections.indexOf(entry.target);
+      return index === 0 ? 0 : index - 1;
+    }
+    for (; index < entries.length; index++) {
+      if (entries[index].boundingClientRect.top <= 0) {
+        entry = entries[index];
+      } else {
+        return sections.indexOf(entry.target);
+      }
+    }
+    return sections.indexOf(entry.target);
+  }
+
+  function createIntersectionObserver(marginTop) {
+    marginTop = Math.floor(marginTop + 10000);
+    let intersectionObserver = new IntersectionObserver(
+      (entries, observe) => {
+        let scrollHeight = document.documentElement.scrollHeight + 100;
+        if (scrollHeight > marginTop) {
+          observe.disconnect();
+          createIntersectionObserver(scrollHeight);
+          return;
+        }
+        let index = findIndex(entries);
+        activateNavByIndex(navItems[index]);
+      },
+      {
+        rootMargin: marginTop + "px 0px -100% 0px",
+        threshold: 0,
+      }
+    );
+    sections.forEach((element) => {
+      element && intersectionObserver.observe(element);
+    });
+  }
+  createIntersectionObserver(document.documentElement.scrollHeight);
+}
+
+document.addEventListener("DOMContentLoaded", listennSidebarTOC);
+document.addEventListener("pjax:success", listennSidebarTOC);
+</script>
+
+<!-- more -->
+
+
+
+
+    
+      
+
+
+<script src="../../../../https:/cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+</div>
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#l_cover",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      //window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      if (typeof $.fancybox != "undefined") {
+        $.fancybox.close();    // 关闭弹窗
+      }
+      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
+      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      volantis.$topBtn.unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+      window.ShowLoading();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+          if (typeof $.fancybox == "undefined") {
+            SCload_fancybox();
+          } else {
+            pjax_fancybox();
+          }
+        
+        
+        
+        
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+      window.HideLoading();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.HideLoading();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+</body>
+   	<div class="GalMenu GalDropDown">
+	      <div class="circle" id="gal">
+	        <div class="ring">
+	          <a href="/" class="menuItem">首页</a>
+	          <a href="javascript:history.go(1);" class="menuItem">前进</a>
+	          <a href="javascript:$('html,body').animate({scrollTop:0},500);" class="menuItem">顶部</a>
+	          <a href="javascript:location.reload();" class="menuItem">刷新</a>
+			  <a href="/Message/" class="menuItem">留言</a>
+	          <a href="javascript:history.go(-1);" class="menuItem">后退</a>
+			</div>
+			
+				<audio id="audio" src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/audio/niconiconi.mp3"></audio>
+	        
+		  </div>
+	</div>
+	<script type="text/javascript">
+	var items = document.querySelectorAll('.menuItem'); 
+	for (var i = 0, l = items.length; i < l; i++) {
+        items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+        items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+      }
+	</script>
+	<script>window.jQuery || document.write('<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/js/jquery-2.1.1.min.js"><\/script>')</script>	
+	
+<script src="../../../../https:/cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/js/GalMenu.js"></script>
+
+	<script type="text/javascript">
+    	$(document).ready(function() {
+        $('body').GalMenu({
+          'menu': 'GalDropDown'
+        })
+      });
+	</script>
+
+
+<div id='loader'>
+	
+	<div class="outer_box">
+	<div class='loader_overlay'></div>
+	<div class='loader_cogs'>
+		<div class='loader_cogs__top'>
+			<div class='top_part'></div>
+			<div class='top_part'></div>
+			<div class='top_part'></div>
+			<div class='top_hole'></div>
+		</div>
+		<div class='loader_cogs__left'>
+			<div class='left_part'></div>
+			<div class='left_part'></div>
+			<div class='left_part'></div>
+			<div class='left_hole'></div>
+		</div>
+		<div class='loader_cogs__bottom'>
+			<div class='bottom_part'></div>
+			<div class='bottom_part'></div>
+			<div class='bottom_part'></div>
+			<div class='bottom_hole'></div>
+		</div>
+		<p style="text-align:center">&nbsp;&nbsp;&nbsp;loading...</p>
+	</div>
+	</div>
+  
+</div>
+
+<script>
+  var endLoading = function () {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loader').classList.add("loading");
+  }
+  window.addEventListener('load',endLoading);
+</script>
+
+
+
+
+</html>

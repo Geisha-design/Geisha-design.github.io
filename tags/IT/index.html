@@ -1,3253 +1,2003 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- title -->
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
 
 
 
-
-<!-- keywords -->
-
-
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script> 
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_click.js"></script>
 
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
-    <meta name="author" content="齐雨争">
-    <meta name="renderer" content="webkit">
-    <meta name="copyright" content="齐雨争">
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.2'>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/css/GalMenu.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@latest/hexo/css/loading_style_2.css" >
+
+  <!-- SEO相关 -->
+  
     
-    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+      <meta name="robots" content="noindex,follow">
     
-    <meta name="description" content="GEISHA">
-    <meta http-equiv="Cache-control" content="no-cache">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>雨争齐齐齐</title>
-    <style type="text/css">
-    @font-face {
-        font-family: 'Oswald-Regular';
-        src: url("../../font/Oswald-Regular.ttf");
-    }
+  
+  <!-- 渲染优化 -->
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    body {
-        margin: 0;
-    }
+  <!-- 页面元数据 -->
+  
+  <title>Tag: IT - 齐雨争</title>
+  
 
-    header,
-    footer,
-    .back-top,
-    .sidebar,
-    .container,
-    .site-intro-meta,
-    .toc-wrapper {
-        display: none;
-    }
+  
 
-    .site-intro {
-        position: relative;
-        z-index: 3;
-        width: 100%;
-        /* height: 50vh; */
-        overflow: hidden;
-    }
+  <!-- feed -->
+  
 
-    .site-intro-placeholder {
-        position: absolute;
-        z-index: -2;
-        top: 0;
-        left: 0;
-        width: calc(100% + 300px);
-        height: 100%;
-        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
-        background-position: center center;
-        transform: translate3d(-226px, 0, 0);
-        animation: gradient-move 2.5s ease-out 0s infinite;
-    }
+  <!-- import meta -->
+  
 
-    @keyframes gradient-move {
-        0% {
-            transform: translate3d(-226px, 0, 0);
-        }
-        100% {
-            transform: translate3d(0, 0, 0);
-        }
-    }
-
-</style>
-
-    <link rel="preload" href= "../../css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <link rel="stylesheet" href= "../../css/mobile.css?v=20180824" media="(max-width: 980px)">
+  <!-- link -->
+  
     
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<link rel="stylesheet" href="../../https:/cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css">
+
+  
+  
+
+  
+
+  
+    <link rel="shortcut icon" type='image/x-icon' href="../../https:/www.cncrush.cn/images/favicon.ico">
+  
+
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
     
-    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
-/* This file is meant as a standalone workflow for
-- testing support for link[rel=preload]
-- enabling async CSS loading in browsers that do not support rel=preload
-- applying rel preload css once loaded, whether supported or not.
-*/ -->
-<script>
-(function( w ){
-	"use strict";
-	// rel=preload support test
-	if( !w.loadCSS ){
-		w.loadCSS = function(){};
-	}
-	// define on the loadCSS obj
-	var rp = loadCSS.relpreload = {};
-	// rel=preload feature support test
-	// runs once and returns a function for compat purposes
-	rp.support = (function(){
-		var ret;
-		try {
-			ret = w.document.createElement( "link" ).relList.supports( "preload" );
-		} catch (e) {
-			ret = false;
-		}
-		return function(){
-			return ret;
-		};
-	})();
+<link rel="stylesheet" href="../../css/style.css">
 
-	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
-	// then change that media back to its intended value on load
-	rp.bindMediaToggle = function( link ){
-		// remember existing media attr for ultimate state, or default to 'all'
-		var finalMedia = link.media || "all";
+  
 
-		function enableStylesheet(){
-			link.media = finalMedia;
-		}
+  <script id="loadcss"></script>
 
-		// bind load handlers to enable media
-		if( link.addEventListener ){
-			link.addEventListener( "load", enableStylesheet );
-		} else if( link.attachEvent ){
-			link.attachEvent( "onload", enableStylesheet );
-		}
+</head>
 
-		// Set rel and non-applicable media type to start an async request
-		// note: timeout allows this to happen async to let rendering continue in IE
-		setTimeout(function(){
-			link.rel = "stylesheet";
-			link.media = "only x";
-		});
-		// also enable media after 3 seconds,
-		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
-		setTimeout( enableStylesheet, 3000 );
-	};
+<body>
+  
 
-	// loop through link elements in DOM
-	rp.poly = function(){
-		// double check this to prevent external calls from running
-		if( rp.support() ){
-			return;
-		}
-		var links = w.document.getElementsByTagName( "link" );
-		for( var i = 0; i < links.length; i++ ){
-			var link = links[ i ];
-			// qualify links to those with rel=preload and as=style attrs
-			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
-				// prevent rerunning on link
-				link.setAttribute( "data-loadcss", true );
-				// bind listeners to toggle media back
-				rp.bindMediaToggle( link );
-			}
-		}
-	};
-
-	// if unsupported, run the polyfill
-	if( !rp.support() ){
-		// run once at least
-		rp.poly();
-
-		// rerun poly on an interval until onload
-		var run = w.setInterval( rp.poly, 500 );
-		if( w.addEventListener ){
-			w.addEventListener( "load", function(){
-				rp.poly();
-				w.clearInterval( run );
-			} );
-		} else if( w.attachEvent ){
-			w.attachEvent( "onload", function(){
-				rp.poly();
-				w.clearInterval( run );
-			} );
-		}
-	}
-
-
-	// commonjs
-	if( typeof exports !== "undefined" ){
-		exports.loadCSS = loadCSS;
-	}
-	else {
-		w.loadCSS = loadCSS;
-	}
-}( typeof global !== "undefined" ? global : this ) );
-</script>
-
-    <link rel="icon" href= "../../assets/favicon.ico" />
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
-    <link rel="preload" href="../../scripts/main.js" as="script" />
-    <link rel="preload" as="font" href="../../font/Oswald-Regular.ttf" crossorigin>
-    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
-    
-    <!-- fancybox -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
-    <!-- 百度统计  -->
-    
-    <!-- 谷歌统计  -->
-    
-<meta name="generator" content="Hexo 5.4.0"></head>
-
-    
-    
-<header class="header">
-
-    <div class="read-progress"></div>
-    <div class="header-sidebar-menu">&#xe775;</div>
-    <!-- post页的toggle banner  -->
-    
-    <a class="home-link" href=/Geisha-design.github.io/>雨争齐齐齐</a>
-</header>
-    <div class="wrapper">
-        <div class="site-intro" style="
-
-
-
-
-
-
-">
-    
-    <!-- 主页  -->
-            
-    <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(../../index.html)"></div>
-    <div class="site-intro-meta">
-        <!-- 标题  -->
-        <h1 class="intro-title">
-            <!-- 主页  -->
-            
-        </h1>
-        <!-- 副标题 -->
-        <p class="intro-subtitle">
-            <!-- 主页副标题  -->
-            
-        </p>
-        <!-- 文章页meta -->
+<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+  <div class='container'>
+  <div id='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
+          <li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
     </div>
-</div>
-        <script>
- 
-  // get user agent
-  var browser = {
-    versions: function () {
-      var u = window.navigator.userAgent;
-      return {
-        userAgent: u,
-        trident: u.indexOf('Trident') > -1, //IE内核
-        presto: u.indexOf('Presto') > -1, //opera内核
-        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
-        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
-        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
-        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
-        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
-        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
-        iPad: u.indexOf('iPad') > -1, //是否为iPad
-        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
-        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
-        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
-      };
-    }()
-  }
-  console.log("userAgent:" + browser.versions.userAgent);
-
-  // callback
-  function fontLoaded() {
-    console.log('font loaded');
-    if (document.getElementsByClassName('site-intro-meta')) {
-      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
-      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
-      var postIntros = document.getElementsByClassName('post-intros')[0]
-      if (postIntros) {
-        postIntros.classList.add('post-fade-in');
-      }
-    }
-  }
-
-  // UC不支持跨域，所以直接显示
-  function asyncCb(){
-    if (browser.versions.uc) {
-      console.log("UCBrowser");
-      fontLoaded();
-    } else {
-      WebFont.load({
-        custom: {
-          families: ['Oswald-Regular']
-        },
-        loading: function () {  //所有字体开始加载
-          // console.log('loading');
-        },
-        active: function () {  //所有字体已渲染
-          fontLoaded();
-        },
-        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
-          console.log('inactive: timeout');
-          fontLoaded();
-        },
-        timeout: 5000 // Set the timeout to two seconds
-      });
-    }
-  }
-
-  function asyncErr(){
-    console.warn('script load from CDN failed, will load local script')
-  }
-
-  // load webfont-loader async, and add callback function
-  function async(u, cb, err) {
-    var d = document, t = 'script',
-      o = d.createElement(t),
-      s = d.getElementsByTagName(t)[0];
-    o.src = u;
-    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
-    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
-    s.parentNode.insertBefore(o, s);
-  }
-
-  var asyncLoadWithFallBack = function(arr, success, reject) {
-      var currReject = function(){
-        reject()
-        arr.shift()
-        if(arr.length)
-          async(arr[0], success, currReject)
-        }
-
-      async(arr[0], success, currReject)
-  }
-
-  asyncLoadWithFallBack([
-    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
-    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
-    "../../lib/webfontloader.min.js"
-  ], asyncCb, asyncErr)
-</script>        
-        <img class="loading" src="../../assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
-        <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "../../2021/03/26/2016-03-26-distributed-data-model/" >
-            
-                <span>数据分布式模型</span>
-        </a>
-        <div class="abstract-content">
-            <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>数据的分布有两种途径：</p>
-<ul>
-<li><p>复制（replication）：</p>
-<p>  将同一份数据拷贝至多个节点；复制又分为：<strong>主从式</strong>（master-slave）和<strong>对等式</strong>（peer-to-peer）。</p>
-</li>
-<li><p>分片（sharding）：</p>
-<p>  将不同数据存放在不同节点。</p>
-</li>
-</ul>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "it">it</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "分布式">分布式</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "NoSql">NoSql</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "../../2021/03/09/2016-03-09-java-memory-area-structure/" >
-            
-                <span>Java运行时内存结构</span>
-        </a>
-        <div class="abstract-content">
-            <p><img src="http://77fkdd.com1.z0.glb.clouddn.com/it%2Fjava%2Fjava-memory-stracture.png" alt="Java内存结构图"></p>
-<p>由图所示，Java运行时内存区域分为：<strong>虚拟机栈</strong>、<strong>方法区</strong>、<strong>本地方法栈</strong>、<strong>程序计数器</strong>和<strong>堆</strong>。</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "it">it</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "jvm">jvm</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "../../2020/12/04/2014-12-04-java-is-compiled-or-interpreted/" >
-            
-                <span>Java是编译型语言还是解释型语言</span>
-        </a>
-        <div class="abstract-content">
-            <p>大多数开发人员都知道，Java源文件需要编译成.class文件才能在JVM中运行。如果继续追问，许多开发人员还会告诉你说.class中的字节码首先会被JVM解释，但是在稍后即时（JIT）编译。然而很多人将字节码含糊地理解为“在某种虚构的或者简化的CPU上运行的机器码”。</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/12/04</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "it">it</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "../../2020/08/10/2013-08-10-learn-less/" >
-            
-                <span>LESS学习</span>
-        </a>
-        <div class="abstract-content">
-            今天下午没事学了一下less，发现用来写样式表真是方便。
-1. 什么是LESSLESS是一种动态样式语言，属于CSS预处理语言的一种，它使用类似CSS的语法，为CSS的赋予了动态语言的特性，如变量、继承、运算、函数等，更方便CSS的编写和维护。
-LESS可以在多种语言、环境中使用，包括浏览器端、桌面客户端、服务端。
-LESS的很多特性，其实对于一个有编程思想的人来看其实很简单，在这就不列举了。
-详细的LESS学习传送门：http://www.lesscss.net/article/document.html
-2. JavaScript求值最让我觉得兴奋的是，LESS可以支持JavaScr...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/08/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "it">it</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "less">less</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "css">css</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "../../2020/08/01/2013-08-01-java-date-am-or-pm/" >
-            
-                <span>JAVA中判断日期是上午还是下午</span>
-        </a>
-        <div class="abstract-content">
-            12GregorianCalendar cal = new GregorianCalendar();System.out.println((cal.get(GregorianCalendar.AM_PM) == GregorianCalendar.PM)? &quot;下午&quot; : &quot;上午&quot;);
-
-当然，通过GregorianCalendar.get()还可以获取更多的信息。
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/08/01</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "date">date</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "it">it</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "../../2019/08/01/2013-08-01-macvim-config/" >
-            
-                <span>macvim配置</span>
-        </a>
-        <div class="abstract-content">
-            <p>虽然我还没用，但是记下总是好的吧，这种东西网站一输如就能找到，就不放到笔记里了。</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/01</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "it">it</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "macvim">macvim</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "vim">vim</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    <!-- paginator  -->
-    
-</main>
-            <!-- profile -->
-            
-        </div>
-        <footer class="footer footer-unloaded">
-    <!-- social  -->
-    
-    <div class="social">
+		<div class="nav-main">
+      
         
-    
-        
+        <a class="title flat-box" target="_self" href='../../index.html'>
+          
+            <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
             
-                <a href="mailto:3202990966@qq.com" class="iconfont-archer email" title=email ></a>
             
-        
-    
-        
-            
-                <a href="/github.com/Geisha-design" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
-    
-        
-            
-                <span class="iconfont-archer wechat" title=wechat>
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../index.html
                   
-                  <img class="profile-qr" src="" />
-                </span>
+                  
+                  
+                    id="indexhtml"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
             
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
 
-    </div>
-    
-    <!-- powered by Hexo  -->
-    <div class="copyright">
-        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
-    </div>
-    <!-- 不蒜子  -->
-    
-    <div class="busuanzi-container">
-    
-     
-    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
-    
-    </div>
-    
-</footer>
-    </div>
-    <!-- toc -->
-    
-    <div class="back-top iconfont-archer">&#xe639;</div>
-    <div class="sidebar sidebar-hide">
-    <ul class="sidebar-tabs sidebar-tabs-active-0">
-        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
-        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
-        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
-    </ul>
-    <div class="sidebar-content sidebar-content-show-archive">
-          <div class="sidebar-panel-archives">
-    <!-- 在ejs中将archive按照时间排序 -->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="total-and-search">
-        <div class="total-archive">
-        Total : 101
-        </div>
-        <!-- search  -->
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="雨争能有什么坏心思呢？" />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../index.html
+                  
+                  
+                  
+                    id="indexhtml"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  <div id="l_body">
+    <div id="l_cover">
+	
+  
+    
+        <div id="half" class='cover-wrapper  dock' style="display: ;">
+          
+            <div class='cover-bg lazyload placeholder' data-bg="https://gitee.com/boyqi/jpg/raw/master/4.jpg"></div>
+          
+          <div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title">GEISHA</p>
+    
+    
+      <p class="subtitle">你顺手挽住火焰，化作漫天大雪</p>
+    
+  </div>
+  <div class='bottom'>
+    <div class='menu navigation'>
+      <div class='list-h'>
         
-    </div>
-    
-    <div class="post-archive">
-    
-    
-    
-    
-    <div class="archive-year"> 2021 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/29</span><a class="archive-post-title" href= "2021/11/29/%E5%9B%9B%E7%A7%8DJavaEE%E6%9E%B6%E6%9E%84%E7%AE%80%E4%BB%8B/" >四种JavaEE架构简介</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/24</span><a class="archive-post-title" href= "2021/04/24/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%AC%AC%E4%BA%8C%E7%AB%A0%E6%80%BB%E7%BB%93/" >线性代数第二章总结</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/24</span><a class="archive-post-title" href= "2021/04/24/%E2%80%9C%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E2%80%9D/" >“计算机文件系统”</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/23</span><a class="archive-post-title" href= "2021/04/23/2020%E8%80%83%E7%A0%94%E8%AE%A1%E7%AE%97%E6%9C%BA%EF%BC%88408%EF%BC%89%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/" >2020考研计算机（408）考试大纲</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/22</span><a class="archive-post-title" href= "2021/04/22/%E2%80%9C%E5%B9%82%E7%BA%A7%E6%95%B0%E7%9A%84%E6%9C%AC%E8%B4%A8%E2%80%9D/" >“幂级数的本质”</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/21</span><a class="archive-post-title" href= "2021/04/21/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%AC%AC%E4%B8%80%E7%AB%A0%E8%8A%82%E6%80%BB%E7%BB%93/" >线性代数第一章节总结</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "2021/04/20/%E5%BE%AE%E5%88%86%E4%B8%AD%E5%80%BC%E5%A4%84%E7%90%86%E4%B9%8B%E5%B8%B8%E6%95%B0k%E5%80%BC%E6%B3%95/" >微分中值处理之常数k值法</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/19</span><a class="archive-post-title" href= "2021/04/19/2017-06-22-blog-with-github-travis-ci-and-coding-net-3/" >使用Github、Travis-CI和Coding.net自动部署博客［三］</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/18</span><a class="archive-post-title" href= "2021/04/18/qcloud-nginx-ssl/" >Nginx使用SSL证书配置https</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/17</span><a class="archive-post-title" href= "2021/04/17/port/" >线性代数思维导图</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/17</span><a class="archive-post-title" href= "2021/04/17/port%E9%AB%98%E6%95%B0%E2%80%94%E2%80%94%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%9A%84%E9%80%9A%E8%A7%A3%E5%92%8C%E7%89%B9%E8%A7%A3/" >高数——微分方程的通解和特解</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/16</span><a class="archive-post-title" href= "2021/04/16/port%E5%9D%82%E6%9C%AC%E9%BE%99%E4%B8%80%E5%85%88%E7%94%9F%E5%AF%B9%E6%88%91%E7%9A%84%E5%BD%B1%E5%93%8D/" >坂本龙一先生对我的影响</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/16</span><a class="archive-post-title" href= "2021/04/16/2013-04-28-recent/" >只是最近</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/16</span><a class="archive-post-title" href= "2021/04/16/2015-04-15-a-lunch/" >一顿午饭</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/15</span><a class="archive-post-title" href= "2021/04/15/port%E8%AE%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0/" >论数据库连接池</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/14</span><a class="archive-post-title" href= "2021/04/14/portmac%E7%9A%84brew%E5%AE%89%E8%A3%85%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/" >mac的brew安装快捷方式</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/14</span><a class="archive-post-title" href= "2021/04/14/port%E2%80%9Cmac%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E7%AC%AC%E4%BA%8C%E5%BC%B9%E2%80%9D/" >“mac虚拟机解决方案第二弹”</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/14</span><a class="archive-post-title" href= "2021/04/14/port%E2%80%9C%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E4%B9%8B%E7%B4%AF%E6%AC%A1%E7%A7%AF%E5%88%86%E6%B3%95%E2%80%9D/" >“二重积分之累次积分法”</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/13</span><a class="archive-post-title" href= "2021/04/13/mac%E4%B8%8A%E5%AE%89%E8%A3%85%E8%99%9A%E6%8B%9F%E6%9C%BA/" >mac上安装虚拟机</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/13</span><a class="archive-post-title" href= "2021/04/13/%E8%AE%BA%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" >论微分方程</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/13</span><a class="archive-post-title" href= "2021/04/13/%E5%BE%AE%E5%88%86%E4%B8%8E%E5%AF%BC%E6%95%B0%E7%9A%84%E5%8C%BA%E5%88%AB/" >微分与导数的区别</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/13</span><a class="archive-post-title" href= "2021/04/13/%E5%BE%AE%E5%88%86%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88/" >微分到底是什么</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/11</span><a class="archive-post-title" href= "2021/04/11/2013-05-09-one-night/" >睡前牢骚</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/08</span><a class="archive-post-title" href= "2021/04/08/2013-05-08-ui-design-principles/" >好文用户接口（UI）设计的 20 条原则</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/02</span><a class="archive-post-title" href= "2021/04/02/iOS%E3%80%81macOS%E7%B3%BB%E7%BB%9F%E5%BA%94%E7%94%A8%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/" >iOS、macOS系统应用管理机制</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/26</span><a class="archive-post-title" href= "2021/03/26/2016-03-26-distributed-data-model/" >数据分布式模型</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "2021/03/18/2013-04-06-beijing-again/" >又一次来到了北京</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/09</span><a class="archive-post-title" href= "2021/03/09/2016-03-09-java-memory-area-structure/" >Java运行时内存结构</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/05</span><a class="archive-post-title" href= "2021/02/05/%E5%BA%94%E7%94%A8%E5%B1%82/" >应用层</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/05</span><a class="archive-post-title" href= "2021/02/05/%E4%BC%A0%E8%BE%93%E5%B1%82/" >传输层</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/05</span><a class="archive-post-title" href= "2021/02/05/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/" >数据链路层</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/05</span><a class="archive-post-title" href= "2021/02/05/%E7%BD%91%E7%BB%9C%E5%B1%82/" >网络层</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/05</span><a class="archive-post-title" href= "2021/02/05/%E7%89%A9%E7%90%86%E5%B1%82/" >物理层</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/05</span><a class="archive-post-title" href= "2021/02/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0Part1%E6%A6%82%E8%BF%B0/" >计算机网络笔记概述</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/30</span><a class="archive-post-title" href= "2021/01/30/2015-01-30-diffrence-between-mvn-clean-install-and-mvn-install/" >mvn打包的时候为什么用clean</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "2021/01/18/2020-01-18-time-protocol/" >时间协议</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/07</span><a class="archive-post-title" href= "2021/01/07/2013-05-15-maxim-coco/" >马克西姆可可粉</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2020 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "2020/12/10/docker%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BD%BF%E7%94%A8mysql%E6%95%B0%E6%8D%AE%E5%BA%93/" >Docker环境下使用mysql数据库</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/07</span><a class="archive-post-title" href= "2020/12/07/%E7%AE%80%E8%BF%B0%E5%BE%AE%E6%9C%8D%E5%8A%A1%E8%AE%BE%E8%AE%A1/" >简述微服务设计</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/04</span><a class="archive-post-title" href= "2020/12/04/2014-12-04-java-is-compiled-or-interpreted/" >Java是编译型语言还是解释型语言</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/02</span><a class="archive-post-title" href= "2020/12/02/2013-12-02-jdk-version-switch-in-mac/" >MAC下JDK版本的切换</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/29</span><a class="archive-post-title" href= "2020/11/29/hexo%E4%B8%AD%E6%B7%BB%E5%8A%A0%E9%BC%A0%E6%A0%87%E5%8F%B3%E9%94%AE%E5%8A%9F%E8%83%BD/" >hexo中添加鼠标右键功能</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/29</span><a class="archive-post-title" href= "2020/11/29/%E4%B8%BB%E9%A2%98%E5%AE%9E%E7%8E%B0%E5%85%A8%E5%B1%80%E6%92%AD%E6%94%BE%E8%83%8C%E6%99%AF%E9%9F%B3%E4%B9%90/" >主题实现全局播放背景音乐</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/25</span><a class="archive-post-title" href= "2020/11/25/2013-11-25-java-reflect-set-value/" >Java使用反射设置值</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "2020/11/21/springboot%E5%85%A5%E9%97%A8/" >springboot入门</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "2020/11/21/%E5%88%9D%E5%A7%8B%E6%90%AD%E5%BB%BA/" >hexo初始搭建</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "2020/11/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%88%86%E4%BA%AB/" >二叉树遍历算法学习分享</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "2020/11/21/hexo%E4%B9%8B%E5%88%86%E7%B1%BB%E9%9B%B7%E8%BE%BE/" >hexo博客优化之实用功能添加系列分类雷达</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "2020/11/21/volantis%E4%B9%8B%E6%89%93%E8%B5%8F%E6%A8%A1%E5%9D%97/" >volantis之打赏模块</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/19</span><a class="archive-post-title" href= "2020/11/19/hexo%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96%E8%BF%9B%E9%98%B6/" >hexo主题美化进阶<hexo主题美化进阶></a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/19</span><a class="archive-post-title" href= "2020/11/19/kmp%E7%AE%97%E6%B3%95%E8%A7%A3%E6%9E%90/" >kmp算法解析<kmp算法解析></a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/19</span><a class="archive-post-title" href= "2020/11/19/hexo%E4%B9%8BVolantis%E6%B7%BB%E5%8A%A0%E6%9A%97%E9%BB%91%E6%A8%A1%E5%BC%8F/" >hexo之Volantis添加暗黑模式</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/18</span><a class="archive-post-title" href= "2020/11/18/2013-11-18-vim-encoding-convert/" >VIM对于文件字符编码的转换</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/16</span><a class="archive-post-title" href= "2020/11/16/2013-11-16-java-markdown-lib/" >Java中使用Markdown</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/12</span><a class="archive-post-title" href= "2020/11/12/2013-11-12-design-patterns-observer/" >设计模式学习笔记观察者模式</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/29</span><a class="archive-post-title" href= "2020/10/29/2013-10-29-tomcat-remote-debug/" >Tomcat打开远程调试</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/29</span><a class="archive-post-title" href= "2020/10/29/2013-05-16-tomcat-install-cert/" >Tomcat安装CA证书（详细过程篇）</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "2020/10/28/2014-10-28-groovy-starting/" >Groovy开始</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/23</span><a class="archive-post-title" href= "2020/10/23/2013-05-16-hibernate-load-get-compare/" >Hibernate的load和get比较</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "2020/10/08/2016-10-08-js-window-print-blank/" >JavaScript执行window.print()打印内容为空白</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/05</span><a class="archive-post-title" href= "2020/10/05/2016-10-05-blog-with-github-travis-ci-and-coding-net-2/" >使用Github、Travis-CI和Coding.net自动部署博客［二］</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/01</span><a class="archive-post-title" href= "2020/10/01/2016-10-01-yushiji/" >寓食记</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/20</span><a class="archive-post-title" href= "2020/09/20/2016-09-20-blog-with-github-travis-ci-and-coding-net-1/" >使用Github、Travis-CI和Coding.net自动部署博客［一］</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/28</span><a class="archive-post-title" href= "2020/08/28/2017-08-28-i18next/" >i18next</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/10</span><a class="archive-post-title" href= "2020/08/10/2013-08-10-learn-less/" >LESS学习</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "2020/08/01/2013-08-01-java-date-am-or-pm/" >JAVA中判断日期是上午还是下午</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">07/07</span><a class="archive-post-title" href= "2020/07/07/2017-07-07-non-root-user-config-for-ssh-key-login/" >错误排查：非ROOT用户使用密钥进行ssh登录提示输入密码</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href= "2020/06/29/2013-06-29-eclipse-maven-web-project/" >Eclipse创建Maven的Web工程</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/21</span><a class="archive-post-title" href= "2020/06/21/2013-06-21-wicket-link-confirm/" >Wicket使用Link加JS的Confirm</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/21</span><a class="archive-post-title" href= "2020/06/21/2017-06-21-use-editorconfig/" >使用EditorConfig</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/05</span><a class="archive-post-title" href= "2020/06/05/2013-06-05-say-about-app-ui-design/" >随便说说应用的界面</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "2020/03/18/2013-03-18-need-a-list/" >需要一个好的计划</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/29</span><a class="archive-post-title" href= "2020/02/29/2016-02-29-rules-of-front-end-optimization/" >前端优化法则</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/26</span><a class="archive-post-title" href= "2020/02/26/2013-02-26-beijing-first-time/" >第一次来北京</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/12</span><a class="archive-post-title" href= "2020/02/12/2013-02-12-railsxue-xi-bi-ji/" >Rails学习笔记-11.2</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2019 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span><a class="archive-post-title" href= "2019/12/06/2013-12-06-java-object-equals/" >JAVA对象equals的技巧</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/23</span><a class="archive-post-title" href= "2019/10/23/2019-10-23-talk-spring-stereotype/" >聊聊Spring的stereotype注解</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/21</span><a class="archive-post-title" href= "2019/10/21/2019-10-21-JetBrains-All-Products-Pack-license/" >免费申请 JetBrains 全产品 License</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/16</span><a class="archive-post-title" href= "2019/08/16/2014-08-16-design-pattern-decorator/" >设计模式学习笔记油漆工模式</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "2019/08/01/2013-08-01-macvim-config/" >macvim配置</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">07/21</span><a class="archive-post-title" href= "2019/07/21/2013-07-21-sudden-rain/" >怎么突然下雨了</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/30</span><a class="archive-post-title" href= "2019/06/30/2019-06-30-one-hexo-theme-aloha/" >Aloha 一个Hexo主题</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/28</span><a class="archive-post-title" href= "2019/05/28/2013-05-28-pre-tag-in-html-with-fixed-width/" >多浏览器支持pre固定宽度</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/05</span><a class="archive-post-title" href= "2019/05/05/2013-05-05-after-film-iron-man/" >写在《钢铁侠3》之后</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/30</span><a class="archive-post-title" href= "2019/03/30/2013-03-30-distant-church/" >远处的教堂</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/13</span><a class="archive-post-title" href= "2019/03/13/2016-03-13-Wicket-Hello-World/" >Wicket的HelloWorld</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/10</span><a class="archive-post-title" href= "2019/03/10/2013-03-10-yi-ge-zhou-mo/" >一个周末的随感</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/20</span><a class="archive-post-title" href= "2019/02/20/2013-02-20-vmware-network-config/" >新手VMware网络配置</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/20</span><a class="archive-post-title" href= "2019/02/20/2013-02-20-design-patterns-singleton/" >设计模式学习笔记单例模式</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/20</span><a class="archive-post-title" href= "2019/02/20/2013-02-20-design-patterns-factory/" >设计模式学习笔记工厂方法模式</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/19</span><a class="archive-post-title" href= "2019/02/19/2015-02-19-runner-of-kite/" >说点关于《追风筝的人》</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2018 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/07</span><a class="archive-post-title" href= "2018/12/07/2013-05-16-list-cannot-remove/" >JAVAList不能使用remove()</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/15</span><a class="archive-post-title" href= "2018/11/15/2013-05-16-mysql-slave-1/" >MYSQL主从同步错误解决</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "2018/11/01/2014-11-01-octopress-to-hexo/" >从Octopress转到Hexo</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/21</span><a class="archive-post-title" href= "2018/05/21/2013-05-21-running/" >跑出第一步</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/05</span><a class="archive-post-title" href= "2018/04/05/2014-04-05-shortcuts-of-eclipse-on-mac/" >Mac下Eclipse快捷键</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/04</span><a class="archive-post-title" href= "2018/04/04/2016-04-04-webjars-introduction/" >WebJars介绍</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/29</span><a class="archive-post-title" href= "2018/03/29/2016-03-29-maven-build-jar-no-class-file/" >Maven打jar包内容出错</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2016 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/07</span><a class="archive-post-title" href= "2016/04/07/2016-04-07-webjars-usage-sample/" >WebJars使用示例</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2015 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/10</span><a class="archive-post-title" href= "2015/04/10/2015-04-10-design-patterns-mediator/" >设计模式Mediator</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2013 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/21</span><a class="archive-post-title" href= "2013/06/21/2013-06-21-python-ini/" >Python配置ini，大小写敏感</a>
-        </li>
-    
+          
+            <a href="../../v4/getting-started/"
+              
+              
+              id="v4getting-started">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg'><p>文档</p>
+            </a>
+          
+            <a href="../../faqs/"
+              
+              
+              id="faqs">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg'><p>帮助</p>
+            </a>
+          
+            <a href="../../examples/"
+              
+              
+              id="examples">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg'><p>示例</p>
+            </a>
+          
+            <a href="../../contributors/"
+              
+              
+              id="contributors">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f389.svg'><p>社区</p>
+            </a>
+          
+            <a href="../../archives/"
+              
+              
+              id="archives">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg'><p>博客</p>
+            </a>
+          
+            <a href="../../https:/github.com/Geisha-design"
+              
+              
+              id="https:githubcomGeisha-design">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg'><p>GitHub</p>
+            </a>
+          
+        
+      </div>
     </div>
   </div>
-        <div class="sidebar-panel-tags">
-    <div class="sidebar-tags-name">
-    
-        <span class="sidebar-tag-name" data-tags="rails"><span class="iconfont-archer">&#xe606;</span>rails</span>
-    
-        <span class="sidebar-tag-name" data-tags="web"><span class="iconfont-archer">&#xe606;</span>web</span>
-    
-        <span class="sidebar-tag-name" data-tags="IT"><span class="iconfont-archer">&#xe606;</span>IT</span>
-    
-        <span class="sidebar-tag-name" data-tags="设计模式"><span class="iconfont-archer">&#xe606;</span>设计模式</span>
-    
-        <span class="sidebar-tag-name" data-tags="Java"><span class="iconfont-archer">&#xe606;</span>Java</span>
-    
-        <span class="sidebar-tag-name" data-tags="VMware"><span class="iconfont-archer">&#xe606;</span>VMware</span>
-    
-        <span class="sidebar-tag-name" data-tags="虚拟机"><span class="iconfont-archer">&#xe606;</span>虚拟机</span>
-    
-        <span class="sidebar-tag-name" data-tags="日志"><span class="iconfont-archer">&#xe606;</span>日志</span>
-    
-        <span class="sidebar-tag-name" data-tags="杂事"><span class="iconfont-archer">&#xe606;</span>杂事</span>
-    
-        <span class="sidebar-tag-name" data-tags="工作"><span class="iconfont-archer">&#xe606;</span>工作</span>
-    
-        <span class="sidebar-tag-name" data-tags="周末"><span class="iconfont-archer">&#xe606;</span>周末</span>
-    
-        <span class="sidebar-tag-name" data-tags="无图"><span class="iconfont-archer">&#xe606;</span>无图</span>
-    
-        <span class="sidebar-tag-name" data-tags="日记"><span class="iconfont-archer">&#xe606;</span>日记</span>
-    
-        <span class="sidebar-tag-name" data-tags="图片"><span class="iconfont-archer">&#xe606;</span>图片</span>
-    
-        <span class="sidebar-tag-name" data-tags="风景"><span class="iconfont-archer">&#xe606;</span>风景</span>
-    
-        <span class="sidebar-tag-name" data-tags="假期"><span class="iconfont-archer">&#xe606;</span>假期</span>
-    
-        <span class="sidebar-tag-name" data-tags="电影"><span class="iconfont-archer">&#xe606;</span>电影</span>
-    
-        <span class="sidebar-tag-name" data-tags="文章"><span class="iconfont-archer">&#xe606;</span>文章</span>
-    
-        <span class="sidebar-tag-name" data-tags="舶来品"><span class="iconfont-archer">&#xe606;</span>舶来品</span>
-    
-        <span class="sidebar-tag-name" data-tags="好文"><span class="iconfont-archer">&#xe606;</span>好文</span>
-    
-        <span class="sidebar-tag-name" data-tags="JAVA"><span class="iconfont-archer">&#xe606;</span>JAVA</span>
-    
-        <span class="sidebar-tag-name" data-tags="心情"><span class="iconfont-archer">&#xe606;</span>心情</span>
-    
-        <span class="sidebar-tag-name" data-tags="MYSQL"><span class="iconfont-archer">&#xe606;</span>MYSQL</span>
-    
-        <span class="sidebar-tag-name" data-tags="数据库"><span class="iconfont-archer">&#xe606;</span>数据库</span>
-    
-        <span class="sidebar-tag-name" data-tags="TOMCAT"><span class="iconfont-archer">&#xe606;</span>TOMCAT</span>
-    
-        <span class="sidebar-tag-name" data-tags="运动"><span class="iconfont-archer">&#xe606;</span>运动</span>
-    
-        <span class="sidebar-tag-name" data-tags="UI"><span class="iconfont-archer">&#xe606;</span>UI</span>
-    
-        <span class="sidebar-tag-name" data-tags="CSS"><span class="iconfont-archer">&#xe606;</span>CSS</span>
-    
-        <span class="sidebar-tag-name" data-tags="HTML"><span class="iconfont-archer">&#xe606;</span>HTML</span>
-    
-        <span class="sidebar-tag-name" data-tags="Maven"><span class="iconfont-archer">&#xe606;</span>Maven</span>
-    
-        <span class="sidebar-tag-name" data-tags="Eclipse"><span class="iconfont-archer">&#xe606;</span>Eclipse</span>
-    
-        <span class="sidebar-tag-name" data-tags="Wicket"><span class="iconfont-archer">&#xe606;</span>Wicket</span>
-    
-        <span class="sidebar-tag-name" data-tags="杂文"><span class="iconfont-archer">&#xe606;</span>杂文</span>
-    
-        <span class="sidebar-tag-name" data-tags="说点啥"><span class="iconfont-archer">&#xe606;</span>说点啥</span>
-    
-        <span class="sidebar-tag-name" data-tags="java"><span class="iconfont-archer">&#xe606;</span>java</span>
-    
-        <span class="sidebar-tag-name" data-tags="date"><span class="iconfont-archer">&#xe606;</span>date</span>
-    
-        <span class="sidebar-tag-name" data-tags="it"><span class="iconfont-archer">&#xe606;</span>it</span>
-    
-        <span class="sidebar-tag-name" data-tags="macvim"><span class="iconfont-archer">&#xe606;</span>macvim</span>
-    
-        <span class="sidebar-tag-name" data-tags="vim"><span class="iconfont-archer">&#xe606;</span>vim</span>
-    
-        <span class="sidebar-tag-name" data-tags="观察者"><span class="iconfont-archer">&#xe606;</span>观察者</span>
-    
-        <span class="sidebar-tag-name" data-tags="observer"><span class="iconfont-archer">&#xe606;</span>observer</span>
-    
-        <span class="sidebar-tag-name" data-tags="less"><span class="iconfont-archer">&#xe606;</span>less</span>
-    
-        <span class="sidebar-tag-name" data-tags="css"><span class="iconfont-archer">&#xe606;</span>css</span>
-    
-        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
-    
-        <span class="sidebar-tag-name" data-tags="ini"><span class="iconfont-archer">&#xe606;</span>ini</span>
-    
-        <span class="sidebar-tag-name" data-tags="linux"><span class="iconfont-archer">&#xe606;</span>linux</span>
-    
-        <span class="sidebar-tag-name" data-tags="mac"><span class="iconfont-archer">&#xe606;</span>mac</span>
-    
-        <span class="sidebar-tag-name" data-tags="reflect"><span class="iconfont-archer">&#xe606;</span>reflect</span>
-    
-        <span class="sidebar-tag-name" data-tags="Field"><span class="iconfont-archer">&#xe606;</span>Field</span>
-    
-        <span class="sidebar-tag-name" data-tags="equals"><span class="iconfont-archer">&#xe606;</span>equals</span>
-    
-        <span class="sidebar-tag-name" data-tags="object"><span class="iconfont-archer">&#xe606;</span>object</span>
-    
-        <span class="sidebar-tag-name" data-tags="jdk"><span class="iconfont-archer">&#xe606;</span>jdk</span>
-    
-        <span class="sidebar-tag-name" data-tags="油漆工"><span class="iconfont-archer">&#xe606;</span>油漆工</span>
-    
-        <span class="sidebar-tag-name" data-tags="decorator"><span class="iconfont-archer">&#xe606;</span>decorator</span>
-    
-        <span class="sidebar-tag-name" data-tags="eclipse"><span class="iconfont-archer">&#xe606;</span>eclipse</span>
-    
-        <span class="sidebar-tag-name" data-tags="Groovy"><span class="iconfont-archer">&#xe606;</span>Groovy</span>
-    
-        <span class="sidebar-tag-name" data-tags="JVM"><span class="iconfont-archer">&#xe606;</span>JVM</span>
-    
-        <span class="sidebar-tag-name" data-tags="markdown"><span class="iconfont-archer">&#xe606;</span>markdown</span>
-    
-        <span class="sidebar-tag-name" data-tags="maven"><span class="iconfont-archer">&#xe606;</span>maven</span>
-    
-        <span class="sidebar-tag-name" data-tags="杂谈"><span class="iconfont-archer">&#xe606;</span>杂谈</span>
-    
-        <span class="sidebar-tag-name" data-tags="记录"><span class="iconfont-archer">&#xe606;</span>记录</span>
-    
-        <span class="sidebar-tag-name" data-tags="生活"><span class="iconfont-archer">&#xe606;</span>生活</span>
-    
-        <span class="sidebar-tag-name" data-tags="中介者"><span class="iconfont-archer">&#xe606;</span>中介者</span>
-    
-        <span class="sidebar-tag-name" data-tags="mediator"><span class="iconfont-archer">&#xe606;</span>mediator</span>
-    
-        <span class="sidebar-tag-name" data-tags="前端"><span class="iconfont-archer">&#xe606;</span>前端</span>
-    
-        <span class="sidebar-tag-name" data-tags="javascript"><span class="iconfont-archer">&#xe606;</span>javascript</span>
-    
-        <span class="sidebar-tag-name" data-tags="jvm"><span class="iconfont-archer">&#xe606;</span>jvm</span>
-    
-        <span class="sidebar-tag-name" data-tags="分布式"><span class="iconfont-archer">&#xe606;</span>分布式</span>
-    
-        <span class="sidebar-tag-name" data-tags="NoSql"><span class="iconfont-archer">&#xe606;</span>NoSql</span>
-    
-        <span class="sidebar-tag-name" data-tags="wicket"><span class="iconfont-archer">&#xe606;</span>wicket</span>
-    
-        <span class="sidebar-tag-name" data-tags="webjars"><span class="iconfont-archer">&#xe606;</span>webjars</span>
-    
-        <span class="sidebar-tag-name" data-tags="jar"><span class="iconfont-archer">&#xe606;</span>jar</span>
-    
-        <span class="sidebar-tag-name" data-tags="github"><span class="iconfont-archer">&#xe606;</span>github</span>
-    
-        <span class="sidebar-tag-name" data-tags="travis"><span class="iconfont-archer">&#xe606;</span>travis</span>
-    
-        <span class="sidebar-tag-name" data-tags="coding.net"><span class="iconfont-archer">&#xe606;</span>coding.net</span>
-    
-        <span class="sidebar-tag-name" data-tags="JavaScript"><span class="iconfont-archer">&#xe606;</span>JavaScript</span>
-    
-        <span class="sidebar-tag-name" data-tags="ssh"><span class="iconfont-archer">&#xe606;</span>ssh</span>
-    
-        <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
-    
-        <span class="sidebar-tag-name" data-tags="gogs"><span class="iconfont-archer">&#xe606;</span>gogs</span>
-    
-        <span class="sidebar-tag-name" data-tags="coding"><span class="iconfont-archer">&#xe606;</span>coding</span>
-    
-        <span class="sidebar-tag-name" data-tags="IDE"><span class="iconfont-archer">&#xe606;</span>IDE</span>
-    
-        <span class="sidebar-tag-name" data-tags="editor"><span class="iconfont-archer">&#xe606;</span>editor</span>
-    
-        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
-    
-        <span class="sidebar-tag-name" data-tags="Node.js"><span class="iconfont-archer">&#xe606;</span>Node.js</span>
-    
-        <span class="sidebar-tag-name" data-tags="express"><span class="iconfont-archer">&#xe606;</span>express</span>
-    
-        <span class="sidebar-tag-name" data-tags="i18n"><span class="iconfont-archer">&#xe606;</span>i18n</span>
-    
-        <span class="sidebar-tag-name" data-tags="技术"><span class="iconfont-archer">&#xe606;</span>技术</span>
-    
-        <span class="sidebar-tag-name" data-tags="教程"><span class="iconfont-archer">&#xe606;</span>教程</span>
-    
-        <span class="sidebar-tag-name" data-tags="开发"><span class="iconfont-archer">&#xe606;</span>开发</span>
-    
-        <span class="sidebar-tag-name" data-tags="小知识点"><span class="iconfont-archer">&#xe606;</span>小知识点</span>
-    
-        <span class="sidebar-tag-name" data-tags="网络"><span class="iconfont-archer">&#xe606;</span>网络</span>
-    
-        <span class="sidebar-tag-name" data-tags="tomcat"><span class="iconfont-archer">&#xe606;</span>tomcat</span>
-    
-        <span class="sidebar-tag-name" data-tags="debug"><span class="iconfont-archer">&#xe606;</span>debug</span>
-    
-        <span class="sidebar-tag-name" data-tags="remote"><span class="iconfont-archer">&#xe606;</span>remote</span>
-    
-        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
-    
-        <span class="sidebar-tag-name" data-tags="数据结构"><span class="iconfont-archer">&#xe606;</span>数据结构</span>
-    
-        <span class="sidebar-tag-name" data-tags="线性代数"><span class="iconfont-archer">&#xe606;</span>线性代数</span>
-    
-        <span class="sidebar-tag-name" data-tags="计算机"><span class="iconfont-archer">&#xe606;</span>计算机</span>
-    
-        <span class="sidebar-tag-name" data-tags="高等数学"><span class="iconfont-archer">&#xe606;</span>高等数学</span>
-    
-        <span class="sidebar-tag-name" data-tags="nginx"><span class="iconfont-archer">&#xe606;</span>nginx</span>
-    
-        <span class="sidebar-tag-name" data-tags="qcloud"><span class="iconfont-archer">&#xe606;</span>qcloud</span>
-    
-        <span class="sidebar-tag-name" data-tags="ssl"><span class="iconfont-archer">&#xe606;</span>ssl</span>
-    
-        <span class="sidebar-tag-name" data-tags="https"><span class="iconfont-archer">&#xe606;</span>https</span>
-    
-        <span class="sidebar-tag-name" data-tags="计算机网络"><span class="iconfont-archer">&#xe606;</span>计算机网络</span>
-    
-        <span class="sidebar-tag-name" data-tags="数据机构"><span class="iconfont-archer">&#xe606;</span>数据机构</span>
-    
-        <span class="sidebar-tag-name" data-tags="计算机常识"><span class="iconfont-archer">&#xe606;</span>计算机常识</span>
-    
-        <span class="sidebar-tag-name" data-tags="艺术家"><span class="iconfont-archer">&#xe606;</span>艺术家</span>
-    
-        <span class="sidebar-tag-name" data-tags="微服务"><span class="iconfont-archer">&#xe606;</span>微服务</span>
-    
-    </div>
-    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
-    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
-    缺失模块。<br/>
-    1、请确保node版本大于6.2<br/>
-    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
-    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
-    3、在根目录_config.yml里添加配置：
-    <pre style="color: #787878; font-size: 0.6rem;">
-jsonContent:
-  meta: false
-  pages: false
-  posts:
-    title: true
-    date: true
-    path: true
-    text: false
-    raw: false
-    content: false
-    slug: false
-    updated: false
-    comments: false
-    link: false
-    permalink: false
-    excerpt: false
-    categories: true
-    tags: true</pre>
-    </div> 
-    <div class="sidebar-tags-list"></div>
 </div>
-        <div class="sidebar-panel-categories">
-    <div class="sidebar-categories-name">
+
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+        </div>
     
-        <span class="sidebar-category-name" data-categories="java"><span class="iconfont-archer">&#xe60a;</span>java</span>
+  
+  </div>
+
+    <div id='safearea'>
+      <div class='body-wrapper' id="pjax-container">
+        
+
+
+<div class='l_main'>
+  
     
-        <span class="sidebar-category-name" data-categories="计算机常识"><span class="iconfont-archer">&#xe60a;</span>计算机常识</span>
+      
+  <section class="post-list">
     
-        <span class="sidebar-category-name" data-categories="生活"><span class="iconfont-archer">&#xe60a;</span>生活</span>
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
     
-        <span class="sidebar-category-name" data-categories="mysql"><span class="iconfont-archer">&#xe60a;</span>mysql</span>
     
-        <span class="sidebar-category-name" data-categories="ui"><span class="iconfont-archer">&#xe60a;</span>ui</span>
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
     
-        <span class="sidebar-category-name" data-categories="三剑客"><span class="iconfont-archer">&#xe60a;</span>三剑客</span>
+    <h2 class="article-title" >
+      <a href="../../2020/10/29/2013-05-16-tomcat-install-cert/">
+        Tomcat安装CA证书（详细过程篇）
+      </a>
+    </h2>
+  
+  <div class='md'>
     
-        <span class="sidebar-category-name" data-categories="python"><span class="iconfont-archer">&#xe60a;</span>python</span>
+      <p><strong>1.创建一个本地证书：&nbsp;</strong><br><br>C:\j2sdk1.4.2_05\bin&gt;;keytool&nbsp;-genkey&nbsp;-alias&nbsp;tomcat&nbsp;-keyalg&nbsp;RSA&nbsp;-keystore&nbsp;keystore&nbsp;<br>输入keystore密码：&nbsp;&nbsp;12345678&nbsp;<br>您的名字与姓氏是什么？&nbsp;<br>&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;www.test.com&nbsp;<br>您的组织单位名称是什么？&nbsp;<br>&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;system&nbsp;<br>您的组织名称是什么？&nbsp;<br>&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;test&nbsp;<br>您所在的城市或区域名称是什么？&nbsp;<br>&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;beijing&nbsp;<br>您所在的州或省份名称是什么？&nbsp;<br>&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;beijing&nbsp;<br>该单位的两字母国家代码是什么&nbsp;<br>&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;cn&nbsp;<br>CN=liujx,&nbsp;OU=system,&nbsp;O=test,&nbsp;L=beijing,&nbsp;ST=beijing,&nbsp;C=cn&nbsp;正确吗？&nbsp;<br>&nbsp;&nbsp;[否]：&nbsp;&nbsp;y&nbsp;<br><br>输入&lt;tomcat&gt;;的主密码&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（如果和&nbsp;keystore&nbsp;密码相同，按回车）：&nbsp;</p>
+<p></p>
     
-        <span class="sidebar-category-name" data-categories="hexo"><span class="iconfont-archer">&#xe60a;</span>hexo</span>
-    
-        <span class="sidebar-category-name" data-categories="计算机网络综合"><span class="iconfont-archer">&#xe60a;</span>计算机网络综合</span>
-    
-        <span class="sidebar-category-name" data-categories="数据结构"><span class="iconfont-archer">&#xe60a;</span>数据结构</span>
-    
-        <span class="sidebar-category-name" data-categories="线性代数"><span class="iconfont-archer">&#xe60a;</span>线性代数</span>
-    
-        <span class="sidebar-category-name" data-categories="高等数学"><span class="iconfont-archer">&#xe60a;</span>高等数学</span>
-    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2020-10-29</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="../../categories/java/">java</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='../../2020/10/29/2013-05-16-tomcat-install-cert/'>
+            Read More
+          </a>
+        </div>
+      
     </div>
-    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
-    <div class="sidebar-categories-list"></div>
+  
+
 </div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="../../2020/10/28/2014-10-28-groovy-starting/">
+        Groovy开始
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      <p>之前看了《Java程序员修炼之道》，第三部分JVM上的多语言编程里面讲到JVM上面的一些脚本语言，有Groovy，Scala，Clojure，没有等。于是这两天学了一下Groovy，发现还真是方便，最明显的就是他的闭包Closure。</p>
+<p>平时在用Java编程的时候，写着写着总是有点烦，一个很简单的方法都要写一堆代码，其实具体逻辑就一行，想着用闭包多好，那么Groovy完全就可以用得上。</p>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2020-10-28</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="../../categories/java/">java</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='../../2020/10/28/2014-10-28-groovy-starting/'>
+            Read More
+          </a>
+        </div>
+      
     </div>
-</div> 
-    <script>
-    var siteMeta = {
-        root: "/Geisha-design.github.io/",
-        author: "齐雨争"
-    }
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="../../2020/10/23/2013-05-16-hibernate-load-get-compare/">
+        Hibernate的load和get比较
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      <div><strong>get和load的实现</strong></div>
+<div>
+<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;load event(产生) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;onLoad Event</div>
+<div>&nbsp; &nbsp; &nbsp;&nbsp;Hibernate&nbsp;--------------------&gt;LoadEventListener---------------&gt;event<strong>①</strong>------&gt;return event-----&gt;getResult()</div>
+<div>&nbsp; &nbsp;<strong>&nbsp;其中：①</strong>:------&gt;setResult(event.session(查找))</div>
+</div>
+<p><span style="background-color: #ffffff;"><strong>未使用二级缓存</strong> <strong></strong>&nbsp;</span> &nbsp;&nbsp;</p>
+<p>load 先从缓存（一级）中查找，如果没有查询结果，就到数据库中查找，不管查询结果如何，都返回XX_$$_javassist_0对象（代理类实例）。</p>
+<p></p>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2020-10-23</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="../../categories/java/">java</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='../../2020/10/23/2013-05-16-hibernate-load-get-compare/'>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="../../2019/02/20/2013-02-20-vmware-network-config/">
+        新手VMware网络配置
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      <p>这个问题以前一直没专门去想过，只是网络不通了我才去折腾，实在不行就问别人，今天总算好好的去理解了一下。这篇文章能写出来，最需要感谢的是华叔。</p>
+<h3 id="首先，是对三种模式的理解："><a href="#首先，是对三种模式的理解：" class="headerlink" title="首先，是对三种模式的理解："></a><strong>首先，是对三种模式的理解：</strong></h3><h4 id="1-Bridged（桥接模式）"><a href="#1-Bridged（桥接模式）" class="headerlink" title="1.Bridged（桥接模式）:"></a><strong>1.Bridged（桥接模式）:</strong></h4><blockquote>
+<p>主机&lt;–&gt;主机所在网段&lt;–&gt;虚拟机</p>
+</blockquote>
+<blockquote>
+<p>比如：主机的IP为__192.168.40.230__，也就是__40网段__，那么虚拟机配__192.168.40.26__就可以和主机所在的网段通信，桥接的意思可以理解为主机的网卡直接插在虚拟机上。</p>
+</blockquote>
+<h4 id="2-Host-only"><a href="#2-Host-only" class="headerlink" title="2.Host-only:"></a><strong>2.Host-only:</strong></h4><blockquote>
+<p>主机和虚拟机之间建立自己的通信，需配置成网络在同一网段,两个虚拟机之间配置成Host-only也可以互相通信。</p>
+</blockquote>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2019-02-20</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/">计算机常识</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='../../2019/02/20/2013-02-20-vmware-network-config/'>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="../../2019/02/20/2013-02-20-design-patterns-singleton/">
+        设计模式学习笔记单例模式
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      <p>最近在看秦小波的__《设计模式之禅》__，虽然这东西只看是没有用的，但是在实际使用之前学习23种模式的概念，还是很重要！</p>
+<h3 id="单例模式类图（这是饿汉式的）"><a href="#单例模式类图（这是饿汉式的）" class="headerlink" title="单例模式类图（这是饿汉式的）"></a>单例模式类图（这是饿汉式的）</h3><p><img src="http://cnhaloimg.wxio.club/designpatterns/singleton_class.jpg" class="lazyload" data-srcset="http://cnhaloimg.wxio.club/designpatterns/singleton_class.jpg" srcset="data:image/png;base64,666" alt="单例模式类图"></p>
+<h3 id="单例模式通用代码（饿汉式）"><a href="#单例模式通用代码（饿汉式）" class="headerlink" title="单例模式通用代码（饿汉式）"></a>单例模式通用代码（饿汉式）</h3>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2019-02-20</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="../../categories/java/">java</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='../../2019/02/20/2013-02-20-design-patterns-singleton/'>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="../../2019/02/20/2013-02-20-design-patterns-factory/">
+        设计模式学习笔记工厂方法模式
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      <p>首先，看一下比较实用的工厂模式的通用源码。</p>
+<h3 id="工厂方法模式通用类图"><a href="#工厂方法模式通用类图" class="headerlink" title="工厂方法模式通用类图"></a>工厂方法模式通用类图</h3><p><img src="http://cnhaloimg.wxio.club/designpatterns/factory_class.jpg" class="lazyload" data-srcset="http://cnhaloimg.wxio.club/designpatterns/factory_class.jpg" srcset="data:image/png;base64,666" alt="工厂模式类图"></p>
+<h3 id="抽象产品类"><a href="#抽象产品类" class="headerlink" title="抽象产品类"></a>抽象产品类</h3>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2019-02-20</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="../../categories/java/">java</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='../../2019/02/20/2013-02-20-design-patterns-factory/'>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="../../2018/12/07/2013-05-16-list-cannot-remove/">
+        JAVAList不能使用remove()
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      <p><strong>List是不能使用remove()的，</strong></p>
+<p>看以下代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String [] a = <span class="keyword">new</span> String[<span class="number">4</span>];</span><br><span class="line">a[<span class="number">0</span>] = <span class="string">&quot;1&quot;</span>;</span><br><span class="line">a[<span class="number">1</span>] = <span class="string">&quot;2&quot;</span>;</span><br><span class="line">List&lt;String&gt; list = Arrays.asList(a);</span><br><span class="line">list.remove(<span class="number">0</span>);</span><br><span class="line">System.out.println(list.get(<span class="number">0</span>));</span><br></pre></td></tr></table></figure>
+
+<p>这是会报错的：</p>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2018-12-07</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="../../categories/java/">java</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='../../2018/12/07/2013-05-16-list-cannot-remove/'>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="../../2018/11/15/2013-05-16-mysql-slave-1/">
+        MYSQL主从同步错误解决
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      <p>首先，如果遇到主键冲突：<br><code>Last_SQL_Error: Error &#39;Duplicate entry &#39;1001-164761-0&#39; for key &#39;PRIMARY&#39;&#39; on query. Default database: &#39;bug&#39;. Query: &#39;insert into misdata (uid,mid,pid,state,mtime) values (164761,1001,0,-1,1262623560)&#39;</code> </p>
+<p><strong>A.可以先将冲突的记录删除，然后再进行一下方法：</strong></p>
+<p>进入主库锁表，</p>
+<p>FLUSH TABLES WITH READ LOCK;</p>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2018-11-15</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="../../categories/mysql/">mysql</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='../../2018/11/15/2013-05-16-mysql-slave-1/'>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+    
+  </section>
+  
+    
+  
+
+
+    
+  
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+<section class="widget blogger shadow desktop mobile">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box circle' href='../../https:/github.com/Geisha-design'>
+          <img no-lazy src='https://gitee.com/boyqi/jpg/raw/master/4426813179192814893c2ee0042f381.png'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+        
+        
+          <p><span id="jinrishici-sentence">齐雨争</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="../../atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="../../mailto:me@xxx.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="../../https:/github.com/volantis-x/"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="../../index.html"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget category shadow desktop">
+    
+  <header>
+    
+      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="../../categories/hexo/" href="../../categories/hexo/"
+            id="categorieshexo"
+            ><div class='name'>hexo</div><div class='badge'>(12)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="../../categories/java/" href="../../categories/java/"
+            id="categoriesjava"
+            ><div class='name'>java</div><div class='badge'>(36)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="../../categories/mysql/" href="../../categories/mysql/"
+            id="categoriesmysql"
+            ><div class='name'>mysql</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="../../categories/python/" href="../../categories/python/"
+            id="categoriespython"
+            ><div class='name'>python</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="../../categories/ui/" href="../../categories/ui/"
+            id="categoriesui"
+            ><div class='name'>ui</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="../../categories/%E4%B8%89%E5%89%91%E5%AE%A2/" href="../../categories/%E4%B8%89%E5%89%91%E5%AE%A2/"
+            id="categoriesE4B889E58991E5AEA2"
+            ><div class='name'>三剑客</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="../../categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" href="../../categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"
+            id="categoriesE695B0E68DAEE7BB93E69E84"
+            ><div class='name'>数据结构</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="../../categories/%E7%94%9F%E6%B4%BB/" href="../../categories/%E7%94%9F%E6%B4%BB/"
+            id="categoriesE7949FE6B4BB"
+            ><div class='name'>生活</div><div class='badge'>(15)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="../../categories/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" href="../../categories/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"
+            id="categoriesE7BABFE680A7E4BBA3E695B0"
+            ><div class='name'>线性代数</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/" href="../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/"
+            id="categoriesE8AEA1E7AE97E69CBAE5B8B8E8AF86"
+            ><div class='name'>计算机常识</div><div class='badge'>(12)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BB%BC%E5%90%88/" href="../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BB%BC%E5%90%88/"
+            id="categoriesE8AEA1E7AE97E69CBAE7BD91E7BB9CE7BBBCE59088"
+            ><div class='name'>计算机网络综合</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="../../categories/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" href="../../categories/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"
+            id="categoriesE9AB98E7AD89E695B0E5ADA6"
+            ><div class='name'>高等数学</div><div class='badge'>(7)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget tagcloud shadow desktop mobile">
+    
+  <header>
+    
+      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <a href="../CSS/" style="font-size: 15.11px; color: #919191">CSS</a> <a href="../Eclipse/" style="font-size: 14px; color: #999">Eclipse</a> <a href="../Field/" style="font-size: 14px; color: #999">Field</a> <a href="../Groovy/" style="font-size: 14px; color: #999">Groovy</a> <a href="../HTML/" style="font-size: 15.11px; color: #919191">HTML</a> <a href="../Hexo/" style="font-size: 14px; color: #999">Hexo</a> <a href="../IDE/" style="font-size: 15.11px; color: #919191">IDE</a> <a href="" style="font-size: 21.78px; color: #646464">IT</a> <a href="../JAVA/" style="font-size: 16.22px; color: #8a8a8a">JAVA</a> <a href="../JVM/" style="font-size: 14px; color: #999">JVM</a> <a href="../Java/" style="font-size: 18.44px; color: #7b7b7b">Java</a> <a href="../JavaScript/" style="font-size: 15.11px; color: #919191">JavaScript</a> <a href="../MYSQL/" style="font-size: 14px; color: #999">MYSQL</a> <a href="../Maven/" style="font-size: 14px; color: #999">Maven</a> <a href="../NoSql/" style="font-size: 14px; color: #999">NoSql</a> <a href="../Node-js/" style="font-size: 14px; color: #999">Node.js</a> <a href="../Python/" style="font-size: 14px; color: #999">Python</a> <a href="../TOMCAT/" style="font-size: 14px; color: #999">TOMCAT</a> <a href="../UI/" style="font-size: 14px; color: #999">UI</a> <a href="../VMware/" style="font-size: 14px; color: #999">VMware</a> <a href="../Wicket/" style="font-size: 14px; color: #999">Wicket</a> <a href="../coding/" style="font-size: 14px; color: #999">coding</a> <a href="../coding-net/" style="font-size: 16.22px; color: #8a8a8a">coding.net</a> <a href="../css/" style="font-size: 17.33px; color: #828282">css</a> <a href="../date/" style="font-size: 14px; color: #999">date</a> <a href="../debug/" style="font-size: 14px; color: #999">debug</a> <a href="../decorator/" style="font-size: 14px; color: #999">decorator</a> <a href="../eclipse/" style="font-size: 14px; color: #999">eclipse</a> <a href="../editor/" style="font-size: 14px; color: #999">editor</a> <a href="../equals/" style="font-size: 14px; color: #999">equals</a> <a href="../express/" style="font-size: 14px; color: #999">express</a> <a href="../git/" style="font-size: 14px; color: #999">git</a> <a href="../github/" style="font-size: 16.22px; color: #8a8a8a">github</a> <a href="../gogs/" style="font-size: 14px; color: #999">gogs</a> <a href="../hexo/" style="font-size: 20.67px; color: #6c6c6c">hexo</a> <a href="../https/" style="font-size: 14px; color: #999">https</a> <a href="../i18n/" style="font-size: 14px; color: #999">i18n</a> <a href="../ini/" style="font-size: 14px; color: #999">ini</a> <a href="../it/" style="font-size: 19.56px; color: #737373">it</a> <a href="../jar/" style="font-size: 14px; color: #999">jar</a> <a href="../java/" style="font-size: 24px; color: #555">java</a> <a href="../javascript/" style="font-size: 16.22px; color: #8a8a8a">javascript</a> <a href="../jdk/" style="font-size: 14px; color: #999">jdk</a> <a href="../jvm/" style="font-size: 14px; color: #999">jvm</a> <a href="../less/" style="font-size: 14px; color: #999">less</a> <a href="../linux/" style="font-size: 15.11px; color: #919191">linux</a> <a href="../mac/" style="font-size: 16.22px; color: #8a8a8a">mac</a> <a href="../macvim/" style="font-size: 14px; color: #999">macvim</a> <a href="../markdown/" style="font-size: 14px; color: #999">markdown</a> <a href="../maven/" style="font-size: 15.11px; color: #919191">maven</a> <a href="../mediator/" style="font-size: 14px; color: #999">mediator</a> <a href="../nginx/" style="font-size: 14px; color: #999">nginx</a> <a href="../object/" style="font-size: 14px; color: #999">object</a> <a href="../observer/" style="font-size: 14px; color: #999">observer</a> <a href="../qcloud/" style="font-size: 14px; color: #999">qcloud</a> <a href="../rails/" style="font-size: 14px; color: #999">rails</a> <a href="../reflect/" style="font-size: 14px; color: #999">reflect</a> <a href="../remote/" style="font-size: 14px; color: #999">remote</a> <a href="../ssh/" style="font-size: 14px; color: #999">ssh</a> <a href="../ssl/" style="font-size: 14px; color: #999">ssl</a> <a href="../tomcat/" style="font-size: 14px; color: #999">tomcat</a> <a href="../travis/" style="font-size: 16.22px; color: #8a8a8a">travis</a> <a href="../vim/" style="font-size: 15.11px; color: #919191">vim</a> <a href="../web/" style="font-size: 15.11px; color: #919191">web</a> <a href="../webjars/" style="font-size: 15.11px; color: #919191">webjars</a> <a href="../wicket/" style="font-size: 15.11px; color: #919191">wicket</a> <a href="../%E4%B8%AD%E4%BB%8B%E8%80%85/" style="font-size: 14px; color: #999">中介者</a> <a href="../%E5%81%87%E6%9C%9F/" style="font-size: 14px; color: #999">假期</a> <a href="../%E5%88%86%E5%B8%83%E5%BC%8F/" style="font-size: 14px; color: #999">分布式</a> <a href="../%E5%89%8D%E7%AB%AF/" style="font-size: 15.11px; color: #919191">前端</a> <a href="../%E5%91%A8%E6%9C%AB/" style="font-size: 15.11px; color: #919191">周末</a> <a href="../%E5%9B%BE%E7%89%87/" style="font-size: 15.11px; color: #919191">图片</a> <a href="../%E5%A5%BD%E6%96%87/" style="font-size: 14px; color: #999">好文</a> <a href="../%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9/" style="font-size: 14px; color: #999">小知识点</a> <a href="../%E5%B7%A5%E4%BD%9C/" style="font-size: 14px; color: #999">工作</a> <a href="../%E5%BC%80%E5%8F%91/" style="font-size: 14px; color: #999">开发</a> <a href="../%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 14px; color: #999">微服务</a> <a href="../%E5%BF%83%E6%83%85/" style="font-size: 14px; color: #999">心情</a> <a href="../%E6%8A%80%E6%9C%AF/" style="font-size: 14px; color: #999">技术</a> <a href="../%E6%95%99%E7%A8%8B/" style="font-size: 14px; color: #999">教程</a> <a href="../%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 14px; color: #999">数据库</a> <a href="../%E6%95%B0%E6%8D%AE%E6%9C%BA%E6%9E%84/" style="font-size: 14px; color: #999">数据机构</a> <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="../%E6%96%87%E7%AB%A0/" style="font-size: 14px; color: #999">文章</a> <a href="../%E6%97%A0%E5%9B%BE/" style="font-size: 14px; color: #999">无图</a> <a href="../%E6%97%A5%E5%BF%97/" style="font-size: 22.89px; color: #5d5d5d">日志</a> <a href="../%E6%97%A5%E8%AE%B0/" style="font-size: 14px; color: #999">日记</a> <a href="../%E6%9D%82%E4%BA%8B/" style="font-size: 20.67px; color: #6c6c6c">杂事</a> <a href="../%E6%9D%82%E6%96%87/" style="font-size: 14px; color: #999">杂文</a> <a href="../%E6%9D%82%E8%B0%88/" style="font-size: 14px; color: #999">杂谈</a> <a href="../%E6%B2%B9%E6%BC%86%E5%B7%A5/" style="font-size: 14px; color: #999">油漆工</a> <a href="../%E7%94%9F%E6%B4%BB/" style="font-size: 15.11px; color: #919191">生活</a> <a href="../%E7%94%B5%E5%BD%B1/" style="font-size: 14px; color: #999">电影</a> <a href="../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 14px; color: #999">线性代数</a> <a href="../%E7%BD%91%E7%BB%9C/" style="font-size: 14px; color: #999">网络</a> <a href="../%E8%88%B6%E6%9D%A5%E5%93%81/" style="font-size: 14px; color: #999">舶来品</a> <a href="../%E8%89%BA%E6%9C%AF%E5%AE%B6/" style="font-size: 14px; color: #999">艺术家</a> <a href="../%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 14px; color: #999">虚拟机</a> <a href="../%E8%A7%82%E5%AF%9F%E8%80%85/" style="font-size: 14px; color: #999">观察者</a> <a href="../%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="font-size: 18.44px; color: #7b7b7b">计算机</a> <a href="../%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/" style="font-size: 14px; color: #999">计算机常识</a> <a href="../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 18.44px; color: #7b7b7b">计算机网络</a> <a href="../%E8%AE%B0%E5%BD%95/" style="font-size: 14px; color: #999">记录</a> <a href="../%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 18.44px; color: #7b7b7b">设计模式</a> <a href="../%E8%AF%B4%E7%82%B9%E5%95%A5/" style="font-size: 14px; color: #999">说点啥</a> <a href="../%E8%BF%90%E5%8A%A8/" style="font-size: 14px; color: #999">运动</a> <a href="../%E9%A3%8E%E6%99%AF/" style="font-size: 14px; color: #999">风景</a> <a href="../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 18.44px; color: #7b7b7b">高等数学</a>
+    </div>
+  </section>
+
+
+  
+
+  
+
+
+</aside>
+
+
+        
+        
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+<script>
+  window.pdata={}
+  pdata.ispage=false;
+  pdata.postTitle="";
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+
+  var l_header=document.getElementById("l_header");
+  
+  l_header.classList.remove("show");
+  
 </script>
-    <!-- CDN failover -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-    <script type="text/javascript">
-        if (typeof window.$ === 'undefined')
-        {
-            console.warn('jquery load from jsdelivr failed, will load local script')
-            document.write('<script src="../../lib/jquery.min.js">\x3C/script>')
-        }
-    </script>
-    <script src="../../scripts/main.js"></script>
-    <!-- algolia -->
+
+        
+      </div>
+      
+  
+  <footer class="footer clearfix">
+    <br><br>
     
-    <!-- busuanzi  -->
-    
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    
-    <!-- CNZZ  -->
-    
-    </div>
-    <!-- async load share.js -->
-     
-    </body>
-</html>
+      
+        <div class="aplayer-container">
+          
 
 
-="sidebar-tag-name" data-tags="教程"><span class="iconfont-archer">&#xe606;</span>教程</span>
+        </div>
+      
     
-        <span class="sidebar-tag-name" data-tags="开发"><span class="iconfont-archer">&#xe606;</span>开发</span>
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+          
+            
+          
+            
+          
+        </div>
+      
     
-        <span class="sidebar-tag-name" data-tags="小知识点"><span class="iconfont-archer">&#xe606;</span>小知识点</span>
-    
-        <span class="sidebar-tag-name" data-tags="网络"><span class="iconfont-archer">&#xe606;</span>网络</span>
-    
-        <span class="sidebar-tag-name" data-tags="tomcat"><span class="iconfont-archer">&#xe606;</span>tomcat</span>
-    
-        <span class="sidebar-tag-name" data-tags="debug"><span class="iconfont-archer">&#xe606;</span>debug</span>
-    
-        <span class="sidebar-tag-name" data-tags="remote"><span class="iconfont-archer">&#xe606;</span>remote</span>
-    
-        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
-    
-        <span class="sidebar-tag-name" data-tags="数据结构"><span class="iconfont-archer">&#xe606;</span>数据结构</span>
-    
-        <span class="sidebar-tag-name" data-tags="线性代数"><span class="iconfont-archer">&#xe606;</span>线性代数</span>
-    
-        <span class="sidebar-tag-name" data-tags="计算机"><span class="iconfont-archer">&#xe606;</span>计算机</span>
-    
-        <span class="sidebar-tag-name" data-tags="高等数学"><span class="iconfont-archer">&#xe606;</span>高等数学</span>
-    
-        <span class="sidebar-tag-name" data-tags="nginx"><span class="iconfont-archer">&#xe606;</span>nginx</span>
-    
-        <span class="sidebar-tag-name" data-tags="qcloud"><span class="iconfont-archer">&#xe606;</span>qcloud</span>
-    
-        <span class="sidebar-tag-name" data-tags="ssl"><span class="iconfont-archer">&#xe606;</span>ssl</span>
-    
-        <span class="sidebar-tag-name" data-tags="https"><span class="iconfont-archer">&#xe606;</span>https</span>
-    
-        <span class="sidebar-tag-name" data-tags="计算机网络"><span class="iconfont-archer">&#xe606;</span>计算机网络</span>
-    
-        <span class="sidebar-tag-name" data-tags="数据机构"><span class="iconfont-archer">&#xe606;</span>数据机构</span>
-    
-        <span class="sidebar-tag-name" data-tags="计算机常识"><span class="iconfont-archer">&#xe606;</span>计算机常识</span>
-    
-        <span class="sidebar-tag-name" data-tags="艺术家"><span class="iconfont-archer">&#xe606;</span>艺术家</span>
-    
-        <span class="sidebar-tag-name" data-tags="微服务"><span class="iconfont-archer">&#xe606;</span>微服务</span>
-    
-    </div>
-    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
-    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
-    缺失模块。<br/>
-    1、请确保node版本大于6.2<br/>
-    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
-    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
-    3、在根目录_config.yml里添加配置：
-    <pre style="color: #787878; font-size: 0.6rem;">
-jsonContent:
-  meta: false
-  pages: false
-  posts:
-    title: true
-    date: true
-    path: true
-    text: false
-    raw: false
-    content: false
-    slug: false
-    updated: false
-    comments: false
-    link: false
-    permalink: false
-    excerpt: false
-    categories: true
-    tags: true</pre>
-    </div> 
-    <div class="sidebar-tags-list"></div>
+      
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
-        <div class="sidebar-panel-categories">
-    <div class="sidebar-categories-name">
+      
     
-        <span class="sidebar-category-name" data-categories="java"><span class="iconfont-archer">&#xe60a;</span>java</span>
-    
-        <span class="sidebar-category-name" data-categories="计算机常识"><span class="iconfont-archer">&#xe60a;</span>计算机常识</span>
-    
-        <span class="sidebar-category-name" data-categories="生活"><span class="iconfont-archer">&#xe60a;</span>生活</span>
-    
-        <span class="sidebar-category-name" data-categories="mysql"><span class="iconfont-archer">&#xe60a;</span>mysql</span>
-    
-        <span class="sidebar-category-name" data-categories="ui"><span class="iconfont-archer">&#xe60a;</span>ui</span>
-    
-        <span class="sidebar-category-name" data-categories="三剑客"><span class="iconfont-archer">&#xe60a;</span>三剑客</span>
-    
-        <span class="sidebar-category-name" data-categories="python"><span class="iconfont-archer">&#xe60a;</span>python</span>
-    
-        <span class="sidebar-category-name" data-categories="hexo"><span class="iconfont-archer">&#xe60a;</span>hexo</span>
-    
-        <span class="sidebar-category-name" data-categories="计算机网络综合"><span class="iconfont-archer">&#xe60a;</span>计算机网络综合</span>
-    
-        <span class="sidebar-category-name" data-categories="数据结构"><span class="iconfont-archer">&#xe60a;</span>数据结构</span>
-    
-        <span class="sidebar-category-name" data-categories="线性代数"><span class="iconfont-archer">&#xe60a;</span>线性代数</span>
-    
-        <span class="sidebar-category-name" data-categories="高等数学"><span class="iconfont-archer">&#xe60a;</span>高等数学</span>
-    
-    </div>
-    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
-    <div class="sidebar-categories-list"></div>
+      
+        
+          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
 </div>
+        
+      
+    
+      
+        Use
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.2" target="_blank" class="codename">Volantis</a>
+        as theme
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="/">Copyright © 2017-2020 XXX</a></p>
+
+        </div>
+      
+    
+  </footer>
+  
+  <iframe frameborder="no" border="1500" marginwidth="1500" marginheight="1500" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=546724667&auto=1&height=66"></iframe>
+  
+
+
+
+
+
+      <a id="s-top" class="fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
     </div>
-</div> 
+  </div>
+  <div>
     <script>
-    var siteMeta = {
-        root: "/Geisha-design.github.io/",
-        author: "齐雨争"
-    }
+window.volantis={};
+/********************脚本懒加载函数********************************/
+function loadScript(src, cb) {
+var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+var script = document.createElement('script');
+script.setAttribute('type','text/javascript');
+if (cb) script.onload = cb;
+script.setAttribute('src', src);
+HEAD.appendChild(script);
+}
+//https://github.com/filamentgroup/loadCSS
+var loadCSS = function( href, before, media, attributes ){
+	var doc = window.document;
+	var ss = doc.createElement( "link" );
+	var ref;
+	if( before ){
+		ref = before;
+	}
+	else {
+		var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
+		ref = refs[ refs.length - 1];
+	}
+	var sheets = doc.styleSheets;
+	if( attributes ){
+		for( var attributeName in attributes ){
+			if( attributes.hasOwnProperty( attributeName ) ){
+				ss.setAttribute( attributeName, attributes[attributeName] );
+			}
+		}
+	}
+	ss.rel = "stylesheet";
+	ss.href = href;
+	ss.media = "only x";
+	function ready( cb ){
+		if( doc.body ){
+			return cb();
+		}
+		setTimeout(function(){
+			ready( cb );
+		});
+	}
+	ready( function(){
+		ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
+	});
+	var onloadcssdefined = function( cb ){
+		var resolvedHref = ss.href;
+		var i = sheets.length;
+		while( i-- ){
+			if( sheets[ i ].href === resolvedHref ){
+				return cb();
+			}
+		}
+		setTimeout(function() {
+			onloadcssdefined( cb );
+		});
+	};
+	function loadCB(){
+		if( ss.addEventListener ){
+			ss.removeEventListener( "load", loadCB );
+		}
+		ss.media = media || "all";
+	}
+	if( ss.addEventListener ){
+		ss.addEventListener( "load", loadCB);
+	}
+	ss.onloadcssdefined = onloadcssdefined;
+	onloadcssdefined( loadCB );
+	return ss;
+};
 </script>
-    <!-- CDN failover -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-    <script type="text/javascript">
-        if (typeof window.$ === 'undefined')
-        {
-            console.warn('jquery load from jsdelivr failed, will load local script')
-            document.write('<script src="../../lib/jquery.min.js">\x3C/script>')
-        }
+<!-- required -->
+
+<script src="../../https:/cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+<script>
+  function pjax_fancybox() {
+    $(".md .gallery").find("img").each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".md .gallery").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  function SCload_fancybox() {
+    if ($(".md .gallery").find("img").length == 0) return;
+    loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css", document.getElementById("loadcss"));
+    setTimeout(function() {
+      loadScript('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', pjax_fancybox)
+    }, 1);
+  };
+  $(function () {
+    SCload_fancybox();
+  });
+</script>
+
+
+<!-- internal -->
+
+
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+  
+    <script>
+      window.FPConfig = {
+        delay: 0,
+        ignoreKeywords: [],
+        maxRPS: 5,
+        hoverDelay: 25
+      };
     </script>
-    <script src="../../scripts/main.js"></script>
-    <!-- algolia -->
+    <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+<script src="../../js/valine.js"></script>
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+
+    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
+
+    let path = pdata.commentPath;
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: path,
+      appId: "",
+      appKey: "",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      recordIP: 'false',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });
+</script>
+
+
+
+
+
+  
+<script src="../../js/app.js"></script>
+
+
+
+
+  
     
-    <!-- busuanzi  -->
+<script src="../../js/search.js"></script>
+
+  
+
+
+<!-- optional -->
+
+  <script>
+const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
+const ROOT =  ("/Geisha-design.github.io/" || "/").endsWith('/') ? ("/Geisha-design.github.io/" || "/") : ("/Geisha-design.github.io//" || "/" );
+(function ($) {
+  
+    customSearch = new HexoSearch({
+      imagePath: SearchServiceimagePath
+    });
+  
+})(jQuery);
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  <script defer>
+
+  const LCCounter = {
+    app_id: 'u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI',
+    app_key: 'jfHtEKVE24j0IVCGHbvuFClp',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'http://example.com' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'http://example.com' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'http://example.com' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              let curPath = window.location.pathname;
+              if (curPath.includes('index.html')) {
+                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
+              }
+              if (pv.getAttribute('data-path') == curPath) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == curPath) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });
+</script>
+
+
+
+
+  <script>
+const rootElement = document.documentElement;
+const darkModeStorageKey = "user-color-scheme";
+const rootElementDarkModeAttributeName = "data-user-color-scheme";
+
+const setLS = (k, v) => {
+  try {
+    localStorage.setItem(k, v);
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+const removeLS = (k) => {
+  try {
+    localStorage.removeItem(k);
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+const getLS = (k) => {
+  try {
+    return localStorage.getItem(k);
+  } catch (e) {
+    console.log(e.message);
+    return null;
+  }
+};
+
+const getModeFromCSSMediaQuery = () => {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+};
+
+const resetRootDarkModeAttributeAndLS = () => {
+  rootElement.removeAttribute(rootElementDarkModeAttributeName);
+  removeLS(darkModeStorageKey);
+};
+
+const validColorModeKeys = {
+  dark: true,
+  light: true,
+};
+
+const applyCustomDarkModeSettings = (mode) => {
+  const currentSetting = mode || getLS(darkModeStorageKey);
+
+  if (currentSetting === getModeFromCSSMediaQuery()) {
+    resetRootDarkModeAttributeAndLS();
+  } else if (validColorModeKeys[currentSetting]) {
+    rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
+  } else {
+    resetRootDarkModeAttributeAndLS();
+  }
+};
+
+const invertDarkModeObj = {
+  dark: "light",
+  light: "dark",
+};
+
+/**
+ * get target mode
+ */
+const toggleCustomDarkMode = () => {
+  let currentSetting = getLS(darkModeStorageKey);
+
+  if (validColorModeKeys[currentSetting]) {
+    currentSetting = invertDarkModeObj[currentSetting];
+  } else if (currentSetting === null) {
+    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
+  } else {
+    return;
+  }
+  setLS(darkModeStorageKey, currentSetting);
+  return currentSetting;
+};
+
+/**
+ * bind click event for toggle button
+ */
+function bindToggleButton() {
+	var btn=$("#wrapper .toggle-mode-btn");
+    btn.on('click',(e) => {
+      const mode = toggleCustomDarkMode();
+      applyCustomDarkModeSettings(mode);
+    });
+}
+
+applyCustomDarkModeSettings();
+document.addEventListener("DOMContentLoaded", bindToggleButton);
+document.addEventListener("pjax:success", bindToggleButton);
+var now = new Date();
+var hour = now.getHours();
+if (hour < 7 && hour >= 19) {
+	var mode = toggleCustomDarkMode();
+	if (mode === "dark") {
+	  applyCustomDarkModeSettings(mode);
+	}
+}
+</script>
+
+
+
+
+
+
+<script>
+function listennSidebarTOC() {
+  const navItems = document.querySelectorAll(".toc li");
+  if (!navItems.length) return;
+  const sections = [...navItems].map((element) => {
+    const link = element.querySelector(".toc-link");
+    const target = document.getElementById(
+      decodeURI(link.getAttribute("href")).replace("#", "")
+    );
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({
+		top: target.offsetTop + 100,
+		
+		behavior: "smooth"
+		
+	  });
+    });
+    return target;
+  });
+
+  function activateNavByIndex(target) {
+    if (target.classList.contains("active-current")) return;
+
+    document.querySelectorAll(".toc .active").forEach((element) => {
+      element.classList.remove("active", "active-current");
+    });
+    target.classList.add("active", "active-current");
+    let parent = target.parentNode;
+    while (!parent.matches(".toc")) {
+      if (parent.matches("li")) parent.classList.add("active");
+      parent = parent.parentNode;
+    }
+  }
+
+  function findIndex(entries) {
+    let index = 0;
+    let entry = entries[index];
+    if (entry.boundingClientRect.top > 0) {
+      index = sections.indexOf(entry.target);
+      return index === 0 ? 0 : index - 1;
+    }
+    for (; index < entries.length; index++) {
+      if (entries[index].boundingClientRect.top <= 0) {
+        entry = entries[index];
+      } else {
+        return sections.indexOf(entry.target);
+      }
+    }
+    return sections.indexOf(entry.target);
+  }
+
+  function createIntersectionObserver(marginTop) {
+    marginTop = Math.floor(marginTop + 10000);
+    let intersectionObserver = new IntersectionObserver(
+      (entries, observe) => {
+        let scrollHeight = document.documentElement.scrollHeight + 100;
+        if (scrollHeight > marginTop) {
+          observe.disconnect();
+          createIntersectionObserver(scrollHeight);
+          return;
+        }
+        let index = findIndex(entries);
+        activateNavByIndex(navItems[index]);
+      },
+      {
+        rootMargin: marginTop + "px 0px -100% 0px",
+        threshold: 0,
+      }
+    );
+    sections.forEach((element) => {
+      element && intersectionObserver.observe(element);
+    });
+  }
+  createIntersectionObserver(document.documentElement.scrollHeight);
+}
+
+document.addEventListener("DOMContentLoaded", listennSidebarTOC);
+document.addEventListener("pjax:success", listennSidebarTOC);
+</script>
+
+<!-- more -->
+
+
+
+
     
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+
+
+<script src="../../https:/cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+</div>
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#l_cover",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      //window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      if (typeof $.fancybox != "undefined") {
+        $.fancybox.close();    // 关闭弹窗
+      }
+      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
+      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      volantis.$topBtn.unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+      window.ShowLoading();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+          if (typeof $.fancybox == "undefined") {
+            SCload_fancybox();
+          } else {
+            pjax_fancybox();
+          }
+        
+        
+        
+        
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+      window.HideLoading();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.HideLoading();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
     
-    <!-- CNZZ  -->
-    
-    </div>
-    <!-- async load share.js -->
-     
-    </body>
+  </div>
+</body>
+   	<div class="GalMenu GalDropDown">
+	      <div class="circle" id="gal">
+	        <div class="ring">
+	          <a href="/" class="menuItem">首页</a>
+	          <a href="javascript:history.go(1);" class="menuItem">前进</a>
+	          <a href="javascript:$('html,body').animate({scrollTop:0},500);" class="menuItem">顶部</a>
+	          <a href="javascript:location.reload();" class="menuItem">刷新</a>
+			  <a href="/Message/" class="menuItem">留言</a>
+	          <a href="javascript:history.go(-1);" class="menuItem">后退</a>
+			</div>
+			
+				<audio id="audio" src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/audio/niconiconi.mp3"></audio>
+	        
+		  </div>
+	</div>
+	<script type="text/javascript">
+	var items = document.querySelectorAll('.menuItem'); 
+	for (var i = 0, l = items.length; i < l; i++) {
+        items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+        items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+      }
+	</script>
+	<script>window.jQuery || document.write('<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/js/jquery-2.1.1.min.js"><\/script>')</script>	
+	
+<script src="../../https:/cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/js/GalMenu.js"></script>
+
+	<script type="text/javascript">
+    	$(document).ready(function() {
+        $('body').GalMenu({
+          'menu': 'GalDropDown'
+        })
+      });
+	</script>
+
+
+<div id='loader'>
+	
+	<div class="outer_box">
+	<div class='loader_overlay'></div>
+	<div class='loader_cogs'>
+		<div class='loader_cogs__top'>
+			<div class='top_part'></div>
+			<div class='top_part'></div>
+			<div class='top_part'></div>
+			<div class='top_hole'></div>
+		</div>
+		<div class='loader_cogs__left'>
+			<div class='left_part'></div>
+			<div class='left_part'></div>
+			<div class='left_part'></div>
+			<div class='left_hole'></div>
+		</div>
+		<div class='loader_cogs__bottom'>
+			<div class='bottom_part'></div>
+			<div class='bottom_part'></div>
+			<div class='bottom_part'></div>
+			<div class='bottom_hole'></div>
+		</div>
+		<p style="text-align:center">&nbsp;&nbsp;&nbsp;loading...</p>
+	</div>
+	</div>
+  
+</div>
+
+<script>
+  var endLoading = function () {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loader').classList.add("loading");
+  }
+  window.addEventListener('load',endLoading);
+</script>
+
+
+
+
 </html>
-
-
