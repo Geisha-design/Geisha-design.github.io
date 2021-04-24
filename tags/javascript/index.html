@@ -210,7 +210,7 @@
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
     
-    <a class="home-link" href=/>雨争齐齐齐</a>
+    <a class="home-link" href=/Geisha-design.github.io/>雨争齐齐齐</a>
 </header>
     <div class="wrapper">
         <div class="site-intro" style="
@@ -346,34 +346,28 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "../../2020/10/08/2016-10-08-js-window-print-blank/" >
+        <a class="abstract-title" href = "../../2020/02/29/2016-02-29-rules-of-front-end-optimization/" >
             
-                <span>JavaScript执行window.print()打印内容为空白</span>
+                <span>前端优化法则</span>
         </a>
         <div class="abstract-content">
-            今天写代码的时候，需要用到打印页面的功能，按理说只要很简单的一段js代码就可以了：
-1window.print();
-
-但是很奇怪，怎么执行，要打印的页面内容都是空白！
-于是一步一步分析，终于找到了罪魁祸首的代码片段：
-12345@media print &#123;    body * &#123;        visibility: hidden;    &#125;&#125;
-
-这段 CSS 的作用就是当媒体类型为 print 的时候，body 里面所有元素都采用样式 “**visibility: hidden;”，所以解决这个问题是把 “visibility: hidden;...
+            <p>前两天被人问到前端的优化有哪些，我支支吾吾也只能说出两三条，表示很惭愧。</p>
+<p>说到前端优化的必修课，那就是<a target="_blank" rel="noopener" href="https://developer.yahoo.com/performance/rules.html">Yahoo的前端优化性能规则</a>，里面都是别人的经验总结，有 <strong>35</strong> 条之多，这是先分类在文章最后，之后会个别阐述我针对最初的 <strong>14</strong> 条，借鉴别人的翻译成果和我自己的解读。</p>
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/10/08</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/29</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "CSS">CSS</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "css">css</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "HTML">HTML</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "前端">前端</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "javascript">javascript</a>
     
 </div>
             
@@ -386,31 +380,68 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "../../2020/08/28/2017-08-28-i18next/" >
+        <a class="abstract-title" href = "../../2018/04/04/2016-04-04-webjars-introduction/" >
             
-                <span>i18next</span>
+                <span>WebJars介绍</span>
         </a>
         <div class="abstract-content">
-            I18next 是一款用JavaScript编写的国际化框架。
-为什么需要国际化一般在编写网站的时候，网页需要向用户展现一些文字，假如你的网站完全面向中国用户，那么你可以把网页里的内容写成中文。但是如果你还要面向英文用户，那么你就不能直接把内容写成中文了，你的网站需要国际化。你需要使用一些技术来让程序自动切换内容的显示，网页的总体结构是不变的，但是内容需要随着用户的改变而改变。
-但是可能有人会说，各准备一个英文和一个中文的网页不就可以了吗？那么请问以后再出现法文，葡萄牙文，西班牙文的需求呢？这种需求其实很常见，比如ebay.com，它面向不同国家有不同的显示，甚至在一个国家还有多种显示（...
+            什么是WebJars什么是WebJars？WebJars是将客户端（浏览器）资源（JavaScript，Css等）打成jar包文件，以对资源进行统一依赖管理。WebJars的jar包部署在Maven中央仓库上。
+为什么使用WebJars我们在开发Java web项目的时候会使用像Maven，Gradle等构建工具以实现对jar包版本依赖管理，以及项目的自动化管理，但是对于JavaScript，Css等前端资源包，我们只能采用拷贝到webapp下的方式，这样做就无法对这些资源进行依赖管理。那么WebJars就提供给我们这些前端资源的jar包形势，我们就可以进行依赖管理。
+三种风格的WebJ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/08/28</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/04</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Node.js">Node.js</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "css">css</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "express">express</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "javascript">javascript</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "i18n">i18n</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "webjars">webjars</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "../../2016/04/07/2016-04-07-webjars-usage-sample/" >
+            
+                <span>WebJars使用示例</span>
+        </a>
+        <div class="abstract-content">
+            说明这里只介绍Servlet3如何使用WebJars（Classic风格），文章中示例源码地址在https://github.com/henryhuang/webjars-example。
+代码编写Servlet类首先配置一个Servlet：
+1234567891011121314151617181920212223242526272829303132333435public class ServletSample extends HttpServlet &#123;		private static final long serialVersionUID = -5041101055869...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2016/04/07</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "java">java</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "css">css</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "javascript">javascript</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "webjars">webjars</a>
     
 </div>
             
@@ -514,8 +545,6 @@
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
-    
-    
     
     
     
@@ -2249,12 +2278,12 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/05</span><a class="archive-post-title" href= "2021/02/05/%E4%BC%A0%E8%BE%93%E5%B1%82/" >传输层</a>
+            <span class="archive-post-date">02/05</span><a class="archive-post-title" href= "2021/02/05/%E5%BA%94%E7%94%A8%E5%B1%82/" >应用层</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/05</span><a class="archive-post-title" href= "2021/02/05/%E5%BA%94%E7%94%A8%E5%B1%82/" >应用层</a>
+            <span class="archive-post-date">02/05</span><a class="archive-post-title" href= "2021/02/05/%E4%BC%A0%E8%BE%93%E5%B1%82/" >传输层</a>
         </li>
     
     
@@ -2671,12 +2700,6 @@
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="日志"><span class="iconfont-archer">&#xe606;</span>日志</span>
-    
-        <span class="sidebar-tag-name" data-tags="杂事"><span class="iconfont-archer">&#xe606;</span>杂事</span>
-    
-        <span class="sidebar-tag-name" data-tags="风景"><span class="iconfont-archer">&#xe606;</span>风景</span>
-    
         <span class="sidebar-tag-name" data-tags="rails"><span class="iconfont-archer">&#xe606;</span>rails</span>
     
         <span class="sidebar-tag-name" data-tags="web"><span class="iconfont-archer">&#xe606;</span>web</span>
@@ -2691,6 +2714,10 @@
     
         <span class="sidebar-tag-name" data-tags="虚拟机"><span class="iconfont-archer">&#xe606;</span>虚拟机</span>
     
+        <span class="sidebar-tag-name" data-tags="日志"><span class="iconfont-archer">&#xe606;</span>日志</span>
+    
+        <span class="sidebar-tag-name" data-tags="杂事"><span class="iconfont-archer">&#xe606;</span>杂事</span>
+    
         <span class="sidebar-tag-name" data-tags="工作"><span class="iconfont-archer">&#xe606;</span>工作</span>
     
         <span class="sidebar-tag-name" data-tags="周末"><span class="iconfont-archer">&#xe606;</span>周末</span>
@@ -2701,19 +2728,21 @@
     
         <span class="sidebar-tag-name" data-tags="图片"><span class="iconfont-archer">&#xe606;</span>图片</span>
     
+        <span class="sidebar-tag-name" data-tags="风景"><span class="iconfont-archer">&#xe606;</span>风景</span>
+    
         <span class="sidebar-tag-name" data-tags="假期"><span class="iconfont-archer">&#xe606;</span>假期</span>
     
         <span class="sidebar-tag-name" data-tags="电影"><span class="iconfont-archer">&#xe606;</span>电影</span>
-    
-        <span class="sidebar-tag-name" data-tags="心情"><span class="iconfont-archer">&#xe606;</span>心情</span>
-    
-        <span class="sidebar-tag-name" data-tags="JAVA"><span class="iconfont-archer">&#xe606;</span>JAVA</span>
     
         <span class="sidebar-tag-name" data-tags="文章"><span class="iconfont-archer">&#xe606;</span>文章</span>
     
         <span class="sidebar-tag-name" data-tags="舶来品"><span class="iconfont-archer">&#xe606;</span>舶来品</span>
     
         <span class="sidebar-tag-name" data-tags="好文"><span class="iconfont-archer">&#xe606;</span>好文</span>
+    
+        <span class="sidebar-tag-name" data-tags="JAVA"><span class="iconfont-archer">&#xe606;</span>JAVA</span>
+    
+        <span class="sidebar-tag-name" data-tags="心情"><span class="iconfont-archer">&#xe606;</span>心情</span>
     
         <span class="sidebar-tag-name" data-tags="MYSQL"><span class="iconfont-archer">&#xe606;</span>MYSQL</span>
     
@@ -2723,21 +2752,17 @@
     
         <span class="sidebar-tag-name" data-tags="运动"><span class="iconfont-archer">&#xe606;</span>运动</span>
     
+        <span class="sidebar-tag-name" data-tags="UI"><span class="iconfont-archer">&#xe606;</span>UI</span>
+    
         <span class="sidebar-tag-name" data-tags="CSS"><span class="iconfont-archer">&#xe606;</span>CSS</span>
     
         <span class="sidebar-tag-name" data-tags="HTML"><span class="iconfont-archer">&#xe606;</span>HTML</span>
     
-        <span class="sidebar-tag-name" data-tags="UI"><span class="iconfont-archer">&#xe606;</span>UI</span>
-    
-        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
-    
-        <span class="sidebar-tag-name" data-tags="ini"><span class="iconfont-archer">&#xe606;</span>ini</span>
-    
-        <span class="sidebar-tag-name" data-tags="Wicket"><span class="iconfont-archer">&#xe606;</span>Wicket</span>
-    
         <span class="sidebar-tag-name" data-tags="Maven"><span class="iconfont-archer">&#xe606;</span>Maven</span>
     
         <span class="sidebar-tag-name" data-tags="Eclipse"><span class="iconfont-archer">&#xe606;</span>Eclipse</span>
+    
+        <span class="sidebar-tag-name" data-tags="Wicket"><span class="iconfont-archer">&#xe606;</span>Wicket</span>
     
         <span class="sidebar-tag-name" data-tags="杂文"><span class="iconfont-archer">&#xe606;</span>杂文</span>
     
@@ -2753,19 +2778,17 @@
     
         <span class="sidebar-tag-name" data-tags="vim"><span class="iconfont-archer">&#xe606;</span>vim</span>
     
+        <span class="sidebar-tag-name" data-tags="观察者"><span class="iconfont-archer">&#xe606;</span>观察者</span>
+    
+        <span class="sidebar-tag-name" data-tags="observer"><span class="iconfont-archer">&#xe606;</span>observer</span>
+    
         <span class="sidebar-tag-name" data-tags="less"><span class="iconfont-archer">&#xe606;</span>less</span>
     
         <span class="sidebar-tag-name" data-tags="css"><span class="iconfont-archer">&#xe606;</span>css</span>
     
-        <span class="sidebar-tag-name" data-tags="tomcat"><span class="iconfont-archer">&#xe606;</span>tomcat</span>
+        <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
-        <span class="sidebar-tag-name" data-tags="debug"><span class="iconfont-archer">&#xe606;</span>debug</span>
-    
-        <span class="sidebar-tag-name" data-tags="remote"><span class="iconfont-archer">&#xe606;</span>remote</span>
-    
-        <span class="sidebar-tag-name" data-tags="观察者"><span class="iconfont-archer">&#xe606;</span>观察者</span>
-    
-        <span class="sidebar-tag-name" data-tags="observer"><span class="iconfont-archer">&#xe606;</span>observer</span>
+        <span class="sidebar-tag-name" data-tags="ini"><span class="iconfont-archer">&#xe606;</span>ini</span>
     
         <span class="sidebar-tag-name" data-tags="linux"><span class="iconfont-archer">&#xe606;</span>linux</span>
     
@@ -2775,59 +2798,51 @@
     
         <span class="sidebar-tag-name" data-tags="Field"><span class="iconfont-archer">&#xe606;</span>Field</span>
     
-        <span class="sidebar-tag-name" data-tags="jdk"><span class="iconfont-archer">&#xe606;</span>jdk</span>
-    
         <span class="sidebar-tag-name" data-tags="equals"><span class="iconfont-archer">&#xe606;</span>equals</span>
     
         <span class="sidebar-tag-name" data-tags="object"><span class="iconfont-archer">&#xe606;</span>object</span>
     
-        <span class="sidebar-tag-name" data-tags="eclipse"><span class="iconfont-archer">&#xe606;</span>eclipse</span>
-    
-        <span class="sidebar-tag-name" data-tags="生活"><span class="iconfont-archer">&#xe606;</span>生活</span>
-    
-        <span class="sidebar-tag-name" data-tags="记录"><span class="iconfont-archer">&#xe606;</span>记录</span>
+        <span class="sidebar-tag-name" data-tags="jdk"><span class="iconfont-archer">&#xe606;</span>jdk</span>
     
         <span class="sidebar-tag-name" data-tags="油漆工"><span class="iconfont-archer">&#xe606;</span>油漆工</span>
     
         <span class="sidebar-tag-name" data-tags="decorator"><span class="iconfont-archer">&#xe606;</span>decorator</span>
     
+        <span class="sidebar-tag-name" data-tags="eclipse"><span class="iconfont-archer">&#xe606;</span>eclipse</span>
+    
         <span class="sidebar-tag-name" data-tags="Groovy"><span class="iconfont-archer">&#xe606;</span>Groovy</span>
     
         <span class="sidebar-tag-name" data-tags="JVM"><span class="iconfont-archer">&#xe606;</span>JVM</span>
+    
+        <span class="sidebar-tag-name" data-tags="markdown"><span class="iconfont-archer">&#xe606;</span>markdown</span>
     
         <span class="sidebar-tag-name" data-tags="maven"><span class="iconfont-archer">&#xe606;</span>maven</span>
     
         <span class="sidebar-tag-name" data-tags="杂谈"><span class="iconfont-archer">&#xe606;</span>杂谈</span>
     
+        <span class="sidebar-tag-name" data-tags="记录"><span class="iconfont-archer">&#xe606;</span>记录</span>
+    
+        <span class="sidebar-tag-name" data-tags="生活"><span class="iconfont-archer">&#xe606;</span>生活</span>
+    
         <span class="sidebar-tag-name" data-tags="中介者"><span class="iconfont-archer">&#xe606;</span>中介者</span>
     
         <span class="sidebar-tag-name" data-tags="mediator"><span class="iconfont-archer">&#xe606;</span>mediator</span>
-    
-        <span class="sidebar-tag-name" data-tags="jvm"><span class="iconfont-archer">&#xe606;</span>jvm</span>
     
         <span class="sidebar-tag-name" data-tags="前端"><span class="iconfont-archer">&#xe606;</span>前端</span>
     
         <span class="sidebar-tag-name" data-tags="javascript"><span class="iconfont-archer">&#xe606;</span>javascript</span>
     
-        <span class="sidebar-tag-name" data-tags="markdown"><span class="iconfont-archer">&#xe606;</span>markdown</span>
-    
-        <span class="sidebar-tag-name" data-tags="wicket"><span class="iconfont-archer">&#xe606;</span>wicket</span>
-    
-        <span class="sidebar-tag-name" data-tags="jar"><span class="iconfont-archer">&#xe606;</span>jar</span>
+        <span class="sidebar-tag-name" data-tags="jvm"><span class="iconfont-archer">&#xe606;</span>jvm</span>
     
         <span class="sidebar-tag-name" data-tags="分布式"><span class="iconfont-archer">&#xe606;</span>分布式</span>
     
         <span class="sidebar-tag-name" data-tags="NoSql"><span class="iconfont-archer">&#xe606;</span>NoSql</span>
     
+        <span class="sidebar-tag-name" data-tags="wicket"><span class="iconfont-archer">&#xe606;</span>wicket</span>
+    
         <span class="sidebar-tag-name" data-tags="webjars"><span class="iconfont-archer">&#xe606;</span>webjars</span>
     
-        <span class="sidebar-tag-name" data-tags="JavaScript"><span class="iconfont-archer">&#xe606;</span>JavaScript</span>
-    
-        <span class="sidebar-tag-name" data-tags="coding"><span class="iconfont-archer">&#xe606;</span>coding</span>
-    
-        <span class="sidebar-tag-name" data-tags="IDE"><span class="iconfont-archer">&#xe606;</span>IDE</span>
-    
-        <span class="sidebar-tag-name" data-tags="editor"><span class="iconfont-archer">&#xe606;</span>editor</span>
+        <span class="sidebar-tag-name" data-tags="jar"><span class="iconfont-archer">&#xe606;</span>jar</span>
     
         <span class="sidebar-tag-name" data-tags="github"><span class="iconfont-archer">&#xe606;</span>github</span>
     
@@ -2835,11 +2850,21 @@
     
         <span class="sidebar-tag-name" data-tags="coding.net"><span class="iconfont-archer">&#xe606;</span>coding.net</span>
     
+        <span class="sidebar-tag-name" data-tags="JavaScript"><span class="iconfont-archer">&#xe606;</span>JavaScript</span>
+    
         <span class="sidebar-tag-name" data-tags="ssh"><span class="iconfont-archer">&#xe606;</span>ssh</span>
     
         <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
     
         <span class="sidebar-tag-name" data-tags="gogs"><span class="iconfont-archer">&#xe606;</span>gogs</span>
+    
+        <span class="sidebar-tag-name" data-tags="coding"><span class="iconfont-archer">&#xe606;</span>coding</span>
+    
+        <span class="sidebar-tag-name" data-tags="IDE"><span class="iconfont-archer">&#xe606;</span>IDE</span>
+    
+        <span class="sidebar-tag-name" data-tags="editor"><span class="iconfont-archer">&#xe606;</span>editor</span>
+    
+        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
     
         <span class="sidebar-tag-name" data-tags="Node.js"><span class="iconfont-archer">&#xe606;</span>Node.js</span>
     
@@ -2847,17 +2872,31 @@
     
         <span class="sidebar-tag-name" data-tags="i18n"><span class="iconfont-archer">&#xe606;</span>i18n</span>
     
-        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
+        <span class="sidebar-tag-name" data-tags="技术"><span class="iconfont-archer">&#xe606;</span>技术</span>
     
         <span class="sidebar-tag-name" data-tags="教程"><span class="iconfont-archer">&#xe606;</span>教程</span>
     
         <span class="sidebar-tag-name" data-tags="开发"><span class="iconfont-archer">&#xe606;</span>开发</span>
     
-        <span class="sidebar-tag-name" data-tags="技术"><span class="iconfont-archer">&#xe606;</span>技术</span>
-    
         <span class="sidebar-tag-name" data-tags="小知识点"><span class="iconfont-archer">&#xe606;</span>小知识点</span>
     
         <span class="sidebar-tag-name" data-tags="网络"><span class="iconfont-archer">&#xe606;</span>网络</span>
+    
+        <span class="sidebar-tag-name" data-tags="tomcat"><span class="iconfont-archer">&#xe606;</span>tomcat</span>
+    
+        <span class="sidebar-tag-name" data-tags="debug"><span class="iconfont-archer">&#xe606;</span>debug</span>
+    
+        <span class="sidebar-tag-name" data-tags="remote"><span class="iconfont-archer">&#xe606;</span>remote</span>
+    
+        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
+    
+        <span class="sidebar-tag-name" data-tags="数据结构"><span class="iconfont-archer">&#xe606;</span>数据结构</span>
+    
+        <span class="sidebar-tag-name" data-tags="线性代数"><span class="iconfont-archer">&#xe606;</span>线性代数</span>
+    
+        <span class="sidebar-tag-name" data-tags="计算机"><span class="iconfont-archer">&#xe606;</span>计算机</span>
+    
+        <span class="sidebar-tag-name" data-tags="高等数学"><span class="iconfont-archer">&#xe606;</span>高等数学</span>
     
         <span class="sidebar-tag-name" data-tags="nginx"><span class="iconfont-archer">&#xe606;</span>nginx</span>
     
@@ -2867,25 +2906,15 @@
     
         <span class="sidebar-tag-name" data-tags="https"><span class="iconfont-archer">&#xe606;</span>https</span>
     
+        <span class="sidebar-tag-name" data-tags="计算机网络"><span class="iconfont-archer">&#xe606;</span>计算机网络</span>
+    
         <span class="sidebar-tag-name" data-tags="数据机构"><span class="iconfont-archer">&#xe606;</span>数据机构</span>
     
-        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
-    
-        <span class="sidebar-tag-name" data-tags="微服务"><span class="iconfont-archer">&#xe606;</span>微服务</span>
+        <span class="sidebar-tag-name" data-tags="计算机常识"><span class="iconfont-archer">&#xe606;</span>计算机常识</span>
     
         <span class="sidebar-tag-name" data-tags="艺术家"><span class="iconfont-archer">&#xe606;</span>艺术家</span>
     
-        <span class="sidebar-tag-name" data-tags="线性代数"><span class="iconfont-archer">&#xe606;</span>线性代数</span>
-    
-        <span class="sidebar-tag-name" data-tags="计算机网络"><span class="iconfont-archer">&#xe606;</span>计算机网络</span>
-    
-        <span class="sidebar-tag-name" data-tags="计算机"><span class="iconfont-archer">&#xe606;</span>计算机</span>
-    
-        <span class="sidebar-tag-name" data-tags="高等数学"><span class="iconfont-archer">&#xe606;</span>高等数学</span>
-    
-        <span class="sidebar-tag-name" data-tags="数据结构"><span class="iconfont-archer">&#xe606;</span>数据结构</span>
-    
-        <span class="sidebar-tag-name" data-tags="计算机常识"><span class="iconfont-archer">&#xe606;</span>计算机常识</span>
+        <span class="sidebar-tag-name" data-tags="微服务"><span class="iconfont-archer">&#xe606;</span>微服务</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -2920,29 +2949,29 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
+        <span class="sidebar-category-name" data-categories="java"><span class="iconfont-archer">&#xe60a;</span>java</span>
+    
+        <span class="sidebar-category-name" data-categories="计算机常识"><span class="iconfont-archer">&#xe60a;</span>计算机常识</span>
+    
         <span class="sidebar-category-name" data-categories="生活"><span class="iconfont-archer">&#xe60a;</span>生活</span>
+    
+        <span class="sidebar-category-name" data-categories="mysql"><span class="iconfont-archer">&#xe60a;</span>mysql</span>
+    
+        <span class="sidebar-category-name" data-categories="ui"><span class="iconfont-archer">&#xe60a;</span>ui</span>
+    
+        <span class="sidebar-category-name" data-categories="三剑客"><span class="iconfont-archer">&#xe60a;</span>三剑客</span>
+    
+        <span class="sidebar-category-name" data-categories="python"><span class="iconfont-archer">&#xe60a;</span>python</span>
     
         <span class="sidebar-category-name" data-categories="hexo"><span class="iconfont-archer">&#xe60a;</span>hexo</span>
     
         <span class="sidebar-category-name" data-categories="计算机网络综合"><span class="iconfont-archer">&#xe60a;</span>计算机网络综合</span>
     
-        <span class="sidebar-category-name" data-categories="高等数学"><span class="iconfont-archer">&#xe60a;</span>高等数学</span>
+        <span class="sidebar-category-name" data-categories="数据结构"><span class="iconfont-archer">&#xe60a;</span>数据结构</span>
     
         <span class="sidebar-category-name" data-categories="线性代数"><span class="iconfont-archer">&#xe60a;</span>线性代数</span>
     
-        <span class="sidebar-category-name" data-categories="java"><span class="iconfont-archer">&#xe60a;</span>java</span>
-    
-        <span class="sidebar-category-name" data-categories="计算机常识"><span class="iconfont-archer">&#xe60a;</span>计算机常识</span>
-    
-        <span class="sidebar-category-name" data-categories="数据结构"><span class="iconfont-archer">&#xe60a;</span>数据结构</span>
-    
-        <span class="sidebar-category-name" data-categories="mysql"><span class="iconfont-archer">&#xe60a;</span>mysql</span>
-    
-        <span class="sidebar-category-name" data-categories="三剑客"><span class="iconfont-archer">&#xe60a;</span>三剑客</span>
-    
-        <span class="sidebar-category-name" data-categories="ui"><span class="iconfont-archer">&#xe60a;</span>ui</span>
-    
-        <span class="sidebar-category-name" data-categories="python"><span class="iconfont-archer">&#xe60a;</span>python</span>
+        <span class="sidebar-category-name" data-categories="高等数学"><span class="iconfont-archer">&#xe60a;</span>高等数学</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
@@ -2952,49 +2981,7 @@ jsonContent:
 </div> 
     <script>
     var siteMeta = {
-        root: "/",
-        author: "齐雨争"
-    }
-</script>
-    <!-- CDN failover -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-    <script type="text/javascript">
-        if (typeof window.$ === 'undefined')
-        {
-            console.warn('jquery load from jsdelivr failed, will load local script')
-            document.write('<script src="../../lib/jquery.min.js">\x3C/script>')
-        }
-    </script>
-    <script src="../../scripts/main.js"></script>
-    <!-- algolia -->
-    
-    <!-- busuanzi  -->
-    
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    
-    <!-- CNZZ  -->
-    
-    </div>
-    <!-- async load share.js -->
-     
-    </body>
-</html>
-
-
-  
-        <span class="sidebar-category-name" data-categories="ui"><span class="iconfont-archer">&#xe60a;</span>ui</span>
-    
-        <span class="sidebar-category-name" data-categories="python"><span class="iconfont-archer">&#xe60a;</span>python</span>
-    
-    </div>
-    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
-    <div class="sidebar-categories-list"></div>
-</div>
-    </div>
-</div> 
-    <script>
-    var siteMeta = {
-        root: "/",
+        root: "/Geisha-design.github.io/",
         author: "齐雨争"
     }
 </script>
