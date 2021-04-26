@@ -1,1703 +1,686 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
-<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
-
-
-
-<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script> 
-<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_click.js"></script>
-
-
-<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.2'>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/css/GalMenu.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@latest/hexo/css/loading_style_2.css" >
-
-  <!-- SEO相关 -->
-  
-    
-  
-  <!-- 渲染优化 -->
-  <meta http-equiv='x-dns-prefetch-control' content='on' />
-  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <meta name="renderer" content="webkit">
-  <meta name="force-rendering" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-  <meta name="HandheldFriendly" content="True" >
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <!-- 页面元数据 -->
-  
-  <title>传输层 - 齐雨争</title>
-  
-    <meta name="keywords" content="计算机">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>  传输层 |    雨争齐齐齐</title>
+  <meta name="description" content="网络层可以把数据从一个主机传送到另一个主机，但是没有和进程建立联系。 传输层就是讲进程和收到的数据联系到一起，使数据能够为应用服务">
+  <!-- 标签页图标 -->
   
 
+  <!-- 图标库 -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- 动画库 -->
   
-    <meta name="description" content="网络层可以把数据从一个主机传送到另一个主机，但是没有和进程建立联系。 传输层就是讲进程和收到的数据联系到一起，使数据能够为应用服务">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fushaolei/cdn-white@1.0/css/animate.css"/>
   
+  <!-- css文件 -->
+  
+<link rel="stylesheet" href="../../../../css/white.css">
 
-  <!-- feed -->
+  <!-- 代码高亮 -->
   
+<meta name="generator" content="Hexo 5.4.0"></head>
 
-  <!-- import meta -->
-  
-
-  <!-- link -->
-  
-    
-<link rel="stylesheet" href="../../../../https:/cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css">
-
-  
-  
-
-  
-
-  
-    <link rel="shortcut icon" type='image/x-icon' href="../../../../https:/www.cncrush.cn/images/favicon.ico">
-  
-
-  
-
-  
-
-  <!-- import link -->
-  
-
-  
-  
-    
-<link rel="stylesheet" href="../../../../css/style.css">
-
-  
-
-  <script id="loadcss"></script>
-
-</head>
 
 <body>
-  
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
-  <div class='container'>
-  <div id='wrapper'>
-    <div class='nav-sub'>
-      <p class="title"></p>
-      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
-        <li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
-        
-          <li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
-        
-      </ul>
-    </div>
-		<div class="nav-main">
-      
-        
-        <a class="title flat-box" target="_self" href='../../../../index.html'>
-          
-            <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
-          
-          
-          
+<div class="menu-outer">
+    <div class="menu-inner">
+      <div class="menu-site-name  animate__animated  animate__fadeInUp">
+        <a href="../../../../index.html">
+          雨争齐齐齐
         </a>
-      
-
-			<div class='menu navigation'>
-				<ul class='nav-list-h m-pc'>
-          
-          
-          
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../index.html
-                  
-                  
-                  
-                    id="indexhtml"
-                  >
-                  <i class='fas fa-rss fa-fw'></i>博客
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../categories/
-                  
-                  
-                  
-                    id="categories"
-                  >
-                  <i class='fas fa-folder-open fa-fw'></i>分类
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../tags/
-                  
-                  
-                  
-                    id="tags"
-                  >
-                  <i class='fas fa-tags fa-fw'></i>标签
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../archives/
-                  
-                  
-                  
-                    id="archives"
-                  >
-                  <i class='fas fa-archive fa-fw'></i>归档
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../friends/
-                  
-                  
-                  
-                    id="friends"
-                  >
-                  <i class='fas fa-link fa-fw'></i>友链
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../about/
-                  
-                  
-                  
-                    id="about"
-                  >
-                  <i class='fas fa-info-circle fa-fw'></i>关于
-                </a>
-                
-              </li>
-            
-          
-          
-				</ul>
-			</div>
-
-      <div class="m_search">
-        <form name="searchform" class="form u-search-form">
-          <i class="icon fas fa-search fa-fw"></i>
-          <input type="text" class="input u-search-input" placeholder="雨争能有什么坏心思呢？" />
-        </form>
-      </div>
-
-			<ul class='switcher nav-list-h m-phone'>
-				
-					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
-				
-				<li>
-          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
-          <ul class="menu-phone list-v navigation white-box">
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../index.html
-                  
-                  
-                  
-                    id="indexhtml"
-                  >
-                  <i class='fas fa-rss fa-fw'></i>博客
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../categories/
-                  
-                  
-                  
-                    id="categories"
-                  >
-                  <i class='fas fa-folder-open fa-fw'></i>分类
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../tags/
-                  
-                  
-                  
-                    id="tags"
-                  >
-                  <i class='fas fa-tags fa-fw'></i>标签
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../archives/
-                  
-                  
-                  
-                    id="archives"
-                  >
-                  <i class='fas fa-archive fa-fw'></i>归档
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../friends/
-                  
-                  
-                  
-                    id="friends"
-                  >
-                  <i class='fas fa-link fa-fw'></i>友链
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../about/
-                  
-                  
-                  
-                    id="about"
-                  >
-                  <i class='fas fa-info-circle fa-fw'></i>关于
-                </a>
-                
-              </li>
-            
-          
-            
-          </ul>
-        </li>
-			</ul>
-		</div>
-	</div>
-  </div>
-</header>
-
-  <div id="l_body">
-    <div id="l_cover">
-	
-  
-    
-        <div id="half" class='cover-wrapper post dock' style="display: ;">
-          
-            <div class='cover-bg lazyload placeholder' data-bg="https://gitee.com/boyqi/jpg/raw/master/4.jpg"></div>
-          
-          <div class='cover-body'>
-  <div class='top'>
-    
-    
-      <p class="title">GEISHA</p>
-    
-    
-      <p class="subtitle">你顺手挽住火焰，化作漫天大雪</p>
-    
-  </div>
-  <div class='bottom'>
-    <div class='menu navigation'>
-      <div class='list-h'>
-        
-          
-            <a href="../../../../v4/getting-started/"
-              
-              
-              id="v4getting-started">
-              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg'><p>文档</p>
-            </a>
-          
-            <a href="../../../../faqs/"
-              
-              
-              id="faqs">
-              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg'><p>帮助</p>
-            </a>
-          
-            <a href="../../../../examples/"
-              
-              
-              id="examples">
-              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg'><p>示例</p>
-            </a>
-          
-            <a href="../../../../contributors/"
-              
-              
-              id="contributors">
-              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f389.svg'><p>社区</p>
-            </a>
-          
-            <a href="../../../../archives/"
-              
-              
-              id="archives">
-              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg'><p>博客</p>
-            </a>
-          
-            <a href="../../../../https:/github.com/Geisha-design"
-              
-              
-              id="https:githubcomGeisha-design">
-              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg'><p>GitHub</p>
-            </a>
-          
         
       </div>
+      <div class="menu-group">
+        <ul class="menu-ul">
+        
+          <a href="../../../../index.html" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              HOME
+            </li>
+          </a>
+        
+          <a href="../../../../archives" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              BLOG
+            </li>
+          </a>
+        
+        
+          <li class="menu-li animate__animated  animate__fadeInUp" id="sort">
+             分类
+             <div class="categories-outer " id="sort-div">
+               <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/hexo/">hexo</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/mysql/">mysql</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/ui/">ui</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E4%B8%89%E5%89%91%E5%AE%A2/">三剑客</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%94%9F%E6%B4%BB/">生活</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/">计算机常识</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BB%BC%E5%90%88/">计算机网络综合</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/">高等数学</a></li></ul>
+             </div>
+          </li>
+        
+        
+          <li class="menu-li animate__animated  animate__fadeInUp" id="mobile-menu">
+            <i class="ri-menu-line"></i>
+          </li>
+        
+        </ul>
+
+      </div>
+
     </div>
-  </div>
 </div>
+<div id="mobile-main" class="animate__animated  animate__fadeIn">
+  <div class="mobile-menu-inner">
+    <div class="mobile-menu-site-name animate__animated  animate__fadeInUp">
+      <a href="../../../../index.html">
+        雨争齐齐齐
+      </a>
+    </div>
+    <div class="mobile-menu-group" id="mobile-close">
+      <i class="ri-close-line"></i>
+    </div>
 
-          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
-        </div>
-    
-  
   </div>
 
-    <div id='safearea'>
-      <div class='body-wrapper' id="pjax-container">
-        
-
-<div class='l_main'>
-  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  <div class="mobile-menu-div">
   
-	  
-
-	  
-  
-
-
-  
-  <div class="article-meta" id="top">
-    
-    
-    
-      <h1 class="title">
-        传输层
-      </h1>
-      <div class='new-meta-box'>
-        
-          
-            
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>小天才齐雨争</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  <div class='new-meta-item category'>
-    <a class='notlink'>
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="../../../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BB%BC%E5%90%88/">计算机网络综合</a>
+    <a href="../../../../index.html" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>HOME</span>
+      </div>
     </a>
+  
+    <a href="../../../../archives" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>BLOG</span>
+      </div>
+    </a>
+  
+  
   </div>
 
 
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Feb 5, 2021</p>
-  </a>
 </div>
 
-          
-        
-          
-            
-  <div class="new-meta-item browse leancloud">
-    <a class='notlink'>
+<div class="body-outer">
+  <div class="body-inner">
+    
+<article class="post-inner">
+  <div class="post-content-outer">
+    <div class="post-intro">
+      <div class="post-title animate__animated  animate__fadeInUp">传输层</div>
+      <div class="meta-intro animate__animated  animate__fadeInUp">Feb 05 2021</div>
       
-      <div id="lc-pv" data-title="传输层" data-path="">
-        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
-        次浏览
+    </div>
+    <div class="post-content-inner">
+      <div class="post-content-inner-space">
+
       </div>
-    </a>
-  </div>
-
-
-          
+      <div class="post-content-main animate__animated  animate__fadeInUp">
+        <!-- top型目录 -->
         
-      </div>
-    
-  </div>
-
-
-  
-  <h1 id="本人计算机网络笔记总目录"><a href="#本人计算机网络笔记总目录" class="headerlink" title="本人计算机网络笔记总目录"></a>本人计算机网络笔记总目录</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45067603/article/details/106974036">计算机网络笔记Part1 概述</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45067603/article/details/106974965">计算机网络笔记Part2 物理层（Physical Layer）</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45067603/article/details/106980441">计算机网络笔记Part3 数据链路层（Data Link Layer）</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45067603/article/details/106993253">计算机网络笔记Part4 网络层（Network Layer）</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45067603/article/details/107034202">计算机网络笔记Part5 传输层（Transport Layer）</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45067603/article/details/107053479">计算机网络笔记Part6 应用层（Application Layer）</a></p>
-<h1 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h1><h2 id="1-1-传输层的意义"><a href="#1-1-传输层的意义" class="headerlink" title="1.1 传输层的意义"></a>1.1 传输层的意义</h2><p>网络层可以把数据从一个主机传送到另一个主机，但是没有和进程建立联系。<br>传输层就是讲进程和收到的数据联系到一起，使数据能够为应用服务<br>所以说传输层是主机才有的层次<br><img src="https://img-blog.csdnimg.cn/20200630094441510.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630094441510.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
-<h2 id="1-2-传输层的两个协议"><a href="#1-2-传输层的两个协议" class="headerlink" title="1.2 传输层的两个协议"></a>1.2 传输层的两个协议</h2><p><img src="https://img-blog.csdnimg.cn/20200630094727731.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630094727731.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
-<h2 id="1-3-传输层的寻址和端口"><a href="#1-3-传输层的寻址和端口" class="headerlink" title="1.3 传输层的寻址和端口"></a>1.3 传输层的寻址和端口</h2><p>端口号只用于计算机分辨本地进程，总共有2^16=65536种端口号，端口号有很多种，不能随便使用<br><img src="https://img-blog.csdnimg.cn/20200630095024127.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630095024127.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
-<h3 id="1-3-1-常见的应用程序端口号"><a href="#1-3-1-常见的应用程序端口号" class="headerlink" title="1.3.1 常见的应用程序端口号"></a>1.3.1 常见的应用程序端口号</h3><p><img src="https://img-blog.csdnimg.cn/20200630095258962.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630095258962.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
-<h1 id="2-UDP协议"><a href="#2-UDP协议" class="headerlink" title="2. UDP协议"></a>2. UDP协议</h1><h2 id="2-1-UDP概述"><a href="#2-1-UDP概述" class="headerlink" title="2.1 UDP概述"></a>2.1 UDP概述</h2><p>注释：<br>因为UDP一次发送一个完整报文不会分片，所以需要应用层传输过来的数据不要太大，否则网络层分片任务就很重，但是也不能太小，不然效率较低<br>UDP适合一些实时应用，因为实时应用延迟要求高，需要立即响应<br><img src="https://img-blog.csdnimg.cn/20200630095616466.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630095616466.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
-<h2 id="2-2-UDP首部格式"><a href="#2-2-UDP首部格式" class="headerlink" title="2.2 UDP首部格式"></a>2.2 UDP首部格式</h2><p><img src="https://img-blog.csdnimg.cn/2020063010003161.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/2020063010003161.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
-<h3 id="2-2-1-UDP的校验位构成"><a href="#2-2-1-UDP的校验位构成" class="headerlink" title="2.2.1 UDP的校验位构成"></a>2.2.1 UDP的校验位构成</h3><p>这里的伪首部只是用来计算检验和的，计算完了就丢弃，可以见下UDP的校验方式<br><img src="https://img-blog.csdnimg.cn/20200630105441329.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630105441329.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
+        <h1 id="本人计算机网络笔记总目录"><a href="#本人计算机网络笔记总目录" class="headerlink" title="本人计算机网络笔记总目录"></a>本人计算机网络笔记总目录</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45067603/article/details/106974036">计算机网络笔记Part1 概述</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45067603/article/details/106974965">计算机网络笔记Part2 物理层（Physical Layer）</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45067603/article/details/106980441">计算机网络笔记Part3 数据链路层（Data Link Layer）</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45067603/article/details/106993253">计算机网络笔记Part4 网络层（Network Layer）</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45067603/article/details/107034202">计算机网络笔记Part5 传输层（Transport Layer）</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45067603/article/details/107053479">计算机网络笔记Part6 应用层（Application Layer）</a></p>
+<h1 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h1><h2 id="1-1-传输层的意义"><a href="#1-1-传输层的意义" class="headerlink" title="1.1 传输层的意义"></a>1.1 传输层的意义</h2><p>网络层可以把数据从一个主机传送到另一个主机，但是没有和进程建立联系。<br>传输层就是讲进程和收到的数据联系到一起，使数据能够为应用服务<br>所以说传输层是主机才有的层次<br><img src="https://img-blog.csdnimg.cn/20200630094441510.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="1-2-传输层的两个协议"><a href="#1-2-传输层的两个协议" class="headerlink" title="1.2 传输层的两个协议"></a>1.2 传输层的两个协议</h2><p><img src="https://img-blog.csdnimg.cn/20200630094727731.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="1-3-传输层的寻址和端口"><a href="#1-3-传输层的寻址和端口" class="headerlink" title="1.3 传输层的寻址和端口"></a>1.3 传输层的寻址和端口</h2><p>端口号只用于计算机分辨本地进程，总共有2^16=65536种端口号，端口号有很多种，不能随便使用<br><img src="https://img-blog.csdnimg.cn/20200630095024127.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="1-3-1-常见的应用程序端口号"><a href="#1-3-1-常见的应用程序端口号" class="headerlink" title="1.3.1 常见的应用程序端口号"></a>1.3.1 常见的应用程序端口号</h3><p><img src="https://img-blog.csdnimg.cn/20200630095258962.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="2-UDP协议"><a href="#2-UDP协议" class="headerlink" title="2. UDP协议"></a>2. UDP协议</h1><h2 id="2-1-UDP概述"><a href="#2-1-UDP概述" class="headerlink" title="2.1 UDP概述"></a>2.1 UDP概述</h2><p>注释：<br>因为UDP一次发送一个完整报文不会分片，所以需要应用层传输过来的数据不要太大，否则网络层分片任务就很重，但是也不能太小，不然效率较低<br>UDP适合一些实时应用，因为实时应用延迟要求高，需要立即响应<br><img src="https://img-blog.csdnimg.cn/20200630095616466.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="2-2-UDP首部格式"><a href="#2-2-UDP首部格式" class="headerlink" title="2.2 UDP首部格式"></a>2.2 UDP首部格式</h2><p><img src="https://img-blog.csdnimg.cn/2020063010003161.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="2-2-1-UDP的校验位构成"><a href="#2-2-1-UDP的校验位构成" class="headerlink" title="2.2.1 UDP的校验位构成"></a>2.2.1 UDP的校验位构成</h3><p>这里的伪首部只是用来计算检验和的，计算完了就丢弃，可以见下UDP的校验方式<br><img src="https://img-blog.csdnimg.cn/20200630105441329.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h3 id="2-2-2-UDP校验方式"><a href="#2-2-2-UDP校验方式" class="headerlink" title="2.2.2 UDP校验方式"></a>2.2.2 UDP校验方式</h3><h4 id="总结一下步骤："><a href="#总结一下步骤：" class="headerlink" title="总结一下步骤："></a>总结一下步骤：</h4><h5 id="在发送端的时候："><a href="#在发送端的时候：" class="headerlink" title="在发送端的时候："></a>在发送端的时候：</h5><p>1.就是将每一行（4字节）拆成两部分，左右平均2字节大小，将这两字节数据写成二进制，那么2字节一共就需要2*8=16位。此时检验和没有计算，默认填充0，同时如果数据字段不整齐，则用0补齐，这样就可以写出几十行二进制数，如图中方所示<br>2.计算着几十行二进制数按<strong>二进制反码运算求和</strong>，二进制反码运算可以参考<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/jcchan/p/10400504.html">二进制反码求和运算</a><br>得到的最后简介再反码，之后将<strong>反码之后的</strong>放入原来的检验和字段</p>
-<h5 id="在接收端的时候"><a href="#在接收端的时候" class="headerlink" title="在接收端的时候"></a>在<strong>接收端</strong>的时候</h5><p><strong>与发送端的时候不同的是，此时检验和字段不是0了</strong><br>按照发送端的步骤再将所有数据写成二进制进行二进制反码运算求和<br>如果最后得到结果全1就是没问题，否则丢弃<br><img src="https://img-blog.csdnimg.cn/20200630105526400.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630105526400.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
-<h1 id="3-TCP协议"><a href="#3-TCP协议" class="headerlink" title="3. TCP协议"></a>3. TCP协议</h1><h2 id="3-1-TCP协议的特点"><a href="#3-1-TCP协议的特点" class="headerlink" title="3.1 TCP协议的特点"></a>3.1 TCP协议的特点</h2><p>TCP必须要建立连接之后才可以进行数据交换，所以TCP是面向连接的<br><img src="https://img-blog.csdnimg.cn/20200630194247441.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630194247441.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br>TCP传输数据是随机切割数据的<img src="https://img-blog.csdnimg.cn/2020063020421472.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/2020063020421472.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
-<h2 id="3-2-TCP报文段的首部"><a href="#3-2-TCP报文段的首部" class="headerlink" title="3.2 TCP报文段的首部"></a>3.2 TCP报文段的首部</h2><p>注释：<br>见上图，可以看到TCP是将数据随机分割后加上TCP头传输的，所以<br>序号就是为了标记这些随机分割之后的数据，这里把第一个字节的编号当成序号<br>确认号就是收到之后做一下标记，代表这之前的都收到了，希望收到的下一个编号的数据就是确认号打头的那个数据<br>偏移量就是为了标记一下距离TCP开始多少字节是数据，这里的单位是4B，这个偏移量就是TCP首部长度<br><img src="https://img-blog.csdnimg.cn/20200630210441410.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630210441410.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br>窗口就是接收方告诉发送方，还有多少地方（缓存）可以放数据<br>紧急指针就是告诉TCP从哪里到哪里是紧急数据<br><img src="https://img-blog.csdnimg.cn/20200630212601599.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630212601599.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
-<h3 id="3-2-1-TCP的六个控制位"><a href="#3-2-1-TCP的六个控制位" class="headerlink" title="3.2.1 TCP的六个控制位"></a>3.2.1 TCP的六个控制位</h3><h4 id="紧急位URG"><a href="#紧急位URG" class="headerlink" title="紧急位URG"></a>紧急位URG</h4><p>URG的特点就是让数据<strong>插队</strong>，URG=1的就会在缓存中被提前到第一个传输<br><img src="https://img-blog.csdnimg.cn/20200630211126589.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630211126589.png" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200630211151331.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630211151331.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
-<h4 id="确认位ACK"><a href="#确认位ACK" class="headerlink" title="确认位ACK"></a>确认位ACK</h4><p><img src="https://img-blog.csdnimg.cn/20200630211354251.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630211354251.png" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
-<h4 id="推送为PSH"><a href="#推送为PSH" class="headerlink" title="推送为PSH"></a>推送为PSH</h4><p>就是接收端的URG，将PSH=1的数据尽快接收<br>注意一下，如果没有PSH，一般都是接收方缓存满了之后再将数据发送到主机<br><img src="https://img-blog.csdnimg.cn/20200630212045298.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630212045298.png" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
-<h4 id="复位RST"><a href="#复位RST" class="headerlink" title="复位RST"></a>复位RST</h4><p><img src="https://img-blog.csdnimg.cn/20200630212049447.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630212049447.png" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
-<h4 id="同步位SYN"><a href="#同步位SYN" class="headerlink" title="同步位SYN"></a>同步位SYN</h4><p>A和B主机要建立连接，就A先发一个报文，其中SYN=1<br>B收到之后也回复一个SYN=1的报文，代表接受连接<br><img src="https://img-blog.csdnimg.cn/20200630212152221.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630212152221.png" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
-<h4 id="终止位FIN"><a href="#终止位FIN" class="headerlink" title="终止位FIN"></a>终止位FIN</h4><p><img src="https://img-blog.csdnimg.cn/20200630212056958.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630212056958.png" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
+<h5 id="在接收端的时候"><a href="#在接收端的时候" class="headerlink" title="在接收端的时候"></a>在<strong>接收端</strong>的时候</h5><p><strong>与发送端的时候不同的是，此时检验和字段不是0了</strong><br>按照发送端的步骤再将所有数据写成二进制进行二进制反码运算求和<br>如果最后得到结果全1就是没问题，否则丢弃<br><img src="https://img-blog.csdnimg.cn/20200630105526400.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="3-TCP协议"><a href="#3-TCP协议" class="headerlink" title="3. TCP协议"></a>3. TCP协议</h1><h2 id="3-1-TCP协议的特点"><a href="#3-1-TCP协议的特点" class="headerlink" title="3.1 TCP协议的特点"></a>3.1 TCP协议的特点</h2><p>TCP必须要建立连接之后才可以进行数据交换，所以TCP是面向连接的<br><img src="https://img-blog.csdnimg.cn/20200630194247441.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>TCP传输数据是随机切割数据的<img src="https://img-blog.csdnimg.cn/2020063020421472.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="3-2-TCP报文段的首部"><a href="#3-2-TCP报文段的首部" class="headerlink" title="3.2 TCP报文段的首部"></a>3.2 TCP报文段的首部</h2><p>注释：<br>见上图，可以看到TCP是将数据随机分割后加上TCP头传输的，所以<br>序号就是为了标记这些随机分割之后的数据，这里把第一个字节的编号当成序号<br>确认号就是收到之后做一下标记，代表这之前的都收到了，希望收到的下一个编号的数据就是确认号打头的那个数据<br>偏移量就是为了标记一下距离TCP开始多少字节是数据，这里的单位是4B，这个偏移量就是TCP首部长度<br><img src="https://img-blog.csdnimg.cn/20200630210441410.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>窗口就是接收方告诉发送方，还有多少地方（缓存）可以放数据<br>紧急指针就是告诉TCP从哪里到哪里是紧急数据<br><img src="https://img-blog.csdnimg.cn/20200630212601599.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="3-2-1-TCP的六个控制位"><a href="#3-2-1-TCP的六个控制位" class="headerlink" title="3.2.1 TCP的六个控制位"></a>3.2.1 TCP的六个控制位</h3><h4 id="紧急位URG"><a href="#紧急位URG" class="headerlink" title="紧急位URG"></a>紧急位URG</h4><p>URG的特点就是让数据<strong>插队</strong>，URG=1的就会在缓存中被提前到第一个传输<br><img src="https://img-blog.csdnimg.cn/20200630211126589.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200630211151331.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h4 id="确认位ACK"><a href="#确认位ACK" class="headerlink" title="确认位ACK"></a>确认位ACK</h4><p><img src="https://img-blog.csdnimg.cn/20200630211354251.png" alt="在这里插入图片描述"></p>
+<h4 id="推送为PSH"><a href="#推送为PSH" class="headerlink" title="推送为PSH"></a>推送为PSH</h4><p>就是接收端的URG，将PSH=1的数据尽快接收<br>注意一下，如果没有PSH，一般都是接收方缓存满了之后再将数据发送到主机<br><img src="https://img-blog.csdnimg.cn/20200630212045298.png" alt="在这里插入图片描述"></p>
+<h4 id="复位RST"><a href="#复位RST" class="headerlink" title="复位RST"></a>复位RST</h4><p><img src="https://img-blog.csdnimg.cn/20200630212049447.png" alt="在这里插入图片描述"></p>
+<h4 id="同步位SYN"><a href="#同步位SYN" class="headerlink" title="同步位SYN"></a>同步位SYN</h4><p>A和B主机要建立连接，就A先发一个报文，其中SYN=1<br>B收到之后也回复一个SYN=1的报文，代表接受连接<br><img src="https://img-blog.csdnimg.cn/20200630212152221.png" alt="在这里插入图片描述"></p>
+<h4 id="终止位FIN"><a href="#终止位FIN" class="headerlink" title="终止位FIN"></a>终止位FIN</h4><p><img src="https://img-blog.csdnimg.cn/20200630212056958.png" alt="在这里插入图片描述"></p>
 <h2 id="3-3-TCP连接管理"><a href="#3-3-TCP连接管理" class="headerlink" title="3.3 TCP连接管理"></a>3.3 TCP连接管理</h2><h3 id="3-3-1-TCP三次握手（建立连接）"><a href="#3-3-1-TCP三次握手（建立连接）" class="headerlink" title="3.3.1 TCP三次握手（建立连接）"></a>3.3.1 TCP三次握手（建立连接）</h3><p>注释：<br>第一段的意思是<br>SYN=1：(A)要建立连接了！<br>seq=x（随机）：因为还没有数据，所以写什么都无所谓</p>
 <p>第二段的意思是<br>SYN=1：我(B)同意你(A)建立连接！<br>ACK=1：连接建立了，之后的ACK必须都置为1<br>seq=y（随机）：因为还没有数据，所以写什么都无所谓<br>ack=x+1：之前发送方(A)说发送的是第x位数据（虽然发送方是瞎说的），所以我(B)要的是x+1位数据</p>
 <p>第三段的意思是<br>SYN=0：SYN只有在建立连接时才为1，其他时候均设为0<br>ACK=1：连接建立了，之后的ACK必须都置为1<br>seq=x+1：我(A)发送的报文段的第一个字节就是x+1<br>ack=y+1：之前接收方(B)说发送的是第y位数据（虽然接收方是瞎说的），所以我(A)要的是y+1位数据</p>
-<p>注意一下，TCP是双向的，所以不存在绝对不变的发送方接收方，这里的两台主机都同时是发送方和接收方<br><img src="https://img-blog.csdnimg.cn/20200630213814996.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630213814996.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
-<h4 id="TCP三次握手特定导致的SYN洪泛攻击"><a href="#TCP三次握手特定导致的SYN洪泛攻击" class="headerlink" title="TCP三次握手特定导致的SYN洪泛攻击"></a>TCP三次握手特定导致的SYN洪泛攻击</h4><p><img src="https://img-blog.csdnimg.cn/20200630214925395.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630214925395.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
+<p>注意一下，TCP是双向的，所以不存在绝对不变的发送方接收方，这里的两台主机都同时是发送方和接收方<br><img src="https://img-blog.csdnimg.cn/20200630213814996.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h4 id="TCP三次握手特定导致的SYN洪泛攻击"><a href="#TCP三次握手特定导致的SYN洪泛攻击" class="headerlink" title="TCP三次握手特定导致的SYN洪泛攻击"></a>TCP三次握手特定导致的SYN洪泛攻击</h4><p><img src="https://img-blog.csdnimg.cn/20200630214925395.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h3 id="3-3-2-TCP四次挥手（连接释放）"><a href="#3-3-2-TCP四次挥手（连接释放）" class="headerlink" title="3.3.2 TCP四次挥手（连接释放）"></a>3.3.2 TCP四次挥手（连接释放）</h3><p>注释：<br>第一段的意思是<br>FIN=1：(A)要释放连接了！<br>seq=u：发了好多数据，这里只是用u指代一下，这里u是有确定值的</p>
 <p>第二段的意思是<br>ACK=1：连接建立了，之后的ACK必须都置为1<br>seq=v：发了好多数据，这里只是用v指代一下，这里v是有确定值的<br>ack=u+1：之前发送方(A)说发送的是第u位数据，所以我(B)要的是u+1位数据（尽管此时A已经决定释放连接了）</p>
 <p>第三段的意思是<br>FIN=1：(B)要释放连接了！<br>ACK=1：连接建立了，之后的ACK必须都置为1<br>seq=w：发了好多数据，这里只是用w指代一下，这里w是有确定值的<br>ack=u+1：之前发送方(A)说发送的是第u位数据，所以我(B)要的是u+1位数据（因为A直接不发数据了，所以第二段第三段的ack都是u+1）</p>
 <p>第四段的意思是<br>ACK=1：连接建立了，之后的ACK必须都置为1<br>seq=u+1：之前发的数据时第u位数据，B也要第u+1位数据，所以我发第u+1位数据<br>ack=w+1：之前发送方(B)说发送的是第w位数据，所以我(A)要的是w+1位数据</p>
-<p>为什么需要等待计时2MSL？<br>因为这样可以保证B可以收到A的终止报文段进而进入关闭状态<br>比如说如果A的第四段报文丢失，那么等待一个MSL之后B就会重传第三段报文，花费小于1MSL之后A就会再收到第三段报文，之后就可以再次向B发送第四段报文提示B关闭连接<br><img src="https://img-blog.csdnimg.cn/20200630215522825.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630215522825.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
-<h2 id="3-4-TCP可靠传输"><a href="#3-4-TCP可靠传输" class="headerlink" title="3.4 TCP可靠传输"></a>3.4 TCP可靠传输</h2><p>TCP是提供可靠传输，UDP这种本身还是不可靠传输的就再靠应用层解决了<br><img src="https://img-blog.csdnimg.cn/20200630220542461.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630220542461.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
-<h3 id="3-4-1-序号"><a href="#3-4-1-序号" class="headerlink" title="3.4.1 序号"></a>3.4.1 序号</h3><p>就是TCP根据下方数据链路层的MTU（最大传输单元）来随即将数据切割成好几端并且进行编号<br><img src="https://img-blog.csdnimg.cn/20200630221424853.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630221424853.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
-<h3 id="3-4-2-确认"><a href="#3-4-2-确认" class="headerlink" title="3.4.2 确认"></a>3.4.2 确认</h3><p>发送方每一次发送数据之后都需要接收方进行确认。<br>TCP使用的是累计确认机制，就是从第一个丢失的字节开始请求丢失的报文段。如图中456丢失，78到达，但仍然请求发送的数据序号是4<br><img src="https://img-blog.csdnimg.cn/20200630221636424.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630221636424.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
+<p>为什么需要等待计时2MSL？<br>因为这样可以保证B可以收到A的终止报文段进而进入关闭状态<br>比如说如果A的第四段报文丢失，那么等待一个MSL之后B就会重传第三段报文，花费小于1MSL之后A就会再收到第三段报文，之后就可以再次向B发送第四段报文提示B关闭连接<br><img src="https://img-blog.csdnimg.cn/20200630215522825.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="3-4-TCP可靠传输"><a href="#3-4-TCP可靠传输" class="headerlink" title="3.4 TCP可靠传输"></a>3.4 TCP可靠传输</h2><p>TCP是提供可靠传输，UDP这种本身还是不可靠传输的就再靠应用层解决了<br><img src="https://img-blog.csdnimg.cn/20200630220542461.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="3-4-1-序号"><a href="#3-4-1-序号" class="headerlink" title="3.4.1 序号"></a>3.4.1 序号</h3><p>就是TCP根据下方数据链路层的MTU（最大传输单元）来随即将数据切割成好几端并且进行编号<br><img src="https://img-blog.csdnimg.cn/20200630221424853.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="3-4-2-确认"><a href="#3-4-2-确认" class="headerlink" title="3.4.2 确认"></a>3.4.2 确认</h3><p>发送方每一次发送数据之后都需要接收方进行确认。<br>TCP使用的是累计确认机制，就是从第一个丢失的字节开始请求丢失的报文段。如图中456丢失，78到达，但仍然请求发送的数据序号是4<br><img src="https://img-blog.csdnimg.cn/20200630221636424.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h3 id="3-4-3-重传"><a href="#3-4-3-重传" class="headerlink" title="3.4.3 重传"></a>3.4.3 重传</h3><p>为什么要使用自适应算法？网络环境太复杂，路径又长又短，RTT设置短了照顾不了距离远的，RTT设置长了又导致网络利用率降低，所以使用RTTs</p>
-<p><img src="https://img-blog.csdnimg.cn/20200630222205619.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630222205619.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
-<h2 id="3-5-TCP流量控制"><a href="#3-5-TCP流量控制" class="headerlink" title="3.5 TCP流量控制"></a>3.5 TCP流量控制</h2><p>简单来说就是接收方可以动态的发送信息告诉发送方发送窗口的大小。<br>接收方接受不过来了就让发送方发送窗口小点，这样发送方发送的速率就慢下来了，接收方就有时间处理它的数据了<br>接受方处理完了也可以发送请求让发送方发送窗口大点，这样发送方发送的速率就快起来了，接收方就可以处理更多数据而不是空闲等着收数据了<br><img src="https://img-blog.csdnimg.cn/202006302226272.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/202006302226272.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
-<h3 id="3-5-1-计时器"><a href="#3-5-1-计时器" class="headerlink" title="3.5.1 计时器"></a>3.5.1 计时器</h3><p>在本例子中，使用的累计确认机制（一次回复收到ack=201）和三次流量控制机制。<br>但是有一个情况就是，如果最后B不允许A再发送数据了，B在处理完数据之后想要恢复窗口大小时发送的有rwnd大小的数据报丢了怎么办？此时A有B的指令在前，发送窗口为0无法发送数据，B也在等待A回复，造成了类似死锁的现象<br>解决方法：使用计时器<br><img src="https://img-blog.csdnimg.cn/20200630223616929.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630223616929.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
-<h2 id="3-6-TCP拥塞控制"><a href="#3-6-TCP拥塞控制" class="headerlink" title="3.6 TCP拥塞控制"></a>3.6 TCP拥塞控制</h2><p>流量控制是对单独一个来说的，拥塞控制是一群<br><img src="https://img-blog.csdnimg.cn/20200630224242515.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630224242515.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
-<h3 id="3-6-1-拥塞控制四种算法"><a href="#3-6-1-拥塞控制四种算法" class="headerlink" title="3.6.1 拥塞控制四种算法"></a>3.6.1 拥塞控制四种算法</h3><p>这里虽然是四种算法，但是通常是两两结合进行使用<br><img src="https://img-blog.csdnimg.cn/20200630232411944.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630232411944.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
-<h3 id="3-6-2-慢开始和拥塞避免"><a href="#3-6-2-慢开始和拥塞避免" class="headerlink" title="3.6.2 慢开始和拥塞避免"></a>3.6.2 慢开始和拥塞避免</h3><p>这里开始时以<strong>指数形式增长</strong>，ssthresh的意思是慢开始门限，代表从这个地方注入的报文段就比较多了，需要开始慢速增加了。<br>之后一段都是<strong>线性增长</strong>，每次增加1，直至达到网络拥塞状态<br>瞬间将cwnd设置为1，同时调整原来的ssthresh的值到之前达到网络拥塞状态的1/2,（这里是24降到12）<br>重复以上步骤，但是注意此时ssthresh变了之后线性增长的转折点也变了<br><img src="https://img-blog.csdnimg.cn/20200630232910475.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630232910475.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
-<h3 id="3-6-3-快重传和快恢复"><a href="#3-6-3-快重传和快恢复" class="headerlink" title="3.6.3 快重传和快恢复"></a>3.6.3 快重传和快恢复</h3><p>这里和上面的慢开始和拥塞避免的一开始步骤差不多，都是先指数增长再转变为线性增长。<br>不同的点是快重传和快恢复算法是在收到连续的ack确认之后执行，这里的ack就是冗余ack，冗余ack的特点是如果多次对某一段请求的数据没有被收到，达到一定数目之后就会立即执行重传。但是此时只是降到现在cwnd的一半，再重新线性增长。而不是像慢开始和拥塞避免的从头开始<br><img src="https://img-blog.csdnimg.cn/20200630233701386.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630233701386.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
-<h1 id="4-本章思维导图"><a href="#4-本章思维导图" class="headerlink" title="4. 本章思维导图"></a>4. 本章思维导图</h1><p><img src="https://img-blog.csdnimg.cn/20200630234217765.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20200630234217765.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20200630222205619.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="3-5-TCP流量控制"><a href="#3-5-TCP流量控制" class="headerlink" title="3.5 TCP流量控制"></a>3.5 TCP流量控制</h2><p>简单来说就是接收方可以动态的发送信息告诉发送方发送窗口的大小。<br>接收方接受不过来了就让发送方发送窗口小点，这样发送方发送的速率就慢下来了，接收方就有时间处理它的数据了<br>接受方处理完了也可以发送请求让发送方发送窗口大点，这样发送方发送的速率就快起来了，接收方就可以处理更多数据而不是空闲等着收数据了<br><img src="https://img-blog.csdnimg.cn/202006302226272.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="3-5-1-计时器"><a href="#3-5-1-计时器" class="headerlink" title="3.5.1 计时器"></a>3.5.1 计时器</h3><p>在本例子中，使用的累计确认机制（一次回复收到ack=201）和三次流量控制机制。<br>但是有一个情况就是，如果最后B不允许A再发送数据了，B在处理完数据之后想要恢复窗口大小时发送的有rwnd大小的数据报丢了怎么办？此时A有B的指令在前，发送窗口为0无法发送数据，B也在等待A回复，造成了类似死锁的现象<br>解决方法：使用计时器<br><img src="https://img-blog.csdnimg.cn/20200630223616929.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="3-6-TCP拥塞控制"><a href="#3-6-TCP拥塞控制" class="headerlink" title="3.6 TCP拥塞控制"></a>3.6 TCP拥塞控制</h2><p>流量控制是对单独一个来说的，拥塞控制是一群<br><img src="https://img-blog.csdnimg.cn/20200630224242515.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="3-6-1-拥塞控制四种算法"><a href="#3-6-1-拥塞控制四种算法" class="headerlink" title="3.6.1 拥塞控制四种算法"></a>3.6.1 拥塞控制四种算法</h3><p>这里虽然是四种算法，但是通常是两两结合进行使用<br><img src="https://img-blog.csdnimg.cn/20200630232411944.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="3-6-2-慢开始和拥塞避免"><a href="#3-6-2-慢开始和拥塞避免" class="headerlink" title="3.6.2 慢开始和拥塞避免"></a>3.6.2 慢开始和拥塞避免</h3><p>这里开始时以<strong>指数形式增长</strong>，ssthresh的意思是慢开始门限，代表从这个地方注入的报文段就比较多了，需要开始慢速增加了。<br>之后一段都是<strong>线性增长</strong>，每次增加1，直至达到网络拥塞状态<br>瞬间将cwnd设置为1，同时调整原来的ssthresh的值到之前达到网络拥塞状态的1/2,（这里是24降到12）<br>重复以上步骤，但是注意此时ssthresh变了之后线性增长的转折点也变了<br><img src="https://img-blog.csdnimg.cn/20200630232910475.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="3-6-3-快重传和快恢复"><a href="#3-6-3-快重传和快恢复" class="headerlink" title="3.6.3 快重传和快恢复"></a>3.6.3 快重传和快恢复</h3><p>这里和上面的慢开始和拥塞避免的一开始步骤差不多，都是先指数增长再转变为线性增长。<br>不同的点是快重传和快恢复算法是在收到连续的ack确认之后执行，这里的ack就是冗余ack，冗余ack的特点是如果多次对某一段请求的数据没有被收到，达到一定数目之后就会立即执行重传。但是此时只是降到现在cwnd的一半，再重新线性增长。而不是像慢开始和拥塞避免的从头开始<br><img src="https://img-blog.csdnimg.cn/20200630233701386.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="4-本章思维导图"><a href="#4-本章思维导图" class="headerlink" title="4. 本章思维导图"></a>4. 本章思维导图</h1><p><img src="https://img-blog.csdnimg.cn/20200630234217765.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h1 id="本文常用名词中英文对照"><a href="#本文常用名词中英文对照" class="headerlink" title="本文常用名词中英文对照"></a>本文常用名词中英文对照</h1><p>Multiplexing and demultiplexing 复用与分用<br>Positive acknowledgments 肯定确认<br>Negative acknowledgments 否定确认<br>Countdown timer （倒数）计时器<br>Cumulative acknowledgment 累积确认<br>Receive buffer 接收缓冲区，或接收缓存<br>Resource-management cells 资源管理单元<br>Source (port number) 源端口号<br>Destination (port number) 目的端口号<br>Checksum 校验和<br>Pipelined protocols 流水线（型）协议<br>Go-back-N 回退N<br>Selective Repeat 选择重传<br>Timeout （定时器）超时<br>Fast Retransmit 快速重传<br>Flow Control 流量控制<br>Three way handshake 三次握手<br>sequence number 序列号（简写为seq）<br>acknowledgement number 确认号（简写为ack；注意与大小的ACK不同）<br>Congestion Control 拥塞控制<br>additive increase, multiplicative decrease 加性增乘性减<br>Slow Start 慢启动<br>congestion-avoidance 拥塞避免<br>fast recovery 快速恢复<br>duplicate (ACK) 冗余（ACK）<br>Random Early Detection 随机早期检测</p>
 <p>参考资料<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV19E411D78Q?p=1">2019 王道考研 计算机网络</a></p>
 
-  
-  
-    
-    <div class='footer'>
-      
-      
-      
-        <div class='copyright'>
-          <blockquote>
+        <!-- 分类文章 -->
+        
+          <div class="post-categoris-bottom">
+            <div class="post-categoris-name">计算机网络综合</div>
+            <ul>
+            
             
               
-                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../../../01/18/2020-01-18-time-protocol/" class="post-categoris-bottom-link">
+                  时间协议
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0Part1%E6%A6%82%E8%BF%B0/" class="post-categoris-bottom-link">
+                  计算机网络笔记概述
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../%E7%89%A9%E7%90%86%E5%B1%82/" class="post-categoris-bottom-link">
+                  物理层
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/" class="post-categoris-bottom-link">
+                  数据链路层
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../%E7%BD%91%E7%BB%9C%E5%B1%82/" class="post-categoris-bottom-link">
+                  网络层
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="me base">
+                  <a  href="" class="post-categoris-bottom-link">
+                  传输层
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../%E5%BA%94%E7%94%A8%E5%B1%82/" class="post-categoris-bottom-link">
+                  应用层
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            </ul>
 
-              
-            
-              
-                <p>本文永久链接是：<a href=http://example.com/2021/02/05/%E4%BC%A0%E8%BE%93%E5%B1%82/>http://example.com/2021/02/05/%E4%BC%A0%E8%BE%93%E5%B1%82/</a></p>
-              
-            
-          </blockquote>
-        </div>
-      
-      
-        <div class='donate'>
-          <div class='imgs'>
-            
-              <img src='../../../../https:/gitee.com/boyqi/jpg/raw/master/541957334755484884.jpg'>
-            
-              <img src='../../../../https:/gitee.com/boyqi/jpg/raw/master/60626648564436122.jpg'>
-            
           </div>
-        </div>
-      
-    </div>
-  
-  
-    
-
-
-  <div class='article-meta' id="bottom">
-    <div class='new-meta-box'>
-      
-        
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-04-19T20:03:48+08:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Apr 19, 2021</p>
-  </a>
-</div>
-
-        
-      
-        
-          
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="../../../../tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>计算机</p></a></div>
-
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/02/05/%E4%BC%A0%E8%BE%93%E5%B1%82/&title=传输层 - 齐雨争&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/02/05/%E4%BC%A0%E8%BE%93%E5%B1%82/&title=传输层 - 齐雨争&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/02/05/%E4%BC%A0%E8%BE%93%E5%B1%82/&title=传输层 - 齐雨争&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-    
-      
-    
-  </div>
-</div>
-
-
-
-        
-      
-    </div>
-  </div>
-
-
-  
-  
-
-  
-    <div class="prev-next">
-      
-        <a class='prev' href='../%E5%BA%94%E7%94%A8%E5%B1%82/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>应用层</p>
-          <p class='content'>本人计算机网络笔记总目录计算机网络笔记Part1 概述计算机网络笔记Part2 物理层（Physical Layer）计算机网络笔记Part3 数据链路层（Data Link Layer）计算机...</p>
-        </a>
-      
-      
-        <a class='next' href='../%E7%BD%91%E7%BB%9C%E5%B1%82/'>
-          <p class='title'>网络层<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>本人计算机网络笔记总目录计算机网络笔记Part1 概述计算机网络笔记Part2 物理层（Physical Layer）计算机网络笔记Part3 数据链路层（Data Link Layer）计算机...</p>
-        </a>
-      
-    </div>
-  
-</article>
-
-
-  
-
-  <article class="post white-box reveal shadow" id="comments">
-    <p ct><i class='fas fa-comments'></i> 评论</p>
-    
-    <div id="valine_container" class="valine_thread">
-  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
-</div>
-
-  </article>
-
-
-
-
-
-
-</div>
-<aside class='l_side'>
-  
-  
-    
-    
-
-
-
-  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
-    
-  <header>
-    
-      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E4%BC%A0%E8%BE%93%E5%B1%82%E7%9A%84%E6%84%8F%E4%B9%89"><span class="toc-text">1.1 传输层的意义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E4%BC%A0%E8%BE%93%E5%B1%82%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%8D%8F%E8%AE%AE"><span class="toc-text">1.2 传输层的两个协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%E4%BC%A0%E8%BE%93%E5%B1%82%E7%9A%84%E5%AF%BB%E5%9D%80%E5%92%8C%E7%AB%AF%E5%8F%A3"><span class="toc-text">1.3 传输层的寻址和端口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-1-%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%AB%AF%E5%8F%A3%E5%8F%B7"><span class="toc-text">1.3.1 常见的应用程序端口号</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-UDP%E6%A6%82%E8%BF%B0"><span class="toc-text">2.1 UDP概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-UDP%E9%A6%96%E9%83%A8%E6%A0%BC%E5%BC%8F"><span class="toc-text">2.2 UDP首部格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-UDP%E7%9A%84%E6%A0%A1%E9%AA%8C%E4%BD%8D%E6%9E%84%E6%88%90"><span class="toc-text">2.2.1 UDP的校验位构成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-UDP%E6%A0%A1%E9%AA%8C%E6%96%B9%E5%BC%8F"><span class="toc-text">2.2.2 UDP校验方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E4%B8%80%E4%B8%8B%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-text">总结一下步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9C%A8%E5%8F%91%E9%80%81%E7%AB%AF%E7%9A%84%E6%97%B6%E5%80%99%EF%BC%9A"><span class="toc-text">在发送端的时候：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9C%A8%E6%8E%A5%E6%94%B6%E7%AB%AF%E7%9A%84%E6%97%B6%E5%80%99"><span class="toc-text">在接收端的时候</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-TCP%E5%8D%8F%E8%AE%AE%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-text">3.1 TCP协议的特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-TCP%E6%8A%A5%E6%96%87%E6%AE%B5%E7%9A%84%E9%A6%96%E9%83%A8"><span class="toc-text">3.2 TCP报文段的首部</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-1-TCP%E7%9A%84%E5%85%AD%E4%B8%AA%E6%8E%A7%E5%88%B6%E4%BD%8D"><span class="toc-text">3.2.1 TCP的六个控制位</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B4%A7%E6%80%A5%E4%BD%8DURG"><span class="toc-text">紧急位URG</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A1%AE%E8%AE%A4%E4%BD%8DACK"><span class="toc-text">确认位ACK</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A8%E9%80%81%E4%B8%BAPSH"><span class="toc-text">推送为PSH</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%8D%E4%BD%8DRST"><span class="toc-text">复位RST</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5%E4%BD%8DSYN"><span class="toc-text">同步位SYN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%88%E6%AD%A2%E4%BD%8DFIN"><span class="toc-text">终止位FIN</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-TCP%E8%BF%9E%E6%8E%A5%E7%AE%A1%E7%90%86"><span class="toc-text">3.3 TCP连接管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-1-TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%EF%BC%88%E5%BB%BA%E7%AB%8B%E8%BF%9E%E6%8E%A5%EF%BC%89"><span class="toc-text">3.3.1 TCP三次握手（建立连接）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E7%89%B9%E5%AE%9A%E5%AF%BC%E8%87%B4%E7%9A%84SYN%E6%B4%AA%E6%B3%9B%E6%94%BB%E5%87%BB"><span class="toc-text">TCP三次握手特定导致的SYN洪泛攻击</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-2-TCP%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%EF%BC%88%E8%BF%9E%E6%8E%A5%E9%87%8A%E6%94%BE%EF%BC%89"><span class="toc-text">3.3.2 TCP四次挥手（连接释放）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-TCP%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93"><span class="toc-text">3.4 TCP可靠传输</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-1-%E5%BA%8F%E5%8F%B7"><span class="toc-text">3.4.1 序号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-2-%E7%A1%AE%E8%AE%A4"><span class="toc-text">3.4.2 确认</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-3-%E9%87%8D%E4%BC%A0"><span class="toc-text">3.4.3 重传</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-TCP%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6"><span class="toc-text">3.5 TCP流量控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-1-%E8%AE%A1%E6%97%B6%E5%99%A8"><span class="toc-text">3.5.1 计时器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-6-TCP%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6"><span class="toc-text">3.6 TCP拥塞控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-1-%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6%E5%9B%9B%E7%A7%8D%E7%AE%97%E6%B3%95"><span class="toc-text">3.6.1 拥塞控制四种算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-2-%E6%85%A2%E5%BC%80%E5%A7%8B%E5%92%8C%E6%8B%A5%E5%A1%9E%E9%81%BF%E5%85%8D"><span class="toc-text">3.6.2 慢开始和拥塞避免</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-3-%E5%BF%AB%E9%87%8D%E4%BC%A0%E5%92%8C%E5%BF%AB%E6%81%A2%E5%A4%8D"><span class="toc-text">3.6.3 快重传和快恢复</span></a></li></ol></li></ol>
-    </div>
-  </section>
-
-
-  
-
-
-</aside>
-
-
-
-        
-        
-          <!--此文件用来存放一些不方便取值的变量-->
-<!--思路大概是将值藏到重加载的区域内-->
-
-<script>
-  window.pdata={}
-  pdata.ispage=true;
-  pdata.postTitle="传输层";
-  pdata.commentPath="";
-  pdata.commentPlaceholder="";
-
-  var l_header=document.getElementById("l_header");
-  
-  l_header.classList.remove("show");
-  
-</script>
 
         
       </div>
-      
-  
-  <footer class="footer clearfix">
-    <br><br>
-    
-      
-        <div class="aplayer-container">
-          
-
-
-        </div>
-      
-    
-      
-        <br>
-        <div class="social-wrapper">
-          
-            
-          
-            
-          
-            
-          
-        </div>
-      
-    
-      
-        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
-</div>
-      
-    
-      
+      <div class="post-content-inner-space">
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
-</div>
+          <div class="space-toc-main animate__animated  animate__fadeInUp">
+            <ol class="space-toc"><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#1-1-%E4%BC%A0%E8%BE%93%E5%B1%82%E7%9A%84%E6%84%8F%E4%B9%89"><span class="space-toc-text">1.1 传输层的意义</span></a></li><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#1-2-%E4%BC%A0%E8%BE%93%E5%B1%82%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%8D%8F%E8%AE%AE"><span class="space-toc-text">1.2 传输层的两个协议</span></a></li><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#1-3-%E4%BC%A0%E8%BE%93%E5%B1%82%E7%9A%84%E5%AF%BB%E5%9D%80%E5%92%8C%E7%AB%AF%E5%8F%A3"><span class="space-toc-text">1.3 传输层的寻址和端口</span></a></li><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#2-1-UDP%E6%A6%82%E8%BF%B0"><span class="space-toc-text">2.1 UDP概述</span></a></li><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#2-2-UDP%E9%A6%96%E9%83%A8%E6%A0%BC%E5%BC%8F"><span class="space-toc-text">2.2 UDP首部格式</span></a></li><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#3-1-TCP%E5%8D%8F%E8%AE%AE%E7%9A%84%E7%89%B9%E7%82%B9"><span class="space-toc-text">3.1 TCP协议的特点</span></a></li><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#3-2-TCP%E6%8A%A5%E6%96%87%E6%AE%B5%E7%9A%84%E9%A6%96%E9%83%A8"><span class="space-toc-text">3.2 TCP报文段的首部</span></a></li><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#3-3-TCP%E8%BF%9E%E6%8E%A5%E7%AE%A1%E7%90%86"><span class="space-toc-text">3.3 TCP连接管理</span></a></li><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#3-4-TCP%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93"><span class="space-toc-text">3.4 TCP可靠传输</span></a></li><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#3-5-TCP%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6"><span class="space-toc-text">3.5 TCP流量控制</span></a></li><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#3-6-TCP%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6"><span class="space-toc-text">3.6 TCP拥塞控制</span></a></li></ol>
+           </div>
         
-      
+      </div>
+   </div>
+    <!-- 评论 -->
     
-      
-        Use
-        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.2" target="_blank" class="codename">Volantis</a>
-        as theme
-      
-    
-      
-        <div class='copyright'>
-        <p><a href="/">Copyright © 2017-2020 XXX</a></p>
-
-        </div>
-      
-    
-  </footer>
-  
-  <iframe frameborder="no" border="1500" marginwidth="1500" marginheight="1500" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=546724667&auto=1&height=66"></iframe>
-  
+  </div>
+</article>
+  </div>
+</div>
 
 
 
+<!-- 如果是home模式的话，不在首页就显示footer，如果不是home模式的话 所有都显示footer -->
 
+  <div class="footer-outer animate__animated  animate__fadeInUp">
+    <div class="footer-inner">
+    <div class="footer-text">
+    <p>Power by <a target="_blank" rel="noopener" href="http://hexo.io/">Hexo</a> Theme by <a target="_blank" rel="noopener" href="https://github.com/FuShaoLei/hexo-theme-white">反方向的钟</a></p>
 
-      <a id="s-top" class="fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
     </div>
-  </div>
-  <div>
-    <script>
-window.volantis={};
-/********************脚本懒加载函数********************************/
-function loadScript(src, cb) {
-var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
-var script = document.createElement('script');
-script.setAttribute('type','text/javascript');
-if (cb) script.onload = cb;
-script.setAttribute('src', src);
-HEAD.appendChild(script);
-}
-//https://github.com/filamentgroup/loadCSS
-var loadCSS = function( href, before, media, attributes ){
-	var doc = window.document;
-	var ss = doc.createElement( "link" );
-	var ref;
-	if( before ){
-		ref = before;
-	}
-	else {
-		var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
-		ref = refs[ refs.length - 1];
-	}
-	var sheets = doc.styleSheets;
-	if( attributes ){
-		for( var attributeName in attributes ){
-			if( attributes.hasOwnProperty( attributeName ) ){
-				ss.setAttribute( attributeName, attributes[attributeName] );
-			}
-		}
-	}
-	ss.rel = "stylesheet";
-	ss.href = href;
-	ss.media = "only x";
-	function ready( cb ){
-		if( doc.body ){
-			return cb();
-		}
-		setTimeout(function(){
-			ready( cb );
-		});
-	}
-	ready( function(){
-		ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
-	});
-	var onloadcssdefined = function( cb ){
-		var resolvedHref = ss.href;
-		var i = sheets.length;
-		while( i-- ){
-			if( sheets[ i ].href === resolvedHref ){
-				return cb();
-			}
-		}
-		setTimeout(function() {
-			onloadcssdefined( cb );
-		});
-	};
-	function loadCB(){
-		if( ss.addEventListener ){
-			ss.removeEventListener( "load", loadCB );
-		}
-		ss.media = media || "all";
-	}
-	if( ss.addEventListener ){
-		ss.addEventListener( "load", loadCB);
-	}
-	ss.onloadcssdefined = onloadcssdefined;
-	onloadcssdefined( loadCB );
-	return ss;
-};
-</script>
-<!-- required -->
-
-<script src="../../../../https:/cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
-
-<script>
-  function pjax_fancybox() {
-    $(".md .gallery").find("img").each(function () { //渲染 fancybox
-      var element = document.createElement("a"); // a 标签
-      $(element).attr("class", "fancybox");
-      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
-      $(element).attr("href", $(this).attr("src"));
-      if ($(this).attr("data-original")) {
-        $(element).attr("href", $(this).attr("data-original"));
-      }
-      $(element).attr("data-fancybox", "images");
-      var caption = "";   // 描述信息
-      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
-        $(element).attr('data-caption', $(this).attr('alt'));
-        caption = $(this).attr('alt');
-      }
-      var div = document.createElement("div");
-      $(div).addClass("fancybox");
-      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
-      var span = document.createElement("span");
-      $(span).addClass("image-caption");
-      $(span).text(caption); // 加描述
-      $(this).after(span);  // 再套一层描述
-      $(this).wrap(element);  // 最后套 a 标签
-    })
-    $(".md .gallery").find("img").fancybox({
-      selector: '[data-fancybox="images"]',
-      hash: false,
-      loop: false,
-      closeClick: true,
-      helpers: {
-        overlay: {closeClick: true}
-      },
-      buttons: [
-        "zoom",
-        "close"
-      ]
-    });
-  };
-  function SCload_fancybox() {
-    if ($(".md .gallery").find("img").length == 0) return;
-    loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css", document.getElementById("loadcss"));
-    setTimeout(function() {
-      loadScript('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', pjax_fancybox)
-    }, 1);
-  };
-  $(function () {
-    SCload_fancybox();
-  });
-</script>
-
-
-<!-- internal -->
-
-
-
-
-
-
-
-  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
-<script>
-  // https://www.npmjs.com/package/vanilla-lazyload
-  // Set the options globally
-  // to make LazyLoad self-initialize
-  window.lazyLoadOptions = {
-    elements_selector: ".lazyload",
-    threshold: 0
-  };
-  // Listen to the initialization event
-  // and get the instance of LazyLoad
-  window.addEventListener(
-    "LazyLoad::Initialized",
-    function (event) {
-      window.lazyLoadInstance = event.detail.instance;
-    },
-    false
-  );
-  document.addEventListener('DOMContentLoaded', function () {
-    lazyLoadInstance.update();
-  });
-  document.addEventListener('pjax:complete', function () {
-    lazyLoadInstance.update();
-  });
-</script>
-
-
-
-
-  
-  
-    <script>
-      window.FPConfig = {
-        delay: 0,
-        ignoreKeywords: [],
-        maxRPS: 5,
-        hoverDelay: 25
-      };
-    </script>
-    <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
-  
-
-
-
-
-
-
-
-
-
-
-  
-  
-<script src="../../../../js/valine.js"></script>
-
-
-<script>
-  var GUEST_INFO = ['nick', 'mail', 'link'];
-  var meta = 'nick,mail,link'.split(',').filter(function (item) {
-    return GUEST_INFO.indexOf(item) > -1
-  });
-  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
-  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
-    return REQUIRED_FIELDS.indexOf(item) > -1
-  });
-
-  function emoji(path, idx, ext) {
-    return path + "/" + path + "-" + idx + "." + ext;
-  }
-
-  var emojiMaps = {};
-  for (var i = 1; i <= 54; i++) {
-    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
-  }
-  for (var i = 1; i <= 101; i++) {
-    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
-  }
-  for (var i = 1; i <= 116; i++) {
-    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
-  }
-  for (var i = 1; i <= 125; i++) {
-    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
-  }
-  for (var i = 1; i <= 4; i++) {
-    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
-  }
-
-  function pjax_valine() {
-    if(!document.querySelectorAll("#valine_container")[0])return;
-
-    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
-
-    let path = pdata.commentPath;
-    if (path.length == 0) {
-      let defaultPath = '';
-      path = defaultPath || decodeURI(window.location.pathname);
-    }
-
-    var valine = new Valine();
-    valine.init({
-      el: '#valine_container',
-      meta: meta,
-      placeholder: pagePlaceholder,
-      path: path,
-      appId: "",
-      appKey: "",
-      pageSize: '10',
-      avatar: 'robohash',
-      lang: 'zh-cn',
-      visitor: 'true',
-      highlight: 'true',
-      mathJax: 'false',
-      enableQQ: 'true',
-      recordIP: 'false',
-      requiredFields: requiredFields,
-      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
-      emojiMaps: emojiMaps
-    })
-  }
-
-  $(function () {
-    pjax_valine();
-  });
-</script>
-
-
-
-
-
-  
-<script src="../../../../js/app.js"></script>
-
-
-
-
-  
-    
-<script src="../../../../js/search.js"></script>
-
-  
-
-
-<!-- optional -->
-
-  <script>
-const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
-const ROOT =  ("/Geisha-design.github.io/" || "/").endsWith('/') ? ("/Geisha-design.github.io/" || "/") : ("/Geisha-design.github.io//" || "/" );
-(function ($) {
-  
-    customSearch = new HexoSearch({
-      imagePath: SearchServiceimagePath
-    });
-  
-})(jQuery);
-
-</script>
-
-
-
-
-
-
-
-
-
-
-
-  <script defer>
-
-  const LCCounter = {
-    app_id: 'u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI',
-    app_key: 'jfHtEKVE24j0IVCGHbvuFClp',
-    custom_api_server: '',
-
-    // 查询存储的记录
-    getRecord(Counter, url, title) {
-      return new Promise(function (resolve, reject) {
-        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
-          .then(resp => resp.json())
-          .then(({results, code, error}) => {
-            if (code === 401) {
-              throw error;
-            }
-            if (results && results.length > 0) {
-              var record = results[0];
-              resolve(record);
-            } else {
-              Counter('post', '/classes/Counter', {url, title: title, times: 0})
-                .then(resp => resp.json())
-                .then((record, error) => {
-                  if (error) {
-                    throw error;
-                  }
-                  resolve(record);
-                }).catch(error => {
-                console.error('Failed to create', error);
-                reject(error);
-              });
-            }
-          }).catch((error) => {
-          console.error('LeanCloud Counter Error:', error);
-          reject(error);
-        });
-      })
-    },
-
-    // 发起自增请求
-    increment(Counter, incrArr) {
-      return new Promise(function (resolve, reject) {
-        Counter('post', '/batch', {
-          "requests": incrArr
-        }).then((res) => {
-          res = res.json();
-          if (res.error) {
-            throw res.error;
-          }
-          resolve(res);
-        }).catch((error) => {
-          console.error('Failed to save visitor count', error);
-          reject(error);
-        });
-      });
-    },
-
-    // 构建自增请求体
-    buildIncrement(objectId) {
-      return {
-        "method": "PUT",
-        "path": `/1.1/classes/Counter/${ objectId }`,
-        "body": {
-          "times": {
-            '__op': 'Increment',
-            'amount': 1
-          }
-        }
-      }
-    },
-
-    // 校验是否为有效的 UV
-    validUV() {
-      var key = 'LeanCloudUVTimestamp';
-      var flag = localStorage.getItem(key);
-      if (flag) {
-        // 距离标记小于 24 小时则不计为 UV
-        if (new Date().getTime() - parseInt(flag) <= 86400000) {
-          return false;
-        }
-      }
-      localStorage.setItem(key, new Date().getTime().toString());
-      return true;
-    },
-
-    addCount(Counter) {
-      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
-      enableIncr = true;
-      var getterArr = [];
-      var incrArr = [];
-      // 请求 PV 并自增
-      var pvCtn = document.querySelector('#lc-sv');
-      if (pvCtn || enableIncr) {
-        var pvGetter = this.getRecord(Counter, 'http://example.com' + '/#lc-sv', 'Visits').then((record) => {
-          incrArr.push(this.buildIncrement(record.objectId))
-          var eles = document.querySelectorAll('#lc-sv #number');
-          if (eles.length > 0) {
-            eles.forEach((el,index,array)=>{
-              el.innerText = record.times + 1;
-              if (pvCtn) {
-                pvCtn.style.display = 'inline';
-              }
-            })
-          }
-        });
-        getterArr.push(pvGetter);
-      }
-
-      // 请求 UV 并自增
-      var uvCtn = document.querySelector('#lc-uv');
-      if (uvCtn || enableIncr) {
-        var uvGetter = this.getRecord(Counter, 'http://example.com' + '/#lc-uv', 'Visitors').then((record) => {
-          var vuv = this.validUV();
-          vuv && incrArr.push(this.buildIncrement(record.objectId))
-          var eles = document.querySelectorAll('#lc-uv #number');
-          if (eles.length > 0) {
-            eles.forEach((el,index,array)=>{
-              el.innerText = record.times + (vuv ? 1 : 0);
-              if (uvCtn) {
-                uvCtn.style.display = 'inline';
-              }
-            })
-          }
-        });
-        getterArr.push(uvGetter);
-      }
-
-      // 请求文章的浏览数，如果是当前页面就自增
-      var allPV = document.querySelectorAll('#lc-pv');
-      if (allPV.length > 0 || enableIncr) {
-        for (i = 0; i < allPV.length; i++) {
-          let pv = allPV[i];
-          let title = pv.getAttribute('data-title');
-          var url = 'http://example.com' + pv.getAttribute('data-path');
-          if (url) {
-            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
-              // 是当前页面就自增
-              let curPath = window.location.pathname;
-              if (curPath.includes('index.html')) {
-                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
-              }
-              if (pv.getAttribute('data-path') == curPath) {
-                incrArr.push(this.buildIncrement(record.objectId));
-              }
-              if (pv) {
-                var ele = pv.querySelector('#lc-pv #number');
-                if (ele) {
-                  if (pv.getAttribute('data-path') == curPath) {
-                    ele.innerText = (record.times || 0) + 1;
-                  } else {
-                    ele.innerText = record.times || 0;
-                  }
-                  pv.style.display = 'inline';
-                }
-              }
-            });
-            getterArr.push(viewGetter);
-          }
-        }
-      }
-
-      // 如果启动计数自增，批量发起自增请求
-      if (enableIncr) {
-        Promise.all(getterArr).then(() => {
-          incrArr.length > 0 && this.increment(Counter, incrArr);
-        })
-      }
-
-    },
-
-
-    fetchData(api_server) {
-      var Counter = (method, url, data) => {
-        return fetch(`${ api_server }/1.1${ url }`, {
-          method,
-          headers: {
-            'X-LC-Id': this.app_id,
-            'X-LC-Key': this.app_key,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
-        });
-      };
-      this.addCount(Counter);
-    },
-
-    refreshCounter() {
-      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
-      if (api_server) {
-        this.fetchData(api_server);
-      } else {
-        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
-          .then(resp => resp.json())
-          .then(({api_server}) => {
-            this.fetchData('https://' + api_server);
-          });
-      }
-    }
-
-  };
-
-  LCCounter.refreshCounter();
-
-  document.addEventListener('pjax:complete', function () {
-    LCCounter.refreshCounter();
-  });
-</script>
-
-
-
-
-  <script>
-const rootElement = document.documentElement;
-const darkModeStorageKey = "user-color-scheme";
-const rootElementDarkModeAttributeName = "data-user-color-scheme";
-
-const setLS = (k, v) => {
-  try {
-    localStorage.setItem(k, v);
-  } catch (e) {
-    console.log(e.message);
-  }
-};
-
-const removeLS = (k) => {
-  try {
-    localStorage.removeItem(k);
-  } catch (e) {
-    console.log(e.message);
-  }
-};
-
-const getLS = (k) => {
-  try {
-    return localStorage.getItem(k);
-  } catch (e) {
-    console.log(e.message);
-    return null;
-  }
-};
-
-const getModeFromCSSMediaQuery = () => {
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
-};
-
-const resetRootDarkModeAttributeAndLS = () => {
-  rootElement.removeAttribute(rootElementDarkModeAttributeName);
-  removeLS(darkModeStorageKey);
-};
-
-const validColorModeKeys = {
-  dark: true,
-  light: true,
-};
-
-const applyCustomDarkModeSettings = (mode) => {
-  const currentSetting = mode || getLS(darkModeStorageKey);
-
-  if (currentSetting === getModeFromCSSMediaQuery()) {
-    resetRootDarkModeAttributeAndLS();
-  } else if (validColorModeKeys[currentSetting]) {
-    rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
-  } else {
-    resetRootDarkModeAttributeAndLS();
-  }
-};
-
-const invertDarkModeObj = {
-  dark: "light",
-  light: "dark",
-};
-
-/**
- * get target mode
- */
-const toggleCustomDarkMode = () => {
-  let currentSetting = getLS(darkModeStorageKey);
-
-  if (validColorModeKeys[currentSetting]) {
-    currentSetting = invertDarkModeObj[currentSetting];
-  } else if (currentSetting === null) {
-    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
-  } else {
-    return;
-  }
-  setLS(darkModeStorageKey, currentSetting);
-  return currentSetting;
-};
-
-/**
- * bind click event for toggle button
- */
-function bindToggleButton() {
-	var btn=$("#wrapper .toggle-mode-btn");
-    btn.on('click',(e) => {
-      const mode = toggleCustomDarkMode();
-      applyCustomDarkModeSettings(mode);
-    });
-}
-
-applyCustomDarkModeSettings();
-document.addEventListener("DOMContentLoaded", bindToggleButton);
-document.addEventListener("pjax:success", bindToggleButton);
-var now = new Date();
-var hour = now.getHours();
-if (hour < 7 && hour >= 19) {
-	var mode = toggleCustomDarkMode();
-	if (mode === "dark") {
-	  applyCustomDarkModeSettings(mode);
-	}
-}
-</script>
-
-
-
-
-
-
-<script>
-function listennSidebarTOC() {
-  const navItems = document.querySelectorAll(".toc li");
-  if (!navItems.length) return;
-  const sections = [...navItems].map((element) => {
-    const link = element.querySelector(".toc-link");
-    const target = document.getElementById(
-      decodeURI(link.getAttribute("href")).replace("#", "")
-    );
-    link.addEventListener("click", (event) => {
-      event.preventDefault();
-      window.scrollTo({
-		top: target.offsetTop + 100,
-		
-		behavior: "smooth"
-		
-	  });
-    });
-    return target;
-  });
-
-  function activateNavByIndex(target) {
-    if (target.classList.contains("active-current")) return;
-
-    document.querySelectorAll(".toc .active").forEach((element) => {
-      element.classList.remove("active", "active-current");
-    });
-    target.classList.add("active", "active-current");
-    let parent = target.parentNode;
-    while (!parent.matches(".toc")) {
-      if (parent.matches("li")) parent.classList.add("active");
-      parent = parent.parentNode;
-    }
-  }
-
-  function findIndex(entries) {
-    let index = 0;
-    let entry = entries[index];
-    if (entry.boundingClientRect.top > 0) {
-      index = sections.indexOf(entry.target);
-      return index === 0 ? 0 : index - 1;
-    }
-    for (; index < entries.length; index++) {
-      if (entries[index].boundingClientRect.top <= 0) {
-        entry = entries[index];
-      } else {
-        return sections.indexOf(entry.target);
-      }
-    }
-    return sections.indexOf(entry.target);
-  }
-
-  function createIntersectionObserver(marginTop) {
-    marginTop = Math.floor(marginTop + 10000);
-    let intersectionObserver = new IntersectionObserver(
-      (entries, observe) => {
-        let scrollHeight = document.documentElement.scrollHeight + 100;
-        if (scrollHeight > marginTop) {
-          observe.disconnect();
-          createIntersectionObserver(scrollHeight);
-          return;
-        }
-        let index = findIndex(entries);
-        activateNavByIndex(navItems[index]);
-      },
-      {
-        rootMargin: marginTop + "px 0px -100% 0px",
-        threshold: 0,
-      }
-    );
-    sections.forEach((element) => {
-      element && intersectionObserver.observe(element);
-    });
-  }
-  createIntersectionObserver(document.documentElement.scrollHeight);
-}
-
-document.addEventListener("DOMContentLoaded", listennSidebarTOC);
-document.addEventListener("pjax:success", listennSidebarTOC);
-</script>
-
-<!-- more -->
-
-
-
-
-    
-      
-
-
-<script src="../../../../https:/cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
-
-<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
-
-<div class="pjax-animate">
-  
-    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
-    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
-    <script>
-      window.ShowLoading = function() {
-        NProgress.start();
-      };
-      window.HideLoading = function() {
-        NProgress.done();
-      }
-    </script>
-  
+    <div class="footer-contact">
+    <ul class="footer-ul">
+        
+        <li class="footer-li">
+            <a href="https://github.com/Geisha-design" target="_blank">
+                <i class="ri-github-line"></i>
+            </a>
+        </li>
+        
+        <li class="footer-li">
+            <a href="mailto:3202990966@qq.com" target="_blank">
+                <i class="ri-mail-line"></i>
+            </a>
+        </li>
+        
+    </ul>
+    </div>
+    </div>
 </div>
 
-<script>
-    var pjax;
-    document.addEventListener('DOMContentLoaded', function () {
-      pjax = new Pjax({
-        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
-        selectors: [
-          "title",
-          "#l_cover",
-          "#pjax-container",
-          "#pjax-header-nav-list"
-        ],
-        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
-        timeout: 5000
-      });
-    });
 
-    document.addEventListener('pjax:send', function (e) {
-      //window.stop(); // 相当于点击了浏览器的停止按钮
 
-      try {
-        var currentUrl = window.location.pathname;
-        var targetUrl = e.triggerElement.href;
-        var banUrl = [""];
-        if (banUrl[0] != "") {
-          banUrl.forEach(item => {
-            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
-              window.location.href = targetUrl;
-            }
-          });
-        }
-      } catch (error) {}
 
-      window.subData = null; // 移除标题（用于一二级导航栏切换处）
-      if (typeof $.fancybox != "undefined") {
-        $.fancybox.close();    // 关闭弹窗
-      }
-      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
-      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
-      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
 
-      // 解绑事件 避免重复监听
-      volantis.$topBtn.unbind('click');
-      $('.menu a').unbind('click');
-      $(window).unbind('resize');
-      $(window).unbind('scroll');
-      $(document).unbind('scroll');
-      $(document).unbind('click');
-      $('body').unbind('click');
-      window.ShowLoading();
-    });
 
-    document.addEventListener('pjax:complete', function () {
-      // 关于百度统计对 SPA 页面的处理：
-      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
-      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
-      // 
+<script src="../../../../js/white.js"></script>
 
-      // 关于谷歌统计对 SPA 页面的处理：
-      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
-      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
-      
 
-      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
-      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
-      $('script[data-pjax], .pjax-reload script').each(function () {
-        $(this).parent().append($(this).remove());
-      });
-      try{
-          if (typeof $.fancybox == "undefined") {
-            SCload_fancybox();
-          } else {
-            pjax_fancybox();
-          }
-        
-        
-        
-        
-        
-        
-          pjax_valine();
-        
-        
-        
-        
-      } catch (e) {
-        console.log(e);
-      }
-      window.HideLoading();
-    });
 
-    document.addEventListener('pjax:error', function (e) {
-      window.HideLoading();
-      window.location.href = e.triggerElement.href;
-    });
-</script>
-
-    
-  </div>
 </body>
-   	<div class="GalMenu GalDropDown">
-	      <div class="circle" id="gal">
-	        <div class="ring">
-	          <a href="/" class="menuItem">首页</a>
-	          <a href="javascript:history.go(1);" class="menuItem">前进</a>
-	          <a href="javascript:$('html,body').animate({scrollTop:0},500);" class="menuItem">顶部</a>
-	          <a href="javascript:location.reload();" class="menuItem">刷新</a>
-			  <a href="/Message/" class="menuItem">留言</a>
-	          <a href="javascript:history.go(-1);" class="menuItem">后退</a>
-			</div>
-			
-				<audio id="audio" src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/audio/niconiconi.mp3"></audio>
-	        
-		  </div>
-	</div>
-	<script type="text/javascript">
-	var items = document.querySelectorAll('.menuItem'); 
-	for (var i = 0, l = items.length; i < l; i++) {
-        items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
-        items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
-      }
-	</script>
-	<script>window.jQuery || document.write('<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/js/jquery-2.1.1.min.js"><\/script>')</script>	
-	
-<script src="../../../../https:/cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/js/GalMenu.js"></script>
-
-	<script type="text/javascript">
-    	$(document).ready(function() {
-        $('body').GalMenu({
-          'menu': 'GalDropDown'
-        })
-      });
-	</script>
-
-
-<div id='loader'>
-	
-	<div class="outer_box">
-	<div class='loader_overlay'></div>
-	<div class='loader_cogs'>
-		<div class='loader_cogs__top'>
-			<div class='top_part'></div>
-			<div class='top_part'></div>
-			<div class='top_part'></div>
-			<div class='top_hole'></div>
-		</div>
-		<div class='loader_cogs__left'>
-			<div class='left_part'></div>
-			<div class='left_part'></div>
-			<div class='left_part'></div>
-			<div class='left_hole'></div>
-		</div>
-		<div class='loader_cogs__bottom'>
-			<div class='bottom_part'></div>
-			<div class='bottom_part'></div>
-			<div class='bottom_part'></div>
-			<div class='bottom_hole'></div>
-		</div>
-		<p style="text-align:center">&nbsp;&nbsp;&nbsp;loading...</p>
-	</div>
-	</div>
-  
-</div>
-
-<script>
-  var endLoading = function () {
-    document.body.style.overflow = 'auto';
-    document.getElementById('loader').classList.add("loading");
-  }
-  window.addEventListener('load',endLoading);
-</script>
-
-
-
-
 </html>

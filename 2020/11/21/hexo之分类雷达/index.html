@@ -1,488 +1,127 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
-<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
-
-
-
-<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script> 
-<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_click.js"></script>
-
-
-<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.2'>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/css/GalMenu.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@latest/hexo/css/loading_style_2.css" >
-
-  <!-- SEO相关 -->
-  
-    
-  
-  <!-- 渲染优化 -->
-  <meta http-equiv='x-dns-prefetch-control' content='on' />
-  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <meta name="renderer" content="webkit">
-  <meta name="force-rendering" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-  <meta name="HandheldFriendly" content="True" >
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <!-- 页面元数据 -->
-  
-  <title>hexo博客优化之实用功能添加系列分类雷达 - 齐雨争</title>
-  
-    <meta name="keywords" content="hexo">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>  Hexo博客优化之实用功能添加系列分类雷达 |    雨争齐齐齐</title>
+  <meta name="description" content="A minimalist theme for hexo.">
+  <!-- 标签页图标 -->
   
 
+  <!-- 图标库 -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- 动画库 -->
   
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fushaolei/cdn-white@1.0/css/animate.css"/>
+  
+  <!-- css文件 -->
+  
+<link rel="stylesheet" href="../../../../css/white.css">
 
-  <!-- feed -->
+  <!-- 代码高亮 -->
   
+<meta name="generator" content="Hexo 5.4.0"></head>
 
-  <!-- import meta -->
-  
-
-  <!-- link -->
-  
-    
-<link rel="stylesheet" href="../../../../https:/cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css">
-
-  
-  
-
-  
-
-  
-    <link rel="shortcut icon" type='image/x-icon' href="../../../../https:/www.cncrush.cn/images/favicon.ico">
-  
-
-  
-
-  
-
-  <!-- import link -->
-  
-
-  
-  
-    
-<link rel="stylesheet" href="../../../../css/style.css">
-
-  
-
-  <script id="loadcss"></script>
-
-</head>
 
 <body>
-  
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
-  <div class='container'>
-  <div id='wrapper'>
-    <div class='nav-sub'>
-      <p class="title"></p>
-      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
-        <li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
-        
-          <li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
-        
-      </ul>
-    </div>
-		<div class="nav-main">
-      
-        
-        <a class="title flat-box" target="_self" href='../../../../index.html'>
-          
-            <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
-          
-          
-          
+<div class="menu-outer">
+    <div class="menu-inner">
+      <div class="menu-site-name  animate__animated  animate__fadeInUp">
+        <a href="../../../../index.html">
+          雨争齐齐齐
         </a>
-      
-
-			<div class='menu navigation'>
-				<ul class='nav-list-h m-pc'>
-          
-          
-          
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../index.html
-                  
-                  
-                  
-                    id="indexhtml"
-                  >
-                  <i class='fas fa-rss fa-fw'></i>博客
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../categories/
-                  
-                  
-                  
-                    id="categories"
-                  >
-                  <i class='fas fa-folder-open fa-fw'></i>分类
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../tags/
-                  
-                  
-                  
-                    id="tags"
-                  >
-                  <i class='fas fa-tags fa-fw'></i>标签
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../archives/
-                  
-                  
-                  
-                    id="archives"
-                  >
-                  <i class='fas fa-archive fa-fw'></i>归档
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../friends/
-                  
-                  
-                  
-                    id="friends"
-                  >
-                  <i class='fas fa-link fa-fw'></i>友链
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../about/
-                  
-                  
-                  
-                    id="about"
-                  >
-                  <i class='fas fa-info-circle fa-fw'></i>关于
-                </a>
-                
-              </li>
-            
-          
-          
-				</ul>
-			</div>
-
-      <div class="m_search">
-        <form name="searchform" class="form u-search-form">
-          <i class="icon fas fa-search fa-fw"></i>
-          <input type="text" class="input u-search-input" placeholder="雨争能有什么坏心思呢？" />
-        </form>
-      </div>
-
-			<ul class='switcher nav-list-h m-phone'>
-				
-					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
-				
-				<li>
-          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
-          <ul class="menu-phone list-v navigation white-box">
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../index.html
-                  
-                  
-                  
-                    id="indexhtml"
-                  >
-                  <i class='fas fa-rss fa-fw'></i>博客
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../categories/
-                  
-                  
-                  
-                    id="categories"
-                  >
-                  <i class='fas fa-folder-open fa-fw'></i>分类
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../tags/
-                  
-                  
-                  
-                    id="tags"
-                  >
-                  <i class='fas fa-tags fa-fw'></i>标签
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../archives/
-                  
-                  
-                  
-                    id="archives"
-                  >
-                  <i class='fas fa-archive fa-fw'></i>归档
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../friends/
-                  
-                  
-                  
-                    id="friends"
-                  >
-                  <i class='fas fa-link fa-fw'></i>友链
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../about/
-                  
-                  
-                  
-                    id="about"
-                  >
-                  <i class='fas fa-info-circle fa-fw'></i>关于
-                </a>
-                
-              </li>
-            
-          
-            
-          </ul>
-        </li>
-			</ul>
-		</div>
-	</div>
-  </div>
-</header>
-
-  <div id="l_body">
-    <div id="l_cover">
-	
-  
-    
-        <div id="half" class='cover-wrapper post dock' style="display: ;">
-          
-            <div class='cover-bg lazyload placeholder' data-bg="https://gitee.com/boyqi/jpg/raw/master/4.jpg"></div>
-          
-          <div class='cover-body'>
-  <div class='top'>
-    
-    
-      <p class="title">GEISHA</p>
-    
-    
-      <p class="subtitle">你顺手挽住火焰，化作漫天大雪</p>
-    
-  </div>
-  <div class='bottom'>
-    <div class='menu navigation'>
-      <div class='list-h'>
-        
-          
-            <a href="../../../../v4/getting-started/"
-              
-              
-              id="v4getting-started">
-              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg'><p>文档</p>
-            </a>
-          
-            <a href="../../../../faqs/"
-              
-              
-              id="faqs">
-              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg'><p>帮助</p>
-            </a>
-          
-            <a href="../../../../examples/"
-              
-              
-              id="examples">
-              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg'><p>示例</p>
-            </a>
-          
-            <a href="../../../../contributors/"
-              
-              
-              id="contributors">
-              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f389.svg'><p>社区</p>
-            </a>
-          
-            <a href="../../../../archives/"
-              
-              
-              id="archives">
-              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg'><p>博客</p>
-            </a>
-          
-            <a href="../../../../https:/github.com/Geisha-design"
-              
-              
-              id="https:githubcomGeisha-design">
-              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg'><p>GitHub</p>
-            </a>
-          
         
       </div>
+      <div class="menu-group">
+        <ul class="menu-ul">
+        
+          <a href="../../../../index.html" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              HOME
+            </li>
+          </a>
+        
+          <a href="../../../../archives" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              BLOG
+            </li>
+          </a>
+        
+        
+          <li class="menu-li animate__animated  animate__fadeInUp" id="sort">
+             分类
+             <div class="categories-outer " id="sort-div">
+               <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/hexo/">hexo</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/mysql/">mysql</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/ui/">ui</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E4%B8%89%E5%89%91%E5%AE%A2/">三剑客</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%94%9F%E6%B4%BB/">生活</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/">计算机常识</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BB%BC%E5%90%88/">计算机网络综合</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/">高等数学</a></li></ul>
+             </div>
+          </li>
+        
+        
+          <li class="menu-li animate__animated  animate__fadeInUp" id="mobile-menu">
+            <i class="ri-menu-line"></i>
+          </li>
+        
+        </ul>
+
+      </div>
+
     </div>
-  </div>
 </div>
+<div id="mobile-main" class="animate__animated  animate__fadeIn">
+  <div class="mobile-menu-inner">
+    <div class="mobile-menu-site-name animate__animated  animate__fadeInUp">
+      <a href="../../../../index.html">
+        雨争齐齐齐
+      </a>
+    </div>
+    <div class="mobile-menu-group" id="mobile-close">
+      <i class="ri-close-line"></i>
+    </div>
 
-          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
-        </div>
-    
-  
   </div>
 
-    <div id='safearea'>
-      <div class='body-wrapper' id="pjax-container">
-        
-
-<div class='l_main'>
-  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  <div class="mobile-menu-div">
   
-	  
-
-	  
-  
-
-
-  
-  <div class="article-meta" id="top">
-    
-    
-    
-      <h1 class="title">
-        hexo博客优化之实用功能添加系列分类雷达
-      </h1>
-      <div class='new-meta-box'>
-        
-          
-            
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>小天才齐雨争</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  <div class='new-meta-item category'>
-    <a class='notlink'>
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="../../../../categories/hexo/">hexo</a>
+    <a href="../../../../index.html" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>HOME</span>
+      </div>
     </a>
+  
+    <a href="../../../../archives" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>BLOG</span>
+      </div>
+    </a>
+  
+  
   </div>
 
 
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Nov 21, 2020</p>
-  </a>
 </div>
 
-          
-        
-          
-            
-  <div class="new-meta-item browse leancloud">
-    <a class='notlink'>
+<div class="body-outer">
+  <div class="body-inner">
+    
+<article class="post-inner">
+  <div class="post-content-outer">
+    <div class="post-intro">
+      <div class="post-title animate__animated  animate__fadeInUp">hexo博客优化之实用功能添加系列分类雷达</div>
+      <div class="meta-intro animate__animated  animate__fadeInUp">Nov 21 2020</div>
       
-      <div id="lc-pv" data-title="hexo博客优化之实用功能添加系列分类雷达" data-path="">
-        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
-        次浏览
+    </div>
+    <div class="post-content-inner">
+      <div class="post-content-inner-space">
+
       </div>
-    </a>
-  </div>
-
-
-          
+      <div class="post-content-main animate__animated  animate__fadeInUp">
+        <!-- top型目录 -->
         
-      </div>
-    
-  </div>
-
-
-  
-  <h1 id="Hexo-博客优化之实用功能添加系列（持续更新）"><a href="#Hexo-博客优化之实用功能添加系列（持续更新）" class="headerlink" title="Hexo 博客优化之实用功能添加系列（持续更新）"></a>Hexo 博客优化之实用功能添加系列（持续更新）</h1><p><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/original.png" class="lazyload" data-srcset="https://csdnimg.cn/release/blogv2/dist/pc/img/original.png" srcset="data:image/png;base64,666" alt="img"></p>
-<p><a target="_blank" rel="noopener" href="https://me.csdn.net/qq_36759224">TRHX • 鲍勃</a> 2019-12-08 00:12:07 <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/articleReadEyes.png" class="lazyload" data-srcset="https://csdnimg.cn/release/blogv2/dist/pc/img/articleReadEyes.png" srcset="data:image/png;base64,666" alt="img"> 32540 <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCollect.png" class="lazyload" data-srcset="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCollect.png" srcset="data:image/png;base64,666" alt="img"> 收藏 31</p>
+        <h1 id="Hexo-博客优化之实用功能添加系列（持续更新）"><a href="#Hexo-博客优化之实用功能添加系列（持续更新）" class="headerlink" title="Hexo 博客优化之实用功能添加系列（持续更新）"></a>Hexo 博客优化之实用功能添加系列（持续更新）</h1><p><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/original.png" alt="img"></p>
+<p><a target="_blank" rel="noopener" href="https://me.csdn.net/qq_36759224">TRHX • 鲍勃</a> 2019-12-08 00:12:07 <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/articleReadEyes.png" alt="img"> 32540 <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/tobarCollect.png" alt="img"> 收藏 31</p>
 <p>分类专栏： <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36759224/category_9285510.html">【 Hexo 博客搭建 】</a> 文章标签： <a target="_blank" rel="noopener" href="https://www.csdn.net/gather_24/MtTaEg0sMzY5NDMtYmxvZwO0O0OO0O0O.html">博客优化</a> <a target="_blank" rel="noopener" href="https://so.csdn.net/so/search/s.do?q=%E5%8D%9A%E5%AE%A2%E5%AE%9E%E7%94%A8%E5%8A%9F%E8%83%BD%E6%B7%BB%E5%8A%A0&t=blog&o=vip&s=&l=&f=&viparticle=">博客实用功能添加</a> <a target="_blank" rel="noopener" href="https://www.csdn.net/gather_22/MtTaYg5sNTA0ODctYmxvZwO0O0OO0O0O.html">Hexo博客</a></p>
 <p>版权</p>
 <hr>
@@ -509,16 +148,16 @@
 </ul>
 <hr>
 <h1 id="【01】添加评论系统"><a href="#【01】添加评论系统" class="headerlink" title="【01】添加评论系统"></a>【01】添加评论系统</h1><p>主流的评论系统有很多，比如：网易云跟帖、多说、友言、畅言、来必力（LiveRe）、Disqus、Valine、Gitalk 等等，目前网易云跟帖、多说、友言都已经关闭了，还有些可能国内还访问不了，比较麻烦，百度了一下，最后还是选择了来必力评论系统</p>
-<p>进入<a target="_blank" rel="noopener" href="https://livere.com/">来必力官网</a>，注册一个账号：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzAvNWM5ZjkxZWQ4OTczYS5wbmc" class="lazyload" data-srcset="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzAvNWM5ZjkxZWQ4OTczYS5wbmc" srcset="data:image/png;base64,666" alt="img"></p>
-<p>注册完毕之后，登录，进入安装页面，选择 City 免费版安装，安装之后你会得到一段代码<br><img src="https://img-blog.csdnimg.cn/20190807103722227.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzU5MjI0,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20190807103722227.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzU5MjI0,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
-<p><img src="https://img-blog.csdnimg.cn/20190807103745470.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzU5MjI0,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20190807103745470.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzU5MjI0,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
-<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5ZjkyOWU3ZDYyYi5wbmc" class="lazyload" data-srcset="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5ZjkyOWU3ZDYyYi5wbmc" srcset="data:image/png;base64,666" alt="img"></p>
-<p>我们打开主题文件下的 _config.yml 文件，添加如下代码：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5ZjkyYjVlMjcwZi5wbmc" class="lazyload" data-srcset="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5ZjkyYjVlMjcwZi5wbmc" srcset="data:image/png;base64,666" alt="img"></p>
+<p>进入<a target="_blank" rel="noopener" href="https://livere.com/">来必力官网</a>，注册一个账号：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzAvNWM5ZjkxZWQ4OTczYS5wbmc" alt="img"></p>
+<p>注册完毕之后，登录，进入安装页面，选择 City 免费版安装，安装之后你会得到一段代码<br><img src="https://img-blog.csdnimg.cn/20190807103722227.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzU5MjI0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20190807103745470.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzU5MjI0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5ZjkyOWU3ZDYyYi5wbmc" alt="img"></p>
+<p>我们打开主题文件下的 _config.yml 文件，添加如下代码：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5ZjkyYjVlMjcwZi5wbmc" alt="img"></p>
 <p>在 \themes\hexo-theme-spfk\layout_partial\comments 文件夹下新建一个 livere.ejs 的文件，在里面填写来必力提供的代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 来必力City版安装代码 --&gt;</span><br><span class="line">&lt;div id=<span class="string">&quot;lv-container&quot;</span> data-id=<span class="string">&quot;city&quot;</span> data-uid=<span class="string">&quot;这里是你的uid&quot;</span>&gt;</span><br><span class="line">	&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">		(<span class="function"><span class="keyword">function</span>(<span class="params">d, s</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> j, e = d.getElementsByTagName(s)[<span class="number">0</span>];</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> LivereTower === <span class="string">&#x27;function&#x27;</span>) &#123; <span class="keyword">return</span>; &#125;</span><br><span class="line">    </span><br><span class="line">        j = d.createElement(s);</span><br><span class="line">        j.src = <span class="string">&#x27;https://cdn-city.livere.com/js/embed.dist.js&#x27;</span>;</span><br><span class="line">        j.async = <span class="literal">true</span>;</span><br><span class="line">    </span><br><span class="line">        e.parentNode.insertBefore(j, e);</span><br><span class="line">        &#125;)(<span class="built_in">document</span>, <span class="string">&#x27;script&#x27;</span>);</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">    &lt;noscript&gt;为正常使用来必力评论功能请激活JavaScript&lt;/noscript&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;!-- City版安装代码已完成 --&gt;</span><br><span class="line"><span class="number">123456789101112131415161718</span></span><br></pre></td></tr></table></figure>
 
-<p>打开 \themes\hexo-theme-spfk\layout_partial\article.ejs 文件，在适当位置添加如下红框中的代码：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5ZjkyZTNlZWJhYS5wbmc" class="lazyload" data-srcset="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5ZjkyZTNlZWJhYS5wbmc" srcset="data:image/png;base64,666" alt="img"></p>
-<p>完成以上操作之后，我们就可以使用来必力评论系统了<br><img src="https://img-blog.csdnimg.cn/20190807103817644.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzU5MjI0,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20190807103817644.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzU5MjI0,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br>另外推荐使用 <a target="_blank" rel="noopener" href="https://valine.js.org/">Valine</a> 评论系统，和 gitalk 评论系统</p>
+<p>打开 \themes\hexo-theme-spfk\layout_partial\article.ejs 文件，在适当位置添加如下红框中的代码：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5ZjkyZTNlZWJhYS5wbmc" alt="img"></p>
+<p>完成以上操作之后，我们就可以使用来必力评论系统了<br><img src="https://img-blog.csdnimg.cn/20190807103817644.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzU5MjI0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>另外推荐使用 <a target="_blank" rel="noopener" href="https://valine.js.org/">Valine</a> 评论系统，和 gitalk 评论系统</p>
 <hr>
 <h1 id="【02】添加字数统计和阅读时长"><a href="#【02】添加字数统计和阅读时长" class="headerlink" title="【02】添加字数统计和阅读时长"></a>【02】添加字数统计和阅读时长</h1><p>先在博客目录下执行以下命令安装 hexo-wordcount 插件：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm i --save hexo-wordcount</span></span><br><span class="line">1</span><br></pre></td></tr></table></figure>
@@ -533,32 +172,32 @@
 <p>最后在主题目录下的 _config.yml 添加以下配置即可</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">word_count:</span> <span class="literal">true</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
 
-<p>效果图：<br><img src="https://img-blog.csdnimg.cn/20191129201331969.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9pdHJoeC5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20191129201331969.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9pdHJoeC5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
+<p>效果图：<br><img src="https://img-blog.csdnimg.cn/20191129201331969.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9pdHJoeC5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <hr>
 <p>同样的，以 <a target="_blank" rel="noopener" href="https://github.com/luuman/hexo-theme-spfk">spfk</a> 主题为例，在 \themes\hexo-theme-spfk\layout_partial\post 目录下创建 word.ejs 文件，在 word.ejs 文件中写入以下代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=<span class="string">&quot;margin-top:10px;&quot;</span>&gt;</span><br><span class="line">    &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;post-time&quot;</span>&gt;</span><br><span class="line">      &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;post-meta-item-icon&quot;</span>&gt;</span><br><span class="line">        &lt;i <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;fa fa-keyboard-o&quot;</span>&gt;&lt;/i&gt;</span><br><span class="line">        &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;post-meta-item-text&quot;</span>&gt;  字数统计: &lt;/span&gt;</span><br><span class="line">        &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;post-count&quot;</span>&gt;&lt;%= wordcount(post.content) %&gt;字&lt;/span&gt;</span><br><span class="line">      &lt;/span&gt;</span><br><span class="line">    &lt;/span&gt;</span><br><span class="line">    &amp;nbsp; | &amp;nbsp;</span><br><span class="line">    &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;post-time&quot;</span>&gt;</span><br><span class="line">      &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;post-meta-item-icon&quot;</span>&gt;</span><br><span class="line">        &lt;i <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;fa fa-hourglass-half&quot;</span>&gt;&lt;/i&gt;</span><br><span class="line">        &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;post-meta-item-text&quot;</span>&gt;  阅读时长: &lt;/span&gt;</span><br><span class="line">        &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;post-count&quot;</span>&gt;&lt;%= min2read(post.content) %&gt;分&lt;/span&gt;</span><br><span class="line">      &lt;/span&gt;</span><br><span class="line">    &lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"><span class="number">1234567891011121314151617</span></span><br></pre></td></tr></table></figure>
 
-<p>然后在 \themes\hexo-theme-spfk\layout_partial\article.ejs 中适当位置添加以下代码：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk1ZmU0ZTM2YS5wbmc" class="lazyload" data-srcset="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk1ZmU0ZTM2YS5wbmc" srcset="data:image/png;base64,666" alt="img"></p>
+<p>然后在 \themes\hexo-theme-spfk\layout_partial\article.ejs 中适当位置添加以下代码：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk1ZmU0ZTM2YS5wbmc" alt="img"></p>
 <p>最后在主题目录下的 _config.yml 添加以下配置即可</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">word_count:</span> <span class="literal">true</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
 
-<p>如果显示的位置不好，可以自行更改其位置，成功配置后的效果如下：<br><img src="https://img-blog.csdnimg.cn/20190807104015998.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzU5MjI0,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20190807104015998.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzU5MjI0,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk2ODkyZTRkYi5wbmc" class="lazyload" data-srcset="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk2ODkyZTRkYi5wbmc" srcset="data:image/png;base64,666" alt="img"></p>
+<p>如果显示的位置不好，可以自行更改其位置，成功配置后的效果如下：<br><img src="https://img-blog.csdnimg.cn/20190807104015998.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzU5MjI0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk2ODkyZTRkYi5wbmc" alt="img"></p>
 <hr>
 <p>另外：要在博客底部显示所有文章的总字数，可以<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/hexo-wordcount">点击此处</a>，根据你博客底部文件的类型选择相应的代码放在适当的位置即可，前提是要安装好 hexo-wordcount 插件，例如我使用 <a target="_blank" rel="noopener" href="https://xaoxuu.com/wiki/material-x/">Material X</a> 主题，在 \themes\material-x\layout_partial 目录下的 footer.ejs 文件中添加如下代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;i <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;fas fa-chart-area&quot;</span>&gt;&lt;/i&gt;</span><br><span class="line">&lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;post-count&quot;</span>&gt;字数统计：&lt;%= totalcount(site) %&gt;&lt;/span&gt;</span><br><span class="line"><span class="number">12</span></span><br></pre></td></tr></table></figure>
 
-<p>实现效果如下：<br><img src="https://img-blog.csdnimg.cn/20190807104042630.png" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20190807104042630.png" srcset="data:image/png;base64,666" alt="在这里插入图片描述"></p>
+<p>实现效果如下：<br><img src="https://img-blog.csdnimg.cn/20190807104042630.png" alt="在这里插入图片描述"></p>
 <hr>
 <h1 id="【03】添加网站运行时间"><a href="#【03】添加网站运行时间" class="headerlink" title="【03】添加网站运行时间"></a>【03】添加网站运行时间</h1><p>一个比较好的小功能，可以看见自己的博客运行多久了，时间一天天的增加，成就感也会一天天增加的<br>在 \themes\hexo-theme-spfk\layout_partial\footer.ejs 文件下添加以下代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;span id=<span class="string">&quot;timeDate&quot;</span>&gt;载入天数...&lt;<span class="regexp">/span&gt;&lt;span id=&quot;times&quot;&gt;载入时分秒...&lt;/</span>span&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>(); </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">createtime</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">        <span class="keyword">var</span> grt= <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">&quot;08/10/2018 17:38:00&quot;</span>);<span class="comment">//在此处修改你的建站时间，格式：月/日/年 时:分:秒</span></span><br><span class="line">        now.setTime(now.getTime()+<span class="number">250</span>); </span><br><span class="line">        days = (now - grt ) / <span class="number">1000</span> / <span class="number">60</span> / <span class="number">60</span> / <span class="number">24</span>; dnum = <span class="built_in">Math</span>.floor(days); </span><br><span class="line">        hours = (now - grt ) / <span class="number">1000</span> / <span class="number">60</span> / <span class="number">60</span> - (<span class="number">24</span> * dnum); hnum = <span class="built_in">Math</span>.floor(hours); </span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">String</span>(hnum).length ==<span class="number">1</span> )&#123;hnum = <span class="string">&quot;0&quot;</span> + hnum;&#125; minutes = (now - grt ) / <span class="number">1000</span> /<span class="number">60</span> - (<span class="number">24</span> * <span class="number">60</span> * dnum) - (<span class="number">60</span> * hnum); </span><br><span class="line">        mnum = <span class="built_in">Math</span>.floor(minutes); <span class="keyword">if</span>(<span class="built_in">String</span>(mnum).length ==<span class="number">1</span> )&#123;mnum = <span class="string">&quot;0&quot;</span> + mnum;&#125; </span><br><span class="line">        seconds = (now - grt ) / <span class="number">1000</span> - (<span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * dnum) - (<span class="number">60</span> * <span class="number">60</span> * hnum) - (<span class="number">60</span> * mnum); </span><br><span class="line">        snum = <span class="built_in">Math</span>.round(seconds); <span class="keyword">if</span>(<span class="built_in">String</span>(snum).length ==<span class="number">1</span> )&#123;snum = <span class="string">&quot;0&quot;</span> + snum;&#125; </span><br><span class="line">        <span class="built_in">document</span>.getElementById(<span class="string">&quot;timeDate&quot;</span>).innerHTML = <span class="string">&quot;本站已安全运行 &quot;</span>+dnum+<span class="string">&quot; 天 &quot;</span>; </span><br><span class="line">        <span class="built_in">document</span>.getElementById(<span class="string">&quot;times&quot;</span>).innerHTML = hnum + <span class="string">&quot; 小时 &quot;</span> + mnum + <span class="string">&quot; 分 &quot;</span> + snum + <span class="string">&quot; 秒&quot;</span>; </span><br><span class="line">    &#125; </span><br><span class="line"><span class="built_in">setInterval</span>(<span class="string">&quot;createtime()&quot;</span>,<span class="number">250</span>);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"><span class="number">1234567891011121314151617</span></span><br></pre></td></tr></table></figure>
 
-<p>最后效果如下：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk3ZGRlY2E4YS5wbmc" class="lazyload" data-srcset="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk3ZGRlY2E4YS5wbmc" srcset="data:image/png;base64,666" alt="img"></p>
+<p>最后效果如下：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk3ZGRlY2E4YS5wbmc" alt="img"></p>
 <hr>
 <h1 id="【04】添加百度统计"><a href="#【04】添加百度统计" class="headerlink" title="【04】添加百度统计"></a>【04】添加百度统计</h1><p>百度统计是百度推出的一款免费的专业网站流量分析工具，能够告诉用户访客是如何找到并浏览用户的网站，在网站上做了些什么，非常有趣，接下来我们把百度统计添加到自己博客当中</p>
-<p>访问<a target="_blank" rel="noopener" href="https://tongji.baidu.com/">百度统计首页</a>，注册一个账号后登陆，添加你的博客网站<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk4NTk0Yzg5NS5wbmc" class="lazyload" data-srcset="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk4NTk0Yzg5NS5wbmc" srcset="data:image/png;base64,666" alt="img"><br>接着点击代码获取，复制该代码<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk4ODE1M2MzNS5wbmc" class="lazyload" data-srcset="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk4ODE1M2MzNS5wbmc" srcset="data:image/png;base64,666" alt="img"></p>
-<p>然后到目录 \themes\hexo-theme-spfk\layout_partial 下新建一个 baidu-analytics.ejs 文件，里面粘贴你刚刚复制的代码<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk4YjBiYjRlZi5wbmc" class="lazyload" data-srcset="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk4YjBiYjRlZi5wbmc" srcset="data:image/png;base64,666" alt="img"></p>
-<p>修改主题文件夹下的 _config.yml 文件，将你的key（图中涂掉部分）填写进去：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk4ZDQzNTQ5ZC5wbmc" class="lazyload" data-srcset="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk4ZDQzNTQ5ZC5wbmc" srcset="data:image/png;base64,666" alt="img"></p>
-<p>所有操作完成后可以在百度统计管理页面检查代码是否安装成功，如果代码安装正确，一般20分钟后，可以查看网站分析数据<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk5MDBiOWI4Ny5wbmc" class="lazyload" data-srcset="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk5MDBiOWI4Ny5wbmc" srcset="data:image/png;base64,666" alt="img"></p>
+<p>访问<a target="_blank" rel="noopener" href="https://tongji.baidu.com/">百度统计首页</a>，注册一个账号后登陆，添加你的博客网站<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk4NTk0Yzg5NS5wbmc" alt="img"><br>接着点击代码获取，复制该代码<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk4ODE1M2MzNS5wbmc" alt="img"></p>
+<p>然后到目录 \themes\hexo-theme-spfk\layout_partial 下新建一个 baidu-analytics.ejs 文件，里面粘贴你刚刚复制的代码<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk4YjBiYjRlZi5wbmc" alt="img"></p>
+<p>修改主题文件夹下的 _config.yml 文件，将你的key（图中涂掉部分）填写进去：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk4ZDQzNTQ5ZC5wbmc" alt="img"></p>
+<p>所有操作完成后可以在百度统计管理页面检查代码是否安装成功，如果代码安装正确，一般20分钟后，可以查看网站分析数据<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMzEvNWM5Zjk5MDBiOWI4Ny5wbmc" alt="img"></p>
 <p>另外推荐：<a target="_blank" rel="noopener" href="https://web.umeng.com/main.php?c=user&a=index">友盟</a>，2010年4月在北京成立，安全、可靠、公正、第三方的网站流量统计分析系统</p>
 <hr>
 <h1 id="【05】添加RSS订阅"><a href="#【05】添加RSS订阅" class="headerlink" title="【05】添加RSS订阅"></a>【05】添加RSS订阅</h1><p>RSS订阅是站点用来和其他站点之间共享内容的一种简易方式，即Really Simple Syndication（简易信息聚合），如果不会使用，可以参见百度百科：<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/RSS%E8%AE%A2%E9%98%85/663114">https://baike.baidu.com/item/RSS%E8%AE%A2%E9%98%85/663114</a> ；首先我们安装feed插件，在本地hexo目录下右键<code>Git Bash Here</code>，输入以下命令：</p>
@@ -572,7 +211,7 @@
 
 <p>至此，RSS订阅功能添加完成</p>
 <hr>
-<h1 id="【06】添加-Fork-me-on-GitHub-效果"><a href="#【06】添加-Fork-me-on-GitHub-效果" class="headerlink" title="【06】添加 Fork me on GitHub 效果"></a>【06】添加 Fork me on GitHub 效果</h1><p>效果图：<br><img src="https://img-blog.csdnimg.cn/20190807104140857.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzU5MjI0,size_16,color_FFFFFF,t_70" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20190807104140857.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzU5MjI0,size_16,color_FFFFFF,t_70" srcset="data:image/png;base64,666" alt="在这里插入图片描述"><br><a target="_blank" rel="noopener" href="https://blog.github.com/2008-12-19-github-ribbons/">点击此处</a>可以查看更多样式，将相应样式的代码复制到你想要放的地方就OK了，代码里的链接也要替换成你的，更多创意，比如 Follow me on CSDN ，只需要用PS改掉图片里的文字，替换掉相应链接即可</p>
+<h1 id="【06】添加-Fork-me-on-GitHub-效果"><a href="#【06】添加-Fork-me-on-GitHub-效果" class="headerlink" title="【06】添加 Fork me on GitHub 效果"></a>【06】添加 Fork me on GitHub 效果</h1><p>效果图：<br><img src="https://img-blog.csdnimg.cn/20190807104140857.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzU5MjI0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><a target="_blank" rel="noopener" href="https://blog.github.com/2008-12-19-github-ribbons/">点击此处</a>可以查看更多样式，将相应样式的代码复制到你想要放的地方就OK了，代码里的链接也要替换成你的，更多创意，比如 Follow me on CSDN ，只需要用PS改掉图片里的文字，替换掉相应链接即可</p>
 <hr>
 <h1 id="【07】更改本地预览端口号"><a href="#【07】更改本地预览端口号" class="headerlink" title="【07】更改本地预览端口号"></a>【07】更改本地预览端口号</h1><p>hexo博客在执行<code>hexo s</code>进行本地预览的时候，默认端口号是4000，当该端口号被占用时会报错 <code>Error: listen EADDRINUSE 0.0.0.0:4000</code> ，此时可以关闭占用该端口的进程，也可以更换端口号，更换端口号可以通过以下两种方法实现：</p>
 <p>方法一：在根目录的<code>_config.yml</code>配置文件内加上如下代码更改<code>hexo s</code>运行时的端口号：</p>
@@ -587,1181 +226,559 @@
 <h1 id="【10】自定义一个不使用主题模板渲染的独立页面"><a href="#【10】自定义一个不使用主题模板渲染的独立页面" class="headerlink" title="【10】自定义一个不使用主题模板渲染的独立页面"></a>【10】自定义一个不使用主题模板渲染的独立页面</h1><p>参考我的另一篇文章：<a target="_blank" rel="noopener" href="https://itrhx.blog.csdn.net/article/details/90320295">《Hexo 博客自定义一个不使用主题模板渲染的独立页面》</a></p>
 <hr>
 <h1 id="未完待续…https-www-itrhx-com-2018-08-27-A04-Hexo-blog-topic-personalization"><a href="#未完待续…https-www-itrhx-com-2018-08-27-A04-Hexo-blog-topic-personalization" class="headerlink" title="未完待续…https://www.itrhx.com/2018/08/27/A04-Hexo-blog-topic-personalization/)"></a>未完待续…<a target="_blank" rel="noopener" href="https://www.itrhx.com/2018/08/27/A04-Hexo-blog-topic-personalization/">https://www.itrhx.com/2018/08/27/A04-Hexo-blog-topic-personalization/</a>)</h1>
-  
-  
-    
-    <div class='footer'>
-      
-      
-      
-        <div class='copyright'>
-          <blockquote>
+        <!-- 分类文章 -->
+        
+          <div class="post-categoris-bottom">
+            <div class="post-categoris-name">hexo</div>
+            <ul>
+            
             
               
-                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../../../../2018/11/01/2014-11-01-octopress-to-hexo/" class="post-categoris-bottom-link">
+                  从Octopress转到Hexo
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../../../../2019/06/30/2019-06-30-one-hexo-theme-aloha/" class="post-categoris-bottom-link">
+                  Aloha 一个Hexo主题
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../../../09/20/2016-09-20-blog-with-github-travis-ci-and-coding-net-1/" class="post-categoris-bottom-link">
+                  使用Github、Travis-CI和Coding.net自动部署博客［一］
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../../../10/05/2016-10-05-blog-with-github-travis-ci-and-coding-net-2/" class="post-categoris-bottom-link">
+                  使用Github、Travis-CI和Coding.net自动部署博客［二］
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../../19/hexo%E4%B9%8BVolantis%E6%B7%BB%E5%8A%A0%E6%9A%97%E9%BB%91%E6%A8%A1%E5%BC%8F/" class="post-categoris-bottom-link">
+                  hexo之Volantis添加暗黑模式
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../../19/hexo%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96%E8%BF%9B%E9%98%B6/" class="post-categoris-bottom-link">
+                  hexo主题美化进阶&lt;hexo主题美化进阶&gt;
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../volantis%E4%B9%8B%E6%89%93%E8%B5%8F%E6%A8%A1%E5%9D%97/" class="post-categoris-bottom-link">
+                  volantis之打赏模块
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="me base">
+                  <a  href="" class="post-categoris-bottom-link">
+                  hexo博客优化之实用功能添加系列分类雷达
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../%E5%88%9D%E5%A7%8B%E6%90%AD%E5%BB%BA/" class="post-categoris-bottom-link">
+                  hexo初始搭建
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../../29/%E4%B8%BB%E9%A2%98%E5%AE%9E%E7%8E%B0%E5%85%A8%E5%B1%80%E6%92%AD%E6%94%BE%E8%83%8C%E6%99%AF%E9%9F%B3%E4%B9%90/" class="post-categoris-bottom-link">
+                  主题实现全局播放背景音乐
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../../29/hexo%E4%B8%AD%E6%B7%BB%E5%8A%A0%E9%BC%A0%E6%A0%87%E5%8F%B3%E9%94%AE%E5%8A%9F%E8%83%BD/" class="post-categoris-bottom-link">
+                  hexo中添加鼠标右键功能
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../../../../2021/04/19/2017-06-22-blog-with-github-travis-ci-and-coding-net-3/" class="post-categoris-bottom-link">
+                  使用Github、Travis-CI和Coding.net自动部署博客［三］
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            </ul>
 
-              
-            
-              
-                <p>本文永久链接是：<a href=http://example.com/2020/11/21/hexo%E4%B9%8B%E5%88%86%E7%B1%BB%E9%9B%B7%E8%BE%BE/>http://example.com/2020/11/21/hexo%E4%B9%8B%E5%88%86%E7%B1%BB%E9%9B%B7%E8%BE%BE/</a></p>
-              
-            
-          </blockquote>
-        </div>
-      
-      
-        <div class='donate'>
-          <div class='imgs'>
-            
-              <img src='../../../../https:/gitee.com/boyqi/jpg/raw/master/541957334755484884.jpg'>
-            
-              <img src='../../../../https:/gitee.com/boyqi/jpg/raw/master/60626648564436122.jpg'>
-            
           </div>
-        </div>
-      
-    </div>
-  
-  
-    
-
-
-  <div class='article-meta' id="bottom">
-    <div class='new-meta-box'>
-      
-        
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-04-19T20:14:31+08:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Apr 19, 2021</p>
-  </a>
-</div>
-
-        
-      
-        
-          
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="../../../../tags/hexo/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>hexo</p></a></div>
-
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2020/11/21/hexo%E4%B9%8B%E5%88%86%E7%B1%BB%E9%9B%B7%E8%BE%BE/&title=hexo博客优化之实用功能添加系列分类雷达 - 齐雨争&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2020/11/21/hexo%E4%B9%8B%E5%88%86%E7%B1%BB%E9%9B%B7%E8%BE%BE/&title=hexo博客优化之实用功能添加系列分类雷达 - 齐雨争&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2020/11/21/hexo%E4%B9%8B%E5%88%86%E7%B1%BB%E9%9B%B7%E8%BE%BE/&title=hexo博客优化之实用功能添加系列分类雷达 - 齐雨争&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-    
-      
-    
-  </div>
-</div>
-
-
-
-        
-      
-    </div>
-  </div>
-
-
-  
-  
-
-  
-    <div class="prev-next">
-      
-        <a class='prev' href='../%E5%88%9D%E5%A7%8B%E6%90%AD%E5%BB%BA/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>hexo初始搭建</p>
-          <p class='content'>hexo搭建博客以及next主题的各种特效合集
-Capricorn322 2020-02-20 21:45:13  487  收藏
-版权
-hexo搭建博客1、安装node和npm，这个自己百度一...</p>
-        </a>
-      
-      
-        <a class='next' href='../volantis%E4%B9%8B%E6%89%93%E8%B5%8F%E6%A8%A1%E5%9D%97/'>
-          <p class='title'>volantis之打赏模块<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>hexo博客打赏随着支付宝和微信转账支付的日益深入人心，有时候我们甚至可以在很多博客文章后面看到小编和文章作者自己添加的DIY打赏功能，包括微信、支付宝等扫描支付转账，本篇文章就是为hexo优化...</p>
-        </a>
-      
-    </div>
-  
-</article>
-
-
-  
-
-  <article class="post white-box reveal shadow" id="comments">
-    <p ct><i class='fas fa-comments'></i> 评论</p>
-    
-    <div id="valine_container" class="valine_thread">
-  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
-</div>
-
-  </article>
-
-
-
-
-
-
-</div>
-<aside class='l_side'>
-  
-  
-    
-    
-
-
-
-  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
-    
-  <header>
-    
-      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95"><span class="toc-text">文章目录</span></a></li></ol>
-    </div>
-  </section>
-
-
-  
-
-
-</aside>
-
-
-
-        
-        
-          <!--此文件用来存放一些不方便取值的变量-->
-<!--思路大概是将值藏到重加载的区域内-->
-
-<script>
-  window.pdata={}
-  pdata.ispage=true;
-  pdata.postTitle="hexo博客优化之实用功能添加系列分类雷达";
-  pdata.commentPath="";
-  pdata.commentPlaceholder="";
-
-  var l_header=document.getElementById("l_header");
-  
-  l_header.classList.remove("show");
-  
-</script>
 
         
       </div>
-      
-  
-  <footer class="footer clearfix">
-    <br><br>
-    
-      
-        <div class="aplayer-container">
-          
-
-
-        </div>
-      
-    
-      
-        <br>
-        <div class="social-wrapper">
-          
-            
-          
-            
-          
-            
-          
-        </div>
-      
-    
-      
-        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
-</div>
-      
-    
-      
+      <div class="post-content-inner-space">
         
-          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
-</div>
+          <div class="space-toc-main animate__animated  animate__fadeInUp">
+            
+           </div>
         
-      
+      </div>
+   </div>
+    <!-- 评论 -->
     
-      
-        Use
-        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.2" target="_blank" class="codename">Volantis</a>
-        as theme
-      
-    
-      
-        <div class='copyright'>
-        <p><a href="/">Copyright © 2017-2020 XXX</a></p>
-
-        </div>
-      
-    
-  </footer>
-  
-  <iframe frameborder="no" border="1500" marginwidth="1500" marginheight="1500" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=546724667&auto=1&height=66"></iframe>
-  
+  </div>
+</article>
+  </div>
+</div>
 
 
 
+<!-- 如果是home模式的话，不在首页就显示footer，如果不是home模式的话 所有都显示footer -->
 
+  <div class="footer-outer animate__animated  animate__fadeInUp">
+    <div class="footer-inner">
+    <div class="footer-text">
+    <p>Power by <a target="_blank" rel="noopener" href="http://hexo.io/">Hexo</a> Theme by <a target="_blank" rel="noopener" href="https://github.com/FuShaoLei/hexo-theme-white">反方向的钟</a></p>
 
-      <a id="s-top" class="fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
     </div>
-  </div>
-  <div>
-    <script>
-window.volantis={};
-/********************脚本懒加载函数********************************/
-function loadScript(src, cb) {
-var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
-var script = document.createElement('script');
-script.setAttribute('type','text/javascript');
-if (cb) script.onload = cb;
-script.setAttribute('src', src);
-HEAD.appendChild(script);
-}
-//https://github.com/filamentgroup/loadCSS
-var loadCSS = function( href, before, media, attributes ){
-	var doc = window.document;
-	var ss = doc.createElement( "link" );
-	var ref;
-	if( before ){
-		ref = before;
-	}
-	else {
-		var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
-		ref = refs[ refs.length - 1];
-	}
-	var sheets = doc.styleSheets;
-	if( attributes ){
-		for( var attributeName in attributes ){
-			if( attributes.hasOwnProperty( attributeName ) ){
-				ss.setAttribute( attributeName, attributes[attributeName] );
-			}
-		}
-	}
-	ss.rel = "stylesheet";
-	ss.href = href;
-	ss.media = "only x";
-	function ready( cb ){
-		if( doc.body ){
-			return cb();
-		}
-		setTimeout(function(){
-			ready( cb );
-		});
-	}
-	ready( function(){
-		ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
-	});
-	var onloadcssdefined = function( cb ){
-		var resolvedHref = ss.href;
-		var i = sheets.length;
-		while( i-- ){
-			if( sheets[ i ].href === resolvedHref ){
-				return cb();
-			}
-		}
-		setTimeout(function() {
-			onloadcssdefined( cb );
-		});
-	};
-	function loadCB(){
-		if( ss.addEventListener ){
-			ss.removeEventListener( "load", loadCB );
-		}
-		ss.media = media || "all";
-	}
-	if( ss.addEventListener ){
-		ss.addEventListener( "load", loadCB);
-	}
-	ss.onloadcssdefined = onloadcssdefined;
-	onloadcssdefined( loadCB );
-	return ss;
-};
-</script>
-<!-- required -->
-
-<script src="../../../../https:/cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
-
-<script>
-  function pjax_fancybox() {
-    $(".md .gallery").find("img").each(function () { //渲染 fancybox
-      var element = document.createElement("a"); // a 标签
-      $(element).attr("class", "fancybox");
-      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
-      $(element).attr("href", $(this).attr("src"));
-      if ($(this).attr("data-original")) {
-        $(element).attr("href", $(this).attr("data-original"));
-      }
-      $(element).attr("data-fancybox", "images");
-      var caption = "";   // 描述信息
-      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
-        $(element).attr('data-caption', $(this).attr('alt'));
-        caption = $(this).attr('alt');
-      }
-      var div = document.createElement("div");
-      $(div).addClass("fancybox");
-      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
-      var span = document.createElement("span");
-      $(span).addClass("image-caption");
-      $(span).text(caption); // 加描述
-      $(this).after(span);  // 再套一层描述
-      $(this).wrap(element);  // 最后套 a 标签
-    })
-    $(".md .gallery").find("img").fancybox({
-      selector: '[data-fancybox="images"]',
-      hash: false,
-      loop: false,
-      closeClick: true,
-      helpers: {
-        overlay: {closeClick: true}
-      },
-      buttons: [
-        "zoom",
-        "close"
-      ]
-    });
-  };
-  function SCload_fancybox() {
-    if ($(".md .gallery").find("img").length == 0) return;
-    loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css", document.getElementById("loadcss"));
-    setTimeout(function() {
-      loadScript('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', pjax_fancybox)
-    }, 1);
-  };
-  $(function () {
-    SCload_fancybox();
-  });
-</script>
-
-
-<!-- internal -->
-
-
-
-
-
-
-
-  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
-<script>
-  // https://www.npmjs.com/package/vanilla-lazyload
-  // Set the options globally
-  // to make LazyLoad self-initialize
-  window.lazyLoadOptions = {
-    elements_selector: ".lazyload",
-    threshold: 0
-  };
-  // Listen to the initialization event
-  // and get the instance of LazyLoad
-  window.addEventListener(
-    "LazyLoad::Initialized",
-    function (event) {
-      window.lazyLoadInstance = event.detail.instance;
-    },
-    false
-  );
-  document.addEventListener('DOMContentLoaded', function () {
-    lazyLoadInstance.update();
-  });
-  document.addEventListener('pjax:complete', function () {
-    lazyLoadInstance.update();
-  });
-</script>
-
-
-
-
-  
-  
-    <script>
-      window.FPConfig = {
-        delay: 0,
-        ignoreKeywords: [],
-        maxRPS: 5,
-        hoverDelay: 25
-      };
-    </script>
-    <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
-  
-
-
-
-
-
-
-
-
-
-
-  
-  
-<script src="../../../../js/valine.js"></script>
-
-
-<script>
-  var GUEST_INFO = ['nick', 'mail', 'link'];
-  var meta = 'nick,mail,link'.split(',').filter(function (item) {
-    return GUEST_INFO.indexOf(item) > -1
-  });
-  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
-  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
-    return REQUIRED_FIELDS.indexOf(item) > -1
-  });
-
-  function emoji(path, idx, ext) {
-    return path + "/" + path + "-" + idx + "." + ext;
-  }
-
-  var emojiMaps = {};
-  for (var i = 1; i <= 54; i++) {
-    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
-  }
-  for (var i = 1; i <= 101; i++) {
-    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
-  }
-  for (var i = 1; i <= 116; i++) {
-    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
-  }
-  for (var i = 1; i <= 125; i++) {
-    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
-  }
-  for (var i = 1; i <= 4; i++) {
-    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
-  }
-
-  function pjax_valine() {
-    if(!document.querySelectorAll("#valine_container")[0])return;
-
-    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
-
-    let path = pdata.commentPath;
-    if (path.length == 0) {
-      let defaultPath = '';
-      path = defaultPath || decodeURI(window.location.pathname);
-    }
-
-    var valine = new Valine();
-    valine.init({
-      el: '#valine_container',
-      meta: meta,
-      placeholder: pagePlaceholder,
-      path: path,
-      appId: "",
-      appKey: "",
-      pageSize: '10',
-      avatar: 'robohash',
-      lang: 'zh-cn',
-      visitor: 'true',
-      highlight: 'true',
-      mathJax: 'false',
-      enableQQ: 'true',
-      recordIP: 'false',
-      requiredFields: requiredFields,
-      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
-      emojiMaps: emojiMaps
-    })
-  }
-
-  $(function () {
-    pjax_valine();
-  });
-</script>
-
-
-
-
-
-  
-<script src="../../../../js/app.js"></script>
-
-
-
-
-  
-    
-<script src="../../../../js/search.js"></script>
-
-  
-
-
-<!-- optional -->
-
-  <script>
-const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
-const ROOT =  ("/Geisha-design.github.io/" || "/").endsWith('/') ? ("/Geisha-design.github.io/" || "/") : ("/Geisha-design.github.io//" || "/" );
-(function ($) {
-  
-    customSearch = new HexoSearch({
-      imagePath: SearchServiceimagePath
-    });
-  
-})(jQuery);
-
-</script>
-
-
-
-
-
-
-
-
-
-
-
-  <script defer>
-
-  const LCCounter = {
-    app_id: 'u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI',
-    app_key: 'jfHtEKVE24j0IVCGHbvuFClp',
-    custom_api_server: '',
-
-    // 查询存储的记录
-    getRecord(Counter, url, title) {
-      return new Promise(function (resolve, reject) {
-        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
-          .then(resp => resp.json())
-          .then(({results, code, error}) => {
-            if (code === 401) {
-              throw error;
-            }
-            if (results && results.length > 0) {
-              var record = results[0];
-              resolve(record);
-            } else {
-              Counter('post', '/classes/Counter', {url, title: title, times: 0})
-                .then(resp => resp.json())
-                .then((record, error) => {
-                  if (error) {
-                    throw error;
-                  }
-                  resolve(record);
-                }).catch(error => {
-                console.error('Failed to create', error);
-                reject(error);
-              });
-            }
-          }).catch((error) => {
-          console.error('LeanCloud Counter Error:', error);
-          reject(error);
-        });
-      })
-    },
-
-    // 发起自增请求
-    increment(Counter, incrArr) {
-      return new Promise(function (resolve, reject) {
-        Counter('post', '/batch', {
-          "requests": incrArr
-        }).then((res) => {
-          res = res.json();
-          if (res.error) {
-            throw res.error;
-          }
-          resolve(res);
-        }).catch((error) => {
-          console.error('Failed to save visitor count', error);
-          reject(error);
-        });
-      });
-    },
-
-    // 构建自增请求体
-    buildIncrement(objectId) {
-      return {
-        "method": "PUT",
-        "path": `/1.1/classes/Counter/${ objectId }`,
-        "body": {
-          "times": {
-            '__op': 'Increment',
-            'amount': 1
-          }
-        }
-      }
-    },
-
-    // 校验是否为有效的 UV
-    validUV() {
-      var key = 'LeanCloudUVTimestamp';
-      var flag = localStorage.getItem(key);
-      if (flag) {
-        // 距离标记小于 24 小时则不计为 UV
-        if (new Date().getTime() - parseInt(flag) <= 86400000) {
-          return false;
-        }
-      }
-      localStorage.setItem(key, new Date().getTime().toString());
-      return true;
-    },
-
-    addCount(Counter) {
-      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
-      enableIncr = true;
-      var getterArr = [];
-      var incrArr = [];
-      // 请求 PV 并自增
-      var pvCtn = document.querySelector('#lc-sv');
-      if (pvCtn || enableIncr) {
-        var pvGetter = this.getRecord(Counter, 'http://example.com' + '/#lc-sv', 'Visits').then((record) => {
-          incrArr.push(this.buildIncrement(record.objectId))
-          var eles = document.querySelectorAll('#lc-sv #number');
-          if (eles.length > 0) {
-            eles.forEach((el,index,array)=>{
-              el.innerText = record.times + 1;
-              if (pvCtn) {
-                pvCtn.style.display = 'inline';
-              }
-            })
-          }
-        });
-        getterArr.push(pvGetter);
-      }
-
-      // 请求 UV 并自增
-      var uvCtn = document.querySelector('#lc-uv');
-      if (uvCtn || enableIncr) {
-        var uvGetter = this.getRecord(Counter, 'http://example.com' + '/#lc-uv', 'Visitors').then((record) => {
-          var vuv = this.validUV();
-          vuv && incrArr.push(this.buildIncrement(record.objectId))
-          var eles = document.querySelectorAll('#lc-uv #number');
-          if (eles.length > 0) {
-            eles.forEach((el,index,array)=>{
-              el.innerText = record.times + (vuv ? 1 : 0);
-              if (uvCtn) {
-                uvCtn.style.display = 'inline';
-              }
-            })
-          }
-        });
-        getterArr.push(uvGetter);
-      }
-
-      // 请求文章的浏览数，如果是当前页面就自增
-      var allPV = document.querySelectorAll('#lc-pv');
-      if (allPV.length > 0 || enableIncr) {
-        for (i = 0; i < allPV.length; i++) {
-          let pv = allPV[i];
-          let title = pv.getAttribute('data-title');
-          var url = 'http://example.com' + pv.getAttribute('data-path');
-          if (url) {
-            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
-              // 是当前页面就自增
-              let curPath = window.location.pathname;
-              if (curPath.includes('index.html')) {
-                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
-              }
-              if (pv.getAttribute('data-path') == curPath) {
-                incrArr.push(this.buildIncrement(record.objectId));
-              }
-              if (pv) {
-                var ele = pv.querySelector('#lc-pv #number');
-                if (ele) {
-                  if (pv.getAttribute('data-path') == curPath) {
-                    ele.innerText = (record.times || 0) + 1;
-                  } else {
-                    ele.innerText = record.times || 0;
-                  }
-                  pv.style.display = 'inline';
-                }
-              }
-            });
-            getterArr.push(viewGetter);
-          }
-        }
-      }
-
-      // 如果启动计数自增，批量发起自增请求
-      if (enableIncr) {
-        Promise.all(getterArr).then(() => {
-          incrArr.length > 0 && this.increment(Counter, incrArr);
-        })
-      }
-
-    },
-
-
-    fetchData(api_server) {
-      var Counter = (method, url, data) => {
-        return fetch(`${ api_server }/1.1${ url }`, {
-          method,
-          headers: {
-            'X-LC-Id': this.app_id,
-            'X-LC-Key': this.app_key,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
-        });
-      };
-      this.addCount(Counter);
-    },
-
-    refreshCounter() {
-      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
-      if (api_server) {
-        this.fetchData(api_server);
-      } else {
-        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
-          .then(resp => resp.json())
-          .then(({api_server}) => {
-            this.fetchData('https://' + api_server);
-          });
-      }
-    }
-
-  };
-
-  LCCounter.refreshCounter();
-
-  document.addEventListener('pjax:complete', function () {
-    LCCounter.refreshCounter();
-  });
-</script>
-
-
-
-
-  <script>
-const rootElement = document.documentElement;
-const darkModeStorageKey = "user-color-scheme";
-const rootElementDarkModeAttributeName = "data-user-color-scheme";
-
-const setLS = (k, v) => {
-  try {
-    localStorage.setItem(k, v);
-  } catch (e) {
-    console.log(e.message);
-  }
-};
-
-const removeLS = (k) => {
-  try {
-    localStorage.removeItem(k);
-  } catch (e) {
-    console.log(e.message);
-  }
-};
-
-const getLS = (k) => {
-  try {
-    return localStorage.getItem(k);
-  } catch (e) {
-    console.log(e.message);
-    return null;
-  }
-};
-
-const getModeFromCSSMediaQuery = () => {
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
-};
-
-const resetRootDarkModeAttributeAndLS = () => {
-  rootElement.removeAttribute(rootElementDarkModeAttributeName);
-  removeLS(darkModeStorageKey);
-};
-
-const validColorModeKeys = {
-  dark: true,
-  light: true,
-};
-
-const applyCustomDarkModeSettings = (mode) => {
-  const currentSetting = mode || getLS(darkModeStorageKey);
-
-  if (currentSetting === getModeFromCSSMediaQuery()) {
-    resetRootDarkModeAttributeAndLS();
-  } else if (validColorModeKeys[currentSetting]) {
-    rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
-  } else {
-    resetRootDarkModeAttributeAndLS();
-  }
-};
-
-const invertDarkModeObj = {
-  dark: "light",
-  light: "dark",
-};
-
-/**
- * get target mode
- */
-const toggleCustomDarkMode = () => {
-  let currentSetting = getLS(darkModeStorageKey);
-
-  if (validColorModeKeys[currentSetting]) {
-    currentSetting = invertDarkModeObj[currentSetting];
-  } else if (currentSetting === null) {
-    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
-  } else {
-    return;
-  }
-  setLS(darkModeStorageKey, currentSetting);
-  return currentSetting;
-};
-
-/**
- * bind click event for toggle button
- */
-function bindToggleButton() {
-	var btn=$("#wrapper .toggle-mode-btn");
-    btn.on('click',(e) => {
-      const mode = toggleCustomDarkMode();
-      applyCustomDarkModeSettings(mode);
-    });
-}
-
-applyCustomDarkModeSettings();
-document.addEventListener("DOMContentLoaded", bindToggleButton);
-document.addEventListener("pjax:success", bindToggleButton);
-var now = new Date();
-var hour = now.getHours();
-if (hour < 7 && hour >= 19) {
-	var mode = toggleCustomDarkMode();
-	if (mode === "dark") {
-	  applyCustomDarkModeSettings(mode);
-	}
-}
-</script>
-
-
-
-
-
-
-<script>
-function listennSidebarTOC() {
-  const navItems = document.querySelectorAll(".toc li");
-  if (!navItems.length) return;
-  const sections = [...navItems].map((element) => {
-    const link = element.querySelector(".toc-link");
-    const target = document.getElementById(
-      decodeURI(link.getAttribute("href")).replace("#", "")
-    );
-    link.addEventListener("click", (event) => {
-      event.preventDefault();
-      window.scrollTo({
-		top: target.offsetTop + 100,
-		
-		behavior: "smooth"
-		
-	  });
-    });
-    return target;
-  });
-
-  function activateNavByIndex(target) {
-    if (target.classList.contains("active-current")) return;
-
-    document.querySelectorAll(".toc .active").forEach((element) => {
-      element.classList.remove("active", "active-current");
-    });
-    target.classList.add("active", "active-current");
-    let parent = target.parentNode;
-    while (!parent.matches(".toc")) {
-      if (parent.matches("li")) parent.classList.add("active");
-      parent = parent.parentNode;
-    }
-  }
-
-  function findIndex(entries) {
-    let index = 0;
-    let entry = entries[index];
-    if (entry.boundingClientRect.top > 0) {
-      index = sections.indexOf(entry.target);
-      return index === 0 ? 0 : index - 1;
-    }
-    for (; index < entries.length; index++) {
-      if (entries[index].boundingClientRect.top <= 0) {
-        entry = entries[index];
-      } else {
-        return sections.indexOf(entry.target);
-      }
-    }
-    return sections.indexOf(entry.target);
-  }
-
-  function createIntersectionObserver(marginTop) {
-    marginTop = Math.floor(marginTop + 10000);
-    let intersectionObserver = new IntersectionObserver(
-      (entries, observe) => {
-        let scrollHeight = document.documentElement.scrollHeight + 100;
-        if (scrollHeight > marginTop) {
-          observe.disconnect();
-          createIntersectionObserver(scrollHeight);
-          return;
-        }
-        let index = findIndex(entries);
-        activateNavByIndex(navItems[index]);
-      },
-      {
-        rootMargin: marginTop + "px 0px -100% 0px",
-        threshold: 0,
-      }
-    );
-    sections.forEach((element) => {
-      element && intersectionObserver.observe(element);
-    });
-  }
-  createIntersectionObserver(document.documentElement.scrollHeight);
-}
-
-document.addEventListener("DOMContentLoaded", listennSidebarTOC);
-document.addEventListener("pjax:success", listennSidebarTOC);
-</script>
-
-<!-- more -->
-
-
-
-
-    
-      
-
-
-<script src="../../../../https:/cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
-
-<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
-
-<div class="pjax-animate">
-  
-    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
-    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
-    <script>
-      window.ShowLoading = function() {
-        NProgress.start();
-      };
-      window.HideLoading = function() {
-        NProgress.done();
-      }
-    </script>
-  
+    <div class="footer-contact">
+    <ul class="footer-ul">
+        
+        <li class="footer-li">
+            <a href="https://github.com/Geisha-design" target="_blank">
+                <i class="ri-github-line"></i>
+            </a>
+        </li>
+        
+        <li class="footer-li">
+            <a href="mailto:3202990966@qq.com" target="_blank">
+                <i class="ri-mail-line"></i>
+            </a>
+        </li>
+        
+    </ul>
+    </div>
+    </div>
 </div>
 
-<script>
-    var pjax;
-    document.addEventListener('DOMContentLoaded', function () {
-      pjax = new Pjax({
-        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
-        selectors: [
-          "title",
-          "#l_cover",
-          "#pjax-container",
-          "#pjax-header-nav-list"
-        ],
-        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
-        timeout: 5000
-      });
-    });
 
-    document.addEventListener('pjax:send', function (e) {
-      //window.stop(); // 相当于点击了浏览器的停止按钮
 
-      try {
-        var currentUrl = window.location.pathname;
-        var targetUrl = e.triggerElement.href;
-        var banUrl = [""];
-        if (banUrl[0] != "") {
-          banUrl.forEach(item => {
-            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
-              window.location.href = targetUrl;
-            }
-          });
-        }
-      } catch (error) {}
 
-      window.subData = null; // 移除标题（用于一二级导航栏切换处）
-      if (typeof $.fancybox != "undefined") {
-        $.fancybox.close();    // 关闭弹窗
-      }
-      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
-      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
-      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
 
-      // 解绑事件 避免重复监听
-      volantis.$topBtn.unbind('click');
-      $('.menu a').unbind('click');
-      $(window).unbind('resize');
-      $(window).unbind('scroll');
-      $(document).unbind('scroll');
-      $(document).unbind('click');
-      $('body').unbind('click');
-      window.ShowLoading();
-    });
 
-    document.addEventListener('pjax:complete', function () {
-      // 关于百度统计对 SPA 页面的处理：
-      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
-      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
-      // 
+<script src="../../../../js/white.js"></script>
 
-      // 关于谷歌统计对 SPA 页面的处理：
-      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
-      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
-      
 
-      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
-      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
-      $('script[data-pjax], .pjax-reload script').each(function () {
-        $(this).parent().append($(this).remove());
-      });
-      try{
-          if (typeof $.fancybox == "undefined") {
-            SCload_fancybox();
-          } else {
-            pjax_fancybox();
-          }
-        
-        
-        
-        
-        
-        
-          pjax_valine();
-        
-        
-        
-        
-      } catch (e) {
-        console.log(e);
-      }
-      window.HideLoading();
-    });
 
-    document.addEventListener('pjax:error', function (e) {
-      window.HideLoading();
-      window.location.href = e.triggerElement.href;
-    });
-</script>
-
-    
-  </div>
 </body>
-   	<div class="GalMenu GalDropDown">
-	      <div class="circle" id="gal">
-	        <div class="ring">
-	          <a href="/" class="menuItem">首页</a>
-	          <a href="javascript:history.go(1);" class="menuItem">前进</a>
-	          <a href="javascript:$('html,body').animate({scrollTop:0},500);" class="menuItem">顶部</a>
-	          <a href="javascript:location.reload();" class="menuItem">刷新</a>
-			  <a href="/Message/" class="menuItem">留言</a>
-	          <a href="javascript:history.go(-1);" class="menuItem">后退</a>
-			</div>
-			
-				<audio id="audio" src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/audio/niconiconi.mp3"></audio>
-	        
-		  </div>
-	</div>
-	<script type="text/javascript">
-	var items = document.querySelectorAll('.menuItem'); 
-	for (var i = 0, l = items.length; i < l; i++) {
-        items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
-        items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
-      }
-	</script>
-	<script>window.jQuery || document.write('<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/js/jquery-2.1.1.min.js"><\/script>')</script>	
-	
-<script src="../../../../https:/cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/js/GalMenu.js"></script>
-
-	<script type="text/javascript">
-    	$(document).ready(function() {
-        $('body').GalMenu({
-          'menu': 'GalDropDown'
-        })
-      });
-	</script>
-
-
-<div id='loader'>
-	
-	<div class="outer_box">
-	<div class='loader_overlay'></div>
-	<div class='loader_cogs'>
-		<div class='loader_cogs__top'>
-			<div class='top_part'></div>
-			<div class='top_part'></div>
-			<div class='top_part'></div>
-			<div class='top_hole'></div>
-		</div>
-		<div class='loader_cogs__left'>
-			<div class='left_part'></div>
-			<div class='left_part'></div>
-			<div class='left_part'></div>
-			<div class='left_hole'></div>
-		</div>
-		<div class='loader_cogs__bottom'>
-			<div class='bottom_part'></div>
-			<div class='bottom_part'></div>
-			<div class='bottom_part'></div>
-			<div class='bottom_hole'></div>
-		</div>
-		<p style="text-align:center">&nbsp;&nbsp;&nbsp;loading...</p>
-	</div>
-	</div>
-  
-</div>
-
-<script>
-  var endLoading = function () {
-    document.body.style.overflow = 'auto';
-    document.getElementById('loader').classList.add("loading");
-  }
-  window.addEventListener('load',endLoading);
-</script>
-
-
-
-
 </html>
