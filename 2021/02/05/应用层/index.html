@@ -1,188 +1,138 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    
-<meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-  <meta name="description" content="应用层"/>
-
-
-
-
-  <meta name="keywords" content="计算机网络," />
-
-
-
-
-
-  <link rel="alternate" href="../../../../default" title="齐雨争" >
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.1" />
-
-
-
-<link rel="canonical" href="http://example.com/2021/02/05/应用层/"/>
-
-
-<meta name="description" content="本人计算机网络笔记总目录计算机网络笔记Part1 概述计算机网络笔记Part2 物理层（Physical Layer）计算机网络笔记Part3 数据链路层（Data Link Layer）计算机网络笔记Part4 网络层（Network Layer）计算机网络笔记Part5 传输层（Transport Layer）计算机网络笔记Part6 应用层（Application Layer） 1. 概述因">
-<meta property="og:type" content="article">
-<meta property="og:title" content="应用层">
-<meta property="og:url" content="http://example.com/2021/02/05/%E5%BA%94%E7%94%A8%E5%B1%82/index.html">
-<meta property="og:site_name" content="齐雨争">
-<meta property="og:description" content="本人计算机网络笔记总目录计算机网络笔记Part1 概述计算机网络笔记Part2 物理层（Physical Layer）计算机网络笔记Part3 数据链路层（Data Link Layer）计算机网络笔记Part4 网络层（Network Layer）计算机网络笔记Part5 传输层（Transport Layer）计算机网络笔记Part6 应用层（Application Layer） 1. 概述因">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200702215803534.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200702220439646.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200702220544850.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200702220920296.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200702221601437.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200702221626114.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200702222254726.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200702223128655.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200702223220720.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200702224616787.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200702224816512.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200702225039138.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200703000333330.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200703000401174.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200703000905460.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200703001117831.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200703001436566.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200703002119799.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200703002319315.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200703002844133.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200703003639358.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200703003942969.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200703004334235.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/2020070300482031.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200703005114701.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200703005650472.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200703010043691.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/2020070301065437.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200703011608294.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200703012144697.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200703012244338.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-<meta property="article:published_time" content="2021-02-05T00:04:02.000Z">
-<meta property="article:modified_time" content="2021-04-19T12:08:41.579Z">
-<meta property="article:author" content="齐雨争">
-<meta property="article:tag" content="计算机网络">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200702215803534.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70">
-
-
-<link rel="stylesheet" type="text/css" href="../../../../css/style.css?v=1.1" />
-<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
-
-
-  <link rel="stylesheet" type="text/css" href="../../../../lib/fancybox/jquery.fancybox.css" />
-
-
-
-
-<script type="text/javascript">
-  var themeConfig = {
-    fancybox: {
-      enable: true
-    },
-  };
-</script>
-
-
-
-
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>  应用层 |    雨争齐齐齐</title>
+  <meta name="description" content="A minimalist theme for hexo.">
+  <!-- 标签页图标 -->
   
 
+  <!-- 图标库 -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- 动画库 -->
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fushaolei/cdn-white@1.0/css/animate.css"/>
+  
+  <!-- css文件 -->
+  
+<link rel="stylesheet" href="../../../../css/white.css">
+
+  <!-- 代码高亮 -->
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
-    <title> 应用层 - 齐雨争 </title>
-  <meta name="generator" content="Hexo 5.4.0"></head>
+<body>
 
-  <body>
-    <div id="page">
-      <header id="masthead"><div class="site-header-inner">
-    <h1 class="site-title">
-        <a href="../../../../." class="logo">齐雨争</a>
-    </h1>
-
-    <nav id="nav-top">
+<div class="menu-outer">
+    <div class="menu-inner">
+      <div class="menu-site-name  animate__animated  animate__fadeInUp">
+        <a href="../../../../index.html">
+          雨争齐齐齐
+        </a>
         
-            <ul id="menu-top" class="nav-top-items">
-                
-                    <li class="menu-item">
-                        <a href="">
-                            
-                            
-                                Archives
-                            
-                        </a>
-                    </li>
-                
-                    <li class="menu-item">
-                        <a href="">
-                            
-                            
-                                About
-                            
-                        </a>
-                    </li>
-                
-                    <li class="menu-item">
-                        <a href="">
-                            
-                            
-                                life
-                            
-                        </a>
-                    </li>
-                
-                    <li class="menu-item">
-                        <a href="">
-                            
-                            
-                                github
-                            
-                        </a>
-                    </li>
-                
-            </ul>
+      </div>
+      <div class="menu-group">
+        <ul class="menu-ul">
         
-  </nav>
+          <a href="../../../../index.html" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              HOME
+            </li>
+          </a>
+        
+          <a href="../../../../archives" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              BLOG
+            </li>
+          </a>
+        
+          <a href="../../../../about/" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              about
+            </li>
+          </a>
+        
+        
+          <li class="menu-li animate__animated  animate__fadeInUp" id="sort">
+             categories
+             <div class="categories-outer " id="sort-div">
+               <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/hexo/">hexo</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/mysql/">mysql</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/ui/">ui</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E4%B8%89%E5%89%91%E5%AE%A2/">三剑客</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%94%9F%E6%B4%BB/">生活</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/">计算机常识</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BB%BC%E5%90%88/">计算机网络综合</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/">高等数学</a></li></ul>
+             </div>
+          </li>
+        
+        
+          <li class="menu-li animate__animated  animate__fadeInUp" id="mobile-menu">
+            <i class="ri-menu-line"></i>
+          </li>
+        
+        </ul>
+
+      </div>
+
+    </div>
+</div>
+<div id="mobile-main" class="animate__animated  animate__fadeIn">
+  <div class="mobile-menu-inner">
+    <div class="mobile-menu-site-name animate__animated  animate__fadeInUp">
+      <a href="../../../../index.html">
+        雨争齐齐齐
+      </a>
+    </div>
+    <div class="mobile-menu-group" id="mobile-close">
+      <i class="ri-close-line"></i>
+    </div>
+
+  </div>
+
+  <div class="mobile-menu-div">
+  
+    <a href="../../../../index.html" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>HOME</span>
+      </div>
+    </a>
+  
+    <a href="../../../../archives" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>BLOG</span>
+      </div>
+    </a>
+  
+    <a href="../../../../about/" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>about</span>
+      </div>
+    </a>
+  
+  
+  </div>
+
+
 </div>
 
-      </header>
-      <div id="content">
-        
-    <div id="primary">
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          应用层
-        
-      </h1>
-
-      <time class="post-time">
-          Feb 05 2021
-      </time>
-    </header>
-
-
-
+<div class="body-outer">
+  <div class="body-inner">
     
-            <div class="post-content">
-            <h1 id="本人计算机网络笔记总目录"><a href="#本人计算机网络笔记总目录" class="headerlink" title="本人计算机网络笔记总目录"></a>本人计算机网络笔记总目录</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45067603/article/details/106974036">计算机网络笔记Part1 概述</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45067603/article/details/106974965">计算机网络笔记Part2 物理层（Physical Layer）</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45067603/article/details/106980441">计算机网络笔记Part3 数据链路层（Data Link Layer）</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45067603/article/details/106993253">计算机网络笔记Part4 网络层（Network Layer）</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45067603/article/details/107034202">计算机网络笔记Part5 传输层（Transport Layer）</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45067603/article/details/107053479">计算机网络笔记Part6 应用层（Application Layer）</a></p>
+<article class="post-inner">
+  <div class="post-content-outer">
+    <div class="post-intro">
+      <div class="post-title animate__animated  animate__fadeInUp">应用层</div>
+      <div class="meta-intro animate__animated  animate__fadeInUp">Feb 05 2021</div>
+      
+    </div>
+    <div class="post-content-inner">
+      <div class="post-content-inner-space">
+
+      </div>
+      <div class="post-content-main animate__animated  animate__fadeInUp">
+        <!-- top型目录 -->
+        
+        <h1 id="本人计算机网络笔记总目录"><a href="#本人计算机网络笔记总目录" class="headerlink" title="本人计算机网络笔记总目录"></a>本人计算机网络笔记总目录</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45067603/article/details/106974036">计算机网络笔记Part1 概述</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45067603/article/details/106974965">计算机网络笔记Part2 物理层（Physical Layer）</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45067603/article/details/106980441">计算机网络笔记Part3 数据链路层（Data Link Layer）</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45067603/article/details/106993253">计算机网络笔记Part4 网络层（Network Layer）</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45067603/article/details/107034202">计算机网络笔记Part5 传输层（Transport Layer）</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45067603/article/details/107053479">计算机网络笔记Part6 应用层（Application Layer）</a></p>
 <h1 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h1><p>因为不同的网络应用之间需要有一个确定的通信规则<br><img src="https://img-blog.csdnimg.cn/20200702215803534.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h2 id="1-1-两种常用的网络应用模型"><a href="#1-1-两种常用的网络应用模型" class="headerlink" title="1.1 两种常用的网络应用模型"></a>1.1 两种常用的网络应用模型</h2><h3 id="1-1-1-客户-服务器模型（Client-Server）"><a href="#1-1-1-客户-服务器模型（Client-Server）" class="headerlink" title="1.1.1 客户/服务器模型（Client/Server）"></a>1.1.1 客户/服务器模型（Client/Server）</h3><p><img src="https://img-blog.csdnimg.cn/20200702220439646.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h3 id="1-1-2-P2P模型（Peer-to-Peer）"><a href="#1-1-2-P2P模型（Peer-to-Peer）" class="headerlink" title="1.1.2 P2P模型（Peer-to-Peer）"></a>1.1.2 P2P模型（Peer-to-Peer）</h3><p>网络健壮性指的是P2P模型不容易坏掉，即使一个节点坏了也没问题，可以有其他节点代替<br><img src="https://img-blog.csdnimg.cn/20200702220544850.png?shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTA2NzYwMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
@@ -233,91 +183,528 @@
 <h1 id="本章常用中英文对照"><a href="#本章常用中英文对照" class="headerlink" title="本章常用中英文对照"></a>本章常用中英文对照</h1><p>Server farm 服务器集群<br>Infrastructure 基础设施，或基础架构<br>Self-scalability 自扩展性<br>Timing 实时性<br>Connection-oriented service 面向连接的服务<br>Base HTML file 基本HTML文件<br>Stateless protocol 无状态协议<br>RTT (round-trip time ) 往返时间<br>User agents 用户代理<br>Mail servers 邮件服务器<br>Top-level domain (TLD) servers 顶级域名服务器<br>Authoritative DNS servers P161 权威域名服务器<br>Iterative queries 迭代查询<br>Resource records (RRs) 资源记录<br>Nonpersistent HTTP 非持久HTTP，或非坚持HTTP<br>Persistent HTTP 持久性HTTP，或坚持的HTTP<br>Peer-to-Peer (P2P) Network 对等网络<br>Socket programming 套接字编程</p>
 <p>参考资料<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV19E411D78Q?p=1">2019 王道考研 计算机网络</a></p>
 
-            </div>
-          
+        <!-- 分类文章 -->
+        
+          <div class="post-categoris-bottom">
+            <div class="post-categoris-name">计算机网络综合</div>
+            <ul>
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../../../01/18/2020-01-18-time-protocol/" class="post-categoris-bottom-link">
+                  时间协议
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0Part1%E6%A6%82%E8%BF%B0/" class="post-categoris-bottom-link">
+                  计算机网络笔记概述
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../%E7%89%A9%E7%90%86%E5%B1%82/" class="post-categoris-bottom-link">
+                  物理层
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/" class="post-categoris-bottom-link">
+                  数据链路层
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../%E7%BD%91%E7%BB%9C%E5%B1%82/" class="post-categoris-bottom-link">
+                  网络层
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../%E4%BC%A0%E8%BE%93%E5%B1%82/" class="post-categoris-bottom-link">
+                  传输层
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="me base">
+                  <a  href="" class="post-categoris-bottom-link">
+                  应用层
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+            
+            
+            
+            
+              
+            
+            
+            </ul>
 
-    
-      <footer class="post-footer">
-		
-		<div class="post-tags">
-		  
-			<a href="../../../../tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
-		  
-		</div>
-		
+          </div>
 
         
+      </div>
+      <div class="post-content-inner-space">
         
-  <nav class="post-nav">
-    
-      <a class="prev" href="../../../03/09/2016-03-09-java-memory-area-structure/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">Java运行时内存结构</span>
-        <span class="prev-text nav-mobile">Prev</span>
-      </a>
-    
-    
-      <a class="next" href="../%E4%BC%A0%E8%BE%93%E5%B1%82/">
-        <span class="next-text nav-default">传输层</span>
-        <span class="prev-text nav-mobile">Next</span>
-        <i class="iconfont icon-right"></i>
-      </a>
-    
-  </nav>
-
+          <div class="space-toc-main animate__animated  animate__fadeInUp">
+            <ol class="space-toc"><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#1-1-%E4%B8%A4%E7%A7%8D%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%A8%A1%E5%9E%8B"><span class="space-toc-text">1.1 两种常用的网络应用模型</span></a></li><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#2-1-%E6%A6%82%E8%BF%B0"><span class="space-toc-text">2.1 概述</span></a></li><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#2-2-%E5%9F%9F%E5%90%8D%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%88DNS%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%89"><span class="space-toc-text">2.2 域名服务器（DNS服务器）</span></a></li><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#2-3-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E8%BF%87%E7%A8%8B"><span class="space-toc-text">2.3 域名解析过程</span></a></li><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#3-1-%E6%A6%82%E8%BF%B0"><span class="space-toc-text">3.1 概述</span></a></li><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#3-2-FTP%E7%9A%84%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%92%8C%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="space-toc-text">3.2 FTP的服务端和客户端</span></a></li><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#3-3-FTP%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="space-toc-text">3.3 FTP的工作原理</span></a></li><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#4-1-%E6%A6%82%E8%BF%B0"><span class="space-toc-text">4.1 概述</span></a></li><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#4-2-%E5%87%A0%E4%B8%AA%E9%82%AE%E4%BB%B6%E5%8D%8F%E8%AE%AE"><span class="space-toc-text">4.2 几个邮件协议</span></a></li><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#4-3-%E5%9F%BA%E4%BA%8E%E4%B8%87%E7%BB%B4%E7%BD%91%E7%9A%84%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6"><span class="space-toc-text">4.3 基于万维网的电子邮件</span></a></li><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#5-1-%E4%B8%87%E7%BB%B4%E7%BD%91%E6%A6%82%E8%BF%B0"><span class="space-toc-text">5.1 万维网概述</span></a></li><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#5-2-HTTP%E5%8D%8F%E8%AE%AE"><span class="space-toc-text">5.2 HTTP协议</span></a></li></ol>
+           </div>
         
-  <div class="comments" id="comments">
+      </div>
+   </div>
+    <!-- 评论 -->
     
   </div>
+</article>
+  </div>
+</div>
 
 
-      </footer>
-    
-  </article>
+
+<!-- 如果是home模式的话，不在首页就显示footer，如果不是home模式的话 所有都显示footer -->
+
+  <div class="footer-outer animate__animated  animate__fadeInUp">
+    <div class="footer-inner">
+    <div class="footer-text">
+    <p>Power by <a target="_blank" rel="noopener" href="http://hexo.io/">Hexo</a> Theme by <a target="_blank" rel="noopener" href="https://github.com/FuShaoLei/hexo-theme-white">反方向的钟</a></p>
 
     </div>
-
-      </div>
-
-      <footer id="colophon"><span class="copyright-year">
-    
-        &copy;
-    
-        2018 -
-    
-    2021
-    <span class="footer-author">齐雨争.</span>
-    <span class="power-by">
-        Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
-    </span>
-</span>
-
-      </footer>
-
-      <div class="back-to-top" id="back-to-top">
-        <i class="iconfont icon-up"></i>
-      </div>
+    <div class="footer-contact">
+    <ul class="footer-ul">
+        
+        <li class="footer-li">
+            <a href="https://github.com/Geisha-design" target="_blank">
+                <i class="ri-github-line"></i>
+            </a>
+        </li>
+        
+        <li class="footer-li">
+            <a href="mailto:3202990966@qq.com" target="_blank">
+                <i class="ri-mail-line"></i>
+            </a>
+        </li>
+        
+    </ul>
     </div>
-    
-
-
-    
-  
+    </div>
+</div>
 
 
 
 
 
-  
-    <script type="text/javascript" src="../../../../lib/jquery/jquery-3.1.1.min.js"></script>
-  
 
-  
-    <script type="text/javascript" src="../../../../lib/fancybox/jquery.fancybox.pack.js"></script>
-  
+<script src="../../../../js/white.js"></script>
 
-    <script type="text/javascript" src="../../../../js/src/theme.js?v=1.1"></script>
-<script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
 
-  </body>
+
+</body>
 </html>

@@ -1,216 +1,138 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    
-<meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-  <meta name="description" content="微分中值处理之常数k值法"/>
-
-
-
-
-
-
-
-
-  <link rel="alternate" href="../../../../default" title="齐雨争" >
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.1" />
-
-
-
-<link rel="canonical" href="http://example.com/2021/04/20/微分中值处理之常数k值法/"/>
-
-
-<meta name="description" content="此文章为转载 微分中值定理的题，往往作为难题来压轴。事实上，微分中值定理的题也是千变万化，搞得人心惶惶。并且，微分中值定理的题不像求极限那样可以用Taylor公式暴力求解。那么，今天，我来介绍一种（部分微分中值定理题的）暴力求法。 常数K值法首先，我们来回忆一下拉格朗日中值定理的一个证法： （这个证法可能和大部分书上的不太一样） 已知：  求证：  证明： 设 为常数 ,记  , 那么  ，且">
-<meta property="og:type" content="article">
-<meta property="og:title" content="微分中值处理之常数k值法">
-<meta property="og:url" content="http://example.com/2021/04/20/%E5%BE%AE%E5%88%86%E4%B8%AD%E5%80%BC%E5%A4%84%E7%90%86%E4%B9%8B%E5%B8%B8%E6%95%B0k%E5%80%BC%E6%B3%95/index.html">
-<meta property="og:site_name" content="齐雨争">
-<meta property="og:description" content="此文章为转载 微分中值定理的题，往往作为难题来压轴。事实上，微分中值定理的题也是千变万化，搞得人心惶惶。并且，微分中值定理的题不像求极限那样可以用Taylor公式暴力求解。那么，今天，我来介绍一种（部分微分中值定理题的）暴力求法。 常数K值法首先，我们来回忆一下拉格朗日中值定理的一个证法： （这个证法可能和大部分书上的不太一样） 已知：  求证：  证明： 设 为常数 ,记  , 那么  ，且">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=f(x)%5Cin+C_%7B%5Ba,b%5D%7D%5Ccap+D_%7B(a,b)%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cexists+x_0+%5Cin+(a,b),s.t.f%27(x_0)=%5Cfrac%7Bf(b)-f(a)%7D%7Bb-a%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=K=%5Cfrac%7Bf(b)-f(a)%7D%7Bb-a%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=g(x)=K(x-a)-%5Cleft(+f(x)-f(a)%5Cright)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=g(a)=g(b)=0">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=g(x)%5Cin+C_%7B%5Ba,b%5D%7D%5Ccap+D_%7B(a,b)%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cexists+x_0+%5Cin+(a,b),s.t.g%27(x_0)=0">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=K-f%27(x_0)=0">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cexists+x_0+%5Cin+(a,b),s.t.+f%27(x_0)=%5Cfrac%7Bf(b)-f(a)%7D%7Bb-a%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=a_0,a_1,...,a_n">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=n+1">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=n+%5Cgeq+1">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=a_0+%5Cleq+a_1+%5Cleq...%5Cleq+a_n">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=x_0">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=(a_0,a_n)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=f%5E%7B(n)%7D(x_0)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=G(f%27(x_0))">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=f(a_0),f(a_1),...,f(a_n)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=a_0,a_1,...,a_n">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=F(f(a_0),f(a_1),...,f(a_n),a_1,a_2,...,a_n)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=f(%5Cfrac%7Ba+b%7D%7B2%7D)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cforall+0+%5Cleq+i%5Cleq+n">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=F(f(a_0),f(a_1),...,f(a_i),...,f(a_n),a_1,a_2,...,i,...,a_n)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=F(f(a_0),f(a_1),...,f(a_i),...,f(a_i),...,f(a_i),a_1,a_2,...,a_i,...,a_i)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=F_1(f(a_0),f(a_1),...f(a_i),...,f(a_i),a_1,a_2,...,a_i...,a_i)G(f%27(x_0))=F_2(f(a_0),f(a_1),...,f(a_i)...,f(a_i),a_1,a_2,...,a_i...,a_i)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=0=0">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=G(K)=F(f(a_0),f(a_1),...,f(a_n),a_1,a_2,...,a_n)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=g(x)=F_1(f(a_0),f(a_1),...,f(x),a_1,a_2,...,x)G(K)-F_2(f(a_0),f(a_1),...,f(x),a_1,a_2,...,x)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=a_n">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=g(a_0)=g(a_1)=...=g(a_n)=0">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=b_i+%5Cin+(a_i,a_%7Bi+1%7D)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=g%27(b_i)=0">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cexists+x_0+%5Cin+(a,b)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=s.t.g%5E%7B(n)%7D(x_0)=0">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=g%5E%7B(n)%7D(x_0)=A(K-f%5E%7B(n)%7D(x_0))=0">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=f%5Cin+C_%7B%5Ba,b%5D%7D%5Ccap+D%5E2_%7B(a,b)%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cforall+c+%5Cin+(a,b),%5Cexists+x_0+%5Cin+(a,b),s.t.">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cfrac%7Bf%27%27(x_0)%7D%7B2%7D=%5Cfrac%7Bf(a)%7D%7B(a-b)(a-c)%7D+%5Cfrac%7Bf(b)%7D%7B(b-a)(b-c)%7D+%5Cfrac%7Bf(c)%7D%7B(c-a)(c-b)%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cfrac%7BK%7D%7B2%7D=%5Cfrac%7Bf(a)%7D%7B(a-b)(a-c)%7D+%5Cfrac%7Bf(b)%7D%7B(b-a)(b-c)%7D+%5Cfrac%7Bf(c)%7D%7B(c-a)(c-b)%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=g(x)=%5Cfrac%7BK%7D%7B2%7D%5Cleft(+(a-x)(x-c)(c-a)+%5Cright)++f(a)(x-c)+f(x)(c-a)+f(c)(a-x)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=g(a)=g(c)=g(b)=0">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=g%5Cin+C_%7B%5Ba,b%5D%7D%5Ccap+D_%7B(a,b)%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cexists+x_1%5Cin(a,c),x_2%5Cin(c,b),s.t.g%27(x_1)=g%27(x_2)=0">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=g%27%5Cin+C_%7B%5Ba,b%5D%7D%5Ccap+D_%7B(a,b)%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cexists+x_0+%5Cin+(x_1,x_2)%5Csubset(a,b),s.t.g%27%27(x_0)=0">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=g%27%27(x_0)=%5Cfrac%7BK%7D%7B2%7D%5Ccdot2(a-c)+f%27%27(x_0)(c-a)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=K=f%27%27(x_0)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cfrac%7Ba+b%7D%7B2%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=f%5Cin+C_%7B%5Ba,b%5D%7D%5Ccap+D%5E2_%7B(a,b)%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cexists+x_0+%5Cin+(a,b),s.t.f(a)-2f(%5Cfrac%7Ba+b%7D%7B2%7D)+f(b)=%5Cfrac%7B(b-a)%5E2%7D%7B4%7Df%27%27(x_0)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=f(a)-2f(%5Cfrac%7Ba+b%7D%7B2%7D)+f(b)=%5Cfrac%7B(b-a)%5E2%7D%7B4%7DK">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=g(x)=%5Cfrac%7B(x-a)%5E2%7D%7B4%7DK-%5Cleft(+f(a)-2f(%5Cfrac%7Ba+x%7D%7B2%7D)+f(x)%5Cright)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=g(a)=g(b)=0">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=g%5Cin+C_%7B%5Ba,b%5D%7D%5Ccap+D_%7B(a,b)%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cexists+x_1%5Cin+(a,b),s.t.g%27(x_1)=0">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=g%27(x_1)=%5Cfrac%7Bx_1-a%7D%7B2%7DK-%5Cleft(-f%27(%5Cfrac%7Ba+x_1%7D%7B2%7D)+f%27(x_1)%5Cright)=0">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cfrac%7Bf%27(x_1)-f%27(%5Cfrac%7Ba+x_1%7D%7B2%7D)%7D%7B%5Cfrac%7Bx_1-a%7D%7B2%7D%7D=K">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=f%27%5Cin+C_%7B%5B%5Cfrac%7Bx_1+a%7D%7B2%7D,x_1%5D%7D%5Ccap+D_%7B(%5Cfrac%7Bx_1+a%7D%7B2%7D,x_1)%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cexists+x_0+%5Cin+(%5Cfrac%7Bx_1+a%7D%7B2%7D,x_1)+%5Csubset+(a,b)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cfrac%7Bf%27(x_1)-f%27(%5Cfrac%7Ba+x_1%7D%7B2%7D)%7D%7B%5Cfrac%7Bx_1-a%7D%7B2%7D%7D=f%27%27(x_0)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=K=f%27%27(x_0)">
-<meta property="article:published_time" content="2021-04-20T15:59:56.000Z">
-<meta property="article:modified_time" content="2021-04-20T16:04:38.273Z">
-<meta property="article:author" content="齐雨争">
-<meta property="article:tag" content="java leetcode mysql hexo">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.zhihu.com/equation?tex=f(x)%5Cin+C_%7B%5Ba,b%5D%7D%5Ccap+D_%7B(a,b)%7D">
-
-
-<link rel="stylesheet" type="text/css" href="../../../../css/style.css?v=1.1" />
-<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
-
-
-  <link rel="stylesheet" type="text/css" href="../../../../lib/fancybox/jquery.fancybox.css" />
-
-
-
-
-<script type="text/javascript">
-  var themeConfig = {
-    fancybox: {
-      enable: true
-    },
-  };
-</script>
-
-
-
-
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>  微分中值处理之常数K值法 |    雨争齐齐齐</title>
+  <meta name="description" content="A minimalist theme for hexo.">
+  <!-- 标签页图标 -->
   
 
+  <!-- 图标库 -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- 动画库 -->
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fushaolei/cdn-white@1.0/css/animate.css"/>
+  
+  <!-- css文件 -->
+  
+<link rel="stylesheet" href="../../../../css/white.css">
+
+  <!-- 代码高亮 -->
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
-    <title> 微分中值处理之常数k值法 - 齐雨争 </title>
-  <meta name="generator" content="Hexo 5.4.0"></head>
+<body>
 
-  <body>
-    <div id="page">
-      <header id="masthead"><div class="site-header-inner">
-    <h1 class="site-title">
-        <a href="../../../../." class="logo">齐雨争</a>
-    </h1>
-
-    <nav id="nav-top">
+<div class="menu-outer">
+    <div class="menu-inner">
+      <div class="menu-site-name  animate__animated  animate__fadeInUp">
+        <a href="../../../../index.html">
+          雨争齐齐齐
+        </a>
         
-            <ul id="menu-top" class="nav-top-items">
-                
-                    <li class="menu-item">
-                        <a href="">
-                            
-                            
-                                Archives
-                            
-                        </a>
-                    </li>
-                
-                    <li class="menu-item">
-                        <a href="">
-                            
-                            
-                                About
-                            
-                        </a>
-                    </li>
-                
-                    <li class="menu-item">
-                        <a href="">
-                            
-                            
-                                life
-                            
-                        </a>
-                    </li>
-                
-                    <li class="menu-item">
-                        <a href="">
-                            
-                            
-                                github
-                            
-                        </a>
-                    </li>
-                
-            </ul>
+      </div>
+      <div class="menu-group">
+        <ul class="menu-ul">
         
-  </nav>
+          <a href="../../../../index.html" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              HOME
+            </li>
+          </a>
+        
+          <a href="../../../../archives" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              BLOG
+            </li>
+          </a>
+        
+          <a href="../../../../about/" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              about
+            </li>
+          </a>
+        
+        
+          <li class="menu-li animate__animated  animate__fadeInUp" id="sort">
+             categories
+             <div class="categories-outer " id="sort-div">
+               <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/hexo/">hexo</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/mysql/">mysql</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/ui/">ui</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E4%B8%89%E5%89%91%E5%AE%A2/">三剑客</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%94%9F%E6%B4%BB/">生活</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/">计算机常识</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BB%BC%E5%90%88/">计算机网络综合</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/">高等数学</a></li></ul>
+             </div>
+          </li>
+        
+        
+          <li class="menu-li animate__animated  animate__fadeInUp" id="mobile-menu">
+            <i class="ri-menu-line"></i>
+          </li>
+        
+        </ul>
+
+      </div>
+
+    </div>
+</div>
+<div id="mobile-main" class="animate__animated  animate__fadeIn">
+  <div class="mobile-menu-inner">
+    <div class="mobile-menu-site-name animate__animated  animate__fadeInUp">
+      <a href="../../../../index.html">
+        雨争齐齐齐
+      </a>
+    </div>
+    <div class="mobile-menu-group" id="mobile-close">
+      <i class="ri-close-line"></i>
+    </div>
+
+  </div>
+
+  <div class="mobile-menu-div">
+  
+    <a href="../../../../index.html" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>HOME</span>
+      </div>
+    </a>
+  
+    <a href="../../../../archives" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>BLOG</span>
+      </div>
+    </a>
+  
+    <a href="../../../../about/" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>about</span>
+      </div>
+    </a>
+  
+  
+  </div>
+
+
 </div>
 
-      </header>
-      <div id="content">
-        
-    <div id="primary">
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          微分中值处理之常数k值法
-        
-      </h1>
-
-      <time class="post-time">
-          Apr 20 2021
-      </time>
-    </header>
-
-
-
+<div class="body-outer">
+  <div class="body-inner">
     
-            <div class="post-content">
-            <p>此文章为转载</p>
+<article class="post-inner">
+  <div class="post-content-outer">
+    <div class="post-intro">
+      <div class="post-title animate__animated  animate__fadeInUp">微分中值处理之常数k值法</div>
+      <div class="meta-intro animate__animated  animate__fadeInUp">Apr 20 2021</div>
+      
+    </div>
+    <div class="post-content-inner">
+      <div class="post-content-inner-space">
+
+      </div>
+      <div class="post-content-main animate__animated  animate__fadeInUp">
+        <!-- top型目录 -->
+        
+        <p>此文章为转载</p>
 <p>微分中值定理的题，往往作为难题来压轴。事实上，微分中值定理的题也是千变万化，搞得人心惶惶。并且，微分中值定理的题不像求极限那样可以用Taylor公式暴力求解。那么，今天，我来介绍一种（部分微分中值定理题的）暴力求法。</p>
 <h2 id="常数K值法"><a href="#常数K值法" class="headerlink" title="常数K值法"></a><strong>常数K值法</strong></h2><p>首先，我们来回忆一下拉格朗日中值定理的一个证法：</p>
 <p>（这个证法可能和大部分书上的不太一样）</p>
@@ -291,85 +213,528 @@
 <p>最后说一句，Taylor大法好，Lagrange余项赛高！</p>
 <p>由于我水平并不高，文章中必然存在着种种错误，希望各位对我文章中的错误不吝斧正！</p>
 
-            </div>
-          
+        <!-- 分类文章 -->
+        
+          <div class="post-categoris-bottom">
+            <div class="post-categoris-name">高等数学</div>
+            <ul>
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../../13/%E5%BE%AE%E5%88%86%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88/" class="post-categoris-bottom-link">
+                  微分到底是什么
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../../13/%E5%BE%AE%E5%88%86%E4%B8%8E%E5%AF%BC%E6%95%B0%E7%9A%84%E5%8C%BA%E5%88%AB/" class="post-categoris-bottom-link">
+                  微分与导数的区别
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../../13/%E8%AE%BA%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" class="post-categoris-bottom-link">
+                  论微分方程
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../../14/port%E2%80%9C%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E4%B9%8B%E7%B4%AF%E6%AC%A1%E7%A7%AF%E5%88%86%E6%B3%95%E2%80%9D/" class="post-categoris-bottom-link">
+                  “二重积分之累次积分法”
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../../17/port%E9%AB%98%E6%95%B0%E2%80%94%E2%80%94%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%9A%84%E9%80%9A%E8%A7%A3%E5%92%8C%E7%89%B9%E8%A7%A3/" class="post-categoris-bottom-link">
+                  高数——微分方程的通解和特解
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="me base">
+                  <a  href="" class="post-categoris-bottom-link">
+                  微分中值处理之常数k值法
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../../22/%E2%80%9C%E5%B9%82%E7%BA%A7%E6%95%B0%E7%9A%84%E6%9C%AC%E8%B4%A8%E2%80%9D/" class="post-categoris-bottom-link">
+                  “幂级数的本质”
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+            
+            
+            
+            
+              
+            
+            
+            </ul>
 
-    
-      <footer class="post-footer">
-		
+          </div>
 
         
+      </div>
+      <div class="post-content-inner-space">
         
-  <nav class="post-nav">
-    
-      <a class="prev" href="../../21/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%AC%AC%E4%B8%80%E7%AB%A0%E8%8A%82%E6%80%BB%E7%BB%93/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">线性代数第一章节总结</span>
-        <span class="prev-text nav-mobile">Prev</span>
-      </a>
-    
-    
-      <a class="next" href="../../19/2017-06-22-blog-with-github-travis-ci-and-coding-net-3/">
-        <span class="next-text nav-default">使用Github、Travis-CI和Coding.net自动部署博客［三］</span>
-        <span class="prev-text nav-mobile">Next</span>
-        <i class="iconfont icon-right"></i>
-      </a>
-    
-  </nav>
-
+          <div class="space-toc-main animate__animated  animate__fadeInUp">
+            <ol class="space-toc"><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#%E5%B8%B8%E6%95%B0K%E5%80%BC%E6%B3%95"><span class="space-toc-text">常数K值法</span></a></li><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#%E9%82%A3%E4%B9%88%EF%BC%8C%E4%B8%8B%E9%9D%A2%E6%88%91%E4%BB%AC%E4%BB%8B%E7%BB%8D%E5%B8%B8%E6%95%B0K%E5%80%BC%E6%B3%95%E7%9A%84%E4%B8%80%E8%88%AC%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="space-toc-text">那么，下面我们介绍常数K值法的一般步骤：</span></a></li><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#%E7%BB%99%E5%87%BA%E5%87%A0%E4%B8%AA%E8%BF%90%E7%94%A8%E5%B8%B8%E6%95%B0K%E5%80%BC%E6%B3%95%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="space-toc-text">给出几个运用常数K值法的例子</span></a></li><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#%E6%80%BB%E7%BB%93"><span class="space-toc-text">总结</span></a></li></ol>
+           </div>
         
-  <div class="comments" id="comments">
+      </div>
+   </div>
+    <!-- 评论 -->
     
   </div>
+</article>
+  </div>
+</div>
 
 
-      </footer>
-    
-  </article>
+
+<!-- 如果是home模式的话，不在首页就显示footer，如果不是home模式的话 所有都显示footer -->
+
+  <div class="footer-outer animate__animated  animate__fadeInUp">
+    <div class="footer-inner">
+    <div class="footer-text">
+    <p>Power by <a target="_blank" rel="noopener" href="http://hexo.io/">Hexo</a> Theme by <a target="_blank" rel="noopener" href="https://github.com/FuShaoLei/hexo-theme-white">反方向的钟</a></p>
 
     </div>
-
-      </div>
-
-      <footer id="colophon"><span class="copyright-year">
-    
-        &copy;
-    
-        2018 -
-    
-    2021
-    <span class="footer-author">齐雨争.</span>
-    <span class="power-by">
-        Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
-    </span>
-</span>
-
-      </footer>
-
-      <div class="back-to-top" id="back-to-top">
-        <i class="iconfont icon-up"></i>
-      </div>
+    <div class="footer-contact">
+    <ul class="footer-ul">
+        
+        <li class="footer-li">
+            <a href="https://github.com/Geisha-design" target="_blank">
+                <i class="ri-github-line"></i>
+            </a>
+        </li>
+        
+        <li class="footer-li">
+            <a href="mailto:3202990966@qq.com" target="_blank">
+                <i class="ri-mail-line"></i>
+            </a>
+        </li>
+        
+    </ul>
     </div>
-    
-
-
-    
-  
+    </div>
+</div>
 
 
 
 
 
-  
-    <script type="text/javascript" src="../../../../lib/jquery/jquery-3.1.1.min.js"></script>
-  
 
-  
-    <script type="text/javascript" src="../../../../lib/fancybox/jquery.fancybox.pack.js"></script>
-  
+<script src="../../../../js/white.js"></script>
 
-    <script type="text/javascript" src="../../../../js/src/theme.js?v=1.1"></script>
-<script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
 
-  </body>
+
+</body>
 </html>

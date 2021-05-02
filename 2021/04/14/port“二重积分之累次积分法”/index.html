@@ -1,348 +1,138 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    
-<meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-  <meta name="description" content="“二重积分之累次积分法”"/>
-
-
-
-
-  <meta name="keywords" content="高等数学," />
-
-
-
-
-
-  <link rel="alternate" href="../../../../default" title="齐雨争" >
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.1" />
-
-
-
-<link rel="canonical" href="http://example.com/2021/04/14/port“二重积分之累次积分法”/"/>
-
-
-<meta name="description" content="【高等数学】二重积分化累次积分方法一、二重积分的理解二重积分的一般表示如下：  它最佳的理解方式是——平面薄片的质量，即平面薄片占据平面区域  , 在点  处的面密度为  ，整个平面薄片的总质量就是将  累积遍整个平面区域  . 当然，二重积分也是一个“分割、近似、求和、取极限”的过程，将该过程压缩成一步到位，就是“二重积分”运算：  注1：  取所有  直径的最大值，该极限比一般极限要复杂的多">
-<meta property="og:type" content="article">
-<meta property="og:title" content="“二重积分之累次积分法”">
-<meta property="og:url" content="http://example.com/2021/04/14/port%E2%80%9C%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E4%B9%8B%E7%B4%AF%E6%AC%A1%E7%A7%AF%E5%88%86%E6%B3%95%E2%80%9D/index.html">
-<meta property="og:site_name" content="齐雨争">
-<meta property="og:description" content="【高等数学】二重积分化累次积分方法一、二重积分的理解二重积分的一般表示如下：  它最佳的理解方式是——平面薄片的质量，即平面薄片占据平面区域  , 在点  处的面密度为  ，整个平面薄片的总质量就是将  累积遍整个平面区域  . 当然，二重积分也是一个“分割、近似、求和、取极限”的过程，将该过程压缩成一步到位，就是“二重积分”运算：  注1：  取所有  直径的最大值，该极限比一般极限要复杂的多">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://pic1.zhimg.com/v2-caec6aa470729eb27390abffefc7b433_1440w.jpg?source=172ae18b">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=I+=+%5Ciint%5Climits_D+f(x,y)+%5Cmathrm%7Bd%7D+%5Csigma">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=(x,y)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=f(x,y)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=f(x,+y)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Clim%5Climits_%7B%5Clambda+%5Cto+0%7D+%5Csum%5Climits_%7Bi=1%7D%5En+f(%5Cxi_i,+%5Ceta_i)+%5CDelta+%5Csigma_i+%5Ctriangleq+%5Ciint%5Climits_D+f(x,y)+%5Cmathrm%7Bd%7D+%5Csigma">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Clambda">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5CDelta+%5Csigma_i">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cmathrm%7Bd%7D+%5Csigma+=+%5Cmathrm%7Bd%7D+x+%5Cmathrm%7Bd%7D+y">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-d68ed46ec23da8306c2d108acd21cbcc_1440w.jpg">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=+%5Ciint%5Climits_D+f(x,y)+%5Cmathrm%7Bd%7D+%5Csigma+=+%5Ciint%5Climits_D+f(x,y)+%5Cmathrm%7Bd%7D+x+%5Cmathrm%7Bd%7D+y">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=f(x,+y)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=D">
-<meta property="og:image" content="https://pic2.zhimg.com/80/v2-56fa53eceda300d10801822bc47425e9_1440w.jpg">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=x">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=y">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=A(x)+=+%5Cint_%7By_1(x)%7D%5E%7By_2(x)%7D+f(x,y)+%5Cmathrm%7Bd%7D+y">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=I+=+%5Cint_a%5Eb+A(x)%5Cmathrm%7Bd%7Dx">
-<meta property="og:image" content="https://pic2.zhimg.com/v2-e5a3814a27acc067dc7619e4f6e8d235_r.jpg">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cbegin%7Beqnarray*%7D+I+=+%5Ciint%5Climits_D+f(x,y)+%5Cmathrm%7Bd%7D+%5Csigma+&=&+%5Cint_a%5Eb+%5CBig%5B+%5Cint_%7By_1(x)%7D%5E%7By_2(x)%7D+f(x,y)+%5Cmathrm%7Bd%7D+y+%5CBig%5D+%5Cmathrm%7Bd%7D+x+%5C%5C+&%5Cxrightarrow%7B%E6%8D%A2%E4%B8%AA%E5%86%99%E6%B3%95%7D&+%5Cint_a%5Eb+%5Cmathrm%7Bd%7D+x+%5Cint_%7By_1(x)%7D%5E%7By_2(x)%7D+f(x,y)+%5Cmathrm%7Bd%7D+y+%5Cend%7Beqnarray*%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cbegin%7Beqnarray*%7D+I+=+%5Ciint%5Climits_D+f(x,y)+%5Cmathrm%7Bd%7D+%5Csigma+&=&+%5Cint_c%5Ed+%5CBig%5B+%5Cint_%7Bx_1(y)%7D%5E%7Bx_2(y)%7D+f(x,y)+%5Cmathrm%7Bd%7D+x+%5CBig%5D+%5Cmathrm%7Bd%7D+y+%5C%5C+&%5Cxrightarrow%7B%E6%8D%A2%E4%B8%AA%E5%86%99%E6%B3%95%7D&+%5Cint_c%5Ed+%5Cmathrm%7Bd%7D+y+%5Cint_%7Bx_1(y)%7D%5E%7Bx_2(y)%7D+f(x,y)+%5Cmathrm%7Bd%7D+x+%5Cend%7Beqnarray*%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=x%5E2+y%5E2">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-4d4bb024f5d052ee7aae1bc662742520_1440w.jpg">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=x,+y">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ctheta+%5Cin+%5B%5Calpha,%5Cbeta%5D,+%5Cquad+%5Crho+%5Cin+%5Ba,b%5D">
-<meta property="og:image" content="https://pic2.zhimg.com/80/v2-150ce7f1057a0640bdb65dcc59213aa1_1440w.jpg">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cmathrm%7Bd%7D+%5Csigma">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-50621f00b56f41dc9de85b5397862a2c_1440w.jpg">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cmathrm%7Bd%7D+%5Csigma">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crm%7Bd%7D+%5Csigma+%5Capprox+%5Crho+%5Crm%7Bd%7D+%5Ctheta+%5Ccdot+%5Crm%7Bd%7D+%5Crho+">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho+%5Crm%7Bd%7D+%5Ctheta+">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Capprox">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex==">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ciint%5Climits_D+f(x,y)+%5Cmathrm%7Bd%7D+%5Csigma+=+%5Ciint%5Climits_%7BD%27%7D+f(%5Crho+%5Ccos+%5Ctheta,+%5Crho+%5Csin+%5Ctheta)+%5Ccdot+%5Crho+%5Crm%7Bd%7D+%5Crho+%5Crm%7Bd%7D+%5Ctheta">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=D%27">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cleft%5C%7B+%5C!+%5Cbegin%7Barray%7D%7Bl%7D+x+=+%5Crho+%5Ccos+%5Ctheta+%5C%5C+y+=+%5Crho+%5Csin+%5Ctheta+%5Cend%7Barray%7D+%5Cright.">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ciint%5Climits_D+f(x,y)+%5Cmathrm%7Bd%7D+%5Csigma+=+%5Ciint%5Climits_%7BD%27%7D+f(%5Crho+%5Ccos+%5Ctheta,+%5Crho+%5Csin+%5Ctheta)+%5Ccdot+%5Cfrac%7B%5Cpartial(x,y)%7D%7B%5Cpartial(%5Crho,+%5Ctheta)%7D+%5Ccdot+%5Crm%7Bd%7D+%5Crho+%5Crm%7Bd%7D+%5Ctheta">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cfrac%7B%5Cpartial+(x,y)%7D%7B%5Cpartial+(%5Crho+,%5Ctheta+)%7D+=+%5Cbegin%7Bvmatrix%7D+%5Cfrac%7B%5Cpartial+x%7D%7B%5Cpartial+%5Crho%7D+&+%5Cfrac%7B%5Cpartial+x%7D%7B%5Cpartial+%5Ctheta%7D+%5C%5C+%5Cfrac%7B%5Cpartial+y%7D%7B%5Cpartial+%5Crho%7D+&+%5Cfrac%7B%5Cpartial+y%7D%7B%5Cpartial+%5Ctheta%7D+%5Cend%7Bvmatrix%7D+=+%5Crho">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=x">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=y">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=y">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=x">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ctheta">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=0">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=x">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=2+%5Cpi">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex==0">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ctheta">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ciint%5Climits_D+xy+%5C,%5Crm%7Bd%7D+%5Csigma">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=y%5E2=x">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=y=x-2">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=D">
-<meta property="og:image" content="https://pic1.zhimg.com/v2-0931561e7a995939bea6952101523ee4_r.jpg">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=y">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=x">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=y">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=y">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=A">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=(1,-1)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=B">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=(4,2)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=y+%5Cin+%5B-1,2%5D">
-<meta property="og:image" content="https://pic2.zhimg.com/v2-72087ced47ccf742e3f886bfe56e356d_r.jpg">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=y">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=x">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=x">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cwidehat%7BAOB%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Coverline%7BAB%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cwidehat%7BAOB%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=y%5E2=x+%5Cxrightarrow%7B%E5%8F%98%E5%BD%A2%7D+x+=+y%5E2">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Coverline%7BAB%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=y=x-2+%5Cxrightarrow%7B%E5%8F%98%E5%BD%A2%7D+x+=+y+2">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=x+%5Cin+%5By%5E2,+y+2%5D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=y=-1">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=y=2">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=x=y%5E2">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=x=y+2">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ciint%5Climits_D+xy+%5C,%5Crm%7Bd%7D+%5Csigma+=%5Cint_%7B-1%7D+%5E2+%5Crm%7Bd%7D+y+%5Cint_%7By%5E2%7D%5E%7By+2%7D+x+y+%5Crm%7Bd%7D+x">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=x">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=y">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=x">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=x">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=(0,0)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=B">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=(4,2)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=x+%5Cin+%5B0,4%5D">
-<meta property="og:image" content="https://pic2.zhimg.com/v2-76f6ee5a8f5f991f33b5184303e9b095_r.jpg">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=x">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=y">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=y">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cwidehat%7BOA%7D+%5Coverline%7BAB%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cwidehat%7BOB%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cwidehat%7BOA%7D+%5Coverline%7BAB%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=x+%5Cin+%5B0,4%5D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=A">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=A">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=(1,-1)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=x+%5Cin+%5B0,4%5D+=+%5B0,1%5D+%5Ccup+%5B1,4%5D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=x=1">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=D_1">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=D_2">
-<meta property="og:image" content="https://pic3.zhimg.com/v2-901f71eb16ecfa7f943eb0ea43ebe272_r.jpg">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=D_1">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=x+%5Cin+%5B0,1%5D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=y">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cwidehat%7BOA%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=y%5E2=x+%5Cxrightarrow%7B%E5%8F%98%E5%BD%A2%7D+y+=+-%5Csqrt%7Bx%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=y">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cwidehat%7BOC%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=y%5E2=x+%5Cxrightarrow%7B%E5%8F%98%E5%BD%A2%7D+y+=+%5Csqrt%7Bx%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=y+%5Cin+%5B-+%5Csqrt%7Bx%7D,+%5Csqrt%7Bx%7D%5D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=D_2">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=x+%5Cin+%5B1,4%5D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=y">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Coverline%7BAB%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=y=x-2">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=y">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cwidehat%7BCB%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=y%5E2=x+%5Cxrightarrow%7B%E5%8F%98%E5%BD%A2%7D+y+=+%5Csqrt%7Bx%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=y+%5Cin+%5Bx-2,+%5Csqrt%7Bx%7D%5D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ciint%5Climits_D+xy+%5C,%5Crm%7Bd%7D+%5Csigma+=%5Cint_0+%5E1+%5Crm%7Bd%7D+x+%5Cint_%7B-%5Csqrt%7Bx%7D%7D%5E%7B%5Csqrt%7Bx%7D%7D+x+y+%5Crm%7Bd%7D+y+++%5Cint_1+%5E4+%5Crm%7Bd%7D+x+%5Cint_%7Bx-2%7D%5E%7B%5Csqrt%7Bx%7D%7D+x+y+%5Crm%7Bd%7D+y">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=x">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=y">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=y">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=x">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=I+=+%5Cint_%7B+-+%5Cfrac%7B%5Cpi+%7D%7B4%7D%7D%5E%7B%5Cfrac%7B%5Cpi+%7D%7B2%7D%7D+%7B%5Crm%7Bd%7D%7D+%5Ctheta+%5Cint_0%5E%7B2%5Ccos+%5Ctheta+%7D+f(%5Crho+%5Ccos+%5Ctheta+,%5Crho+%5Csin+%5Ctheta+)%5Crho+%7B%5Crm%7Bd%7D%7D%5Crho+">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ctheta">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ctheta+%5Cin+%5Cbig%5B+-%5Cfrac%7B%5Cpi%7D%7B4%7D,+%5Cfrac%7B%5Cpi%7D%7B2%7D+%5Cbig%5D,+%5Cquad+%5Crho+%5Cin+%5B0,+2+%5Ccos+%5Ctheta%5D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cbegin%7Beqnarray*%7D+%5Crho=2%5Ccos+%5Ctheta+&%5Cxrightarrow%7B%E5%8F%98%E5%BD%A2%7D&+%5Crho%5E2=2+%5Crho+%5Ccos+%5Ctheta+%5C%5C+&%5Cxrightarrow%7B%E5%8F%98%E5%BD%A2%7D&+x%5E2+y%5E2+=+2x+%5Cxrightarrow%7B%E5%8F%98%E5%BD%A2%7D+%EF%BC%88x-1)%5E2+y%5E2=1+%5Cend%7Beqnarray*%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ctheta">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=D">
-<meta property="og:image" content="https://pic2.zhimg.com/v2-1323f28edc20fb76154427a32a5bc8d1_r.jpg">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ctheta">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=0">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=(2,0)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=2">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho+%5Cin+%5B0,2%5D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho=0">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho=2">
-<meta property="og:image" content="https://pic3.zhimg.com/v2-75a120ab4acb3b01502ca799bdcb830e_r.jpg">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ctheta">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Coverline%7BOB%7D+%5Cwidehat%7BBA%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cwidehat%7BOA%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Coverline%7BOB%7D+%5Cwidehat%7BBA%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ctheta+=+%5Ctheta_1(%5Crho)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho+%5Cin+%5B0,2%5D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=B">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=B">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=(1,-1)">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho+%5Cin+%5B0,2%5D+=+%5B0,+%5Csqrt%7B2%7D%5D+%5Ccup+%5B%5Csqrt%7B2%7D,+2%5D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho+=+%5Csqrt%7B2%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=D_1">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=D_2">
-<meta property="og:image" content="https://pic1.zhimg.com/v2-b4f1c8de2c862c5a2889cd22b37cdac8_r.jpg">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=D_1">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho+%5Cin+%5B0,+%5Csqrt%7B2%7D%5D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ctheta">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Coverline%7BOB%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ctheta+=+-+%5Cfrac%7B%5Cpi%7D%7B4%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ctheta">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cwidehat%7BOC%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho=2+%5Ccos+%5Ctheta+%5Cxrightarrow%7B%E5%8F%98%E5%BD%A2%7D+%5Ctheta+=+%5Carccos+%5Cfrac%7B%5Crho%7D%7B2%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ctheta+%5Cin+%5Cbig%5B-+%5Cfrac%7B%5Cpi%7D%7B4%7D,+%5Carccos+%5Cfrac%7B%5Crho%7D%7B2%7D+%5Cbig%5D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=D_2">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho+%5Cin+%5B%5Csqrt%7B2%7D,+2%5D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ctheta">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cwidehat%7BBA%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho=2+%5Ccos+%5Ctheta+%5Cxrightarrow%7B%E5%8F%98%E5%BD%A2%7D+%5Ctheta+=+-%5Carccos+%5Cfrac%7B%5Crho%7D%7B2%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ctheta">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cwidehat%7BCA%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho=2+%5Ccos+%5Ctheta+%5Cxrightarrow%7B%E5%8F%98%E5%BD%A2%7D+%5Ctheta+=+%5Carccos+%5Cfrac%7B%5Crho%7D%7B2%7D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ctheta+%5Cin+%5Cbig%5B-+%5Carccos+%5Cfrac%7B%5Crho%7D%7B2%7D+,+%5Carccos+%5Cfrac%7B%5Crho%7D%7B2%7D+%5Cbig%5D">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=I+=+%5Cint_0%5E%7B%5Csqrt+2+%7D+%7B%5Crm%7Bd%7D%7D%5Crho+%5Cint_%7B+-+%5Cfrac%7B%5Cpi+%7D%7B4%7D%7D%5E%7B%5Carccos+%5Cfrac%7B%5Crho+%7D%7B2%7D%7D+f(%5Crho+%5Ccos+%5Ctheta+,%5Crho+%5Csin+%5Ctheta+)%5Crho+%7B%5Crm%7Bd%7D%7D%5Ctheta+++%5Cint_%7B%5Csqrt+2+%7D%5E2+%7B%7B%5Crm%7Bd%7D%7D%5Crho+%7D+%5Cint_%7B+-+%5Carccos+%5Cfrac%7B%5Crho+%7D%7B2%7D%7D%5E%7B%5Carccos+%5Cfrac%7B%5Crho+%7D%7B2%7D%7D+f(%5Crho+%5Ccos+%5Ctheta+,%5Crho+%5Csin+%5Ctheta+)%5Crho+%7B%5Crm%7Bd%7D%7D%5Ctheta+">
-<meta property="article:published_time" content="2021-04-14T11:50:52.000Z">
-<meta property="article:modified_time" content="2021-04-19T11:46:17.785Z">
-<meta property="article:author" content="齐雨争">
-<meta property="article:tag" content="高等数学">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://pic1.zhimg.com/v2-caec6aa470729eb27390abffefc7b433_1440w.jpg?source=172ae18b">
-
-
-<link rel="stylesheet" type="text/css" href="../../../../css/style.css?v=1.1" />
-<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
-
-
-  <link rel="stylesheet" type="text/css" href="../../../../lib/fancybox/jquery.fancybox.css" />
-
-
-
-
-<script type="text/javascript">
-  var themeConfig = {
-    fancybox: {
-      enable: true
-    },
-  };
-</script>
-
-
-
-
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>  “二重积分之累次积分法” |    雨争齐齐齐</title>
+  <meta name="description" content="A minimalist theme for hexo.">
+  <!-- 标签页图标 -->
   
 
+  <!-- 图标库 -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- 动画库 -->
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fushaolei/cdn-white@1.0/css/animate.css"/>
+  
+  <!-- css文件 -->
+  
+<link rel="stylesheet" href="../../../../css/white.css">
+
+  <!-- 代码高亮 -->
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
-    <title> “二重积分之累次积分法” - 齐雨争 </title>
-  <meta name="generator" content="Hexo 5.4.0"></head>
+<body>
 
-  <body>
-    <div id="page">
-      <header id="masthead"><div class="site-header-inner">
-    <h1 class="site-title">
-        <a href="../../../../." class="logo">齐雨争</a>
-    </h1>
-
-    <nav id="nav-top">
+<div class="menu-outer">
+    <div class="menu-inner">
+      <div class="menu-site-name  animate__animated  animate__fadeInUp">
+        <a href="../../../../index.html">
+          雨争齐齐齐
+        </a>
         
-            <ul id="menu-top" class="nav-top-items">
-                
-                    <li class="menu-item">
-                        <a href="">
-                            
-                            
-                                Archives
-                            
-                        </a>
-                    </li>
-                
-                    <li class="menu-item">
-                        <a href="">
-                            
-                            
-                                About
-                            
-                        </a>
-                    </li>
-                
-                    <li class="menu-item">
-                        <a href="">
-                            
-                            
-                                life
-                            
-                        </a>
-                    </li>
-                
-                    <li class="menu-item">
-                        <a href="">
-                            
-                            
-                                github
-                            
-                        </a>
-                    </li>
-                
-            </ul>
+      </div>
+      <div class="menu-group">
+        <ul class="menu-ul">
         
-  </nav>
+          <a href="../../../../index.html" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              HOME
+            </li>
+          </a>
+        
+          <a href="../../../../archives" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              BLOG
+            </li>
+          </a>
+        
+          <a href="../../../../about/" class="nav-link">
+            <li class="menu-li  animate__animated  animate__fadeInUp">
+              about
+            </li>
+          </a>
+        
+        
+          <li class="menu-li animate__animated  animate__fadeInUp" id="sort">
+             categories
+             <div class="categories-outer " id="sort-div">
+               <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/hexo/">hexo</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/mysql/">mysql</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/ui/">ui</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E4%B8%89%E5%89%91%E5%AE%A2/">三剑客</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%94%9F%E6%B4%BB/">生活</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/">计算机常识</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BB%BC%E5%90%88/">计算机网络综合</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/">高等数学</a></li></ul>
+             </div>
+          </li>
+        
+        
+          <li class="menu-li animate__animated  animate__fadeInUp" id="mobile-menu">
+            <i class="ri-menu-line"></i>
+          </li>
+        
+        </ul>
+
+      </div>
+
+    </div>
+</div>
+<div id="mobile-main" class="animate__animated  animate__fadeIn">
+  <div class="mobile-menu-inner">
+    <div class="mobile-menu-site-name animate__animated  animate__fadeInUp">
+      <a href="../../../../index.html">
+        雨争齐齐齐
+      </a>
+    </div>
+    <div class="mobile-menu-group" id="mobile-close">
+      <i class="ri-close-line"></i>
+    </div>
+
+  </div>
+
+  <div class="mobile-menu-div">
+  
+    <a href="../../../../index.html" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>HOME</span>
+      </div>
+    </a>
+  
+    <a href="../../../../archives" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>BLOG</span>
+      </div>
+    </a>
+  
+    <a href="../../../../about/" class="mobile-nav-link">
+      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
+        <span>about</span>
+      </div>
+    </a>
+  
+  
+  </div>
+
+
 </div>
 
-      </header>
-      <div id="content">
-        
-    <div id="primary">
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          “二重积分之累次积分法”
-        
-      </h1>
-
-      <time class="post-time">
-          Apr 14 2021
-      </time>
-    </header>
-
-
-
+<div class="body-outer">
+  <div class="body-inner">
     
-            <div class="post-content">
-            <p><img src="https://pic1.zhimg.com/v2-caec6aa470729eb27390abffefc7b433_1440w.jpg?source=172ae18b" alt="【高等数学】二重积分化累次积分方法"></p>
+<article class="post-inner">
+  <div class="post-content-outer">
+    <div class="post-intro">
+      <div class="post-title animate__animated  animate__fadeInUp">“二重积分之累次积分法”</div>
+      <div class="meta-intro animate__animated  animate__fadeInUp">Apr 14 2021</div>
+      
+    </div>
+    <div class="post-content-inner">
+      <div class="post-content-inner-space">
+
+      </div>
+      <div class="post-content-main animate__animated  animate__fadeInUp">
+        <!-- top型目录 -->
+        
+        <p><img src="https://pic1.zhimg.com/v2-caec6aa470729eb27390abffefc7b433_1440w.jpg?source=172ae18b" alt="【高等数学】二重积分化累次积分方法"></p>
 <h1 id="【高等数学】二重积分化累次积分方法"><a href="#【高等数学】二重积分化累次积分方法" class="headerlink" title="【高等数学】二重积分化累次积分方法"></a>【高等数学】二重积分化累次积分方法</h1><h2 id="一、二重积分的理解"><a href="#一、二重积分的理解" class="headerlink" title="一、二重积分的理解"></a>一、<strong>二重积分的理解</strong></h2><p>二重积分的一般表示如下：</p>
 <p><img src="https://www.zhihu.com/equation?tex=I+=+%5Ciint%5Climits_D+f(x,y)+%5Cmathrm%7Bd%7D+%5Csigma" alt="[公式]"></p>
 <p>它最佳的理解方式是——平面薄片的质量，即平面薄片占据平面区域 <img src="https://www.zhihu.com/equation?tex=D" alt="[公式]"> , 在点 <img src="https://www.zhihu.com/equation?tex=(x,y)" alt="[公式]"> 处的面密度为 <img src="https://www.zhihu.com/equation?tex=f(x,y)" alt="[公式]"> ，整个平面薄片的总质量就是将 <img src="https://www.zhihu.com/equation?tex=f(x,+y)" alt="[公式]"> 累积遍整个平面区域 <img src="https://www.zhihu.com/equation?tex=D" alt="[公式]"> <em>.</em></p>
@@ -474,91 +264,528 @@
 <p><strong>参考文献：</strong></p>
 <p>《高等数学》，同济版</p>
 
-            </div>
-          
+        <!-- 分类文章 -->
+        
+          <div class="post-categoris-bottom">
+            <div class="post-categoris-name">高等数学</div>
+            <ul>
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../../13/%E5%BE%AE%E5%88%86%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88/" class="post-categoris-bottom-link">
+                  微分到底是什么
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../../13/%E5%BE%AE%E5%88%86%E4%B8%8E%E5%AF%BC%E6%95%B0%E7%9A%84%E5%8C%BA%E5%88%AB/" class="post-categoris-bottom-link">
+                  微分与导数的区别
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../../13/%E8%AE%BA%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" class="post-categoris-bottom-link">
+                  论微分方程
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="me base">
+                  <a  href="" class="post-categoris-bottom-link">
+                  “二重积分之累次积分法”
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../../17/port%E9%AB%98%E6%95%B0%E2%80%94%E2%80%94%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%9A%84%E9%80%9A%E8%A7%A3%E5%92%8C%E7%89%B9%E8%A7%A3/" class="post-categoris-bottom-link">
+                  高数——微分方程的通解和特解
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../../20/%E5%BE%AE%E5%88%86%E4%B8%AD%E5%80%BC%E5%A4%84%E7%90%86%E4%B9%8B%E5%B8%B8%E6%95%B0k%E5%80%BC%E6%B3%95/" class="post-categoris-bottom-link">
+                  微分中值处理之常数k值法
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+                <li class="base">
+                  <a  href="../../22/%E2%80%9C%E5%B9%82%E7%BA%A7%E6%95%B0%E7%9A%84%E6%9C%AC%E8%B4%A8%E2%80%9D/" class="post-categoris-bottom-link">
+                  “幂级数的本质”
+                </a>
+                </li>
+              
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+              
+            
+            
+            
+            
+            
+            
+            
+              
+            
+            
+            </ul>
 
-    
-      <footer class="post-footer">
-		
-		<div class="post-tags">
-		  
-			<a href="../../../../tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/">高等数学</a>
-		  
-		</div>
-		
+          </div>
 
         
+      </div>
+      <div class="post-content-inner-space">
         
-  <nav class="post-nav">
-    
-      <a class="prev" href="../../15/port%E8%AE%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">论数据库连接池</span>
-        <span class="prev-text nav-mobile">Prev</span>
-      </a>
-    
-    
-      <a class="next" href="../port%E2%80%9Cmac%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E7%AC%AC%E4%BA%8C%E5%BC%B9%E2%80%9D/">
-        <span class="next-text nav-default">“mac虚拟机解决方案第二弹”</span>
-        <span class="prev-text nav-mobile">Next</span>
-        <i class="iconfont icon-right"></i>
-      </a>
-    
-  </nav>
-
+          <div class="space-toc-main animate__animated  animate__fadeInUp">
+            <ol class="space-toc"><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#%E4%B8%80%E3%80%81%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E7%9A%84%E7%90%86%E8%A7%A3"><span class="space-toc-text">一、二重积分的理解</span></a></li><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#%E4%BA%8C%E3%80%81%E8%AE%A1%E7%AE%97%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="space-toc-text">二、计算二重积分的基本原理</span></a></li><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#%E4%B8%89%E3%80%81%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E5%8C%96%E7%B4%AF%E6%AC%A1%E7%A7%AF%E5%88%86%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95"><span class="space-toc-text">三、二重积分化累次积分的通用方法</span></a></li><li class="space-toc-item space-toc-level-2"><a class="space-toc-link" href="#%E5%9B%9B%E3%80%81%E4%BE%8B%E9%A2%98%E6%BC%94%E7%A4%BA"><span class="space-toc-text">四、例题演示</span></a></li></ol>
+           </div>
         
-  <div class="comments" id="comments">
+      </div>
+   </div>
+    <!-- 评论 -->
     
   </div>
+</article>
+  </div>
+</div>
 
 
-      </footer>
-    
-  </article>
+
+<!-- 如果是home模式的话，不在首页就显示footer，如果不是home模式的话 所有都显示footer -->
+
+  <div class="footer-outer animate__animated  animate__fadeInUp">
+    <div class="footer-inner">
+    <div class="footer-text">
+    <p>Power by <a target="_blank" rel="noopener" href="http://hexo.io/">Hexo</a> Theme by <a target="_blank" rel="noopener" href="https://github.com/FuShaoLei/hexo-theme-white">反方向的钟</a></p>
 
     </div>
-
-      </div>
-
-      <footer id="colophon"><span class="copyright-year">
-    
-        &copy;
-    
-        2018 -
-    
-    2021
-    <span class="footer-author">齐雨争.</span>
-    <span class="power-by">
-        Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> and <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
-    </span>
-</span>
-
-      </footer>
-
-      <div class="back-to-top" id="back-to-top">
-        <i class="iconfont icon-up"></i>
-      </div>
+    <div class="footer-contact">
+    <ul class="footer-ul">
+        
+        <li class="footer-li">
+            <a href="https://github.com/Geisha-design" target="_blank">
+                <i class="ri-github-line"></i>
+            </a>
+        </li>
+        
+        <li class="footer-li">
+            <a href="mailto:3202990966@qq.com" target="_blank">
+                <i class="ri-mail-line"></i>
+            </a>
+        </li>
+        
+    </ul>
     </div>
-    
-
-
-    
-  
+    </div>
+</div>
 
 
 
 
 
-  
-    <script type="text/javascript" src="../../../../lib/jquery/jquery-3.1.1.min.js"></script>
-  
 
-  
-    <script type="text/javascript" src="../../../../lib/fancybox/jquery.fancybox.pack.js"></script>
-  
+<script src="../../../../js/white.js"></script>
 
-    <script type="text/javascript" src="../../../../js/src/theme.js?v=1.1"></script>
-<script type="text/javascript" src="../../../../js/src/bootstrap.js?v=1.1"></script>
 
-  </body>
+
+</body>
 </html>
