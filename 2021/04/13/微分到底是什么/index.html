@@ -1,138 +1,489 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>  微分到底是什么 |    雨争齐齐齐</title>
-  <meta name="description" content="单变量微积分、线性代数的概念很多，我们的“带你学”系列：">
-  <!-- 标签页图标 -->
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script> 
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_click.js"></script>
+
+
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.2'>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/css/GalMenu.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@latest/hexo/css/loading_style_2.css" >
+
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+  <title>微分到底是什么 - 齐雨争</title>
+  
+    <meta name="keywords" content="高等数学">
   
 
-  <!-- 图标库 -->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
-  <!-- 动画库 -->
   
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fushaolei/cdn-white@1.0/css/animate.css"/>
+    <meta name="description" content="单变量微积分、线性代数的概念很多，我们的“带你学”系列：">
   
-  <!-- css文件 -->
-  
-<link rel="stylesheet" href="../../../../css/white.css">
 
-  <!-- 代码高亮 -->
+  <!-- feed -->
   
-<meta name="generator" content="Hexo 5.4.0"></head>
 
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  
+    
+<link rel="stylesheet" href="../../../../https:/cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css">
+
+  
+  
+
+  
+
+  
+    <link rel="shortcut icon" type='image/x-icon' href="../../../../https:/www.cncrush.cn/images/favicon.ico">
+  
+
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="../../../../css/style.css">
+
+  
+
+  <script id="loadcss"></script>
+
+</head>
 
 <body>
+  
 
-<div class="menu-outer">
-    <div class="menu-inner">
-      <div class="menu-site-name  animate__animated  animate__fadeInUp">
-        <a href="../../../../index.html">
-          雨争齐齐齐
-        </a>
+<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+  <div class='container'>
+  <div id='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a id="s-comment" class="fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
-      </div>
-      <div class="menu-group">
-        <ul class="menu-ul">
+          <li><a id="s-toc" class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
-          <a href="../../../../index.html" class="nav-link">
-            <li class="menu-li  animate__animated  animate__fadeInUp">
-              HOME
-            </li>
-          </a>
-        
-          <a href="../../../../archives" class="nav-link">
-            <li class="menu-li  animate__animated  animate__fadeInUp">
-              BLOG
-            </li>
-          </a>
-        
-          <a href="../../../../about/" class="nav-link">
-            <li class="menu-li  animate__animated  animate__fadeInUp">
-              about
-            </li>
-          </a>
-        
-        
-          <li class="menu-li animate__animated  animate__fadeInUp" id="sort">
-             categories
-             <div class="categories-outer " id="sort-div">
-               <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/hexo/">hexo</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/mysql/">mysql</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/ui/">ui</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E4%B8%89%E5%89%91%E5%AE%A2/">三剑客</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%94%9F%E6%B4%BB/">生活</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/">计算机常识</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BB%BC%E5%90%88/">计算机网络综合</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/">高等数学</a></li></ul>
-             </div>
-          </li>
-        
-        
-          <li class="menu-li animate__animated  animate__fadeInUp" id="mobile-menu">
-            <i class="ri-menu-line"></i>
-          </li>
-        
-        </ul>
-
-      </div>
-
+      </ul>
     </div>
-</div>
-<div id="mobile-main" class="animate__animated  animate__fadeIn">
-  <div class="mobile-menu-inner">
-    <div class="mobile-menu-site-name animate__animated  animate__fadeInUp">
-      <a href="../../../../index.html">
-        雨争齐齐齐
-      </a>
-    </div>
-    <div class="mobile-menu-group" id="mobile-close">
-      <i class="ri-close-line"></i>
-    </div>
-
-  </div>
-
-  <div class="mobile-menu-div">
-  
-    <a href="../../../../index.html" class="mobile-nav-link">
-      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
-        <span>HOME</span>
-      </div>
-    </a>
-  
-    <a href="../../../../archives" class="mobile-nav-link">
-      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
-        <span>BLOG</span>
-      </div>
-    </a>
-  
-    <a href="../../../../about/" class="mobile-nav-link">
-      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
-        <span>about</span>
-      </div>
-    </a>
-  
-  
-  </div>
-
-
-</div>
-
-<div class="body-outer">
-  <div class="body-inner">
-    
-<article class="post-inner">
-  <div class="post-content-outer">
-    <div class="post-intro">
-      <div class="post-title animate__animated  animate__fadeInUp">微分到底是什么</div>
-      <div class="meta-intro animate__animated  animate__fadeInUp">Apr 13 2021</div>
+		<div class="nav-main">
       
-    </div>
-    <div class="post-content-inner">
-      <div class="post-content-inner-space">
-
-      </div>
-      <div class="post-content-main animate__animated  animate__fadeInUp">
-        <!-- top型目录 -->
         
-        <p><img src="https://pic1.zhimg.com/v2-1796b656d29ddebd0093f828f59b66f2_1440w.jpg?source=172ae18b" alt="微分是什么？"></p>
+        <a class="title flat-box" target="_self" href='../../../../index.html'>
+          
+            <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../index.html
+                  
+                  
+                  
+                    id="indexhtml"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="雨争能有什么坏心思呢？" />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../index.html
+                  
+                  
+                  
+                    id="indexhtml"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=../../../../about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  <div id="l_body">
+    <div id="l_cover">
+	
+  
+    
+        <div id="half" class='cover-wrapper post dock' style="display: ;">
+          
+            <div class='cover-bg lazyload placeholder' data-bg="https://gitee.com/boyqi/jpg/raw/master/4.jpg"></div>
+          
+          <div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title">GEISHA</p>
+    
+    
+      <p class="subtitle">你顺手挽住火焰，化作漫天大雪</p>
+    
+  </div>
+  <div class='bottom'>
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a href="../../../../v4/getting-started/"
+              
+              
+              id="v4getting-started">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg'><p>文档</p>
+            </a>
+          
+            <a href="../../../../faqs/"
+              
+              
+              id="faqs">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg'><p>帮助</p>
+            </a>
+          
+            <a href="../../../../examples/"
+              
+              
+              id="examples">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg'><p>示例</p>
+            </a>
+          
+            <a href="../../../../contributors/"
+              
+              
+              id="contributors">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f389.svg'><p>社区</p>
+            </a>
+          
+            <a href="../../../../archives/"
+              
+              
+              id="archives">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg'><p>博客</p>
+            </a>
+          
+            <a href="../../../../https:/github.com/Geisha-design"
+              
+              
+              id="https:githubcomGeisha-design">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg'><p>GitHub</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+        </div>
+    
+  
+  </div>
+
+    <div id='safearea'>
+      <div class='body-wrapper' id="pjax-container">
+        
+
+<div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+	  
+
+	  
+  
+
+
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title">
+        微分到底是什么
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>小天才齐雨争</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="../../../../categories/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/">高等数学</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Apr 13, 2021</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="微分到底是什么" data-path="">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+    
+  </div>
+
+
+  
+  <p><img src="https://pic1.zhimg.com/v2-1796b656d29ddebd0093f828f59b66f2_1440w.jpg?source=172ae18b" class="lazyload" data-srcset="https://pic1.zhimg.com/v2-1796b656d29ddebd0093f828f59b66f2_1440w.jpg?source=172ae18b" srcset="data:image/png;base64,666" alt="微分是什么？"></p>
 <p>单变量微积分、线性代数的概念很多，我们的“带你学”系列：</p>
 <ul>
 <li>“单变量微积分”（主要覆盖《高等数学同济版上》的内容）</li>
@@ -145,626 +496,1271 @@
 <li><a href="https://link.zhihu.com/?target=https://www.matongxue.com/madocs/851">柯西的数列极限</a></li>
 </ul>
 <p>最开始我们就提到了，曲线下微小的矩形是“微分”：</p>
-<p><img src="https://pic4.zhimg.com/v2-8a18b6f11f4d3fe637fe67ff89d6386b_r.jpg" alt="img"></p>
+<p><img src="https://pic4.zhimg.com/v2-8a18b6f11f4d3fe637fe67ff89d6386b_r.jpg" class="lazyload" data-srcset="https://pic4.zhimg.com/v2-8a18b6f11f4d3fe637fe67ff89d6386b_r.jpg" srcset="data:image/png;base64,666" alt="img"></p>
 <p>把这些“微分”加起来就是“积分”，就可以得到曲线下的面积：</p>
-<p><img src="https://pic3.zhimg.com/v2-275f27678e8133040ceb372b2d1ffbe2_r.jpg" alt="img"></p>
-<p>上一章定义了极限，解决了微积分中的第一个问题，什么是“<img src="https://www.zhihu.com/equation?tex=%5CDelta+x" alt="[公式]"> 无限接近0”：</p>
-<p><img src="https://pic1.zhimg.com/v2-a3563c54cb05529fa15ec97f18fd84c0_r.jpg" alt="img"></p>
+<p><img src="https://pic3.zhimg.com/v2-275f27678e8133040ceb372b2d1ffbe2_r.jpg" class="lazyload" data-srcset="https://pic3.zhimg.com/v2-275f27678e8133040ceb372b2d1ffbe2_r.jpg" srcset="data:image/png;base64,666" alt="img"></p>
+<p>上一章定义了极限，解决了微积分中的第一个问题，什么是“<img src="https://www.zhihu.com/equation?tex=%5CDelta+x" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=%5CDelta+x" srcset="data:image/png;base64,666" alt="[公式]"> 无限接近0”：</p>
+<p><img src="https://pic1.zhimg.com/v2-a3563c54cb05529fa15ec97f18fd84c0_r.jpg" class="lazyload" data-srcset="https://pic1.zhimg.com/v2-a3563c54cb05529fa15ec97f18fd84c0_r.jpg" srcset="data:image/png;base64,666" alt="img"></p>
 <p>下面我们开始研究数学上什么是“微分”，怎么把“微分”加起来完成“积分”。</p>
 <p><strong>1 积分</strong></p>
-<p>比如要求<img src="https://www.zhihu.com/equation?tex=f(x)=x%5E2" alt="[公式]"> ，在<img src="https://www.zhihu.com/equation?tex=%5B0,a%5D,a+%3E+0" alt="[公式]"> 下的面积：</p>
-<p><img src="https://pic2.zhimg.com/v2-4b9ba3ea8946d68ceeaafcf6754d0a01_r.jpg" alt="img"></p>
-<p>把<img src="https://www.zhihu.com/equation?tex=%5B0,a%5D" alt="[公式]"> 平均分成<img src="https://www.zhihu.com/equation?tex=n" alt="[公式]"> 份，每份长为<img src="https://www.zhihu.com/equation?tex=%5CDelta+x=%5Cfrac%7Ba-0%7D%7Bn%7D=%5Cfrac%7Ba%7D%7Bn%7D" alt="[公式]"> ：</p>
-<p><img src="https://pic4.zhimg.com/v2-59a05ca213271957837a3942894152af_r.jpg" alt="img"></p>
-<p>这些点的坐标是这么一个数列（把<img src="https://www.zhihu.com/equation?tex=0" alt="[公式]"> 点去掉）：</p>
-<p><img src="https://www.zhihu.com/equation?tex=%5C%7Ba_i%5C%7D=%5Cleft%5C%7B%5Cfrac%7Ba%7D%7Bn%7D,+%5Cfrac%7B2a%7D%7Bn%7D,%5Ccdots,+%5Cfrac%7B(n-1)a%7D%7Bn%7D,+%5Cfrac%7Bna%7D%7Bn%7D%5Cright%5C%7D,i=1,2,%5Ccdots,n%5C%5C" alt="[公式]"></p>
-<p>点之间的间隔为<img src="https://www.zhihu.com/equation?tex=%5CDelta+x=%5Cfrac%7Ba%7D%7Bn%7D" alt="[公式]"> ，所以上述数列可以简写为：</p>
-<p><img src="https://www.zhihu.com/equation?tex=%5C%7Ba_i%5C%7D=%5Cleft%5C%7B%5CDelta+x,+2%5CDelta+x,+%5Ccdots,+(n-1)%5CDelta+x,+n%5CDelta+x%5Cright%5C%7D%5C%5C" alt="[公式]"></p>
-<p>以这些坐标为终点，宽为<img src="https://www.zhihu.com/equation?tex=%5CDelta+x" alt="[公式]"> ，高为<img src="https://www.zhihu.com/equation?tex=f(a_i)" alt="[公式]"> 作矩形：</p>
-<p><img src="https://pic3.zhimg.com/v2-ed17e20d61a14f75444f6dfbc7da9282_r.jpg" alt="img"></p>
-<p>每个矩形面积为<img src="https://www.zhihu.com/equation?tex=f(a_i)%5CDelta+x" alt="[公式]"> ，它们的面积和为：</p>
-<p><img src="https://www.zhihu.com/equation?tex=+%5Cbegin%7Baligned%7D+++++S_n+++++++++&=%5Csum_%7Bi=1%7D%5En+f(a_i)%5CDelta+x%5C%5C+++++++++%5C%5C+++++++++&=(%5CDelta+x)%5E2%5CDelta+x+(2%5CDelta+x)%5E2%5CDelta+x+%5Ccdots+%5B(n-1)%5CDelta+x%5D%5E2%5CDelta+x+(n%5CDelta+x)%5E2%5CDelta+x%5C%5C+++++++++%5C%5C+++++++++&=%5B1+2%5E2+%5Ccdots+(n-1)%5E2+n%5E2%5D(%5CDelta+x)%5E3+%5Cend%7Baligned%7D+%5C%5C" alt="[公式]"></p>
+<p>比如要求<img src="https://www.zhihu.com/equation?tex=f(x)=x%5E2" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=f(x)=x%5E2" srcset="data:image/png;base64,666" alt="[公式]"> ，在<img src="https://www.zhihu.com/equation?tex=%5B0,a%5D,a+%3E+0" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=%5B0,a%5D,a+%3E+0" srcset="data:image/png;base64,666" alt="[公式]"> 下的面积：</p>
+<p><img src="https://pic2.zhimg.com/v2-4b9ba3ea8946d68ceeaafcf6754d0a01_r.jpg" class="lazyload" data-srcset="https://pic2.zhimg.com/v2-4b9ba3ea8946d68ceeaafcf6754d0a01_r.jpg" srcset="data:image/png;base64,666" alt="img"></p>
+<p>把<img src="https://www.zhihu.com/equation?tex=%5B0,a%5D" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=%5B0,a%5D" srcset="data:image/png;base64,666" alt="[公式]"> 平均分成<img src="https://www.zhihu.com/equation?tex=n" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=n" srcset="data:image/png;base64,666" alt="[公式]"> 份，每份长为<img src="https://www.zhihu.com/equation?tex=%5CDelta+x=%5Cfrac%7Ba-0%7D%7Bn%7D=%5Cfrac%7Ba%7D%7Bn%7D" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=%5CDelta+x=%5Cfrac%7Ba-0%7D%7Bn%7D=%5Cfrac%7Ba%7D%7Bn%7D" srcset="data:image/png;base64,666" alt="[公式]"> ：</p>
+<p><img src="https://pic4.zhimg.com/v2-59a05ca213271957837a3942894152af_r.jpg" class="lazyload" data-srcset="https://pic4.zhimg.com/v2-59a05ca213271957837a3942894152af_r.jpg" srcset="data:image/png;base64,666" alt="img"></p>
+<p>这些点的坐标是这么一个数列（把<img src="https://www.zhihu.com/equation?tex=0" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=0" srcset="data:image/png;base64,666" alt="[公式]"> 点去掉）：</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5C%7Ba_i%5C%7D=%5Cleft%5C%7B%5Cfrac%7Ba%7D%7Bn%7D,+%5Cfrac%7B2a%7D%7Bn%7D,%5Ccdots,+%5Cfrac%7B(n-1)a%7D%7Bn%7D,+%5Cfrac%7Bna%7D%7Bn%7D%5Cright%5C%7D,i=1,2,%5Ccdots,n%5C%5C" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=%5C%7Ba_i%5C%7D=%5Cleft%5C%7B%5Cfrac%7Ba%7D%7Bn%7D,+%5Cfrac%7B2a%7D%7Bn%7D,%5Ccdots,+%5Cfrac%7B(n-1)a%7D%7Bn%7D,+%5Cfrac%7Bna%7D%7Bn%7D%5Cright%5C%7D,i=1,2,%5Ccdots,n%5C%5C" srcset="data:image/png;base64,666" alt="[公式]"></p>
+<p>点之间的间隔为<img src="https://www.zhihu.com/equation?tex=%5CDelta+x=%5Cfrac%7Ba%7D%7Bn%7D" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=%5CDelta+x=%5Cfrac%7Ba%7D%7Bn%7D" srcset="data:image/png;base64,666" alt="[公式]"> ，所以上述数列可以简写为：</p>
+<p><img src="https://www.zhihu.com/equation?tex=%5C%7Ba_i%5C%7D=%5Cleft%5C%7B%5CDelta+x,+2%5CDelta+x,+%5Ccdots,+(n-1)%5CDelta+x,+n%5CDelta+x%5Cright%5C%7D%5C%5C" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=%5C%7Ba_i%5C%7D=%5Cleft%5C%7B%5CDelta+x,+2%5CDelta+x,+%5Ccdots,+(n-1)%5CDelta+x,+n%5CDelta+x%5Cright%5C%7D%5C%5C" srcset="data:image/png;base64,666" alt="[公式]"></p>
+<p>以这些坐标为终点，宽为<img src="https://www.zhihu.com/equation?tex=%5CDelta+x" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=%5CDelta+x" srcset="data:image/png;base64,666" alt="[公式]"> ，高为<img src="https://www.zhihu.com/equation?tex=f(a_i)" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=f(a_i)" srcset="data:image/png;base64,666" alt="[公式]"> 作矩形：</p>
+<p><img src="https://pic3.zhimg.com/v2-ed17e20d61a14f75444f6dfbc7da9282_r.jpg" class="lazyload" data-srcset="https://pic3.zhimg.com/v2-ed17e20d61a14f75444f6dfbc7da9282_r.jpg" srcset="data:image/png;base64,666" alt="img"></p>
+<p>每个矩形面积为<img src="https://www.zhihu.com/equation?tex=f(a_i)%5CDelta+x" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=f(a_i)%5CDelta+x" srcset="data:image/png;base64,666" alt="[公式]"> ，它们的面积和为：</p>
+<p><img src="https://www.zhihu.com/equation?tex=+%5Cbegin%7Baligned%7D+++++S_n+++++++++&=%5Csum_%7Bi=1%7D%5En+f(a_i)%5CDelta+x%5C%5C+++++++++%5C%5C+++++++++&=(%5CDelta+x)%5E2%5CDelta+x+(2%5CDelta+x)%5E2%5CDelta+x+%5Ccdots+%5B(n-1)%5CDelta+x%5D%5E2%5CDelta+x+(n%5CDelta+x)%5E2%5CDelta+x%5C%5C+++++++++%5C%5C+++++++++&=%5B1+2%5E2+%5Ccdots+(n-1)%5E2+n%5E2%5D(%5CDelta+x)%5E3+%5Cend%7Baligned%7D+%5C%5C" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=+%5Cbegin%7Baligned%7D+++++S_n+++++++++&=%5Csum_%7Bi=1%7D%5En+f(a_i)%5CDelta+x%5C%5C+++++++++%5C%5C+++++++++&=(%5CDelta+x)%5E2%5CDelta+x+(2%5CDelta+x)%5E2%5CDelta+x+%5Ccdots+%5B(n-1)%5CDelta+x%5D%5E2%5CDelta+x+(n%5CDelta+x)%5E2%5CDelta+x%5C%5C+++++++++%5C%5C+++++++++&=%5B1+2%5E2+%5Ccdots+(n-1)%5E2+n%5E2%5D(%5CDelta+x)%5E3+%5Cend%7Baligned%7D+%5C%5C" srcset="data:image/png;base64,666" alt="[公式]"></p>
 <p>已知其中的级数：</p>
-<p><img src="https://www.zhihu.com/equation?tex=1+2%5E2+%5Ccdots+(n-1)%5E2+n%5E2=%5Cfrac%7Bn(n+1)(2n+1)%7D%7B6%7D%5C%5C" alt="[公式]"></p>
+<p><img src="https://www.zhihu.com/equation?tex=1+2%5E2+%5Ccdots+(n-1)%5E2+n%5E2=%5Cfrac%7Bn(n+1)(2n+1)%7D%7B6%7D%5C%5C" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=1+2%5E2+%5Ccdots+(n-1)%5E2+n%5E2=%5Cfrac%7Bn(n+1)(2n+1)%7D%7B6%7D%5C%5C" srcset="data:image/png;base64,666" alt="[公式]"></p>
 <p>所以上面的式子继续算下去：</p>
-<p><img src="https://www.zhihu.com/equation?tex=+%5Cbegin%7Baligned%7D+++++S_n+++++++++&=%5Cfrac%7Bn(n+1)(2n+1)%7D%7B6%7D(%5CDelta+x)%5E3%5C%5C+++++++++%5C%5C+++++++++&=%5Cleft(%5Cfrac%7B2n%5E3+3n%5E2+n%7D%7B6%7D%5Cright)(%5CDelta+x)%5E3+%5Cend%7Baligned%7D+%5C%5C" alt="[公式]"></p>
-<p>因为<img src="https://www.zhihu.com/equation?tex=%5CDelta+x=%5Cfrac%7Ba%7D%7Bn%7D" alt="[公式]"> ，代入上式可得：</p>
-<p><img src="https://www.zhihu.com/equation?tex=S_n=%5Csum_%7Bi=1%7D%5En+f(a_i)%5CDelta+x=a%5E3%5Cleft(%5Cfrac%7B1%7D%7B3%7D+%5Cfrac%7B1%7D%7B2n%7D+%5Cfrac%7B1%7D%7B6n%5E2%7D%5Cright)%5C%5C" alt="[公式]"></p>
-<p>当<img src="https://www.zhihu.com/equation?tex=n%5Cto%5Cinfty" alt="[公式]"> 的时候，矩形面积和就是曲面下的面积：</p>
-<p><img src="https://pic3.zhimg.com/v2-2d74728e927833d859a0c0bc02b0e84e_b.jpg" alt="img"></p>
-<p>从数学上就是，曲面下面积<img src="https://www.zhihu.com/equation?tex=S" alt="[公式]"> 为：</p>
-<p><img src="https://www.zhihu.com/equation?tex=+%5Cbegin%7Baligned%7D+++++S=%5Clim_%7Bn%5Cto%5Cinfty%7DS_n+++++++++&=%5Clim_%7Bn%5Cto%5Cinfty%7D%5Cleft%5Ba%5E3%5Cleft(%5Cfrac%7B1%7D%7B3%7D+%5Cfrac%7B1%7D%7B2n%7D+%5Cfrac%7B1%7D%7B6n%5E2%7D%5Cright)%5Cright%5D%5C%5C+++++++++%5C%5C+++++++++&=%5Cfrac%7B1%7D%7B3%7Da%5E3+%5Cend%7Baligned%7D%5C%5C" alt="[公式]"></p>
+<p><img src="https://www.zhihu.com/equation?tex=+%5Cbegin%7Baligned%7D+++++S_n+++++++++&=%5Cfrac%7Bn(n+1)(2n+1)%7D%7B6%7D(%5CDelta+x)%5E3%5C%5C+++++++++%5C%5C+++++++++&=%5Cleft(%5Cfrac%7B2n%5E3+3n%5E2+n%7D%7B6%7D%5Cright)(%5CDelta+x)%5E3+%5Cend%7Baligned%7D+%5C%5C" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=+%5Cbegin%7Baligned%7D+++++S_n+++++++++&=%5Cfrac%7Bn(n+1)(2n+1)%7D%7B6%7D(%5CDelta+x)%5E3%5C%5C+++++++++%5C%5C+++++++++&=%5Cleft(%5Cfrac%7B2n%5E3+3n%5E2+n%7D%7B6%7D%5Cright)(%5CDelta+x)%5E3+%5Cend%7Baligned%7D+%5C%5C" srcset="data:image/png;base64,666" alt="[公式]"></p>
+<p>因为<img src="https://www.zhihu.com/equation?tex=%5CDelta+x=%5Cfrac%7Ba%7D%7Bn%7D" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=%5CDelta+x=%5Cfrac%7Ba%7D%7Bn%7D" srcset="data:image/png;base64,666" alt="[公式]"> ，代入上式可得：</p>
+<p><img src="https://www.zhihu.com/equation?tex=S_n=%5Csum_%7Bi=1%7D%5En+f(a_i)%5CDelta+x=a%5E3%5Cleft(%5Cfrac%7B1%7D%7B3%7D+%5Cfrac%7B1%7D%7B2n%7D+%5Cfrac%7B1%7D%7B6n%5E2%7D%5Cright)%5C%5C" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=S_n=%5Csum_%7Bi=1%7D%5En+f(a_i)%5CDelta+x=a%5E3%5Cleft(%5Cfrac%7B1%7D%7B3%7D+%5Cfrac%7B1%7D%7B2n%7D+%5Cfrac%7B1%7D%7B6n%5E2%7D%5Cright)%5C%5C" srcset="data:image/png;base64,666" alt="[公式]"></p>
+<p>当<img src="https://www.zhihu.com/equation?tex=n%5Cto%5Cinfty" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=n%5Cto%5Cinfty" srcset="data:image/png;base64,666" alt="[公式]"> 的时候，矩形面积和就是曲面下的面积：</p>
+<p><img src="https://pic3.zhimg.com/v2-2d74728e927833d859a0c0bc02b0e84e_b.jpg" class="lazyload" data-srcset="https://pic3.zhimg.com/v2-2d74728e927833d859a0c0bc02b0e84e_b.jpg" srcset="data:image/png;base64,666" alt="img"></p>
+<p>从数学上就是，曲面下面积<img src="https://www.zhihu.com/equation?tex=S" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=S" srcset="data:image/png;base64,666" alt="[公式]"> 为：</p>
+<p><img src="https://www.zhihu.com/equation?tex=+%5Cbegin%7Baligned%7D+++++S=%5Clim_%7Bn%5Cto%5Cinfty%7DS_n+++++++++&=%5Clim_%7Bn%5Cto%5Cinfty%7D%5Cleft%5Ba%5E3%5Cleft(%5Cfrac%7B1%7D%7B3%7D+%5Cfrac%7B1%7D%7B2n%7D+%5Cfrac%7B1%7D%7B6n%5E2%7D%5Cright)%5Cright%5D%5C%5C+++++++++%5C%5C+++++++++&=%5Cfrac%7B1%7D%7B3%7Da%5E3+%5Cend%7Baligned%7D%5C%5C" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=+%5Cbegin%7Baligned%7D+++++S=%5Clim_%7Bn%5Cto%5Cinfty%7DS_n+++++++++&=%5Clim_%7Bn%5Cto%5Cinfty%7D%5Cleft%5Ba%5E3%5Cleft(%5Cfrac%7B1%7D%7B3%7D+%5Cfrac%7B1%7D%7B2n%7D+%5Cfrac%7B1%7D%7B6n%5E2%7D%5Cright)%5Cright%5D%5C%5C+++++++++%5C%5C+++++++++&=%5Cfrac%7B1%7D%7B3%7Da%5E3+%5Cend%7Baligned%7D%5C%5C" srcset="data:image/png;base64,666" alt="[公式]"></p>
 <p>在极限的帮助下，算出了曲面下的面积。</p>
 <p><strong>2 新的开始</strong></p>
 <p>既然得到了曲面下的面积了，是不是微积分课程完了？并没有，实际上刚刚开始。</p>
 <p><strong>2.1 计算复杂</strong></p>
 <p>上述计算方法早在微积分这门学科正式成立之前就有了。</p>
-<p><img src="https://pic2.zhimg.com/80/v2-ba0c809545852173f0cb0f30f28c010d_1440w.jpg" alt="img"></p>
-<p>博纳文图拉·弗兰切斯科·卡瓦列里（1598 －1647），意大利几何学家。在他的著作中就提到了上面这个求解方法，那时候还没有极限，他是直觉地认为当<img src="https://www.zhihu.com/equation?tex=n" alt="[公式]"> 足够大时：</p>
-<p><img src="https://www.zhihu.com/equation?tex=a%5E3%5Cleft(%5Cfrac%7B1%7D%7B3%7D-%5Cunderbrace%7B%5Cfrac%7B1%7D%7B2n%7D+%5Cfrac%7B1%7D%7B6n%5E2%7D%7D_%7B%E5%8F%AF%E4%BB%A5%E5%BF%BD%E7%95%A5%7D%5Cright)=%5Cfrac%7B1%7D%7B3%7Da%5E3%5C%5C" alt="[公式]"></p>
-<p>这种计算方法简单粗暴，比如，想求正弦函数曲线下<img src="https://www.zhihu.com/equation?tex=%5B0,%5Cpi%5D" alt="[公式]"> 之间的面积，也可以通过矩形和来计算，但是计算起来并不简单（详细计算步骤可以查看<a href="https://link.zhihu.com/?target=https://www.matongxue.com/madocs/847/">这里</a>）：</p>
-<p><img src="https://pic3.zhimg.com/v2-b747c520f8b5a72ba532e2892c898042_r.jpg" alt="img"></p>
+<p><img src="https://pic2.zhimg.com/80/v2-ba0c809545852173f0cb0f30f28c010d_1440w.jpg" class="lazyload" data-srcset="https://pic2.zhimg.com/80/v2-ba0c809545852173f0cb0f30f28c010d_1440w.jpg" srcset="data:image/png;base64,666" alt="img"></p>
+<p>博纳文图拉·弗兰切斯科·卡瓦列里（1598 －1647），意大利几何学家。在他的著作中就提到了上面这个求解方法，那时候还没有极限，他是直觉地认为当<img src="https://www.zhihu.com/equation?tex=n" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=n" srcset="data:image/png;base64,666" alt="[公式]"> 足够大时：</p>
+<p><img src="https://www.zhihu.com/equation?tex=a%5E3%5Cleft(%5Cfrac%7B1%7D%7B3%7D-%5Cunderbrace%7B%5Cfrac%7B1%7D%7B2n%7D+%5Cfrac%7B1%7D%7B6n%5E2%7D%7D_%7B%E5%8F%AF%E4%BB%A5%E5%BF%BD%E7%95%A5%7D%5Cright)=%5Cfrac%7B1%7D%7B3%7Da%5E3%5C%5C" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=a%5E3%5Cleft(%5Cfrac%7B1%7D%7B3%7D-%5Cunderbrace%7B%5Cfrac%7B1%7D%7B2n%7D+%5Cfrac%7B1%7D%7B6n%5E2%7D%7D_%7B%E5%8F%AF%E4%BB%A5%E5%BF%BD%E7%95%A5%7D%5Cright)=%5Cfrac%7B1%7D%7B3%7Da%5E3%5C%5C" srcset="data:image/png;base64,666" alt="[公式]"></p>
+<p>这种计算方法简单粗暴，比如，想求正弦函数曲线下<img src="https://www.zhihu.com/equation?tex=%5B0,%5Cpi%5D" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=%5B0,%5Cpi%5D" srcset="data:image/png;base64,666" alt="[公式]"> 之间的面积，也可以通过矩形和来计算，但是计算起来并不简单（详细计算步骤可以查看<a href="https://link.zhihu.com/?target=https://www.matongxue.com/madocs/847/">这里</a>）：</p>
+<p><img src="https://pic3.zhimg.com/v2-b747c520f8b5a72ba532e2892c898042_r.jpg" class="lazyload" data-srcset="https://pic3.zhimg.com/v2-b747c520f8b5a72ba532e2892c898042_r.jpg" srcset="data:image/png;base64,666" alt="img"></p>
 <p>把矩形面积加起来就需要计算级数（级数就是数列的和），但级数的计算往往很复杂。</p>
 <p>欧拉就是一个级数计算大师，当时很多数学家求“积分”时，算不出级数就向欧拉求救，所以有句话是这么说的：“欧拉，他是所有人的老师”（出自另外一位数学家拉普拉斯之口）。</p>
 <p><strong>2.2 不够抽象</strong></p>
 <p>之前说了，可以用内接多边形来逼近圆的面积：</p>
-<p><img src="https://pic2.zhimg.com/v2-dc83d49413813be31e4caedacc161e8d_b.jpg" alt="img"></p>
+<p><img src="https://pic2.zhimg.com/v2-dc83d49413813be31e4caedacc161e8d_b.jpg" class="lazyload" data-srcset="https://pic2.zhimg.com/v2-dc83d49413813be31e4caedacc161e8d_b.jpg" srcset="data:image/png;base64,666" alt="img"></p>
 <p>也可以换个思路，用小三角形的和来逼近圆的面积：</p>
-<p><img src="https://pic1.zhimg.com/v2-2cb5cb466a531a06d95c250ca3ca9ef8_b.jpg" alt="img"></p>
+<p><img src="https://pic1.zhimg.com/v2-2cb5cb466a531a06d95c250ca3ca9ef8_b.jpg" class="lazyload" data-srcset="https://pic1.zhimg.com/v2-2cb5cb466a531a06d95c250ca3ca9ef8_b.jpg" srcset="data:image/png;base64,666" alt="img"></p>
 <p>“圆内小三角形的和”与“曲线下的矩形和”看起来异曲同工，但毕竟三角形和矩形还是不一样，能否把这两者统一起来？</p>
 <p>还有，能不能用微积分来计算一段曲线的长度（马上就可以看到如何去做）：</p>
-<p><img src="https://pic1.zhimg.com/v2-1dd2d92a6e159627d25200d6597cc514_r.jpg" alt="img"></p>
+<p><img src="https://pic1.zhimg.com/v2-1dd2d92a6e159627d25200d6597cc514_r.jpg" class="lazyload" data-srcset="https://pic1.zhimg.com/v2-1dd2d92a6e159627d25200d6597cc514_r.jpg" srcset="data:image/png;base64,666" alt="img"></p>
 <p>例子可能举得还不够好、不够多，但可以看出目前所学的微积分还不够抽象，不足以解决更多问题。</p>
 <p><strong>2.3 小结</strong></p>
 <p>不管是为了计算更加简便，还是为了扩大微积分的应用范围，我们都需要开始新的学习。</p>
 <p><strong>3 微分</strong></p>
 <p>不管为了计算的便利性，还是覆盖更多的应用场景，都需要把“微分”这个概念抽象出来。</p>
 <p><strong>3.1 矩形微分</strong></p>
-<p>比如，想求<img src="https://www.zhihu.com/equation?tex=%5Ba,b%5D" alt="[公式]"> 区间内<img src="https://www.zhihu.com/equation?tex=f(x)" alt="[公式]"> 曲线下的面积<img src="https://www.zhihu.com/equation?tex=S" alt="[公式]"> ：</p>
-<p><img src="https://pic4.zhimg.com/v2-7e0317973fca0c3ed23ac6579ed43c7f_r.jpg" alt="img"></p>
-<p>把<img src="https://www.zhihu.com/equation?tex=%5Ba,b%5D" alt="[公式]"> 平均分成<img src="https://www.zhihu.com/equation?tex=n" alt="[公式]"> 份，每份长为<img src="https://www.zhihu.com/equation?tex=%5CDelta+x=%5Cfrac%7Ba-b%7D%7Bn%7D" alt="[公式]"> ，每个<img src="https://www.zhihu.com/equation?tex=%5CDelta+x" alt="[公式]"> 对应一个<img src="https://www.zhihu.com/equation?tex=%5CDelta+S_i" alt="[公式]"> ：</p>
-<p><img src="https://pic4.zhimg.com/v2-908bf0755b3b888f45beadefbbd0f973_r.jpg" alt="img"></p>
+<p>比如，想求<img src="https://www.zhihu.com/equation?tex=%5Ba,b%5D" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=%5Ba,b%5D" srcset="data:image/png;base64,666" alt="[公式]"> 区间内<img src="https://www.zhihu.com/equation?tex=f(x)" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=f(x)" srcset="data:image/png;base64,666" alt="[公式]"> 曲线下的面积<img src="https://www.zhihu.com/equation?tex=S" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=S" srcset="data:image/png;base64,666" alt="[公式]"> ：</p>
+<p><img src="https://pic4.zhimg.com/v2-7e0317973fca0c3ed23ac6579ed43c7f_r.jpg" class="lazyload" data-srcset="https://pic4.zhimg.com/v2-7e0317973fca0c3ed23ac6579ed43c7f_r.jpg" srcset="data:image/png;base64,666" alt="img"></p>
+<p>把<img src="https://www.zhihu.com/equation?tex=%5Ba,b%5D" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=%5Ba,b%5D" srcset="data:image/png;base64,666" alt="[公式]"> 平均分成<img src="https://www.zhihu.com/equation?tex=n" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=n" srcset="data:image/png;base64,666" alt="[公式]"> 份，每份长为<img src="https://www.zhihu.com/equation?tex=%5CDelta+x=%5Cfrac%7Ba-b%7D%7Bn%7D" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=%5CDelta+x=%5Cfrac%7Ba-b%7D%7Bn%7D" srcset="data:image/png;base64,666" alt="[公式]"> ，每个<img src="https://www.zhihu.com/equation?tex=%5CDelta+x" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=%5CDelta+x" srcset="data:image/png;base64,666" alt="[公式]"> 对应一个<img src="https://www.zhihu.com/equation?tex=%5CDelta+S_i" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=%5CDelta+S_i" srcset="data:image/png;base64,666" alt="[公式]"> ：</p>
+<p><img src="https://pic4.zhimg.com/v2-908bf0755b3b888f45beadefbbd0f973_r.jpg" class="lazyload" data-srcset="https://pic4.zhimg.com/v2-908bf0755b3b888f45beadefbbd0f973_r.jpg" srcset="data:image/png;base64,666" alt="img"></p>
 <p>很显然：</p>
-<p><img src="https://www.zhihu.com/equation?tex=S=%5Csum_%7Bi=1%7D%5En+%5CDelta+S_i%5C%5C" alt="[公式]"></p>
-<p>从里面随便选一份，为了表示一般性，其面积记为<img src="https://www.zhihu.com/equation?tex=%5CDelta+S" alt="[公式]"> ：</p>
-<p><img src="https://pic3.zhimg.com/v2-5bd694ab4694b7ae5149e127a77ac77a_r.jpg" alt="img"></p>
-<p>在同样的位置，以<img src="https://www.zhihu.com/equation?tex=%5CDelta+x" alt="[公式]"> 为底、<img src="https://www.zhihu.com/equation?tex=f(x_0)" alt="[公式]"> 为高作矩形，其面积记为<img src="https://www.zhihu.com/equation?tex=%5Ctextrm%7Bd%7DS" alt="[公式]"> ：</p>
-<p><img src="https://pic3.zhimg.com/v2-fcc65f80a6db3fe158d03c6cee502bc2_r.jpg" alt="img"></p>
-<p>很显然，随着<img src="https://www.zhihu.com/equation?tex=%5CDelta+x%5Cto+0" alt="[公式]"> ，<img src="https://www.zhihu.com/equation?tex=%5CDelta+S" alt="[公式]"> 与<img src="https://www.zhihu.com/equation?tex=%5Ctextrm%7Bd%7DS" alt="[公式]"> 会无限接近：</p>
-<p><img src="https://pic1.zhimg.com/v2-50cc14e4f9b03cf887e9ea0ed8dfd46c_r.jpg" alt="img"></p>
+<p><img src="https://www.zhihu.com/equation?tex=S=%5Csum_%7Bi=1%7D%5En+%5CDelta+S_i%5C%5C" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=S=%5Csum_%7Bi=1%7D%5En+%5CDelta+S_i%5C%5C" srcset="data:image/png;base64,666" alt="[公式]"></p>
+<p>从里面随便选一份，为了表示一般性，其面积记为<img src="https://www.zhihu.com/equation?tex=%5CDelta+S" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=%5CDelta+S" srcset="data:image/png;base64,666" alt="[公式]"> ：</p>
+<p><img src="https://pic3.zhimg.com/v2-5bd694ab4694b7ae5149e127a77ac77a_r.jpg" class="lazyload" data-srcset="https://pic3.zhimg.com/v2-5bd694ab4694b7ae5149e127a77ac77a_r.jpg" srcset="data:image/png;base64,666" alt="img"></p>
+<p>在同样的位置，以<img src="https://www.zhihu.com/equation?tex=%5CDelta+x" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=%5CDelta+x" srcset="data:image/png;base64,666" alt="[公式]"> 为底、<img src="https://www.zhihu.com/equation?tex=f(x_0)" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=f(x_0)" srcset="data:image/png;base64,666" alt="[公式]"> 为高作矩形，其面积记为<img src="https://www.zhihu.com/equation?tex=%5Ctextrm%7Bd%7DS" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=%5Ctextrm%7Bd%7DS" srcset="data:image/png;base64,666" alt="[公式]"> ：</p>
+<p><img src="https://pic3.zhimg.com/v2-fcc65f80a6db3fe158d03c6cee502bc2_r.jpg" class="lazyload" data-srcset="https://pic3.zhimg.com/v2-fcc65f80a6db3fe158d03c6cee502bc2_r.jpg" srcset="data:image/png;base64,666" alt="img"></p>
+<p>很显然，随着<img src="https://www.zhihu.com/equation?tex=%5CDelta+x%5Cto+0" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=%5CDelta+x%5Cto+0" srcset="data:image/png;base64,666" alt="[公式]"> ，<img src="https://www.zhihu.com/equation?tex=%5CDelta+S" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=%5CDelta+S" srcset="data:image/png;base64,666" alt="[公式]"> 与<img src="https://www.zhihu.com/equation?tex=%5Ctextrm%7Bd%7DS" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=%5Ctextrm%7Bd%7DS" srcset="data:image/png;base64,666" alt="[公式]"> 会无限接近：</p>
+<p><img src="https://pic1.zhimg.com/v2-50cc14e4f9b03cf887e9ea0ed8dfd46c_r.jpg" class="lazyload" data-srcset="https://pic1.zhimg.com/v2-50cc14e4f9b03cf887e9ea0ed8dfd46c_r.jpg" srcset="data:image/png;base64,666" alt="img"></p>
 <p>实际上两者都是无穷小：</p>
-<p><img src="https://www.zhihu.com/equation?tex=+%5Clim_%7B%5CDelta+x%5Cto+0%7D%5CDelta+S=0=%5Clim_%7B%5CDelta+x%5Cto+0%7D%5Ctextrm%7Bd%7DS+%5C%5C" alt="[公式]"></p>
-<p><img src="https://www.zhihu.com/equation?tex=%5CDelta+S" alt="[公式]"> 与<img src="https://www.zhihu.com/equation?tex=%5Ctextrm%7Bd%7DS" alt="[公式]"> 有各自的名字（命名的来由可以查看<a href="https://link.zhihu.com/?target=https://www.matongxue.com/madocs/847/">这里</a>）：</p>
-<p><img src="https://pic2.zhimg.com/v2-2480480a27db5c145c840c61990cefe5_r.jpg" alt="img"></p>
+<p><img src="https://www.zhihu.com/equation?tex=+%5Clim_%7B%5CDelta+x%5Cto+0%7D%5CDelta+S=0=%5Clim_%7B%5CDelta+x%5Cto+0%7D%5Ctextrm%7Bd%7DS+%5C%5C" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=+%5Clim_%7B%5CDelta+x%5Cto+0%7D%5CDelta+S=0=%5Clim_%7B%5CDelta+x%5Cto+0%7D%5Ctextrm%7Bd%7DS+%5C%5C" srcset="data:image/png;base64,666" alt="[公式]"></p>
+<p><img src="https://www.zhihu.com/equation?tex=%5CDelta+S" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=%5CDelta+S" srcset="data:image/png;base64,666" alt="[公式]"> 与<img src="https://www.zhihu.com/equation?tex=%5Ctextrm%7Bd%7DS" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=%5Ctextrm%7Bd%7DS" srcset="data:image/png;base64,666" alt="[公式]"> 有各自的名字（命名的来由可以查看<a href="https://link.zhihu.com/?target=https://www.matongxue.com/madocs/847/">这里</a>）：</p>
+<p><img src="https://pic2.zhimg.com/v2-2480480a27db5c145c840c61990cefe5_r.jpg" class="lazyload" data-srcset="https://pic2.zhimg.com/v2-2480480a27db5c145c840c61990cefe5_r.jpg" srcset="data:image/png;base64,666" alt="img"></p>
 <p>“微分”是对“差分”的近似，以“直”代“曲”（“微分”就是“直”，“差分”就是“曲”），也叫做线性近似：</p>
-<p><img src="https://www.zhihu.com/equation?tex=%E5%BE%AE%E5%88%86%5Capprox+%E5%B7%AE%E5%88%86%5C%5C" alt="[公式]"></p>
-<p>在极限下有（因为<img src="https://www.zhihu.com/equation?tex=%5CDelta+x=%5Cfrac%7Ba-b%7D%7Bn%7D" alt="[公式]"> ，所以<img src="https://www.zhihu.com/equation?tex=%5CDelta+x%5Cto+0" alt="[公式]"> 相当于<img src="https://www.zhihu.com/equation?tex=n%5Cto%5Cinfty" alt="[公式]"> ）：</p>
-<p><img src="https://www.zhihu.com/equation?tex=S=%5Clim_%7B%5CDelta+x%5Cto+0%7D%5Csum_%7Bi=1%7D%5En+%5Ctextrm%7Bd%7DS_i%5C%5C" alt="[公式]"></p>
-<p>其中，<img src="https://www.zhihu.com/equation?tex=%5Ctextrm%7Bd%7DS_i" alt="[公式]"> 对应之前的<img src="https://www.zhihu.com/equation?tex=%5CDelta+S_i" alt="[公式]"> 。</p>
+<p><img src="https://www.zhihu.com/equation?tex=%E5%BE%AE%E5%88%86%5Capprox+%E5%B7%AE%E5%88%86%5C%5C" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=%E5%BE%AE%E5%88%86%5Capprox+%E5%B7%AE%E5%88%86%5C%5C" srcset="data:image/png;base64,666" alt="[公式]"></p>
+<p>在极限下有（因为<img src="https://www.zhihu.com/equation?tex=%5CDelta+x=%5Cfrac%7Ba-b%7D%7Bn%7D" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=%5CDelta+x=%5Cfrac%7Ba-b%7D%7Bn%7D" srcset="data:image/png;base64,666" alt="[公式]"> ，所以<img src="https://www.zhihu.com/equation?tex=%5CDelta+x%5Cto+0" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=%5CDelta+x%5Cto+0" srcset="data:image/png;base64,666" alt="[公式]"> 相当于<img src="https://www.zhihu.com/equation?tex=n%5Cto%5Cinfty" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=n%5Cto%5Cinfty" srcset="data:image/png;base64,666" alt="[公式]"> ）：</p>
+<p><img src="https://www.zhihu.com/equation?tex=S=%5Clim_%7B%5CDelta+x%5Cto+0%7D%5Csum_%7Bi=1%7D%5En+%5Ctextrm%7Bd%7DS_i%5C%5C" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=S=%5Clim_%7B%5CDelta+x%5Cto+0%7D%5Csum_%7Bi=1%7D%5En+%5Ctextrm%7Bd%7DS_i%5C%5C" srcset="data:image/png;base64,666" alt="[公式]"></p>
+<p>其中，<img src="https://www.zhihu.com/equation?tex=%5Ctextrm%7Bd%7DS_i" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=%5Ctextrm%7Bd%7DS_i" srcset="data:image/png;base64,666" alt="[公式]"> 对应之前的<img src="https://www.zhihu.com/equation?tex=%5CDelta+S_i" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=%5CDelta+S_i" srcset="data:image/png;base64,666" alt="[公式]"> 。</p>
 <p>稍微总结下：</p>
-<p><img src="https://www.zhihu.com/equation?tex=+%5Cbegin%7Barray%7D%7Bc%7Cc%7D+++++%5Chline+++++%5Cquad%5Cquad&%5Cquad%5Ccolor%7Bblue%7D%7B%E5%B7%AE%E5%88%86%7D%5Cquad&%5Cquad%5Ccolor%7Borange%7D%7B%E5%BE%AE%E5%88%86%7D%5Cquad+%5C%5C+++++%5Chline+%5C%5C+++++%5Cquad%E7%AC%A6%E5%8F%B7+%5Cquad&%5Cquad+%5CDelta+S+%5Cquad&%5Cquad+%5Ctextrm%7Bd%7DS%5Cquad%5C%5C++++++%5Cquad%E6%B1%82%E5%92%8C+%5Cquad&%5Cquad+%5Cdisplaystyle+S=%5Csum_%7Bi=1%7D%5En+%5CDelta+S_i+%5Cquad&%5Cquad+%5Cdisplaystyle++S=%5Clim_%7B%5CDelta+x%5Cto+0%7D%5Csum_%7Bi=1%7D%5En+%5Ctextrm%7Bd%7DS_i%5Cquad%5C%5C+++++%5C%5C%5Chline+%5Cend%7Barray%7D+%5C%5C" alt="[公式]"></p>
+<p><img src="https://www.zhihu.com/equation?tex=+%5Cbegin%7Barray%7D%7Bc%7Cc%7D+++++%5Chline+++++%5Cquad%5Cquad&%5Cquad%5Ccolor%7Bblue%7D%7B%E5%B7%AE%E5%88%86%7D%5Cquad&%5Cquad%5Ccolor%7Borange%7D%7B%E5%BE%AE%E5%88%86%7D%5Cquad+%5C%5C+++++%5Chline+%5C%5C+++++%5Cquad%E7%AC%A6%E5%8F%B7+%5Cquad&%5Cquad+%5CDelta+S+%5Cquad&%5Cquad+%5Ctextrm%7Bd%7DS%5Cquad%5C%5C++++++%5Cquad%E6%B1%82%E5%92%8C+%5Cquad&%5Cquad+%5Cdisplaystyle+S=%5Csum_%7Bi=1%7D%5En+%5CDelta+S_i+%5Cquad&%5Cquad+%5Cdisplaystyle++S=%5Clim_%7B%5CDelta+x%5Cto+0%7D%5Csum_%7Bi=1%7D%5En+%5Ctextrm%7Bd%7DS_i%5Cquad%5C%5C+++++%5C%5C%5Chline+%5Cend%7Barray%7D+%5C%5C" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=+%5Cbegin%7Barray%7D%7Bc%7Cc%7D+++++%5Chline+++++%5Cquad%5Cquad&%5Cquad%5Ccolor%7Bblue%7D%7B%E5%B7%AE%E5%88%86%7D%5Cquad&%5Cquad%5Ccolor%7Borange%7D%7B%E5%BE%AE%E5%88%86%7D%5Cquad+%5C%5C+++++%5Chline+%5C%5C+++++%5Cquad%E7%AC%A6%E5%8F%B7+%5Cquad&%5Cquad+%5CDelta+S+%5Cquad&%5Cquad+%5Ctextrm%7Bd%7DS%5Cquad%5C%5C++++++%5Cquad%E6%B1%82%E5%92%8C+%5Cquad&%5Cquad+%5Cdisplaystyle+S=%5Csum_%7Bi=1%7D%5En+%5CDelta+S_i+%5Cquad&%5Cquad+%5Cdisplaystyle++S=%5Clim_%7B%5CDelta+x%5Cto+0%7D%5Csum_%7Bi=1%7D%5En+%5Ctextrm%7Bd%7DS_i%5Cquad%5C%5C+++++%5C%5C%5Chline+%5Cend%7Barray%7D+%5C%5C" srcset="data:image/png;base64,666" alt="[公式]"></p>
 <p><strong>3.2 三角形微分</strong></p>
-<p>要求圆的面积<img src="https://www.zhihu.com/equation?tex=S" alt="[公式]"> ：</p>
-<p><img src="https://pic3.zhimg.com/v2-4d871334cb29946b1748136448c5794e_r.jpg" alt="img"></p>
-<p>同样的可以把它均分为<img src="https://www.zhihu.com/equation?tex=n" alt="[公式]"> 个扇形：</p>
-<p><img src="https://pic3.zhimg.com/v2-981eea345692069b0a67ed787663d442_r.jpg" alt="img"></p>
+<p>要求圆的面积<img src="https://www.zhihu.com/equation?tex=S" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=S" srcset="data:image/png;base64,666" alt="[公式]"> ：</p>
+<p><img src="https://pic3.zhimg.com/v2-4d871334cb29946b1748136448c5794e_r.jpg" class="lazyload" data-srcset="https://pic3.zhimg.com/v2-4d871334cb29946b1748136448c5794e_r.jpg" srcset="data:image/png;base64,666" alt="img"></p>
+<p>同样的可以把它均分为<img src="https://www.zhihu.com/equation?tex=n" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=n" srcset="data:image/png;base64,666" alt="[公式]"> 个扇形：</p>
+<p><img src="https://pic3.zhimg.com/v2-981eea345692069b0a67ed787663d442_r.jpg" class="lazyload" data-srcset="https://pic3.zhimg.com/v2-981eea345692069b0a67ed787663d442_r.jpg" srcset="data:image/png;base64,666" alt="img"></p>
 <p>很显然，也可以用三角形去近似这些扇形：</p>
-<p><img src="https://pic2.zhimg.com/v2-86c903f72b50af1f07012bfb8f325405_r.jpg" alt="img"></p>
+<p><img src="https://pic2.zhimg.com/v2-86c903f72b50af1f07012bfb8f325405_r.jpg" class="lazyload" data-srcset="https://pic2.zhimg.com/v2-86c903f72b50af1f07012bfb8f325405_r.jpg" srcset="data:image/png;base64,666" alt="img"></p>
 <p>这里，小扇形就是“差分”，小三角形就是“微分”，以三角形的“直”去代替扇形的“曲”。</p>
 <p><strong>3.3 切线微分</strong></p>
 <p>要求这条曲线的长度：</p>
-<p><img src="https://pic1.zhimg.com/v2-d6cb661250d8b04d649fa082c7651588_r.jpg" alt="img"></p>
-<p>可以把它均分为<img src="https://www.zhihu.com/equation?tex=n" alt="[公式]"> 个曲线段：</p>
-<p><img src="https://pic1.zhimg.com/v2-5ec44b658b088cd55e65509f92675ea0_r.jpg" alt="img"></p>
+<p><img src="https://pic1.zhimg.com/v2-d6cb661250d8b04d649fa082c7651588_r.jpg" class="lazyload" data-srcset="https://pic1.zhimg.com/v2-d6cb661250d8b04d649fa082c7651588_r.jpg" srcset="data:image/png;base64,666" alt="img"></p>
+<p>可以把它均分为<img src="https://www.zhihu.com/equation?tex=n" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=n" srcset="data:image/png;base64,666" alt="[公式]"> 个曲线段：</p>
+<p><img src="https://pic1.zhimg.com/v2-5ec44b658b088cd55e65509f92675ea0_r.jpg" class="lazyload" data-srcset="https://pic1.zhimg.com/v2-5ec44b658b088cd55e65509f92675ea0_r.jpg" srcset="data:image/png;base64,666" alt="img"></p>
 <p>也可以用切线段（切线之后就会介绍）来近似这些曲线段：</p>
-<p><img src="https://pic2.zhimg.com/v2-60af822987419816cfb37e1d54a7da91_r.jpg" alt="img"></p>
+<p><img src="https://pic2.zhimg.com/v2-60af822987419816cfb37e1d54a7da91_r.jpg" class="lazyload" data-srcset="https://pic2.zhimg.com/v2-60af822987419816cfb37e1d54a7da91_r.jpg" srcset="data:image/png;base64,666" alt="img"></p>
 <p>划分细点的话，更容易看出两者的相似性：</p>
-<p><img src="https://pic1.zhimg.com/v2-0620c1efc29be818af69edcab853f708_b.jpg" alt="img"></p>
+<p><img src="https://pic1.zhimg.com/v2-0620c1efc29be818af69edcab853f708_b.jpg" class="lazyload" data-srcset="https://pic1.zhimg.com/v2-0620c1efc29be818af69edcab853f708_b.jpg" srcset="data:image/png;base64,666" alt="img"></p>
 <p>这里，曲线段就是“差分”，切线段就是“微分”，以切线段的“直”去代替曲线段的“曲”。</p>
 <p><strong>3.4 小结</strong></p>
 <p>“微分”是“差分”的线性近似，是对“以直代曲”思想的数学表达。</p>
 <p>有了“微分”之后，上述几种“积分”（包括面积、曲线长度等）就可以统一表示为：</p>
-<p><img src="https://www.zhihu.com/equation?tex=+%E7%A7%AF%E5%88%86=%5Clim%5Csum+%E5%BE%AE%E5%88%86%5C%5C" alt="[公式]"></p>
+<p><img src="https://www.zhihu.com/equation?tex=+%E7%A7%AF%E5%88%86=%5Clim%5Csum+%E5%BE%AE%E5%88%86%5C%5C" class="lazyload" data-srcset="https://www.zhihu.com/equation?tex=+%E7%A7%AF%E5%88%86=%5Clim%5Csum+%E5%BE%AE%E5%88%86%5C%5C" srcset="data:image/png;base64,666" alt="[公式]"></p>
 <p>上述几种“微分”的严格定义不尽相同，这里暂不给出，后面不断完善。</p>
 
-        <!-- 分类文章 -->
-        
-          <div class="post-categoris-bottom">
-            <div class="post-categoris-name">高等数学</div>
-            <ul>
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-                <li class="me base">
-                  <a  href="" class="post-categoris-bottom-link">
-                  微分到底是什么
-                </a>
-                </li>
-              
-              
-            
-            
-            
-              
-                <li class="base">
-                  <a  href="../%E5%BE%AE%E5%88%86%E4%B8%8E%E5%AF%BC%E6%95%B0%E7%9A%84%E5%8C%BA%E5%88%AB/" class="post-categoris-bottom-link">
-                  微分与导数的区别
-                </a>
-                </li>
-              
-              
-            
-            
-            
-              
-            
-            
-            
-              
-                <li class="base">
-                  <a  href="../%E8%AE%BA%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" class="post-categoris-bottom-link">
-                  论微分方程
-                </a>
-                </li>
-              
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-                <li class="base">
-                  <a  href="../../14/port%E2%80%9C%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E4%B9%8B%E7%B4%AF%E6%AC%A1%E7%A7%AF%E5%88%86%E6%B3%95%E2%80%9D/" class="post-categoris-bottom-link">
-                  “二重积分之累次积分法”
-                </a>
-                </li>
-              
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-                <li class="base">
-                  <a  href="../../17/port%E9%AB%98%E6%95%B0%E2%80%94%E2%80%94%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%9A%84%E9%80%9A%E8%A7%A3%E5%92%8C%E7%89%B9%E8%A7%A3/" class="post-categoris-bottom-link">
-                  高数——微分方程的通解和特解
-                </a>
-                </li>
-              
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-                <li class="base">
-                  <a  href="../../20/%E5%BE%AE%E5%88%86%E4%B8%AD%E5%80%BC%E5%A4%84%E7%90%86%E4%B9%8B%E5%B8%B8%E6%95%B0k%E5%80%BC%E6%B3%95/" class="post-categoris-bottom-link">
-                  微分中值处理之常数k值法
-                </a>
-                </li>
-              
-              
-            
-            
-            
-              
-            
-            
-            
-              
-                <li class="base">
-                  <a  href="../../22/%E2%80%9C%E5%B9%82%E7%BA%A7%E6%95%B0%E7%9A%84%E6%9C%AC%E8%B4%A8%E2%80%9D/" class="post-categoris-bottom-link">
-                  “幂级数的本质”
-                </a>
-                </li>
-              
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-              
-            
-            
-            
-            
-            
-            
-            
-              
-            
-            
-            </ul>
+  
+  
+    
+    <div class='footer'>
+      
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
+              
+            
+              
+                <p>本文永久链接是：<a href=http://example.com/2021/04/13/%E5%BE%AE%E5%88%86%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88/>http://example.com/2021/04/13/%E5%BE%AE%E5%88%86%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88/</a></p>
+              
+            
+          </blockquote>
+        </div>
+      
+      
+        <div class='donate'>
+          <div class='imgs'>
+            
+              <img src='../../../../https:/gitee.com/boyqi/jpg/raw/master/541957334755484884.jpg'>
+            
+              <img src='../../../../https:/gitee.com/boyqi/jpg/raw/master/60626648564436122.jpg'>
+            
           </div>
+        </div>
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-04-19T19:53:44+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Apr 19, 2021</p>
+  </a>
+</div>
 
         
-      </div>
-      <div class="post-content-inner-space">
+      
         
-      </div>
-   </div>
-    <!-- 评论 -->
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="../../../../tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>高等数学</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/04/13/%E5%BE%AE%E5%88%86%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88/&title=微分到底是什么 - 齐雨争&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/04/13/%E5%BE%AE%E5%88%86%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88/&title=微分到底是什么 - 齐雨争&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/04/13/%E5%BE%AE%E5%88%86%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88/&title=微分到底是什么 - 齐雨争&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
+      
     
   </div>
-</article>
+</div>
+
+
+
+        
+      
+    </div>
   </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='../%E5%BE%AE%E5%88%86%E4%B8%8E%E5%AF%BC%E6%95%B0%E7%9A%84%E5%8C%BA%E5%88%AB/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>微分与导数的区别</p>
+          <p class='content'>说来惭愧，学到现在，我才真正的慢慢意会到这个最基础的定义
+微分是 [公式]
+微商是 [公式]
+导数是微商在某一点 [公式] 的值 [公式]
+微分是说一个函数在自变量做无穷小变化时函数值的变化。如...</p>
+        </a>
+      
+      
+        <a class='next' href='../../11/2013-05-09-one-night/'>
+          <p class='title'>睡前牢骚<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>这段话是我一个尊敬的老大哥的闲言碎语罢了
+这么一睡，又要开始一天看似忙碌的生活。总觉得时间很快，不管是从大的还是小的。和一个高中同学聊天，使得今天晚上想到好多小时候在西安的事，时间真的很快，从小...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
+  </article>
 
 
-<!-- 如果是home模式的话，不在首页就显示footer，如果不是home模式的话 所有都显示footer -->
 
-  <div class="footer-outer animate__animated  animate__fadeInUp">
-    <div class="footer-inner">
-    <div class="footer-text">
-    <p>Power by <a target="_blank" rel="noopener" href="http://hexo.io/">Hexo</a> Theme by <a target="_blank" rel="noopener" href="https://github.com/FuShaoLei/hexo-theme-white">反方向的钟</a></p>
 
-    </div>
-    <div class="footer-contact">
-    <ul class="footer-ul">
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+
+
+  
+
+
+</aside>
+
+
+
         
-        <li class="footer-li">
-            <a href="https://github.com/Geisha-design" target="_blank">
-                <i class="ri-github-line"></i>
-            </a>
-        </li>
         
-        <li class="footer-li">
-            <a href="mailto:3202990966@qq.com" target="_blank">
-                <i class="ri-mail-line"></i>
-            </a>
-        </li>
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+<script>
+  window.pdata={}
+  pdata.ispage=true;
+  pdata.postTitle="微分到底是什么";
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+
+  var l_header=document.getElementById("l_header");
+  
+  l_header.classList.remove("show");
+  
+</script>
+
         
-    </ul>
+      </div>
+      
+  
+  <footer class="footer clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+          
+            
+          
+            
+          
+        </div>
+      
+    
+      
+        <div><p>Blog content follows the <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+      
+    
+      
+        
+          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+</div>
+        
+      
+    
+      
+        Use
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.1.2" target="_blank" class="codename">Volantis</a>
+        as theme
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="/">Copyright © 2017-2020 XXX</a></p>
+
+        </div>
+      
+    
+  </footer>
+  
+  <iframe frameborder="no" border="1500" marginwidth="1500" marginheight="1500" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=546724667&auto=1&height=66"></iframe>
+  
+
+
+
+
+
+      <a id="s-top" class="fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
     </div>
-    </div>
+  </div>
+  <div>
+    <script>
+window.volantis={};
+/********************脚本懒加载函数********************************/
+function loadScript(src, cb) {
+var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+var script = document.createElement('script');
+script.setAttribute('type','text/javascript');
+if (cb) script.onload = cb;
+script.setAttribute('src', src);
+HEAD.appendChild(script);
+}
+//https://github.com/filamentgroup/loadCSS
+var loadCSS = function( href, before, media, attributes ){
+	var doc = window.document;
+	var ss = doc.createElement( "link" );
+	var ref;
+	if( before ){
+		ref = before;
+	}
+	else {
+		var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
+		ref = refs[ refs.length - 1];
+	}
+	var sheets = doc.styleSheets;
+	if( attributes ){
+		for( var attributeName in attributes ){
+			if( attributes.hasOwnProperty( attributeName ) ){
+				ss.setAttribute( attributeName, attributes[attributeName] );
+			}
+		}
+	}
+	ss.rel = "stylesheet";
+	ss.href = href;
+	ss.media = "only x";
+	function ready( cb ){
+		if( doc.body ){
+			return cb();
+		}
+		setTimeout(function(){
+			ready( cb );
+		});
+	}
+	ready( function(){
+		ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
+	});
+	var onloadcssdefined = function( cb ){
+		var resolvedHref = ss.href;
+		var i = sheets.length;
+		while( i-- ){
+			if( sheets[ i ].href === resolvedHref ){
+				return cb();
+			}
+		}
+		setTimeout(function() {
+			onloadcssdefined( cb );
+		});
+	};
+	function loadCB(){
+		if( ss.addEventListener ){
+			ss.removeEventListener( "load", loadCB );
+		}
+		ss.media = media || "all";
+	}
+	if( ss.addEventListener ){
+		ss.addEventListener( "load", loadCB);
+	}
+	ss.onloadcssdefined = onloadcssdefined;
+	onloadcssdefined( loadCB );
+	return ss;
+};
+</script>
+<!-- required -->
+
+<script src="../../../../https:/cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+<script>
+  function pjax_fancybox() {
+    $(".md .gallery").find("img").each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".md .gallery").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  function SCload_fancybox() {
+    if ($(".md .gallery").find("img").length == 0) return;
+    loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css", document.getElementById("loadcss"));
+    setTimeout(function() {
+      loadScript('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', pjax_fancybox)
+    }, 1);
+  };
+  $(function () {
+    SCload_fancybox();
+  });
+</script>
+
+
+<!-- internal -->
+
+
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+  
+    <script>
+      window.FPConfig = {
+        delay: 0,
+        ignoreKeywords: [],
+        maxRPS: 5,
+        hoverDelay: 25
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+<script src="../../../../js/valine.js"></script>
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+
+    let pagePlaceholder = pdata.commentPlaceholder || "快来评论吧~";
+
+    let path = pdata.commentPath;
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: path,
+      appId: "",
+      appKey: "",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      recordIP: 'false',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });
+</script>
+
+
+
+
+
+  
+<script src="../../../../js/app.js"></script>
+
+
+
+
+  
+    
+<script src="../../../../js/search.js"></script>
+
+  
+
+
+<!-- optional -->
+
+  <script>
+const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
+const ROOT =  ("/Geisha-design.github.io/" || "/").endsWith('/') ? ("/Geisha-design.github.io/" || "/") : ("/Geisha-design.github.io//" || "/" );
+(function ($) {
+  
+    customSearch = new HexoSearch({
+      imagePath: SearchServiceimagePath
+    });
+  
+})(jQuery);
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  <script defer>
+
+  const LCCounter = {
+    app_id: 'u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI',
+    app_key: 'jfHtEKVE24j0IVCGHbvuFClp',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'http://example.com' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'http://example.com' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'http://example.com' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              let curPath = window.location.pathname;
+              if (curPath.includes('index.html')) {
+                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
+              }
+              if (pv.getAttribute('data-path') == curPath) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == curPath) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });
+</script>
+
+
+
+
+  <script>
+const rootElement = document.documentElement;
+const darkModeStorageKey = "user-color-scheme";
+const rootElementDarkModeAttributeName = "data-user-color-scheme";
+
+const setLS = (k, v) => {
+  try {
+    localStorage.setItem(k, v);
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+const removeLS = (k) => {
+  try {
+    localStorage.removeItem(k);
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+const getLS = (k) => {
+  try {
+    return localStorage.getItem(k);
+  } catch (e) {
+    console.log(e.message);
+    return null;
+  }
+};
+
+const getModeFromCSSMediaQuery = () => {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+};
+
+const resetRootDarkModeAttributeAndLS = () => {
+  rootElement.removeAttribute(rootElementDarkModeAttributeName);
+  removeLS(darkModeStorageKey);
+};
+
+const validColorModeKeys = {
+  dark: true,
+  light: true,
+};
+
+const applyCustomDarkModeSettings = (mode) => {
+  const currentSetting = mode || getLS(darkModeStorageKey);
+
+  if (currentSetting === getModeFromCSSMediaQuery()) {
+    resetRootDarkModeAttributeAndLS();
+  } else if (validColorModeKeys[currentSetting]) {
+    rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
+  } else {
+    resetRootDarkModeAttributeAndLS();
+  }
+};
+
+const invertDarkModeObj = {
+  dark: "light",
+  light: "dark",
+};
+
+/**
+ * get target mode
+ */
+const toggleCustomDarkMode = () => {
+  let currentSetting = getLS(darkModeStorageKey);
+
+  if (validColorModeKeys[currentSetting]) {
+    currentSetting = invertDarkModeObj[currentSetting];
+  } else if (currentSetting === null) {
+    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
+  } else {
+    return;
+  }
+  setLS(darkModeStorageKey, currentSetting);
+  return currentSetting;
+};
+
+/**
+ * bind click event for toggle button
+ */
+function bindToggleButton() {
+	var btn=$("#wrapper .toggle-mode-btn");
+    btn.on('click',(e) => {
+      const mode = toggleCustomDarkMode();
+      applyCustomDarkModeSettings(mode);
+    });
+}
+
+applyCustomDarkModeSettings();
+document.addEventListener("DOMContentLoaded", bindToggleButton);
+document.addEventListener("pjax:success", bindToggleButton);
+var now = new Date();
+var hour = now.getHours();
+if (hour < 7 && hour >= 19) {
+	var mode = toggleCustomDarkMode();
+	if (mode === "dark") {
+	  applyCustomDarkModeSettings(mode);
+	}
+}
+</script>
+
+
+
+
+
+
+<script>
+function listennSidebarTOC() {
+  const navItems = document.querySelectorAll(".toc li");
+  if (!navItems.length) return;
+  const sections = [...navItems].map((element) => {
+    const link = element.querySelector(".toc-link");
+    const target = document.getElementById(
+      decodeURI(link.getAttribute("href")).replace("#", "")
+    );
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({
+		top: target.offsetTop + 100,
+		
+		behavior: "smooth"
+		
+	  });
+    });
+    return target;
+  });
+
+  function activateNavByIndex(target) {
+    if (target.classList.contains("active-current")) return;
+
+    document.querySelectorAll(".toc .active").forEach((element) => {
+      element.classList.remove("active", "active-current");
+    });
+    target.classList.add("active", "active-current");
+    let parent = target.parentNode;
+    while (!parent.matches(".toc")) {
+      if (parent.matches("li")) parent.classList.add("active");
+      parent = parent.parentNode;
+    }
+  }
+
+  function findIndex(entries) {
+    let index = 0;
+    let entry = entries[index];
+    if (entry.boundingClientRect.top > 0) {
+      index = sections.indexOf(entry.target);
+      return index === 0 ? 0 : index - 1;
+    }
+    for (; index < entries.length; index++) {
+      if (entries[index].boundingClientRect.top <= 0) {
+        entry = entries[index];
+      } else {
+        return sections.indexOf(entry.target);
+      }
+    }
+    return sections.indexOf(entry.target);
+  }
+
+  function createIntersectionObserver(marginTop) {
+    marginTop = Math.floor(marginTop + 10000);
+    let intersectionObserver = new IntersectionObserver(
+      (entries, observe) => {
+        let scrollHeight = document.documentElement.scrollHeight + 100;
+        if (scrollHeight > marginTop) {
+          observe.disconnect();
+          createIntersectionObserver(scrollHeight);
+          return;
+        }
+        let index = findIndex(entries);
+        activateNavByIndex(navItems[index]);
+      },
+      {
+        rootMargin: marginTop + "px 0px -100% 0px",
+        threshold: 0,
+      }
+    );
+    sections.forEach((element) => {
+      element && intersectionObserver.observe(element);
+    });
+  }
+  createIntersectionObserver(document.documentElement.scrollHeight);
+}
+
+document.addEventListener("DOMContentLoaded", listennSidebarTOC);
+document.addEventListener("pjax:success", listennSidebarTOC);
+</script>
+
+<!-- more -->
+
+
+
+
+    
+      
+
+
+<script src="../../../../https:/cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
 </div>
 
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#l_cover",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
 
+    document.addEventListener('pjax:send', function (e) {
+      //window.stop(); // 相当于点击了浏览器的停止按钮
 
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
 
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      if (typeof $.fancybox != "undefined") {
+        $.fancybox.close();    // 关闭弹窗
+      }
+      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
+      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
 
+      // 解绑事件 避免重复监听
+      volantis.$topBtn.unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+      window.ShowLoading();
+    });
 
-<script src="../../../../js/white.js"></script>
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
 
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
 
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+          if (typeof $.fancybox == "undefined") {
+            SCload_fancybox();
+          } else {
+            pjax_fancybox();
+          }
+        
+        
+        
+        
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+      window.HideLoading();
+    });
 
+    document.addEventListener('pjax:error', function (e) {
+      window.HideLoading();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
 </body>
+   	<div class="GalMenu GalDropDown">
+	      <div class="circle" id="gal">
+	        <div class="ring">
+	          <a href="/" class="menuItem">首页</a>
+	          <a href="javascript:history.go(1);" class="menuItem">前进</a>
+	          <a href="javascript:$('html,body').animate({scrollTop:0},500);" class="menuItem">顶部</a>
+	          <a href="javascript:location.reload();" class="menuItem">刷新</a>
+			  <a href="/Message/" class="menuItem">留言</a>
+	          <a href="javascript:history.go(-1);" class="menuItem">后退</a>
+			</div>
+			
+				<audio id="audio" src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/audio/niconiconi.mp3"></audio>
+	        
+		  </div>
+	</div>
+	<script type="text/javascript">
+	var items = document.querySelectorAll('.menuItem'); 
+	for (var i = 0, l = items.length; i < l; i++) {
+        items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+        items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+      }
+	</script>
+	<script>window.jQuery || document.write('<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/js/jquery-2.1.1.min.js"><\/script>')</script>	
+	
+<script src="../../../../https:/cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/js/GalMenu.js"></script>
+
+	<script type="text/javascript">
+    	$(document).ready(function() {
+        $('body').GalMenu({
+          'menu': 'GalDropDown'
+        })
+      });
+	</script>
+
+
+<div id='loader'>
+	
+	<div class="outer_box">
+	<div class='loader_overlay'></div>
+	<div class='loader_cogs'>
+		<div class='loader_cogs__top'>
+			<div class='top_part'></div>
+			<div class='top_part'></div>
+			<div class='top_part'></div>
+			<div class='top_hole'></div>
+		</div>
+		<div class='loader_cogs__left'>
+			<div class='left_part'></div>
+			<div class='left_part'></div>
+			<div class='left_part'></div>
+			<div class='left_hole'></div>
+		</div>
+		<div class='loader_cogs__bottom'>
+			<div class='bottom_part'></div>
+			<div class='bottom_part'></div>
+			<div class='bottom_part'></div>
+			<div class='bottom_hole'></div>
+		</div>
+		<p style="text-align:center">&nbsp;&nbsp;&nbsp;loading...</p>
+	</div>
+	</div>
+  
+</div>
+
+<script>
+  var endLoading = function () {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loader').classList.add("loading");
+  }
+  window.addEventListener('load',endLoading);
+</script>
+
+
+
+
 </html>
