@@ -1,5 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script> 
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_click.js"></script>
+
+
+
+
   <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.3.1'>
   <meta charset="utf-8">
   <!-- SEO相关 -->
@@ -104,9 +117,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </head>
 
   <body>
-  </script>
 
-    
 
 <header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
   <div class='container'>
@@ -354,6 +365,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 	</div>
   </div>
 </header>
+
 
     <div id="l_body">
       <div id="l_cover">
@@ -926,11 +938,7 @@ var loadCSS = function( href, before, media, attributes ){
 <script>
   function pjax_fancybox() {
     $(".md .gallery").find("img").each(function () { //渲染 fancybox
-      var element = document.createElement("a"); // a 标签
-      $(element).attr("class", "fancybox");
-      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
-      $(element).attr("href", $(this).attr("src"));
-      if ($(this).attr("data-original")) {
+      var element =("data-original")) {
         $(element).attr("href", $(this).attr("data-original"));
       }
       $(element).attr("data-fancybox", "images");
@@ -1939,7 +1947,24 @@ document.addEventListener("pjax:success", listennSidebarTOC);
 
     </div>
 
-<script src="//i2.wp.com/cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
+
+
+
+  </body>
+
+
+</html>
+��入pjax:error回调函数 参见layout/_partial/scripts/global.ejs
+	  volantis.pjax.method.error.start();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+ 
+	  
+
+    </div>
+
+
 
 
   </body>

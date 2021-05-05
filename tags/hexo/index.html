@@ -1,5 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script> 
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_click.js"></script>
+
+
+
+
   <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.3.1'>
   <meta charset="utf-8">
   <!-- SEO相关 -->
@@ -104,9 +117,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </head>
 
   <body>
-  </script>
 
-    
 
 <header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
   <div class='container'>
@@ -354,6 +365,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 	</div>
   </div>
 </header>
+
 
     <div id="l_body">
       <div id="l_cover">
@@ -655,7 +667,301 @@ TRHX • 鲍勃 2019-12-08 00:12:07  32540  收藏 31
       </div>
       
         <div>
-          <a class='readmore'
+          <a class='readmore' href='../../2020/11/21/hexo%E4%B9%8B%E5%88%86%E7%B1%BB%E9%9B%B7%E8%BE%BE/'>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="../../2020/11/21/volantis%E4%B9%8B%E6%89%93%E8%B5%8F%E6%A8%A1%E5%9D%97/">
+        volantis之打赏模块
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        hexo博客打赏随着支付宝和微信转账支付的日益深入人心，有时候我们甚至可以在很多博客文章后面看到小编和文章作者自己添加的DIY打赏功能，包括微信、支付宝等扫描支付转账，本篇文章就是为hexo优化，在每篇文章后面添加打赏功能。
+打赏模块的代码layout\_partial 下新建 donate.ejs 输入如下内容：
+12345678910111213141516171819202122232...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2020-11-21</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="../../categories/hexo/">hexo</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='../../2020/11/21/volantis%E4%B9%8B%E6%89%93%E8%B5%8F%E6%A8%A1%E5%9D%97/'>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="../../2020/11/19/hexo%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96%E8%BF%9B%E9%98%B6/">
+        hexo主题美化进阶<hexo主题美化进阶>
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        hexo之Volantis主题美化此博客为转载学习博客。
+
+置顶  阳光派plus  2020-05-23 15:24:13    784   收藏  7
+分类专栏：  博客  文章标签：  javascript  前端  css3  github  经验分享
+版权
+具体效果请移步我的博客👉阳光派Plus更：1.添加暗黑模式2.添加鼠标右键功能3.添加页面预加载功能
+7.20 更新★val...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2020-11-19</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="../../categories/hexo/">hexo</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='../../2020/11/19/hexo%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96%E8%BF%9B%E9%98%B6/'>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="../../2020/11/19/hexo%E4%B9%8BVolantis%E6%B7%BB%E5%8A%A0%E6%9A%97%E9%BB%91%E6%A8%A1%E5%BC%8F/">
+        hexo之Volantis添加暗黑模式
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        很久之前就想过给博客添加一个暗黑模式，一直搁置。直到Volantis更新到3.0版本后添加了暗黑模式，然而尝试之后的结果却不是那么满意。于是着手自己配置一下。
+主要的实现方法参考了博主  cungudafa的文章，然后配置到Volantis中。其实自己主要是做了适合于Volantis主题在暗黑模式下的一些格式、代码等等的颜色配置。
+请注意，由于自己修改了原主题的许多源码，所以在做这个时主要配...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2020-11-19</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="../../categories/hexo/">hexo</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='../../2020/11/19/hexo%E4%B9%8BVolantis%E6%B7%BB%E5%8A%A0%E6%9A%97%E9%BB%91%E6%A8%A1%E5%BC%8F/'>
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+    
+  </section>
+  
+    
+  
+
+
+    
+  
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+<section class="widget blogger shadow desktop mobile">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='../../about/'>
+          <img no-lazy src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+        
+        
+          <p><span id="jinrishici-sentence">齐雨争</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="../../atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="../../mailto:me@xxx.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="../../https:/github.com/volantis-x/"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="../../index.html"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget category shadow desktop">
+    
+  <header>
+    
+      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="../../categories/hexo/" href="../../categories/hexo/"
+            id="categorieshexo"
+            ><div class='name'>hexo</div><div class='badge'>(12)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="../../categories/java/" href="../../categories/java/"
+            id="categoriesjava"
+            ><div class='name'>java</div><div class='badge'>(36)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="../../categories/mysql/" href="../../categories/mysql/"
+            id="categoriesmysql"
+            ><div class='name'>mysql</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="../../categories/python/" href="../../categories/python/"
+            id="categoriespython"
+            ><div class='name'>python</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="../../categories/ui/" href="../../categories/ui/"
+            id="categoriesui"
+            ><div class='name'>ui</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="../../categories/%E4%B8%89%E5%89%91%E5%AE%A2/" href="../../categories/%E4%B8%89%E5%89%91%E5%AE%A2/"
+            id="categoriesE4B889E58991E5AEA2"
+            ><div class='name'>三剑客</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="../../categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" href="../../categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"
+            id="categoriesE695B0E68DAEE7BB93E69E84"
+            ><div class='name'>数据结构</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
             title="../../categories/%E7%94%9F%E6%B4%BB/" href="../../categories/%E7%94%9F%E6%B4%BB/"
             id="categoriesE7949FE6B4BB"
             ><div class='name'>生活</div><div class='badge'>(17)</div></a></li>
@@ -702,7 +1008,7 @@ TRHX • 鲍勃 2019-12-08 00:12:07  32540  收藏 31
 
 
     <div class='content'>
-      <a href="../CSS/" style="font-size: 15.11px; color: #919191">CSS</a> <a href="../Eclipse/" style="font-size: 14px; color: #999">Eclipse</a> <a href="../Field/" style="font-size: 14px; color: #999">Field</a> <a href="../Groovy/" style="font-size: 14px; color: #999">Groovy</a> <a href="../HTML/" style="font-size: 15.11px; color: #919191">HTML</a> <a href="" style="font-size: 14px; color: #999">Hexo</a> <a href="../IDE/" style="font-size: 15.11px; color: #919191">IDE</a> <a href="../IT/" style="font-size: 21.78px; color: #646464">IT</a> <a href="../JAVA/" style="font-size: 16.22px; color: #8a8a8a">JAVA</a> <a href="../JVM/" style="font-size: 14px; color: #999">JVM</a> <a href="../Java/" style="font-size: 18.44px; color: #7b7b7b">Java</a> <a href="../JavaScript/" style="font-size: 15.11px; color: #919191">JavaScript</a> <a href="../MYSQL/" style="font-size: 14px; color: #999">MYSQL</a> <a href="../Maven/" style="font-size: 14px; color: #999">Maven</a> <a href="../NoSql/" style="font-size: 14px; color: #999">NoSql</a> <a href="../Node-js/" style="font-size: 14px; color: #999">Node.js</a> <a href="../Python/" style="font-size: 14px; color: #999">Python</a> <a href="../TOMCAT/" style="font-size: 14px; color: #999">TOMCAT</a> <a href="../UI/" style="font-size: 14px; color: #999">UI</a> <a href="../VMware/" style="font-size: 14px; color: #999">VMware</a> <a href="../Wicket/" style="font-size: 14px; color: #999">Wicket</a> <a href="../coding/" style="font-size: 14px; color: #999">coding</a> <a href="../coding-net/" style="font-size: 16.22px; color: #8a8a8a">coding.net</a> <a href="../css/" style="font-size: 17.33px; color: #828282">css</a> <a href="../date/" style="font-size: 14px; color: #999">date</a> <a href="../debug/" style="font-size: 14px; color: #999">debug</a> <a href="../decorator/" style="font-size: 14px; color: #999">decorator</a> <a href="../eclipse/" style="font-size: 14px; color: #999">eclipse</a> <a href="../editor/" style="font-size: 14px; color: #999">editor</a> <a href="../equals/" style="font-size: 14px; color: #999">equals</a> <a href="../express/" style="font-size: 14px; color: #999">express</a> <a href="../git/" style="font-size: 14px; color: #999">git</a> <a href="../github/" style="font-size: 16.22px; color: #8a8a8a">github</a> <a href="../gogs/" style="font-size: 14px; color: #999">gogs</a> <a href="../hexo/" style="font-size: 20.67px; color: #6c6c6c">hexo</a> <a href="../https/" style="font-size: 14px; color: #999">https</a> <a href="../i18n/" style="font-size: 14px; color: #999">i18n</a> <a href="../ini/" style="font-size: 14px; color: #999">ini</a> <a href="../it/" style="font-size: 19.56px; color: #737373">it</a> <a href="../jar/" style="font-size: 14px; color: #999">jar</a> <a href="../java/" style="font-size: 24px; color: #555">java</a> <a href="../javascript/" style="font-size: 16.22px; color: #8a8a8a">javascript</a> <a href="../jdk/" style="font-size: 14px; color: #999">jdk</a> <a href="../jvm/" style="font-size: 14px; color: #999">jvm</a> <a href="../less/" style="font-size: 14px; color: #999">less</a> <a href="../linux/" style="font-size: 15.11px; color: #919191">linux</a> <a href="../mac/" style="font-size: 16.22px; color: #8a8a8a">mac</a> <a href="../macvim/" style="font-size: 14px; color: #999">macvim</a> <a href="../markdown/" style="font-size: 14px; color: #999">markdown</a> <a href="../maven/" style="font-size: 15.11px; color: #919191">maven</a> <a href="../mediator/" style="font-size: 14px; color: #999">mediator</a> <a href="../nginx/" style="font-size: 14px; color: #999">nginx</a> <a href="../object/" style="font-size: 14px; color: #999">object</a> <a href="../observer/" style="font-size: 14px; color: #999">observer</a> <a href="../qcloud/" style="font-size: 14px; color: #999">qcloud</a> <a href="../rails/" style="font-size: 14px; color: #999">rails</a> <a href="../reflect/" style="font-size: 14px; color: #999">reflect</a> <a href="../remote/" style="font-size: 14px; color: #999">remote</a> <a href="../ssh/" style="font-size: 14px; color: #999">ssh</a> <a href="../ssl/" style="font-size: 14px; color: #999">ssl</a> <a href="../tomcat/" style="font-size: 14px; color: #999">tomcat</a> <a href="../travis/" style="font-size: 16.22px; color: #8a8a8a">travis</a> <a href="../vim/" style="font-size: 15.11px; color: #919191">vim</a> <a href="../web/" style="font-size: 15.11px; color: #919191">web</a> <a href="../webjars/" style="font-size: 15.11px; color: #919191">webjars</a> <a href="../wicket/" style="font-size: 15.11px; color: #919191">wicket</a> <a href="../%E4%B8%AD%E4%BB%8B%E8%80%85/" style="font-size: 14px; color: #999">中介者</a> <a href="../%E5%81%87%E6%9C%9F/" style="font-size: 14px; color: #999">假期</a> <a href="../%E5%88%86%E5%B8%83%E5%BC%8F/" style="font-size: 14px; color: #999">分布式</a> <a href="../%E5%89%8D%E7%AB%AF/" style="font-size: 15.11px; color: #919191">前端</a> <a href="../%E5%91%A8%E6%9C%AB/" style="font-size: 15.11px; color: #919191">周末</a> <a href="../%E5%9B%BE%E7%89%87/" style="font-size: 15.11px; color: #919191">图片</a> <a href="../%E5%A5%BD%E6%96%87/" style="font-size: 14px; color: #999">好文</a> <a href="../%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9/" style="font-size: 14px; color: #999">小知识点</a> <a href="../%E5%B7%A5%E4%BD%9C/" style="font-size: 14px; color: #999">工作</a> <a href="../%E5%BC%80%E5%8F%91/" style="font-size: 14px; color: #999">开发</a> <a href="../%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 14px; color: #999">微服务</a> <a href="../%E5%BF%83%E6%83%85/" style="font-size: 14px; color: #999">心情</a> <a href="../%E6%8A%80%E6%9C%AF/" style="font-size: 14px; color: #999">技术</a> <a href="../%E6%95%99%E7%A8%8B/" style="font-size: 14px; color: #999">教程</a> <a href="../%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 14px; color: #999">数据库</a> <a href="../%E6%95%B0%E6%8D%AE%E6%9C%BA%E6%9E%84/" style="font-size: 14px; color: #999">数据机构</a> <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="../%E6%96%87%E7%AB%A0/" style="font-size: 14px; color: #999">文章</a> <a href="../%E6%97%A0%E5%9B%BE/" style="font-size: 14px; color: #999">无图</a> <a href="../%E6%97%A5%E5%BF%97/" style="font-size: 22.89px; color: #5d5d5d">日志</a> <a href="../%E6%97%A5%E8%AE%B0/" style="font-size: 14px; color: #999">日记</a> <a href="../%E6%9D%82%E4%BA%8B/" style="font-size: 20.67px; color: #6c6c6c">杂事</a> <a href="../%E6%9D%82%E6%96%87/" style="font-size: 14px; color: #999">杂文</a> <a href="../%E6%9D%82%E8%B0%88/" style="font-size: 14px; color: #999">杂谈</a> <a href="../%E6%B2%B9%E6%BC%86%E5%B7%A5/" style="font-size: 14px; color: #999">油漆工</a> <a href="../%E7%94%9F%E6%B4%BB/" style="font-size: 15.11px; color: #919191">生活</a> <a href="../%E7%94%B5%E5%BD%B1/" style="font-size: 14px; color: #999">电影</a> <a href="../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 14px; color: #999">线性代数</a> <a href="../%E7%BD%91%E7%BB%9C/" style="font-size: 14px; color: #999">网络</a> <a href="../%E8%88%B6%E6%9D%A5%E5%93%81/" style="font-size: 14px; color: #999">舶来品</a> <a href="../%E8%89%BA%E6%9C%AF%E5%AE%B6/" style="font-size: 14px; color: #999">艺术家</a> <a href="../%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 14px; color: #999">虚拟机</a> <a href="../%E8%A7%82%E5%AF%9F%E8%80%85/" style="font-size: 14px; color: #999">观察者</a> <a href="../%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="font-size: 18.44px; color: #7b7b7b">计算机</a> <a href="../%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/" style="font-size: 14px; color: #999">计算机常识</a> <a href="../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 18.44px; color: #7b7b7b">计算机网络</a> <a href="../%E8%AE%B0%E5%BD%95/" style="font-size: 14px; color: #999">记录</a> <a href="../%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 18.44px; color: #7b7b7b">设计模式</a> <a href="../%E8%AF%B4%E7%82%B9%E5%95%A5/" style="font-size: 14px; color: #999">说点啥</a> <a href="../%E8%BF%90%E5%8A%A8/" style="font-size: 14px; color: #999">运动</a> <a href="../%E9%A3%8E%E6%99%AF/" style="font-size: 14px; color: #999">风景</a> <a href="../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 18.44px; color: #7b7b7b">高等数学</a>
+      <a href="../CSS/" style="font-size: 15.11px; color: #919191">CSS</a> <a href="../Eclipse/" style="font-size: 14px; color: #999">Eclipse</a> <a href="../Field/" style="font-size: 14px; color: #999">Field</a> <a href="../Groovy/" style="font-size: 14px; color: #999">Groovy</a> <a href="../HTML/" style="font-size: 15.11px; color: #919191">HTML</a> <a href="../Hexo/" style="font-size: 14px; color: #999">Hexo</a> <a href="../IDE/" style="font-size: 15.11px; color: #919191">IDE</a> <a href="../IT/" style="font-size: 21.78px; color: #646464">IT</a> <a href="../JAVA/" style="font-size: 16.22px; color: #8a8a8a">JAVA</a> <a href="../JVM/" style="font-size: 14px; color: #999">JVM</a> <a href="../Java/" style="font-size: 18.44px; color: #7b7b7b">Java</a> <a href="../JavaScript/" style="font-size: 15.11px; color: #919191">JavaScript</a> <a href="../MYSQL/" style="font-size: 14px; color: #999">MYSQL</a> <a href="../Maven/" style="font-size: 14px; color: #999">Maven</a> <a href="../NoSql/" style="font-size: 14px; color: #999">NoSql</a> <a href="../Node-js/" style="font-size: 14px; color: #999">Node.js</a> <a href="../Python/" style="font-size: 14px; color: #999">Python</a> <a href="../TOMCAT/" style="font-size: 14px; color: #999">TOMCAT</a> <a href="../UI/" style="font-size: 14px; color: #999">UI</a> <a href="../VMware/" style="font-size: 14px; color: #999">VMware</a> <a href="../Wicket/" style="font-size: 14px; color: #999">Wicket</a> <a href="../coding/" style="font-size: 14px; color: #999">coding</a> <a href="../coding-net/" style="font-size: 16.22px; color: #8a8a8a">coding.net</a> <a href="../css/" style="font-size: 17.33px; color: #828282">css</a> <a href="../date/" style="font-size: 14px; color: #999">date</a> <a href="../debug/" style="font-size: 14px; color: #999">debug</a> <a href="../decorator/" style="font-size: 14px; color: #999">decorator</a> <a href="../eclipse/" style="font-size: 14px; color: #999">eclipse</a> <a href="../editor/" style="font-size: 14px; color: #999">editor</a> <a href="../equals/" style="font-size: 14px; color: #999">equals</a> <a href="../express/" style="font-size: 14px; color: #999">express</a> <a href="../git/" style="font-size: 14px; color: #999">git</a> <a href="../github/" style="font-size: 16.22px; color: #8a8a8a">github</a> <a href="../gogs/" style="font-size: 14px; color: #999">gogs</a> <a href="" style="font-size: 20.67px; color: #6c6c6c">hexo</a> <a href="../https/" style="font-size: 14px; color: #999">https</a> <a href="../i18n/" style="font-size: 14px; color: #999">i18n</a> <a href="../ini/" style="font-size: 14px; color: #999">ini</a> <a href="../it/" style="font-size: 19.56px; color: #737373">it</a> <a href="../jar/" style="font-size: 14px; color: #999">jar</a> <a href="../java/" style="font-size: 24px; color: #555">java</a> <a href="../javascript/" style="font-size: 16.22px; color: #8a8a8a">javascript</a> <a href="../jdk/" style="font-size: 14px; color: #999">jdk</a> <a href="../jvm/" style="font-size: 14px; color: #999">jvm</a> <a href="../less/" style="font-size: 14px; color: #999">less</a> <a href="../linux/" style="font-size: 15.11px; color: #919191">linux</a> <a href="../mac/" style="font-size: 16.22px; color: #8a8a8a">mac</a> <a href="../macvim/" style="font-size: 14px; color: #999">macvim</a> <a href="../markdown/" style="font-size: 14px; color: #999">markdown</a> <a href="../maven/" style="font-size: 15.11px; color: #919191">maven</a> <a href="../mediator/" style="font-size: 14px; color: #999">mediator</a> <a href="../nginx/" style="font-size: 14px; color: #999">nginx</a> <a href="../object/" style="font-size: 14px; color: #999">object</a> <a href="../observer/" style="font-size: 14px; color: #999">observer</a> <a href="../qcloud/" style="font-size: 14px; color: #999">qcloud</a> <a href="../rails/" style="font-size: 14px; color: #999">rails</a> <a href="../reflect/" style="font-size: 14px; color: #999">reflect</a> <a href="../remote/" style="font-size: 14px; color: #999">remote</a> <a href="../ssh/" style="font-size: 14px; color: #999">ssh</a> <a href="../ssl/" style="font-size: 14px; color: #999">ssl</a> <a href="../tomcat/" style="font-size: 14px; color: #999">tomcat</a> <a href="../travis/" style="font-size: 16.22px; color: #8a8a8a">travis</a> <a href="../vim/" style="font-size: 15.11px; color: #919191">vim</a> <a href="../web/" style="font-size: 15.11px; color: #919191">web</a> <a href="../webjars/" style="font-size: 15.11px; color: #919191">webjars</a> <a href="../wicket/" style="font-size: 15.11px; color: #919191">wicket</a> <a href="../%E4%B8%AD%E4%BB%8B%E8%80%85/" style="font-size: 14px; color: #999">中介者</a> <a href="../%E5%81%87%E6%9C%9F/" style="font-size: 14px; color: #999">假期</a> <a href="../%E5%88%86%E5%B8%83%E5%BC%8F/" style="font-size: 14px; color: #999">分布式</a> <a href="../%E5%89%8D%E7%AB%AF/" style="font-size: 15.11px; color: #919191">前端</a> <a href="../%E5%91%A8%E6%9C%AB/" style="font-size: 15.11px; color: #919191">周末</a> <a href="../%E5%9B%BE%E7%89%87/" style="font-size: 15.11px; color: #919191">图片</a> <a href="../%E5%A5%BD%E6%96%87/" style="font-size: 14px; color: #999">好文</a> <a href="../%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9/" style="font-size: 14px; color: #999">小知识点</a> <a href="../%E5%B7%A5%E4%BD%9C/" style="font-size: 14px; color: #999">工作</a> <a href="../%E5%BC%80%E5%8F%91/" style="font-size: 14px; color: #999">开发</a> <a href="../%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 14px; color: #999">微服务</a> <a href="../%E5%BF%83%E6%83%85/" style="font-size: 14px; color: #999">心情</a> <a href="../%E6%8A%80%E6%9C%AF/" style="font-size: 14px; color: #999">技术</a> <a href="../%E6%95%99%E7%A8%8B/" style="font-size: 14px; color: #999">教程</a> <a href="../%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 14px; color: #999">数据库</a> <a href="../%E6%95%B0%E6%8D%AE%E6%9C%BA%E6%9E%84/" style="font-size: 14px; color: #999">数据机构</a> <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="../%E6%96%87%E7%AB%A0/" style="font-size: 14px; color: #999">文章</a> <a href="../%E6%97%A0%E5%9B%BE/" style="font-size: 14px; color: #999">无图</a> <a href="../%E6%97%A5%E5%BF%97/" style="font-size: 22.89px; color: #5d5d5d">日志</a> <a href="../%E6%97%A5%E8%AE%B0/" style="font-size: 14px; color: #999">日记</a> <a href="../%E6%9D%82%E4%BA%8B/" style="font-size: 20.67px; color: #6c6c6c">杂事</a> <a href="../%E6%9D%82%E6%96%87/" style="font-size: 14px; color: #999">杂文</a> <a href="../%E6%9D%82%E8%B0%88/" style="font-size: 14px; color: #999">杂谈</a> <a href="../%E6%B2%B9%E6%BC%86%E5%B7%A5/" style="font-size: 14px; color: #999">油漆工</a> <a href="../%E7%94%9F%E6%B4%BB/" style="font-size: 15.11px; color: #919191">生活</a> <a href="../%E7%94%B5%E5%BD%B1/" style="font-size: 14px; color: #999">电影</a> <a href="../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 14px; color: #999">线性代数</a> <a href="../%E7%BD%91%E7%BB%9C/" style="font-size: 14px; color: #999">网络</a> <a href="../%E8%88%B6%E6%9D%A5%E5%93%81/" style="font-size: 14px; color: #999">舶来品</a> <a href="../%E8%89%BA%E6%9C%AF%E5%AE%B6/" style="font-size: 14px; color: #999">艺术家</a> <a href="../%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 14px; color: #999">虚拟机</a> <a href="../%E8%A7%82%E5%AF%9F%E8%80%85/" style="font-size: 14px; color: #999">观察者</a> <a href="../%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="font-size: 18.44px; color: #7b7b7b">计算机</a> <a href="../%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/" style="font-size: 14px; color: #999">计算机常识</a> <a href="../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 18.44px; color: #7b7b7b">计算机网络</a> <a href="../%E8%AE%B0%E5%BD%95/" style="font-size: 14px; color: #999">记录</a> <a href="../%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 18.44px; color: #7b7b7b">设计模式</a> <a href="../%E8%AF%B4%E7%82%B9%E5%95%A5/" style="font-size: 14px; color: #999">说点啥</a> <a href="../%E8%BF%90%E5%8A%A8/" style="font-size: 14px; color: #999">运动</a> <a href="../%E9%A3%8E%E6%99%AF/" style="font-size: 14px; color: #999">风景</a> <a href="../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 18.44px; color: #7b7b7b">高等数学</a>
     </div>
   </section>
 
@@ -1959,297 +2265,7 @@ document.addEventListener("pjax:success", listennSidebarTOC);
 
     </div>
 
-<script src="//i2.wp.com/cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
 
-
-  </body>
-
-
-</html>
--9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
-      if (api_server) {
-        this.fetchData(api_server);
-      } else {
-        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
-          .then(resp => resp.json())
-          .then(({api_server}) => {
-            this.fetchData('https://' + api_server);
-          });
-      }
-    }
-
-  };
-
-  LCCounter.refreshCounter();
-
-  document.addEventListener('pjax:complete', function () {
-    LCCounter.refreshCounter();
-  });
-</script>
-
-
-
-
-  <script>
-const rootElement = document.documentElement;
-const darkModeStorageKey = "user-color-scheme";
-const rootElementDarkModeAttributeName = "data-user-color-scheme";
-
-const setLS = (k, v) => {
-    localStorage.setItem(k, v);
-};
-
-const removeLS = (k) => {
-    localStorage.removeItem(k);
-};
-
-const getLS = (k) => {
-    return localStorage.getItem(k);
-};
-
-const getModeFromCSSMediaQuery = () => {
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
-};
-
-const resetRootDarkModeAttributeAndLS = () => {
-  rootElement.removeAttribute(rootElementDarkModeAttributeName);
-  removeLS(darkModeStorageKey);
-};
-
-const validColorModeKeys = {
-  dark: true,
-  light: true,
-};
-
-const applyCustomDarkModeSettings = (mode) => {
-  const currentSetting = mode || getLS(darkModeStorageKey);
-
-  if (currentSetting === getModeFromCSSMediaQuery()) {
-    resetRootDarkModeAttributeAndLS();
-  } else if (validColorModeKeys[currentSetting]) {
-    rootElement.setAttribute(rootElementDarkModeAttributeName, currentSetting);
-  } else {
-    resetRootDarkModeAttributeAndLS();
-  }
-};
-
-const invertDarkModeObj = {
-  dark: "light",
-  light: "dark",
-};
-
-/**
- * get target mode
- */
-const toggleCustomDarkMode = () => {
-  let currentSetting = getLS(darkModeStorageKey);
-
-  if (validColorModeKeys[currentSetting]) {
-    currentSetting = invertDarkModeObj[currentSetting];
-  } else if (currentSetting === null) {
-    currentSetting = invertDarkModeObj[getModeFromCSSMediaQuery()];
-  } else {
-    return;
-  }
-  setLS(darkModeStorageKey, currentSetting);
-  return currentSetting;
-};
-
-/**
- * bind click event for toggle button
- */
-var btn=$("#wrapper .toggle-mode-btn,#rightmenu-wrapper .toggle-mode-btn");
-function bindToggleButton() {
-    btn.on('click',(e) => {
-      const mode = toggleCustomDarkMode();
-      applyCustomDarkModeSettings(mode);
-    });
-}
-
-applyCustomDarkModeSettings();
-document.addEventListener("DOMContentLoaded", bindToggleButton);
-volantis.pjax.push(bindToggleButton);
-volantis.pjax.send(()=>{
-	btn.unbind('click');
-},'toggle-mode-btn-unbind');
-</script>
-
-
-
-
-
-
-
-
-<script>
-function listennSidebarTOC() {
-  const navItems = document.querySelectorAll(".toc li");
-  if (!navItems.length) return;
-  const sections = [...navItems].map((element) => {
-    const link = element.querySelector(".toc-link");
-    const target = document.getElementById(
-      decodeURI(link.getAttribute("href")).replace("#", "")
-    );
-    link.addEventListener("click", (event) => {
-      event.preventDefault();
-      window.scrollTo({
-		top: target.offsetTop + 100,
-		
-		behavior: "smooth"
-		
-	  });
-    });
-    return target;
-  });
-
-  function activateNavByIndex(target) {
-    if (target.classList.contains("active-current")) return;
-
-    document.querySelectorAll(".toc .active").forEach((element) => {
-      element.classList.remove("active", "active-current");
-    });
-    target.classList.add("active", "active-current");
-    let parent = target.parentNode;
-    while (!parent.matches(".toc")) {
-      if (parent.matches("li")) parent.classList.add("active");
-      parent = parent.parentNode;
-    }
-  }
-
-  function findIndex(entries) {
-    let index = 0;
-    let entry = entries[index];
-    if (entry.boundingClientRect.top > 0) {
-      index = sections.indexOf(entry.target);
-      return index === 0 ? 0 : index - 1;
-    }
-    for (; index < entries.length; index++) {
-      if (entries[index].boundingClientRect.top <= 0) {
-        entry = entries[index];
-      } else {
-        return sections.indexOf(entry.target);
-      }
-    }
-    return sections.indexOf(entry.target);
-  }
-
-  function createIntersectionObserver(marginTop) {
-    marginTop = Math.floor(marginTop + 10000);
-    let intersectionObserver = new IntersectionObserver(
-      (entries, observe) => {
-        let scrollHeight = document.documentElement.scrollHeight + 100;
-        if (scrollHeight > marginTop) {
-          observe.disconnect();
-          createIntersectionObserver(scrollHeight);
-          return;
-        }
-        let index = findIndex(entries);
-        activateNavByIndex(navItems[index]);
-      },
-      {
-        rootMargin: marginTop + "px 0px -100% 0px",
-        threshold: 0,
-      }
-    );
-    sections.forEach((element) => {
-      element && intersectionObserver.observe(element);
-    });
-  }
-  createIntersectionObserver(document.documentElement.scrollHeight);
-}
-
-document.addEventListener("DOMContentLoaded", listennSidebarTOC);
-document.addEventListener("pjax:success", listennSidebarTOC);
-</script>
-
-<!-- more -->
-
- 
-	   
-	    
-
-
-<script src="../../https:/cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
-
-
-<script>
-    var pjax;
-    document.addEventListener('DOMContentLoaded', function () {
-      pjax = new Pjax({
-        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
-        selectors: [
-          "title",
-          
-          "#pjax-container",
-          "#pjax-header-nav-list"
-        ],
-        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
-        timeout: 5000
-      });
-    });
-
-    document.addEventListener('pjax:send', function (e) {
-      //window.stop(); // 相当于点击了浏览器的停止按钮
-
-      try {
-        var currentUrl = window.location.pathname;
-        var targetUrl = e.triggerElement.href;
-        var banUrl = [""];
-        if (banUrl[0] != "") {
-          banUrl.forEach(item => {
-            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
-              window.location.href = targetUrl;
-            }
-          });
-        }
-      } catch (error) {}
-
-      window.subData = null; // 移除标题（用于一二级导航栏切换处）
-
-      volantis.$switcher.removeClass('active'); // 关闭移动端激活的搜索框
-      volantis.$header.removeClass('z_search-open'); // 关闭移动端激活的搜索框
-      volantis.$wrapper.removeClass('sub'); // 跳转页面时关闭二级导航
-
-      // 解绑事件 避免重复监听
-      volantis.$topBtn.unbind('click');
-      $('.menu a').unbind('click');
-      $(window).unbind('resize');
-      $(window).unbind('scroll');
-      $(document).unbind('scroll');
-      $(document).unbind('click');
-      $('body').unbind('click');
-	  // 使用 volantis.pjax.send 方法传入pjax:send回调函数 参见layout/_partial/scripts/global.ejs
-	  volantis.pjax.method.send.start();
-    });
-
-    document.addEventListener('pjax:complete', function () {
-      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
-      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
-      $('script[data-pjax], .pjax-reload script').each(function () {
-        $(this).parent().append($(this).remove());
-      });
-      try{
-		// 使用 volantis.pjax.push 方法传入重载函数 参见layout/_partial/scripts/global.ejs
-		volantis.pjax.method.complete.start();
-      } catch (e) {
-        console.log(e);
-      }
-    });
-
-    document.addEventListener('pjax:error', function (e) {
-	  // 使用 volantis.pjax.error 方法传入pjax:error回调函数 参见layout/_partial/scripts/global.ejs
-	  volantis.pjax.method.error.start();
-      window.location.href = e.triggerElement.href;
-    });
-</script>
- 
-	  
-
-    </div>
-
-<script src="//i2.wp.com/cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
 
 
   </body>
