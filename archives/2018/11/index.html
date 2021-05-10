@@ -114,6 +114,13 @@
                         MYSQL主从同步错误解决
                     </div>
                     
+                    <div class="excerpt">
+                        <p>首先，如果遇到主键冲突：<br><code>Last_SQL_Error: Error &#39;Duplicate entry &#39;1001-164761-0&#39; for key &#39;PRIMARY&#39;&#39; on query. Default database: &#39;bug&#39;. Query: &#39;insert into misdata (uid,mid,pid,state,mtime) values (164761,1001,0,-1,1262623560)&#39;</code> </p>
+<p><strong>A.可以先将冲突的记录删除，然后再进行一下方法：</strong></p>
+<p>进入主库锁表，</p>
+<p>FLUSH TABLES WITH READ LOCK;</p>
+                    </div>
+                    
                     <div class="time">
                         
                         
@@ -142,6 +149,11 @@
                 <div class="content">
                     <div class="title">
                         从Octopress转到Hexo
+                    </div>
+                    
+                    <div class="excerpt">
+                        <p>以前一直使用的Octopress来构建博客，部署在<a target="_blank" rel="noopener" href="http://pages.github.com/">github</a>上。最近发现，github访问起来太不稳定了，又慢，所以就准备换个地方来写。</p>
+<p>以前就关注过<a target="_blank" rel="noopener" href="http://pages.gitcafe.com/">GitCafe</a>和<a target="_blank" rel="noopener" href="http://hexo.io/">Hexo</a>，GitCafe是中国的，来提github对于天朝程序猿来说有先天优势。而使用Hexo来代替Octopress来说，则是因为想尝试一下，他是台湾人写的，算是支持一下华人了，另外他的主题我挺喜欢。</p>
                     </div>
                     
                     <div class="time">

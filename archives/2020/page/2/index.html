@@ -114,6 +114,11 @@
                         Tomcat安装CA证书（详细过程篇）
                     </div>
                     
+                    <div class="excerpt">
+                        <p><strong>1.创建一个本地证书：&nbsp;</strong><br><br>C:\j2sdk1.4.2_05\bin&gt;;keytool&nbsp;-genkey&nbsp;-alias&nbsp;tomcat&nbsp;-keyalg&nbsp;RSA&nbsp;-keystore&nbsp;keystore&nbsp;<br>输入keystore密码：&nbsp;&nbsp;12345678&nbsp;<br>您的名字与姓氏是什么？&nbsp;<br>&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;www.test.com&nbsp;<br>您的组织单位名称是什么？&nbsp;<br>&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;system&nbsp;<br>您的组织名称是什么？&nbsp;<br>&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;test&nbsp;<br>您所在的城市或区域名称是什么？&nbsp;<br>&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;beijing&nbsp;<br>您所在的州或省份名称是什么？&nbsp;<br>&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;beijing&nbsp;<br>该单位的两字母国家代码是什么&nbsp;<br>&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;cn&nbsp;<br>CN=liujx,&nbsp;OU=system,&nbsp;O=test,&nbsp;L=beijing,&nbsp;ST=beijing,&nbsp;C=cn&nbsp;正确吗？&nbsp;<br>&nbsp;&nbsp;[否]：&nbsp;&nbsp;y&nbsp;<br><br>输入&lt;tomcat&gt;;的主密码&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（如果和&nbsp;keystore&nbsp;密码相同，按回车）：&nbsp;</p>
+<p></p>
+                    </div>
+                    
                     <div class="time">
                         
                         
@@ -142,6 +147,11 @@
                 <div class="content">
                     <div class="title">
                         Groovy开始
+                    </div>
+                    
+                    <div class="excerpt">
+                        <p>之前看了《Java程序员修炼之道》，第三部分JVM上的多语言编程里面讲到JVM上面的一些脚本语言，有Groovy，Scala，Clojure，没有等。于是这两天学了一下Groovy，发现还真是方便，最明显的就是他的闭包Closure。</p>
+<p>平时在用Java编程的时候，写着写着总是有点烦，一个很简单的方法都要写一堆代码，其实具体逻辑就一行，想着用闭包多好，那么Groovy完全就可以用得上。</p>
                     </div>
                     
                     <div class="time">
@@ -174,6 +184,18 @@
                         Hibernate的load和get比较
                     </div>
                     
+                    <div class="excerpt">
+                        <div><strong>get和load的实现</strong></div>
+<div>
+<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;load event(产生) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;onLoad Event</div>
+<div>&nbsp; &nbsp; &nbsp;&nbsp;Hibernate&nbsp;--------------------&gt;LoadEventListener---------------&gt;event<strong>①</strong>------&gt;return event-----&gt;getResult()</div>
+<div>&nbsp; &nbsp;<strong>&nbsp;其中：①</strong>:------&gt;setResult(event.session(查找))</div>
+</div>
+<p><span style="background-color: #ffffff;"><strong>未使用二级缓存</strong> <strong></strong>&nbsp;</span> &nbsp;&nbsp;</p>
+<p>load 先从缓存（一级）中查找，如果没有查询结果，就到数据库中查找，不管查询结果如何，都返回XX_$$_javassist_0对象（代理类实例）。</p>
+<p></p>
+                    </div>
+                    
                     <div class="time">
                         
                         
@@ -202,6 +224,10 @@
                 <div class="content">
                     <div class="title">
                         JavaScript执行window.print()打印内容为空白
+                    </div>
+                    
+                    <div class="excerpt">
+                        
                     </div>
                     
                     <div class="time">
@@ -234,6 +260,10 @@
                         使用Github、Travis-CI和Coding.net自动部署博客［二］
                     </div>
                     
+                    <div class="excerpt">
+                        
+                    </div>
+                    
                     <div class="time">
                         
                         
@@ -262,6 +292,10 @@
                 <div class="content">
                     <div class="title">
                         寓食记
+                    </div>
+                    
+                    <div class="excerpt">
+                        
                     </div>
                     
                     <div class="time">
@@ -294,6 +328,10 @@
                         使用Github、Travis-CI和Coding.net自动部署博客［一］
                     </div>
                     
+                    <div class="excerpt">
+                        
+                    </div>
+                    
                     <div class="time">
                         
                         
@@ -322,6 +360,10 @@
                 <div class="content">
                     <div class="title">
                         i18next
+                    </div>
+                    
+                    <div class="excerpt">
+                        
                     </div>
                     
                     <div class="time">
@@ -354,6 +396,10 @@
                         LESS学习
                     </div>
                     
+                    <div class="excerpt">
+                        
+                    </div>
+                    
                     <div class="time">
                         
                         
@@ -382,6 +428,10 @@
                 <div class="content">
                     <div class="title">
                         JAVA中判断日期是上午还是下午
+                    </div>
+                    
+                    <div class="excerpt">
+                        
                     </div>
                     
                     <div class="time">
@@ -414,6 +464,10 @@
                         错误排查：非ROOT用户使用密钥进行ssh登录提示输入密码
                     </div>
                     
+                    <div class="excerpt">
+                        
+                    </div>
+                    
                     <div class="time">
                         
                         
@@ -442,6 +496,10 @@
                 <div class="content">
                     <div class="title">
                         Eclipse创建Maven的Web工程
+                    </div>
+                    
+                    <div class="excerpt">
+                        
                     </div>
                     
                     <div class="time">
@@ -474,6 +532,10 @@
                         Wicket使用Link加JS的Confirm
                     </div>
                     
+                    <div class="excerpt">
+                        
+                    </div>
+                    
                     <div class="time">
                         
                         
@@ -502,6 +564,10 @@
                 <div class="content">
                     <div class="title">
                         使用EditorConfig
+                    </div>
+                    
+                    <div class="excerpt">
+                        
                     </div>
                     
                     <div class="time">
@@ -534,6 +600,14 @@
                         随便说说应用的界面
                     </div>
                     
+                    <div class="excerpt">
+                        <p>整天拿着手机没事，当然就是安装应用来玩玩。随着应用安装多了，总能感觉到不同公司对于应用的设计理念的不同，下面就以我个人的角度，还随便说说这些感想。</p>
+<p>总的来说，我是比较喜欢网易的应用设计，而不是很喜欢腾讯的，甚至因为这一点，现在很少去用微信和手机QQ了，而新浪在我心目中就介于两者之间了。</p>
+<h1 id="因为Android的标准"><a href="#因为Android的标准" class="headerlink" title="因为Android的标准"></a>因为Android的标准</h1><p>我用的是魅族MX2，从一拿到手就从不后悔，不管外界对Smartbar的评价如何，我坚信这种做法是对的。我可以感受到魅族在设计的时候考虑的有多深。对于Smartbar的解释网上已经有很多文章了。</p>
+<p>网易的应用现在基本是按照Android的设计来，虽然在刚开始，网易新闻还是出现两排按键，但是现在不断地更新，已经体验到Smartbar真的Smart的地方了。</p>
+<h3 id="网易新闻"><a href="#网易新闻" class="headerlink" title="网易新闻"></a>网易新闻</h3><p><img src="http://githubimg.wxio.club/20130605_app_imgs/163_news.jpg" alt="网易新闻" title="网易新闻"></p>
+                    </div>
+                    
                     <div class="time">
                         
                         
@@ -562,6 +636,10 @@
                 <div class="content">
                     <div class="title">
                         需要一个好的计划
+                    </div>
+                    
+                    <div class="excerpt">
+                        
                     </div>
                     
                     <div class="time">
@@ -594,6 +672,11 @@
                         前端优化法则
                     </div>
                     
+                    <div class="excerpt">
+                        <p>前两天被人问到前端的优化有哪些，我支支吾吾也只能说出两三条，表示很惭愧。</p>
+<p>说到前端优化的必修课，那就是<a target="_blank" rel="noopener" href="https://developer.yahoo.com/performance/rules.html">Yahoo的前端优化性能规则</a>，里面都是别人的经验总结，有 <strong>35</strong> 条之多，这是先分类在文章最后，之后会个别阐述我针对最初的 <strong>14</strong> 条，借鉴别人的翻译成果和我自己的解读。</p>
+                    </div>
+                    
                     <div class="time">
                         
                         
@@ -624,6 +707,10 @@
                         第一次来北京
                     </div>
                     
+                    <div class="excerpt">
+                        
+                    </div>
+                    
                     <div class="time">
                         
                         
@@ -652,6 +739,10 @@
                 <div class="content">
                     <div class="title">
                         Rails学习笔记-11.2
+                    </div>
+                    
+                    <div class="excerpt">
+                        
                     </div>
                     
                     <div class="time">

@@ -114,6 +114,15 @@
                         设计模式学习笔记观察者模式
                     </div>
                     
+                    <div class="excerpt">
+                        <h3 id="1-模式定义"><a href="#1-模式定义" class="headerlink" title="1. 模式定义"></a>1. 模式定义</h3><p>观察者模式（Observer Pattern）也叫做发布订阅模式（Publish/subscribe），它使一个在项目中经常使用的模式。</p>
+<h3 id="2-模式各角色"><a href="#2-模式各角色" class="headerlink" title="2. 模式各角色"></a>2. 模式各角色</h3><p><strong>Subject被观察者</strong>：定义被观察者必须实现的职责，它必须能够动态地增加、取消观察者。它一般是抽象类或者是实现类，仅仅完成作为被观察者必须实现的职责：管理观察者并通知观察者。</p>
+<p><strong>Observer观察者</strong>：观察者接收到消息后，即进行update（更新方法）操作，对接收到的信息进行处理。</p>
+<p><strong>ConcreteSubject具体的被观察者</strong>：定义被观察者自己的业务逻辑，同时定义对哪些事件进行通知。</p>
+<p><strong>ConcreteObserver具体的观察者</strong>：每个观察在接收到消息后的处理反应是不同，各个观察者有自己的处理逻辑。</p>
+<h3 id="3-模式类图"><a href="#3-模式类图" class="headerlink" title="3. 模式类图"></a>3. 模式类图</h3><p><img src="http://githubimg.wxio.club/designpatterns/patterns_observer.png" alt="观察者模式类图"></p>
+                    </div>
+                    
                     <div class="time">
                         
                         

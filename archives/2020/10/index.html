@@ -114,6 +114,10 @@
                         Tomcat打开远程调试
                     </div>
                     
+                    <div class="excerpt">
+                        
+                    </div>
+                    
                     <div class="time">
                         
                         
@@ -142,6 +146,11 @@
                 <div class="content">
                     <div class="title">
                         Tomcat安装CA证书（详细过程篇）
+                    </div>
+                    
+                    <div class="excerpt">
+                        <p><strong>1.创建一个本地证书：&nbsp;</strong><br><br>C:\j2sdk1.4.2_05\bin&gt;;keytool&nbsp;-genkey&nbsp;-alias&nbsp;tomcat&nbsp;-keyalg&nbsp;RSA&nbsp;-keystore&nbsp;keystore&nbsp;<br>输入keystore密码：&nbsp;&nbsp;12345678&nbsp;<br>您的名字与姓氏是什么？&nbsp;<br>&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;www.test.com&nbsp;<br>您的组织单位名称是什么？&nbsp;<br>&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;system&nbsp;<br>您的组织名称是什么？&nbsp;<br>&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;test&nbsp;<br>您所在的城市或区域名称是什么？&nbsp;<br>&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;beijing&nbsp;<br>您所在的州或省份名称是什么？&nbsp;<br>&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;beijing&nbsp;<br>该单位的两字母国家代码是什么&nbsp;<br>&nbsp;&nbsp;[Unknown]：&nbsp;&nbsp;cn&nbsp;<br>CN=liujx,&nbsp;OU=system,&nbsp;O=test,&nbsp;L=beijing,&nbsp;ST=beijing,&nbsp;C=cn&nbsp;正确吗？&nbsp;<br>&nbsp;&nbsp;[否]：&nbsp;&nbsp;y&nbsp;<br><br>输入&lt;tomcat&gt;;的主密码&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（如果和&nbsp;keystore&nbsp;密码相同，按回车）：&nbsp;</p>
+<p></p>
                     </div>
                     
                     <div class="time">
@@ -174,6 +183,11 @@
                         Groovy开始
                     </div>
                     
+                    <div class="excerpt">
+                        <p>之前看了《Java程序员修炼之道》，第三部分JVM上的多语言编程里面讲到JVM上面的一些脚本语言，有Groovy，Scala，Clojure，没有等。于是这两天学了一下Groovy，发现还真是方便，最明显的就是他的闭包Closure。</p>
+<p>平时在用Java编程的时候，写着写着总是有点烦，一个很简单的方法都要写一堆代码，其实具体逻辑就一行，想着用闭包多好，那么Groovy完全就可以用得上。</p>
+                    </div>
+                    
                     <div class="time">
                         
                         
@@ -202,6 +216,18 @@
                 <div class="content">
                     <div class="title">
                         Hibernate的load和get比较
+                    </div>
+                    
+                    <div class="excerpt">
+                        <div><strong>get和load的实现</strong></div>
+<div>
+<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;load event(产生) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;onLoad Event</div>
+<div>&nbsp; &nbsp; &nbsp;&nbsp;Hibernate&nbsp;--------------------&gt;LoadEventListener---------------&gt;event<strong>①</strong>------&gt;return event-----&gt;getResult()</div>
+<div>&nbsp; &nbsp;<strong>&nbsp;其中：①</strong>:------&gt;setResult(event.session(查找))</div>
+</div>
+<p><span style="background-color: #ffffff;"><strong>未使用二级缓存</strong> <strong></strong>&nbsp;</span> &nbsp;&nbsp;</p>
+<p>load 先从缓存（一级）中查找，如果没有查询结果，就到数据库中查找，不管查询结果如何，都返回XX_$$_javassist_0对象（代理类实例）。</p>
+<p></p>
                     </div>
                     
                     <div class="time">
@@ -234,6 +260,10 @@
                         JavaScript执行window.print()打印内容为空白
                     </div>
                     
+                    <div class="excerpt">
+                        
+                    </div>
+                    
                     <div class="time">
                         
                         
@@ -264,6 +294,10 @@
                         使用Github、Travis-CI和Coding.net自动部署博客［二］
                     </div>
                     
+                    <div class="excerpt">
+                        
+                    </div>
+                    
                     <div class="time">
                         
                         
@@ -292,6 +326,10 @@
                 <div class="content">
                     <div class="title">
                         寓食记
+                    </div>
+                    
+                    <div class="excerpt">
+                        
                     </div>
                     
                     <div class="time">

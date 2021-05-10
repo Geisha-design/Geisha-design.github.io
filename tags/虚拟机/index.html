@@ -114,6 +114,19 @@
                         新手VMware网络配置
                     </div>
                     
+                    <div class="excerpt">
+                        <p>这个问题以前一直没专门去想过，只是网络不通了我才去折腾，实在不行就问别人，今天总算好好的去理解了一下。这篇文章能写出来，最需要感谢的是华叔。</p>
+<h3 id="首先，是对三种模式的理解："><a href="#首先，是对三种模式的理解：" class="headerlink" title="首先，是对三种模式的理解："></a><strong>首先，是对三种模式的理解：</strong></h3><h4 id="1-Bridged（桥接模式）"><a href="#1-Bridged（桥接模式）" class="headerlink" title="1.Bridged（桥接模式）:"></a><strong>1.Bridged（桥接模式）:</strong></h4><blockquote>
+<p>主机&lt;–&gt;主机所在网段&lt;–&gt;虚拟机</p>
+</blockquote>
+<blockquote>
+<p>比如：主机的IP为__192.168.40.230__，也就是__40网段__，那么虚拟机配__192.168.40.26__就可以和主机所在的网段通信，桥接的意思可以理解为主机的网卡直接插在虚拟机上。</p>
+</blockquote>
+<h4 id="2-Host-only"><a href="#2-Host-only" class="headerlink" title="2.Host-only:"></a><strong>2.Host-only:</strong></h4><blockquote>
+<p>主机和虚拟机之间建立自己的通信，需配置成网络在同一网段,两个虚拟机之间配置成Host-only也可以互相通信。</p>
+</blockquote>
+                    </div>
+                    
                     <div class="time">
                         
                         

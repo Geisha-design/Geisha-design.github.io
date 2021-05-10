@@ -114,6 +114,13 @@
                         MYSQL主从同步错误解决
                     </div>
                     
+                    <div class="excerpt">
+                        <p>首先，如果遇到主键冲突：<br><code>Last_SQL_Error: Error &#39;Duplicate entry &#39;1001-164761-0&#39; for key &#39;PRIMARY&#39;&#39; on query. Default database: &#39;bug&#39;. Query: &#39;insert into misdata (uid,mid,pid,state,mtime) values (164761,1001,0,-1,1262623560)&#39;</code> </p>
+<p><strong>A.可以先将冲突的记录删除，然后再进行一下方法：</strong></p>
+<p>进入主库锁表，</p>
+<p>FLUSH TABLES WITH READ LOCK;</p>
+                    </div>
+                    
                     <div class="time">
                         
                         

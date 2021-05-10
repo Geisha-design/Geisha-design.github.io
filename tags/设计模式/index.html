@@ -114,6 +114,15 @@
                         设计模式学习笔记观察者模式
                     </div>
                     
+                    <div class="excerpt">
+                        <h3 id="1-模式定义"><a href="#1-模式定义" class="headerlink" title="1. 模式定义"></a>1. 模式定义</h3><p>观察者模式（Observer Pattern）也叫做发布订阅模式（Publish/subscribe），它使一个在项目中经常使用的模式。</p>
+<h3 id="2-模式各角色"><a href="#2-模式各角色" class="headerlink" title="2. 模式各角色"></a>2. 模式各角色</h3><p><strong>Subject被观察者</strong>：定义被观察者必须实现的职责，它必须能够动态地增加、取消观察者。它一般是抽象类或者是实现类，仅仅完成作为被观察者必须实现的职责：管理观察者并通知观察者。</p>
+<p><strong>Observer观察者</strong>：观察者接收到消息后，即进行update（更新方法）操作，对接收到的信息进行处理。</p>
+<p><strong>ConcreteSubject具体的被观察者</strong>：定义被观察者自己的业务逻辑，同时定义对哪些事件进行通知。</p>
+<p><strong>ConcreteObserver具体的观察者</strong>：每个观察在接收到消息后的处理反应是不同，各个观察者有自己的处理逻辑。</p>
+<h3 id="3-模式类图"><a href="#3-模式类图" class="headerlink" title="3. 模式类图"></a>3. 模式类图</h3><p><img src="http://githubimg.wxio.club/designpatterns/patterns_observer.png" alt="观察者模式类图"></p>
+                    </div>
+                    
                     <div class="time">
                         
                         
@@ -142,6 +151,12 @@
                 <div class="content">
                     <div class="title">
                         设计模式学习笔记油漆工模式
+                    </div>
+                    
+                    <div class="excerpt">
+                        <h1 id="设计模式之Decorator-油漆工"><a href="#设计模式之Decorator-油漆工" class="headerlink" title="设计模式之Decorator(油漆工)"></a>设计模式之Decorator(油漆工)</h1><p>查看 <a target="_blank" rel="noopener" href="https://github.com/henryhuang/designpatterns/tree/master/src/cnhalo/twoa/designpatterns/structure/decorator">代码</a></p>
+<p>装饰模式:Decorator常被翻译成”装饰”,我觉得翻译成”油漆工”更形象点,油漆工(decorator)是用来刷油漆的,那么被刷油漆的对象我们称decoratee.这两种实体在Decorator模式中是必须的.</p>
+<h3 id="Decorator定义"><a href="#Decorator定义" class="headerlink" title="Decorator定义:"></a>Decorator定义:</h3><p>动态给一个对象添加一些额外的职责,就象在墙上刷油漆.使用Decorator模式相比用生成子类方式达到功能的扩充显得更为灵活.</p>
                     </div>
                     
                     <div class="time">
@@ -174,6 +189,12 @@
                         设计模式学习笔记单例模式
                     </div>
                     
+                    <div class="excerpt">
+                        <p>最近在看秦小波的__《设计模式之禅》__，虽然这东西只看是没有用的，但是在实际使用之前学习23种模式的概念，还是很重要！</p>
+<h3 id="单例模式类图（这是饿汉式的）"><a href="#单例模式类图（这是饿汉式的）" class="headerlink" title="单例模式类图（这是饿汉式的）"></a>单例模式类图（这是饿汉式的）</h3><p><img src="http://cnhaloimg.wxio.club/designpatterns/singleton_class.jpg" alt="单例模式类图"></p>
+<h3 id="单例模式通用代码（饿汉式）"><a href="#单例模式通用代码（饿汉式）" class="headerlink" title="单例模式通用代码（饿汉式）"></a>单例模式通用代码（饿汉式）</h3>
+                    </div>
+                    
                     <div class="time">
                         
                         
@@ -204,6 +225,12 @@
                         设计模式学习笔记工厂方法模式
                     </div>
                     
+                    <div class="excerpt">
+                        <p>首先，看一下比较实用的工厂模式的通用源码。</p>
+<h3 id="工厂方法模式通用类图"><a href="#工厂方法模式通用类图" class="headerlink" title="工厂方法模式通用类图"></a>工厂方法模式通用类图</h3><p><img src="http://cnhaloimg.wxio.club/designpatterns/factory_class.jpg" alt="工厂模式类图"></p>
+<h3 id="抽象产品类"><a href="#抽象产品类" class="headerlink" title="抽象产品类"></a>抽象产品类</h3>
+                    </div>
+                    
                     <div class="time">
                         
                         
@@ -232,6 +259,10 @@
                 <div class="content">
                     <div class="title">
                         设计模式Mediator
+                    </div>
+                    
+                    <div class="excerpt">
+                        <h3 id="Mediator中介者模式定义"><a href="#Mediator中介者模式定义" class="headerlink" title="Mediator中介者模式定义"></a>Mediator中介者模式定义</h3><p>用一个中介对象来封装一系列关于对象交互行为。</p>
                     </div>
                     
                     <div class="time">
