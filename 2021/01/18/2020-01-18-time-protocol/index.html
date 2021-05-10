@@ -1,87 +1,136 @@
 <!DOCTYPE html>
+<html lang="en">
+    <!DOCTYPE html>
 <html>
 
-
-
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=426342234&auto=1&height=66"></iframe>
-
-
-
-
-<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
-
-
-
-<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script> 
-<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_click.js"></script>
-
-
-
-  <!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   
   <title>时间协议 - 齐雨争</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   
-  <meta name="keywords" content=小知识点,网络>
-  
-    <meta name="description" content="GEISHA">
+    <link rel="shortcut icon" href="../../../../favicon.png">
   
   
-    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.02">
-  
-  
-    <link rel="alternate" href="../../../../atom.xml " title="齐雨争" type="application/atom+xml">
+    <link rel='manifest' href='/manifest.json'>
   
 
   
-<link rel="stylesheet" href="../../../../css/style.css">
+<link rel="stylesheet" href="../../../../css/var.css">
 
+  
+<link rel="stylesheet" href="../../../../css/main.css">
+
+  
+<link rel="stylesheet" href="../../../../css/typography.css">
+
+  
+<link rel="stylesheet" href="../../../../css/code-highlighting.css">
+
+  
+<link rel="stylesheet" href="../../../../css/components.css">
+
+  
+<link rel="stylesheet" href="../../../../css/nav.css">
+
+  
+<link rel="stylesheet" href="../../../../css/paginator.css">
+
+  
+<link rel="stylesheet" href="../../../../css/footer.css">
+
+  
+<link rel="stylesheet" href="../../../../css/post-list.css">
+
+  
+<link rel="stylesheet" href="../../../../css/waline.css">
+
+  
+  
+  
+<link rel="stylesheet" href="../../../../css/post.css">
+
+  
+
+  
 <meta name="generator" content="Hexo 5.4.0"></head>
+    <script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
 
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script>
 
+    <body>
+        <nav id="theme-nav">
+    <div class="inner">
+        <a class="title" href="/">帅哥的博客</a>
+        <div class="nav-arrow"></div>
+        <div class="nav-items">
+            <a class="nav-item nav-item-home" href="/">Home</a>
+            
+            
+            <a class="nav-item" href="../../../../archives">文章</a>
+            
+            
+            
+            <a class="nav-item" href="../../../../friends">朋友们的友链</a>
+            
+            
+            
+            <a class="nav-item" href="../../../../examples">维护的大家</a>
+            
+            
+            
+            <a class="nav-item" href="../../../../https:/github.com/Geisha-design">开源项目</a>
+            
+            
+            
+            <a class="nav-item" href="../../../../about">关于我</a>
+            
+            
+            
+            <a class="nav-item nav-item-github nav-item-icon" href="../../../../https:/github.com/Geisha-design" target="_blank">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-codepen nav-item-icon" href="../../../../https:/codepen.io/mrwillcom" target="_blank">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-patreon nav-item-icon" href="../../../../https:/www.patreon.com/MrWillCom" target="_blank">&nbsp;</a>
+            
+            
+        </div>
+    </div>
+</nav>
+        <article class="post">
+    <div class="meta">
+        
+        <div class="date" id="date">
+            
+            <span>January</span>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <span>18,</span>
+            <span>2021</span>
+        </div>
+        
 
-  <body>
-    <div class="container">
-      <header class="header">
-  <div class="blog-title">
-    <a href="../../../../index.html" class="logo">齐雨争</a>
-    <div class="subtitle">穿梭时间的画面的钟，从反方向开始移动</div>
-  </div>
-  <nav class="navbar">
-    <ul class="menu">
-      
-        <li class="menu-item">
-          <a href="../../../../index.html" class="menu-item-link">Home</a>
-        </li>
-      
-        <li class="menu-item">
-          <a href="../../../../archives" class="menu-item-link">Archives</a>
-        </li>
-      
-        <li class="menu-item">
-          <a href="../../../../about" class="menu-item-link">About</a>
-        </li>
-      
-        <li class="menu-item">
-          <a href="../../../../life" class="menu-item-link">life</a>
-        </li>
-      
-    </ul>
-  </nav>
-</header>
-<article class="post">
-  <div class="post-title">
-    <h1 class="article-title">时间协议</h1>
-  </div>
-   <div class="post-meta">
-    <span class="post-time">2021-01-18</span>
-  </div>
-  <div class="post-content">
-    <h1 id="时间协议"><a href="#时间协议" class="headerlink" title="时间协议"></a>时间协议</h1><p>前两天在看Netty的hello world的时候，里面举了个例子—创建时间协议服务器。通过学习，才知道这个协议很老的，甚至已经被网络时间替代了。但是这个协议很简单，所以学习一下也无碍。</p>
+        <h2 class="title">时间协议</h2>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="content">
+        <h1 id="时间协议"><a href="#时间协议" class="headerlink" title="时间协议"></a>时间协议</h1><p>前两天在看Netty的hello world的时候，里面举了个例子—创建时间协议服务器。通过学习，才知道这个协议很老的，甚至已经被网络时间替代了。但是这个协议很简单，所以学习一下也无碍。</p>
 <h2 id="什么是时间协议"><a href="#什么是时间协议" class="headerlink" title="什么是时间协议"></a>什么是时间协议</h2><p>时间协议（英语：TIME protocol）是一个在RFC 868内定义的网络传输协议。它用作提供机器可读的日期时间信息。</p>
 <p>这是时间协议（Time Protocol）在<a target="_blank" rel="noopener" href="https://tools.ietf.org/html/rfc868">RFC868</a>上的定义（中文由我自己翻译的）：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line">                             Time Protocol</span><br><span class="line">                                时间协议</span><br><span class="line"></span><br><span class="line">This RFC specifies a standard for the ARPA Internet community.  Hosts on</span><br><span class="line">the ARPA Internet that choose to implement a Time Protocol are expected</span><br><span class="line">to adopt and implement this standard.</span><br><span class="line">这个RFC的标准给ARPA（美国国防部国防高等研究计划署）英特网定义的。在ARPA英特网上，</span><br><span class="line">要实现时间协议的主机，则希望采用并且实现这个标准。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">This protocol provides a site-independent, machine readable date and</span><br><span class="line">time.  The Time service sends back to the originating source the time in</span><br><span class="line">seconds since midnight on January first 1900.</span><br><span class="line">这个协议提供了一个独立的，机器可读的日期和时间。时间服务将回复给客户端一个从</span><br><span class="line">格林威治时间1900年1月1日开始计算，到请求时刻的总秒数。</span><br><span class="line"></span><br><span class="line">One motivation arises from the fact that not all systems have a</span><br><span class="line">date&#x2F;time clock, and all are subject to occasional human or machine</span><br><span class="line">error.  The use of time-servers makes it possible to quickly confirm or</span><br><span class="line">correct a system&#39;s idea of the time, by making a brief poll of several</span><br><span class="line">independent sites on the network.</span><br><span class="line">现实中，并不是所有的系统都有时间功能，而且偶尔会受到人为的或者机器错误的影响。</span><br><span class="line">那么时间服务器就可以快速地提供正确的时间来让其他系统确认，或者用来纠正时间，</span><br><span class="line">只需要在网络上简单地查询就可以。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">This protocol may be used either above the Transmission Control Protocol</span><br><span class="line">(TCP) or above the User Datagram Protocol (UDP).</span><br><span class="line">这个协议可以用在TCP和UDP协议上。</span><br><span class="line"></span><br><span class="line">When used via TCP the time service works as follows:</span><br><span class="line">当通过TCP协议使用时，时间服务器将执行以下步骤：</span><br><span class="line"></span><br><span class="line">   S: Listen on port 37 (45 octal).</span><br><span class="line">   服务端：监听37端口</span><br><span class="line"></span><br><span class="line">   U: Connect to port 37.</span><br><span class="line">   客户端：连接到37端口</span><br><span class="line"></span><br><span class="line">   S: Send the time as a 32 bit binary number.</span><br><span class="line">   服务端：发送32位二进制的时间</span><br><span class="line"></span><br><span class="line">   U: Receive the time.</span><br><span class="line">   客户端：接收到时间</span><br><span class="line"></span><br><span class="line">   U: Close the connection.</span><br><span class="line">   客户端：断开连接</span><br><span class="line"></span><br><span class="line">   S: Close the connection.</span><br><span class="line">   服务端：断开连接</span><br><span class="line"></span><br><span class="line">   The server listens for a connection on port 37.  When the connection</span><br><span class="line">   is established, the server returns a 32-bit time value and closes the</span><br><span class="line">   connection.  If the server is unable to determine the time at its</span><br><span class="line">   site, it should either refuse the connection or close it without</span><br><span class="line">   sending anything.</span><br><span class="line">   服务器监听端口37的连接。当连接建立，服务器将返回32位的时间值，然后关闭连接。</span><br><span class="line">   如果服务器无法确定时间，它需要拒绝连接，或者不发送任何信息，直接关闭连接。</span><br><span class="line"></span><br><span class="line">When used via UDP the time service works as follows:</span><br><span class="line">当通过UDP协议使用时，时间服务器将执行以下步骤：</span><br><span class="line"></span><br><span class="line">   S: Listen on port 37 (45 octal).</span><br><span class="line">   服务端：监听37端口</span><br><span class="line"></span><br><span class="line">   U: Send an empty datagram to port 37.</span><br><span class="line">   客户端：发送空数据报到37端口</span><br><span class="line"></span><br><span class="line">   S: Receive the empty datagram.</span><br><span class="line">   服务端：接受到空的数据报</span><br><span class="line"></span><br><span class="line">   S: Send a datagram containing the time as a 32 bit binary number.</span><br><span class="line">   服务端：发送32位二进制的时间的数据报</span><br><span class="line"></span><br><span class="line">   U: Receive the time datagram.</span><br><span class="line">   客户端：接收时间数据报</span><br><span class="line"></span><br><span class="line">   The server listens for a datagram on port 37.  When a datagram</span><br><span class="line">   arrives, the server returns a datagram containing the 32-bit time</span><br><span class="line">   value.  If the server is unable to determine the time at its site, it</span><br><span class="line">   should discard the arriving datagram and make no reply.</span><br><span class="line">   服务器用37端口监听数据报。当接收到数据报，服务器就返回包含32位二进制的时间的数据报。</span><br><span class="line">   如果服务器无法确定时间，则它应该丢弃接收到的数据报，不作回复。</span><br><span class="line"></span><br><span class="line">The Time</span><br><span class="line">时间</span><br><span class="line"></span><br><span class="line">The time is the number of seconds since 00:00 (midnight) 1 January 1900</span><br><span class="line">GMT, such that the time 1 is 12:00:01 am on 1 January 1900 GMT; this</span><br><span class="line">base will serve until the year 2036.</span><br><span class="line">这里的时间，时从格林威治时间1900年1月1日0点0分0秒开始计算，</span><br><span class="line">比如1就表示时格林威治时间1900年1月1日上午12点0分1秒；但是，这种计算方式到2036年将不再适用。</span><br><span class="line"></span><br><span class="line">For example:</span><br><span class="line">示例：</span><br><span class="line"></span><br><span class="line">   the time  2,208,988,800 corresponds to 00:00  1 Jan 1970 GMT,</span><br><span class="line"></span><br><span class="line">             2,398,291,200 corresponds to 00:00  1 Jan 1976 GMT,</span><br><span class="line"></span><br><span class="line">             2,524,521,600 corresponds to 00:00  1 Jan 1980 GMT,</span><br><span class="line"></span><br><span class="line">             2,629,584,000 corresponds to 00:00  1 May 1983 GMT,</span><br><span class="line"></span><br><span class="line">        and -1,297,728,000 corresponds to 00:00 17 Nov 1858 GMT.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -91,35 +140,76 @@
 
 <h3 id="Client"><a href="#Client" class="headerlink" title="Client"></a>Client</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TPClient</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> PORT = <span class="number">37</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> OFF_SET = <span class="number">2208988800L</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Long time = <span class="keyword">new</span> TPClient(<span class="string">&quot;localhost&quot;</span>).seekTime();</span><br><span class="line">        <span class="keyword">if</span> (time != <span class="keyword">null</span>) &#123;</span><br><span class="line">            System.out.println(<span class="keyword">new</span> Date((time - OFF_SET) * <span class="number">1000L</span>));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String host;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">TPClient</span><span class="params">(String host)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.host = host;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Long <span class="title">seekTime</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> (Socket socket = <span class="keyword">new</span> Socket(<span class="keyword">this</span>.host, PORT);</span><br><span class="line">            DataInputStream is = <span class="keyword">new</span> DataInputStream(socket.getInputStream())) &#123;</span><br><span class="line">            <span class="keyword">int</span> length = is.readInt();</span><br><span class="line">            <span class="keyword">byte</span>[] bytes = <span class="keyword">new</span> <span class="keyword">byte</span>[length];</span><br><span class="line">            is.readFully(bytes);</span><br><span class="line">            <span class="keyword">return</span> Long.valueOf(<span class="keyword">new</span> String(bytes));</span><br><span class="line">        &#125; <span class="keyword">catch</span> (UnknownHostException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-  </div>
-  <div class="post-footer">
-    
-      <ul class="post-tag-list" itemprop="keywords"><li class="post-tag-list-item"><a class="post-tag-list-link" href="../../../../tags/%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9/" rel="tag">小知识点</a></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="../../../../tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a></li></ul>
-    
-
-    <a href="#top" class="top">Back to Top</a>
-  </div>
-</article>
-<footer>
-  &copy; 2021
-  <span class="author">
-    齐雨争
-  </span>
-</footer>
     </div>
 
+    <div class="about">
+        <h1>About this Post</h1>
+        <p>This post is written by 齐雨争, licensed under <a
+                target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a>.</p>
+    </div>
 
+    
+        
+    
+</article>
+        <footer>
+    <div class="inner">
+        <div class="links">
+            
+            <div class="group">
+                <h4 class="title">Blog</h4>
+                
+                <a href="/" class="item" target="_blank">Blog</a>
+                
+                <a href="/archives" class="item" target="_blank">Archives</a>
+                
+                <a href="/friends" class="item" target="_blank">Friends</a>
+                
+                <a href="/projects" class="item" target="_blank">Projects</a>
+                
+                <a href="/resume" class="item" target="_blank">Resume</a>
+                
+                <a href="/about" class="item" target="_blank">About</a>
+                
+                <a href="/atom.xml" class="item" target="_blank">RSS</a>
+                
+            </div>
+            
+            <div class="group">
+                <h4 class="title">Projects</h4>
+                
+                <a href="https://github.com/transmister" class="item" target="_blank">Transmister</a>
+                
+                <a href="https://github.com/MrWillCom/css-and-js-windows-uwp-xaml-controls" class="item" target="_blank">CSS&amp;JS Windows UWP XAML Controls</a>
+                
+                <a href="https://github.com/MrWillCom/hexo-theme-cupertino" class="item" target="_blank">Theme Cupertino</a>
+                
+                <a href="https://github.com/MrWillCom/github-dark-mode" class="item" target="_blank">GitHub Dark Mode</a>
+                
+            </div>
+            
+            <div class="group">
+                <h4 class="title">Me</h4>
+                
+                <a href="https://github.com/MrWillCom" class="item" target="_blank">GitHub</a>
+                
+                <a href="https://codepen.io/mrwillcom" class="item" target="_blank">CodePen</a>
+                
+                <a href="https://www.patreon.com/MrWillCom" class="item" target="_blank">Patreon</a>
+                
+                <a href="mailto:mr.will.com@outlook.com" class="item" target="_blank">Email</a>
+                
+            </div>
+            
+        </div>
+        &copy; 2021 齐雨争<br />
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+</footer>
 
+        
+<script src="../../../../js/main.js"></script>
 
-
-
-
-
-  </body>
-
-
-
-
-
-
+        
+    </body>
 </html>

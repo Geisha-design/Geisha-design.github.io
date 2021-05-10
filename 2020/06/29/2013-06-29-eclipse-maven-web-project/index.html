@@ -1,87 +1,136 @@
 <!DOCTYPE html>
+<html lang="en">
+    <!DOCTYPE html>
 <html>
 
-
-
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=426342234&auto=1&height=66"></iframe>
-
-
-
-
-<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
-
-
-
-<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script> 
-<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_click.js"></script>
-
-
-
-  <!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   
   <title>Eclipse创建Maven的Web工程 - 齐雨争</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   
-  <meta name="keywords" content=Java,Maven,Eclipse>
-  
-    <meta name="description" content="GEISHA">
+    <link rel="shortcut icon" href="../../../../favicon.png">
   
   
-    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.02">
-  
-  
-    <link rel="alternate" href="../../../../atom.xml " title="齐雨争" type="application/atom+xml">
+    <link rel='manifest' href='/manifest.json'>
   
 
   
-<link rel="stylesheet" href="../../../../css/style.css">
+<link rel="stylesheet" href="../../../../css/var.css">
 
+  
+<link rel="stylesheet" href="../../../../css/main.css">
+
+  
+<link rel="stylesheet" href="../../../../css/typography.css">
+
+  
+<link rel="stylesheet" href="../../../../css/code-highlighting.css">
+
+  
+<link rel="stylesheet" href="../../../../css/components.css">
+
+  
+<link rel="stylesheet" href="../../../../css/nav.css">
+
+  
+<link rel="stylesheet" href="../../../../css/paginator.css">
+
+  
+<link rel="stylesheet" href="../../../../css/footer.css">
+
+  
+<link rel="stylesheet" href="../../../../css/post-list.css">
+
+  
+<link rel="stylesheet" href="../../../../css/waline.css">
+
+  
+  
+  
+<link rel="stylesheet" href="../../../../css/post.css">
+
+  
+
+  
 <meta name="generator" content="Hexo 5.4.0"></head>
+    <script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
 
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script>
 
+    <body>
+        <nav id="theme-nav">
+    <div class="inner">
+        <a class="title" href="/">帅哥的博客</a>
+        <div class="nav-arrow"></div>
+        <div class="nav-items">
+            <a class="nav-item nav-item-home" href="/">Home</a>
+            
+            
+            <a class="nav-item" href="../../../../archives">文章</a>
+            
+            
+            
+            <a class="nav-item" href="../../../../friends">朋友们的友链</a>
+            
+            
+            
+            <a class="nav-item" href="../../../../examples">维护的大家</a>
+            
+            
+            
+            <a class="nav-item" href="../../../../https:/github.com/Geisha-design">开源项目</a>
+            
+            
+            
+            <a class="nav-item" href="../../../../about">关于我</a>
+            
+            
+            
+            <a class="nav-item nav-item-github nav-item-icon" href="../../../../https:/github.com/Geisha-design" target="_blank">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-codepen nav-item-icon" href="../../../../https:/codepen.io/mrwillcom" target="_blank">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-patreon nav-item-icon" href="../../../../https:/www.patreon.com/MrWillCom" target="_blank">&nbsp;</a>
+            
+            
+        </div>
+    </div>
+</nav>
+        <article class="post">
+    <div class="meta">
+        
+        <div class="date" id="date">
+            
+            
+            
+            
+            
+            
+            <span>June</span>
+            
+            
+            
+            
+            
+            
+            
+            <span>29,</span>
+            <span>2020</span>
+        </div>
+        
 
-  <body>
-    <div class="container">
-      <header class="header">
-  <div class="blog-title">
-    <a href="../../../../index.html" class="logo">齐雨争</a>
-    <div class="subtitle">穿梭时间的画面的钟，从反方向开始移动</div>
-  </div>
-  <nav class="navbar">
-    <ul class="menu">
-      
-        <li class="menu-item">
-          <a href="../../../../index.html" class="menu-item-link">Home</a>
-        </li>
-      
-        <li class="menu-item">
-          <a href="../../../../archives" class="menu-item-link">Archives</a>
-        </li>
-      
-        <li class="menu-item">
-          <a href="../../../../about" class="menu-item-link">About</a>
-        </li>
-      
-        <li class="menu-item">
-          <a href="../../../../life" class="menu-item-link">life</a>
-        </li>
-      
-    </ul>
-  </nav>
-</header>
-<article class="post">
-  <div class="post-title">
-    <h1 class="article-title">Eclipse创建Maven的Web工程</h1>
-  </div>
-   <div class="post-meta">
-    <span class="post-time">2020-06-29</span>
-  </div>
-  <div class="post-content">
-    <p>折腾很长时间，终于弄出可以调试的了，遇到了很多问题，但是一步一步查资料，求助，终于弄出来了。</p>
+        <h2 class="title">Eclipse创建Maven的Web工程</h2>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="content">
+        <p>折腾很长时间，终于弄出可以调试的了，遇到了很多问题，但是一步一步查资料，求助，终于弄出来了。</p>
 <p>首先，因为Eclipse更新到了4.3Kepler，所以一开始我就下的它来使用，结果里面的maven插件包括了m2e-wtp，这实在让人头疼。按照步骤也算是整出来了一个，但是，在使用Server打开的时候，却总是找不到类，找了很多解决方法也没不好解决，说是Server读的class的位置和项目的class位置不一样类似的原因，于是我想是不是因为m2e-wtp创建的项目会有所特殊，需要特别配置什么的，找资料也找不到解决的方法，于是就想着不要这个插件了，刚好有Juno版本的包，就重新安装了。</p>
 <p>安装Juno后，是按照这个老外的方法来创建项目的，挺详细的：<br><a target="_blank" rel="noopener" href="http://fruzenshtein.com/setup-of-dynamic-web-project-using-maven/">http://fruzenshtein.com/setup-of-dynamic-web-project-using-maven/
 </a></p>
@@ -90,35 +139,76 @@
 <p>虽然解决了，但是这毕竟不是正确地开发需要的方式，这只是小程序可以搞搞，但是在大项目有很多很多测试的时候，要解决就必须按照Maven的结构来了，那我想m2e-wtp才真正有他的优势吧。还有在原来的pom里有servlet和jsp的依赖，是为了代码里能使用到他们，但是在部署的时候是不需要的，所以采用直接不放到依赖里显然不是真正解决的方法。</p>
 <p>待日后研究研究m2e-wtp。</p>
 
-  </div>
-  <div class="post-footer">
-    
-      <ul class="post-tag-list" itemprop="keywords"><li class="post-tag-list-item"><a class="post-tag-list-link" href="../../../../tags/Eclipse/" rel="tag">Eclipse</a></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="../../../../tags/Java/" rel="tag">Java</a></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="../../../../tags/Maven/" rel="tag">Maven</a></li></ul>
-    
-
-    <a href="#top" class="top">Back to Top</a>
-  </div>
-</article>
-<footer>
-  &copy; 2021
-  <span class="author">
-    齐雨争
-  </span>
-</footer>
     </div>
 
+    <div class="about">
+        <h1>About this Post</h1>
+        <p>This post is written by 齐雨争, licensed under <a
+                target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a>.</p>
+    </div>
 
+    
+        
+    
+</article>
+        <footer>
+    <div class="inner">
+        <div class="links">
+            
+            <div class="group">
+                <h4 class="title">Blog</h4>
+                
+                <a href="/" class="item" target="_blank">Blog</a>
+                
+                <a href="/archives" class="item" target="_blank">Archives</a>
+                
+                <a href="/friends" class="item" target="_blank">Friends</a>
+                
+                <a href="/projects" class="item" target="_blank">Projects</a>
+                
+                <a href="/resume" class="item" target="_blank">Resume</a>
+                
+                <a href="/about" class="item" target="_blank">About</a>
+                
+                <a href="/atom.xml" class="item" target="_blank">RSS</a>
+                
+            </div>
+            
+            <div class="group">
+                <h4 class="title">Projects</h4>
+                
+                <a href="https://github.com/transmister" class="item" target="_blank">Transmister</a>
+                
+                <a href="https://github.com/MrWillCom/css-and-js-windows-uwp-xaml-controls" class="item" target="_blank">CSS&amp;JS Windows UWP XAML Controls</a>
+                
+                <a href="https://github.com/MrWillCom/hexo-theme-cupertino" class="item" target="_blank">Theme Cupertino</a>
+                
+                <a href="https://github.com/MrWillCom/github-dark-mode" class="item" target="_blank">GitHub Dark Mode</a>
+                
+            </div>
+            
+            <div class="group">
+                <h4 class="title">Me</h4>
+                
+                <a href="https://github.com/MrWillCom" class="item" target="_blank">GitHub</a>
+                
+                <a href="https://codepen.io/mrwillcom" class="item" target="_blank">CodePen</a>
+                
+                <a href="https://www.patreon.com/MrWillCom" class="item" target="_blank">Patreon</a>
+                
+                <a href="mailto:mr.will.com@outlook.com" class="item" target="_blank">Email</a>
+                
+            </div>
+            
+        </div>
+        &copy; 2021 齐雨争<br />
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+</footer>
 
+        
+<script src="../../../../js/main.js"></script>
 
-
-
-
-
-  </body>
-
-
-
-
-
-
+        
+    </body>
 </html>

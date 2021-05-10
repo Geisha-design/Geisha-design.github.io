@@ -1,87 +1,136 @@
 <!DOCTYPE html>
+<html lang="en">
+    <!DOCTYPE html>
 <html>
 
-
-
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=426342234&auto=1&height=66"></iframe>
-
-
-
-
-<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
-
-
-
-<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script> 
-<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_click.js"></script>
-
-
-
-  <!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   
   <title>Java使用反射设置值 - 齐雨争</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   
-  <meta name="keywords" content=java,reflect,Field>
-  
-    <meta name="description" content="GEISHA">
+    <link rel="shortcut icon" href="../../../../favicon.png">
   
   
-    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.02">
-  
-  
-    <link rel="alternate" href="../../../../atom.xml " title="齐雨争" type="application/atom+xml">
+    <link rel='manifest' href='/manifest.json'>
   
 
   
-<link rel="stylesheet" href="../../../../css/style.css">
+<link rel="stylesheet" href="../../../../css/var.css">
 
+  
+<link rel="stylesheet" href="../../../../css/main.css">
+
+  
+<link rel="stylesheet" href="../../../../css/typography.css">
+
+  
+<link rel="stylesheet" href="../../../../css/code-highlighting.css">
+
+  
+<link rel="stylesheet" href="../../../../css/components.css">
+
+  
+<link rel="stylesheet" href="../../../../css/nav.css">
+
+  
+<link rel="stylesheet" href="../../../../css/paginator.css">
+
+  
+<link rel="stylesheet" href="../../../../css/footer.css">
+
+  
+<link rel="stylesheet" href="../../../../css/post-list.css">
+
+  
+<link rel="stylesheet" href="../../../../css/waline.css">
+
+  
+  
+  
+<link rel="stylesheet" href="../../../../css/post.css">
+
+  
+
+  
 <meta name="generator" content="Hexo 5.4.0"></head>
+    <script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
 
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script>
 
+    <body>
+        <nav id="theme-nav">
+    <div class="inner">
+        <a class="title" href="/">帅哥的博客</a>
+        <div class="nav-arrow"></div>
+        <div class="nav-items">
+            <a class="nav-item nav-item-home" href="/">Home</a>
+            
+            
+            <a class="nav-item" href="../../../../archives">文章</a>
+            
+            
+            
+            <a class="nav-item" href="../../../../friends">朋友们的友链</a>
+            
+            
+            
+            <a class="nav-item" href="../../../../examples">维护的大家</a>
+            
+            
+            
+            <a class="nav-item" href="../../../../https:/github.com/Geisha-design">开源项目</a>
+            
+            
+            
+            <a class="nav-item" href="../../../../about">关于我</a>
+            
+            
+            
+            <a class="nav-item nav-item-github nav-item-icon" href="../../../../https:/github.com/Geisha-design" target="_blank">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-codepen nav-item-icon" href="../../../../https:/codepen.io/mrwillcom" target="_blank">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-patreon nav-item-icon" href="../../../../https:/www.patreon.com/MrWillCom" target="_blank">&nbsp;</a>
+            
+            
+        </div>
+    </div>
+</nav>
+        <article class="post">
+    <div class="meta">
+        
+        <div class="date" id="date">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <span>November</span>
+            
+            
+            <span>25,</span>
+            <span>2020</span>
+        </div>
+        
 
-  <body>
-    <div class="container">
-      <header class="header">
-  <div class="blog-title">
-    <a href="../../../../index.html" class="logo">齐雨争</a>
-    <div class="subtitle">穿梭时间的画面的钟，从反方向开始移动</div>
-  </div>
-  <nav class="navbar">
-    <ul class="menu">
-      
-        <li class="menu-item">
-          <a href="../../../../index.html" class="menu-item-link">Home</a>
-        </li>
-      
-        <li class="menu-item">
-          <a href="../../../../archives" class="menu-item-link">Archives</a>
-        </li>
-      
-        <li class="menu-item">
-          <a href="../../../../about" class="menu-item-link">About</a>
-        </li>
-      
-        <li class="menu-item">
-          <a href="../../../../life" class="menu-item-link">life</a>
-        </li>
-      
-    </ul>
-  </nav>
-</header>
-<article class="post">
-  <div class="post-title">
-    <h1 class="article-title">Java使用反射设置值</h1>
-  </div>
-   <div class="post-meta">
-    <span class="post-time">2020-11-25</span>
-  </div>
-  <div class="post-content">
-    <p>今天敲代码，遇到个问题，需要实现一个方法：给一个类的成员变量设置值，数字类型的设置为0，布尔类型的设置为false，其他设置为null，变量不知道是什么类型的。</p>
+        <h2 class="title">Java使用反射设置值</h2>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="content">
+        <p>今天敲代码，遇到个问题，需要实现一个方法：给一个类的成员变量设置值，数字类型的设置为0，布尔类型的设置为false，其他设置为null，变量不知道是什么类型的。</p>
 <p>这里面有几个要点：</p>
 <ul>
 <li>给变量设值</li>
@@ -119,35 +168,76 @@ NullPointerException - 如果指定的 Class 参数为 null。
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * cnhalo.mrhuang.field.Main &lt;示例&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>	huangyijie</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span>	2013年11月25日 下午3:35:04</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * main: 实现的功能： &lt;br&gt;</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * 给一个类的成员变量设置值，数字类型的设置为0，布尔类型的设置为false，其他设置为null，变量不知道是什么类型的 &lt;br&gt;</span></span><br><span class="line"><span class="comment">	 *</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> args</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> SecurityException</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> NoSuchFieldException</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> IllegalArgumentException</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@throws</span> IllegalAccessException</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> SecurityException, NoSuchFieldException, IllegalArgumentException, IllegalAccessException </span>&#123;</span><br><span class="line">		</span><br><span class="line">		Config cfg = Config.getInstance();</span><br><span class="line">		<span class="comment">// 打印一下初始值</span></span><br><span class="line">		System.out.println(cfg);</span><br><span class="line">		</span><br><span class="line">		Field[] fields = cfg.getClass().getFields();</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(Field field : fields) &#123;</span><br><span class="line">			Class&lt;?&gt; clazz = field.getType();</span><br><span class="line">			<span class="comment">// 如果是基本类型</span></span><br><span class="line">			<span class="keyword">if</span>(clazz.isPrimitive())</span><br><span class="line">				<span class="comment">// 转换为包装类</span></span><br><span class="line">				clazz = getWrapperClass(clazz);</span><br><span class="line">			<span class="comment">// 判断为数字类型</span></span><br><span class="line">			<span class="keyword">if</span>(Number.class.isAssignableFrom(clazz))</span><br><span class="line">				field.set(cfg, <span class="number">0</span>);</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(Boolean.class.isAssignableFrom(clazz))</span><br><span class="line">				field.set(cfg, <span class="keyword">false</span>);</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				field.set(cfg, <span class="keyword">null</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 打印一下修改后的值</span></span><br><span class="line">		System.out.println(cfg);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * getWrapperClass: 将基本类型转换为包装类 &lt;br&gt;</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * 我暂时找不到java中相关的方法，如果有的话可以替换，现在先自己写一个 &lt;br&gt;</span></span><br><span class="line"><span class="comment">	 *</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> primitiveClass</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Class&lt;?&gt; getWrapperClass(Class&lt;?&gt; primitiveClass) &#123;</span><br><span class="line">		<span class="keyword">if</span>(!primitiveClass.isPrimitive())</span><br><span class="line">			<span class="keyword">return</span> primitiveClass;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(primitiveClass == Boolean.TYPE)</span><br><span class="line">			<span class="keyword">return</span> Boolean.class;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(primitiveClass == Character.TYPE)</span><br><span class="line">			<span class="keyword">return</span> Character.class;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(primitiveClass == Byte.TYPE)</span><br><span class="line">			<span class="keyword">return</span> Byte.class;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(primitiveClass == Short.TYPE)</span><br><span class="line">			<span class="keyword">return</span> Short.class;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(primitiveClass == Integer.TYPE)</span><br><span class="line">			<span class="keyword">return</span> Integer.class;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(primitiveClass == Long.TYPE)</span><br><span class="line">			<span class="keyword">return</span> Long.class;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(primitiveClass == Float.TYPE)</span><br><span class="line">			<span class="keyword">return</span> Float.class;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(primitiveClass == Double.TYPE)</span><br><span class="line">			<span class="keyword">return</span> Double.class;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">return</span> Void.class;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h3 id="5-相关扩展"><a href="#5-相关扩展" class="headerlink" title="5. 相关扩展"></a>5. 相关扩展</h3><h4 id="5-1-转-Java中判断字符串是否为数字的三种方法"><a href="#5-1-转-Java中判断字符串是否为数字的三种方法" class="headerlink" title="5.1 [转]Java中判断字符串是否为数字的三种方法"></a>5.1 [转]Java中判断字符串是否为数字的三种方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 用JAVA自带的函数</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isNumeric</span><span class="params">(String str)</span></span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = str.length();--i&gt;=<span class="number">0</span>;)&#123;   </span><br><span class="line">   <span class="keyword">if</span> (!Character.isDigit(str.charAt(i)))&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">   &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 用正则表达式</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isNumeric</span><span class="params">(String str)</span></span>&#123; </span><br><span class="line">    Pattern pattern = Pattern.compile(<span class="string">&quot;[0-9]*&quot;</span>); </span><br><span class="line">    <span class="keyword">return</span> pattern.matcher(str).matches();    </span><br><span class="line"> &#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">// 用ascii码</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isNumeric</span><span class="params">(String str)</span></span>&#123;</span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i=str.length();--i&gt;=<span class="number">0</span>;)&#123;</span><br><span class="line">      <span class="keyword">int</span> chr=str.charAt(i);</span><br><span class="line">      <span class="keyword">if</span>(chr&lt;<span class="number">48</span> || chr&gt;<span class="number">57</span>)</span><br><span class="line">         <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-  </div>
-  <div class="post-footer">
-    
-      <ul class="post-tag-list" itemprop="keywords"><li class="post-tag-list-item"><a class="post-tag-list-link" href="../../../../tags/Field/" rel="tag">Field</a></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="../../../../tags/java/" rel="tag">java</a></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="../../../../tags/reflect/" rel="tag">reflect</a></li></ul>
-    
-
-    <a href="#top" class="top">Back to Top</a>
-  </div>
-</article>
-<footer>
-  &copy; 2021
-  <span class="author">
-    齐雨争
-  </span>
-</footer>
     </div>
 
+    <div class="about">
+        <h1>About this Post</h1>
+        <p>This post is written by 齐雨争, licensed under <a
+                target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a>.</p>
+    </div>
 
+    
+        
+    
+</article>
+        <footer>
+    <div class="inner">
+        <div class="links">
+            
+            <div class="group">
+                <h4 class="title">Blog</h4>
+                
+                <a href="/" class="item" target="_blank">Blog</a>
+                
+                <a href="/archives" class="item" target="_blank">Archives</a>
+                
+                <a href="/friends" class="item" target="_blank">Friends</a>
+                
+                <a href="/projects" class="item" target="_blank">Projects</a>
+                
+                <a href="/resume" class="item" target="_blank">Resume</a>
+                
+                <a href="/about" class="item" target="_blank">About</a>
+                
+                <a href="/atom.xml" class="item" target="_blank">RSS</a>
+                
+            </div>
+            
+            <div class="group">
+                <h4 class="title">Projects</h4>
+                
+                <a href="https://github.com/transmister" class="item" target="_blank">Transmister</a>
+                
+                <a href="https://github.com/MrWillCom/css-and-js-windows-uwp-xaml-controls" class="item" target="_blank">CSS&amp;JS Windows UWP XAML Controls</a>
+                
+                <a href="https://github.com/MrWillCom/hexo-theme-cupertino" class="item" target="_blank">Theme Cupertino</a>
+                
+                <a href="https://github.com/MrWillCom/github-dark-mode" class="item" target="_blank">GitHub Dark Mode</a>
+                
+            </div>
+            
+            <div class="group">
+                <h4 class="title">Me</h4>
+                
+                <a href="https://github.com/MrWillCom" class="item" target="_blank">GitHub</a>
+                
+                <a href="https://codepen.io/mrwillcom" class="item" target="_blank">CodePen</a>
+                
+                <a href="https://www.patreon.com/MrWillCom" class="item" target="_blank">Patreon</a>
+                
+                <a href="mailto:mr.will.com@outlook.com" class="item" target="_blank">Email</a>
+                
+            </div>
+            
+        </div>
+        &copy; 2021 齐雨争<br />
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+</footer>
 
+        
+<script src="../../../../js/main.js"></script>
 
-
-
-
-
-  </body>
-
-
-
-
-
-
+        
+    </body>
 </html>

@@ -1,87 +1,136 @@
 <!DOCTYPE html>
+<html lang="en">
+    <!DOCTYPE html>
 <html>
 
-
-
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=426342234&auto=1&height=66"></iframe>
-
-
-
-
-<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
-
-
-
-<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script> 
-<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_click.js"></script>
-
-
-
-  <!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   
   <title>Java是编译型语言还是解释型语言 - 齐雨争</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   
-  <meta name="keywords" content=java,it>
-  
-    <meta name="description" content="GEISHA">
+    <link rel="shortcut icon" href="../../../../favicon.png">
   
   
-    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.02">
-  
-  
-    <link rel="alternate" href="../../../../atom.xml " title="齐雨争" type="application/atom+xml">
+    <link rel='manifest' href='/manifest.json'>
   
 
   
-<link rel="stylesheet" href="../../../../css/style.css">
+<link rel="stylesheet" href="../../../../css/var.css">
 
+  
+<link rel="stylesheet" href="../../../../css/main.css">
+
+  
+<link rel="stylesheet" href="../../../../css/typography.css">
+
+  
+<link rel="stylesheet" href="../../../../css/code-highlighting.css">
+
+  
+<link rel="stylesheet" href="../../../../css/components.css">
+
+  
+<link rel="stylesheet" href="../../../../css/nav.css">
+
+  
+<link rel="stylesheet" href="../../../../css/paginator.css">
+
+  
+<link rel="stylesheet" href="../../../../css/footer.css">
+
+  
+<link rel="stylesheet" href="../../../../css/post-list.css">
+
+  
+<link rel="stylesheet" href="../../../../css/waline.css">
+
+  
+  
+  
+<link rel="stylesheet" href="../../../../css/post.css">
+
+  
+
+  
 <meta name="generator" content="Hexo 5.4.0"></head>
+    <script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
 
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script>
 
+    <body>
+        <nav id="theme-nav">
+    <div class="inner">
+        <a class="title" href="/">帅哥的博客</a>
+        <div class="nav-arrow"></div>
+        <div class="nav-items">
+            <a class="nav-item nav-item-home" href="/">Home</a>
+            
+            
+            <a class="nav-item" href="../../../../archives">文章</a>
+            
+            
+            
+            <a class="nav-item" href="../../../../friends">朋友们的友链</a>
+            
+            
+            
+            <a class="nav-item" href="../../../../examples">维护的大家</a>
+            
+            
+            
+            <a class="nav-item" href="../../../../https:/github.com/Geisha-design">开源项目</a>
+            
+            
+            
+            <a class="nav-item" href="../../../../about">关于我</a>
+            
+            
+            
+            <a class="nav-item nav-item-github nav-item-icon" href="../../../../https:/github.com/Geisha-design" target="_blank">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-codepen nav-item-icon" href="../../../../https:/codepen.io/mrwillcom" target="_blank">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-patreon nav-item-icon" href="../../../../https:/www.patreon.com/MrWillCom" target="_blank">&nbsp;</a>
+            
+            
+        </div>
+    </div>
+</nav>
+        <article class="post">
+    <div class="meta">
+        
+        <div class="date" id="date">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <span>December</span>
+            
+            <span>4,</span>
+            <span>2020</span>
+        </div>
+        
 
-  <body>
-    <div class="container">
-      <header class="header">
-  <div class="blog-title">
-    <a href="../../../../index.html" class="logo">齐雨争</a>
-    <div class="subtitle">穿梭时间的画面的钟，从反方向开始移动</div>
-  </div>
-  <nav class="navbar">
-    <ul class="menu">
-      
-        <li class="menu-item">
-          <a href="../../../../index.html" class="menu-item-link">Home</a>
-        </li>
-      
-        <li class="menu-item">
-          <a href="../../../../archives" class="menu-item-link">Archives</a>
-        </li>
-      
-        <li class="menu-item">
-          <a href="../../../../about" class="menu-item-link">About</a>
-        </li>
-      
-        <li class="menu-item">
-          <a href="../../../../life" class="menu-item-link">life</a>
-        </li>
-      
-    </ul>
-  </nav>
-</header>
-<article class="post">
-  <div class="post-title">
-    <h1 class="article-title">Java是编译型语言还是解释型语言</h1>
-  </div>
-   <div class="post-meta">
-    <span class="post-time">2020-12-04</span>
-  </div>
-  <div class="post-content">
-    <p>大多数开发人员都知道，Java源文件需要编译成.class文件才能在JVM中运行。如果继续追问，许多开发人员还会告诉你说.class中的字节码首先会被JVM解释，但是在稍后即时（JIT）编译。然而很多人将字节码含糊地理解为“在某种虚构的或者简化的CPU上运行的机器码”。</p>
+        <h2 class="title">Java是编译型语言还是解释型语言</h2>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="content">
+        <p>大多数开发人员都知道，Java源文件需要编译成.class文件才能在JVM中运行。如果继续追问，许多开发人员还会告诉你说.class中的字节码首先会被JVM解释，但是在稍后即时（JIT）编译。然而很多人将字节码含糊地理解为“在某种虚构的或者简化的CPU上运行的机器码”。</p>
 <span id="more"></span>
 
 <p>实际上，JVM字节码更像是中途的驿站，是一种从人类可读的源码向机器码过度的中间状态。用编译原理术语讲，字节码实际上是一种中间语言（IL）形态，不是真正的机器码。也就是说，将Java源码变成变成字节码的过程不是C或C++程序员所理解的那种编译。Java所谓的编译器javac也不同于gcc，实际上它只是一种针对java源码生成类文件的工具。Java体系中真正的编译器是JIT:</p>
@@ -106,35 +155,76 @@
 <li>JavaScript可以被V8引擎编译为机器码然后执行，如果在node.js下，这个编译结果被缓存起来了，你说这跟编译好再执行的C有什么区别？- </li>
 </ul>
 
-  </div>
-  <div class="post-footer">
-    
-      <ul class="post-tag-list" itemprop="keywords"><li class="post-tag-list-item"><a class="post-tag-list-link" href="../../../../tags/it/" rel="tag">it</a></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="../../../../tags/java/" rel="tag">java</a></li></ul>
-    
-
-    <a href="#top" class="top">Back to Top</a>
-  </div>
-</article>
-<footer>
-  &copy; 2021
-  <span class="author">
-    齐雨争
-  </span>
-</footer>
     </div>
 
+    <div class="about">
+        <h1>About this Post</h1>
+        <p>This post is written by 齐雨争, licensed under <a
+                target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a>.</p>
+    </div>
 
+    
+        
+    
+</article>
+        <footer>
+    <div class="inner">
+        <div class="links">
+            
+            <div class="group">
+                <h4 class="title">Blog</h4>
+                
+                <a href="/" class="item" target="_blank">Blog</a>
+                
+                <a href="/archives" class="item" target="_blank">Archives</a>
+                
+                <a href="/friends" class="item" target="_blank">Friends</a>
+                
+                <a href="/projects" class="item" target="_blank">Projects</a>
+                
+                <a href="/resume" class="item" target="_blank">Resume</a>
+                
+                <a href="/about" class="item" target="_blank">About</a>
+                
+                <a href="/atom.xml" class="item" target="_blank">RSS</a>
+                
+            </div>
+            
+            <div class="group">
+                <h4 class="title">Projects</h4>
+                
+                <a href="https://github.com/transmister" class="item" target="_blank">Transmister</a>
+                
+                <a href="https://github.com/MrWillCom/css-and-js-windows-uwp-xaml-controls" class="item" target="_blank">CSS&amp;JS Windows UWP XAML Controls</a>
+                
+                <a href="https://github.com/MrWillCom/hexo-theme-cupertino" class="item" target="_blank">Theme Cupertino</a>
+                
+                <a href="https://github.com/MrWillCom/github-dark-mode" class="item" target="_blank">GitHub Dark Mode</a>
+                
+            </div>
+            
+            <div class="group">
+                <h4 class="title">Me</h4>
+                
+                <a href="https://github.com/MrWillCom" class="item" target="_blank">GitHub</a>
+                
+                <a href="https://codepen.io/mrwillcom" class="item" target="_blank">CodePen</a>
+                
+                <a href="https://www.patreon.com/MrWillCom" class="item" target="_blank">Patreon</a>
+                
+                <a href="mailto:mr.will.com@outlook.com" class="item" target="_blank">Email</a>
+                
+            </div>
+            
+        </div>
+        &copy; 2021 齐雨争<br />
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+</footer>
 
+        
+<script src="../../../../js/main.js"></script>
 
-
-
-
-
-  </body>
-
-
-
-
-
-
+        
+    </body>
 </html>
