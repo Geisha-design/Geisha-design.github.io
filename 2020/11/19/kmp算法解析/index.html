@@ -1,103 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-
-
-
-
-    <meta name="keywords" content="数据结构,"/>
-
-
-
-    <meta name="description" content="有些算法，适合从它产生的动机，如何设计与解决问题这样正向地去介绍。但KMP算法真的不适合这样去学。最好的办法是先搞清楚它所用的数据结构是什么，再搞清楚怎么用，最后为什么的问题就会有恍然大悟的感觉。我试着从这个思路再介绍一下。大家只需要记住一点，PMT是什么东西。然后自己临时推这个算法也是能推出..."/>
-
-
-<meta name="Robots" content="all">
-
-
-    <title>齐雨争 | kmp算法解析&lt;kmp算法解析&gt;</title>
-
-
-<link rel="icon" href="/images/favicon.ico">
-
-<link rel="stylesheet" href="../../../../css/font-awesome.min.css">
-
-
-<link rel="stylesheet" href="../../../../css/atom-one-dark.css">
-
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="java leetcode mysql hexo">
+    <meta name="description" content="雨争齐齐齐">
+    <meta name="author" content="齐雨争">
+    
+    <title>
+        
+            kmp算法解析&lt;kmp算法解析&gt; |
+        
+        YUZHENG QIQIQI
+    </title>
+    
 <link rel="stylesheet" href="../../../../css/style.css">
 
+    <link rel="shortcut icon" href="../../../../images/logo.svg">
+    
+<link rel="stylesheet" href="css/font-awesome.min.css">
 
-<script src="../../../../js/highlight.min.js"></script>
-
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":false,"background_img":"/images/backiee-112669-landscape.jpg","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
 <meta name="generator" content="Hexo 5.4.0"></head>
+
+
 <body>
-    <div class="main-container">
-        <header class="header">
-    <div class="global-width">
-        <nav class="nav-box">
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
             
-                <a class="nav-item" href="/"
+            <a class="logo-title" href="/">
+                YUZHENG QIQIQI
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="../../../../index.html"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="../../../../archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="../../../../about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
                 
-                >Home</a>
-            
-                <a class="nav-item" href="/resume"
-                
-                >Resume</a>
-            
-                <a class="nav-item" href="/mood"
-                
-                   target="_blank"
-                
-                >Mood</a>
-            
-                <a class="nav-item" href="/amusement/tetris"
-                
-                   target="_blank"
-                
-                >Amusement</a>
-            
-                <a class="nav-item" href="/about"
-                
-                >About</a>
-            
-        </nav>
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="../../../../index.html">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="../../../../archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="../../../../about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
 </header>
 
-        <section class="content global-width">
-            <div class="main">
-                <article class="box post">
-    <div class="post-title align-center detail-title">kmp算法解析&lt;kmp算法解析&gt;</div>
-    <div class="post-meta align-center">
-        
-        <i class="fa fa-calendar"></i> <time>2020-11-19</time>
-        <span class="dotted">|</span>
-        <i class="fa fa-user"></i> 
-        
-            
-                <span class="dotted">|</span>
-                <i class="fa fa-folder-open-o"></i>
-                <a class="category-link" href="../../../../categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
 
                 
-                    <span class="dotted">|</span>
-                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
 
-            
-            
-                <i class="fa fa-tags"></i>
-                <a class="tag-none-link" href="../../../../tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a>
-            
+        <div class="article-title">
+            <span class="title-hover-animation">kmp算法解析&lt;kmp算法解析&gt;</span>
+        </div>
+
         
-    </div>
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="../../../../images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">齐雨争</span>
+                        
+                            <span class="author-label">Lv5</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2020-11-19 20:33:03
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="../../../../categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
 
-    <div class="post-content">
-        <p>有些算法，适合从它产生的动机，如何设计与解决问题这样正向地去介绍。但KMP算法真的不适合这样去学。最好的办法是先搞清楚它所用的数据结构是什么，再搞清楚怎么用，最后为什么的问题就会有恍然大悟的感觉。我试着从这个思路再介绍一下。大家只需要记住一点，PMT是什么东西。然后自己临时推这个算法也是能推出来的，完全不需要死记硬背。</p>
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>有些算法，适合从它产生的动机，如何设计与解决问题这样正向地去介绍。但KMP算法真的不适合这样去学。最好的办法是先搞清楚它所用的数据结构是什么，再搞清楚怎么用，最后为什么的问题就会有恍然大悟的感觉。我试着从这个思路再介绍一下。大家只需要记住一点，PMT是什么东西。然后自己临时推这个算法也是能推出来的，完全不需要死记硬背。</p>
 <p>KMP算法的核心，是一个被称为部分匹配表(Partial Match Table)的数组。我觉得理解KMP的最大障碍就是很多人在看了很多关于KMP的文章之后，仍然搞不懂PMT中的值代表了什么意思。这里我们抛开所有的枝枝蔓蔓，先来解释一下这个数据到底是什么。</p>
 <p>对于字符串“abababca”，它的PMT如下表所示：</p>
 <p><img src="https://pic1.zhimg.com/50/v2-e905ece7e7d8be90afc62fe9595a9b0f_hd.jpg?source=1940ef5c"><img src="https://pic1.zhimg.com/80/v2-e905ece7e7d8be90afc62fe9595a9b0f_1440w.jpg?source=1940ef5c"></p>
@@ -126,104 +217,172 @@
 <p>至此，KMP算法就全部介绍完了。<strong>粗体</strong></p>
 <p><em><strong>对于要考研的小伙伴来说，这章节在串string那一块算重点，可以结合王道考研笔记结合起来学习。</strong></em></p>
 
-    </div>
-</article>
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="../hexo%E4%B9%8BVolantis%E6%B7%BB%E5%8A%A0%E6%9A%97%E9%BB%91%E6%A8%A1%E5%BC%8F/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">hexo之Volantis添加暗黑模式</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="../../18/2013-11-18-vim-encoding-convert/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">VIM对于文件字符编码的转换</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
             </div>
-            <div class="aside">
-    
-        <div class="box widget">
-    <div class="introduction">
-        <p><img src="/images/avatar.jpg" alt="head-sculpture" /></p>
-        <p class="name">
-            博落回
-        </p>
-        <p class="slogan">流连矣 忘景幻云催 峦栈醺醺说旧梦 重山迟迟映霞辉 向晚共邀归 —— 忆江南</p>
+        
+
+        
     </div>
 </div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">齐雨争</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
     
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
         
-<div class="box widget">
-    <div class="title">Recent</div>
-    <ul class="item-box">
-        
-            
-                <li><a href="../../../../2021/05/04/%E5%B0%8F%E7%BA%A2%E4%B9%A6%E7%9A%84%E6%83%8A%E5%96%9C/">小红书的惊喜</a></li>
-            
-        
-            
-                <li><a href="../../../../2021/05/03/%E2%80%9C%E5%8D%97%E4%BA%AC%E5%8F%8B%E8%AE%B0-%E6%9D%8E%E5%AE%B6%E9%A6%A8%E2%80%9D/">南京友记-李家馨</a></li>
-            
-        
-            
-                <li><a href="../../../../2021/05/01/%E5%8D%97%E4%BA%AC%E4%B9%8B%E6%97%85-episode-1/">南京之旅-中山陵</a></li>
-            
-        
-            
-                <li><a href="../../../../2021/04/24/%E2%80%9C%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E2%80%9D/">“计算机文件系统”</a></li>
-            
-        
-            
-                <li><a href="../../../../2021/04/24/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%AC%AC%E4%BA%8C%E7%AB%A0%E6%80%BB%E7%BB%93/">线性代数第二章总结</a></li>
-            
-        
-            
-                <li><a href="../../../../2021/04/23/2020%E8%80%83%E7%A0%94%E8%AE%A1%E7%AE%97%E6%9C%BA%EF%BC%88408%EF%BC%89%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/">2020考研计算机（408）考试大纲</a></li>
-            
-        
-            
-                <li><a href="../../../../2021/04/22/%E2%80%9C%E5%B9%82%E7%BA%A7%E6%95%B0%E7%9A%84%E6%9C%AC%E8%B4%A8%E2%80%9D/">“幂级数的本质”</a></li>
-            
-        
-            
-                <li><a href="../../../../2021/04/21/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%AC%AC%E4%B8%80%E7%AB%A0%E8%8A%82%E6%80%BB%E7%BB%93/">线性代数第一章节总结</a></li>
-            
+
+        <!-- go comment -->
         
     </ul>
 </div>
 
-    
-        
-    <div class="box widget">
-        <div class="title">Categories</div>
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/hexo/">hexo</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/java/">java</a><span class="category-list-count">36</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/mysql/">mysql</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/ui/">ui</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E4%B8%89%E5%89%91%E5%AE%A2/">三剑客</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%94%9F%E6%B4%BB/">生活</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/">计算机常识</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BB%BC%E5%90%88/">计算机网络综合</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/">高等数学</a><span class="category-list-count">7</span></li></ul>
-    </div>
-
-    
-        
-  <div class="box widget">
-    <div class="title">Archives</div>
-    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2021/05/">2021-05</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2021/04/">2021-04</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2021/03/">2021-03</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2021/02/">2021-02</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2021/01/">2021-01</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/12/">2020-12</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/11/">2020-11</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/10/">2020-10</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/09/">2020-09</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/08/">2020-08</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/07/">2020-07</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/06/">2020-06</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/03/">2020-03</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2020/02/">2020-02</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2019/12/">2019-12</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2019/10/">2019-10</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2019/08/">2019-08</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2019/07/">2019-07</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2019/06/">2019-06</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2019/05/">2019-05</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2019/03/">2019-03</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2019/02/">2019-02</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2018/12/">2018-12</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2018/11/">2018-11</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2018/05/">2018-05</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2018/04/">2018-04</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2018/03/">2018-03</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2016/04/">2016-04</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2015/04/">2015-04</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../archives/2013/06/">2013-06</a><span class="archive-list-count">1</span></li></ul>
-  </div>
-
-    
-        
-    <div class="box widget">
-        <div class="title">Tags</div>
-        <div class="item-box cloud-label">
-            <a href="../../../../tags/CSS/" style="font-size: 11.11px;">CSS</a> <a href="../../../../tags/Eclipse/" style="font-size: 10px;">Eclipse</a> <a href="../../../../tags/Field/" style="font-size: 10px;">Field</a> <a href="../../../../tags/Groovy/" style="font-size: 10px;">Groovy</a> <a href="../../../../tags/HTML/" style="font-size: 11.11px;">HTML</a> <a href="../../../../tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="../../../../tags/IDE/" style="font-size: 11.11px;">IDE</a> <a href="../../../../tags/IT/" style="font-size: 17.78px;">IT</a> <a href="../../../../tags/JAVA/" style="font-size: 12.22px;">JAVA</a> <a href="../../../../tags/JVM/" style="font-size: 10px;">JVM</a> <a href="../../../../tags/Java/" style="font-size: 14.44px;">Java</a> <a href="../../../../tags/JavaScript/" style="font-size: 11.11px;">JavaScript</a> <a href="../../../../tags/MYSQL/" style="font-size: 10px;">MYSQL</a> <a href="../../../../tags/Maven/" style="font-size: 10px;">Maven</a> <a href="../../../../tags/NoSql/" style="font-size: 10px;">NoSql</a> <a href="../../../../tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="../../../../tags/Python/" style="font-size: 10px;">Python</a> <a href="../../../../tags/TOMCAT/" style="font-size: 10px;">TOMCAT</a> <a href="../../../../tags/UI/" style="font-size: 10px;">UI</a> <a href="../../../../tags/VMware/" style="font-size: 10px;">VMware</a> <a href="../../../../tags/Wicket/" style="font-size: 10px;">Wicket</a> <a href="../../../../tags/coding/" style="font-size: 10px;">coding</a> <a href="../../../../tags/coding-net/" style="font-size: 12.22px;">coding.net</a> <a href="../../../../tags/css/" style="font-size: 13.33px;">css</a> <a href="../../../../tags/date/" style="font-size: 10px;">date</a> <a href="../../../../tags/debug/" style="font-size: 10px;">debug</a> <a href="../../../../tags/decorator/" style="font-size: 10px;">decorator</a> <a href="../../../../tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="../../../../tags/editor/" style="font-size: 10px;">editor</a> <a href="../../../../tags/equals/" style="font-size: 10px;">equals</a> <a href="../../../../tags/express/" style="font-size: 10px;">express</a> <a href="../../../../tags/git/" style="font-size: 10px;">git</a> <a href="../../../../tags/github/" style="font-size: 12.22px;">github</a> <a href="../../../../tags/gogs/" style="font-size: 10px;">gogs</a> <a href="../../../../tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="../../../../tags/https/" style="font-size: 10px;">https</a> <a href="../../../../tags/i18n/" style="font-size: 10px;">i18n</a> <a href="../../../../tags/ini/" style="font-size: 10px;">ini</a> <a href="../../../../tags/it/" style="font-size: 15.56px;">it</a> <a href="../../../../tags/jar/" style="font-size: 10px;">jar</a> <a href="../../../../tags/java/" style="font-size: 20px;">java</a> <a href="../../../../tags/javascript/" style="font-size: 12.22px;">javascript</a> <a href="../../../../tags/jdk/" style="font-size: 10px;">jdk</a> <a href="../../../../tags/jvm/" style="font-size: 10px;">jvm</a> <a href="../../../../tags/less/" style="font-size: 10px;">less</a> <a href="../../../../tags/linux/" style="font-size: 11.11px;">linux</a> <a href="../../../../tags/mac/" style="font-size: 12.22px;">mac</a> <a href="../../../../tags/macvim/" style="font-size: 10px;">macvim</a> <a href="../../../../tags/markdown/" style="font-size: 10px;">markdown</a> <a href="../../../../tags/maven/" style="font-size: 11.11px;">maven</a> <a href="../../../../tags/mediator/" style="font-size: 10px;">mediator</a> <a href="../../../../tags/nginx/" style="font-size: 10px;">nginx</a> <a href="../../../../tags/object/" style="font-size: 10px;">object</a> <a href="../../../../tags/observer/" style="font-size: 10px;">observer</a> <a href="../../../../tags/qcloud/" style="font-size: 10px;">qcloud</a> <a href="../../../../tags/rails/" style="font-size: 10px;">rails</a> <a href="../../../../tags/reflect/" style="font-size: 10px;">reflect</a> <a href="../../../../tags/remote/" style="font-size: 10px;">remote</a> <a href="../../../../tags/ssh/" style="font-size: 10px;">ssh</a> <a href="../../../../tags/ssl/" style="font-size: 10px;">ssl</a> <a href="../../../../tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="../../../../tags/travis/" style="font-size: 12.22px;">travis</a> <a href="../../../../tags/vim/" style="font-size: 11.11px;">vim</a> <a href="../../../../tags/web/" style="font-size: 11.11px;">web</a> <a href="../../../../tags/webjars/" style="font-size: 11.11px;">webjars</a> <a href="../../../../tags/wicket/" style="font-size: 11.11px;">wicket</a> <a href="../../../../tags/%E4%B8%AD%E4%BB%8B%E8%80%85/" style="font-size: 10px;">中介者</a> <a href="../../../../tags/%E5%81%87%E6%9C%9F/" style="font-size: 10px;">假期</a> <a href="../../../../tags/%E5%88%86%E5%B8%83%E5%BC%8F/" style="font-size: 10px;">分布式</a> <a href="../../../../tags/%E5%89%8D%E7%AB%AF/" style="font-size: 11.11px;">前端</a> <a href="../../../../tags/%E5%91%A8%E6%9C%AB/" style="font-size: 11.11px;">周末</a> <a href="../../../../tags/%E5%9B%BE%E7%89%87/" style="font-size: 11.11px;">图片</a> <a href="../../../../tags/%E5%A5%BD%E6%96%87/" style="font-size: 10px;">好文</a> <a href="../../../../tags/%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9/" style="font-size: 10px;">小知识点</a> <a href="../../../../tags/%E5%B7%A5%E4%BD%9C/" style="font-size: 10px;">工作</a> <a href="../../../../tags/%E5%BC%80%E5%8F%91/" style="font-size: 10px;">开发</a> <a href="../../../../tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 10px;">微服务</a> <a href="../../../../tags/%E5%BF%83%E6%83%85/" style="font-size: 10px;">心情</a> <a href="../../../../tags/%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">技术</a> <a href="../../../../tags/%E6%95%99%E7%A8%8B/" style="font-size: 10px;">教程</a> <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10px;">数据库</a> <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E6%9C%BA%E6%9E%84/" style="font-size: 10px;">数据机构</a> <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="../../../../tags/%E6%96%87%E7%AB%A0/" style="font-size: 10px;">文章</a> <a href="../../../../tags/%E6%97%A0%E5%9B%BE/" style="font-size: 10px;">无图</a> <a href="../../../../tags/%E6%97%A5%E5%BF%97/" style="font-size: 18.89px;">日志</a> <a href="../../../../tags/%E6%97%A5%E8%AE%B0/" style="font-size: 10px;">日记</a> <a href="../../../../tags/%E6%9D%82%E4%BA%8B/" style="font-size: 16.67px;">杂事</a> <a href="../../../../tags/%E6%9D%82%E6%96%87/" style="font-size: 10px;">杂文</a> <a href="../../../../tags/%E6%9D%82%E8%B0%88/" style="font-size: 10px;">杂谈</a> <a href="../../../../tags/%E6%B2%B9%E6%BC%86%E5%B7%A5/" style="font-size: 10px;">油漆工</a> <a href="../../../../tags/%E7%94%9F%E6%B4%BB/" style="font-size: 11.11px;">生活</a> <a href="../../../../tags/%E7%94%B5%E5%BD%B1/" style="font-size: 10px;">电影</a> <a href="../../../../tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 10px;">线性代数</a> <a href="../../../../tags/%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">网络</a> <a href="../../../../tags/%E8%88%B6%E6%9D%A5%E5%93%81/" style="font-size: 10px;">舶来品</a> <a href="../../../../tags/%E8%89%BA%E6%9C%AF%E5%AE%B6/" style="font-size: 10px;">艺术家</a> <a href="../../../../tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="../../../../tags/%E8%A7%82%E5%AF%9F%E8%80%85/" style="font-size: 10px;">观察者</a> <a href="../../../../tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="font-size: 14.44px;">计算机</a> <a href="../../../../tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/" style="font-size: 10px;">计算机常识</a> <a href="../../../../tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 14.44px;">计算机网络</a> <a href="../../../../tags/%E8%AE%B0%E5%BD%95/" style="font-size: 10px;">记录</a> <a href="../../../../tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 14.44px;">设计模式</a> <a href="../../../../tags/%E8%AF%B4%E7%82%B9%E5%95%A5/" style="font-size: 10px;">说点啥</a> <a href="../../../../tags/%E8%BF%90%E5%8A%A8/" style="font-size: 10px;">运动</a> <a href="../../../../tags/%E9%A3%8E%E6%99%AF/" style="font-size: 10px;">风景</a> <a href="../../../../tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 14.44px;">高等数学</a>
         </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
     </div>
 
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="js/utils.js"></script>
+
+<script src="js/main.js"></script>
+
+<script src="js/header-shrink.js"></script>
+
+<script src="js/back2top.js"></script>
+
+<script src="js/dark-light-toggle.js"></script>
+
+
+
+
+
+
+
+
+<div class="post-scripts">
     
 </div>
-        </section>
-        <footer class="footer">
-    <div class="global-width footer-box">
-        <div class="copyright">
-            <span>Copyright &copy; 2019</span>
-            <span class="dotted">|</span>
-            <span>Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a></span>
-            <span class="dotted">|</span>
-            <span>Theme by <a href="javascript:">Loren</a></span>
-            <span class="dotted">|</span>
-            <span><a target="_blank" rel="noopener" href="http://www.beian.miit.gov.cn">浙ICP备18016660号-1</a></span>
-        </div>
-    </div>
-</footer>
-    </div>
 
-<script>
-    hljs.initHighlightingOnLoad();
-</script>
+
+
 </body>
 </html>
