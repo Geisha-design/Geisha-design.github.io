@@ -1,404 +1,1060 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!DOCTYPE html>
-<html>
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-  
-  <title>tag: Hexo - 齐雨争</title>
-  
-    <link rel="shortcut icon" href="../../favicon.png">
-  
-  
-    <link rel='manifest' href='/manifest.json'>
-  
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 
-  
-<link rel="stylesheet" href="../../css/var.css">
 
-  
-<link rel="stylesheet" href="../../css/main.css">
 
-  
-<link rel="stylesheet" href="../../css/typography.css">
 
-  
-<link rel="stylesheet" href="../../css/code-highlighting.css">
+    <meta name="keywords" content="java leetcode mysql hexo"/>
 
-  
-<link rel="stylesheet" href="../../css/components.css">
 
-  
-<link rel="stylesheet" href="../../css/nav.css">
 
-  
-<link rel="stylesheet" href="../../css/paginator.css">
+    <meta name="description" content="雨争齐齐齐"/>
 
-  
-<link rel="stylesheet" href="../../css/footer.css">
 
-  
-<link rel="stylesheet" href="../../css/post-list.css">
+<meta name="Robots" content="all">
 
-  
-<link rel="stylesheet" href="../../css/waline.css">
 
-  
-  
-  
-<link rel="stylesheet" href="../../css/post.css">
+    <title>齐雨争</title>
 
-  
 
-  
+<link rel="icon" href="/images/favicon.ico">
+
+<link rel="stylesheet" href="../../css/font-awesome.min.css">
+
+
+<link rel="stylesheet" href="../../css/atom-one-dark.css">
+
+
+<link rel="stylesheet" href="../../css/style.css">
+
+
+<script src="../../js/highlight.min.js"></script>
+
 <meta name="generator" content="Hexo 5.4.0"></head>
-    <script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
-
-<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script>
-
-    <body>
-        <nav id="theme-nav">
-    <div class="inner">
-        <a class="title" href="/">帅哥的博客</a>
-        <div class="nav-arrow"></div>
-        <div class="nav-items">
-            <a class="nav-item nav-item-home" href="/">Home</a>
+<body>
+    <div class="main-container">
+        <header class="header">
+    <div class="global-width">
+        <nav class="nav-box">
             
+                <a class="nav-item" href="/"
+                
+                >Home</a>
             
-            <a class="nav-item" href="../../archives">文章</a>
+                <a class="nav-item" href="/resume"
+                
+                >Resume</a>
             
+                <a class="nav-item" href="/mood"
+                
+                   target="_blank"
+                
+                >Mood</a>
             
+                <a class="nav-item" href="/amusement/tetris"
+                
+                   target="_blank"
+                
+                >Amusement</a>
             
-            <a class="nav-item" href="../../friends">朋友们的友链</a>
+                <a class="nav-item" href="/about"
+                
+                >About</a>
             
-            
-            
-            <a class="nav-item" href="../../examples">维护的大家</a>
-            
-            
-            
-            <a class="nav-item" href="../../https:/github.com/Geisha-design">开源项目</a>
-            
-            
-            
-            <a class="nav-item" href="../../about">关于我</a>
-            
-            
-            
-            <a class="nav-item nav-item-github nav-item-icon" href="../../https:/github.com/Geisha-design" target="_blank">&nbsp;</a>
-            
-            
-            
-            <a class="nav-item nav-item-codepen nav-item-icon" href="../../https:/codepen.io/mrwillcom" target="_blank">&nbsp;</a>
-            
-            
-            
-            <a class="nav-item nav-item-patreon nav-item-icon" href="../../https:/www.patreon.com/MrWillCom" target="_blank">&nbsp;</a>
-            
-            
-        </div>
+        </nav>
     </div>
-</nav>
-        <div class="container">
+</header>
+
+        <section class="content global-width">
+            <div class="main">
+                
+    
+        <article class="box post post-item">
+            <div class="post-title"><a href="../../2020/11/29/hexo%E4%B8%AD%E6%B7%BB%E5%8A%A0%E9%BC%A0%E6%A0%87%E5%8F%B3%E9%94%AE%E5%8A%9F%E8%83%BD/">hexo中添加鼠标右键功能</a></div>
+            <div class="post-meta">
+                
+                <i class="fa fa-calendar"></i> <time>2020-11-29</time>
+                <span class="dotted">|</span>
+                <i class="fa fa-user"></i> 
+            </div>
+
+            <div class="post-excerpt">
+                <a href="../../2020/11/29/hexo%E4%B8%AD%E6%B7%BB%E5%8A%A0%E9%BC%A0%E6%A0%87%E5%8F%B3%E9%94%AE%E5%8A%9F%E8%83%BD/">
+                    <p>
+                        
+                            hexo中添加鼠标右键功能
+为你的博客添加鼠标右键菜单。此样式功能是在网上看到的，于是就整到hexo中。同样，由于本人使用Volantis主题，所以对Volantis作了些配置。通用的方法会在后文写到。也可按照自己使用的主题自行配置。
+添加配置信息在主题配置文件volantis/_config.yml中添加配置信息：
+12345Right_Click:  enable: true  # true or false  是否开启右键  js: https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/js/GalMenu.js  audio: false  # true or false 是否开启点击音乐1234
+
+添加配置文件在blog\themes\volantis\layout_partial中创建名为Right_Click.ejs的文件，添加以下代码：
+12345678910111213141516171819202122232425262728293031323334&lt;% if(theme.Right_Click.enable) &#123; %&gt;   	&lt;div class=&quot;GalMenu GalDropDown&quot;&gt;	      &lt;div class=&quot;circle&quot; id=&quot;gal&quot;&gt;	        &lt;div class=&quot;ring&quot;&gt;	          &lt;a href=&quot;/&quot; class=&quot;menuItem&quot;&gt;首页&lt;/a&gt;	          &lt;a href=&quot;javascript:history.go(1);&quot; class=&quot;menuItem&quot;&gt;前进&lt;/a&gt;	          &lt;a href=&quot;javascript:$(&#x27;html,body&#x27;).animate(&#123;scrollTop:0&#125;,500);&quot; class=&quot;menuItem&quot;&gt;顶部&lt;/a&gt;	          &lt;a href=&quot;javascript:location.reload();&quot; class=&quot;menuItem&quot;&gt;刷新&lt;/a&gt;			  &lt;a href=&quot;/Message/&quot; class=&quot;menuItem&quot;&gt;留言&lt;/a&gt;	          &lt;a href=&quot;javascript:history.go(-1);&quot; class=&quot;menuItem&quot;&gt;后退&lt;/a&gt;			&lt;/div&gt;			&lt;% if(theme.Right_Click.audio) &#123;%&gt;				&lt;audio id=&quot;audio&quot; src=&quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/audio/niconiconi.mp3&quot;&gt;&lt;/audio&gt;	        &lt;% &#125; %&gt;		  &lt;/div&gt;	&lt;/div&gt;	&lt;script type=&quot;text/javascript&quot;&gt;	var items = document.querySelectorAll(&#x27;.menuItem&#x27;); 	for (var i = 0, l = items.length; i &lt; l; i++) &#123;        items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + &quot;%&quot;;        items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + &quot;%&quot;      &#125;	&lt;/script&gt;	&lt;script&gt;window.jQuery || document.write(&#x27;&lt;script src=&quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/js/jquery-2.1.1.min.js&quot;&gt;&lt;\/script&gt;&#x27;)&lt;/script&gt;		&lt;%- js(theme.Right_Click.js) %&gt;	&lt;script type=&quot;text/javascript&quot;&gt;    	$(document).ready(function() &#123;        $(&#x27;body&#x27;).GalMenu(&#123;          &#x27;menu&#x27;: &#x27;GalDropDown&#x27;        &#125;)      &#125;);	&lt;/script&gt;&lt;% &#125; %&gt;
+
+其中右键菜单内容可在此处修改。
+引入样式文件在blog\themes\volantis\layout_partial的head.ejs文件中引入样式文件
+12&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/css/GalMenu.css&quot;&gt;1
+
+右键菜单中的图片可在此处修改。
+引入到页面在blog\themes\volantis\layout的layout.ejs文件中的&lt;/body&gt;引入。（一定要在末尾引入)
+12&lt;%- partial(&#x27;_partial/Right_Click&#x27;) %&gt;1
+
+最后别忘了一键三连。
+Volantis3.0版本已经添加了右键功能，使用本文中的右键别忘了关闭原主题中的右键。
+其他主题引入样式文件12&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/css/GalMenu.css&quot;&gt;1
+
+引入到页面在&lt;/body&gt;上方添加以下代码：
+123456789101112131415161718192021222324252627282930&lt;div class=&quot;GalMenu GalDropDown&quot;&gt;      &lt;div class=&quot;circle&quot; id=&quot;gal&quot;&gt;        &lt;div class=&quot;ring&quot;&gt;          &lt;a href=&quot;/&quot; class=&quot;menuItem&quot;&gt;首页&lt;/a&gt;          &lt;a href=&quot;javascript:history.go(1);&quot; class=&quot;menuItem&quot;&gt;前进&lt;/a&gt;          &lt;a href=&quot;javascript:$(&#x27;html,body&#x27;).animate(&#123;scrollTop:0&#125;,500);&quot; class=&quot;menuItem&quot;&gt;顶部&lt;/a&gt;          &lt;a href=&quot;javascript:location.reload();&quot; class=&quot;menuItem&quot;&gt;刷新&lt;/a&gt;		  &lt;a href=&quot;/Message/&quot; class=&quot;menuItem&quot;&gt;留言&lt;/a&gt;          &lt;a href=&quot;javascript:history.go(-1);&quot; class=&quot;menuItem&quot;&gt;后退&lt;/a&gt;		&lt;/div&gt;			&lt;audio id=&quot;audio&quot; src=&quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/audio/niconiconi.mp3&quot;&gt;&lt;/audio&gt;	  &lt;/div&gt;&lt;/div&gt;&lt;script type=&quot;text/javascript&quot;&gt;var items = document.querySelectorAll(&#x27;.menuItem&#x27;); for (var i = 0, l = items.length; i &lt; l; i++) &#123;       items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + &quot;%&quot;;       items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + &quot;%&quot;     &#125;&lt;/script&gt;&lt;script&gt;window.jQuery || document.write(&#x27;&lt;script src=&quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/js/jquery-2.1.1.min.js&quot;&gt;&lt;\/script&gt;&#x27;)&lt;/script&gt;	&lt;script src=&quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/hexo/js/GalMenu.js&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;   	$(document).ready(function() &#123;       $(&#x27;body&#x27;).GalMenu(&#123;         &#x27;menu&#x27;: &#x27;GalDropDown&#x27;       &#125;)     &#125;);&lt;/script&gt;
+
+最后目前只作了些简单的配置，后期期望加入更多的功能。
+
+                        
+                    </p>
+                </a>
+            </div>
+
+            
+                <div class="post-footer">
+                    
+                        <i class="fa fa-folder-open-o"></i>
+                        <a class="category-link" href="../../categories/hexo/">hexo</a>
+
+                        
+                            <span class="dotted">|</span>
+                        
+
+                    
+                    
+                        <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="" rel="tag">hexo</a>
+                    
+                </div>
+            
+        </article>
     
 
-    <div class="post-list">
-        
-        <article class="post-list-item">
-            <a href="../../2019/06/30/2019-06-30-one-hexo-theme-aloha/">
+    
+        <article class="box post post-item">
+            <div class="post-title"><a href="../../2020/11/29/%E4%B8%BB%E9%A2%98%E5%AE%9E%E7%8E%B0%E5%85%A8%E5%B1%80%E6%92%AD%E6%94%BE%E8%83%8C%E6%99%AF%E9%9F%B3%E4%B9%90/">主题实现全局播放背景音乐</a></div>
+            <div class="post-meta">
                 
-                <div class="content">
-                    <div class="title">
-                        Aloha 一个Hexo主题
-                    </div>
+                <i class="fa fa-calendar"></i> <time>2020-11-29</time>
+                <span class="dotted">|</span>
+                <i class="fa fa-user"></i> 
+            </div>
+
+            <div class="post-excerpt">
+                <a href="../../2020/11/29/%E4%B8%BB%E9%A2%98%E5%AE%9E%E7%8E%B0%E5%85%A8%E5%B1%80%E6%92%AD%E6%94%BE%E8%83%8C%E6%99%AF%E9%9F%B3%E4%B9%90/">
+                    <p>
+                        
+                            Hexo + Next 主题实现全局播放背景音乐第一种方式：使用网易云音乐插件特点：
+
+简单快捷
+有版权保护的音乐无法播放（易造成歌单失效）
+
+我们可以将此插件添加到博客界面，或者博客文章之中（直接粘贴网易云插件代码即可）。
+
+如何获取网易云歌单外链音乐插件及注意事项
+
+在此我们举例将音乐插件添加到侧边栏。打开我们主题文件：themes\next\layout\_macro\sidebar.swig找到sidebar-inner，将网易云插件代码代码粘贴到此&lt;div&gt;标签后即可。
+演示：
+123456789101112131415161718192021&lt;aside class=&quot;sidebar&quot;&gt; &lt;div class=&quot;sidebar-inner&quot;&gt; //从下面开始复制，粘贴到这里  &lt;!--网易云插件--&gt;  &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=330 height=86       src=&quot;//music.163.com/outchain/player?type=2&amp;id=463352828&amp;auto=0&amp;height=66&quot;&gt;  &lt;/iframe&gt;
+
+在博客文件夹打开GitBash执行hexo clean、hexo g、hexo s，即可看到效果。
+效果图：
+
+第二种方式：使用Aplayer + MetingJS插件特点：
+
+可以播放大部分音乐。
+还可以添加其他音乐平台的歌单，如：QQ音乐...
+
+在此我们举例将音乐插件添加到侧边栏。
+点击绿色框线处就会打开播放列表
+
+
+有两种实现方式打开我们主题文件：themes\next\layout\_macro\sidebar.swig找到sidebar-inner，复制下面代码粘贴到此&lt;div&gt;标签后即可。
+简单方式
+经测试：此方式，有时会失效，留作研究。【不推荐】 【要求MetingJS版本：@2.0.1】
+
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889&lt;aside class=&quot;sidebar&quot;&gt;    &lt;div class=&quot;sidebar-inner&quot;&gt;   //从下面开始复制，粘贴到这里    &lt;!-- require APlayer --&gt;    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css&quot;&gt;    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js&quot;&gt;&lt;/script&gt;    &lt;!-- require MetingJS--&gt;    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js&quot;&gt;&lt;/script&gt;     &lt;!--网易云--&gt;       &lt;meting-js      server=&quot;netease&quot;      id=&quot;4916164702&quot;	  type=&quot;playlist&quot; 	  mini=&quot;false&quot;      fixed=&quot;false&quot;      list-folded=&quot;true&quot;      autoplay=&quot;false&quot;      volume=&quot;0.4&quot;      theme=&quot;#FADFA3&quot;      order=&quot;random&quot;	  loop=&quot;all&quot;      preload=&quot;auto&quot;      mutex=&quot;true&quot;&gt;    &lt;/meting-js&gt;
+
+属性
+
+
+
+选项
+默认值
+功能描述
+
+
+
+id
+必须值
+歌曲 id / 播放列表 id / 相册 id / 搜索关键字
+
+
+server
+必须值
+音乐平台: netease, tencent, kugou, xiami, baidu
+
+
+type
+必须值
+song, playlist, album, search, `artist
+
+
+auto
+options
+music link, support: netease, tencent, xiami
+
+
+fixed
+false
+开启固定模式
+
+
+mini
+false
+开启迷你模式
+
+
+autoplay
+false
+自动播放，移动端浏览器暂时不支持此功能
+
+
+theme
+#2980b9
+播放器风格色彩设置
+
+
+loop
+all
+列表循环模式：all, one,none
+
+
+order
+list
+列表播放模式： list, random
+
+
+preload
+auto
+音乐文件预载入模式，可选项： none, metadata, auto
+
+
+volume
+0.7
+播放器音量
+
+
+mutex
+true
+该选项开启时，如果同页面有其他 aplayer 播放，该播放器会暂停
+
+
+lrc-type
+0
+lyric type
+
+
+list-folded
+false
+歌词格式类型
+
+
+list-max-height
+340px
+播放列表的最大长度
+
+
+storage-name
+metingjs
+LocalStorage 中存储播放器设定的键名
+
+
+
+其他属性请参照：MetingJS
+
+添加QQ音乐歌单将meting-js换成下面即可。 auto后为歌单网址。
+123456789&lt;meting-js   auto=&quot;https://y.qq.com/n/yqq/playlist/1790504159.html#stat=y_new.playlist.pic_click&quot;&gt;&lt;/meting-js&gt;
+
+复杂方式在data-后添加属性及属性值即可实现相同功能
+
+【要求MetingJS版本：@1.2】
+
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485&lt;aside class=&quot;sidebar&quot;&gt;    &lt;div class=&quot;sidebar-inner&quot;&gt;   //从下面开始复制，粘贴到这里&lt;!-- require APlayer --&gt;    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css&quot;&gt;    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js&quot;&gt;&lt;/script&gt;    &lt;!-- require MetingJS--&gt;    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js&quot;&gt;&lt;/script&gt; 	&lt;!--网易云--&gt;       &lt;div class=&quot;aplayer&quot;       data-id=&quot;4916164702&quot;       data-server=&quot;netease&quot;       data-type=&quot;playlist&quot;       data-fixed=&quot;false&quot;       data-autoplay=&quot;false&quot;       data-list-folded=&quot;true&quot;      data-mutex=&quot;true&quot;      data-order=&quot;random&quot;       data-loop=&quot;all&quot;      data-volume=&quot;0.4&quot;       data-theme=&quot;#FADFA3&quot;       date-preload=&quot;auto&quot; &gt;     &lt;/div&gt;
+
+
+其他属性请参照：APlayer
+
+第三种方式：使用Aplayer添加本地音乐此方式有些麻烦和复杂，界面相关属性都需要自己设置和修改，不做具体阐述，参考以下链接
+
+
+feilong4659196：使用Aplayer + LeanCloud方式
+[Y`s BLOG](https://blog.yleao.com/2018/0902/hexo上的aplayer应用.html)：使用Aplayer + 纯代码方式（Aplay官方文档也有描述）
+
+
+使用 Pajx 实现背景音乐全局播放即实现页面跳转刷新后音乐不间断播放
+
+经测试，在博客文章中的网易云插件无法实现全局播放。（留作研究）
+
+
+打开themes\next\layout文件夹找到_layout.swig
+在&lt;\head&gt;标签前添加下面代码，并保存。
+
+1234567891011121314151617&lt;head&gt;   //粘贴到这里      &lt;!--pjax：防止跳转页面音乐暂停--&gt;  &lt;script src=&quot;https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js&quot;&gt;&lt;/script&gt; &lt;/head&gt; 
+
+
+在主题的配置文件中找到pajx，将它设置为true，并保存。
+
+123456789# Easily enable fast Ajax navigation on your website.# Dependencies: https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;theme-next-pjaxpjax: true
+
+在博客文件夹打开GitBash执行hexo clean、hexo g、hexo s，跳转页面时即可看到效果。
+参考文章 【鸣谢】
+
+Aplay官方文档(中文版)
+Pjax
+MetingJS
+Sourc0d
+hushhw
+feilong4659196
+[Y`s BLOG](https://blog.yleao.com/2018/0902/hexo上的aplayer应用.html)
+
+
+
+                        
+                    </p>
+                </a>
+            </div>
+
+            
+                <div class="post-footer">
                     
-                    <div class="excerpt">
+                        <i class="fa fa-folder-open-o"></i>
+                        <a class="category-link" href="../../categories/hexo/">hexo</a>
+
                         
-                    </div>
+                            <span class="dotted">|</span>
+                        
+
                     
-                    <div class="time">
-                        
-                        
-                        
-                        
-                        
-                        
-                        <span>June</span>
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        <span>&nbsp;30,&nbsp;</span>
-                        <span>2019</span>
-                    </div>
+                    
+                        <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="" rel="tag">hexo</a>
+                    
                 </div>
-            </a>
+            
         </article>
+    
+
+    
+        <article class="box post post-item">
+            <div class="post-title"><a href="../../2020/11/21/%E5%88%9D%E5%A7%8B%E6%90%AD%E5%BB%BA/">hexo初始搭建</a></div>
+            <div class="post-meta">
+                
+                <i class="fa fa-calendar"></i> <time>2020-11-21</time>
+                <span class="dotted">|</span>
+                <i class="fa fa-user"></i> 
+            </div>
+
+            <div class="post-excerpt">
+                <a href="../../2020/11/21/%E5%88%9D%E5%A7%8B%E6%90%AD%E5%BB%BA/">
+                    <p>
+                        
+                            hexo搭建博客以及next主题的各种特效合集
+Capricorn322 2020-02-20 21:45:13  487  收藏
+版权
+hexo搭建博客1、安装node和npm，这个自己百度一下node官网下载即可就不在这多说了，node下载后npm也会一起下载，下载完成后终端测试：
+1234567891011121314151617node -v npm -v 检测版本号
+
+2、全局安装hexo
+1npm install -g hexo-cli     # -g表示全局安装
+
+3、初始化项目
+1hexo init xxx  #文件名
+
+4、进入文件夹并且初始化
+123456789cd myblog npm install
+
+5、在本地运行创建的博客
+12345678910111213141516171819202122232425262728293031323334353637hexo g hexo s //也可以在package.json中配置&quot;local&quot; : &#x27;hexo g &amp; hexo s&#x27; //每次想要运行这两个语句的时候直接 npm run local
+
+这个时候你就能够在本地看到你搭建的博客
+hexo发布文章12345hexo new  xxxx  # xxx为文章名字可以是汉字 
+
+此时会出现一个提示
+
+进入posts文件夹下,打开文章，在里面进行编写
+1vim test5.md
+
+hexo添加标签和分类这里只拿标签页作举例子，其他页面都是一个道理
+1、在配置文件中找到menu，将你想现实的页面钱前方的#去掉
+
+2、这时候你刷新就可以看到主页面已经有了tags，但是，点击的时候会现实cannot get，这是因为你还没有创建对应的界面
+1hexo new page tags
+
+此时会给你一个提示信息
+3、进入tags文件夹后，打开index.md
+1vim index.md
+
+type写为tags ，保存，这时候再刷新就可以看到你的tags啦
+hexo添加多个tag
+hexo添加多个分类（categories）1、添加两个并行分类
+123456789categories: - [分类1] - [分类2]
+
+2、添加子分类
+123456789categories： - 父分类 - 子分类
+
+next主题1、将文章底部带#的tag变成图标
+实现效果图
+实现方法：找到next下的配置文件，把tag_icon设置为true
+
+2、在每一篇文章后加本文结束的标记
+在路径 \themes\next\layout\_macro 中新建 passage-end-tag.swig 文件,并添加以下内容：
+1234567891011121314151617&lt;div&gt;    &#123;% if not is_index %&#125;        &lt;div style=&quot;text-align:center;color: #ccc;font-size:14px; margin-top:10px&quot;&gt;-------------本文结束---感谢您的阅读-------------&lt;/div&gt;    &#123;% endif %&#125;&lt;/div&gt;
+
+接着打开\themes\next\layout\_macro\post.swig文件,将下方代码复制到红框位置
+
+1234567891011121314151617&lt;div&gt;  &#123;% if not is_index %&#125;    &#123;% include &#x27;passage-end-tag.swig&#x27; %&#125;  &#123;% endif %&#125;&lt;/div&gt;
+
+然后打开主题配置文件（_config.yml），在末尾添加
+123456789# 文章末尾添加“本文结束”标记passage_end_tag:  enabled: true
+
+
+                        
+                    </p>
+                </a>
+            </div>
+
+            
+                <div class="post-footer">
+                    
+                        <i class="fa fa-folder-open-o"></i>
+                        <a class="category-link" href="../../categories/hexo/">hexo</a>
+
+                        
+                            <span class="dotted">|</span>
+                        
+
+                    
+                    
+                        <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="" rel="tag">hexo</a>
+                    
+                </div>
+            
+        </article>
+    
+
+    
+        <article class="box post post-item">
+            <div class="post-title"><a href="../../2020/11/21/hexo%E4%B9%8B%E5%88%86%E7%B1%BB%E9%9B%B7%E8%BE%BE/">hexo博客优化之实用功能添加系列分类雷达</a></div>
+            <div class="post-meta">
+                
+                <i class="fa fa-calendar"></i> <time>2020-11-21</time>
+                <span class="dotted">|</span>
+                <i class="fa fa-user"></i> 
+            </div>
+
+            <div class="post-excerpt">
+                <a href="../../2020/11/21/hexo%E4%B9%8B%E5%88%86%E7%B1%BB%E9%9B%B7%E8%BE%BE/">
+                    <p>
+                        
+                            Hexo 博客优化之实用功能添加系列（持续更新）
+TRHX • 鲍勃 2019-12-08 00:12:07  32540  收藏 31
+分类专栏： 【 Hexo 博客搭建 】 文章标签： 博客优化 博客实用功能添加 Hexo博客
+版权
+
+本文将讲述一些 Hexo 博客实用功能的添加，本文以作者 luuman 的 spfk 主题和作者 xaoxuu 的 Material X 主题为例，实际效果欢迎访问我的博客进行查看，本文章会不定时进行更新。文章涉及有关参考资料、教程、链接如有侵权请联系我删除！
+请注意：不同主题可能方法有些不同，相同主题不同版本，配置方法也有所差异！阅读主题文档非常重要！
+博客功能添加前提条件：有一定的前端基础，了解 HTML、CSS、JS，了解 CSS 预处理语言 Sass、Less、Stylus，搞懂 hexo 的目录结构。
+博客功能添加通用步骤：选定主题，认真阅读主题文档，大多数主题文档都有非常详细的配置设置，分析主题目录结构，了解每个文件是对应网页哪个部分的，认真阅读相关教程，教程本质上只为你提供核心代码和思路，具体代码要添加到哪个地方，需要你自己搞懂主题结构，添加到需要的、合适的位置！
+欢迎关注我的专栏：《Github/Coding Pages + Hexo》，从前期搭建到后期美化一条龙，帮你解决 Hexo 常见问题！
+推荐阅读：《Hexo 博客优化之博客美化系列（持续更新）》
+Hexo 交流群：924812033，有问题可以一起交流解决。
+
+文章目录
+【01】添加评论系统
+【02】添加字数统计和阅读时长
+【03】添加网站运行时间
+【04】添加百度统计
+【05】添加RSS订阅
+【06】添加 Fork me on GitHub 效果
+【07】更改本地预览端口号
+【08】启用 HTTPS
+【09】博客备份
+【10】自定义一个不使用主题模板渲染的独立页面
+未完待续……
+
+
+【01】添加评论系统主流的评论系统有很多，比如：网易云跟帖、多说、友言、畅言、来必力（LiveRe）、Disqus、Valine、Gitalk 等等，目前网易云跟帖、多说、友言都已经关闭了，还有些可能国内还访问不了，比较麻烦，百度了一下，最后还是选择了来必力评论系统
+进入来必力官网，注册一个账号：
+注册完毕之后，登录，进入安装页面，选择 City 免费版安装，安装之后你会得到一段代码
+
+
+我们打开主题文件下的 _config.yml 文件，添加如下代码：
+在 \themes\hexo-theme-spfk\layout_partial\comments 文件夹下新建一个 livere.ejs 的文件，在里面填写来必力提供的代码：
+12345678910111213141516171819&lt;!-- 来必力City版安装代码 --&gt;&lt;div id=&quot;lv-container&quot; data-id=&quot;city&quot; data-uid=&quot;这里是你的uid&quot;&gt;	&lt;script type=&quot;text/javascript&quot;&gt;		(function(d, s) &#123;        var j, e = d.getElementsByTagName(s)[0];            if (typeof LivereTower === &#x27;function&#x27;) &#123; return; &#125;            j = d.createElement(s);        j.src = &#x27;https://cdn-city.livere.com/js/embed.dist.js&#x27;;        j.async = true;            e.parentNode.insertBefore(j, e);        &#125;)(document, &#x27;script&#x27;);	&lt;/script&gt;    &lt;noscript&gt;为正常使用来必力评论功能请激活JavaScript&lt;/noscript&gt;&lt;/div&gt;&lt;!-- City版安装代码已完成 --&gt;123456789101112131415161718
+
+打开 \themes\hexo-theme-spfk\layout_partial\article.ejs 文件，在适当位置添加如下红框中的代码：
+完成以上操作之后，我们就可以使用来必力评论系统了另外推荐使用 Valine 评论系统，和 gitalk 评论系统
+
+【02】添加字数统计和阅读时长先在博客目录下执行以下命令安装 hexo-wordcount 插件：
+12$ npm i --save hexo-wordcount1
+
+注意：在 Material X 主题中，字数统计和阅读时长的功能我已提交 PR，在最新版本中，只需要安装插件后，在主题 config.yml 配置文件里，将 word_count 关键字设置为 true 即可，对于旧版本，可以通过以下方法实现：
+以 Material X 主题（版本 1.2.1）为例，在 \themes\material-x\layout_meta 目录下创建 word.ejs 文件，在 word.ejs 文件中写入以下代码：
+12345678910111213141516171819202122&lt;% if(isPostList || !isPostList)&#123; %&gt;  &lt;% if (theme.word_count &amp;&amp; !post.no_word_count) &#123; %&gt;    &lt;div style=&quot;margin-right: 10px;&quot;&gt;      &lt;span class=&quot;post-time&quot;&gt;        &lt;span class=&quot;post-meta-item-icon&quot;&gt;          &lt;i class=&quot;fa fa-keyboard&quot;&gt;&lt;/i&gt;          &lt;span class=&quot;post-meta-item-text&quot;&gt;  字数统计: &lt;/span&gt;          &lt;span class=&quot;post-count&quot;&gt;&lt;%= wordcount(post.content) %&gt;字&lt;/span&gt;        &lt;/span&gt;      &lt;/span&gt;      &amp;nbsp; | &amp;nbsp;      &lt;span class=&quot;post-time&quot;&gt;        &lt;span class=&quot;post-meta-item-icon&quot;&gt;          &lt;i class=&quot;fa fa-hourglass-half&quot;&gt;&lt;/i&gt;          &lt;span class=&quot;post-meta-item-text&quot;&gt;  阅读时长≈&lt;/span&gt;          &lt;span class=&quot;post-count&quot;&gt;&lt;%= min2read(post.content) %&gt;分&lt;/span&gt;        &lt;/span&gt;      &lt;/span&gt;    &lt;/div&gt;  &lt;% &#125; %&gt;&lt;% &#125; %&gt;123456789101112131415161718192021
+
+然后在主题的配置文件 _config.yml 找到 meta 关键字，将 word 填入 header 中：
+1234meta:  header: [title, author, date, categories, tags, counter, word, top]  footer: [updated, share]123
+
+最后在主题目录下的 _config.yml 添加以下配置即可
+12word_count: true1
+
+效果图：
+
+同样的，以 spfk 主题为例，在 \themes\hexo-theme-spfk\layout_partial\post 目录下创建 word.ejs 文件，在 word.ejs 文件中写入以下代码：
+123456789101112131415161718&lt;div style=&quot;margin-top:10px;&quot;&gt;    &lt;span class=&quot;post-time&quot;&gt;      &lt;span class=&quot;post-meta-item-icon&quot;&gt;        &lt;i class=&quot;fa fa-keyboard-o&quot;&gt;&lt;/i&gt;        &lt;span class=&quot;post-meta-item-text&quot;&gt;  字数统计: &lt;/span&gt;        &lt;span class=&quot;post-count&quot;&gt;&lt;%= wordcount(post.content) %&gt;字&lt;/span&gt;      &lt;/span&gt;    &lt;/span&gt;    &amp;nbsp; | &amp;nbsp;    &lt;span class=&quot;post-time&quot;&gt;      &lt;span class=&quot;post-meta-item-icon&quot;&gt;        &lt;i class=&quot;fa fa-hourglass-half&quot;&gt;&lt;/i&gt;        &lt;span class=&quot;post-meta-item-text&quot;&gt;  阅读时长: &lt;/span&gt;        &lt;span class=&quot;post-count&quot;&gt;&lt;%= min2read(post.content) %&gt;分&lt;/span&gt;      &lt;/span&gt;    &lt;/span&gt;&lt;/div&gt;1234567891011121314151617
+
+然后在 \themes\hexo-theme-spfk\layout_partial\article.ejs 中适当位置添加以下代码：
+最后在主题目录下的 _config.yml 添加以下配置即可
+12word_count: true1
+
+如果显示的位置不好，可以自行更改其位置，成功配置后的效果如下：
+
+另外：要在博客底部显示所有文章的总字数，可以点击此处，根据你博客底部文件的类型选择相应的代码放在适当的位置即可，前提是要安装好 hexo-wordcount 插件，例如我使用 Material X 主题，在 \themes\material-x\layout_partial 目录下的 footer.ejs 文件中添加如下代码：
+123&lt;i class=&quot;fas fa-chart-area&quot;&gt;&lt;/i&gt;&lt;span class=&quot;post-count&quot;&gt;字数统计：&lt;%= totalcount(site) %&gt;&lt;/span&gt;12
+
+实现效果如下：
+
+【03】添加网站运行时间一个比较好的小功能，可以看见自己的博客运行多久了，时间一天天的增加，成就感也会一天天增加的在 \themes\hexo-theme-spfk\layout_partial\footer.ejs 文件下添加以下代码：
+123456789101112131415161718&lt;span id=&quot;timeDate&quot;&gt;载入天数...&lt;/span&gt;&lt;span id=&quot;times&quot;&gt;载入时分秒...&lt;/span&gt;&lt;script&gt;    var now = new Date();     function createtime() &#123;         var grt= new Date(&quot;08/10/2018 17:38:00&quot;);//在此处修改你的建站时间，格式：月/日/年 时:分:秒        now.setTime(now.getTime()+250);         days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);         hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);         if(String(hnum).length ==1 )&#123;hnum = &quot;0&quot; + hnum;&#125; minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);         mnum = Math.floor(minutes); if(String(mnum).length ==1 )&#123;mnum = &quot;0&quot; + mnum;&#125;         seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);         snum = Math.round(seconds); if(String(snum).length ==1 )&#123;snum = &quot;0&quot; + snum;&#125;         document.getElementById(&quot;timeDate&quot;).innerHTML = &quot;本站已安全运行 &quot;+dnum+&quot; 天 &quot;;         document.getElementById(&quot;times&quot;).innerHTML = hnum + &quot; 小时 &quot; + mnum + &quot; 分 &quot; + snum + &quot; 秒&quot;;     &#125; setInterval(&quot;createtime()&quot;,250);&lt;/script&gt;1234567891011121314151617
+
+最后效果如下：
+
+【04】添加百度统计百度统计是百度推出的一款免费的专业网站流量分析工具，能够告诉用户访客是如何找到并浏览用户的网站，在网站上做了些什么，非常有趣，接下来我们把百度统计添加到自己博客当中
+访问百度统计首页，注册一个账号后登陆，添加你的博客网站接着点击代码获取，复制该代码
+然后到目录 \themes\hexo-theme-spfk\layout_partial 下新建一个 baidu-analytics.ejs 文件，里面粘贴你刚刚复制的代码
+修改主题文件夹下的 _config.yml 文件，将你的key（图中涂掉部分）填写进去：
+所有操作完成后可以在百度统计管理页面检查代码是否安装成功，如果代码安装正确，一般20分钟后，可以查看网站分析数据
+另外推荐：友盟，2010年4月在北京成立，安全、可靠、公正、第三方的网站流量统计分析系统
+
+【05】添加RSS订阅RSS订阅是站点用来和其他站点之间共享内容的一种简易方式，即Really Simple Syndication（简易信息聚合），如果不会使用，可以参见百度百科：https://baike.baidu.com/item/RSS%E8%AE%A2%E9%98%85/663114 ；首先我们安装feed插件，在本地hexo目录下右键Git Bash Here，输入以下命令：
+12$ npm install hexo-generator-feed1
+
+等待安装完成后，打开hexo目录下的配置文件 _config.yml，在末尾添加以下配置：
+1234567891011# Extensions## Plugins: http://hexo.io/plugins/#RSS订阅plugin:- hexo-generator-feed#Feed Atomfeed:type: atompath: atom.xmllimit: 2012345678910
+
+随后打开主题配置文件 _config.yml，添加以下配置：
+12rss: /atom.xml1
+
+至此，RSS订阅功能添加完成
+
+【06】添加 Fork me on GitHub 效果效果图：点击此处可以查看更多样式，将相应样式的代码复制到你想要放的地方就OK了，代码里的链接也要替换成你的，更多创意，比如 Follow me on CSDN ，只需要用PS改掉图片里的文字，替换掉相应链接即可
+
+【07】更改本地预览端口号hexo博客在执行hexo s进行本地预览的时候，默认端口号是4000，当该端口号被占用时会报错 Error: listen EADDRINUSE 0.0.0.0:4000 ，此时可以关闭占用该端口的进程，也可以更换端口号，更换端口号可以通过以下两种方法实现：
+方法一：在根目录的_config.yml配置文件内加上如下代码更改hexo s运行时的端口号：
+12345server:  port: 5000  compress: true  header: true1234
+
+方法二：通过 hexo server -p 5000 命令来指定端口，这种方法只是本次执行有效
+
+【08】启用 HTTPS参考我的另一篇文章：《利用官方支持为基于GitHub Pages的Hexo博客启用HTTPS》
+
+【09】博客备份参考我的另一篇文章：《使用 hexo-git-backup 插件备份你的 Hexo 博客》
+
+【10】自定义一个不使用主题模板渲染的独立页面参考我的另一篇文章：《Hexo 博客自定义一个不使用主题模板渲染的独立页面》
+
+未完待续…https://www.itrhx.com/2018/08/27/A04-Hexo-blog-topic-personalization/)
+                        
+                    </p>
+                </a>
+            </div>
+
+            
+                <div class="post-footer">
+                    
+                        <i class="fa fa-folder-open-o"></i>
+                        <a class="category-link" href="../../categories/hexo/">hexo</a>
+
+                        
+                            <span class="dotted">|</span>
+                        
+
+                    
+                    
+                        <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="" rel="tag">hexo</a>
+                    
+                </div>
+            
+        </article>
+    
+
+    
+        <article class="box post post-item">
+            <div class="post-title"><a href="../../2020/11/21/volantis%E4%B9%8B%E6%89%93%E8%B5%8F%E6%A8%A1%E5%9D%97/">volantis之打赏模块</a></div>
+            <div class="post-meta">
+                
+                <i class="fa fa-calendar"></i> <time>2020-11-21</time>
+                <span class="dotted">|</span>
+                <i class="fa fa-user"></i> 
+            </div>
+
+            <div class="post-excerpt">
+                <a href="../../2020/11/21/volantis%E4%B9%8B%E6%89%93%E8%B5%8F%E6%A8%A1%E5%9D%97/">
+                    <p>
+                        
+                            hexo博客打赏随着支付宝和微信转账支付的日益深入人心，有时候我们甚至可以在很多博客文章后面看到小编和文章作者自己添加的DIY打赏功能，包括微信、支付宝等扫描支付转账，本篇文章就是为hexo优化，在每篇文章后面添加打赏功能。
+打赏模块的代码layout\_partial 下新建 donate.ejs 输入如下内容：
+123456789101112131415161718192021222324&lt;! -- 添加捐赠图标 --&gt;&lt;div class =&quot;post-donate&quot;&gt;    &lt;div id=&quot;donate_board&quot; class=&quot;donate_bar center&quot;&gt;        &lt;a id=&quot;btn_donate&quot; class=&quot;btn_donate&quot; href=&quot;javascript:;&quot; title=&quot;打赏&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;donate_txt&quot;&gt;           &amp;uarr;&lt;br&gt;           &lt;%=theme.donate_message%&gt;        &lt;/span&gt;        &lt;br&gt;      &lt;/div&gt;      &lt;div id=&quot;donate_guide&quot; class=&quot;donate_bar center hidden&quot; &gt;        &lt;!-- 支付宝打赏图案 --&gt;        &lt;img src=&quot;https://raw.githubusercontent.com/chuangwailinjie/chuangwailinjie.github.io/master/img/zhifubao.jpg&quot; alt=&quot;支付宝打赏&quot;&gt;         &lt;!-- 微信打赏图案 --&gt;        &lt;img src=&quot;https://raw.githubusercontent.com/chuangwailinjie/chuangwailinjie.github.io/master/img/wx.jpg&quot; alt=&quot;微信打赏&quot;&gt;      &lt;/div&gt;    &lt;script type=&quot;text/javascript&quot;&gt;        document.getElementById(&#x27;btn_donate&#x27;).onclick = function()&#123;            $(&#x27;#donate_board&#x27;).addClass(&#x27;hidden&#x27;);            $(&#x27;#donate_guide&#x27;).removeClass(&#x27;hidden&#x27;);        &#125;    &lt;/script&gt;&lt;/div&gt;&lt;! -- 添加捐赠图标 --&gt;
+
+设置打赏模块的样式source\css\_partial 下新建 donate.styl 输入如下内容：
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546.donate_bar &#123;    text-align: center;    margin-top: 5%&#125;.donate_bar a.btn_donate &#123;    display: inline-block;    width: 82px;    height: 82px;    margin-left: auto;    margin-right: auto;    background: url(http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif)no-repeat;    -webkit-transition: background 0s;    -moz-transition: background 0s;    -o-transition: background 0s;    -ms-transition: background 0s;    transition: background 0s&#125;.donate_bar a.btn_donate:hover &#123;    background-position: 0 -82px&#125;.donate_bar .donate_txt &#123;    display: block;    color: #9d9d9d;    font: 14px/2 &quot;Microsoft Yahei&quot;&#125;.donate_bar.hidden&#123;    display: none&#125;.post-donate&#123;    margin-top: 80px;&#125;#donate_guide&#123;    height: 210px;    width: 420px;    margin: 0 auto;&#125;#donate_guide img&#123;    height: 200px;    height: 200px;&#125;
+
+最后，记得在 source\css\style.styl 中添加 @import &#39;_partial/donate&#39;第三步： 讲打赏模块整合到文章中在 layout\_partial\article.ejs 中的 &lt;article&gt; &lt;/article&gt; 标签内添加如下内容：
+123&lt;% if (!index &amp;&amp; theme.donate)&#123; %&gt;    &lt;%- partial(&#x27;donate&#x27;) %&gt;&lt;% &#125; %&gt;
+
+第四步： 编写配置文件我们可以在主题的 _config.yml 文件中关闭和打开打赏功能，还可以自定义设置打赏文案。例如：
+是否开启打赏功能1donate: true
+
+打赏文案1donate_message: ****
+                        
+                    </p>
+                </a>
+            </div>
+
+            
+                <div class="post-footer">
+                    
+                        <i class="fa fa-folder-open-o"></i>
+                        <a class="category-link" href="../../categories/hexo/">hexo</a>
+
+                        
+                            <span class="dotted">|</span>
+                        
+
+                    
+                    
+                        <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="" rel="tag">hexo</a>
+                    
+                </div>
+            
+        </article>
+    
+
+    
+        <article class="box post post-item">
+            <div class="post-title"><a href="../../2020/11/19/hexo%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96%E8%BF%9B%E9%98%B6/">hexo主题美化进阶&lt;hexo主题美化进阶&gt;</a></div>
+            <div class="post-meta">
+                
+                <i class="fa fa-calendar"></i> <time>2020-11-19</time>
+                <span class="dotted">|</span>
+                <i class="fa fa-user"></i> 
+            </div>
+
+            <div class="post-excerpt">
+                <a href="../../2020/11/19/hexo%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96%E8%BF%9B%E9%98%B6/">
+                    <p>
+                        
+                            hexo之Volantis主题美化此博客为转载学习博客。
+
+置顶  阳光派plus  2020-05-23 15:24:13    784   收藏  7
+分类专栏：  博客  文章标签：  javascript  前端  css3  github  经验分享
+版权
+具体效果请移步我的博客👉阳光派Plus更：1.添加暗黑模式2.添加鼠标右键功能3.添加页面预加载功能
+7.20 更新★valine评论区卡片式背景★添加鼠标样式★文章首字下沉★文章末尾版权★修改页面卡片阴影6.15 更新★修改valine表情区域样式★主页、正文区域文章标题居中★博客文章链接优化
+文章目录
+
+
+
+一、主界面显示-   -   [1、设置主页logo](https://blog.csdn.net/qq_45428737/article/details/106299049?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control#1logo_26)
+    -   [2、添加小标题动态彩色字体](https://blog.csdn.net/qq_45428737/article/details/106299049?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control#2_30)
+    -   [3、界面间距](https://blog.csdn.net/qq_45428737/article/details/106299049?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control#3_96)
+-   [二、页面优化](https://blog.csdn.net/qq_45428737/article/details/106299049?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control#_146)
+-   -   [1、导航栏样式](https://blog.csdn.net/qq_45428737/article/details/106299049?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control#1_148)
+    -   [2、页面卡片阴影](https://blog.csdn.net/qq_45428737/article/details/106299049?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control#2_196)
+    -   [3、页面特效](https://blog.csdn.net/qq_45428737/article/details/106299049?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control#3_230)
+    -   -   [a、樱花](https://blog.csdn.net/qq_45428737/article/details/106299049?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control#a_234)
+        -   [b、鼠标滑动特效](https://blog.csdn.net/qq_45428737/article/details/106299049?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control#b_242)
+        -   [c、鼠标点击特效](https://blog.csdn.net/qq_45428737/article/details/106299049?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control#c_250)
+        -   [d、鼠标点击爱心特效](https://blog.csdn.net/qq_45428737/article/details/106299049?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control#d_258)
+        -   [e、鼠标点击社会主义价值观特效](https://blog.csdn.net/qq_45428737/article/details/106299049?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control#e_266)
+    -   [4、主页、正文文章标题居中](https://blog.csdn.net/qq_45428737/article/details/106299049?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control#4_272)
+    -   [5、博客文章链接优化](https://blog.csdn.net/qq_45428737/article/details/106299049?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control#5_292)
+    -   [6、添加鼠标样式](https://blog.csdn.net/qq_45428737/article/details/106299049?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control#6_314)
+    -   [7、文章首字下沉](https://blog.csdn.net/qq_45428737/article/details/106299049?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control#7_326)
+    -   [8、文章末尾版权](https://blog.csdn.net/qq_45428737/article/details/106299049?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control#8_351)
+-   [三、valine评论优化](https://blog.csdn.net/qq_45428737/article/details/106299049?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control#valine_373)
+-   -   [1、Valine添加博主标签](https://blog.csdn.net/qq_45428737/article/details/106299049?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control#1Valine_374)
+    -   [2、评论添加一言](https://blog.csdn.net/qq_45428737/article/details/106299049?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control#2_491)
+    -   [3、添加评论背景](https://blog.csdn.net/qq_45428737/article/details/106299049?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control#3_527)
+    -   [4、添加自定义表情](https://blog.csdn.net/qq_45428737/article/details/106299049?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control#4_551)
+    -   [5、修改表情区域样式](https://blog.csdn.net/qq_45428737/article/details/106299049?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control#5_665)
+    -   [6、评论区卡片式背景](https://blog.csdn.net/qq_45428737/article/details/106299049?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.control#6_679)
+
+
+
+
+
+
+
+
+
+☀️  写在前面本教程适用于Volantis2.6.4及以上的版本，如果版本不同，文件位置可能会有些不同。不过总体不影响。可以查看作者更新文档。当然也不仅局限于Volantis主题，其他主题按照自身的语法格式同样可修改。Volantis主题已升级到3.0版本，有些文件位置与2.X版本有所不同，文中会提出。本文中涉及到修改.styl后缀的文件时一定要注意格式，不能多一个会少一个空格●主界面优化●页面优化●评论区优化
+一、主界面显示1、设置主页logo默认显示文字显得有些单调，故选择使用图片logo代替文字显示标题。修改主题配置文件_config.yml中的cover，添加logo属性值。
+2、添加小标题动态彩色字体修改主题配置文件_config.yml中的cover。去除subtitile属性值；在 themes/volantis/layout/_cover中index.ejs文件中添加如下代码(文字部分可修改)：
+1234567891011121314151617181920212223242526272829303132333435363738394041424344&lt;!-- 封面滚动字体 --&gt;&lt;div id=&quot;binft&quot;&gt;&lt;/div&gt; &lt;script&gt;    var binft = function (r) &#123;      function t() &#123;        return b[Math.floor(Math.random() * b.length)]      &#125;        function e() &#123;        return String.fromCharCode(94 * Math.random() + 33)      &#125;      function n(r) &#123;        for (var n = document.createDocumentFragment(), i = 0; r &gt; i; i++) &#123;          var l = document.createElement(&quot;span&quot;);          l.textContent = e(), l.style.color = t(), n.appendChild(l)        &#125;        return n      &#125;      function i() &#123;        var t = o[c.skillI];        c.step ? c.step-- : (c.step = g, c.prefixP &lt; l.length ? (c.prefixP &gt;= 0 &amp;&amp; (c.text += l[c.prefixP]), c.prefixP++) : &quot;forward&quot; === c.direction ? c.skillP &lt; t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : (c.direction = &quot;backward&quot;, c.delay = a) : c.skillP &gt; 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % o.length, c.direction = &quot;forward&quot;)), r.textContent = c.text, r.appendChild(n(c.prefixP &lt; l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d)      &#125;      var l = &quot;&quot;,      o = [&quot;山有木兮木有枝，心悦君兮君不知。&quot;, &quot;人生若只如初见，何事秋风悲画扇。&quot;,&quot;十年生死两茫茫，不思量，自难忘。&quot;, &quot;曾经沧海难为水，除却巫山不是云。&quot;,&quot;洛中何郁郁，冠带自相索。&quot;,&quot;只愿君心似我心，定不负相思意。&quot;,&quot;愿得一心人，白头不相离。&quot;,&quot;入我相思门，知我相思苦。&quot;].map(function (r) &#123;      return r + &quot;&quot;      &#125;),      a = 2,      g = 1,      s = 5,      d = 75,      b = [&quot;rgb(110,64,170)&quot;, &quot;rgb(150,61,179)&quot;, &quot;rgb(191,60,175)&quot;, &quot;rgb(228,65,157)&quot;, &quot;rgb(254,75,131)&quot;, &quot;rgb(255,94,99)&quot;, &quot;rgb(255,120,71)&quot;, &quot;rgb(251,150,51)&quot;, &quot;rgb(226,183,47)&quot;, &quot;rgb(198,214,60)&quot;, &quot;rgb(175,240,91)&quot;, &quot;rgb(127,246,88)&quot;, &quot;rgb(82,246,103)&quot;, &quot;rgb(48,239,130)&quot;, &quot;rgb(29,223,163)&quot;, &quot;rgb(26,199,194)&quot;, &quot;rgb(35,171,216)&quot;, &quot;rgb(54,140,225)&quot;, &quot;rgb(76,110,219)&quot;, &quot;rgb(96,84,200)&quot;],      c = &#123;        text: &quot;&quot;,        prefixP: -s,        skillI: 0,        skillP: 0,        direction: &quot;forward&quot;,        delay: a,        step: g      &#125;;      i()      &#125;;      binft(document.getElementById(&#x27;binft&#x27;));  &lt;/script&gt;
+
+12345678910111213  &lt;div class=&#x27;a&#x27;&gt;    &lt;% if (theme.cover.logo) &#123; %&gt;      &lt;img class=&#x27;logo&#x27; src=&#x27;&lt;%- url_for(theme.cover.logo) %&gt;&#x27;/&gt;    &lt;% &#125; %&gt;    &lt;% if (theme.cover.title) &#123; %&gt;      &lt;p class=&quot;title&quot;&gt;&lt;%- theme.cover.title ? theme.cover.title : config.title %&gt;&lt;/p&gt;    &lt;% &#125; %&gt;    &lt;% if (theme.cover.subtitle) &#123; %&gt;      &lt;p class=&quot;subtitle&quot;&gt;&lt;%- theme.cover.subtitle%&gt;&lt;/p&gt;    &lt;% &#125; %&gt;+     此处添加代码  &lt;/div&gt;
+
+这个滚动字体可以加在任何位置。
+3、界面间距原界面处title,subtitle,searc,menu之间间距感觉有点大，所以调整了一下。在 themes/volantis/source/css/_layout中的cover.styl文件修改margin-top，margin-bottom的值。
+123456789101112131415161718.cover-wrapper .cover  top: 0  left: 0  max-width: 100%  height: 100vh  display: flex  flex-wrap: nowrap  flex-direction: column  align-items: center  align-self: center  align-content: center  color: $color-site-inner  padding: $gap  .cover-body    div.b      margin-top: 3vh      margin-bottom: 8vh
+
+另：在界面中导航栏部分默认第一个会有下划线，如下
+
+去除方法：在themes/volantis/source/css/_layout中cover.styl文件，大概在148行处，删除border-bottom属性
+1234567891011121314    ul&gt;li&gt;a      font-size: $fontsize-meta      padding: 2px      margin: 4px      trans()      color: alpha($color-site-inner, .65)      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05)      border-bottom: 2px solid transparent      i        margin-right: 4px      &amp;:hover, &amp;.active, &amp;:active        color: $color-site-inner-       border-bottom: 2px solid $color-site-inner(删除此行)
+
+总体效果：
+
+二、页面优化1、导航栏样式主要是在原基础上添加了一个渐变背景。
+首先在主题配置文件_config.yml中navbar的effext毛玻璃特效（blur）去掉。
+1234567891011121314style:  font_smoothing: false # font-smoothing for webkit  max_width: 1280px # Sum of body width and sidebar width (This limit will be exceeded           when the device width is greater than 2000px, reaching 75% of the total width)  scrollbar:    size: 4px    border: 2px    color: &#x27;#2196f3&#x27;    hover: &#x27;#ff5722&#x27;  navbar:    height: 64px    width: auto # auto, max-   effect: [shadow, blur] # [shadow, floatable, blur]+   effect: [shadow] # [shadow, floatable, blur]
+
+然后在themes\volantis\source\css_layout\navbar.styl中，大概25行处添加代码
+12background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+
+123456789101112.l_header  $iconW = 32px  $iconMargin = 4px  position: fixed  z-index: 1000  top: 0  width: 100%  height: $navbar-height  background: $color-card+ background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%)  box-shadow: $boxshadow-card
+
+效果：
+
+附上一个免费的CSS渐变背景样式网站👉CSS背景渐变
+2、页面卡片阴影在主页面中的文章、侧边栏添加一点阴影，并在鼠标悬停时出现阴影。
+在themes\volantis\source\css_layout中main.styl文件，找到.white-box属性,在background下方添加代码：主页文章：在\themes\volantis\source\css_layout中main.styl文件，找到.post-wrapper属性
+123456789  .post-wrapper    column-break-inside: avoid    break-inside: avoid-column+   box-shadow: 0 1px 20px -6px rgba(0,0,0,0.5)+   border-radius: 8px+   transition: box-shadow .5s ease+   &amp;:hover+     box-shadow:0px 1px 20px 1px rgba(0,0,0,0.5)
+
+在themes\volantis\source\css_layout中sidebar.styl文件，找到.widget属性，在display下方添加上面同样的代码。侧边栏：在themes\volantis\source\css_layout中sidebar.styl文件，找到.widget属性
+123456789101112.widget  z-index: 0  background: $color-card  margin-top: $gap  border-radius: $border-card  width: 100%  display: none+ box-shadow: 0 1px 20px -6px rgba(0,0,0,0.5)+ transition: box-shadow .5s ease+ &amp;:hover+   box-shadow:0px 1px 20px 1px rgba(0,0,0,0.5)
+
+注意格式！
+3、页面特效以下特效整理于网上分享的js代码，均在themes\volantis\layout中layout.ejs文件body里面直接引用即可。(不限制于Volantis主题)
+a、樱花
+12&lt;script src=&quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js&quot;&gt;&lt;/script&gt;
+
+b、鼠标滑动特效
+12&lt;script src=&quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js&quot;&gt;&lt;/script&gt;
+
+c、鼠标点击特效
+12&lt;script src=&quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_click.js&quot;&gt;&lt;/script&gt;
+
+d、鼠标点击爱心特效
+12&lt;script src=&quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/clicklove.js&quot;&gt;&lt;/script&gt;
+
+e、鼠标点击社会主义价值观特效
+12&lt;script src=&quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/clicksocialist.js&quot;&gt;&lt;/script&gt;
+
+4、主页、正文文章标题居中主页面的文章、文章正文、关于/友链/留言板等自定义页面的标题居中。文章地址 themes\volantis\source\css_layout\main.styl
+123456789  .post-wrapper    margin-bottom: $gap    .post      div.meta        margin-bottom: $gap        .title          font-size: $fontsize-h2+         text-align: center
+
+123456      .title        trans(.1s)        margin: 0+       text-align: center        color: $color-text
+
+5、博客文章链接优化原本hexo中文章的链接是:year/:month/:day/:title/格式，有时候可能还会有乱码，不好看，所以通过插件修改。
+安装插件
+12npm install hexo-abbrlink --save
+
+此插件跟hexo-asset-image插件有冲突（可以使用本地图片的插件），若使用这个插件，hexo-asset-image插件会失效。
+修改配置文件文件地址  blog/_config.yml
+123456# permalink: :year/:month/:day/:title/+ permalink: post/:abbrlink.html  //post可以修改+ abbrlink:+   alg: crc16+   rep: hex
+
+最后一键三连。然后链接就会变成post/***.html的格式。
+6、添加鼠标样式下载两个文件（文件一、文件二），文件放在\blog\themes\volantis\source\img中，然后在index.styl文件中引用。
+123456789*  box-sizing: border-box  outline: none  margin: 0  padding: 0+ cursor: url(/img/default.cur),auto+:link+ cursor: url(/img/pointer.cur),auto
+
+7、文章首字下沉设置文章中第一个p标签首字样式，达到下沉的效果。
+12345678910111213141516171819202122.article  underline()    &amp;:hover      text-decoration: underline  .article-entry+   &gt;p+     &amp;:first-child::first-letter+       float: left+       margin-top: 14px+       margin-right: 6px+       color: #555+       font-size: 42px+       line-height: 28px+       font-style: normal+       font-weight: 400+       +mobile()&#123;+         margin-top: 10px+         margin-right: 4px+         font-size: 26px+         line-height: 20px+       &#125;
+
+8、文章末尾版权修改默认的文章末尾版权区域样式。修改样式：
+12345  blockquote+    background: #efefef     //修改背景颜色+    border-left: $border-codeblock solid #575757   //修改左边框颜色    border-radius: $border-codeblock
+
+修改内容：
+12345678910  copyright:    class: copyright    display: [desktop, mobile] # [desktop, mobile]    blockquote: true+    permalink: &#x27;🔗 本文链接：&#x27;    content:+     - &#x27;📚 本文由&lt;a href=&quot;https://www.zyoushuo.cn/&quot;&gt;阳光派Plus&lt;/a&gt;创作，转载请注明出处&#x27;+     - &#x27;🧾 博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议&#x27;+     - permalink
+
+图标来自于📙 Emojipedia — 😃
+三、valine评论优化1、Valine添加博主标签此部分参考博主HCLonely Blog的文章Valine添加博主标签及评论微信、QQ通知。
+Volantis主题添加需要修改一点语法格式。
+★添加评论QQ头像★添加博主，小伙伴，访客标签★添加浏览器和操作系统图标，需  fontawesomeV5  支持★增加 QQ 邮箱识别★metaplaceholder  可自定义
+⑴ 首先引入valine的js代码
+12https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;HCLonely&#x2F;Valine@latest&#x2F;dist&#x2F;Valine.min.js
+
+本人使用的版本引入valine的js是在主题配置文件_conflg.yml的valine配置中，其他版本要是没有的话就在themes\volantis\layout_partial的scripts.ejs文件中找一下。
+(2) 添加valine配置参数
+参数
+类型
+说明
+默认
+实例
+tagMeta
+Array
+标签要显示的文字
+博主,小伙伴,访客
+博主,小伙伴,访客
+master
+Array/String
+md5 加密后的博主邮箱
+.
+315be36db8ad7b3e3a7bb0839d6fa839
+friends
+Array
+md5 加密后的小伙伴邮箱
+.
+315be36db8ad7b3e3a7bb0839d6fa839
+metaPlaceholder
+Object
+meta placeholder 内容
+.
+{“nick”:“昵称 / QQ 号”,“mail”:“邮箱 (必填)”}
+md5加密需要完整的邮箱地址，例如QQ邮箱就是&#x31;&#x32;&#x33;&#52;&#53;&#54;&#x37;&#56;&#57;&#64;&#x71;&#x71;&#x2e;&#99;&#111;&#109;；加密必须是32位小写。例如我的配置为
+123456789101112131415161718192021222324252627282930comments:  title: &lt;i class=&#x27;fas fa-comments&#x27;&gt;&lt;/i&gt; 评论  subtitle:  service: valine # valine, minivaline, disqus, gitalk, livere  valine:    appId:  ***# your appId    appKey: ***# your appKey    js: https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js    path: # All pages use the same path (share the same comments data)    meta: nick,mail,link # valine comment header info    requiredFields: [&#x27;nick&#x27;,&#x27;mail&#x27;]    enableQQ: true # Unstable avatar link    placeholder: 快来评论吧~ # valine comment input placeholder(like: Please leave your footprints )    avatar: robohash # gravatar style https://valine.js.org/avatar    pageSize: 10 # comment list page size    lang: zh-cn    highlight: true    visitor: true    mathJax: false+   metaPlaceholder:+     - nick: 阳光派Plus+     - mail: ***@qq.com+   tagMeta: 博主,小伙伴,访客+   master: +     - 487f87505f619bf9ea08f26bb34f8118+   friends: +     - 011c2b8a03f490e9aeab5d41a8a0469a+     - 8fe874d093278833df8b7172113eca32+     ......
+
+附上一个MD5加密网站👉MD5在线加密
+(3) 添加valine渲染文件参数
+在themes\volantis\layout_partial中scripts.ejs文件，找到enableValine，在valine.init中添加（3.0版本文件位置在\themes\volantis\layout_third-party\comments\valine的scripts.ejs文件）
+123master: master,friends: friends,
+
+12345678910111213141516171819202122232425 valine.init(&#123;    el: &#x27;#valine_container&#x27;,    meta: meta,    &lt;% if (page.valine &amp;&amp; page.valine.path) &#123; %&gt;      path: &quot;&lt;%= page.valine.path %&gt;&quot;,    &lt;% &#125; else if (theme.comments.valine.path) &#123; %&gt;      path: &quot;&lt;%= theme.comments.valine.path %&gt;&quot;,    &lt;% &#125; %&gt;    appId: &quot;&lt;%= theme.comments.valine.appId %&gt;&quot;,    appKey: &quot;&lt;%= theme.comments.valine.appKey %&gt;&quot;,    placeholder: &quot;&lt;%= (page.valine &amp;&amp; page.valine.placeholder) ? page.valine.placeholder : theme.comments.valine.placeholder %&gt;&quot;,    pageSize:&#x27;&lt;%= theme.comments.valine.pageSize %&gt;&#x27;,    avatar:&#x27;&lt;%= theme.comments.valine.avatar %&gt;&#x27;,    lang:&#x27;&lt;%= theme.comments.valine.lang %&gt;&#x27;,    visitor: &#x27;&lt;%= theme.comments.valine.visitor %&gt;&#x27;,    highlight: &#x27;&lt;%= theme.comments.valine.highlight %&gt;&#x27;,    mathJax: &#x27;&lt;%= theme.comments.valine.mathJax %&gt;&#x27;,    enableQQ: &#x27;&lt;%= theme.comments.valine.enableQQ %&gt;&#x27;,    requiredFields: requiredFields,+   emojiCDN: &#x27;https://cdn.jsdelivr.net/gh/zyoushuo/Blog/emoji/&#x27;,    emojiMaps: emojiMaps,+	master: master,+	friends: friends,  &#125;)
+
+然后在  var valine = new Valine();下方添加
+123var friends = &#x27;&lt;%= theme.comments.valine.friends %&gt;&#x27;.split(&#x27;,&#x27;);var master = &#x27;&lt;%= theme.comments.valine.master %&gt;&#x27;.split(&#x27;,&#x27;);
+
+1234567  var valine = new Valine();+ var friends = &#x27;&lt;%= theme.comments.valine.friends %&gt;&#x27;.split(&#x27;,&#x27;);+ var master = &#x27;&lt;%= theme.comments.valine.master %&gt;&#x27;.split(&#x27;,&#x27;);  function emoji(path, idx, ext) &#123;      return path + &quot;/&quot; + path + &quot;-&quot; + idx + &quot;.&quot; + ext;  &#125;
+
+2、评论添加一言
+在themes\volantis\layout_third-party中的comments.ejs文件，找到enableValine，在&lt;/ section&gt;上方添加代码（3.0版本文件位置在\themes\volantis\layout_third-party\comments\valine的layout.ejs中）
+123456789 &lt;!-- valine 添加一言 --&gt;&lt;script src=&quot;https://sdk.jinrishici.com/v2/browser/jinrishici.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;     jinrishici.load(function(result) &#123;     var jrsc_plac =  result.data.content + &quot;\n「&quot; + result.data.origin.title + &quot;」&quot; + result.data.origin.dynasty + &quot; · &quot; + result.data.origin.author     document.getElementById(&quot;veditor&quot;).setAttribute(&quot;placeholder&quot;,jrsc_plac);      &#125;); &lt;/script&gt;
+
+12345678910111213141516&lt;% if (enableValine)&#123; %&gt;  &lt;section id=&quot;comments&quot;&gt;     &lt;div id=&quot;valine_container&quot; class=&quot;valine_thread&quot;&gt;       &lt;i class=&quot;fas fa-cog fa-spin fa-fw fa-2x&quot;&gt;&lt;/i&gt;     &lt;/div&gt;	 &lt;!-- valine 添加一言 --&gt;+	&lt;script src=&quot;https://sdk.jinrishici.com/v2/browser/jinrishici.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;+       &lt;script type=&quot;text/javascript&quot;&gt;+              jinrishici.load(function(result) &#123;+            var jrsc_plac =  result.data.content + &quot;\n「&quot; + result.data.origin.title + &quot;」&quot; + result.data.origin.dynasty + &quot; · &quot; + result.data.origin.author+             document.getElementById(&quot;veditor&quot;).setAttribute(&quot;placeholder&quot;,jrsc_plac);+            &#125;);+     &lt;/script&gt;   &lt;/section&gt;&lt;% &#125; %&gt;
+
+3、添加评论背景在themes\volantis\source\css_third-party中的valine.styl文件，找到vedit，在span标签下方再添加.veditor标签属性。
+123.veditor  background: url(https://cdn.jsdelivr.net/gh/zyoushuo/Blog/images/valinebg.webp) 100% 100% no-repeat
+
+背景可替换。
+1234567891011        .vedit          .vctrl span            padding: 0            margin: 10px          span            fill: $color-p            &amp;.actived              fill: $color-theme+		  .veditor+		    background: url(https://cdn.jsdelivr.net/gh/zyoushuo/Blog/images/valinebg.webp) 100% 100% no-repeat
+
+4、添加自定义表情目前我使用的版本，在主题配置文件_config.yml的valine配置中，即使引用不同的js，valine的表情还是没有变化，需要修改渲染文件。
+在themes\volantis\layout_partial中的scripts.ejs文件，找到enableValine，在var emojiMaps = {}中即可添加。例如我的配置：(3.0版本文件位置在\themes\volantis\layout_third-party\comments\valine的scripts.ejs文件）
+123456789101112 var emojiMaps = &#123;&quot;doge&quot;: &quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/emoji/bilibili/doge.png&quot;,   &quot;亲亲&quot;: &quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/emoji/bilibili/亲亲.png&quot;,   &quot;偷笑&quot;: &quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/emoji/bilibili/偷笑.png&quot;,  &quot;再见&quot;: &quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/emoji/bilibili/再见.png&quot;,   &quot;冷漠&quot;: &quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/emoji/bilibili/冷漠.png&quot;,   &quot;发怒&quot;: &quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/emoji/bilibili/发怒.png&quot;,   &quot;发财&quot;: &quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/emoji/bilibili/发财.png&quot;,   &quot;可爱&quot;: &quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/emoji/bilibili/可爱.png&quot;,   .....   &#125;
+
+这种方法适合对中文表情包，如果不在乎表情包名字的话可以按照作者的语法格式：
+12345678910111213141516for (var i = 1; i &lt;= 54; i++) &#123;  emojiMaps[&#x27;tieba-&#x27; + i] = emoji(&#x27;tieba&#x27;, i, &#x27;png&#x27;);&#125;for (var i = 1; i &lt;= 101; i++) &#123;  emojiMaps[&#x27;qq-&#x27; + i] = emoji(&#x27;qq&#x27;, i, &#x27;gif&#x27;);&#125;for (var i = 1; i &lt;= 116; i++) &#123;  emojiMaps[&#x27;aru-&#x27; + i] = emoji(&#x27;aru&#x27;, i, &#x27;gif&#x27;);&#125;for (var i = 1; i &lt;= 125; i++) &#123;  emojiMaps[&#x27;twemoji-&#x27; + i] = emoji(&#x27;twemoji&#x27;, i, &#x27;png&#x27;);&#125;for (var i = 1; i &lt;= 4; i++) &#123;  emojiMaps[&#x27;weibo-&#x27; + i] = emoji(&#x27;weibo&#x27;, i, &#x27;png&#x27;);&#125;
+
+按照语法格式对表情包进行命名，比较方便。我的配置为：
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768&lt;% if (enableValine)&#123; %&gt;  &lt;% if (theme.comments.valine.js) &#123; %&gt;    &lt;%- js(theme.comments.valine.js) %&gt;  &lt;% &#125; else &#123; %&gt;    &lt;%- js([&#x27;js/valine.js&#x27;]) %&gt;  &lt;% &#125; %&gt;  &lt;script&gt;  var GUEST_INFO = [&#x27;nick&#x27;,&#x27;mail&#x27;,&#x27;link&#x27;];  var meta = &#x27;&lt;%= theme.comments.valine.meta %&gt;&#x27;.split(&#x27;,&#x27;).filter(function(item)&#123;    return GUEST_INFO.indexOf(item) &gt; -1  &#125;);  var REQUIRED_FIELDS = [&#x27;nick&#x27;,&#x27;mail&#x27;,&#x27;link&#x27;];  var requiredFields = &#x27;&lt;%= theme.comments.valine.requiredFields %&gt;&#x27;.split(&#x27;,&#x27;).filter(function(item)&#123;    return REQUIRED_FIELDS.indexOf(item) &gt; -1  &#125;);  var valine = new Valine();  function emoji(path, idx, ext) &#123;      return path + &quot;/&quot; + path + &quot;-&quot; + idx + &quot;.&quot; + ext;  &#125;  var friends = &#x27;&lt;%= theme.comments.valine.friends %&gt;&#x27;.split(&#x27;,&#x27;);  var master = &#x27;&lt;%= theme.comments.valine.master %&gt;&#x27;.split(&#x27;,&#x27;);  var emojiMaps = &#123;	&quot;doge&quot;: &quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/emoji/bilibili/doge.png&quot;,    &quot;亲亲&quot;: &quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/emoji/bilibili/亲亲.png&quot;,    &quot;偷笑&quot;: &quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/emoji/bilibili/偷笑.png&quot;,      &quot;冷漠&quot;: &quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/emoji/bilibili/冷漠.png&quot;,    &quot;发怒&quot;: &quot;https://cdn.jsdelivr.net/gh/zyoushuo/Blog@master/emoji/bilibili/发怒.png&quot;,             ....  &#125;;  for (var i = 1; i &lt;= 23; i++) &#123;    emojiMaps[&#x27;weibo-&#x27; + i] = emoji(&#x27;weibo&#x27;, i, &#x27;png&#x27;);  &#125;  for (var i = 1; i &lt;= 23; i++) &#123;    emojiMaps[&#x27;tieba-&#x27; + i] = emoji(&#x27;tieba&#x27;, i, &#x27;png&#x27;);  &#125;  for (var i = 1; i &lt;= 23; i++) &#123;    emojiMaps[&#x27;bqb-&#x27; + i] = emoji(&#x27;bqb&#x27;, i, &#x27;jpg&#x27;);  &#125;  for (var i = 1; i &lt;= 23; i++) &#123;    emojiMaps[&#x27;ya-&#x27; + i] = emoji(&#x27;ya&#x27;, i, &#x27;jpg&#x27;);  &#125;  valine.init(&#123;    el: &#x27;#valine_container&#x27;,    meta: meta,    &lt;% if (page.valine &amp;&amp; page.valine.path) &#123; %&gt;      path: &quot;&lt;%= page.valine.path %&gt;&quot;,    &lt;% &#125; else if (theme.comments.valine.path) &#123; %&gt;      path: &quot;&lt;%= theme.comments.valine.path %&gt;&quot;,    &lt;% &#125; %&gt;    appId: &quot;&lt;%= theme.comments.valine.appId %&gt;&quot;,    appKey: &quot;&lt;%= theme.comments.valine.appKey %&gt;&quot;,    placeholder: &quot;&lt;%= (page.valine &amp;&amp; page.valine.placeholder) ? page.valine.placeholder : theme.comments.valine.placeholder %&gt;&quot;,    pageSize:&#x27;&lt;%= theme.comments.valine.pageSize %&gt;&#x27;,    avatar:&#x27;&lt;%= theme.comments.valine.avatar %&gt;&#x27;,    lang:&#x27;&lt;%= theme.comments.valine.lang %&gt;&#x27;,    visitor: &#x27;&lt;%= theme.comments.valine.visitor %&gt;&#x27;,    highlight: &#x27;&lt;%= theme.comments.valine.highlight %&gt;&#x27;,    mathJax: &#x27;&lt;%= theme.comments.valine.mathJax %&gt;&#x27;,    enableQQ: &#x27;&lt;%= theme.comments.valine.enableQQ %&gt;&#x27;,    requiredFields: requiredFields,    emojiCDN: &#x27;https://cdn.jsdelivr.net/gh/zyoushuo/Blog/emoji/&#x27;,    emojiMaps: emojiMaps,	master: master,	friends: friends,  &#125;)  &lt;/script&gt;&lt;% &#125; %&gt;
+
+此方法要在emojiCDN处添加地址。
+5、修改表情区域样式修改表情大小、背景颜色。在themes\volantis\source\css_third-party中的valine.styl文件
+12345678910        .vemojis,.vpreview+         background: #fff  //背景区域颜色          border-radius: $border-codeblock          padding: $gap * 0.5+         border: 1px solid #f6f6f6 //边框          scrollbar()          .vemoji+           max-height: 40px   //表情大小+           max-width: 100px
+
+6、评论区卡片式背景具体样式就是给每一条评论加个背景边框。
+12345678910111213      .vcards+       .vcard+         box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12)+         padding: 15px 20px 0 20px+         margin-bottom: 10px+         border-radius: 8px        .vquote          border-left: none        .vh          border-bottom: 1px dashed alpha($color-text, .1)+         .vcard+           box-shadow: none
+
+🌻最后虽然是对Volantis主题的美化，但是其他主题同样适用。学会使用F12，找准位置，然后找到对应的文件，按照语法格式修改即可。多去参考参考其他博主的网站。目前对Volantis主题就修改了怎么多，若再有修改，日后添加。注意事项☆如果修改了样式发现没有变化，请使用hexo cl清理文件缓存、Ctrl+F5强制刷新、Ctrl+shift+delete清理浏览器缓存。（尤其是最后一个）
+☆有时候在修改styl文件会出现错误，比如这样：
+可以发现是格式不正确，请删除多余的空格。参考文章：
+Valine-1.4.4新版本尝鲜+个性制定（表情包、qq头像、UI样式
+Valine添加博主标签及评论微信、QQ通知
+halo 博客深度定制与美化教程
+
+                        
+                    </p>
+                </a>
+            </div>
+
+            
+                <div class="post-footer">
+                    
+                        <i class="fa fa-folder-open-o"></i>
+                        <a class="category-link" href="../../categories/hexo/">hexo</a>
+
+                        
+                            <span class="dotted">|</span>
+                        
+
+                    
+                    
+                        <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="" rel="tag">hexo</a>
+                    
+                </div>
+            
+        </article>
+    
+
+    
+        <article class="box post post-item">
+            <div class="post-title"><a href="../../2020/11/19/hexo%E4%B9%8BVolantis%E6%B7%BB%E5%8A%A0%E6%9A%97%E9%BB%91%E6%A8%A1%E5%BC%8F/">hexo之Volantis添加暗黑模式</a></div>
+            <div class="post-meta">
+                
+                <i class="fa fa-calendar"></i> <time>2020-11-19</time>
+                <span class="dotted">|</span>
+                <i class="fa fa-user"></i> 
+            </div>
+
+            <div class="post-excerpt">
+                <a href="../../2020/11/19/hexo%E4%B9%8BVolantis%E6%B7%BB%E5%8A%A0%E6%9A%97%E9%BB%91%E6%A8%A1%E5%BC%8F/">
+                    <p>
+                        
+                            很久之前就想过给博客添加一个暗黑模式，一直搁置。直到Volantis更新到3.0版本后添加了暗黑模式，然而尝试之后的结果却不是那么满意。于是着手自己配置一下。
+主要的实现方法参考了博主  cungudafa的文章，然后配置到Volantis中。其实自己主要是做了适合于Volantis主题在暗黑模式下的一些格式、代码等等的颜色配置。
+请注意，由于自己修改了原主题的许多源码，所以在做这个时主要配置了适合自己的一些代码风格，以下仅供参考，可以自行调整颜色配置。  
+使用此暗黑模式请删除原主题中blog\themes\volantis\source\css_third-party下的darkmode.styl文件，自己在配置时发现与此文件可能是冲突或者原暗黑模式有点bug。
+在Volantis中实现暗黑模式创建格式文件在blog\themes\volantis\layout_partial下创建文件left.ejs文件，添加以下代码：
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168169170171172173174175176177178179180181182183184185186187188189190191192193194195196197198199200201202203204205206207208209210211212213214215216217218219220221222223224225226227228229230231232233234235236237238239240241242243244245246247248249250251252253254255256257258259260261262263264265266267268269270271272273274275276277278279280281282283284285286287288289290291292293294295296297298299300301302303304305306307308309310311312313&lt;div id=&quot;RightDownBtn&quot;&gt;    &lt;a onclick=&quot;switchNightMode()&quot; title=&quot;切换暗黑模式&quot;&gt;        &lt;svg style=&quot; width: 1.5em;height: 1.5em;&quot; class=&quot;icon&quot; aria-hidden=&quot;true&quot;&gt;            &lt;use id=&quot;modeicon&quot; xlink:href=&quot;#icon-_moon&quot;&gt;            &lt;/use&gt;        &lt;/svg&gt;    &lt;/a&gt;    &lt;svg aria-hidden=&quot;true&quot; style=&quot;position: absolute; width: 0px; height: 0px; overflow: hidden;&quot;&gt;        &lt;symbol id=&quot;icon-sun&quot; viewBox=&quot;0 0 1024 1024&quot;&gt;            &lt;path                d=&quot;M511.99976 511.99976m-511.99976 0a511.99976 511.99976 0 1 0 1023.99952 0 511.99976 511.99976 0 1 0-1023.99952 0Z&quot;                fill=&quot;#91D2F2&quot;&gt;&lt;/path&gt;            &lt;path                d=&quot;M144.623932 868.455593C237.679889 964.327548 367.831828 1023.99952 511.99976 1023.99952c269.983873 0 490.99977-209.007902 510.455761-474.031778C956.991551 535.703749 887.559584 527.999753 815.623618 527.999753c-309.535855 0-572.895731 142.055933-670.999686 340.45584z&quot;                fill=&quot;#198058&quot;&gt;&lt;/path&gt;            &lt;path                d=&quot;M979.623541 575.99973c-351.319835 0-647.791696 155.655927-741.279653 368.639827A509.359761 509.359761 0 0 0 511.99976 1023.99952c260.839878 0 475.967777-195.111909 507.799762-447.31979a1194.34344 1194.34344 0 0 0-40.175981-0.68z&quot;                fill=&quot;#1E9969&quot;&gt;&lt;/path&gt;            &lt;path                d=&quot;M69.711967 769.831639C158.503926 921.815568 323.271848 1023.99952 511.99976 1023.99952a509.455761 509.455761 0 0 0 269.631874-76.783964C657.111692 828.375612 464.271782 751.999648 247.623884 751.999648c-61.575971 0-121.183943 6.271997-177.911917 17.831991z&quot;                fill=&quot;#6AA33A&quot;&gt;&lt;/path&gt;            &lt;path                d=&quot;M487.887771 1023.39152c-86.543959-122.151943-236.911889-214.679899-417.591804-252.543881 85.11996 144.919932 239.415888 244.279885 417.591804 252.543881z&quot;                fill=&quot;#95E652&quot;&gt;&lt;/path&gt;            &lt;path                d=&quot;M394.159815 167.999921l-45.255979 45.255979L303.647858 167.999921l45.255978-45.255979zM394.159815 503.999764l-45.255979 45.255979L303.655858 503.999764l45.247978-45.247979z&quot;                fill=&quot;#FFF8E6&quot;&gt;&lt;/path&gt;            &lt;path                d=&quot;M180.879915 290.719864l45.247979 45.247979-45.255979 45.255978-45.255979-45.255978zM516.903758 290.719864l45.247978 45.247979-45.247978 45.247978-45.247979-45.247978z&quot;                fill=&quot;#FFF8E6&quot;&gt;&lt;/path&gt;            &lt;path d=&quot;M198.087907 185.207913h63.99997v63.99997h-63.99997zM435.671796 422.791802h63.99997v63.99997h-63.99997z&quot;                fill=&quot;#FFF8E6&quot;&gt;&lt;/path&gt;            &lt;path d=&quot;M198.087907 422.791802h63.99997v63.99997h-63.99997zM435.671796 185.207913h63.99997v63.99997h-63.99997z&quot;                fill=&quot;#FFF8E6&quot;&gt;&lt;/path&gt;            &lt;path                d=&quot;M348.879836 335.999843m-183.999913 0a183.999914 183.999914 0 1 0 367.999827 0 183.999914 183.999914 0 1 0-367.999827 0Z&quot;                fill=&quot;#FFEAB3&quot;&gt;&lt;/path&gt;            &lt;path                d=&quot;M348.879836 335.999843m-159.999925 0a159.999925 159.999925 0 1 0 319.99985 0 159.999925 159.999925 0 1 0-319.99985 0Z&quot;                fill=&quot;#FFDC80&quot;&gt;&lt;/path&gt;        &lt;/symbol&gt;        &lt;symbol id=&quot;icon-_moon&quot; viewBox=&quot;0 0 1024 1024&quot;&gt;            &lt;path d=&quot;M512 512m-512 0a512 512 0 1 0 1024 0 512 512 0 1 0-1024 0Z&quot; fill=&quot;#323232&quot;&gt;&lt;/path&gt;            &lt;path                d=&quot;M512 512m-407.005867 0a407.005867 407.005867 0 1 0 814.011734 0 407.005867 407.005867 0 1 0-814.011734 0Z&quot;                fill=&quot;#494A4A&quot;&gt;&lt;/path&gt;            &lt;path                d=&quot;M748.1344 633.9584c0-1.143467 0.085333-2.286933 0.085333-3.413333a69.512533 69.512533 0 0 0-8.823466-33.979734q-1.058133-1.911467-2.2528-3.7376l-0.187734-0.3072a70.485333 70.485333 0 0 0-5.2736-7.099733l-0.238933-0.273067q-1.3312-1.536-2.730667-3.003733l-0.3072-0.324267a70.894933 70.894933 0 0 0-6.417066-5.819733l-0.5632-0.443733q-1.467733-1.160533-3.003734-2.235734l-0.494933-0.341333q-1.706667-1.2288-3.6352-2.3552l-0.256-0.136533q-1.706667-0.989867-3.413333-1.8944l-0.887467-0.4608q-1.604267-0.802133-3.242667-1.536l-0.6144-0.273067q-1.928533-0.836267-3.9424-1.553067l-0.8192-0.273066a54.8864 54.8864 0 0 0-3.242666-1.024l-1.143467-0.324267a85.248 85.248 0 0 0-3.601067-0.887467l-0.546133-0.119466a67.345067 67.345067 0 0 0-4.1984-0.733867l-1.143467-0.136533q-1.706667-0.2048-3.2768-0.341334l-1.245866-0.1024a74.786133 74.786133 0 0 0-4.386134-0.1536 69.8368 69.8368 0 0 0-20.48 3.037867 104.106667 104.106667 0 0 0-12.1344-11.076267 258.696533 258.696533 0 0 0-449.9456-248.763733 183.1424 183.1424 0 0 1 106.939734-34.2528c5.12 0 10.24 0.221867 15.36 0.631467a183.125333 183.125333 0 0 1 50.5344 11.52h0.170666q3.874133 1.501867 7.68 3.157333l0.256 0.1024 7.441067 3.413333 0.273067 0.136534q3.669333 1.826133 7.253333 3.805866l0.221867 0.119467q3.618133 2.013867 7.133866 4.164267a184.610133 184.610133 0 0 1 26.760534 20.036266h0.085333q2.986667 2.696533 5.870933 5.5296l0.324267 0.3072q2.781867 2.7648 5.461333 5.632l0.443734 0.477867q2.6112 2.833067 5.12 5.768533l0.494933 0.580267q2.4576 2.9184 4.795733 5.956267l0.494934 0.648533q2.321067 3.037867 4.522666 6.178133l0.426667 0.6144q2.2016 3.1744 4.283733 6.4512l0.324267 0.529067q2.116267 3.413333 4.078933 6.826667l0.170667 0.3072c1.553067 2.7136 3.0208 5.495467 4.437333 8.2944a56.149333 56.149333 0 0 0-12.578133 2.304 82.824533 82.824533 0 0 0-134.007467 18.039466 42.530133 42.530133 0 0 0-53.009066 41.079467 104.277333 104.277333 0 0 0-42.2912 80.110933 13.653333 13.653333 0 0 0 0 1.4336v0.426667c0 0.136533 0.1024 0.682667 0.187733 1.024s0 0.3072 0.1024 0.4608 0.2048 0.733867 0.324267 1.092267l0.1024 0.3072a15.36 15.36 0 0 0 0.580266 1.416533l0.1024 0.187733a16.520533 16.520533 0 0 0 0.648534 1.211734l0.221866 0.3584c0.221867 0.3584 0.4608 0.733867 0.7168 1.092266l0.221867 0.3072a26.333867 26.333867 0 0 0 2.338133 2.798934l0.119467 0.119466q0.6144 0.631467 1.297067 1.262934l0.2048 0.187733q0.7168 0.648533 1.501866 1.297067 1.706667 1.416533 3.720534 2.781866c0.6656 0.4608 1.348267 0.904533 2.065066 1.348267 26.914133 16.7936 87.995733 28.535467 159.044267 28.535467 19.3536 0 37.956267-0.8704 55.3472-2.474667l-0.494933 0.750933-0.426667 0.6144q-2.2016 3.140267-4.539733 6.178134l-0.477867 0.631466q-2.338133 3.037867-4.795733 5.956267l-0.494934 0.580267q-2.491733 2.935467-5.12 5.7856l-0.443733 0.477866q-2.679467 2.884267-5.461333 5.649067l-0.3072 0.290133q-2.884267 2.833067-5.870934 5.546667a184.8832 184.8832 0 0 1-26.7776 20.036267q-3.515733 2.167467-7.150933 4.181333l-0.187733 0.1024q-3.584 1.979733-7.2704 3.805867l-0.256 0.136533q-3.6864 1.826133-7.458134 3.413333l-0.238933 0.1024q-3.805867 1.706667-7.68 3.157334h-0.136533a183.057067 183.057067 0 0 1-50.551467 11.52c-5.12 0.4096-10.24 0.631467-15.36 0.631466a183.159467 183.159467 0 0 1-106.939733-34.2528 258.5088 258.5088 0 0 0 180.138666 107.093334 109.550933 109.550933 0 0 0-3.259733 26.453333 16.520533 16.520533 0 0 0 0.1024 1.706667v0.529066c0 0.170667 0.136533 0.853333 0.221867 1.262934l0.136533 0.5632 0.392533 1.365333 0.136534 0.4096a13.892267 13.892267 0 0 0 0.733866 1.706667l0.119467 0.238933c0.238933 0.512 0.512 1.006933 0.802133 1.501867l0.273067 0.443733q0.4096 0.682667 0.887467 1.365333l0.273066 0.375467a33.0752 33.0752 0 0 0 2.9184 3.413333l0.1536 0.1536 1.5872 1.553067 0.273067 0.256 1.8432 1.621333q2.116267 1.706667 4.625067 3.413334l2.56 1.706666c33.467733 20.8896 109.431467 35.4816 197.802666 35.4816 119.330133 0 216.046933-26.606933 216.046934-59.409066a131.413333 131.413333 0 0 0-56.285867-102.058667z&quot;                fill=&quot;#323232&quot;&gt;&lt;/path&gt;            &lt;path                d=&quot;M573.8496 401.8176v-2.781867a56.200533 56.200533 0 0 0-72.6016-53.725866 82.824533 82.824533 0 0 0-134.007467 18.039466 42.530133 42.530133 0 0 0-53.009066 41.079467 104.277333 104.277333 0 0 0-42.257067 80.0768c0 26.385067 77.7728 47.786667 173.7216 47.786667s173.7216-21.384533 173.7216-47.786667a105.659733 105.659733 0 0 0-45.568-82.688z&quot;                fill=&quot;#CDCCCA&quot;&gt;&lt;/path&gt;            &lt;path                d=&quot;M293.768533 506.2656a104.277333 104.277333 0 0 1 42.2912-80.110933 42.530133 42.530133 0 0 1 53.009067-41.079467 82.807467 82.807467 0 0 1 134.007467-18.039467 56.32 56.32 0 0 1 43.758933 4.642134 56.2176 56.2176 0 0 0-65.518933-26.4192 82.824533 82.824533 0 0 0-134.007467 18.039466 42.530133 42.530133 0 0 0-53.009067 41.079467 104.277333 104.277333 0 0 0-42.325333 80.128c0 8.413867 7.936 16.3328 21.845333 23.210667a13.294933 13.294933 0 0 1-0.0512-1.450667z&quot;                fill=&quot;#E8E9EC&quot;&gt;&lt;/path&gt;            &lt;path                d=&quot;M453.4784 166.912a258.338133 258.338133 0 0 0-210.944 108.919467 183.995733 183.995733 0 1 1 0 299.451733 258.6624 258.6624 0 1 0 210.944-408.388267z&quot;                fill=&quot;#DDAE2A&quot;&gt;&lt;/path&gt;            &lt;path                d=&quot;M364.834133 608.9216q7.594667 0.631467 15.36 0.648533a183.995733 183.995733 0 0 0 0-367.9744q-7.748267 0-15.36 0.631467a183.995733 183.995733 0 0 1 0 366.6944z&quot;                fill=&quot;#EDC849&quot;&gt;&lt;/path&gt;            &lt;path                d=&quot;M794.7776 605.969067c0-1.143467 0.085333-2.286933 0.085333-3.413334a69.973333 69.973333 0 0 0-90.299733-66.833066 102.997333 102.997333 0 0 0-166.656 22.4256 52.906667 52.906667 0 0 0-65.928533 51.0976 129.706667 129.706667 0 0 0-52.599467 99.6352c0 32.8192 96.733867 59.409067 216.046933 59.409066s216.046933-26.606933 216.046934-59.409066a131.413333 131.413333 0 0 0-56.695467-102.912z&quot;                fill=&quot;#CDCCCA&quot;&gt;&lt;/path&gt;            &lt;path                d=&quot;M446.481067 735.914667a129.706667 129.706667 0 0 1 52.599466-99.6352 52.906667 52.906667 0 0 1 65.928534-51.080534 102.997333 102.997333 0 0 1 166.6048-22.442666 69.973333 69.973333 0 0 1 54.408533 5.7856 69.973333 69.973333 0 0 0-81.476267-32.853334 102.997333 102.997333 0 0 0-166.656 22.4256 52.906667 52.906667 0 0 0-65.928533 51.0976 129.706667 129.706667 0 0 0-52.599467 99.6352c0 10.478933 9.864533 20.309333 27.170134 28.859734a17.408 17.408 0 0 1-0.0512-1.792z&quot;                fill=&quot;#E8E9EC&quot;&gt;&lt;/path&gt;        &lt;/symbol&gt;    &lt;/svg&gt;&lt;/div&gt;&lt;script&gt;    function music_on() &#123;        var audio1 = document.getElementById(&#x27;bg_music&#x27;);        if (audio1.paused) &#123;            audio1.play();        &#125;else&#123;            audio1.pause();            audio1.currentTime = 0;//音乐从头播放        &#125;    &#125;    function BackTOP() &#123;        $(&quot;#btn&quot;).hide();        $(function () &#123;            $(window).scroll(function () &#123;                if ($(window).scrollTop() &gt; 50) &#123;                    $(&quot;#btn&quot;).fadeIn(200);                &#125; else &#123;                    $(&quot;#btn&quot;).fadeOut(200);                &#125;            &#125;);            $(&quot;#btn&quot;).click(function () &#123;                $(&#x27;body,html&#x27;).animate(&#123;                        scrollTop: 0                    &#125;,                    500);                return false;            &#125;);        &#125;);        $(function () &#123;            $(&quot;#say&quot;).click(function () &#123;                $(&#x27;body,html&#x27;).animate(&#123;                        scrollTop: $(&#x27;html, body&#x27;).get(0).scrollHeight                    &#125;,                    500);                return false;            &#125;);        &#125;)    &#125;    $(&#x27;#readmode&#x27;).click(function () &#123;            $(&#x27;body&#x27;).toggleClass(&#x27;read-mode&#x27;)        &#125;)            function SiderMenu() &#123;        $(&#x27;#main-container&#x27;).toggleClass(&#x27;open&#x27;);        $(&#x27;.iconflat&#x27;).css(&#x27;width&#x27;, &#x27;50px&#x27;).css(&#x27;height&#x27;, &#x27;50px&#x27;);        $(&#x27;.openNav&#x27;).css(&#x27;height&#x27;, &#x27;50px&#x27;);        $(&#x27;#main-container,#mo-nav,.openNav&#x27;).toggleClass(&#x27;open&#x27;)    &#125;    function switchNightMode() &#123;        $(&#x27;&lt;div class=&quot;Cuteen_DarkSky&quot;&gt;&lt;div class=&quot;Cuteen_DarkPlanet&quot;&gt;&lt;/div&gt;&lt;/div&gt;&#x27;).appendTo($(&quot;body&quot;)), setTimeout(            function () &#123;                var DarkMode = document.cookie.replace(/(?:(?:^|.*;\s*)DarkMode\s*\=\s*([^;]*).*$)|^.*$/, &quot;$1&quot;) ||                    &#x27;0&#x27;;                (DarkMode == &#x27;0&#x27;) ? ($(&quot;html&quot;).addClass(&quot;DarkMode&quot;), document.cookie = &quot;DarkMode=1;path=/&quot;, console                    .log(&#x27;夜间模式开启&#x27;), $(&#x27;#modeicon&#x27;).attr(&quot;xlink:href&quot;, &quot;#icon-sun&quot;)) : ($(&quot;html&quot;).removeClass(                        &quot;DarkMode&quot;), document.cookie = &quot;DarkMode=0;path=/&quot;, console.log(&#x27;夜间模式关闭&#x27;), $(&#x27;#modeicon&#x27;)                    .attr(&quot;xlink:href&quot;, &quot;#icon-_moon&quot;)), setTimeout(function () &#123;                    $(&quot;.Cuteen_DarkSky&quot;).fadeOut(1e3, function () &#123;                        $(this).remove()                    &#125;)                &#125;, 2e3)            &#125;), 50    &#125;    function checkNightMode() &#123;        if ($(&quot;html&quot;).hasClass(&quot;n-f&quot;)) &#123;            $(&quot;html&quot;).removeClass(&quot;day&quot;);            $(&quot;html&quot;).addClass(&quot;DarkMode&quot;);            $(&#x27;#modeicon&#x27;).attr(&quot;xlink:href&quot;, &quot;#icon-sun&quot;)            return;        &#125;        if ($(&quot;html&quot;).hasClass(&quot;d-f&quot;)) &#123;            $(&quot;html&quot;).removeClass(&quot;DarkMode&quot;);            $(&quot;html&quot;).addClass(&quot;day&quot;);            $(&#x27;#modeicon&#x27;).attr(&quot;xlink:href&quot;, &quot;#icon-_moon&quot;)            return;        &#125;        if (document.cookie.replace(/(?:(?:^|.*;\s*)DarkMode\s*\=\s*([^;]*).*$)|^.*$/, &quot;$1&quot;) === &#x27;&#x27;) &#123;            if (new Date().getHours() &gt;= 23 || new Date().getHours() &lt; 7) &#123;                $(&quot;html&quot;).addClass(&quot;DarkMode&quot;);                document.cookie = &quot;DarkMode=1;path=/&quot;;                console.log(&#x27;夜间模式开启&#x27;);                $(&#x27;#modeicon&#x27;).attr(&quot;xlink:href&quot;, &quot;#icon-sun&quot;)            &#125; else &#123;                $(&quot;html&quot;).removeClass(&quot;DarkMode&quot;);                document.cookie = &quot;DarkMode=0;path=/&quot;;                console.log(&#x27;夜间模式关闭&#x27;);                $(&#x27;#modeicon&#x27;).attr(&quot;xlink:href&quot;, &quot;#icon-_moon&quot;)            &#125;        &#125; else &#123;            var DarkMode = document.cookie.replace(/(?:(?:^|.*;\s*)DarkMode\s*\=\s*([^;]*).*$)|^.*$/, &quot;$1&quot;) || &#x27;0&#x27;;            if (DarkMode == &#x27;0&#x27;) &#123;                $(&quot;html&quot;).removeClass(&quot;DarkMode&quot;);                $(&#x27;#modeicon&#x27;).attr(&quot;xlink:href&quot;, &quot;#icon-_moon&quot;)            &#125; else if (DarkMode == &#x27;1&#x27;) &#123;                $(&quot;html&quot;).addClass(&quot;DarkMode&quot;);                $(&#x27;#modeicon&#x27;).attr(&quot;xlink:href&quot;, &quot;#icon-sun&quot;)            &#125;        &#125;    &#125;    BackTOP();    checkNightMode();&lt;/script&gt;&lt;style&gt;    #RightDownBtn &#123;        position: fixed;        left: 1.875rem;        bottom: 1.875rem;        padding: 0.3125rem 0.625rem;        background: #fff;        border-radius: 0.1875rem;        &lt;!-- box-shadow: 0 0 0.3125rem rgba(0, 0, 0, .4); --&gt;        transition: 0.3s ease all;        z-index: 1;        align-items: flex-end;        flex-direction: column;        display: -moz-flex;        display: flex;        float: right;    &#125;    #RightDownBtn&gt;a,    #RightDownBtn&gt;label &#123;        width: 1.5em;        height: 1.5em;        margin: 0.3125rem 0;        transition: .2s cubic-bezier(.25, .46, .45, .94);    &#125;    /* font color */    .DarkMode #page,    .DarkMode #colophon,    .DarkMode #vcomments .vbtn,    .DarkMode .art-content #archives .al_mon_list .al_mon,    .DarkMode .art-content #archives .al_mon_list span,    .DarkMode body,    .DarkMode .art-content #archives .al_mon_list .al_mon,    .DarkMode .art-content #archives .al_mon_list span,    .DarkMode button,    .DarkMode .art .art-content #archives a,    .DarkMode textarea,    .DarkMode strong,    .DarkMode a,    .DarkMode p,	.DarkMode li,    .DarkMode .label &#123;        color: rgba(255, 255, 255, .6);    &#125;	    .DarkMode #page,    .DarkMode body,    .DarkMode #colophon,    .DarkMode #main-container,    .DarkMode #page .yya,    .DarkMode #content,    .DarkMode #contentss,    .DarkMode #footer &#123;        background-color: #292a2d;    &#125;    .DarkMode strong,    .DarkMode img &#123;        filter: brightness(.7);    &#125;    /* sun and noon */    .Cuteen_DarkSky,    .Cuteen_DarkSky:before &#123;        content: &quot;&quot;;        position: fixed;        left: 0;        right: 0;        top: 0;        bottom: 0;        z-index: 88888888    &#125;    .Cuteen_DarkSky &#123;        background: linear-gradient(#feb8b0, #fef9db)    &#125;    .Cuteen_DarkSky:before &#123;        transition: 2s ease all;        opacity: 0;        background: linear-gradient(#4c3f6d, #6c62bb, #93b1ed)    &#125;    .DarkMode .Cuteen_DarkSky:before &#123;        opacity: 1    &#125;    .Cuteen_DarkPlanet &#123;        z-index: 99999999;        position: fixed;        left: -50%;        top: -50%;        width: 200%;        height: 200%;        -webkit-animation: CuteenPlanetMove 2s cubic-bezier(.7, 0, 0, 1);        animation: CuteenPlanetMove 2s cubic-bezier(.7, 0, 0, 1);        transform-origin: center bottom    &#125;    @-webkit-keyframes CuteenPlanetMove &#123;        0% &#123;            transform: rotate(0)        &#125;        to &#123;            transform: rotate(360deg)        &#125;    &#125;    @keyframes CuteenPlanetMove &#123;        0% &#123;            transform: rotate(0)        &#125;        to &#123;            transform: rotate(360deg)        &#125;    &#125;    .Cuteen_DarkPlanet:after &#123;        position: absolute;        left: 35%;        top: 40%;        width: 9.375rem;        height: 9.375rem;        border-radius: 50%;        content: &quot;&quot;;        background: linear-gradient(#fefefe, #fffbe8)    &#125;&lt;/style&gt;&lt;!-- left side bar.end --&gt;
+
+创建样式文件建议所有关于主题自定义的样式都放置在同一个文件夹中，然后全局引入。在blog\themes\volantis\source\css下创建文件夹_custom，然后在blog\themes\volantis\source\css下的index.styl中全局引用此文件夹下所有文件：
+12345678// Project @import &#x27;_base&#x27; @import &#x27;_tag-plugins/*&#x27; @import &#x27;_highlight&#x27; @import &#x27;_third-party/*&#x27; @import &#x27;_layout/*&#x27;+@import &#x27;_custom/*&#x27;
+
+创建样式文件highlight.styl，放置在_custom文件夹中。添加以下代码：
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114.DarkMode  .l_main    #comments      .vcards        .vhead          .vsys            background:none        .vcontent          p            color: rgb(136 136 136)      .vinput        color: #dbdbe2      #valine_container        .vwrap          border: 1px dashed #fff          .vemojis            background:none    .post      section        .title          a            color: #dbdbe2    .article      .prev-next        &gt;a          background: #444  .widget    background-color: #292a2d    &gt;.content      ul        &gt;li          a            color: rgba(255, 255, 255, .6) !important            &amp;:hover              color: rgb(99 203 252) !important    header      color: rgb(68 215 182)      a        color: rgb(68 215 182)  .container    background-color: #292a2d    box-shadow: 0 1px 3px 0 rgba(6,6,6,.28)  .white-box    background-color: #292a2d  .article    code      background: #f6f6f663 !important      border: none    blockquote      background: #f6f6f663    h3,h4,h5      color: rgb(219 219 226)  div.note    background: #44444475 !important  details    border: none    background:none    &gt;summary      background: #444  .l_header    .m_search      .input        background-color: #292a2d    .wrapper      .title        color: #dbdbe2    .switcher      &gt;li &gt;a        color: #44d7b6 !important  #archive-page    .archive      .archive-year        h2          color: #fff      .archive_page        .archive-post          .title            color: rgb(219 219 226)  #RightDownBtn    background: none  h1    color: rgb(219 219 226)  ul.list-v    background: rgb(41 42 45)  .comments    hr      color: rgb(102 102 102)    .article      p[ct]        color: #dbdbe2  div.tabs    background: rgb(102 102 102)  .new-meta-item    p      color: #888 !important  .highlight&gt;table      background: #282c34  .gutter    background: #282c34 !important    background-color: #282c34 !important  .highlight     figcaption      background-color: #21252b  .highlight    border: 1px solid #21252b !important    background: #282c34  .highlight pre .line, .highlight pre .params       color: rgba(158, 142, 142, 0.9)
+
+所有的样式都是基于我自己的主题写的，仅供参考。
+引入到页面在blog\themes\volantis\layout\layout.ejs的文件末尾&lt;/body&gt;下引入：
+12&lt;%- partial(&#x27;_partial/left&#x27;, null, &#123;cache: !config.relative_link&#125;) %&gt;
+
+最后一键三连。
+总结配置的最终效果还是挺满意的，目前只调试了这么多，后期若发现有哪里不合适的地方再修改。在原文章中，博主写了很多功能，不过我都抛弃了，只留下的暗黑模式。可以参考文章自己添加。
+参考文章：
+hexo（sakura）给博客增添侧边栏（回到顶部，跳转评论，深色模式，播放音乐）
+
+                        
+                    </p>
+                </a>
+            </div>
+
+            
+                <div class="post-footer">
+                    
+                        <i class="fa fa-folder-open-o"></i>
+                        <a class="category-link" href="../../categories/hexo/">hexo</a>
+
+                        
+                            <span class="dotted">|</span>
+                        
+
+                    
+                    
+                        <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="" rel="tag">hexo</a>
+                    
+                </div>
+            
+        </article>
+    
+
+
+
+            </div>
+            <div class="aside">
+    
+        <div class="box widget">
+    <div class="introduction">
+        <p><img src="/images/avatar.jpg" alt="head-sculpture" /></p>
+        <p class="name">
+            博落回
+        </p>
+        <p class="slogan">流连矣 忘景幻云催 峦栈醺醺说旧梦 重山迟迟映霞辉 向晚共邀归 —— 忆江南</p>
+    </div>
+</div>
+    
         
+<div class="box widget">
+    <div class="title">Recent</div>
+    <ul class="item-box">
+        
+            
+                <li><a href="../../2021/05/04/%E5%B0%8F%E7%BA%A2%E4%B9%A6%E7%9A%84%E6%83%8A%E5%96%9C/">小红书的惊喜</a></li>
+            
+        
+            
+                <li><a href="../../2021/05/03/%E2%80%9C%E5%8D%97%E4%BA%AC%E5%8F%8B%E8%AE%B0-%E6%9D%8E%E5%AE%B6%E9%A6%A8%E2%80%9D/">南京友记-李家馨</a></li>
+            
+        
+            
+                <li><a href="../../2021/05/01/%E5%8D%97%E4%BA%AC%E4%B9%8B%E6%97%85-episode-1/">南京之旅-中山陵</a></li>
+            
+        
+            
+                <li><a href="../../2021/04/24/%E2%80%9C%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E2%80%9D/">“计算机文件系统”</a></li>
+            
+        
+            
+                <li><a href="../../2021/04/24/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%AC%AC%E4%BA%8C%E7%AB%A0%E6%80%BB%E7%BB%93/">线性代数第二章总结</a></li>
+            
+        
+            
+                <li><a href="../../2021/04/23/2020%E8%80%83%E7%A0%94%E8%AE%A1%E7%AE%97%E6%9C%BA%EF%BC%88408%EF%BC%89%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/">2020考研计算机（408）考试大纲</a></li>
+            
+        
+            
+                <li><a href="../../2021/04/22/%E2%80%9C%E5%B9%82%E7%BA%A7%E6%95%B0%E7%9A%84%E6%9C%AC%E8%B4%A8%E2%80%9D/">“幂级数的本质”</a></li>
+            
+        
+            
+                <li><a href="../../2021/04/21/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%AC%AC%E4%B8%80%E7%AB%A0%E8%8A%82%E6%80%BB%E7%BB%93/">线性代数第一章节总结</a></li>
+            
+        
+    </ul>
+</div>
+
+    
+        
+    <div class="box widget">
+        <div class="title">Categories</div>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../categories/hexo/">hexo</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/java/">java</a><span class="category-list-count">36</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/mysql/">mysql</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/ui/">ui</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E4%B8%89%E5%89%91%E5%AE%A2/">三剑客</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E7%94%9F%E6%B4%BB/">生活</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/">计算机常识</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BB%BC%E5%90%88/">计算机网络综合</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/">高等数学</a><span class="category-list-count">7</span></li></ul>
+    </div>
+
+    
+        
+  <div class="box widget">
+    <div class="title">Archives</div>
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/05/">2021-05</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/04/">2021-04</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/03/">2021-03</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/02/">2021-02</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/01/">2021-01</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/12/">2020-12</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/11/">2020-11</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/10/">2020-10</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/09/">2020-09</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/08/">2020-08</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/07/">2020-07</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/06/">2020-06</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/03/">2020-03</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/02/">2020-02</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/12/">2019-12</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/10/">2019-10</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/08/">2019-08</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/07/">2019-07</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/06/">2019-06</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/05/">2019-05</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/03/">2019-03</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/02/">2019-02</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/12/">2018-12</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/11/">2018-11</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/05/">2018-05</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/04/">2018-04</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/03/">2018-03</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2016/04/">2016-04</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/04/">2015-04</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/06/">2013-06</a><span class="archive-list-count">1</span></li></ul>
+  </div>
+
+    
+        
+    <div class="box widget">
+        <div class="title">Tags</div>
+        <div class="item-box cloud-label">
+            <a href="../CSS/" style="font-size: 11.11px;">CSS</a> <a href="../Eclipse/" style="font-size: 10px;">Eclipse</a> <a href="../Field/" style="font-size: 10px;">Field</a> <a href="../Groovy/" style="font-size: 10px;">Groovy</a> <a href="../HTML/" style="font-size: 11.11px;">HTML</a> <a href="../Hexo/" style="font-size: 10px;">Hexo</a> <a href="../IDE/" style="font-size: 11.11px;">IDE</a> <a href="../IT/" style="font-size: 17.78px;">IT</a> <a href="../JAVA/" style="font-size: 12.22px;">JAVA</a> <a href="../JVM/" style="font-size: 10px;">JVM</a> <a href="../Java/" style="font-size: 14.44px;">Java</a> <a href="../JavaScript/" style="font-size: 11.11px;">JavaScript</a> <a href="../MYSQL/" style="font-size: 10px;">MYSQL</a> <a href="../Maven/" style="font-size: 10px;">Maven</a> <a href="../NoSql/" style="font-size: 10px;">NoSql</a> <a href="../Node-js/" style="font-size: 10px;">Node.js</a> <a href="../Python/" style="font-size: 10px;">Python</a> <a href="../TOMCAT/" style="font-size: 10px;">TOMCAT</a> <a href="../UI/" style="font-size: 10px;">UI</a> <a href="../VMware/" style="font-size: 10px;">VMware</a> <a href="../Wicket/" style="font-size: 10px;">Wicket</a> <a href="../coding/" style="font-size: 10px;">coding</a> <a href="../coding-net/" style="font-size: 12.22px;">coding.net</a> <a href="../css/" style="font-size: 13.33px;">css</a> <a href="../date/" style="font-size: 10px;">date</a> <a href="../debug/" style="font-size: 10px;">debug</a> <a href="../decorator/" style="font-size: 10px;">decorator</a> <a href="../eclipse/" style="font-size: 10px;">eclipse</a> <a href="../editor/" style="font-size: 10px;">editor</a> <a href="../equals/" style="font-size: 10px;">equals</a> <a href="../express/" style="font-size: 10px;">express</a> <a href="../git/" style="font-size: 10px;">git</a> <a href="../github/" style="font-size: 12.22px;">github</a> <a href="../gogs/" style="font-size: 10px;">gogs</a> <a href="" style="font-size: 16.67px;">hexo</a> <a href="../https/" style="font-size: 10px;">https</a> <a href="../i18n/" style="font-size: 10px;">i18n</a> <a href="../ini/" style="font-size: 10px;">ini</a> <a href="../it/" style="font-size: 15.56px;">it</a> <a href="../jar/" style="font-size: 10px;">jar</a> <a href="../java/" style="font-size: 20px;">java</a> <a href="../javascript/" style="font-size: 12.22px;">javascript</a> <a href="../jdk/" style="font-size: 10px;">jdk</a> <a href="../jvm/" style="font-size: 10px;">jvm</a> <a href="../less/" style="font-size: 10px;">less</a> <a href="../linux/" style="font-size: 11.11px;">linux</a> <a href="../mac/" style="font-size: 12.22px;">mac</a> <a href="../macvim/" style="font-size: 10px;">macvim</a> <a href="../markdown/" style="font-size: 10px;">markdown</a> <a href="../maven/" style="font-size: 11.11px;">maven</a> <a href="../mediator/" style="font-size: 10px;">mediator</a> <a href="../nginx/" style="font-size: 10px;">nginx</a> <a href="../object/" style="font-size: 10px;">object</a> <a href="../observer/" style="font-size: 10px;">observer</a> <a href="../qcloud/" style="font-size: 10px;">qcloud</a> <a href="../rails/" style="font-size: 10px;">rails</a> <a href="../reflect/" style="font-size: 10px;">reflect</a> <a href="../remote/" style="font-size: 10px;">remote</a> <a href="../ssh/" style="font-size: 10px;">ssh</a> <a href="../ssl/" style="font-size: 10px;">ssl</a> <a href="../tomcat/" style="font-size: 10px;">tomcat</a> <a href="../travis/" style="font-size: 12.22px;">travis</a> <a href="../vim/" style="font-size: 11.11px;">vim</a> <a href="../web/" style="font-size: 11.11px;">web</a> <a href="../webjars/" style="font-size: 11.11px;">webjars</a> <a href="../wicket/" style="font-size: 11.11px;">wicket</a> <a href="../%E4%B8%AD%E4%BB%8B%E8%80%85/" style="font-size: 10px;">中介者</a> <a href="../%E5%81%87%E6%9C%9F/" style="font-size: 10px;">假期</a> <a href="../%E5%88%86%E5%B8%83%E5%BC%8F/" style="font-size: 10px;">分布式</a> <a href="../%E5%89%8D%E7%AB%AF/" style="font-size: 11.11px;">前端</a> <a href="../%E5%91%A8%E6%9C%AB/" style="font-size: 11.11px;">周末</a> <a href="../%E5%9B%BE%E7%89%87/" style="font-size: 11.11px;">图片</a> <a href="../%E5%A5%BD%E6%96%87/" style="font-size: 10px;">好文</a> <a href="../%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9/" style="font-size: 10px;">小知识点</a> <a href="../%E5%B7%A5%E4%BD%9C/" style="font-size: 10px;">工作</a> <a href="../%E5%BC%80%E5%8F%91/" style="font-size: 10px;">开发</a> <a href="../%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 10px;">微服务</a> <a href="../%E5%BF%83%E6%83%85/" style="font-size: 10px;">心情</a> <a href="../%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">技术</a> <a href="../%E6%95%99%E7%A8%8B/" style="font-size: 10px;">教程</a> <a href="../%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10px;">数据库</a> <a href="../%E6%95%B0%E6%8D%AE%E6%9C%BA%E6%9E%84/" style="font-size: 10px;">数据机构</a> <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="../%E6%96%87%E7%AB%A0/" style="font-size: 10px;">文章</a> <a href="../%E6%97%A0%E5%9B%BE/" style="font-size: 10px;">无图</a> <a href="../%E6%97%A5%E5%BF%97/" style="font-size: 18.89px;">日志</a> <a href="../%E6%97%A5%E8%AE%B0/" style="font-size: 10px;">日记</a> <a href="../%E6%9D%82%E4%BA%8B/" style="font-size: 16.67px;">杂事</a> <a href="../%E6%9D%82%E6%96%87/" style="font-size: 10px;">杂文</a> <a href="../%E6%9D%82%E8%B0%88/" style="font-size: 10px;">杂谈</a> <a href="../%E6%B2%B9%E6%BC%86%E5%B7%A5/" style="font-size: 10px;">油漆工</a> <a href="../%E7%94%9F%E6%B4%BB/" style="font-size: 11.11px;">生活</a> <a href="../%E7%94%B5%E5%BD%B1/" style="font-size: 10px;">电影</a> <a href="../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 10px;">线性代数</a> <a href="../%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">网络</a> <a href="../%E8%88%B6%E6%9D%A5%E5%93%81/" style="font-size: 10px;">舶来品</a> <a href="../%E8%89%BA%E6%9C%AF%E5%AE%B6/" style="font-size: 10px;">艺术家</a> <a href="../%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="../%E8%A7%82%E5%AF%9F%E8%80%85/" style="font-size: 10px;">观察者</a> <a href="../%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="font-size: 14.44px;">计算机</a> <a href="../%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/" style="font-size: 10px;">计算机常识</a> <a href="../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 14.44px;">计算机网络</a> <a href="../%E8%AE%B0%E5%BD%95/" style="font-size: 10px;">记录</a> <a href="../%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 14.44px;">设计模式</a> <a href="../%E8%AF%B4%E7%82%B9%E5%95%A5/" style="font-size: 10px;">说点啥</a> <a href="../%E8%BF%90%E5%8A%A8/" style="font-size: 10px;">运动</a> <a href="../%E9%A3%8E%E6%99%AF/" style="font-size: 10px;">风景</a> <a href="../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 14.44px;">高等数学</a>
+        </div>
     </div>
 
     
 </div>
-        <footer>
-    <div class="inner">
-        <div class="links">
-            
-            <div class="group">
-                <h4 class="title">Blog</h4>
-                
-                <a href="/" class="item" target="_blank">Blog</a>
-                
-                <a href="/archives" class="item" target="_blank">Archives</a>
-                
-                <a href="/friends" class="item" target="_blank">Friends</a>
-                
-                <a href="/projects" class="item" target="_blank">Projects</a>
-                
-                <a href="/resume" class="item" target="_blank">Resume</a>
-                
-                <a href="/about" class="item" target="_blank">About</a>
-                
-                <a href="/atom.xml" class="item" target="_blank">RSS</a>
-                
-            </div>
-            
-            <div class="group">
-                <h4 class="title">Projects</h4>
-                
-                <a href="https://github.com/transmister" class="item" target="_blank">Transmister</a>
-                
-                <a href="https://github.com/MrWillCom/css-and-js-windows-uwp-xaml-controls" class="item" target="_blank">CSS&amp;JS Windows UWP XAML Controls</a>
-                
-                <a href="https://github.com/MrWillCom/hexo-theme-cupertino" class="item" target="_blank">Theme Cupertino</a>
-                
-                <a href="https://github.com/MrWillCom/github-dark-mode" class="item" target="_blank">GitHub Dark Mode</a>
-                
-            </div>
-            
-            <div class="group">
-                <h4 class="title">Me</h4>
-                
-                <a href="https://github.com/MrWillCom" class="item" target="_blank">GitHub</a>
-                
-                <a href="https://codepen.io/mrwillcom" class="item" target="_blank">CodePen</a>
-                
-                <a href="https://www.patreon.com/MrWillCom" class="item" target="_blank">Patreon</a>
-                
-                <a href="mailto:mr.will.com@outlook.com" class="item" target="_blank">Email</a>
-                
-            </div>
-            
+        </section>
+        <footer class="footer">
+    <div class="global-width footer-box">
+        <div class="copyright">
+            <span>Copyright &copy; 2019</span>
+            <span class="dotted">|</span>
+            <span>Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a></span>
+            <span class="dotted">|</span>
+            <span>Theme by <a href="javascript:">Loren</a></span>
+            <span class="dotted">|</span>
+            <span><a target="_blank" rel="noopener" href="http://www.beian.miit.gov.cn">浙ICP备18016660号-1</a></span>
         </div>
-        &copy; 2021 齐雨争<br />
-        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
 </footer>
-
-        
-<script src="../../js/main.js"></script>
-
-        
-    </body>
-</html>ent">
-                    <div class="title">
-                        hexo博客优化之实用功能添加系列分类雷达
-                    </div>
-                    
-                    <div class="excerpt">
-                        
-                    </div>
-                    
-                    <div class="time">
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        <span>November</span>
-                        
-                        
-                        <span>&nbsp;21,&nbsp;</span>
-                        <span>2020</span>
-                    </div>
-                </div>
-            </a>
-        </article>
-        
-        <article class="post-list-item">
-            <a href="../../2020/11/21/volantis%E4%B9%8B%E6%89%93%E8%B5%8F%E6%A8%A1%E5%9D%97/">
-                
-                <div class="content">
-                    <div class="title">
-                        volantis之打赏模块
-                    </div>
-                    
-                    <div class="excerpt">
-                        
-                    </div>
-                    
-                    <div class="time">
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        <span>November</span>
-                        
-                        
-                        <span>&nbsp;21,&nbsp;</span>
-                        <span>2020</span>
-                    </div>
-                </div>
-            </a>
-        </article>
-        
-        <article class="post-list-item">
-            <a href="../../2020/11/19/hexo%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96%E8%BF%9B%E9%98%B6/">
-                
-                <div class="content">
-                    <div class="title">
-                        hexo主题美化进阶&lt;hexo主题美化进阶&gt;
-                    </div>
-                    
-                    <div class="excerpt">
-                        
-                    </div>
-                    
-                    <div class="time">
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        <span>November</span>
-                        
-                        
-                        <span>&nbsp;19,&nbsp;</span>
-                        <span>2020</span>
-                    </div>
-                </div>
-            </a>
-        </article>
-        
-        <article class="post-list-item">
-            <a href="../../2020/11/19/hexo%E4%B9%8BVolantis%E6%B7%BB%E5%8A%A0%E6%9A%97%E9%BB%91%E6%A8%A1%E5%BC%8F/">
-                
-                <div class="content">
-                    <div class="title">
-                        hexo之Volantis添加暗黑模式
-                    </div>
-                    
-                    <div class="excerpt">
-                        
-                    </div>
-                    
-                    <div class="time">
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        <span>November</span>
-                        
-                        
-                        <span>&nbsp;19,&nbsp;</span>
-                        <span>2020</span>
-                    </div>
-                </div>
-            </a>
-        </article>
-        
     </div>
 
-    
-</div>
-        <footer>
-    <div class="inner">
-        <div class="links">
-            
-            <div class="group">
-                <h4 class="title">Blog</h4>
-                
-                <a href="/" class="item" target="_blank">Blog</a>
-                
-                <a href="/archives" class="item" target="_blank">Archives</a>
-                
-                <a href="/friends" class="item" target="_blank">Friends</a>
-                
-                <a href="/projects" class="item" target="_blank">Projects</a>
-                
-                <a href="/resume" class="item" target="_blank">Resume</a>
-                
-                <a href="/about" class="item" target="_blank">About</a>
-                
-                <a href="/atom.xml" class="item" target="_blank">RSS</a>
-                
-            </div>
-            
-            <div class="group">
-                <h4 class="title">Projects</h4>
-                
-                <a href="https://github.com/transmister" class="item" target="_blank">Transmister</a>
-                
-                <a href="https://github.com/MrWillCom/css-and-js-windows-uwp-xaml-controls" class="item" target="_blank">CSS&amp;JS Windows UWP XAML Controls</a>
-                
-                <a href="https://github.com/MrWillCom/hexo-theme-cupertino" class="item" target="_blank">Theme Cupertino</a>
-                
-                <a href="https://github.com/MrWillCom/github-dark-mode" class="item" target="_blank">GitHub Dark Mode</a>
-                
-            </div>
-            
-            <div class="group">
-                <h4 class="title">Me</h4>
-                
-                <a href="https://github.com/MrWillCom" class="item" target="_blank">GitHub</a>
-                
-                <a href="https://codepen.io/mrwillcom" class="item" target="_blank">CodePen</a>
-                
-                <a href="https://www.patreon.com/MrWillCom" class="item" target="_blank">Patreon</a>
-                
-                <a href="mailto:mr.will.com@outlook.com" class="item" target="_blank">Email</a>
-                
-            </div>
-            
-        </div>
-        &copy; 2021 齐雨争<br />
-        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-</footer>
-
-        
-<script src="../../js/main.js"></script>
-
-        
-    </body>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>
 </html>

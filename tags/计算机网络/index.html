@@ -1,343 +1,810 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!DOCTYPE html>
-<html>
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-  
-  <title>tag: 计算机网络 - 齐雨争</title>
-  
-    <link rel="shortcut icon" href="../../favicon.png">
-  
-  
-    <link rel='manifest' href='/manifest.json'>
-  
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 
-  
-<link rel="stylesheet" href="../../css/var.css">
 
-  
-<link rel="stylesheet" href="../../css/main.css">
 
-  
-<link rel="stylesheet" href="../../css/typography.css">
 
-  
-<link rel="stylesheet" href="../../css/code-highlighting.css">
+    <meta name="keywords" content="java leetcode mysql hexo"/>
 
-  
-<link rel="stylesheet" href="../../css/components.css">
 
-  
-<link rel="stylesheet" href="../../css/nav.css">
 
-  
-<link rel="stylesheet" href="../../css/paginator.css">
+    <meta name="description" content="雨争齐齐齐"/>
 
-  
-<link rel="stylesheet" href="../../css/footer.css">
 
-  
-<link rel="stylesheet" href="../../css/post-list.css">
+<meta name="Robots" content="all">
 
-  
-<link rel="stylesheet" href="../../css/waline.css">
 
-  
-  
-  
-<link rel="stylesheet" href="../../css/post.css">
+    <title>齐雨争</title>
 
-  
 
-  
+<link rel="icon" href="/images/favicon.ico">
+
+<link rel="stylesheet" href="../../css/font-awesome.min.css">
+
+
+<link rel="stylesheet" href="../../css/atom-one-dark.css">
+
+
+<link rel="stylesheet" href="../../css/style.css">
+
+
+<script src="../../js/highlight.min.js"></script>
+
 <meta name="generator" content="Hexo 5.4.0"></head>
-    <script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
-
-<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script>
-
-    <body>
-        <nav id="theme-nav">
-    <div class="inner">
-        <a class="title" href="/">帅哥的博客</a>
-        <div class="nav-arrow"></div>
-        <div class="nav-items">
-            <a class="nav-item nav-item-home" href="/">Home</a>
+<body>
+    <div class="main-container">
+        <header class="header">
+    <div class="global-width">
+        <nav class="nav-box">
             
+                <a class="nav-item" href="/"
+                
+                >Home</a>
             
-            <a class="nav-item" href="../../archives">文章</a>
+                <a class="nav-item" href="/resume"
+                
+                >Resume</a>
             
+                <a class="nav-item" href="/mood"
+                
+                   target="_blank"
+                
+                >Mood</a>
             
+                <a class="nav-item" href="/amusement/tetris"
+                
+                   target="_blank"
+                
+                >Amusement</a>
             
-            <a class="nav-item" href="../../friends">朋友们的友链</a>
+                <a class="nav-item" href="/about"
+                
+                >About</a>
             
-            
-            
-            <a class="nav-item" href="../../examples">维护的大家</a>
-            
-            
-            
-            <a class="nav-item" href="../../https:/github.com/Geisha-design">开源项目</a>
-            
-            
-            
-            <a class="nav-item" href="../../about">关于我</a>
-            
-            
-            
-            <a class="nav-item nav-item-github nav-item-icon" href="../../https:/github.com/Geisha-design" target="_blank">&nbsp;</a>
-            
-            
-            
-            <a class="nav-item nav-item-codepen nav-item-icon" href="../../https:/codepen.io/mrwillcom" target="_blank">&nbsp;</a>
-            
-            
-            
-            <a class="nav-item nav-item-patreon nav-item-icon" href="../../https:/www.patreon.com/MrWillCom" target="_blank">&nbsp;</a>
-            
-            
-        </div>
+        </nav>
     </div>
-</nav>
-        <div class="container">
+</header>
+
+        <section class="content global-width">
+            <div class="main">
+                
+    
+        <article class="box post post-item">
+            <div class="post-title"><a href="../../2021/02/05/%E5%BA%94%E7%94%A8%E5%B1%82/">应用层</a></div>
+            <div class="post-meta">
+                
+                <i class="fa fa-calendar"></i> <time>2021-02-05</time>
+                <span class="dotted">|</span>
+                <i class="fa fa-user"></i> 
+            </div>
+
+            <div class="post-excerpt">
+                <a href="../../2021/02/05/%E5%BA%94%E7%94%A8%E5%B1%82/">
+                    <p>
+                        
+                            本人计算机网络笔记总目录计算机网络笔记Part1 概述计算机网络笔记Part2 物理层（Physical Layer）计算机网络笔记Part3 数据链路层（Data Link Layer）计算机网络笔记Part4 网络层（Network Layer）计算机网络笔记Part5 传输层（Transport Layer）计算机网络笔记Part6 应用层（Application Layer）
+1. 概述因为不同的网络应用之间需要有一个确定的通信规则
+1.1 两种常用的网络应用模型1.1.1 客户/服务器模型（Client/Server）
+1.1.2 P2P模型（Peer-to-Peer）网络健壮性指的是P2P模型不容易坏掉，即使一个节点坏了也没问题，可以有其他节点代替
+2. 域名系统协议（DNS）2.1 概述DNS就是将打在地址栏的域名转化为IP地址的东西
+2.1.1 域名域名就是www.xxx.com，当然这是最简单的一种.com之后还可以有东西，称之为根域名从左向右，级别逐渐增高
+2.2 域名服务器（DNS服务器）DNS服务器有很多台，根据层次结构分为三层，根域名服务器，顶级域名服务器，权限域名服务器本地域名服务器不算层次结构，特点是里主机比较近，当主机和另一台比较近的主机通信时，就不用走哪些更高级的服务器了根域名服务器并不是一个域名只有一台，而是一个域名对应多台域名服务器，全世界一共有13个这样的域名，分别是a.rootservers.net，b.rootservers.net，c.rootservers.net，~m.rootservers.net在权限域名服务器中，虽然看似abc.com比y.abc.com少了一位，但是他们的地位仍是对等的，对应的两台权限域名服务器
+2.3 域名解析过程
+2.3.1 递归查询在上图中主机先是想本地域名服务器发送请求，如果查不到的话，本地域名服务器向根域名服务器发送请求（找别人），如果还是查不到的话，根域名域名服务器向顶级域名服务器发送请求（找别人），如果还是查不到的话，顶级域名服务器向权限域名服务器发送请求（找别人）可以看到每一次向下一个查询的服务器都变了，不是主机一个个去问，而是服务器自己一个个问下去
+2.3.2 迭代查询在上图中主机先是想本地域名服务器发送请求，如果查不到的话，本地域名服务器就让主机去向根域名服务器发送请求（主机去找，本地域名给目标根域名服务器的IP地址），如果还是查不到的话，根域名域名服务器让主机去向对应的顶级域名服务器发送请求（主机去找，根域名给目标顶级域名服务器的IP地址），如果还是查不到的话，顶级域名服务器让主机去向权限域名服务器发送请求（主机去找，顶级域名给目标权限域名服务器的IP地址）可以看到这里是主机一个个挨个问的地址
+2.3.3 高速缓存为了减少多次查询同一个域名的资源浪费，本地域名服务器会存储最近使用的ip地址解析，下次再访问同一个域名就不需要这么多查询步骤了。同时这个高速缓存主机本身也有存储同时本地域名服务器还可以对顶级域名服务器，权限域名服务器的地址进行缓存，下一次即使是不知道的ip地址，查询也可以更快高速缓存为了保持正确性，需要定时更新
+3. 文件传输协议（FTP，TFTP）3.1 概述TFTP是一个轻量的，比较容易实现的，面对小文件的，UDP的文件传输协议这里我们重点是FTP协议
+3.2 FTP的服务端和客户端
+3.3 FTP的工作原理为什么有匿名登陆：对于一些公共服务器来说，增加验证阶段就是增加资源开销，减少验证阶段就可以节省资源来更好地服务主进程和从属进程的区别：主进程是打开端口，让外部发送的数据可以进来，并且将这些数据逐个分配各从属进程。从属进程则是单独为这些数据服务先注释一下这里的主进程被忽略掉了，只是没标在上面，不是没有啊这里客户端和服务器端先建立TCP连接，端口是21，称为控制连接然后看情况是主动建立连接还是被动建立连接主动建立连接是指服务器端主动发送请求和客户端进行连接，此时端口号固定是20被动连接是指客户端发送请求和服务器端建立数据传送连接，此时端口号是不确定，有两者协商得到数据传输完成之后，数据连接断开，控制连接继续保持，直至两边发送断开请求
+FTP的两种传输模式了解即可
+4. 电子邮件4.1 概述4.1.1 电子邮件的格式
+4.1.2 电子邮件系统的组成结构注释：用户代理的四个功能解释：撰写就是给用户编辑信件的环境显示就是可以看到自己写的和自己收的信件内容处理就是对信件进行操作，包括删除，打印，转发等等通信就是可以将邮件发送到邮件服务器当中，同时可以从邮件服务器当中读取邮件
+邮件服务器的功能注释邮件服务器端的发送和接受是指从自己的用户代理处接收邮件，之后向对面的邮件服务器发送邮件邮件服务器的报告邮件发送结果就是投递是否成功这种情况邮件服务器既可以作为客户端又可以作为服务器端，使用的是C/S方式
+协议的功能注释发邮件用的是SMTP收邮件的是POP3或者IMAP
+
+4.2 几个邮件协议4.2.1 简单邮件传送协议SMTP注意一下，这里STMP客户和服务器不是固定死的，可以也可以成为服务器，服务器也可以成为用户，由发送方和接收方决定，发送方就是客户，接收方就是服务器注释可以看见这里比如
+123456220 service ready250 OK421 service not available550 xxx354 xxx
+
+都是应答信息
+这里RCPT能有多条命令的原因是，电子邮件可以有多个收件人，就是群发，所以允许多个RCPT
+再强调一下，这里服务器和客户端可以互换，视具体情况而定，发送方是客户端，接收方是服务器端
+4.2.2 改进SMTP缺点的MIME协议MIME改善SMTP发送数据的缺点，是SMTP的功能性扩展MIME协议已经逐渐开始应用到浏览器当中，通过对不同文件类型用不同的标识符标识，来让浏览器读取通过MIME的相关文件
+4.2.3 邮局协议POP3这里接收方是客户端，邮件服务器是服务器端POP3确实很简单，但是有不少缺点，比较难受的就是邮件一旦下载就自动删除了
+4.2.4 比较复杂的读取邮件的协议——IMAP协议
+4.3 基于万维网的电子邮件与之前的不同的地方就是，基于万维网的电子邮件的邮件服务器端可以不同
+同时，发送邮件使用的SMTP/MIME和收邮件时的POP3/IMAP协议都换成了HTTP协议
+
+5. 万维网和HTTP协议5.1 万维网概述URL用来标识整个互联网当中的某一个资源（文字，视屏，音频等）的位置
+HTTP用来将这些资源传送给用户
+HTML帮助设计者来设计页面，让不同设计者设计的页面都可以在界面上显示
+5.2 HTTP协议5.2.1 HTTP协议的过程这张图里讲了HTTP的具体过程
+服务器通过TCP 80端口来监听HTTP请求
+注意HTTP可以不一次性下载完页面的所有资源，可以只下载文本部分，其他音频视频等待用户下一步请求之后再传输
+5.2.2 HTTP协议的特点
+5.2.3 HTTP的连接方式——持久连接和非持久连接非持久连接在TCP三次握手的第三次握手时发生，将HTTP请求作为第三次握手的数据部分发给服务器，服务器收到请求之后将HTTP相应报文传输给客户。耗时就是RTT*2+文档传输时间。缺点就是这样如果再想传输，那么就需要重新建立TCP连接从头开始
+持久连接和非持久连接类似，都是在第三次握手时发生，将HTTP请求作为第三次握手的数据部分发给服务器，服务器收到请求之后将HTTP相应报文传输给客户。但是持久连接再需要请资源的时候就不需要建立新的TCP连接了
+
+持久连接的两种方式——非流水线和流水线非流水线就是发一个，确认一个，才能再发下一个流水线就是一个个连着发，然后多个确认和之前说过的停止等待协议，后退N帧协议和选择重传协议很像，忘了的话可以去复习一下开个传送门计算机网络笔记Part3 数据链路层（Data Link Layer）
+5.2.4 HTTP的报文结构开始行用于区别请求报文和响应报文。可以明显的看到两者第一行的东西都不一样
+请求报文的方法是指命令，就是对所请求的对象进行什么操作，如获取/删除等等URL就是之间说的资源标识符版本是指使用的是什么版本的HTTP协议
+CRLF相当于我们程序里面的；，标识一行的结束。同时，在整个首部行结束时，为了区别首部行和实体主体还会有一行单独的CRLF这里举了请求报文的例子，和一些常用的状态码
+
+6. 本章思维导图
+本章常用中英文对照Server farm 服务器集群Infrastructure 基础设施，或基础架构Self-scalability 自扩展性Timing 实时性Connection-oriented service 面向连接的服务Base HTML file 基本HTML文件Stateless protocol 无状态协议RTT (round-trip time ) 往返时间User agents 用户代理Mail servers 邮件服务器Top-level domain (TLD) servers 顶级域名服务器Authoritative DNS servers P161 权威域名服务器Iterative queries 迭代查询Resource records (RRs) 资源记录Nonpersistent HTTP 非持久HTTP，或非坚持HTTPPersistent HTTP 持久性HTTP，或坚持的HTTPPeer-to-Peer (P2P) Network 对等网络Socket programming 套接字编程
+参考资料2019 王道考研 计算机网络
+
+                        
+                    </p>
+                </a>
+            </div>
+
+            
+                <div class="post-footer">
+                    
+                        <i class="fa fa-folder-open-o"></i>
+                        <a class="category-link" href="../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BB%BC%E5%90%88/">计算机网络综合</a>
+
+                        
+                            <span class="dotted">|</span>
+                        
+
+                    
+                    
+                        <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="" rel="tag">计算机网络</a>
+                    
+                </div>
+            
+        </article>
     
 
-    <div class="post-list">
-        
-        <article class="post-list-item">
-            <a href="../../2021/02/05/%E5%BA%94%E7%94%A8%E5%B1%82/">
+    
+        <article class="box post post-item">
+            <div class="post-title"><a href="../../2021/02/05/%E7%BD%91%E7%BB%9C%E5%B1%82/">网络层</a></div>
+            <div class="post-meta">
                 
-                <div class="content">
-                    <div class="title">
-                        应用层
-                    </div>
+                <i class="fa fa-calendar"></i> <time>2021-02-05</time>
+                <span class="dotted">|</span>
+                <i class="fa fa-user"></i> 
+            </div>
+
+            <div class="post-excerpt">
+                <a href="../../2021/02/05/%E7%BD%91%E7%BB%9C%E5%B1%82/">
+                    <p>
+                        
+                            本人计算机网络笔记总目录计算机网络笔记Part1 概述计算机网络笔记Part2 物理层（Physical Layer）计算机网络笔记Part3 数据链路层（Data Link Layer）计算机网络笔记Part4 网络层（Network Layer）计算机网络笔记Part5 传输层（Transport Layer）计算机网络笔记Part6 应用层（Application Layer）
+1. 概述注释：数据报和分组的关系：分组是一段比较长的数据，将它进行切割成一段段之后就得到数据报功能一就是让数据在路由器之间走最佳的路径功能二就是让不同的设备（手机，电脑，平板等）都能正常连接功能三见图中解释开环控制就是在拥塞之前就提前设计解决闭环控制就是在拥塞时自动调整解决问题
+OSI参考模型
+各层次的传输单元
+应用层
+报文
+传输层
+报文段
+网络层
+IP数据报，分组（如果IP数据报太大就切割成分组）
+数据链路层
+帧
+物理层
+比特流
+2. 数据交换方式为什么要进行数据交换？因为每个节点之间都拉网线太麻烦了也不实际，所以通过大量交换设备互联进行数据交换
+2.1 电路交换常见的例子：打电话注释：链路支持多路复用（可参考数据链路层的TDM等）特点是独占资源，因为两者建立了连接
+2.2 报文交换注释：报文发送的过程1.源先根据报文加上ip地址，物理地址等，通过物理层发送2.交换机收到报文之后，先进行存储，等待链路空闲之后进行转发，但是转发的路径不是固定的，是比较随机的3.最后通过许多交换机最终到达目的地
+2.3 分组交换分组交换和报文交换基本相同，就是将报文切割之后再进行发送
+2.4 分组交换和报文交换的具体计算对比注释：是怎么计算的？报文交换：一共三段，每段都需要10000bit/1000bps=10s，三段就是3x10=30s分组交换：可以分为两段，一个是第一个数据开始发到最后一个数据从源发出，一段是最后一个数据到达目的地。第一段总时间是10000bit/1000bps=10s，第二段总时间是（10/1000）*2=0.02s，所以总时间是10.02s。理解一下，这里就是报文交换的时候，由于报文没有分割，所以即使先到的数据也不能先发走，只能等到最后一段报文全部到了之后才能一起走，相对于分组交换明显拖慢了前面数据的速度，所以导致报文交换明显慢于分组交换可以看到分组交换明显快于报文交换，所以我们通常使用分组交换
+2.4.1 分组传输的两种传输方式-数据报与虚电路综述
+数据报
+虚电路
+3. 路由算法和路由协议概述路由算法就是让路由知道收到报文之后下一步怎么走AS就是多个路由器之间构成的单独的小圈子，圈子内使用自己的协议，圈子和圈子之间用的是BGP协议
+3.1 RIP协议和距离向量算法3.1.1 RIP协议概述通过交换信息构建路由表
+3.1.2 如何建立路由表
+3.1.3 RIP协议报文格式
+3.1.4 RIP协议特点就是来回更新路由表，错误信息被覆盖，导致直至达到距离上限强制错误时才可以得知出错
+3.1.5 距离向量算法注释：为什么改地址？因为图中是从x得到的信息为什么距离固定+1？因为路由器只从相邻路由器之间获取RIP报文，举例只会是1为什么下一跳是x就要替换？因为网络环境不断变化，可能这次某个节点挂掉，所以保持最新的为什么下一跳不是x时有更新和不处理两种手段？因为这样可以提高效率，比原来快就换，比原来慢就保留原来的，也可以理解
+3.2 OSPF协议和链路状态算法3.2.1 OSPF协议概述
+3.2.2 OSPF的其他特点为什么OSPF收敛速度快？因为它只是刷新一下链路状态，得知其是否连通，不需要和RIP一样进行对照，而是直接通过Dijilstra算法来自己算出路径
+3.2.3 链路状态路由算法了解即可
+3.2.4 OSPF区域了解即可
+3.2.5 OSPF分组了解即可
+3.3 BGP协议3.3.1 BGP协议简介
+3.3.2 BGP协议交换信息的过程了解即可，只需要知道BGP交换协议里面交换的是一组路径向量
+3.3.3 BGP协议报文格式BGP是应用层协议
+3.3.4 BGP协议特点
+3.3.5 BGP的四种报文
+3.4 三种路由协议的比较
+4. IP数据报4.1 IP数据报格式注释：
+名称
+注释
+大小
+版本 Version
+ipv4或者ipv6
+4位
+首部长度 IHL
+此处数值再乘以4才是真正大小，同时因为IP数据报固定长度为20字节，所以此处最小值为5，即二进制的0101
+4位
+区分服务 DSCP + ECN
+希望获得哪种服务，用的比较少
+8位
+总长度 Total Length
+首部+数据的长度，最大为2^16-1=65535
+16位
+标识 Identification
+用来表示是哪一个数据报的分片，不同的分片标识各不相同
+8位
+标志 Flags
+用来表示是否分片和分片是否结束
+3位，但实际有用的只有后两位
+片偏移 Fragment Offset
+用来标记分片之后，该分片在原来的数据报的位置，以8字节为单位
+13位
+生存时间 Time To Live
+即TTL，没经过一个路由器TTL-1,0时自动放弃，根据系统不同默认的TTL不同
+8位
+协议 Protocol
+用来标记协议名的字段值，如TCP,UDP,ICMP等等
+8位
+首部检验和 Header Checksum
+检验首部的字段是否出错，出错就丢弃此数据报
+源地址 Source IP Address
+发送方ip地址
+32位
+目的地址 Destination IP Address
+接收方ip地址
+32位
+可选字段 Options
+用来排错等安全检测
+未知，可在0-40位之间
+填充
+将数据报对齐成4字节的整数倍，数值全部为0
+未知，根据可选字段来定
+
+计算偏移量时记住是以0开始的就行，以每一篇最开始的除以8得到的数值就是偏移量MF和DF的定义见上图
+5. IP5.1 ipv4地址全球唯一的表示某一个主机或者路由器接口的编码
+5.1.1 ip地址分类
+5.1.2 特殊ip地址
+5.1.3 私有ip地址解释一下为什么A类最大是126.xxx.xxx.xxx？因为网络号最开始第一位是0，一共八位，所以二进制表示位0xxxxxxx，最大就是2^7-1=127，但是因为127.xxx.xxx.xxx是特殊ip地址，所以将其去掉为什么B类最大是191.255.xxx.xxx？因为网络号最开始第一位是10，一共八位，所以二进制表示位10xxxxxx，最大就是10111111=191，最小就是10000000=128，无特殊ip地址为什么C类最大是223.255.xxx.xxx？因为网络号最开始第一位是110，一共八位，所以二进制表示位110xxxxx，最大就是11011111=223，最小就是10000000=192，无特殊ip地址
+
+5.2 网络地址转换NAT注释：连接内网和外网，就是找个代理的用它的ip地址与外面收发数据NAT需要构建NAT转换表，既要存广域网（WAN，外网）也要存局域网（LAN，内网）的ip地址和端口号
+5.3 子网划分和子网掩码5.3.1 为什么需要子网划分总结一下，就是ip不够用，所以需要额外整个子网扩展ip注释：为什么子网好能全0或者全1：因为CIDR编址（可见下一段）为什么主机号不能全0或者全1：因为全0代表本网络，全1代表广播分组
+5.3.2 子网掩码子网掩码就是用来和ip地址一起计算子网的地址的方法就是讲子网掩码逐位写成二进制然后而原来ip地址进行与运算，就可以得到子网ip地址因为255是11111111，所以如果写着255的话，ip地址和子网ip地址对应的地方的数值就相同这道题可以看出来，即使子网掩码不同，相同ip地址对应的子网ip地址也可能相同但是子网掩码不同，划分的子网数目不同为什么划分的子网数目不同？或者说怎么算划分的子网位数目？以255.255.192.0为例，255是11111111即八个1,192是11000000即2个1，一共是8_2+2=18个1，一共有32位地址，所以剩余有32-18=14位以255.255.224.0为例，255是11111111即八个1,224是11100000即3个1，一共是8_2+3=19个1，一共有32位地址，所以剩余有32-19=13位这道题先将255.255.252.0计算出一共有8+8+6=22位网络号位所以就有32-22=10位主机号位将180.80.77.55解析，可以知道在77部分某部分开始会用来表示主机号位77的二进制是0100 1101，因为一共有22位网络号位，所以010011 （此处分开） 01，从这个01开始是主机号位。所以用来表示子网ip地址的应该是180.80.76（010011 00）.xxx PS注意76括号内后两位二进制00但是本体是发布广播地址，所以主机号全部都要是1所以应该是180.80.79（010011 11）.255（11111111）注意79括号内后两位二进制11注释：1.这里特定主机路由就是指找特定的处理这里这个ip地址的路由2.默认路由会将这个数据报发给另一个路由，直至找到对应的路由，或者TTL耗尽被丢弃
+5.4 无分类编制CIDR使用CIDR可以聚合网络如图，通过缩短前缀，R1和R2就可以合并在206.1.0.0/16的子网下但是这样转发表之中就会有多个匹配结果，所以我们使用最长前缀匹配最长前缀匹配就是在计算后符合同一子网的时候，选前缀越长的这道题选B因为本网络是192.168.5.0/24，就是192.168.5.（0000 0000）/24，将248写成二进制是11111 000，有五个1，所以前五位都可以作为子网的编号，剩下的三位就是用来分配子网内剩余的地址了，因为不能全0或者全1，所以还要减2
+5.5 ARP协议
+5.6 DHCP协议
+5.7 ICMP协议5.7.1 ICMP协议概述ICMP，IGMP处于网络层和传输层之间，就是为了更好地转发ip数据报和提高交互成功的几率
+5.7.2 ICMP差错报告报文ICMP差错报告报文如何与IP数据报结合
+五种ICMP差错报文其中源点抑制已废弃不用
+四种不发送ICMP差错报文的情况注释：组播是指由一点到多点，但不是无脑发到所有点，无脑发到所有点的是广播，组播有筛选条件
+
+5.7.3 ICMP询问报文四种ICMP询问报文后两种是掩码地址请求和回答报文，路由器询问和通告报文，这两个已经废弃不再使用
+5.7.4 ICMP的应用1.ping命令：测试两个主机之间连通性，使用了ICMP回送请求和回答报文2.traceroute命令：跟踪一个分组从原点到终点的路径，使用了ICMP时间超过差错报告报文traceroute命令讲解
+6. IPV66.1 为什么会有IPV6就是IPV4地址用完了，从根本上增加ip地址数目，之前讲的NAT和CIDR也只是在IPV4的基础上扩展了IPV4地址数目，治标不治本
+6.2 IPV6地址表示形式
+6.3 IPV6数据报格式名称
+作用
+位数
+版本 Version
+知名协议版本，此处因为是ipv6所以总是6
+4位
+优先级 Traffic Class
+又来区分数据报的类型和优先级
+8位
+流标签 Flow Label
+和ipv4标识某个数据报分片不同，这是对于一整个数据报流的标记
+19位
+有效载荷长度 Payload Length
+指的是扩展首部+数据部分的大小，和ipv4的总长度和首部长度都不同，ipv6的首部长度是固定的40字节
+16位
+下一个首部 Next Header
+基本首部的下一个首部指的是有效载荷里标记的的扩展首部，有效载荷里的扩展首部再指向有效载荷里标记的的扩展首部，直至最后指向数据
+8位
+跳数限制 Hop Limit
+基本相当于ipv4当中的TTL，每到一个路由器-1.减到0时丢弃
+7位
+源地址 Source Address
+发送方ipv6地址
+128位
+目标地址 Destination Address
+接收方ipv6地址
+128位
+
+6.4 IPV4和IPV6的区别
+6.5 IPV6基本地址类型名称
+作用
+要求
+单播
+一对一通信
+可做源地址，目的地址
+多播
+一对多通信，以前的广播地址当做覆盖所有主机的多播
+可做目的地址
+任播
+一对多当中的一个通信，看似一对多，实则一对一
+可做目的地址
+6.6 IPV4和IPV6之间的过渡如果是ipv6的数据报到了ipv4，就用ipv4重新封装，把ipv6数据报前面加上ipv4伪装成ipv4数据报继续传输，直至到了ipv6路由再解开ipv4伪装
+7. IP组播（多播）7.1 什么是组播单播只能一对一，广播必须一对全部，组播就可以是一对全部中的一部分辅助理解：单播所占资源多组播明显减轻了压力
+7.2 IP组播地址
+7.3 硬件组播就像全F的mac地址代表广播一样，00-10-5E打头的MAC地址就代表组播7为什么最大是00-10-5E-7F-FF-FF？因为只有最后23位决定
+
+7.4 IGMP协议与组播路由选择协议7.4.1 IGMP协议注释：IGMP只能知道有没有组播组成员，对有几个组播组成员，成员在哪个地方都不知道
+
+7.4.2 组播路由选择协议有了这个，成员可以自行找到转发组，自行决定参加哪个组播（就像电视机选台一样）
+8. 移动IP移动IP不等于动态IP（DHCP获得的）移动IP的可以让用户因为地理原因等等，即使不在内网也可以访问内网的东西
+8.1 移动IP的相关术语
+8.2 移动IP通信过程
+9. 网络层设备9.1 路由器9.1.1 路由器的构造
+9.1.2 路由器的输入输出端口构造
+9.1.3 集线器，网桥，路由表几层设备比较
+9.1.4 路由器的路由表和转发表这里实际上就是对前面知识的复习了
+10. 本章思维导图
+本章常用名词中英文对照Forwarding table 转发表Virtual-circuit networks 虚电路网络Datagram networks 数据报网络Signaling message 信令报文Active queue management 主动队列管理Head-of-the-line 队头Classless interdomain routing (CIDR) 无类域间路由Plug-and-play 即插即用Anycast 任播Interior gateway protocols 内部网关协议Routing information Protocol 路由信息协议（RIP）Open shortest Path First OSPF 开放最短路径优先Area border routers 区域边界路由器Circuit Switching 电路转换Packet Switching 分组交换
+参考资料2019 王道考研 计算机网络
+
+                        
+                    </p>
+                </a>
+            </div>
+
+            
+                <div class="post-footer">
                     
-                    <div class="excerpt">
+                        <i class="fa fa-folder-open-o"></i>
+                        <a class="category-link" href="../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BB%BC%E5%90%88/">计算机网络综合</a>
+
                         
-                    </div>
+                            <span class="dotted">|</span>
+                        
+
                     
-                    <div class="time">
-                        
-                        
-                        <span>February</span>
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        <span>&nbsp;5,&nbsp;</span>
-                        <span>2021</span>
-                    </div>
+                    
+                        <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="" rel="tag">计算机网络</a>
+                    
                 </div>
-            </a>
+            
         </article>
-        
-        <article class="post-list-item">
-            <a href="../../2021/02/05/%E7%BD%91%E7%BB%9C%E5%B1%82/">
+    
+
+    
+        <article class="box post post-item">
+            <div class="post-title"><a href="../../2021/02/05/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/">数据链路层</a></div>
+            <div class="post-meta">
                 
-                <div class="content">
-                    <div class="title">
-                        网络层
-                    </div>
+                <i class="fa fa-calendar"></i> <time>2021-02-05</time>
+                <span class="dotted">|</span>
+                <i class="fa fa-user"></i> 
+            </div>
+
+            <div class="post-excerpt">
+                <a href="../../2021/02/05/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/">
+                    <p>
+                        
+                            本人计算机网络笔记总目录计算机网络笔记Part1 概述计算机网络笔记Part2 物理层（Physical Layer）计算机网络笔记Part3 数据链路层（Data Link Layer）计算机网络笔记Part4 网络层（Network Layer）计算机网络笔记Part5 传输层（Transport Layer）计算机网络笔记Part6 应用层（Application Layer）
+1. 基本概念
+2. 封装成帧与透明传输封装成帧就是加将数据加头加尾，相当于将数据打包透明传输就是为了防止特殊的数据无法正常传输的的情况的发生，比如说在封装成帧的过程中出现数据中的某些标记符与开始/结束标记符恰巧重复等等情况
+2.1 透明传输的应用2.1.1 字符计数法就是在帧的首部做计数，看看数据是否错误缺点：如果在某一个帧内，标记位后面的某个字节的数据丢失，那么会影响后面的帧比如3 1 1 和 4 2 2 2，如果前面的帧丢失变成 3 1，那么后面的4就会被补到前面变成 3 1 4导致错误
+2.1.2 字符填充法就是加头加尾分别标记开始结束，和零比特填充法（见下）对比，开始和结束的对应的字符不一样但有可能出现数据内某段比特流数据正好与标记字段重复，从而导致误判断的情况解决方法：添加转义字符
+2.1.3 零比特填充法
+2.1.4 违规编码法因为曼彻斯特编码不使用高-高，低-低来表示，所以如果使用高-高，低-低来表示帧起始和终止就不会与数据冲突
+3. 差错控制3.1 差错是什么，从哪来的数据链路层的差错检测的是比特的错误
+3.2 为什么要在数据链路层进行差错控制？因为错误可以尽早发现，不会让一个错误的数据包发送了很长时间到达最终目的地之后才被发现，从而导致网络资源的浪费
+3.3 检错编码（奇偶校验码，循环冗余码CRC）3.3.1 奇偶校验码缺点：只能检测出1，3，5，7…等等奇位数错误，检测成功率位50%
+3.3.2 循环冗余码CRC就是用传输数据除以生成多项式得到冗余码实际例子注释：1.阶数就是最高位是哪位，然后位数-1，如10011就是5-1=4,1011就是4-1=32.异或运算就是相同得0，不同得1，比如100和101做异或，结果就是0013.出书和最后的余数添加到要发送的数据后面，称为帧检验序列FCS接收方收到数据后进行检测需要注意的地方
+3.4 纠错编码（海明码）分为四步
+第一步 确认校验码位数r
+第二步 确定校验码和数据的位置注释：1.为什么是10为数据位？因为4位校验码+6位信息位=10位2.校验码放到2的几次方的位置，其他的地方按顺序放已知的信息位
+
+第三步 求出校验码的值注释1.先是通过二进制位确定有几位。本题中因为最大位10的二进制是1010，所以是4为，将其标注2.然后从p1开始看，看p1的二进制位的数值和所有信息位的对应位置的数值是否相同，然后找出来这些位这里有点难理解，这里以p1为例辅助理解，这里找出来的就是P1,D1,D2,D4,D5然后计算异或值，比如说这里D1=1,D2=0,D4=1,D5=0,就是p1要同时和0,1，0,1进行异或之后得到0，为了标识我加粗原始计算数据举例：0和1异或得1,1和0异或得1,1和1异或得0，那么p1和0异或得0，p1就是0了3.其他同理，按顺序计算出P2,P3,P4,然后填入表格
+第四步 检测并纠错就是和上面一样，将所有校验位进行运算，得出的结果的值就是错误的位
+4. 数据链路层的流量控制和可靠传输4.1 流量控制与可靠传输流量控制是为了让传输过程中的发送速度和接受速度匹配，减少传输出错与资源浪费可靠传输是发送端发送什么，接收端就要受到什么
+4.1.1 停止等待协议（Stop-and-Wait）停止等待协议的无差错情况注释：因为一次就一个，所以用0和1标记ack就行停止等待协议的有差错情况停止等待协议的特点1.简单2.信道利用率低。大部分时间数据都在路上，发送方很长时间闲置，资源浪费
+4.1.2 后退N帧协议（GBN）因为停止等待协议太浪费时间了，所以尝试采用GBN，发送连续多个数据帧，以增大信道利用率注释：累计确认：就是收到一个确认帧，那么它和它之前的所有帧都默认已收到，反之，如果某个确认帧没收到，那么它和它之后的所有帧都默认丢失（即使收到了也丢掉），进行重传
+下图是一个实例注释：此图发送2帧时丢失，所以接收方几首收到后面的帧也是直接丢弃并且发送最晚收到的有效帧1的ACK，直至2帧的超时重传机制被触发进行重传并得到ACK之后，接收方才会接受2帧以及后面的帧
+发送窗口不能无限大，与使用的编号的比特数有关很简单，就是1比特编号0和1,同理2比特编号0-3，如果用1比特编号，却要4个窗口长度，那么窗口内数据编号都编不过来，直接乱套了GBN的优缺点也显而易见，优点是提高了信道利用率，缺点是因为重传机制的原因导致已经收到数据却需要强行丢弃而造成浪费
+4.1.3 选择重传协议（SR）为了解决GBN的缺点，我们打算尝试只重传错误的帧，这样的话就不用浪费资源吧已经收到的帧再重传一次了。和GBN相比，两者都有窗口了，和GBN的区别其实就是做了一个数据缓存，已经收到的帧不用扔了，等待之前因意外丢失的帧收到的时候确认即可，但是只能缓存窗口尺寸内的包含的帧（PS，缓存咋可能无限大）SR运行过程注释：2帧丢失之后仍然在发送，但是2帧丢失之后只是缓存，并没有移动窗口，直至最后2帧收到后一次性确认2-5帧同样的，因为编号的问题，发送窗口不能无限大发送窗口最后和接受窗口大小相同，这样利用率比较高
+5. 介质访问控制技术就是让节点之间的通信不会进行相互干扰
+5.1 信道划分介质访问控制虽然使用一条共享信道，但是通过多路复用技术组合进行传输，提高了信道的利用率
+5.1.1 频分多路复用FDM
+5.1.2 时分多路复用TDMTDM的缺点就是利用率低，所以又衍生出了STDM
+5.1.3 统计时分复用STDMSTDM的原则是先到先走，满了就发，相对于TDM提高了利用率
+5.1.4 码分多路复用CDMCDM只是做一下记录，暂时还用不到，有需要请自行查找资料
+5.2 随机访问介质访问控制所有用户都可以随机发送信息，发送时可以占用全部带宽，理论上个人使用时比静态分配信道的速度更快
+5.2.1 ALOHA协议纯ALOHA协议缺点：太随性，导致效率低时隙ALOHA协议相对于纯ALOHA协议就是固定了发送的时间（只能在一个时间片的开始），提高了效率
+5.2.2 CSMA协议
+名称
+描述
+优点
+缺点
+1-坚持CSMA
+发送信息时监听信道，一空闲下来就立即传输，信道忙也一直监听，如果发送时冲突就等待随机时长之后再监听
+立即发送，利用率高
+如果多台设备同时监听，那么会发生冲突
+非坚持CSMA
+发送信息时监听信道，如果空闲就立即传输，信道忙就随机等待一段时间后再监听
+冲突发生的几率减少
+因为需要等待，所以利用率不高
+p-坚持CSMA
+发送信息时监听信道，空闲时以概率p进行传输，概率1-p不传输。信道忙就随机等待一段时间后再监听
+冲突减少的同时效率也比较高
+即使发生冲突也要坚持发送数据，资源被浪费
+5.2.3 CSMA/CD协议概述就是因为链路实际有长短，发送数据需要时间，这个时间内可能就被其他节点当成空闲状态导致发生碰撞知道自己发生碰撞的最长时间是2τ（两倍的传播时延），就是一去一回图示传播时延对载波监听的影响由此我们可以想到最小帧长的问题，因为如果帧太短，帧都发送完了才检测到碰撞导致停止，导致无法停止碰撞
+5.2.4 CSMA/CA协议
+5.2.5 CSMA/CD 与 CSMA/CA的区别
+5.3 轮询访问介质访问控制主要包括两大类，一个是轮询协议，另一个是令牌传递协议
+5.3.1 轮询协议就是选出一个代表，让他控制所有的传输注释：轮询开销在随着服务的节点越多，需要用于查询是否发送数据发送的数据帧也就越多，会造成一定开销等待延迟就是因为这是轮流“邀请”，所以难免某个节点需要发送数据，但是主节点还在较远的需要里有需求的节点那边，导致需求得不到立即响应单点故障很好理解，就是代表挂了
+
+5.3.2 令牌传递协议注释：在节点之间没有收发数据的需求时，令牌在节点之间循环。发送数据的流程》当一个节点需要时就可以获得这个令牌。然后修改这个令牌的状态（空闲-&gt;占用）》再将令牌与数据帧结合，让其在节点构成的环之间流动》不是目的地的节点收到令牌也不接受，直接略过，目标节点收到信息并复制一份到本地（传输完成），因为是个闭环，所以发送节点最后得到令牌》最后，发送令牌的节点对令牌的内容进行检查，如果发现数据出错还要重新发一遍问题基本和轮询协议相同
+
+6.局域网6.1 局域网的概念概括：范围大小，速度快，延迟低，节点平等
+6.1.1 局域网的网络拓扑结构常用的是总线型拓扑
+6.1.2 局域网的传播介质局域网
+常用介质
+有线局域网
+双绞线，同轴电缆，光纤
+无线局域网
+电磁波
+6.1.3 局域网介质访问方法
+6.2 局域网的分类
+6.3 IEEE802标准
+6.3.1 IEEE802描述的局域网参考模型
+6.4以太网6.4.1 以太网概念
+6.4.2 以太网的发展
+6.4.3 适配器和MAC地址
+6.4.4 以太网MAC帧注释：1.这里的mac层指的是数据链路层2.之前说过数据链路层将上一层ip数据包加头加尾头就是目标地址（6字节），源地址（6字节），类型（2字节）尾就是FCS（帧检验序列），（4字节）3.前导码不是MAC帧的一部分，目的是使时钟同步4.为什么数据长度时46~1500？因为有最小传输字节64字节，mac占用6+6+2+4=18，所以数据最小为64-18=46，1500则是规定的默认最大字节，没有理由
+
+6.4.5 10BASE-T以太网
+6.4.6 高速以太网
+6.5 无线局域网
+6.5.1 两种无线局域网
+7.广域网7.1 广域网的概述概括一下，一个字大
+7.2 PPP协议（Point-to-Point Protocol）PPP协议是目前使用最广泛的数据链路层协议，拨号基本都是PPP协议PPP协议仅支持全双工链路
+7.2.1 PPP协议需要满足的要求
+7.2.2 PPP协议不需要满足的要求
+7.2.3 PPP协议组成成分以及功能
+7.2.4 PPP协议的帧格式
+7.3 HDLC协议（High-Level Data Link Control）7.3.1 HDLC协议概述
+7.3.2 HDLC的三种站
+7.3.3 HDLC的帧格式
+7.4 PPP协议和HDLC协议对比为什么HDLC协议更可靠，但是我们使用PPP协议？因为现在网络要求高，数据链路层本来就是不可靠的尽力传输，差错控制这些复杂的交给了TCP等
+8. 链路层设备8.1 集线器（Hub）可以扩展以太网，但是集线器会无脑将一个设备的所有消息转发到集线器所连的所有设备，故会将所连接的所有设备变成一个大的冲突域，同时只能有两台设备进行通信，且设备越多，冲突越多。由此诞生了网桥
+8.2 网桥（Bridge）使用网桥时，由于网桥会根据mac地址进行过滤，所以不会形成冲突域
+8.2.1 两种网桥透明网桥通过自学习来构建转发表。每一个通过网桥的数据包都会被记录下网桥收到数据时数据对应的地址和网桥自己的接口，通过许许多多的数据包的构造的缓存，网桥就可以知道哪个数据包在哪个接口，以后如果要穿数据包就知道要往哪个接口发送数据包了
+原路由网桥在发送时，直接将最佳路径放到帧首部。那么网桥如何获得最佳路径？通过广播方式想目标地址发送广播，此时可能会经过不同路由产生不同的路径，目标地址收到后再将每一条路径都发一个响应帧给网桥，网桥经过对比就知道哪个接口最快了
+8.3 交换机网桥接口越来越多，网桥就变成了交换机
+8.4 冲突域和广播域
+9. 本章总结思维导图
+本章常用中英文对照End system 端系统Modem 调制解调器（俗称：猫）Base station 基站Communication link 通信链路Physical media 物理介质Coaxial cable 同轴电缆Fiber optics 光纤Radio spectrum 射频频谱Transmission rate 传输速率Packets （数据）包，或分组Routers 路由器Path 路径ISP (Internet Service Provider) 网络服务提供商FDM (frequency-division multiplexing) 频分多路复用TDM (time-division multiplexing) 时分多路复用Statistical Multiplexing 统计复用Store-and-forward 存储转发Queuing delays 排队延迟Transmission delay 传输延迟，或发送延迟Propagation delay 传播延迟Throughput 吞吐量Internet backbone 骨干网Delay 延迟，或时延Loss 丢包Message 消息，或报文Segment （报文）段Datagram 数据报Frames 帧参考资料2019 王道考研 计算机网络
+
+                        
+                    </p>
+                </a>
+            </div>
+
+            
+                <div class="post-footer">
                     
-                    <div class="excerpt">
+                        <i class="fa fa-folder-open-o"></i>
+                        <a class="category-link" href="../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BB%BC%E5%90%88/">计算机网络综合</a>
+
                         
-                    </div>
+                            <span class="dotted">|</span>
+                        
+
                     
-                    <div class="time">
-                        
-                        
-                        <span>February</span>
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        <span>&nbsp;5,&nbsp;</span>
-                        <span>2021</span>
-                    </div>
+                    
+                        <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="" rel="tag">计算机网络</a>
+                    
                 </div>
-            </a>
+            
         </article>
-        
-        <article class="post-list-item">
-            <a href="../../2021/02/05/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/">
+    
+
+    
+        <article class="box post post-item">
+            <div class="post-title"><a href="../../2021/02/05/%E7%89%A9%E7%90%86%E5%B1%82/">物理层</a></div>
+            <div class="post-meta">
                 
-                <div class="content">
-                    <div class="title">
-                        数据链路层
-                    </div>
+                <i class="fa fa-calendar"></i> <time>2021-02-05</time>
+                <span class="dotted">|</span>
+                <i class="fa fa-user"></i> 
+            </div>
+
+            <div class="post-excerpt">
+                <a href="../../2021/02/05/%E7%89%A9%E7%90%86%E5%B1%82/">
+                    <p>
+                        
+                            本人计算机网络笔记总目录计算机网络笔记Part1 概述计算机网络笔记Part2 物理层（Physical Layer）计算机网络笔记Part3 数据链路层（Data Link Layer）计算机网络笔记Part4 网络层（Network Layer）计算机网络笔记Part5 传输层（Transport Layer）计算机网络笔记Part6 应用层（Application Layer）
+1. 基本概念
+2. 数据通信基本知识2.1 一个数据通信例子
+2.2 相关术语
+2.3 三种通讯方式名称
+英文
+定义
+需要信道条数
+单工通信
+Simplex
+只能一个发一个收
+一条
+半双工通信
+half-duplex
+都可以发或者收，但是同一时间只能进行一个
+两条
+全双工通信
+duplex
+都可以同时收发数据
+两条
+2.4 两种数据传输方式传输方式
+特点
+串行传输
+速度慢，省钱，适合远距离
+并行传输
+速度快，耗钱，适合近距离
+
+2.5 码元（Symbol）定义：码元是指用一个固定时长的信号波形（数字脉冲），代表离散数值的基本波形。当有多个离散状态时，成为M进制码元一个码元可以携带多个比特的信息个人理解：码元就是在网线上传输的一个个信号段。码元的不同进制就是用来表示不同的数值的
+2.6 波特（Baud）用来指一秒可以传输多少个码元
+2.7 速率分为码元传输速率和信息传输速率信息传输速率就是b/s，就是我们平常说的网速码元可以理解为几个比特的集合，所以信息传输速率（网速）=码元传输速率x码元所带信息量（多少比特）码元所带信息量（比特数）=log2（码元进制数）
+2.8 带宽（Band Width）用来表示最高数据速率
+2.9 奈式准则（Nyquist）是在理想状态下得出的结论
+2.10 香农公式（Shannon）是在有噪声的信道中得出的结论
+2.11 基带信号和宽带/带通信号（Base band，pass band）计算机网络中用的基带信号是数字信号
+2.12 编码将数据转化为数字信号数字数据(digtal data)通过 数字发送器(digit emitter) 转化为 数字信号(digtal signal)模拟数据(analog data)通过 PCM编码器(PCM coder) 转化为 数字信号 (digtal signal)
+
+单极性不归零编码：只使用一个电压值，高电平表示1，低电平表示0.
+
+
+双极性不归零编码：用幅值相等的正负电平表示二进制数1和0.
+
+
+单极性归零编码：发送码1时高电平在整个码元期间只持续一段时间，其余时间返回零电平。
+
+
+双极性归零编码：正负零三个电平，信号本身携带同步信息。
+
+
+
+曼彻斯特编码：单极性编码的缺点是没有办法区分此时是没有信号，还是有信号，但是信号是0.这种编码方式是bit中间有信号，低-高跳转表示0，高-低跳转表示1，一个时钟周期只可以表示一个bit，并且必须通过两次采样才能得到一个bit。它能携带时钟信号，而且能区分此时是没有信号还是信号为0.
+
+
+差分曼彻斯特编码：抗干扰能力比曼彻斯特编码更强。bit与bit之间有信号跳变，表示下一个bit为0，bit与bit之间没有信号跳变，表示下一个bit为1。
+
+
+2.13 调制：数据转化为模拟信号（了解）常用的调制方法：调频(AM)，调频(FM)，调相(PM)模拟数据(analog data)通过 调制器(modulaotr) 转化为 模拟信号 (analog signal)
+数字数据(digtal data)通过 调制器(modulaotr) 转化为 模拟信号 (analog signal)
+3. 物理层传输介质传输介质分为导向性传输介质和非导向性传输介质
+导向性传输介质
+电磁波沿着固体媒介（铜线or光纤）被导向传播
+非导向性传输介质
+自由空间，如空气，水等等
+3.1 常见的导向性传输介质3.1.1 双绞线根据有无屏蔽层分为屏蔽双绞线（STP）和无屏蔽双绞线（UTP）
+3.1.2 同轴电缆（Coaxial Cable）
+3.1.3 光纤（Optical fiber）根据入射角不同，又分为单模光纤和多模光纤
+3.2 常见的非导向性传输介质包括无线电波，微波，红外线和激光等
+4. 物理层设备4.1 中继器（RP repeater）注释：5-4-3规则是为了限制中继器使用次数的，理由可见图5是指不能超过5个网段4是指在这些网段中的物理层网络设备（中继器，集线器）最多不超过4个3是指这些网段中最多只有三个网段挂有计算机
+4.2 集线器（Hub）集线器是个大的冲突域，同时只能有两个设备进行通讯，只会传输信号，没有智能。
+5. 本章思维导图参考资料2019 王道考研 计算机网络
+
+                        
+                    </p>
+                </a>
+            </div>
+
+            
+                <div class="post-footer">
                     
-                    <div class="excerpt">
+                        <i class="fa fa-folder-open-o"></i>
+                        <a class="category-link" href="../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BB%BC%E5%90%88/">计算机网络综合</a>
+
                         
-                    </div>
+                            <span class="dotted">|</span>
+                        
+
                     
-                    <div class="time">
-                        
-                        
-                        <span>February</span>
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        <span>&nbsp;5,&nbsp;</span>
-                        <span>2021</span>
-                    </div>
+                    
+                        <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="" rel="tag">计算机网络</a>
+                    
                 </div>
-            </a>
+            
         </article>
-        
-        <article class="post-list-item">
-            <a href="../../2021/02/05/%E7%89%A9%E7%90%86%E5%B1%82/">
+    
+
+    
+        <article class="box post post-item">
+            <div class="post-title"><a href="../../2021/02/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0Part1%E6%A6%82%E8%BF%B0/">计算机网络笔记概述</a></div>
+            <div class="post-meta">
                 
-                <div class="content">
-                    <div class="title">
-                        物理层
-                    </div>
+                <i class="fa fa-calendar"></i> <time>2021-02-05</time>
+                <span class="dotted">|</span>
+                <i class="fa fa-user"></i> 
+            </div>
+
+            <div class="post-excerpt">
+                <a href="../../2021/02/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0Part1%E6%A6%82%E8%BF%B0/">
+                    <p>
+                        
+                            本人计算机网络笔记总目录计算机网络笔记Part1 概述计算机网络笔记Part2 物理层（Physical Layer）计算机网络笔记Part3 数据链路层（Data Link Layer）计算机网络笔记Part4 网络层（Network Layer）计算机网络笔记Part5 传输层（Transport Layer）计算机网络笔记Part6 应用层（Application Layer）
+1. 速率相关性能指标1.1 速率定义：连接在计算机网络上的主机在数字信道上传送数据位数的速率单位:b/s,Kb/s,Mb/s,Tb/s，如果用字节表示，则是B/s,KB/s,MB/s,TB/s1Byte=8Bit
+1.2 带宽在计算机网络中，指的是网络设备所支持的最高速度，单位同速率，是理想条件下最高速率
+1.3 吞吐量指的是单位时间内通过某个网络的数据总量
+个人理解速率就是实际网速，带宽是理论网速（长城宽带警告），吞吐量是一个或多个设备的综合速率，比如说1000m宽带的路由器连着三部手机，每部手机都是10mb/s看片，那么速率就是10mb/s，带宽是宽带的1000m，路由器吞吐量是30mb/s，即三者之和
+2.时延相关指标2.1 时延时延包括四大类
+名称
+描述
+计算公式
+发送时延
+数据从主机到信道上所用的时间
+发送的数据长度/发送速率
+传播时延
+数据在信道上传播所花费的时间
+信道长度/电磁波在信道上传播的速率
+排队时延
+数据在路由器前等待前面数据处理的时间
+无计算方式
+处理时延
+数据在路由器中处理需求的时间
+无计算方式
+使用高速链路(提高网速)，只能减小发送时延，无法减少其他三个时延
+2.2 时延带宽积公式：时延带宽积=传播时延x带宽意思是链路上有多少比特的数据
+2.3往返时延RTT从发送方发送数据开始，到接收方确认收到为止所花费的时间RTT=传播时延x2+处理时间(有时可能直接忽略)
+2.4 利用率2.4.1 信道利用率信道利用率=有数据通过时间/有+无数据通过时间
+2.4.2 网络利用率网络利用率=所有信道利用率加权求平均值
+2.4.3 时延和利用率的关系图利用率越高，延迟越大
+3. 分层结构3.1 为什么要分层，分层要做什么（1）发起通信的计算机必须将数据通信的通路进行激活。（2）要告诉网络如何识别目的主机。（3）发起通信的计算机要查明目的主机是否开机，并且与网络连接正常。（4）发起通信的计算机要弄清楚，对方计算机中文件管理程序是否已经做好准备工作。（5）确保差错和意外可以解决。
+3.2 正式认识分层结构
+4. 参考模型名称
+英文
+作用
+应用层
+Application Layer
+直接为用户的应用进程（例如电子邮件、文件传输和终端仿真）提供服务。如HTTP、SMTP、FTP、DNS等
+表示层
+Presentation Layer
+把数据转换为能与接收者的系统格式兼容并适合传输的格式，即让两个系统可以交换信息
+会话层
+Session Layer
+负责在数据传输中设置和维护计算机网络中两台计算机之间的通信连接
+传输层
+Transport Layer
+负责端到端通讯，可靠传输，不可靠传输 ，流量控制，复用分用
+网络层
+Network Layer
+负责选择路由最佳路径，规划IP地址(ipv4和ipv6变化只会影响网络层)，拥塞控制
+数据链路层
+Data Link Layer
+帧的开始和结束，还有透明传输，差错校验(纠错由传输层解决)
+物理层
+Physical Layer
+定义网络设备接口标准，电气标准(电压)，如何在物理链路上传输的更快
+4.1 OSI流程简介网络层及以上，每一层都要对上一层发送的数据进行处理（加个头部）数据链路层不仅需要加头部，还需要加尾部物理层什么都不加，只管发送数据（比特流）
+4.2 TCP/IP参考模型
+4.3 五层参考模型及其传输过程简介参考资料2019 王道考研 计算机网络
+
+                        
+                    </p>
+                </a>
+            </div>
+
+            
+                <div class="post-footer">
                     
-                    <div class="excerpt">
+                        <i class="fa fa-folder-open-o"></i>
+                        <a class="category-link" href="../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BB%BC%E5%90%88/">计算机网络综合</a>
+
                         
-                    </div>
+                            <span class="dotted">|</span>
+                        
+
                     
-                    <div class="time">
-                        
-                        
-                        <span>February</span>
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        <span>&nbsp;5,&nbsp;</span>
-                        <span>2021</span>
-                    </div>
+                    
+                        <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="" rel="tag">计算机网络</a>
+                    
                 </div>
-            </a>
+            
         </article>
+    
+
+
+
+            </div>
+            <div class="aside">
+    
+        <div class="box widget">
+    <div class="introduction">
+        <p><img src="/images/avatar.jpg" alt="head-sculpture" /></p>
+        <p class="name">
+            博落回
+        </p>
+        <p class="slogan">流连矣 忘景幻云催 峦栈醺醺说旧梦 重山迟迟映霞辉 向晚共邀归 —— 忆江南</p>
+    </div>
+</div>
+    
         
-        <article class="post-list-item">
-            <a href="../../2021/02/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0Part1%E6%A6%82%E8%BF%B0/">
-                
-                <div class="content">
-                    <div class="title">
-                        计算机网络笔记概述
-                    </div>
-                    
-                    <div class="excerpt">
-                        
-                    </div>
-                    
-                    <div class="time">
-                        
-                        
-                        <span>February</span>
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        <span>&nbsp;5,&nbsp;</span>
-                        <span>2021</span>
-                    </div>
-                </div>
-            </a>
-        </article>
+<div class="box widget">
+    <div class="title">Recent</div>
+    <ul class="item-box">
         
+            
+                <li><a href="../../2021/05/04/%E5%B0%8F%E7%BA%A2%E4%B9%A6%E7%9A%84%E6%83%8A%E5%96%9C/">小红书的惊喜</a></li>
+            
+        
+            
+                <li><a href="../../2021/05/03/%E2%80%9C%E5%8D%97%E4%BA%AC%E5%8F%8B%E8%AE%B0-%E6%9D%8E%E5%AE%B6%E9%A6%A8%E2%80%9D/">南京友记-李家馨</a></li>
+            
+        
+            
+                <li><a href="../../2021/05/01/%E5%8D%97%E4%BA%AC%E4%B9%8B%E6%97%85-episode-1/">南京之旅-中山陵</a></li>
+            
+        
+            
+                <li><a href="../../2021/04/24/%E2%80%9C%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E2%80%9D/">“计算机文件系统”</a></li>
+            
+        
+            
+                <li><a href="../../2021/04/24/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%AC%AC%E4%BA%8C%E7%AB%A0%E6%80%BB%E7%BB%93/">线性代数第二章总结</a></li>
+            
+        
+            
+                <li><a href="../../2021/04/23/2020%E8%80%83%E7%A0%94%E8%AE%A1%E7%AE%97%E6%9C%BA%EF%BC%88408%EF%BC%89%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/">2020考研计算机（408）考试大纲</a></li>
+            
+        
+            
+                <li><a href="../../2021/04/22/%E2%80%9C%E5%B9%82%E7%BA%A7%E6%95%B0%E7%9A%84%E6%9C%AC%E8%B4%A8%E2%80%9D/">“幂级数的本质”</a></li>
+            
+        
+            
+                <li><a href="../../2021/04/21/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%AC%AC%E4%B8%80%E7%AB%A0%E8%8A%82%E6%80%BB%E7%BB%93/">线性代数第一章节总结</a></li>
+            
+        
+    </ul>
+</div>
+
+    
+        
+    <div class="box widget">
+        <div class="title">Categories</div>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../categories/hexo/">hexo</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/java/">java</a><span class="category-list-count">36</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/mysql/">mysql</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/ui/">ui</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E4%B8%89%E5%89%91%E5%AE%A2/">三剑客</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E7%94%9F%E6%B4%BB/">生活</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/">计算机常识</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BB%BC%E5%90%88/">计算机网络综合</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/">高等数学</a><span class="category-list-count">7</span></li></ul>
+    </div>
+
+    
+        
+  <div class="box widget">
+    <div class="title">Archives</div>
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/05/">2021-05</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/04/">2021-04</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/03/">2021-03</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/02/">2021-02</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/01/">2021-01</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/12/">2020-12</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/11/">2020-11</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/10/">2020-10</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/09/">2020-09</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/08/">2020-08</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/07/">2020-07</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/06/">2020-06</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/03/">2020-03</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/02/">2020-02</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/12/">2019-12</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/10/">2019-10</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/08/">2019-08</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/07/">2019-07</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/06/">2019-06</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/05/">2019-05</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/03/">2019-03</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/02/">2019-02</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/12/">2018-12</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/11/">2018-11</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/05/">2018-05</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/04/">2018-04</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/03/">2018-03</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2016/04/">2016-04</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/04/">2015-04</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/06/">2013-06</a><span class="archive-list-count">1</span></li></ul>
+  </div>
+
+    
+        
+    <div class="box widget">
+        <div class="title">Tags</div>
+        <div class="item-box cloud-label">
+            <a href="../CSS/" style="font-size: 11.11px;">CSS</a> <a href="../Eclipse/" style="font-size: 10px;">Eclipse</a> <a href="../Field/" style="font-size: 10px;">Field</a> <a href="../Groovy/" style="font-size: 10px;">Groovy</a> <a href="../HTML/" style="font-size: 11.11px;">HTML</a> <a href="../Hexo/" style="font-size: 10px;">Hexo</a> <a href="../IDE/" style="font-size: 11.11px;">IDE</a> <a href="../IT/" style="font-size: 17.78px;">IT</a> <a href="../JAVA/" style="font-size: 12.22px;">JAVA</a> <a href="../JVM/" style="font-size: 10px;">JVM</a> <a href="../Java/" style="font-size: 14.44px;">Java</a> <a href="../JavaScript/" style="font-size: 11.11px;">JavaScript</a> <a href="../MYSQL/" style="font-size: 10px;">MYSQL</a> <a href="../Maven/" style="font-size: 10px;">Maven</a> <a href="../NoSql/" style="font-size: 10px;">NoSql</a> <a href="../Node-js/" style="font-size: 10px;">Node.js</a> <a href="../Python/" style="font-size: 10px;">Python</a> <a href="../TOMCAT/" style="font-size: 10px;">TOMCAT</a> <a href="../UI/" style="font-size: 10px;">UI</a> <a href="../VMware/" style="font-size: 10px;">VMware</a> <a href="../Wicket/" style="font-size: 10px;">Wicket</a> <a href="../coding/" style="font-size: 10px;">coding</a> <a href="../coding-net/" style="font-size: 12.22px;">coding.net</a> <a href="../css/" style="font-size: 13.33px;">css</a> <a href="../date/" style="font-size: 10px;">date</a> <a href="../debug/" style="font-size: 10px;">debug</a> <a href="../decorator/" style="font-size: 10px;">decorator</a> <a href="../eclipse/" style="font-size: 10px;">eclipse</a> <a href="../editor/" style="font-size: 10px;">editor</a> <a href="../equals/" style="font-size: 10px;">equals</a> <a href="../express/" style="font-size: 10px;">express</a> <a href="../git/" style="font-size: 10px;">git</a> <a href="../github/" style="font-size: 12.22px;">github</a> <a href="../gogs/" style="font-size: 10px;">gogs</a> <a href="../hexo/" style="font-size: 16.67px;">hexo</a> <a href="../https/" style="font-size: 10px;">https</a> <a href="../i18n/" style="font-size: 10px;">i18n</a> <a href="../ini/" style="font-size: 10px;">ini</a> <a href="../it/" style="font-size: 15.56px;">it</a> <a href="../jar/" style="font-size: 10px;">jar</a> <a href="../java/" style="font-size: 20px;">java</a> <a href="../javascript/" style="font-size: 12.22px;">javascript</a> <a href="../jdk/" style="font-size: 10px;">jdk</a> <a href="../jvm/" style="font-size: 10px;">jvm</a> <a href="../less/" style="font-size: 10px;">less</a> <a href="../linux/" style="font-size: 11.11px;">linux</a> <a href="../mac/" style="font-size: 12.22px;">mac</a> <a href="../macvim/" style="font-size: 10px;">macvim</a> <a href="../markdown/" style="font-size: 10px;">markdown</a> <a href="../maven/" style="font-size: 11.11px;">maven</a> <a href="../mediator/" style="font-size: 10px;">mediator</a> <a href="../nginx/" style="font-size: 10px;">nginx</a> <a href="../object/" style="font-size: 10px;">object</a> <a href="../observer/" style="font-size: 10px;">observer</a> <a href="../qcloud/" style="font-size: 10px;">qcloud</a> <a href="../rails/" style="font-size: 10px;">rails</a> <a href="../reflect/" style="font-size: 10px;">reflect</a> <a href="../remote/" style="font-size: 10px;">remote</a> <a href="../ssh/" style="font-size: 10px;">ssh</a> <a href="../ssl/" style="font-size: 10px;">ssl</a> <a href="../tomcat/" style="font-size: 10px;">tomcat</a> <a href="../travis/" style="font-size: 12.22px;">travis</a> <a href="../vim/" style="font-size: 11.11px;">vim</a> <a href="../web/" style="font-size: 11.11px;">web</a> <a href="../webjars/" style="font-size: 11.11px;">webjars</a> <a href="../wicket/" style="font-size: 11.11px;">wicket</a> <a href="../%E4%B8%AD%E4%BB%8B%E8%80%85/" style="font-size: 10px;">中介者</a> <a href="../%E5%81%87%E6%9C%9F/" style="font-size: 10px;">假期</a> <a href="../%E5%88%86%E5%B8%83%E5%BC%8F/" style="font-size: 10px;">分布式</a> <a href="../%E5%89%8D%E7%AB%AF/" style="font-size: 11.11px;">前端</a> <a href="../%E5%91%A8%E6%9C%AB/" style="font-size: 11.11px;">周末</a> <a href="../%E5%9B%BE%E7%89%87/" style="font-size: 11.11px;">图片</a> <a href="../%E5%A5%BD%E6%96%87/" style="font-size: 10px;">好文</a> <a href="../%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9/" style="font-size: 10px;">小知识点</a> <a href="../%E5%B7%A5%E4%BD%9C/" style="font-size: 10px;">工作</a> <a href="../%E5%BC%80%E5%8F%91/" style="font-size: 10px;">开发</a> <a href="../%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 10px;">微服务</a> <a href="../%E5%BF%83%E6%83%85/" style="font-size: 10px;">心情</a> <a href="../%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">技术</a> <a href="../%E6%95%99%E7%A8%8B/" style="font-size: 10px;">教程</a> <a href="../%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10px;">数据库</a> <a href="../%E6%95%B0%E6%8D%AE%E6%9C%BA%E6%9E%84/" style="font-size: 10px;">数据机构</a> <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="../%E6%96%87%E7%AB%A0/" style="font-size: 10px;">文章</a> <a href="../%E6%97%A0%E5%9B%BE/" style="font-size: 10px;">无图</a> <a href="../%E6%97%A5%E5%BF%97/" style="font-size: 18.89px;">日志</a> <a href="../%E6%97%A5%E8%AE%B0/" style="font-size: 10px;">日记</a> <a href="../%E6%9D%82%E4%BA%8B/" style="font-size: 16.67px;">杂事</a> <a href="../%E6%9D%82%E6%96%87/" style="font-size: 10px;">杂文</a> <a href="../%E6%9D%82%E8%B0%88/" style="font-size: 10px;">杂谈</a> <a href="../%E6%B2%B9%E6%BC%86%E5%B7%A5/" style="font-size: 10px;">油漆工</a> <a href="../%E7%94%9F%E6%B4%BB/" style="font-size: 11.11px;">生活</a> <a href="../%E7%94%B5%E5%BD%B1/" style="font-size: 10px;">电影</a> <a href="../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 10px;">线性代数</a> <a href="../%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">网络</a> <a href="../%E8%88%B6%E6%9D%A5%E5%93%81/" style="font-size: 10px;">舶来品</a> <a href="../%E8%89%BA%E6%9C%AF%E5%AE%B6/" style="font-size: 10px;">艺术家</a> <a href="../%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="../%E8%A7%82%E5%AF%9F%E8%80%85/" style="font-size: 10px;">观察者</a> <a href="../%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="font-size: 14.44px;">计算机</a> <a href="../%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/" style="font-size: 10px;">计算机常识</a> <a href="" style="font-size: 14.44px;">计算机网络</a> <a href="../%E8%AE%B0%E5%BD%95/" style="font-size: 10px;">记录</a> <a href="../%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 14.44px;">设计模式</a> <a href="../%E8%AF%B4%E7%82%B9%E5%95%A5/" style="font-size: 10px;">说点啥</a> <a href="../%E8%BF%90%E5%8A%A8/" style="font-size: 10px;">运动</a> <a href="../%E9%A3%8E%E6%99%AF/" style="font-size: 10px;">风景</a> <a href="../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 14.44px;">高等数学</a>
+        </div>
     </div>
 
     
 </div>
-        <footer>
-    <div class="inner">
-        <div class="links">
-            
-            <div class="group">
-                <h4 class="title">Blog</h4>
-                
-                <a href="/" class="item" target="_blank">Blog</a>
-                
-                <a href="/archives" class="item" target="_blank">Archives</a>
-                
-                <a href="/friends" class="item" target="_blank">Friends</a>
-                
-                <a href="/projects" class="item" target="_blank">Projects</a>
-                
-                <a href="/resume" class="item" target="_blank">Resume</a>
-                
-                <a href="/about" class="item" target="_blank">About</a>
-                
-                <a href="/atom.xml" class="item" target="_blank">RSS</a>
-                
-            </div>
-            
-            <div class="group">
-                <h4 class="title">Projects</h4>
-                
-                <a href="https://github.com/transmister" class="item" target="_blank">Transmister</a>
-                
-                <a href="https://github.com/MrWillCom/css-and-js-windows-uwp-xaml-controls" class="item" target="_blank">CSS&amp;JS Windows UWP XAML Controls</a>
-                
-                <a href="https://github.com/MrWillCom/hexo-theme-cupertino" class="item" target="_blank">Theme Cupertino</a>
-                
-                <a href="https://github.com/MrWillCom/github-dark-mode" class="item" target="_blank">GitHub Dark Mode</a>
-                
-            </div>
-            
-            <div class="group">
-                <h4 class="title">Me</h4>
-                
-                <a href="https://github.com/MrWillCom" class="item" target="_blank">GitHub</a>
-                
-                <a href="https://codepen.io/mrwillcom" class="item" target="_blank">CodePen</a>
-                
-                <a href="https://www.patreon.com/MrWillCom" class="item" target="_blank">Patreon</a>
-                
-                <a href="mailto:mr.will.com@outlook.com" class="item" target="_blank">Email</a>
-                
-            </div>
-            
+        </section>
+        <footer class="footer">
+    <div class="global-width footer-box">
+        <div class="copyright">
+            <span>Copyright &copy; 2019</span>
+            <span class="dotted">|</span>
+            <span>Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a></span>
+            <span class="dotted">|</span>
+            <span>Theme by <a href="javascript:">Loren</a></span>
+            <span class="dotted">|</span>
+            <span><a target="_blank" rel="noopener" href="http://www.beian.miit.gov.cn">浙ICP备18016660号-1</a></span>
         </div>
-        &copy; 2021 齐雨争<br />
-        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
 </footer>
+    </div>
 
-        
-<script src="../../js/main.js"></script>
-
-        
-    </body>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>
 </html>

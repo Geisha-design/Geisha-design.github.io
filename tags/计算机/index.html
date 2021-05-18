@@ -1,343 +1,538 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!DOCTYPE html>
-<html>
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-  
-  <title>tag: 计算机 - 齐雨争</title>
-  
-    <link rel="shortcut icon" href="../../favicon.png">
-  
-  
-    <link rel='manifest' href='/manifest.json'>
-  
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 
-  
-<link rel="stylesheet" href="../../css/var.css">
 
-  
-<link rel="stylesheet" href="../../css/main.css">
 
-  
-<link rel="stylesheet" href="../../css/typography.css">
 
-  
-<link rel="stylesheet" href="../../css/code-highlighting.css">
+    <meta name="keywords" content="java leetcode mysql hexo"/>
 
-  
-<link rel="stylesheet" href="../../css/components.css">
 
-  
-<link rel="stylesheet" href="../../css/nav.css">
 
-  
-<link rel="stylesheet" href="../../css/paginator.css">
+    <meta name="description" content="雨争齐齐齐"/>
 
-  
-<link rel="stylesheet" href="../../css/footer.css">
 
-  
-<link rel="stylesheet" href="../../css/post-list.css">
+<meta name="Robots" content="all">
 
-  
-<link rel="stylesheet" href="../../css/waline.css">
 
-  
-  
-  
-<link rel="stylesheet" href="../../css/post.css">
+    <title>齐雨争</title>
 
-  
 
-  
+<link rel="icon" href="/images/favicon.ico">
+
+<link rel="stylesheet" href="../../css/font-awesome.min.css">
+
+
+<link rel="stylesheet" href="../../css/atom-one-dark.css">
+
+
+<link rel="stylesheet" href="../../css/style.css">
+
+
+<script src="../../js/highlight.min.js"></script>
+
 <meta name="generator" content="Hexo 5.4.0"></head>
-    <script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
-
-<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script>
-
-    <body>
-        <nav id="theme-nav">
-    <div class="inner">
-        <a class="title" href="/">帅哥的博客</a>
-        <div class="nav-arrow"></div>
-        <div class="nav-items">
-            <a class="nav-item nav-item-home" href="/">Home</a>
+<body>
+    <div class="main-container">
+        <header class="header">
+    <div class="global-width">
+        <nav class="nav-box">
             
+                <a class="nav-item" href="/"
+                
+                >Home</a>
             
-            <a class="nav-item" href="../../archives">文章</a>
+                <a class="nav-item" href="/resume"
+                
+                >Resume</a>
             
+                <a class="nav-item" href="/mood"
+                
+                   target="_blank"
+                
+                >Mood</a>
             
+                <a class="nav-item" href="/amusement/tetris"
+                
+                   target="_blank"
+                
+                >Amusement</a>
             
-            <a class="nav-item" href="../../friends">朋友们的友链</a>
+                <a class="nav-item" href="/about"
+                
+                >About</a>
             
-            
-            
-            <a class="nav-item" href="../../examples">维护的大家</a>
-            
-            
-            
-            <a class="nav-item" href="../../https:/github.com/Geisha-design">开源项目</a>
-            
-            
-            
-            <a class="nav-item" href="../../about">关于我</a>
-            
-            
-            
-            <a class="nav-item nav-item-github nav-item-icon" href="../../https:/github.com/Geisha-design" target="_blank">&nbsp;</a>
-            
-            
-            
-            <a class="nav-item nav-item-codepen nav-item-icon" href="../../https:/codepen.io/mrwillcom" target="_blank">&nbsp;</a>
-            
-            
-            
-            <a class="nav-item nav-item-patreon nav-item-icon" href="../../https:/www.patreon.com/MrWillCom" target="_blank">&nbsp;</a>
-            
-            
-        </div>
+        </nav>
     </div>
-</nav>
-        <div class="container">
+</header>
+
+        <section class="content global-width">
+            <div class="main">
+                
+    
+        <article class="box post post-item">
+            <div class="post-title"><a href="../../2021/04/15/port%E8%AE%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0/">论数据库连接池</a></div>
+            <div class="post-meta">
+                
+                <i class="fa fa-calendar"></i> <time>2021-04-15</time>
+                <span class="dotted">|</span>
+                <i class="fa fa-user"></i> 
+            </div>
+
+            <div class="post-excerpt">
+                <a href="../../2021/04/15/port%E8%AE%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0/">
+                    <p>
+                        
+                            数据库连接是一种关键的有限的昂贵的资源，这一点企业级应用程序中体现得尤为突出。对数据库连接的管理能显著影响到整个应用程序的伸缩性和健壮性，影响到程序的性能指标。数据库连接池正是针对这个问题提出来的。
+  数据库连接池负责分配、管理和释放数据库连接，它允许应用程序重复使用一个现有的数据库连接，而再不是重新建立一个；释放空闲时间超过最大空闲时间的数据库连接来避免因为没有释放数据库连接而引起的数据库连接遗漏。这项技术能明显提高对数据库操作的性能。
+具体工作机制如下：
+数据库连接池在初始化时将创建一定数量的数据库连接放到连接池中，这些数据库连接的数量是由最小数据库连接数来设定的。无论这些数据库连接是否被使用，连接池都将一直保证至少拥有这么多的连接数量。连接池的最大数据库连接数量限定了这个连接池能占有的最大连接数，当应用程序向连接池请求的连接数超过最大连接数量时，这些请求将被加入到等待队列中。
+数据库连接池的最小连接数和最大连接数的设置要考虑到下列几个因素：
+
+最小连接数是连接池一直保持的数据库连接，所以如果应用程序对数据库连接的使用量不大，将会有大量的数据库连接资源被浪费；
+
+最大连接数是连接池能申请的最大连接数，如果数据库连接请求超过此数，后面的数据库连接请求将被加入到等待队列中，这会影响之后的数据库操作。
+
+如果最小连接数与最大连接数相差太大，那么最先的连接请求将会获利，之后超过最小连接数量的连接请求等价于建立一个新的数据库连接。不过，这些大于最小连接数的数据库连接在使用完不会马上被释放，它将被放到连接池中等待重复使用或是空闲超时后被释放。
+
+
+===================================================================
+J2EE服务器启动时会建立一定数量的池连接，并一直维持不少于此数目的池连接。
+  调用：客户端程序需要连接时，池驱动程序会返回一个未使用的池连接并将其表记为 忙。如果当前没有空闲连接，池驱动程序就新建一定数量的连接，新建连接的数量有配置参数决定。
+释放：当使用的池连接调用完成后，池驱动程序将此连接表记为空闲， 其他调用就可以使用这个连接。
+最大维持连接数：没有任何请求时在连接池中可以存在的连接数
+最大连接数：连接池中最多可以存在的连接个数。
+最大等待时间：当断开连接时，超过最大维持连接数的连接不会马上销毁，最大等待时间过后它才会销毁。
+连接池是将已经创建好的连接保存在池中，当有请求来时，直接使用已经创建好的连接对数据库进行访问。这样省略了创建连接和销毁连接的过程。
+现在假设：最大维持连接数是10，最大连接数是20，最大等待时间是10000（毫秒）
+其过程：最开始在连接池中有10个连接（最大连接数），当有用户申请连接时，其将一个连接分配用户，直到连接池中的10个连接全都分配出去，当第11个用户申请连接时，它将创建第11个连接并分配给该用户，直到把第20个连接（最大连接数）分配给第20个用户，当第21个用户申请连接时，它需要等待，直到前面的20个用户中某一个断开了连接，才会把那个连接分配给第21个用户，当用户断开连接时（第11至20个连接），该连接不会立刻被释放而是需要等待10000毫秒（最大等待时间），才被释放，当没有用户连接时，连接池内还保持10个连接。
+在开发中，使用连接池时若没有关闭连接（调用连接的close方法）会出现“连接池疲劳的错误”。
+数据连接池的主要作用是什么?
+数据连接池是把数据库连接放到中间服务器上,比如tomcat上,那么相当于每次你操作数据库的时候就不需要再”连接”到数据库再进行相关操作,而是直接操作服务器上的”连接池”,你可以根据字面意思进行理解,把数据库当做一条小溪,那么”连接池”就是一个”水池”,这个水池里面的水是由事先架好的通向”小溪”的水管引进来的,所以,你想喝水的时候不必大老远地跑到小溪边上,而只要到这个水池就可以.这样的话就可以提高”效率”.但是数据池一般是用在数据量比较大的项目,这样可以提高程序的效率,想一想这样的话是不是就把相关的负荷加在了服务器上,因为这个”池”是在服务器上的,对于小数据量处理的项目不推荐使用,应为过于频繁的请求会使得服务器负载加重
+关系:
+ 你 –&gt;”水池”–&gt;小溪(快速喝水)
+ 程序–&gt;”数据池”–&gt;数据库(快速存取)
+就是这样,也不用把它想神秘了,我是这样理解的,也就这样说了,希望对你有帮助
+数据连接池怎么设置？
+在数据库连接字段的时候可以设置
+比如：“DataSource=Server;Initial;Catalog=db;UserID=test;Password=test;
+ MaxPoolSize = 100;MinPoolSize= 15”
+这样 连接池 最大为100，最小为15
+
+                        
+                    </p>
+                </a>
+            </div>
+
+            
+                <div class="post-footer">
+                    
+                        <i class="fa fa-folder-open-o"></i>
+                        <a class="category-link" href="../../categories/java/">java</a>
+
+                        
+                            <span class="dotted">|</span>
+                        
+
+                    
+                    
+                        <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="" rel="tag">计算机</a>
+                    
+                </div>
+            
+        </article>
     
 
-    <div class="post-list">
-        
-        <article class="post-list-item">
-            <a href="../../2021/04/15/port%E8%AE%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0/">
+    
+        <article class="box post post-item">
+            <div class="post-title"><a href="../../2021/04/14/port%E2%80%9Cmac%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E7%AC%AC%E4%BA%8C%E5%BC%B9%E2%80%9D/">“mac虚拟机解决方案第二弹”</a></div>
+            <div class="post-meta">
                 
-                <div class="content">
-                    <div class="title">
-                        论数据库连接池
-                    </div>
+                <i class="fa fa-calendar"></i> <time>2021-04-14</time>
+                <span class="dotted">|</span>
+                <i class="fa fa-user"></i> 
+            </div>
+
+            <div class="post-excerpt">
+                <a href="../../2021/04/14/port%E2%80%9Cmac%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E7%AC%AC%E4%BA%8C%E5%BC%B9%E2%80%9D/">
+                    <p>
+                        
+                            对于完全小白请先看一下鄙人的上一篇文章，brew的安装在进行后续操作。
+最容易的请直接看3.
+mac安装window虚拟机的三种方式，双系统硬盘安装，Parallels，virtaubox
+Mac下安装Windows虚拟机有几种方式可以考虑1.双系统硬盘安装的方式，启动时选择不同的操作系统进去，相当于在苹果Mac笔记本硬件上安装了个Windows系统，不能直接切换，进去后操作Windows的体验比较好。需要下载安装特定的win10镜像，应用程序–&gt;实用工具–&gt;启动转换助理 然后按提示安装就可以了。图文介绍可以看这篇文章：https://zhuanlan.zhihu.com/p/34435136
+2.使用收费虚拟机软件（Parallels 498元起），可以一键滑过去切换系统，体验也比较好，但开机启动会占Mac的内存资源，相当于启动了一个后台进程的软件。https://www.parallels.cn/Parallels Desktop 是功能最强大灵活度最高的虚拟化方案，无需重启即可在同一台电脑上随时访问Windows和Mac两个系统上的众多应用程序。从仅限于PC的游戏到生产力软件，Parallels Desktop都能帮您实现便捷使用。可以同时运行Windows和MacOS应用程序，直接从Mac dock启动Windows应用程序，无需重启。双系统文件随意拖动在Mac与Windows应用程序之间随意拖放文件快捷使用，无需本地拷贝文件即可存储，深度整合，手势共用，云端共享。操作简单 无缝对接安全便捷的新建向导自动查找操作系统，融合模式(Coherence)不使用Windows界面也可轻松切换各个应用程序，无缝对接。Parallels Toolbox 是Mac平台上的一款PD虚拟机快捷的实用工具集合工具
+3.使用免费虚拟机软件virtualbox虚拟机，在虚拟机软件里面打开，功能比较弱，体检比较差，也不太稳定，经常出现需要重新安装系统的问题，只能当测试用或者临时用一下。
+使用免费虚拟机软件virtualbox虚拟机安装方法：1.安装完成brew后可以使用命令安装免费的virtualbox虚拟机PS:由于源在国外问题，brew下载的速度很慢经常会导致下载超时失败，建议改成国内镜像或者fq后执行brew cask install virtualboxbrew cask install virtualbox-extension-pack
+
+2.安装完成虚拟机后下载一个ISO镜像，本人测试用迅雷下载了几个都不能用，到微软官方上下载了一个才安装成功了
+3.下载完ISO镜像后打开virtualbox创建虚拟机就可以了
+
+ 
+
+                        
+                    </p>
+                </a>
+            </div>
+
+            
+                <div class="post-footer">
                     
-                    <div class="excerpt">
+                        <i class="fa fa-folder-open-o"></i>
+                        <a class="category-link" href="../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/">计算机常识</a>
+
                         
-                    </div>
+                            <span class="dotted">|</span>
+                        
+
                     
-                    <div class="time">
-                        
-                        
-                        
-                        
-                        <span>April</span>
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        <span>&nbsp;15,&nbsp;</span>
-                        <span>2021</span>
-                    </div>
+                    
+                        <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="" rel="tag">计算机</a>
+                    
                 </div>
-            </a>
+            
         </article>
-        
-        <article class="post-list-item">
-            <a href="../../2021/04/14/port%E2%80%9Cmac%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E7%AC%AC%E4%BA%8C%E5%BC%B9%E2%80%9D/">
+    
+
+    
+        <article class="box post post-item">
+            <div class="post-title"><a href="../../2021/04/14/portmac%E7%9A%84brew%E5%AE%89%E8%A3%85%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/">mac的brew安装快捷方式</a></div>
+            <div class="post-meta">
                 
-                <div class="content">
-                    <div class="title">
-                        “mac虚拟机解决方案第二弹”
-                    </div>
+                <i class="fa fa-calendar"></i> <time>2021-04-14</time>
+                <span class="dotted">|</span>
+                <i class="fa fa-user"></i> 
+            </div>
+
+            <div class="post-excerpt">
+                <a href="../../2021/04/14/portmac%E7%9A%84brew%E5%AE%89%E8%A3%85%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/">
+                    <p>
+                        
+                            介于网上误人子弟，及其不负责任的brew安装方式讲解
+最离谱的看到一个老哥安装brew写了洋洋洒洒的2000多字。
+所以为了各位刚使用的朋友谋福利，这里只需要一行代码，在terminal执行即可
+一键解君愁。
+在网上搜了很多brew安装方式，包括使用官网的方式都安装报错Failed to connect to raw.githubusercontent.com port 443: Connection refused
+然后找了好久终于找到一个安装成功。
+安装方式
+/bin/zsh -c “$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;
+你没有看错，把这行代码执行就可。
+
+                        
+                    </p>
+                </a>
+            </div>
+
+            
+                <div class="post-footer">
                     
-                    <div class="excerpt">
+                        <i class="fa fa-folder-open-o"></i>
+                        <a class="category-link" href="../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/">计算机常识</a>
+
                         
-                    </div>
+                            <span class="dotted">|</span>
+                        
+
                     
-                    <div class="time">
-                        
-                        
-                        
-                        
-                        <span>April</span>
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        <span>&nbsp;14,&nbsp;</span>
-                        <span>2021</span>
-                    </div>
+                    
+                        <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="" rel="tag">计算机</a>
+                    
                 </div>
-            </a>
+            
         </article>
-        
-        <article class="post-list-item">
-            <a href="../../2021/04/14/portmac%E7%9A%84brew%E5%AE%89%E8%A3%85%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/">
+    
+
+    
+        <article class="box post post-item">
+            <div class="post-title"><a href="../../2021/04/13/mac%E4%B8%8A%E5%AE%89%E8%A3%85%E8%99%9A%E6%8B%9F%E6%9C%BA/">mac上安装虚拟机</a></div>
+            <div class="post-meta">
                 
-                <div class="content">
-                    <div class="title">
-                        mac的brew安装快捷方式
-                    </div>
+                <i class="fa fa-calendar"></i> <time>2021-04-13</time>
+                <span class="dotted">|</span>
+                <i class="fa fa-user"></i> 
+            </div>
+
+            <div class="post-excerpt">
+                <a href="../../2021/04/13/mac%E4%B8%8A%E5%AE%89%E8%A3%85%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+                    <p>
+                        
+                            应某位学弟的要求，鄙人今晚与图书馆写了此篇博文。
+软件选择目前我知道的Mac虚拟机：
+Parallels Desktop：收费，基本无序列号资源；但据说好用、强大，对Win系统多了很多优化。VMWare Fusion：老牌虚拟机软件，Mac上也做的非常不错。VirtualBox：开源，免费，但好像不够强大。在找了很久 Parallels Desktop 的资源，而又无功而返后，最终决定使用 VMWare Fusion。
+开门见山地说，附上破解版本链接 https://www.xxmac.com/mac/xuniji
+
+运行效果
+· 运行速度不稳定
+12&gt; 这里的不稳定是每次之间，不是时快时慢。&gt; 刚开机时较慢，运行一段时间后速度较快。
+
+
+u1s1比便宜的商务本流畅多了 （4000¥以下的）
+系统之间文件转换方便
+适用情况很广，我的wtg就是使用虚拟机安装的
+总体体验感觉不错
+
+安装过程安装过程非常简单，几乎全部傻瓜式操作 1. 下载虚拟机软件 推荐：Parallels Desktop
+链接： mac志
+
+下载镜像
+
+
+
+获得方式同上，注意要下载可以用于虚拟机的版本
+如果使用上面推荐的这款软件会自带镜像
+安装虚拟机软件
+
+
+
+下载好之后应该得到中间这个，运行即可，里面全部中文界面，自带win10和unbuntu等等虚拟机镜像，按照提示操作即可
+完成后就能看到上面另外的两个图标了。做什么用的？就是字面意思。
+
+
+双红杠就是这款虚拟机应用的标志
+\4. 节约空间 虚拟机支持在移动硬盘里运行，如果在安装时可以选择位置，直接设置到外部介质即可。如果没有机会选择，就要自己下载好镜像存储在移动硬盘中，安装时倒入虚拟机。（好像直接安装到内置硬盘中然后把系统文件直接拖到外部介质再重启虚拟机导入系统也可以，我可能就是这么操作的）
+为什么今年我放弃虚拟机不是因为不好用，而是因为移动的业务效能过高了。
+以上不行则使用方案二
+大部分Mac用户大部分都是通过Parallels Desktop或者VMware Fusion Pro安装虚拟机，可两款虚拟机价值不菲，但是今天小编为大家带来VMware虚拟机免费获取教程，仅限个人或者非商业用途使用！
+
+
+Macv.comVMware Fusion Pro 12 Mac(vm虚拟机) 支持11.0 Big Sur614.88 MB2020.11.20简体中文VMware Fusion 12最新推出的最新版本虚拟机，VMware Fusion 11Mac版可以完整支持 Windows 10、OS X El Capitan 和最新的 Retina Mac 产品，当然还支持微软的 Cortana！下载
+
+Macv.comParallels Desktop 16 for mac(最好用的虚拟机软件)支持big sur280.8 MB2020.12.16简体中文Parallels Desktop 16被称为 macOS 上最强大的虚拟机软件。可以在 Mac 下同时模拟运行 Win、Linux、Android 等多种操作系统及软件而不必重启电脑，并能在不同系统间随意切换。下载
+VMware虚拟机免费获取教程
+先用谷歌浏览器打开 https://www.vmware.com/ 进入VMware虚拟机的官网，点击Downloads—Fusion
+
+转至虚拟机下载页面，点击GO TO DOWNLOADS
+
+点击DOWNLOAD NOW
+
+需要登陆VMware的账户，可以自己申请一个。
+
+注册完成之后登陆就可以完成下载软件。软件下载完成后打开，双击VMware Fusion.app进行安装
+
+输入电脑密码，点击OK
+
+来到VMware注册页面，点击获取免费的许可证密钥
+
+跳转到以下界面
+
+如果跳转的是中文版的VMware官网页面，请将地区更改为美国再重新点击获取免费的许可证密钥
+
+登陆上自己刚注册的账户，然后选择License &amp; Download就可以查看自己的注册密钥了
+
+将获取的注册密钥复制到指定位置点击继续，VM虚拟机就可以免费使用了！
+
+
+                        
+                    </p>
+                </a>
+            </div>
+
+            
+                <div class="post-footer">
                     
-                    <div class="excerpt">
+                        <i class="fa fa-folder-open-o"></i>
+                        <a class="category-link" href="../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/">计算机常识</a>
+
                         
-                    </div>
+                            <span class="dotted">|</span>
+                        
+
                     
-                    <div class="time">
-                        
-                        
-                        
-                        
-                        <span>April</span>
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        <span>&nbsp;14,&nbsp;</span>
-                        <span>2021</span>
-                    </div>
+                    
+                        <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="" rel="tag">计算机</a>
+                    
                 </div>
-            </a>
+            
         </article>
-        
-        <article class="post-list-item">
-            <a href="../../2021/04/13/mac%E4%B8%8A%E5%AE%89%E8%A3%85%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+    
+
+    
+        <article class="box post post-item">
+            <div class="post-title"><a href="../../2021/02/05/%E4%BC%A0%E8%BE%93%E5%B1%82/">传输层</a></div>
+            <div class="post-meta">
                 
-                <div class="content">
-                    <div class="title">
-                        mac上安装虚拟机
-                    </div>
+                <i class="fa fa-calendar"></i> <time>2021-02-05</time>
+                <span class="dotted">|</span>
+                <i class="fa fa-user"></i> 
+            </div>
+
+            <div class="post-excerpt">
+                <a href="../../2021/02/05/%E4%BC%A0%E8%BE%93%E5%B1%82/">
+                    <p>
+                        
+                            本人计算机网络笔记总目录计算机网络笔记Part1 概述计算机网络笔记Part2 物理层（Physical Layer）计算机网络笔记Part3 数据链路层（Data Link Layer）计算机网络笔记Part4 网络层（Network Layer）计算机网络笔记Part5 传输层（Transport Layer）计算机网络笔记Part6 应用层（Application Layer）
+1. 概述1.1 传输层的意义网络层可以把数据从一个主机传送到另一个主机，但是没有和进程建立联系。传输层就是讲进程和收到的数据联系到一起，使数据能够为应用服务所以说传输层是主机才有的层次
+1.2 传输层的两个协议
+1.3 传输层的寻址和端口端口号只用于计算机分辨本地进程，总共有2^16=65536种端口号，端口号有很多种，不能随便使用
+1.3.1 常见的应用程序端口号
+2. UDP协议2.1 UDP概述注释：因为UDP一次发送一个完整报文不会分片，所以需要应用层传输过来的数据不要太大，否则网络层分片任务就很重，但是也不能太小，不然效率较低UDP适合一些实时应用，因为实时应用延迟要求高，需要立即响应
+2.2 UDP首部格式
+2.2.1 UDP的校验位构成这里的伪首部只是用来计算检验和的，计算完了就丢弃，可以见下UDP的校验方式
+2.2.2 UDP校验方式总结一下步骤：在发送端的时候：1.就是将每一行（4字节）拆成两部分，左右平均2字节大小，将这两字节数据写成二进制，那么2字节一共就需要2*8=16位。此时检验和没有计算，默认填充0，同时如果数据字段不整齐，则用0补齐，这样就可以写出几十行二进制数，如图中方所示2.计算着几十行二进制数按二进制反码运算求和，二进制反码运算可以参考二进制反码求和运算得到的最后简介再反码，之后将反码之后的放入原来的检验和字段
+在接收端的时候与发送端的时候不同的是，此时检验和字段不是0了按照发送端的步骤再将所有数据写成二进制进行二进制反码运算求和如果最后得到结果全1就是没问题，否则丢弃
+3. TCP协议3.1 TCP协议的特点TCP必须要建立连接之后才可以进行数据交换，所以TCP是面向连接的TCP传输数据是随机切割数据的
+3.2 TCP报文段的首部注释：见上图，可以看到TCP是将数据随机分割后加上TCP头传输的，所以序号就是为了标记这些随机分割之后的数据，这里把第一个字节的编号当成序号确认号就是收到之后做一下标记，代表这之前的都收到了，希望收到的下一个编号的数据就是确认号打头的那个数据偏移量就是为了标记一下距离TCP开始多少字节是数据，这里的单位是4B，这个偏移量就是TCP首部长度窗口就是接收方告诉发送方，还有多少地方（缓存）可以放数据紧急指针就是告诉TCP从哪里到哪里是紧急数据
+3.2.1 TCP的六个控制位紧急位URGURG的特点就是让数据插队，URG=1的就会在缓存中被提前到第一个传输
+确认位ACK
+推送为PSH就是接收端的URG，将PSH=1的数据尽快接收注意一下，如果没有PSH，一般都是接收方缓存满了之后再将数据发送到主机
+复位RST
+同步位SYNA和B主机要建立连接，就A先发一个报文，其中SYN=1B收到之后也回复一个SYN=1的报文，代表接受连接
+终止位FIN
+3.3 TCP连接管理3.3.1 TCP三次握手（建立连接）注释：第一段的意思是SYN=1：(A)要建立连接了！seq=x（随机）：因为还没有数据，所以写什么都无所谓
+第二段的意思是SYN=1：我(B)同意你(A)建立连接！ACK=1：连接建立了，之后的ACK必须都置为1seq=y（随机）：因为还没有数据，所以写什么都无所谓ack=x+1：之前发送方(A)说发送的是第x位数据（虽然发送方是瞎说的），所以我(B)要的是x+1位数据
+第三段的意思是SYN=0：SYN只有在建立连接时才为1，其他时候均设为0ACK=1：连接建立了，之后的ACK必须都置为1seq=x+1：我(A)发送的报文段的第一个字节就是x+1ack=y+1：之前接收方(B)说发送的是第y位数据（虽然接收方是瞎说的），所以我(A)要的是y+1位数据
+注意一下，TCP是双向的，所以不存在绝对不变的发送方接收方，这里的两台主机都同时是发送方和接收方
+TCP三次握手特定导致的SYN洪泛攻击
+3.3.2 TCP四次挥手（连接释放）注释：第一段的意思是FIN=1：(A)要释放连接了！seq=u：发了好多数据，这里只是用u指代一下，这里u是有确定值的
+第二段的意思是ACK=1：连接建立了，之后的ACK必须都置为1seq=v：发了好多数据，这里只是用v指代一下，这里v是有确定值的ack=u+1：之前发送方(A)说发送的是第u位数据，所以我(B)要的是u+1位数据（尽管此时A已经决定释放连接了）
+第三段的意思是FIN=1：(B)要释放连接了！ACK=1：连接建立了，之后的ACK必须都置为1seq=w：发了好多数据，这里只是用w指代一下，这里w是有确定值的ack=u+1：之前发送方(A)说发送的是第u位数据，所以我(B)要的是u+1位数据（因为A直接不发数据了，所以第二段第三段的ack都是u+1）
+第四段的意思是ACK=1：连接建立了，之后的ACK必须都置为1seq=u+1：之前发的数据时第u位数据，B也要第u+1位数据，所以我发第u+1位数据ack=w+1：之前发送方(B)说发送的是第w位数据，所以我(A)要的是w+1位数据
+为什么需要等待计时2MSL？因为这样可以保证B可以收到A的终止报文段进而进入关闭状态比如说如果A的第四段报文丢失，那么等待一个MSL之后B就会重传第三段报文，花费小于1MSL之后A就会再收到第三段报文，之后就可以再次向B发送第四段报文提示B关闭连接
+3.4 TCP可靠传输TCP是提供可靠传输，UDP这种本身还是不可靠传输的就再靠应用层解决了
+3.4.1 序号就是TCP根据下方数据链路层的MTU（最大传输单元）来随即将数据切割成好几端并且进行编号
+3.4.2 确认发送方每一次发送数据之后都需要接收方进行确认。TCP使用的是累计确认机制，就是从第一个丢失的字节开始请求丢失的报文段。如图中456丢失，78到达，但仍然请求发送的数据序号是4
+3.4.3 重传为什么要使用自适应算法？网络环境太复杂，路径又长又短，RTT设置短了照顾不了距离远的，RTT设置长了又导致网络利用率降低，所以使用RTTs
+
+3.5 TCP流量控制简单来说就是接收方可以动态的发送信息告诉发送方发送窗口的大小。接收方接受不过来了就让发送方发送窗口小点，这样发送方发送的速率就慢下来了，接收方就有时间处理它的数据了接受方处理完了也可以发送请求让发送方发送窗口大点，这样发送方发送的速率就快起来了，接收方就可以处理更多数据而不是空闲等着收数据了
+3.5.1 计时器在本例子中，使用的累计确认机制（一次回复收到ack=201）和三次流量控制机制。但是有一个情况就是，如果最后B不允许A再发送数据了，B在处理完数据之后想要恢复窗口大小时发送的有rwnd大小的数据报丢了怎么办？此时A有B的指令在前，发送窗口为0无法发送数据，B也在等待A回复，造成了类似死锁的现象解决方法：使用计时器
+3.6 TCP拥塞控制流量控制是对单独一个来说的，拥塞控制是一群
+3.6.1 拥塞控制四种算法这里虽然是四种算法，但是通常是两两结合进行使用
+3.6.2 慢开始和拥塞避免这里开始时以指数形式增长，ssthresh的意思是慢开始门限，代表从这个地方注入的报文段就比较多了，需要开始慢速增加了。之后一段都是线性增长，每次增加1，直至达到网络拥塞状态瞬间将cwnd设置为1，同时调整原来的ssthresh的值到之前达到网络拥塞状态的1/2,（这里是24降到12）重复以上步骤，但是注意此时ssthresh变了之后线性增长的转折点也变了
+3.6.3 快重传和快恢复这里和上面的慢开始和拥塞避免的一开始步骤差不多，都是先指数增长再转变为线性增长。不同的点是快重传和快恢复算法是在收到连续的ack确认之后执行，这里的ack就是冗余ack，冗余ack的特点是如果多次对某一段请求的数据没有被收到，达到一定数目之后就会立即执行重传。但是此时只是降到现在cwnd的一半，再重新线性增长。而不是像慢开始和拥塞避免的从头开始
+4. 本章思维导图
+本文常用名词中英文对照Multiplexing and demultiplexing 复用与分用Positive acknowledgments 肯定确认Negative acknowledgments 否定确认Countdown timer （倒数）计时器Cumulative acknowledgment 累积确认Receive buffer 接收缓冲区，或接收缓存Resource-management cells 资源管理单元Source (port number) 源端口号Destination (port number) 目的端口号Checksum 校验和Pipelined protocols 流水线（型）协议Go-back-N 回退NSelective Repeat 选择重传Timeout （定时器）超时Fast Retransmit 快速重传Flow Control 流量控制Three way handshake 三次握手sequence number 序列号（简写为seq）acknowledgement number 确认号（简写为ack；注意与大小的ACK不同）Congestion Control 拥塞控制additive increase, multiplicative decrease 加性增乘性减Slow Start 慢启动congestion-avoidance 拥塞避免fast recovery 快速恢复duplicate (ACK) 冗余（ACK）Random Early Detection 随机早期检测
+参考资料2019 王道考研 计算机网络
+
+                        
+                    </p>
+                </a>
+            </div>
+
+            
+                <div class="post-footer">
                     
-                    <div class="excerpt">
+                        <i class="fa fa-folder-open-o"></i>
+                        <a class="category-link" href="../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BB%BC%E5%90%88/">计算机网络综合</a>
+
                         
-                    </div>
+                            <span class="dotted">|</span>
+                        
+
                     
-                    <div class="time">
-                        
-                        
-                        
-                        
-                        <span>April</span>
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        <span>&nbsp;13,&nbsp;</span>
-                        <span>2021</span>
-                    </div>
+                    
+                        <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="" rel="tag">计算机</a>
+                    
                 </div>
-            </a>
+            
         </article>
+    
+
+
+
+            </div>
+            <div class="aside">
+    
+        <div class="box widget">
+    <div class="introduction">
+        <p><img src="/images/avatar.jpg" alt="head-sculpture" /></p>
+        <p class="name">
+            博落回
+        </p>
+        <p class="slogan">流连矣 忘景幻云催 峦栈醺醺说旧梦 重山迟迟映霞辉 向晚共邀归 —— 忆江南</p>
+    </div>
+</div>
+    
         
-        <article class="post-list-item">
-            <a href="../../2021/02/05/%E4%BC%A0%E8%BE%93%E5%B1%82/">
-                
-                <div class="content">
-                    <div class="title">
-                        传输层
-                    </div>
-                    
-                    <div class="excerpt">
-                        
-                    </div>
-                    
-                    <div class="time">
-                        
-                        
-                        <span>February</span>
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        <span>&nbsp;5,&nbsp;</span>
-                        <span>2021</span>
-                    </div>
-                </div>
-            </a>
-        </article>
+<div class="box widget">
+    <div class="title">Recent</div>
+    <ul class="item-box">
         
+            
+                <li><a href="../../2021/05/04/%E5%B0%8F%E7%BA%A2%E4%B9%A6%E7%9A%84%E6%83%8A%E5%96%9C/">小红书的惊喜</a></li>
+            
+        
+            
+                <li><a href="../../2021/05/03/%E2%80%9C%E5%8D%97%E4%BA%AC%E5%8F%8B%E8%AE%B0-%E6%9D%8E%E5%AE%B6%E9%A6%A8%E2%80%9D/">南京友记-李家馨</a></li>
+            
+        
+            
+                <li><a href="../../2021/05/01/%E5%8D%97%E4%BA%AC%E4%B9%8B%E6%97%85-episode-1/">南京之旅-中山陵</a></li>
+            
+        
+            
+                <li><a href="../../2021/04/24/%E2%80%9C%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E2%80%9D/">“计算机文件系统”</a></li>
+            
+        
+            
+                <li><a href="../../2021/04/24/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%AC%AC%E4%BA%8C%E7%AB%A0%E6%80%BB%E7%BB%93/">线性代数第二章总结</a></li>
+            
+        
+            
+                <li><a href="../../2021/04/23/2020%E8%80%83%E7%A0%94%E8%AE%A1%E7%AE%97%E6%9C%BA%EF%BC%88408%EF%BC%89%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/">2020考研计算机（408）考试大纲</a></li>
+            
+        
+            
+                <li><a href="../../2021/04/22/%E2%80%9C%E5%B9%82%E7%BA%A7%E6%95%B0%E7%9A%84%E6%9C%AC%E8%B4%A8%E2%80%9D/">“幂级数的本质”</a></li>
+            
+        
+            
+                <li><a href="../../2021/04/21/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%AC%AC%E4%B8%80%E7%AB%A0%E8%8A%82%E6%80%BB%E7%BB%93/">线性代数第一章节总结</a></li>
+            
+        
+    </ul>
+</div>
+
+    
+        
+    <div class="box widget">
+        <div class="title">Categories</div>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../categories/hexo/">hexo</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/java/">java</a><span class="category-list-count">36</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/mysql/">mysql</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/python/">python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/ui/">ui</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E4%B8%89%E5%89%91%E5%AE%A2/">三剑客</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E7%94%9F%E6%B4%BB/">生活</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/">计算机常识</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BB%BC%E5%90%88/">计算机网络综合</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/">高等数学</a><span class="category-list-count">7</span></li></ul>
+    </div>
+
+    
+        
+  <div class="box widget">
+    <div class="title">Archives</div>
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/05/">2021-05</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/04/">2021-04</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/03/">2021-03</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/02/">2021-02</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2021/01/">2021-01</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/12/">2020-12</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/11/">2020-11</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/10/">2020-10</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/09/">2020-09</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/08/">2020-08</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/07/">2020-07</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/06/">2020-06</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/03/">2020-03</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/02/">2020-02</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/12/">2019-12</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/10/">2019-10</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/08/">2019-08</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/07/">2019-07</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/06/">2019-06</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/05/">2019-05</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/03/">2019-03</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2019/02/">2019-02</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/12/">2018-12</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/11/">2018-11</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/05/">2018-05</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/04/">2018-04</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2018/03/">2018-03</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2016/04/">2016-04</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2015/04/">2015-04</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2013/06/">2013-06</a><span class="archive-list-count">1</span></li></ul>
+  </div>
+
+    
+        
+    <div class="box widget">
+        <div class="title">Tags</div>
+        <div class="item-box cloud-label">
+            <a href="../CSS/" style="font-size: 11.11px;">CSS</a> <a href="../Eclipse/" style="font-size: 10px;">Eclipse</a> <a href="../Field/" style="font-size: 10px;">Field</a> <a href="../Groovy/" style="font-size: 10px;">Groovy</a> <a href="../HTML/" style="font-size: 11.11px;">HTML</a> <a href="../Hexo/" style="font-size: 10px;">Hexo</a> <a href="../IDE/" style="font-size: 11.11px;">IDE</a> <a href="../IT/" style="font-size: 17.78px;">IT</a> <a href="../JAVA/" style="font-size: 12.22px;">JAVA</a> <a href="../JVM/" style="font-size: 10px;">JVM</a> <a href="../Java/" style="font-size: 14.44px;">Java</a> <a href="../JavaScript/" style="font-size: 11.11px;">JavaScript</a> <a href="../MYSQL/" style="font-size: 10px;">MYSQL</a> <a href="../Maven/" style="font-size: 10px;">Maven</a> <a href="../NoSql/" style="font-size: 10px;">NoSql</a> <a href="../Node-js/" style="font-size: 10px;">Node.js</a> <a href="../Python/" style="font-size: 10px;">Python</a> <a href="../TOMCAT/" style="font-size: 10px;">TOMCAT</a> <a href="../UI/" style="font-size: 10px;">UI</a> <a href="../VMware/" style="font-size: 10px;">VMware</a> <a href="../Wicket/" style="font-size: 10px;">Wicket</a> <a href="../coding/" style="font-size: 10px;">coding</a> <a href="../coding-net/" style="font-size: 12.22px;">coding.net</a> <a href="../css/" style="font-size: 13.33px;">css</a> <a href="../date/" style="font-size: 10px;">date</a> <a href="../debug/" style="font-size: 10px;">debug</a> <a href="../decorator/" style="font-size: 10px;">decorator</a> <a href="../eclipse/" style="font-size: 10px;">eclipse</a> <a href="../editor/" style="font-size: 10px;">editor</a> <a href="../equals/" style="font-size: 10px;">equals</a> <a href="../express/" style="font-size: 10px;">express</a> <a href="../git/" style="font-size: 10px;">git</a> <a href="../github/" style="font-size: 12.22px;">github</a> <a href="../gogs/" style="font-size: 10px;">gogs</a> <a href="../hexo/" style="font-size: 16.67px;">hexo</a> <a href="../https/" style="font-size: 10px;">https</a> <a href="../i18n/" style="font-size: 10px;">i18n</a> <a href="../ini/" style="font-size: 10px;">ini</a> <a href="../it/" style="font-size: 15.56px;">it</a> <a href="../jar/" style="font-size: 10px;">jar</a> <a href="../java/" style="font-size: 20px;">java</a> <a href="../javascript/" style="font-size: 12.22px;">javascript</a> <a href="../jdk/" style="font-size: 10px;">jdk</a> <a href="../jvm/" style="font-size: 10px;">jvm</a> <a href="../less/" style="font-size: 10px;">less</a> <a href="../linux/" style="font-size: 11.11px;">linux</a> <a href="../mac/" style="font-size: 12.22px;">mac</a> <a href="../macvim/" style="font-size: 10px;">macvim</a> <a href="../markdown/" style="font-size: 10px;">markdown</a> <a href="../maven/" style="font-size: 11.11px;">maven</a> <a href="../mediator/" style="font-size: 10px;">mediator</a> <a href="../nginx/" style="font-size: 10px;">nginx</a> <a href="../object/" style="font-size: 10px;">object</a> <a href="../observer/" style="font-size: 10px;">observer</a> <a href="../qcloud/" style="font-size: 10px;">qcloud</a> <a href="../rails/" style="font-size: 10px;">rails</a> <a href="../reflect/" style="font-size: 10px;">reflect</a> <a href="../remote/" style="font-size: 10px;">remote</a> <a href="../ssh/" style="font-size: 10px;">ssh</a> <a href="../ssl/" style="font-size: 10px;">ssl</a> <a href="../tomcat/" style="font-size: 10px;">tomcat</a> <a href="../travis/" style="font-size: 12.22px;">travis</a> <a href="../vim/" style="font-size: 11.11px;">vim</a> <a href="../web/" style="font-size: 11.11px;">web</a> <a href="../webjars/" style="font-size: 11.11px;">webjars</a> <a href="../wicket/" style="font-size: 11.11px;">wicket</a> <a href="../%E4%B8%AD%E4%BB%8B%E8%80%85/" style="font-size: 10px;">中介者</a> <a href="../%E5%81%87%E6%9C%9F/" style="font-size: 10px;">假期</a> <a href="../%E5%88%86%E5%B8%83%E5%BC%8F/" style="font-size: 10px;">分布式</a> <a href="../%E5%89%8D%E7%AB%AF/" style="font-size: 11.11px;">前端</a> <a href="../%E5%91%A8%E6%9C%AB/" style="font-size: 11.11px;">周末</a> <a href="../%E5%9B%BE%E7%89%87/" style="font-size: 11.11px;">图片</a> <a href="../%E5%A5%BD%E6%96%87/" style="font-size: 10px;">好文</a> <a href="../%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9/" style="font-size: 10px;">小知识点</a> <a href="../%E5%B7%A5%E4%BD%9C/" style="font-size: 10px;">工作</a> <a href="../%E5%BC%80%E5%8F%91/" style="font-size: 10px;">开发</a> <a href="../%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 10px;">微服务</a> <a href="../%E5%BF%83%E6%83%85/" style="font-size: 10px;">心情</a> <a href="../%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">技术</a> <a href="../%E6%95%99%E7%A8%8B/" style="font-size: 10px;">教程</a> <a href="../%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10px;">数据库</a> <a href="../%E6%95%B0%E6%8D%AE%E6%9C%BA%E6%9E%84/" style="font-size: 10px;">数据机构</a> <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="../%E6%96%87%E7%AB%A0/" style="font-size: 10px;">文章</a> <a href="../%E6%97%A0%E5%9B%BE/" style="font-size: 10px;">无图</a> <a href="../%E6%97%A5%E5%BF%97/" style="font-size: 18.89px;">日志</a> <a href="../%E6%97%A5%E8%AE%B0/" style="font-size: 10px;">日记</a> <a href="../%E6%9D%82%E4%BA%8B/" style="font-size: 16.67px;">杂事</a> <a href="../%E6%9D%82%E6%96%87/" style="font-size: 10px;">杂文</a> <a href="../%E6%9D%82%E8%B0%88/" style="font-size: 10px;">杂谈</a> <a href="../%E6%B2%B9%E6%BC%86%E5%B7%A5/" style="font-size: 10px;">油漆工</a> <a href="../%E7%94%9F%E6%B4%BB/" style="font-size: 11.11px;">生活</a> <a href="../%E7%94%B5%E5%BD%B1/" style="font-size: 10px;">电影</a> <a href="../%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 10px;">线性代数</a> <a href="../%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">网络</a> <a href="../%E8%88%B6%E6%9D%A5%E5%93%81/" style="font-size: 10px;">舶来品</a> <a href="../%E8%89%BA%E6%9C%AF%E5%AE%B6/" style="font-size: 10px;">艺术家</a> <a href="../%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a> <a href="../%E8%A7%82%E5%AF%9F%E8%80%85/" style="font-size: 10px;">观察者</a> <a href="" style="font-size: 14.44px;">计算机</a> <a href="../%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/" style="font-size: 10px;">计算机常识</a> <a href="../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 14.44px;">计算机网络</a> <a href="../%E8%AE%B0%E5%BD%95/" style="font-size: 10px;">记录</a> <a href="../%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 14.44px;">设计模式</a> <a href="../%E8%AF%B4%E7%82%B9%E5%95%A5/" style="font-size: 10px;">说点啥</a> <a href="../%E8%BF%90%E5%8A%A8/" style="font-size: 10px;">运动</a> <a href="../%E9%A3%8E%E6%99%AF/" style="font-size: 10px;">风景</a> <a href="../%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" style="font-size: 14.44px;">高等数学</a>
+        </div>
     </div>
 
     
 </div>
-        <footer>
-    <div class="inner">
-        <div class="links">
-            
-            <div class="group">
-                <h4 class="title">Blog</h4>
-                
-                <a href="/" class="item" target="_blank">Blog</a>
-                
-                <a href="/archives" class="item" target="_blank">Archives</a>
-                
-                <a href="/friends" class="item" target="_blank">Friends</a>
-                
-                <a href="/projects" class="item" target="_blank">Projects</a>
-                
-                <a href="/resume" class="item" target="_blank">Resume</a>
-                
-                <a href="/about" class="item" target="_blank">About</a>
-                
-                <a href="/atom.xml" class="item" target="_blank">RSS</a>
-                
-            </div>
-            
-            <div class="group">
-                <h4 class="title">Projects</h4>
-                
-                <a href="https://github.com/transmister" class="item" target="_blank">Transmister</a>
-                
-                <a href="https://github.com/MrWillCom/css-and-js-windows-uwp-xaml-controls" class="item" target="_blank">CSS&amp;JS Windows UWP XAML Controls</a>
-                
-                <a href="https://github.com/MrWillCom/hexo-theme-cupertino" class="item" target="_blank">Theme Cupertino</a>
-                
-                <a href="https://github.com/MrWillCom/github-dark-mode" class="item" target="_blank">GitHub Dark Mode</a>
-                
-            </div>
-            
-            <div class="group">
-                <h4 class="title">Me</h4>
-                
-                <a href="https://github.com/MrWillCom" class="item" target="_blank">GitHub</a>
-                
-                <a href="https://codepen.io/mrwillcom" class="item" target="_blank">CodePen</a>
-                
-                <a href="https://www.patreon.com/MrWillCom" class="item" target="_blank">Patreon</a>
-                
-                <a href="mailto:mr.will.com@outlook.com" class="item" target="_blank">Email</a>
-                
-            </div>
-            
+        </section>
+        <footer class="footer">
+    <div class="global-width footer-box">
+        <div class="copyright">
+            <span>Copyright &copy; 2019</span>
+            <span class="dotted">|</span>
+            <span>Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a></span>
+            <span class="dotted">|</span>
+            <span>Theme by <a href="javascript:">Loren</a></span>
+            <span class="dotted">|</span>
+            <span><a target="_blank" rel="noopener" href="http://www.beian.miit.gov.cn">浙ICP备18016660号-1</a></span>
         </div>
-        &copy; 2021 齐雨争<br />
-        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
 </footer>
+    </div>
 
-        
-<script src="../../js/main.js"></script>
-
-        
-    </body>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>
 </html>
