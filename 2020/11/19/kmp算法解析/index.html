@@ -6,16 +6,16 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="expires" content="0">
   
-  <title>kmp算法解析 | 小黛 / Chingmy</title>
+  <title>kmp算法解析 | 齐雨争 / Chingmy</title>
   <meta name="author" content="齐雨争">
   
-  <meta name="description" content="雨争齐齐齐">
+  <meta name="description" content="就是一个单纯的小男孩罢了">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <meta property="og:title" content="kmp算法解析"/>
-  <meta property="og:site_name" content="小黛 / Chingmy"/>
+  <meta property="og:site_name" content="齐雨争 / Chingmy"/>
 
   
     <meta property="og:image" content=""/>
@@ -71,7 +71,7 @@ var _hmt = _hmt || [];
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-	  <a class="navbar-brand" href="/">小黛 / Chingmy</a>
+	  <a class="navbar-brand" href="/">齐雨争 / Chingmy</a>
       <div class="collapse navbar-collapse nav-menu">
 		<ul class="nav navbar-nav">
 		  
@@ -135,7 +135,7 @@ var _hmt = _hmt || [];
 	<div class="mypage">		
 	  		
 
-	  <p>有些算法，适合从它产生的动机，如何设计与解决问题这样正向地去介绍。但KMP算法真的不适合这样去学。最好的办法是先搞清楚它所用的数据结构是什么，再搞清楚怎么用，最后为什么的问题就会有恍然大悟的感觉。我试着从这个思路再介绍一下。大家只需要记住一点，PMT是什么东西。然后自己临时推这个算法也是能推出来的，完全不需要死记硬背。</p>
+	  <p>有些算法，适合从它产生的动机，如何设计与解决问题这样正向地去介绍。但KMP算法真的不适合这样去学。最好的办法是先搞清楚它所用的数据结构是什么，再搞清楚怎么用，最后为什么的问题就会有恍然大悟的感觉。我试着从这个思路再介绍一下。大家只需要记住一点，PMT是什么东西。然后自己临时推这个算法也是能推出来的，完全不需要死记硬背。 <span id="more"></span></p>
 <p>KMP算法的核心，是一个被称为部分匹配表(Partial Match Table)的数组。我觉得理解KMP的最大障碍就是很多人在看了很多关于KMP的文章之后，仍然搞不懂PMT中的值代表了什么意思。这里我们抛开所有的枝枝蔓蔓，先来解释一下这个数据到底是什么。</p>
 <p>对于字符串“abababca”，它的PMT如下表所示：</p>
 <p><img src="https://pic1.zhimg.com/50/v2-e905ece7e7d8be90afc62fe9595a9b0f_hd.jpg?source=1940ef5c"><img src="https://pic1.zhimg.com/80/v2-e905ece7e7d8be90afc62fe9595a9b0f_1440w.jpg?source=1940ef5c"></p>

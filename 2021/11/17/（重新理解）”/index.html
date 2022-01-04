@@ -6,16 +6,16 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="expires" content="0">
   
-  <title>链表的节点与指针重新理解） | 小黛 / Chingmy</title>
+  <title>链表的节点与指针重新理解 | 齐雨争 / Chingmy</title>
   <meta name="author" content="齐雨争">
   
-  <meta name="description" content="雨争齐齐齐">
+  <meta name="description" content="就是一个单纯的小男孩罢了">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="链表的节点与指针重新理解）"/>
-  <meta property="og:site_name" content="小黛 / Chingmy"/>
+  <meta property="og:title" content="链表的节点与指针重新理解"/>
+  <meta property="og:site_name" content="齐雨争 / Chingmy"/>
 
   
     <meta property="og:image" content=""/>
@@ -71,7 +71,7 @@ var _hmt = _hmt || [];
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-	  <a class="navbar-brand" href="/">小黛 / Chingmy</a>
+	  <a class="navbar-brand" href="/">齐雨争 / Chingmy</a>
       <div class="collapse navbar-collapse nav-menu">
 		<ul class="nav navbar-nav">
 		  
@@ -118,7 +118,7 @@ var _hmt = _hmt || [];
 
 	
 		<div class="page-header">
-			<h1> 链表的节点与指针重新理解）</h1>
+			<h1> 链表的节点与指针重新理解</h1>
 		</div>
 	
 
@@ -138,27 +138,31 @@ var _hmt = _hmt || [];
 	  <p>下图为头指针与头结点以及首元结点的关系。</p>
 <p><img src="https://img-blog.csdn.net/20180502195346635" alt="img"></p>
 <p>链表定义：c语言 </p>
-<p>typedef struct LinkList                                                                                                                                {</p>
+<p>typedef struct LinkList<br>{</p>
 <pre><code>     int Element;
  
      LinkList * next;
 </code></pre>
-<p>}LinkList;<br>链表内包含很多结点（当然也可以包含零个结点）。其中每个结点的数据空间一般会包含一个数据结构（用于存放各种类型的数据）以及一个指针，该指针一般称为next，用来指向下一个结点的位置。由于下一个结点也是链表类型，所以next的指针也要定义为链表类型。</p>
+<p>}LinkList;</p>
+<p>链表内包含很多结点（当然也可以包含零个结点）。其中每个结点的数据空间一般会包含一个数据结构（用于存放各种类型的数据）以及一个指针，该指针一般称为next，用来指向下一个结点的位置。由于下一个结点也是链表类型，所以next的指针也要定义为链表类型。</p>
 <p>链表定义：java语言</p>
 <p>public class Node {<br>     protected Node next; //指针域<br>     public  int data;//数据域  </p>
-<pre><code>    public Node( int data) &#123;  
+<pre><code> public Node( int data) &#123;  
        this. data = data;  
  &#125;  
- &#125;
- 
- 
-对于两个节点pA和pB,    pA.value=A,    pB.value=B，指针变量分别为pA,pB
 </code></pre>
+<p>}<br>对于两个节点pA和pB,    pA.value=A,    pB.value=B，指针变量分别为pA,pB</p>
 <p><img src="https://img-blog.csdnimg.cn/20190228164323467.png" alt="img"></p>
 <p>执行pA.next=pB， 表述pA指向节点的下一个节点是pB</p>
+<p><img src="https://img-blog.csdnimg.cn/2019022816522710.png" alt="img"></p>
 <p>执行pA=pB，就是让pA指向pB所指的节点</p>
+<p><img src="https://img-blog.csdnimg.cn/20190228165309283.png" alt="img"></p>
 <p>对于如下链表：</p>
+<p><img src="https://img-blog.csdnimg.cn/20190228164835403.png" alt="img"></p>
 <p>pA=pB.next，表述指针pA指向指针pC指向的节点</p>
+<p>如下图：</p>
+<p><img src="https://img-blog.csdnimg.cn/20190228165030905.png" alt="img"></p>
+<p><img src="https://img-blog.csdnimg.cn/20190228165510397.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25zamxpdmU=,size_16,color_FFFFFF,t_70" alt="img"></p>
 	  
 	</div>
 

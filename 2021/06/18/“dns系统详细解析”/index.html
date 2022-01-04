@@ -6,16 +6,16 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="expires" content="0">
   
-  <title>DNS系统详细解析 | 小黛 / Chingmy</title>
+  <title>DNS系统详细解析 | 齐雨争 / Chingmy</title>
   <meta name="author" content="齐雨争">
   
-  <meta name="description" content="雨争齐齐齐">
+  <meta name="description" content="就是一个单纯的小男孩罢了">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <meta property="og:title" content="DNS系统详细解析"/>
-  <meta property="og:site_name" content="小黛 / Chingmy"/>
+  <meta property="og:site_name" content="齐雨争 / Chingmy"/>
 
   
     <meta property="og:image" content=""/>
@@ -71,7 +71,7 @@ var _hmt = _hmt || [];
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-	  <a class="navbar-brand" href="/">小黛 / Chingmy</a>
+	  <a class="navbar-brand" href="/">齐雨争 / Chingmy</a>
       <div class="collapse navbar-collapse nav-menu">
 		<ul class="nav navbar-nav">
 		  
@@ -135,7 +135,7 @@ var _hmt = _hmt || [];
 	<div class="mypage">		
 	  		
 
-	  <p>DNS系统概述：域名系统DNS（domain name system）是因特网使用的命名系统，用来把便于人们记忆的含有特定含义的主机名转换为便于机器处理的IP地址，值得注意的是，DNS系统采用C/S架构，其协议运行在UDP之上，使用53号端口。DNS分为三个部分，层次域名空间，域名服务器和解析器。层次域名空间：因特网采用层次树状结构的命名方法。任何一个连接在因特网上的主机或者路由器，都有一个唯一的层次结构的名字，即域名（Domain name）域是名字空间中一个可以被管理的划分。域还可以被分为子域，而子域还可以继续划分为子域的子域，这样就形成了顶级域，二级域，三级域等。每一个域名都是由标号序列组成，各标号之间用点“.“”隔开。<br>举个例子：<a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a> 其中com是顶级域名，cskaoyan是二级域名，www是三级域名。<br>关于域名中的标号有以下几点值得注意：<br>1.英文不区分大小写。<br>2.标号中除了连字符-之外不能使用其他的标点符号。<br>3.每一个标号不超过63个字符，多标号组成的完整域名最长不超过255字符。<br>4.级别最低的域名写在最左边，级别最高的顶级域名写在最右边。</p>
+	  <p>DNS系统概述：域名系统DNS（domain name system）是因特网使用的命名系统，用来把便于人们记忆的含有特定含义的主机名转换为便于机器处理的IP地址，值得注意的是，DNS系统采用C/S架构，其协议运行在UDP之上，使用53号端口。DNS分为三个部分，层次域名空间，域名服务器和解析器。层次域名空间：因特网采用层次树状结构的命名方法。任何一个连接在因特网上的主机或者路由器，都有一个唯一的层次结构的名字，即域名（Domain。<span id="more"></span> name）域是名字空间中一个可以被管理的划分。域还可以被分为子域，而子域还可以继续划分为子域的子域，这样就形成了顶级域，二级域，三级域等。每一个域名都是由标号序列组成，各标号之间用点“.“”隔开。<br>举个例子：<a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a> 其中com是顶级域名，cskaoyan是二级域名，www是三级域名。<br>关于域名中的标号有以下几点值得注意：<br>1.英文不区分大小写。<br>2.标号中除了连字符-之外不能使用其他的标点符号。<br>3.每一个标号不超过63个字符，多标号组成的完整域名最长不超过255字符。<br>4.级别最低的域名写在最左边，级别最高的顶级域名写在最右边。</p>
 <p>顶级域名（Top name domain TLD）：有以下大三类<br>1.国家级顶级域名nTLD，国家和某些地区的域名，如“.cn”表示中国，“.us”表示美国，“.uk”表示英国，“.hk”表示中国香港特区。<br>2.通用顶级域名gTLD.常见的有“.com”（公司企业）“.net”（网络服务机构）“.org”（非营利性的组织）“.gov”（美国的政府部门）等。<br>3.基础结构域名。这种顶级域名只有一个，即arga，用于反向域名解析，因此又称为反向域名。<br>国家顶级域名注册的二级域名均由国家自行确定。下图是域名空间的结构<img src="https://img-blog.csdnimg.cn/20181227145035233.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2FhMTkyODk5Mjc3Mg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <p>在域名系统中，每个域分别由不同的组织进</p>
 <p>在域名系统中，每个域分别由不同的组织进行管理，每个组织都可以将它的域再分成一定数目的子域，并将这些子域委托给其他组织去管理。例如，管理CN域的中国将EDU.CN子域授权给中国教育和科研计算机网CERNET来管理。<br>域名服务器</p>
@@ -168,7 +168,7 @@ var _hmt = _hmt || [];
 
     <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
     
-    <a href="/2021/05/03/“南京友记-李家馨”/" type="button" class="btn btn-default ">Next<i
+    <a href="/2021/04/24/“计算机文件系统”/" type="button" class="btn btn-default ">Next<i
                 class="fa fa-arrow-circle-o-right"></i></a>
     
 
@@ -205,6 +205,14 @@ var _hmt = _hmt || [];
     
 
 	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/计算机网络/">计算机网络<span>2</span></a></li>
+    </ul>
+	</div>
 		
 
 	<!-- toc -->
