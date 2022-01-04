@@ -6,7 +6,7 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="expires" content="0">
   
-  <title>Rails学习笔记-11.2 | 齐雨争 / Chingmy</title>
+  <title>Rails 学习笔记 -11.2 | 齐雨争 / Chingmy</title>
   <meta name="author" content="齐雨争">
   
   <meta name="description" content="就是一个单纯的小男孩罢了">
@@ -14,7 +14,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Rails学习笔记-11.2"/>
+  <meta property="og:title" content="Rails 学习笔记 -11.2"/>
   <meta property="og:site_name" content="齐雨争 / Chingmy"/>
 
   
@@ -118,7 +118,7 @@ var _hmt = _hmt || [];
 
 	
 		<div class="page-header">
-			<h1> Rails学习笔记-11.2</h1>
+			<h1> Rails 学习笔记 -11.2</h1>
 		</div>
 	
 
@@ -135,11 +135,11 @@ var _hmt = _hmt || [];
 	<div class="mypage">		
 	  		
 
-	  <p>11.2 迭代F2:建立一个基于Ajax的购物车，开始是按照书里面写的，创建create.js.rjs，网上查了，需要使用protype-rails gem，于是安装了，但是页面点击后ajax没有效果，需要手动刷新后才能出现。于是在网上查了,由于默认使用jquery，所以就改成了jquery的，创建create.js.erb，内容为$(‘#cart’).html(“&lt;%= escape_javascript(render(@cart)) %&gt;”); <span id="more"></span></p>
-<p>按照网上仁兄的做法来的：</p>
-<p>1.\app\views\layouts\application.html.erb<br>&lt;%= javascript_include_tag :defaults %&gt; to &lt;%= javascript_include_tag “application” %&gt;<br>2.app/views/line_items/create.js.rjs 成create.js.erb，并修改内容：<br>$(‘#cart’).html(“&lt;%= escape_javascript(render(@cart)) %&gt;”);</p>
-<p>3.修改line_items_controller中的create方法， 加入format.js</p>
-<p>传送门:<a href="http://ruby-china.org/topics/6154" target="_blank">RubyChina</a></p>
+	  <p>11.2 迭代 F2: 建立一个基于 Ajax 的购物车，开始是按照书里面写的，创建 create.js.rjs，网上查了，需要使用 protype-rails gem，于是安装了，但是页面点击后 ajax 没有效果，需要手动刷新后才能出现。于是在网上查了, 由于默认使用 jquery，所以就改成了 jquery 的，创建 create.js.erb，内容为 $(‘#cart’).html(“&lt;%= escape_javascript(render(@cart)) %&gt;”); <span id="more"></span></p>
+<p> 按照网上仁兄的做法来的：</p>
+<p>1.\app\views\layouts\application.html.erb<br>&lt;%= javascript_include_tag :defaults %&gt; to &lt;%= javascript_include_tag “application” %&gt;<br>2.app/views/line_items/create.js.rjs 成 create.js.erb，并修改内容：<br>$(‘#cart’).html(“&lt;%= escape_javascript(render(@cart)) %&gt;”);</p>
+<p>3. 修改 line_items_controller 中的 create 方法， 加入 format.js</p>
+<p> 传送门:<a href="http://ruby-china.org/topics/6154" target="_blank">RubyChina</a></p>
 	  
 	</div>
 
@@ -149,13 +149,14 @@ var _hmt = _hmt || [];
 
     
     
-    <a href="/2020/11/19/kmp算法解析/" type="button" class="btn btn-default"><i
+    <a href="/2020/02/22/Gallery-Post-Not-Supported/" type="button" class="btn btn-default"><i
                 class="fa fa-arrow-circle-o-left"></i> Prev</a>
     
 
     <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
     
-    <a type="button" class="btn btn-default disabled">Next<i class="fa fa-arrow-circle-o-right"></i></a>
+    <a href="/2019/12/02/Markdown-Basic-Syntax/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
     
 
     

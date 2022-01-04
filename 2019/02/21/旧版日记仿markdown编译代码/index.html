@@ -1,0 +1,277 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>旧版日记仿markdown编译代码 | 齐雨争 / Chingmy</title>
+  <meta name="author" content="齐雨争">
+  
+  <meta name="description" content="就是一个单纯的小男孩罢了">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="旧版日记仿markdown编译代码"/>
+  <meta property="og:site_name" content="齐雨争 / Chingmy"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-70812759-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?cb5448498d7169c668b07c2b255d62c1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">齐雨争 / Chingmy</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/atom.xml" title="Subscribe me.">
+			  <i class=""></i>RSS
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> 旧版日记仿markdown编译代码</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <p>旧版日记仿markdown编译代码</p>
+<span id="more"></span>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;hexo-fs&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> myDiary = fs.readFileSync(<span class="string">&#x27;source/my.diary&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> timeRangeAndDiaries = myDiary.split(<span class="regexp">/-&#123;9,&#125;/</span>); <span class="comment">// Split by /-&#123;9,&#125;/ so that having time ranges and diaries separated (trimmed).</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; timeRangeAndDiaries.length; i++) &#123;</span><br><span class="line">    timeRangeAndDiaries[i] = timeRangeAndDiaries[i].trim();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (timeRangeAndDiaries[i].startsWith(<span class="string">&#x27;#&#x27;</span>)) &#123; <span class="comment">// Edit time ranges to have h2 tags covered.</span></span><br><span class="line">        timeRangeAndDiaries[i] = <span class="string">&#x27;&lt;h2&gt;&#x27;</span> + timeRangeAndDiaries[i].replace(<span class="string">&#x27;#&#x27;</span>, <span class="string">&#x27;&#x27;</span>).trim() + <span class="string">&#x27;&lt;/h2&gt;&#x27;</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// switch \n to &#123;newline&#125;</span></span><br><span class="line">        timeRangeAndDiaries[i] = timeRangeAndDiaries[i].replace(<span class="regexp">/\n+/g</span>, <span class="string">&#x27;&#123;newline&#125;&#x27;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Search list tags in each diaries and save them into temps for parts of paragraph.</span></span><br><span class="line">        <span class="keyword">var</span> tempLists = timeRangeAndDiaries[i].match(<span class="regexp">/\[list\](.*?)\[\/list\]/g</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Search img tags in each diaries and save them into temps for parts of paragraph.</span></span><br><span class="line">        <span class="keyword">var</span> tempImgs = timeRangeAndDiaries[i].match(<span class="regexp">/\[img\](.*?)\[\/img\]/g</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Edit the saved temps for parts of paragraph to html tags and replace them to each diary (clear out newline characters).</span></span><br><span class="line">        <span class="keyword">if</span> (tempLists != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; tempLists.length; j++) &#123;</span><br><span class="line">                <span class="keyword">var</span> temp = tempLists[j].replace(<span class="regexp">/\[\/?list\]/g</span>, <span class="string">&#x27;&#x27;</span>).split(<span class="string">&#x27;&#123;newline&#125;&#x27;</span>);</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">var</span> k = <span class="number">0</span>; k &lt; temp.length; k++) &#123;</span><br><span class="line">                    <span class="keyword">var</span> trimmed = temp[k].replace(<span class="regexp">/(&#123;newline&#125;)+/g</span>, <span class="string">&#x27;&#x27;</span>).trim();</span><br><span class="line">                    <span class="keyword">if</span> (trimmed == <span class="string">&#x27;&#x27;</span>) &#123;</span><br><span class="line">                        temp[k] = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        temp[k] = <span class="string">&#x27;&lt;li&gt;&#x27;</span> + trimmed + <span class="string">&#x27;&lt;/li&gt;&#x27;</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                tempLists[j] = <span class="string">&#x27;&lt;ul&gt;&#x27;</span> + temp.join(<span class="string">&#x27;&#x27;</span>) + <span class="string">&#x27;&lt;/ul&gt;&#x27;</span>;</span><br><span class="line">                timeRangeAndDiaries[i] = timeRangeAndDiaries[i].replace(<span class="regexp">/\[list\](.*?)\[\/list\]/</span>, tempLists[j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (tempImgs != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; tempImgs.length; j++) &#123;</span><br><span class="line">                tempImgs[j] = <span class="string">&#x27;&lt;img src=&quot;&#x27;</span> + tempImgs[j].replace(<span class="regexp">/\[\/?img\]/g</span>, <span class="string">&#x27;&#x27;</span>).replace(<span class="regexp">/(&#123;newline&#125;)+/g</span>, <span class="string">&#x27;&#x27;</span>).trim() + <span class="string">&#x27;&quot;&gt;&#x27;</span>;</span><br><span class="line">                timeRangeAndDiaries[i] = timeRangeAndDiaries[i].replace(<span class="regexp">/\[img\](.*?)\[\/img\]/</span>, tempImgs[j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Split each diary by newline characters and save them into temps for paragraphing.</span></span><br><span class="line">        <span class="keyword">var</span> tempParagraphing = timeRangeAndDiaries[i].replace(<span class="regexp">/\n/g</span>, <span class="string">&#x27;&#x27;</span>).split(<span class="string">&#x27;&#123;newline&#125;&#x27;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Edit the saved temps for paragraphing to html tags and replace them to each diary (clear out newline characters and empty lines).</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; tempParagraphing.length; j++) &#123;</span><br><span class="line">            <span class="keyword">var</span> trimmed = tempParagraphing[j].replace(<span class="regexp">/(&#123;newline&#125;)+/g</span>, <span class="string">&#x27;&#x27;</span>).trim();</span><br><span class="line">            <span class="keyword">if</span> (trimmed == <span class="string">&#x27;&#x27;</span>) &#123;</span><br><span class="line">                tempParagraphing[j] = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!trimmed.startsWith(<span class="string">&#x27;&lt;ul&#x27;</span>)) &#123;</span><br><span class="line">                tempParagraphing[j] = <span class="string">&#x27;&lt;p&gt;&#x27;</span> + trimmed + <span class="string">&#x27;&lt;/p&gt;&#x27;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">var</span> tempDiary = tempParagraphing.join(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line">        <span class="keyword">if</span> (tempDiary.trim() != <span class="string">&#x27;&#x27;</span>) &#123;</span><br><span class="line">            timeRangeAndDiaries[i] = <span class="string">&#x27;&lt;div class=&quot;diary-item&quot;&gt;&#x27;</span> + tempDiary + <span class="string">&#x27;&lt;/div&gt;&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Join these converted time ranges and diaries into string.</span></span><br><span class="line"><span class="keyword">var</span> html = timeRangeAndDiaries.join(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line"><span class="comment">// console.log(html)</span></span><br><span class="line">fs.writeFileSync(<span class="string">&#x27;public/diaries.html&#x27;</span>, html);</span><br></pre></td></tr></table></figure>
+	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+
+    
+    
+    <a href="/2019/06/19/Oracle-SQL-Basic-Usage/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2019/01/17/网易云音乐歌单JS音乐播放器JS代码/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2019-02-21 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/Hexo/">Hexo<span>3</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/old-blog/">old blog<span>1</span></a></li> <li><a href="/tags/diary/">diary<span>1</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2022 齐雨争
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a>,<a target="_blank" rel="noopener" href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>,<a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a> and <a href="http://getbootstrap.com/" target="_blank">BOOTSTRA.386</a>. 
+     <br> Theme by <a target="_blank" rel="noopener" href="http://github.com/wzpan/hexo-theme-freemind/">Freemind.386</a>.    
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+   </html>

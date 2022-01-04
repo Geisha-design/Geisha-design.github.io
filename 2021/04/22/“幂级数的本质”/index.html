@@ -135,18 +135,18 @@ var _hmt = _hmt || [];
 	<div class="mypage">		
 	  		
 
-	  <h1 id="级数（幂级数）"><a href="#级数（幂级数）" class="headerlink" title="级数（幂级数）"></a>级数（幂级数）</h1><h2 id="回到梦开始的地方"><a href="#回到梦开始的地方" class="headerlink" title="回到梦开始的地方"></a>回到梦开始的地方</h2><p>在一元函数微积分的世界中，我们沿着极限、导数、微分、积分的路已经走出了一段路。 <span id="more"></span></p>
+	  <h1 id="级数（幂级数）"><a href="# 级数（幂级数）" class="headerlink" title="级数（幂级数）"></a>级数（幂级数）</h1><h2 id="回到梦开始的地方"><a href="# 回到梦开始的地方" class="headerlink" title="回到梦开始的地方"></a>回到梦开始的地方 </h2><p> 在一元函数微积分的世界中，我们沿着极限、导数、微分、积分的路已经走出了一段路。 <span id="more"></span></p>
 <p>这时候回头看我们在第一篇《从极限开始》中介绍的芝诺悖论，你是否还记得计算阿喀琉斯追赶上乌龟所需要的时间的表达式：</p>
 <p><img src="https://www.zhihu.com/equation?tex=T=%5Cfrac%7B90%7D%7B10%7D+%5Cfrac%7B9%7D%7B10%7D+%5Cfrac%7B0.9%7D%7B10%7D+..." alt="[公式]"></p>
-<p>显而易见的，这个求和算式中的每一项所组成的，是一个首项为9，公比为0.1的等比数列，其通项可写为：</p>
+<p>显而易见的，这个求和算式中的每一项所组成的，是一个首项为 9，公比为 0.1 的等比数列，其通项可写为：</p>
 <p><img src="https://www.zhihu.com/equation?tex=a_n=9%5Ccdot+(0.1)%5E%7Bn-1%7D" alt="[公式]"></p>
 <p>而所求时间 <img src="https://www.zhihu.com/equation?tex=T" alt="[公式]"> ，则是对这个数列的项数 <img src="https://www.zhihu.com/equation?tex=n%5Cto+%5Cinfty" alt="[公式]"> 时进行求和，即：</p>
 <p><img src="https://www.zhihu.com/equation?tex=T=%5Csum_%7Bn=1%7D%5E%5Cinfty+a_n+" alt="[公式]"></p>
-<p><strong>无穷数列的求和</strong>就是无穷级数，简称<strong>级数</strong>。</p>
+<p><strong>无穷数列的求和 </strong> 就是无穷级数，简称 <strong> 级数</strong>。</p>
 <p>所以，级数，实际上就是再次借助极限的工具，将对数列的有限项求和推广到了无限项求和。因此我们可以说，积分是无限连续项的求和，级数则是无限离散项的求和。</p>
 <p>接下来，有了级数的概念以后，我们就可以用它来解决芝诺没有想明白的地方：即无穷项求和的结果，到底是趋向无穷的不可得还是趋向一个确定的数，即讨论级数的敛散性。</p>
 <hr>
-<h2 id="级数的敛散性"><a href="#级数的敛散性" class="headerlink" title="级数的敛散性"></a>级数的敛散性</h2><p>就让我们先从非常熟悉的等比数列开始说起：</p>
+<h2 id="级数的敛散性"><a href="# 级数的敛散性" class="headerlink" title="级数的敛散性"></a>级数的敛散性 </h2><p> 就让我们先从非常熟悉的等比数列开始说起：</p>
 <p>有等比数列，公比为 <img src="https://www.zhihu.com/equation?tex=q" alt="[公式]"> ，首项为 <img src="https://www.zhihu.com/equation?tex=a_1" alt="[公式]"> ，其中 <img src="https://www.zhihu.com/equation?tex=p,a_1%5Cneq0" alt="[公式]"> 且 <img src="https://www.zhihu.com/equation?tex=q%5Cneq+1" alt="[公式]"> ，则有通项：</p>
 <p><img src="https://www.zhihu.com/equation?tex=a_n=a_1%5Ccdot+p%5E%7Bn-1%7D" alt="[公式]"></p>
 <p>由等比数列的前 <img src="https://www.zhihu.com/equation?tex=n" alt="[公式]"> 项求和公式知：</p>
@@ -167,8 +167,8 @@ var _hmt = _hmt || [];
 <ol>
 <li>根据 <img src="https://www.zhihu.com/equation?tex=S_n%5Cgeq+S_%7Bn-1%7D" alt="[公式]"> ，即级数恒不增，故可以使用有界性；</li>
 <li>比较判别法：将 <img src="https://www.zhihu.com/equation?tex=u_n" alt="[公式]"> 与另一个已知敛散性的级数项 <img src="https://www.zhihu.com/equation?tex=v_n" alt="[公式]"> 进行比较;</li>
-<li>比值判别法：通过比较 <img src="https://www.zhihu.com/equation?tex=%5Crho+=%5Clim_%7Bn+%5Cto+%5Cinfty%7D%5Cfrac%7Bu_%7Bn+1%7D%7D%7Bu_n%7D" alt="[公式]"> 与1的关系；</li>
-<li>根植判别法：通过比较 <img src="https://www.zhihu.com/equation?tex=%5Crho+=%5Clim_%7Bn+%5Cto+%5Cinfty%7D%5Csqrt%5Bn%5D%7Bu_n%7D+" alt="[公式]"> 与1的关系。</li>
+<li>比值判别法：通过比较 <img src="https://www.zhihu.com/equation?tex=%5Crho+=%5Clim_%7Bn+%5Cto+%5Cinfty%7D%5Cfrac%7Bu_%7Bn+1%7D%7D%7Bu_n%7D" alt="[公式]"> 与 1 的关系；</li>
+<li>根植判别法：通过比较 <img src="https://www.zhihu.com/equation?tex=%5Crho+=%5Clim_%7Bn+%5Cto+%5Cinfty%7D%5Csqrt%5Bn%5D%7Bu_n%7D+" alt="[公式]"> 与 1 的关系。</li>
 </ol>
 <p>对于交错级数，则需使用莱布尼茨判别法，即满足去除正负号的数列 <img src="https://www.zhihu.com/equation?tex=%5C%7Bu_n%5C%7D" alt="[公式]"> 单调不增且 <img src="https://www.zhihu.com/equation?tex=%5Clim_%7Bn+%5Cto+%5Cinfty%7Du_n=0" alt="[公式]"> ，则该交错级数收敛。</p>
 <p>而对于任意项级数，以目前我们所学的内容，暂时还不能给出通用的判别方式。</p>
@@ -178,13 +178,13 @@ var _hmt = _hmt || [];
 <li>若原级数收敛，但该级数的绝对值级数收敛，则称该级数条件收敛。</li>
 </ul>
 <hr>
-<h2 id="以一个新的角度来看待函数"><a href="#以一个新的角度来看待函数" class="headerlink" title="以一个新的角度来看待函数"></a>以一个新的角度来看待函数</h2><p>想象有一根笔直的铁丝，然后我们用手对它进行变形，使它弯曲成一定的角度：</p>
+<h2 id="以一个新的角度来看待函数"><a href="# 以一个新的角度来看待函数" class="headerlink" title="以一个新的角度来看待函数"></a>以一个新的角度来看待函数 </h2><p> 想象有一根笔直的铁丝，然后我们用手对它进行变形，使它弯曲成一定的角度：</p>
 <p><img src="https://pic2.zhimg.com/v2-7fe91eb75378b692d6f56acbc7fce36d_r.jpg" alt="img">对铁丝进行弯曲</p>
 <p>接着，想象在直角坐标系中的横坐标轴，即为那根比直的铁丝；函数 <img src="https://www.zhihu.com/equation?tex=f(x)=e%5Ex" alt="[公式]"> 的图像则为弯曲后的铁丝：</p>
 <p><img src="https://pic4.zhimg.com/v2-b8548ada14de1056caa386b5295838a3_r.jpg" alt="img">函数的图像变换</p>
 <p>以这个例子为启示，我们是否，可以将函数看作是一种变换图形的模具。</p>
 <p>在机械加工产业的制造车间里，为铸造模具送入一个原型坯料，经过加工后，将为我们返回一个模具形状的产品；若我们将函数 <img src="https://www.zhihu.com/equation?tex=f(x)" alt="[公式]"> 也看作是一种加工图形的模具，为它送入初始图形 <img src="https://www.zhihu.com/equation?tex=x" alt="[公式]"> 轴，经过模具的加工返回一个新的图形 <img src="https://www.zhihu.com/equation?tex=e%5Ex" alt="[公式]"></p>
-<p>——即<strong>将函数，看作是一种变换图形的工具</strong>。</p>
+<p>——即 <strong> 将函数，看作是一种变换图形的工具</strong>。</p>
 <p>在有了这个概念以后，令人兴奋的问题来了：</p>
 <p>如果现在，有一个异常复杂的图案，我们能否使用手里那根初始的铁丝，通过拗的方式，将它坳成复杂的图形？</p>
 <p>换句话说，我们能否使用一些简单的图形，通过函数这个变换工具，将它变形为复杂的图形。</p>
@@ -198,7 +198,7 @@ var _hmt = _hmt || [];
 <p>即： <img src="https://www.zhihu.com/equation?tex=y=f(x_0)+f%5Cprime(x_0)(x-x_0)" alt="[公式]"></p>
 <p><img src="https://pic1.zhimg.com/v2-d6dc7a1c514f24ee629577fe64dce3dc_r.jpg" alt="img">从一根铁丝开始</p>
 <p>但，显而易见的，若这根铁丝只能保持笔直，那么这样的摆放只能使得它在 <img src="https://www.zhihu.com/equation?tex=x_0" alt="[公式]"> 处这一点是与我们的目标图形相一致的，一旦偏离 <img src="https://www.zhihu.com/equation?tex=x_0" alt="[公式]"> 处，哪怕一点点，它们的形态都将不再吻合。</p>
-<p><strong>因此，第二步：将这根铁丝坳弯一点点以使得它也能够贴合</strong> <img src="https://www.zhihu.com/equation?tex=x_0" alt="[公式]"> <strong>处附近的图形</strong></p>
+<p><strong>因此，第二步：将这根铁丝坳弯一点点以使得它也能够贴合 </strong> <img src="https://www.zhihu.com/equation?tex=x_0" alt="[公式]"> <strong> 处附近的图形</strong></p>
 <p>根据连续函数的定义，若有：</p>
 <p><img src="https://www.zhihu.com/equation?tex=%5Clim_%7Bx+%5Cto+x_0%7Df(x)=f(x_0)=A" alt="[公式]"></p>
 <p>如果把极限符号去掉，即有：</p>
@@ -242,23 +242,23 @@ var _hmt = _hmt || [];
 <p><img src="https://www.zhihu.com/equation?tex=f(x)=%5Cfrac%7Bf(x_0)%7D%7B0!%7D+%5Cfrac%7Bf%5Cprime(x_0)%7D%7B1!%7D(x-x_0)+%5Cfrac%7Bf%5Cprime%5Cprime(x)%7D%7B2!%7D(x-x_0)%5E2+...+%5Cfrac%7Bf%5E%7B(n)%7D(x)%7D%7Bn!%7D(x-x_0)%5En+%5Calpha_%7Bn+1%7D(x)(x-x_0)%5E%7Bn+1%7D" alt="[公式]"></p>
 <p>而在前文我们已经知道，数列的无穷项求和，就是级数。</p>
 <p>当把数列中的通项，由确定的数值，推广至函数，即 <img src="https://www.zhihu.com/equation?tex=u_n=f_n(x)" alt="[公式]"> 。则无穷级数的概念，就从数列的常数项级数拓展到了函数项级数。</p>
-<p>再进一步的，如果在函数项级数中的各项函数，都是属于同一系列(series)的函数，譬如：前文这个展开式所表示的函数项级数，其每一项就都是由 <img src="https://www.zhihu.com/equation?tex=x" alt="[公式]"> 的多项式与一个常系数相乘构成的幂函数组成。</p>
-<p>这种由幂函数构成的函数项级数，就是<strong>幂级数</strong>，而上文这个幂级数，就是<strong>泰勒级数</strong>。</p>
+<p>再进一步的，如果在函数项级数中的各项函数，都是属于同一系列 (series) 的函数，譬如：前文这个展开式所表示的函数项级数，其每一项就都是由 <img src="https://www.zhihu.com/equation?tex=x" alt="[公式]"> 的多项式与一个常系数相乘构成的幂函数组成。</p>
+<p>这种由幂函数构成的函数项级数，就是 <strong> 幂级数 </strong>，而上文这个幂级数，就是<strong> 泰勒级数</strong>。</p>
 <p>而通过前面这一系列的推导，你应该可以理解，幂级数之所以如此特殊，之所以在分析学中占据如此重要的地位，其本质是因为：</p>
 <p><strong>常义的微分与积分是以区间为整体对函数进行全局的线性拟合；而幂级数是从一点处出发对函数进行局部的线性拟合。</strong></p>
 <p>一个是高屋建瓴，把握整体；一个是集中一点，登峰造极！</p>
 <hr>
-<h2 id="幂级数的收敛域"><a href="#幂级数的收敛域" class="headerlink" title="幂级数的收敛域"></a>幂级数的收敛域</h2><p>有函数项级数：</p>
+<h2 id="幂级数的收敛域"><a href="# 幂级数的收敛域" class="headerlink" title="幂级数的收敛域"></a>幂级数的收敛域 </h2><p> 有函数项级数：</p>
 <p><img src="https://www.zhihu.com/equation?tex=%5Csum_%7Bn%7D%5E%7B%5Cinfty%7Du_n(x)=u_1(x)+u_2(x)+...u_n(x)" alt="[公式]"></p>
 <p>当 <img src="https://www.zhihu.com/equation?tex=u_n(x)" alt="[公式]"> 为定义域 <img src="https://www.zhihu.com/equation?tex=x%5Cin+I%5C!R" alt="[公式]"> 的幂函数时，则有幂级数：</p>
 <p><img src="https://www.zhihu.com/equation?tex=%5Csum_%7Bn%7D%5E%7B%5Cinfty%7Da_n(x-x_0)%5En=a_0+a_1(x-x_0)+a_2(x-x_0)%5E2+...+a_n(x-x_0)%5En" alt="[公式]"></p>
 <p>幂级数本身是一个任意项级数，由前文得知，可以将它转变为绝对值级数，然后通过判断它是否绝对收敛来判断原级数的敛散性。</p>
 <p>故，可以通过比值判别法，比较：</p>
 <p><img src="https://www.zhihu.com/equation?tex=%5Clim_%7Bn+%5Cto+%5Cinfty%7D%5Cvert%5Cfrac%7Bu_%7Bn+1%7D(x)%7D%7Bu_n(x)%7D%5Cvert=%5Clim_%7Bn+%5Cto+%5Cinfty%7D%5Cvert+%5Cfrac%7Ba_%7Bn+1%7D(x-x_0)%5E%7Bn+1%7D%7D%7Ba_n(x-x_0)%5En%7D+%5Cvert=%5Clim_%7Bn+%5Cto+%5Cinfty%7D%5Cvert+%5Cfrac%7Ba_%7Bn+1%7D%7D%7Ba_n%7D(x-x_0)++%5Cvert" alt="[公式]"></p>
-<p>与1的关系来判别绝对值级数的敛散性。</p>
+<p>与 1 的关系来判别绝对值级数的敛散性。</p>
 <p>而其中， <img src="https://www.zhihu.com/equation?tex=x" alt="[公式]"> 为 <img src="https://www.zhihu.com/equation?tex=x_0" alt="[公式]"> 去心邻域内的一点，即：</p>
 <p><img src="https://www.zhihu.com/equation?tex=0%3C%5Cvert+x-x_0%5Cvert%3C%5Csigma,%5Csigma%3E0" alt="[公式]"> ， 我们知道 <img src="https://www.zhihu.com/equation?tex=%5Csigma" alt="[公式]"> 即该去心邻域的半径；</p>
-<p>同时可记 <img src="https://www.zhihu.com/equation?tex=%5Crho=%5Clim_%7Bn+%5Cto+%5Cinfty%7D%5Cvert+%5Cfrac%7Ba_%7Bn+1%7D%7D%7Ba_n%7D+%5Cvert" alt="[公式]"> ，因此我们只需讨论 <img src="https://www.zhihu.com/equation?tex=%5Crho%5Ccdot+%5Csigma" alt="[公式]"> 与1之间的关系：</p>
+<p>同时可记 <img src="https://www.zhihu.com/equation?tex=%5Crho=%5Clim_%7Bn+%5Cto+%5Cinfty%7D%5Cvert+%5Cfrac%7Ba_%7Bn+1%7D%7D%7Ba_n%7D+%5Cvert" alt="[公式]"> ，因此我们只需讨论 <img src="https://www.zhihu.com/equation?tex=%5Crho%5Ccdot+%5Csigma" alt="[公式]"> 与 1 之间的关系：</p>
 <ul>
 <li>若满足 <img src="https://www.zhihu.com/equation?tex=%5Crho+%5Ccdot+%5Csigma+%3C+1" alt="[公式]"> ，则绝对值级数收敛，原级数必收敛；</li>
 <li>若满足 <img src="https://www.zhihu.com/equation?tex=%5Crho%5Ccdot+%5Csigma%3E1" alt="[公式]"> ，则绝对值级数发散，原级数必发散；</li>
@@ -275,7 +275,7 @@ var _hmt = _hmt || [];
 <p>因此，对于之前敛散性判别的结论整理后，有：</p>
 <p>若 <img src="https://www.zhihu.com/equation?tex=%5Crho=0" alt="[公式]"> ，则该幂级数在整个定义域上恒收敛，收敛半径为 <img src="https://www.zhihu.com/equation?tex=+%5Cinfty" alt="[公式]"> ;</p>
 <p>若 <img src="https://www.zhihu.com/equation?tex=%5Crho=+%5Cinfty" alt="[公式]"> ，则该幂级数在 <img src="https://www.zhihu.com/equation?tex=x_0" alt="[公式]"> 以外的所有区域全部发散，收敛半径为 <img src="https://www.zhihu.com/equation?tex=0" alt="[公式]"> ；</p>
-<p>若 <img src="https://www.zhihu.com/equation?tex=0%3C%5Crho%3C+%5Cinfty" alt="[公式]"> ，则该幂级数的收敛半径为 <img src="https://www.zhihu.com/equation?tex=%5Cfrac%7B1%7D%7B%5Crho%7D" alt="[公式]"> ，在收敛半径以内 <img src="https://www.zhihu.com/equation?tex=(x_0-%5Cfrac%7B1%7D%7B%5Crho%7D,x_0+%5Cfrac%7B1%7D%7B%5Crho%7D)" alt="[公式]"> 全部收敛，在收敛半径以外 <img src="https://www.zhihu.com/equation?tex=(-%5Cinfty,+x_0-%5Cfrac%7B1%7D%7B%5Crho%7D),(x_0+%5Cfrac%7B1%7D%7B%5Crho%7D,+%5Cinfty)" alt="[公式]"> 全部发散，在收敛半径处 <img src="https://www.zhihu.com/equation?tex=x_0-%5Cfrac%7B1%7D%7B%5Crho%7D,x_0+%5Cfrac%7B1%7D%7B%5Crho%7D" alt="[公式]"> 需单独判断。而这个结论，也就是幂级数的<strong>阿贝尔收敛定理</strong>。</p>
+<p>若 <img src="https://www.zhihu.com/equation?tex=0%3C%5Crho%3C+%5Cinfty" alt="[公式]"> ，则该幂级数的收敛半径为 <img src="https://www.zhihu.com/equation?tex=%5Cfrac%7B1%7D%7B%5Crho%7D" alt="[公式]"> ，在收敛半径以内 <img src="https://www.zhihu.com/equation?tex=(x_0-%5Cfrac%7B1%7D%7B%5Crho%7D,x_0+%5Cfrac%7B1%7D%7B%5Crho%7D)" alt="[公式]"> 全部收敛，在收敛半径以外 <img src="https://www.zhihu.com/equation?tex=(-%5Cinfty,+x_0-%5Cfrac%7B1%7D%7B%5Crho%7D),(x_0+%5Cfrac%7B1%7D%7B%5Crho%7D,+%5Cinfty)" alt="[公式]"> 全部发散，在收敛半径处 <img src="https://www.zhihu.com/equation?tex=x_0-%5Cfrac%7B1%7D%7B%5Crho%7D,x_0+%5Cfrac%7B1%7D%7B%5Crho%7D" alt="[公式]"> 需单独判断。而这个结论，也就是幂级数的 <strong> 阿贝尔收敛定理</strong>。</p>
 <p>更本质的来说，<strong>求解幂级数收敛域的过程，实际上，就是在求我们通过“拗铁丝”方式得到的拟合图像与目标函数实现贴合的范围</strong>。</p>
 <p><img src="https://pic4.zhimg.com/v2-98099080849ac47c3c460fb88847d4d7_r.jpg" alt="img">求解收敛域，就是求取局部贴合的范围</p>
 <hr>
@@ -283,7 +283,7 @@ var _hmt = _hmt || [];
 <p><img src="https://www.zhihu.com/equation?tex=f(x)=%5Cfrac%7Bf(x_0)%7D%7B0!%7D+%5Cfrac%7Bf%5Cprime(x_0)%7D%7B1!%7D(x-x_0)+%5Cfrac%7Bf%5Cprime%5Cprime(x)%7D%7B2!%7D(x-x_0)%5E2+...+%5Cfrac%7Bf%5E%7B(n)%7D(x)%7D%7Bn!%7D(x-x_0)%5En+..." alt="[公式]"></p>
 <p>对于特别的当 <img src="https://www.zhihu.com/equation?tex=x_0=0" alt="[公式]"> 时，也就是对函数在零点处展开，其形式变为：</p>
 <p><img src="https://www.zhihu.com/equation?tex=f(0)+f%5Cprime(0)x+%5Cfrac%7Bf%5Cprime%5Cprime(0)%7D%7B2!%7Dx%5E2+...+%5Cfrac%7Bf%5E%7B(n)%7D(0)%7D%7Bn!%7Dx%5En+..." alt="[公式]"></p>
-<p>将这个级数称为<strong>麦克劳林级数</strong>。</p>
+<p>将这个级数称为 <strong> 麦克劳林级数</strong>。</p>
 <p>我们在求极限时，用到的等价无穷小，绝大多数都是由麦克劳林公式推导得来，譬如经典的：</p>
 <p><img src="https://www.zhihu.com/equation?tex=%5Csin+x+%5Csim+x,x+%5Cto+0" alt="[公式]"></p>
 <p>即有 <img src="https://www.zhihu.com/equation?tex=%5Csin+x" alt="[公式]"> 的麦克劳林展开式：</p>
@@ -311,7 +311,7 @@ var _hmt = _hmt || [];
 <p>…</p>
 <p>这就是使用麦克劳林级数推导出的一个圆周率计算公式。</p>
 <blockquote>
-<p>值得一提的是，利用 <img src="https://www.zhihu.com/equation?tex=%5Carctan+x" alt="[公式]"> 在的麦克劳林级数计算 <img src="https://www.zhihu.com/equation?tex=%5Cpi" alt="[公式]"> 的过程，其收敛速度相当缓慢，在展开到第100项左右， <img src="https://www.zhihu.com/equation?tex=%5Cpi" alt="[公式]"> 的值也只接近于3.1315929。你能否想出收敛速度更快的级数来帮助我们更快的算出较为精确的圆周率数值~</p>
+<p>值得一提的是，利用 <img src="https://www.zhihu.com/equation?tex=%5Carctan+x" alt="[公式]"> 在的麦克劳林级数计算 <img src="https://www.zhihu.com/equation?tex=%5Cpi" alt="[公式]"> 的过程，其收敛速度相当缓慢，在展开到第 100 项左右， <img src="https://www.zhihu.com/equation?tex=%5Cpi" alt="[公式]"> 的值也只接近于 3.1315929。你能否想出收敛速度更快的级数来帮助我们更快的算出较为精确的圆周率数值~</p>
 </blockquote>
 <hr>
 <p>结束级数的学习之后，我们对一元微积分的热身活动就基本完毕。</p>

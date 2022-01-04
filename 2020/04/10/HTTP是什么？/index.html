@@ -1,0 +1,314 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>HTTP是什么？ | 齐雨争 / Chingmy</title>
+  <meta name="author" content="齐雨争">
+  
+  <meta name="description" content="就是一个单纯的小男孩罢了">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="HTTP是什么？"/>
+  <meta property="og:site_name" content="齐雨争 / Chingmy"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-70812759-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?cb5448498d7169c668b07c2b255d62c1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">齐雨争 / Chingmy</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/atom.xml" title="Subscribe me.">
+			  <i class=""></i>RSS
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> HTTP是什么？</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <p>HTTP是客户端和服务端之间互动需要准守的其中一种协议。在日常上网过程中，用户通过浏览器浏览目标网站的操作，看起来就是进入目标网站的门户之后，想看哪里就点哪里，但是实际上客户端和服务端之间的数据互动都是通过一套标准来执行的。用旧时代的眼光来看就是网络节点两边统一使用了莫斯代码，所以两边之间的交流就没有了障碍。</p>
+<span id="more"></span>
+
+<p><strong>先来个更好的文章做参考：<a target="_blank" rel="noopener" href="//www.cnblogs.com/an-wen/p/11180076.html">HTTP协议超级详解</a></strong></p>
+<h1 id="HTTP-1-1"><a href="#HTTP-1-1" class="headerlink" title="HTTP/1.1"></a>HTTP/1.1</h1><p>HTTP属于TCP/IP中的“顶层”应用层，这说明HTTP的包装是数据出发前的第一步。在这里不谈TCP相关连接过程，但是HTTP请求/响应都是要在连接之后的事；想看的话，可以看<a target="_blank" rel="noopener" href="//www.cnblogs.com/kaleidoscope/p/9701117.html">TCP三次握手详解及释放连接过程</a>。基本上HTTP就是请求和响应的模式，在服务方想理你客户方的情况下，你想要什么，她都会回应你。</p>
+<p>HTTP请求方法：</p>
+<ul>
+<li>GET，一般请求的数据都是不需要处理的数据</li>
+<li>HEAD，获取metadata，打个比方就是电脑上文件右键属性</li>
+<li>POST，一般请求的数据都是需要处理的数据</li>
+<li>PUT，像数据库的INSERT</li>
+<li>DELETE，像数据库的DELETE</li>
+<li>PATCH，像数据库的UPDATE</li>
+<li>还有TRACE、OPTIONS、CONNECT</li>
+</ul>
+<p>HTTP状态码：</p>
+<ul>
+<li>100及以上，普通的信息代码</li>
+<li>200及以上，请求成功被处理</li>
+<li>300及以上，请求被重定向了</li>
+<li>400及以上，这是客户方的错</li>
+<li>500及以上，这是服务方的错</li>
+</ul>
+<h2 id="HTTP请求-响应报文结构"><a href="#HTTP请求-响应报文结构" class="headerlink" title="HTTP请求/响应报文结构"></a>HTTP请求/响应报文结构</h2><p><img src="/gallery/http-request-format.png" class="lazyload" data-srcset="/gallery/http-request-format.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="HTTP请求报文结构"><em>Image from: <a target="_blank" rel="noopener" href="//www.cnblogs.com/an-wen/p/11180076.html">HTTP协议超级详解</a></em></p>
+<p><img src="/gallery/http-request-example.jpg" class="lazyload" data-srcset="/gallery/http-request-example.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="HTTP请求报文例子"><em>Image from: <a target="_blank" rel="noopener" href="//www.cnblogs.com/an-wen/p/11180076.html">HTTP协议超级详解</a></em></p>
+<p><img src="/gallery/http-response-format.png" class="lazyload" data-srcset="/gallery/http-response-format.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="HTTP响应报文结构"><em>Image from: <a target="_blank" rel="noopener" href="//www.cnblogs.com/an-wen/p/11180076.html">HTTP协议超级详解</a></em></p>
+<p><img src="/gallery/http-response-example.jpg" class="lazyload" data-srcset="/gallery/http-response-example.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="HTTP响应报文例子"><em>Image from: <a target="_blank" rel="noopener" href="//www.cnblogs.com/an-wen/p/11180076.html">HTTP协议超级详解</a></em></p>
+<h2 id="比较HTTP-1-1和HTTP-2"><a href="#比较HTTP-1-1和HTTP-2" class="headerlink" title="比较HTTP/1.1和HTTP/2"></a>比较HTTP/1.1和HTTP/2</h2><ul>
+<li>HTTP/2在一次TCP连接中可以同时发送多个请求，多行程减少了连接次数和响应的等待时间</li>
+<li>HTTP/2压缩头部信息，包裹更小，运输更方便</li>
+<li>HTTP/2使用二进制协议，不仅节省了不少分隔符和封箱胶带，还可以分成小份包装以数据流形式发送</li>
+<li>HTTP/2允许服务端推送，一次请求把相关依赖的脚本也给客户端一起发来，很人性化</li>
+</ul>
+<h1 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h1><p>在HTTP包装外再来个SSL/TLS加密包装，HTTPS有以下特点：</p>
+<ol>
+<li>内容加密，传输过程中使用的密文</li>
+<li>验证身份，找到对的服务端</li>
+<li>保护数据完整性，防止传输过程中被动手脚</li>
+</ol>
+<p>基本上传输中的数据不易被动手脚。</p>
+<p><strong><em>更多可以百度HTTP、HTTPS、TCP连接等。</em></strong></p>
+	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+
+    
+    
+    <a href="/2020/04/15/Hexo主题Mustom使用指南/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2020/04/08/TCP-IP是什么？/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2020-04-10 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/网络/">网络<span>2</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/HTTP/">HTTP<span>1</span></a></li> <li><a href="/tags/HTTPS/">HTTPS<span>1</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2022 齐雨争
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a>,<a target="_blank" rel="noopener" href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>,<a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a> and <a href="http://getbootstrap.com/" target="_blank">BOOTSTRA.386</a>. 
+     <br> Theme by <a target="_blank" rel="noopener" href="http://github.com/wzpan/hexo-theme-freemind/">Freemind.386</a>.    
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+   </html>

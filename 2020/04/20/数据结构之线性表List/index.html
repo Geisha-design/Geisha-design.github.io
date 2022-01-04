@@ -1,0 +1,325 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>数据结构之线性表List | 齐雨争 / Chingmy</title>
+  <meta name="author" content="齐雨争">
+  
+  <meta name="description" content="就是一个单纯的小男孩罢了">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="数据结构之线性表List"/>
+  <meta property="og:site_name" content="齐雨争 / Chingmy"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-70812759-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?cb5448498d7169c668b07c2b255d62c1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">齐雨争 / Chingmy</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/atom.xml" title="Subscribe me.">
+			  <i class=""></i>RSS
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> 数据结构之线性表List</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <p>线性表（List），了解线性表的基础知识，认识一下线性表的种类。</p>
+<span id="more"></span>
+
+<h1 id="线性表List"><a href="#线性表List" class="headerlink" title="线性表List"></a>线性表List</h1><p>线性表（List）：由另个或多个元素组成的有限序列。<strong>元素是有序的，可以被排列的</strong>。在有序结构中，某个元素<code>ai</code>前面的元素<code>ai-1</code>称为<strong>前驱元素</strong>，后面的元素<code>ai+1</code>称为<strong>后继元素</strong>。在Java语言中，数组（ArrayList）和链表（Linked List）都属于线性表。其中数组使用了顺序结构，而链表使用了链式结构。</p>
+<p>线性表的数据对象集合为<code>&#123;a1,a2,...,an-1,an&#125;</code>，每个元素的类型均为<code>DataType</code>。<strong>数据元素之间的关系是一对一的关系。</strong>其中，除第一个元素<code>a1</code>外，每个元素有且只有一个直接前驱元素，除最后一个元素<code>an</code>外，每个元素有且只有一个直接后继元素。</p>
+<h1 id="线性表伪代码"><a href="#线性表伪代码" class="headerlink" title="线性表伪代码"></a>线性表伪代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ADT 线性表（List）</span><br><span class="line">Data</span><br><span class="line">  数据对象集合 &#123;a1,a2,...,an-1,an&#125;</span><br><span class="line">Operation</span><br><span class="line">  init(*L)：初始化空线性表L</span><br><span class="line">  isEmpty(L)：判断线性表是否为空</span><br><span class="line">  clear(*L)：清空线性表</span><br><span class="line">  getElement(L,i,*e)：将线性表L中第i个元素返回给e</span><br><span class="line">  elementAt(L,e)：线性表L中查找与e相等的元素，返回元素的位置</span><br><span class="line">  insert(*L,i,e)：线性表L中第i个位置插入新元素e</span><br><span class="line">  delete(*L,i,*e)：删除线性表L中第i个位置元素，并返回该元素给e</span><br><span class="line">  length(L)：返回线性表L的元数个数</span><br><span class="line">endADT</span><br></pre></td></tr></table></figure>
+
+<h1 id="线性表的顺序存储结构"><a href="#线性表的顺序存储结构" class="headerlink" title="线性表的顺序存储结构"></a>线性表的顺序存储结构</h1><p>线性表的顺序存储结构封装需要3个属性：</p>
+<ul>
+<li>存储空间初始位置，数组指针</li>
+<li>线性表的最大长度，指存储空间总长度，初始化后不变</li>
+<li>线性表的当前长度，指表中元素数量，大于等于0，小于表的最大长度</li>
+</ul>
+<h2 id="顺序存储结构的地址计算方法"><a href="#顺序存储结构的地址计算方法" class="headerlink" title="顺序存储结构的地址计算方法"></a>顺序存储结构的地址计算方法</h2><p><strong>注：<code>i</code>从“1”开始</strong></p>
+<p>假设每个元素类型的<code>DataType</code>都需要占用<code>c</code>个储存单位（字节），那么线性表中第<code>i+1</code>个元素和第<code>i</code>个元素的存储位置的关系是（LOC为获得存储位置的函数）：</p>
+<p><code>LOC(ai+1) = LOC(ai) + c</code></p>
+<p>所以找第<code>i</code>个元素<code>ai</code>的储存位置可以又线性表初始指针指向的<code>a1</code>推算出：</p>
+<p><strong><code>LOC(ai) = LOC(a1) + (i-1) * c</code></strong></p>
+<p>通过这个公式，计算出线性表中任意位置的地址，所用的时间都是相同的，那么他的存储时间性能就是<code>O(1)</code>，<strong>这种结构通常被称为随机存储结构。</strong></p>
+<h1 id="线性表的链式存储结构"><a href="#线性表的链式存储结构" class="headerlink" title="线性表的链式存储结构"></a>线性表的链式存储结构</h1><p>顺序存储结构最大的缺点，插入和删除需要移动大量元素，从而保持表中元素邻居的关系；链式存储结构通过携带后继元素的存储地址就解决了这个缺点。</p>
+<p>链式存储结构的线性表中元素称为“存储映像”，也称为“节点（Node）”。每个节点都是由两部分组成：</p>
+<ul>
+<li>数据域：储存数据元素信息的域</li>
+<li>指针域：存储直接后继元素地址的域</li>
+</ul>
+<h2 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h2><p><code>n</code>个节点链接成一个链表，即为线性表<code>(a1,a2,...,an-1,an)</code>的链式存储结构。因为此链表的每个节点中只包含一个指针域，所以叫做单链表。</p>
+<p><img src="/.com//data-structure-linked-list-normal.png" class="lazyload" data-srcset="/.com//data-structure-linked-list-normal.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="单链表图示"></p>
+<p>单链表必须有一个头部加上0到多个节点。头指针是链表指向第一个节点的指针，如果链表有头结点，则头指针指向头结点。头结点携带第一个元素的节点指针，放在第一个节点之前，其数据域一般无意义，但也可以存放链表的长度。头结点不是必须的，但是头结点可以放一些对列表有用的变量。</p>
+<p>尾指针是指向单链表的最后一个节点的指针，这个指针不是必须的，但是尾指针有好处，比如需要在尾部插入新节点。</p>
+<p><strong>若线性表需要频繁查找，很少进行插入和删除操作是，宜采用顺序存储结构。</strong></p>
+<p><strong>若需要频繁插入和删除时，宜采用单链表结构。</strong></p>
+<h2 id="静态链表"><a href="#静态链表" class="headerlink" title="静态链表"></a>静态链表</h2><p>在内存中建立一个数组，在数组最大长度内的空间中再建立一个链表，这种链表就是静态链表。静态链表通过“游标（Cursor）”指向后继元素所处数组中的“下标（Index）”。下图为静态链表转普通链表，最大长度为<code>100</code>，第一个元素游标指向备用链表的头节点（既当前链表尾节点的游标，也是尾指针），最后一个元素游标指向当前链表头节点。</p>
+<p><img src="/.com//data-structure-linked-list-static-to-normal.png" class="lazyload" data-srcset="/.com//data-structure-linked-list-static-to-normal.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="静态链表转普通链表"></p>
+<ul>
+<li>数组中第一个和最后一个元素不存放数据</li>
+<li>未使用的数组元素被称为备用链表</li>
+<li>数组第一个元素，即<code>Index = 0</code>的元素的游标（Cursor）存放备用链表的第一个节点的下标</li>
+<li>数组最后一个元素，即<code>Index = MAX_SIZE-1</code>的元素的游标（Cursor）存放当前链表的第一个节点的下标</li>
+<li>静态链表初始化时，<code>Index = 0</code>的元素的游标应从<code>1</code>开始，而<code>Index = MAX_SIZE-1</code>的元素的游标则是<code>0</code>，表示空链表</li>
+</ul>
+<h2 id="循环链表"><a href="#循环链表" class="headerlink" title="循环链表"></a>循环链表</h2><p>在单链表中，如果不从头结点出发，就无法访问到全部节点。循环链表就解决了这个问题。只要有链表中某一节点的指针，就能跑完全部节点。当表为空时，头部后继指针指向头部本身。</p>
+<p><strong>循环链表所用的方法就是把尾节点的空指针指向头节点，使单链表形成一个环，这种头尾相接的单链表被称为单循环链表，简称循环链表。</strong></p>
+<p>原单链表判断尾节点用<code>node.next === null ?</code>，现在则是用<code>node.next === head ?</code>。</p>
+<h2 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h2><p>对比单链表，双向链表的节点有两个指针：前驱指针和后继指针。双向列表允许从尾部往回跑。当表为空时，头部前驱指针和后继指针都指向头部本身。</p>
+<h1 id="找单链表中间的节点的方法"><a href="#找单链表中间的节点的方法" class="headerlink" title="找单链表中间的节点的方法"></a>找单链表中间的节点的方法</h1><p>利用快慢指针原理：设置两个指针<code>*search</code>和<code>*middle</code>都指向单链表的头结点。其中<code>*search</code>的移动速度是<code>*middle</code>的2倍。当<code>*search</code>指向尾节点时，<code>*middle</code>正好就在中间。</p>
+<p>在一个长度为100的单链表中，当<code>*search</code>指向第100个节点时，<code>*middle</code>指向第50个节点。</p>
+<p>在一个长度为101的单链表中，当<code>*search</code>指向102（即超出长度）时，<code>*middle</code>指向第51个节点，正好在中间。</p>
+<h1 id="判断一个链表是否有环"><a href="#判断一个链表是否有环" class="headerlink" title="判断一个链表是否有环"></a>判断一个链表是否有环</h1><p>方法一：设置两个指针<code>*q</code>和<code>*b</code>。<code>*q</code>一直在走的情况下，每遇到一个节点，<code>*b</code>就从新从头结点开始走。如果<code>*q</code>所在当前步数等于<code>*b</code>从头开始数的步数，则<code>*q</code>继续往前走一步，而<code>*b</code>从新走。如果<code>*q</code>所在当前步数不等于<code>*b</code>的从头开始数的步数，则存在环。这种方法可以找到环所在节点。</p>
+<p>方法二：设置两个指针<code>*q</code>和<code>*b</code>都指向单链表的头结点。其中<code>*q</code>的移动速度是<code>*b</code>的2倍，若在某个时候<code>*q == *b</code>，则存在环。一般偶数量节点的单循环链表跑两次后<code>*q == *b</code>。</p>
+<blockquote>
+<p>本文参考：<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1jW411K7yg">【C语言描述】《数据结构和算法》（小甲鱼）</a></p>
+</blockquote>
+	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+
+    
+    
+    <a href="/2020/04/23/数据结构之栈Stack和队列Queue/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2020/04/18/算法之基础/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2020-04-20 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/数据结构与算法/">数据结构与算法<span>4</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/线性表/">线性表<span>1</span></a></li> <li><a href="/tags/List/">List<span>1</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2022 齐雨争
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a>,<a target="_blank" rel="noopener" href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>,<a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a> and <a href="http://getbootstrap.com/" target="_blank">BOOTSTRA.386</a>. 
+     <br> Theme by <a target="_blank" rel="noopener" href="http://github.com/wzpan/hexo-theme-freemind/">Freemind.386</a>.    
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+   </html>
