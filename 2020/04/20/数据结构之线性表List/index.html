@@ -161,13 +161,13 @@ var _hmt = _hmt || [];
 <li>指针域：存储直接后继元素地址的域</li>
 </ul>
 <h2 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h2><p><code>n</code>个节点链接成一个链表，即为线性表<code>(a1,a2,...,an-1,an)</code>的链式存储结构。因为此链表的每个节点中只包含一个指针域，所以叫做单链表。</p>
-<p><img src="/.com//data-structure-linked-list-normal.png" class="lazyload" data-srcset="/.com//data-structure-linked-list-normal.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="单链表图示"></p>
+<p><img src="/.com//data-structure-linked-list-normal.png" alt="单链表图示"></p>
 <p>单链表必须有一个头部加上0到多个节点。头指针是链表指向第一个节点的指针，如果链表有头结点，则头指针指向头结点。头结点携带第一个元素的节点指针，放在第一个节点之前，其数据域一般无意义，但也可以存放链表的长度。头结点不是必须的，但是头结点可以放一些对列表有用的变量。</p>
 <p>尾指针是指向单链表的最后一个节点的指针，这个指针不是必须的，但是尾指针有好处，比如需要在尾部插入新节点。</p>
 <p><strong>若线性表需要频繁查找，很少进行插入和删除操作是，宜采用顺序存储结构。</strong></p>
 <p><strong>若需要频繁插入和删除时，宜采用单链表结构。</strong></p>
 <h2 id="静态链表"><a href="#静态链表" class="headerlink" title="静态链表"></a>静态链表</h2><p>在内存中建立一个数组，在数组最大长度内的空间中再建立一个链表，这种链表就是静态链表。静态链表通过“游标（Cursor）”指向后继元素所处数组中的“下标（Index）”。下图为静态链表转普通链表，最大长度为<code>100</code>，第一个元素游标指向备用链表的头节点（既当前链表尾节点的游标，也是尾指针），最后一个元素游标指向当前链表头节点。</p>
-<p><img src="/.com//data-structure-linked-list-static-to-normal.png" class="lazyload" data-srcset="/.com//data-structure-linked-list-static-to-normal.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="静态链表转普通链表"></p>
+<p><img src="/.com//data-structure-linked-list-static-to-normal.png" alt="静态链表转普通链表"></p>
 <ul>
 <li>数组中第一个和最后一个元素不存放数据</li>
 <li>未使用的数组元素被称为备用链表</li>

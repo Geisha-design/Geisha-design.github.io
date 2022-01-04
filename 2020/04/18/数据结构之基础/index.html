@@ -140,7 +140,7 @@ var _hmt = _hmt || [];
 
 <h1 id="顺序结构"><a href="#顺序结构" class="headerlink" title="顺序结构"></a>顺序结构</h1><p><strong>内存中元素紧挨在一起的数据结构为顺序结构</strong>。在C语言中，声明一个整数结构类型长度为<code>5</code>的数组时，内存中会留出5个整数长度的连续空间用于存储数组。实际上，数组的指针可以说是指向在数组中的第一个元素。当要修改第4个元素时，计算机是找到了数组指针地址，跳跃3个整数长度的距离，从而找到第4个元素的位置。</p>
 <h1 id="链式结构"><a href="#链式结构" class="headerlink" title="链式结构"></a>链式结构</h1><p><strong>内存中元素可连续也可不连续，通过指针寻找和连接元素的数据结构为链式结构</strong>。在Java语言中，链表（Linked List）和树（Tree）都属于链式结构。他们属于抽象的结构类型，类型所包含的元素被称为节点（Node）。链表节点中的值可以为整数类、浮点类、字符串等，包括抽象数据类；但链表节点中还会包含有节点的一个后继元素指针。树节点对比链表节点的不同在于树节点中可以包含有多个后继元素指针。总结起来就是<strong>链式结构节点在内存中连续摆放不是必须的</strong>，当计算机查找某个节点时，会走遍目标节点前的所有节点，从而顺着第一个节点的指针找到目标指针。</p>
-<h1 id="比较顺序结构和链式结构"><a href="#比较顺序结构和链式结构" class="headerlink" title="比较顺序结构和链式结构"></a>比较顺序结构和链式结构</h1><p><img src="/.com//data-structure-random-linked-ram.png" class="lazyload" data-srcset="/.com//data-structure-random-linked-ram.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="顺序结构和链式结构在内存中的不同"></p>
+<h1 id="比较顺序结构和链式结构"><a href="#比较顺序结构和链式结构" class="headerlink" title="比较顺序结构和链式结构"></a>比较顺序结构和链式结构</h1><p><img src="/.com//data-structure-random-linked-ram.png" alt="顺序结构和链式结构在内存中的不同"></p>
 <ul>
 <li>顺序结构在内存中有固定最大长度，而链式结构在内存中没有，所以在流动数据多的情况下，链式结构对空间利用更灵活。</li>
 <li>顺序结构在内存中是元素之间是连续的，而链式结构在内存中很可能是不连续的，所以在查找元素时，通过地址计算公式查找，顺序结构的效率更高。</li>
