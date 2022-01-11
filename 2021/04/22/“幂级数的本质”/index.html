@@ -1,141 +1,269 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="pragma" content="no-cache">
-  <meta http-equiv="cache-control" content="no-cache">
-  <meta http-equiv="expires" content="0">
   
-  <title>幂级数的本质 | 齐雨争 / Chingmy</title>
-  <meta name="author" content="齐雨争">
-  
-  <meta name="description" content="就是一个单纯的小男孩罢了">
-  
-  
+  <title>幂级数的本质 | / Chingmy /</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <meta property="og:title" content="幂级数的本质"/>
-  <meta property="og:site_name" content="齐雨争 / Chingmy"/>
+  <meta name="description" content="级数（幂级数）回到梦开始的地方在一元函数微积分的世界中，我们沿着极限、导数、微分、积分的路已经走出了一段路。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="幂级数的本质">
+<meta property="og:url" content="http://example.com/2021/04/22/%E2%80%9C%E5%B9%82%E7%BA%A7%E6%95%B0%E7%9A%84%E6%9C%AC%E8%B4%A8%E2%80%9D/index.html">
+<meta property="og:site_name" content="&#x2F; Chingmy &#x2F;">
+<meta property="og:description" content="级数（幂级数）回到梦开始的地方在一元函数微积分的世界中，我们沿着极限、导数、微分、积分的路已经走出了一段路。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=T=%5Cfrac%7B90%7D%7B10%7D+%5Cfrac%7B9%7D%7B10%7D+%5Cfrac%7B0.9%7D%7B10%7D+...">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=a_n=9%5Ccdot+(0.1)%5E%7Bn-1%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=T">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=n%5Cto+%5Cinfty">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=T=%5Csum_%7Bn=1%7D%5E%5Cinfty+a_n+">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=q">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=a_1">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=p,a_1%5Cneq0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=q%5Cneq+1">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=a_n=a_1%5Ccdot+p%5E%7Bn-1%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=n">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=S_n=a_1%5Ccdot+%5Cfrac%7B1-q%5En%7D%7B1-q%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Csum_%7Bn=1%7D%5E%7B%5Cinfty%7Da_n">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Clim_%7Bn+%5Cto+%5Cinfty%7DS_n=a_1%5Ccdot+%5Clim_%7Bn+%5Cto+%5Cinfty%7D%5Cfrac%7B1-q%5En%7D%7B1-q%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=-1%3Cq%3C1">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=q%5En%5Crightarrow+0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Clim_%7Bn+%5Cto+%5Cinfty%7DS_n=%5Cfrac%7Ba_1%7D%7B1-q%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=q%3E1">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=q%3C-1">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=q%5En%5Crightarrow+%5Cpm%5Cinfty">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Clim_%7Bn+%5Cto+%5Cinfty%7DS_n=%5Cpm+%5Cinfty">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=u_n%5Cgeq+0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=S_n=%5Csum_%7Bn=1%7D%5E%7B%5Cinfty%7Du_n=u_1+u_2+...u_n">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=S_n=%5Csum_%7Bn=1%7D%5E%7B%5Cinfty%7D(-1)%5E%7Bn-1%7Du_n=u_1-u_2+u_3-u_4+...u_n">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=S_n%5Cgeq+S_%7Bn-1%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=u_n">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=v_n">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho+=%5Clim_%7Bn+%5Cto+%5Cinfty%7D%5Cfrac%7Bu_%7Bn+1%7D%7D%7Bu_n%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho+=%5Clim_%7Bn+%5Cto+%5Cinfty%7D%5Csqrt%5Bn%5D%7Bu_n%7D+">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5C%7Bu_n%5C%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Clim_%7Bn+%5Cto+%5Cinfty%7Du_n=0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=S_n=%5Csum_%7Bn=1%7D%5E%7B%5Cinfty%7D%5Cvert+u_n%5Cvert+">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-7fe91eb75378b692d6f56acbc7fce36d_r.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=f(x)=e%5Ex">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-b8548ada14de1056caa386b5295838a3_r.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=f(x)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=e%5Ex">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=n">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=y">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x_0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x_0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=y-y_0=y%5Cprime(x-x_0)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=y=f(x_0)+f%5Cprime(x_0)(x-x_0)">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-d6dc7a1c514f24ee629577fe64dce3dc_r.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x_0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x_0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x_0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Clim_%7Bx+%5Cto+x_0%7Df(x)=f(x_0)=A">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=f(x)=A+%5Calpha+(x)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x_0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x_0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Calpha(x)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x_0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=f%5Cprime(x_0)=%5Clim_%7Bx+%5Cto+x_0%7D%5Cfrac%7Bf(x)-f(x_0)%7D%7Bx-x_0%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cfrac%7Bf(x)-f(x_0)%7D%7Bx-x_0%7D=f%5Cprime(x_0)+%5Calpha(x)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=f(x)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=f(x)=f(x_0)+f%5Cprime(x_0)(x-x_0)+%5Calpha(x)(x-x_0)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=y">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x_0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Calpha(x)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x_0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Calpha(x)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Calpha_1(x)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x_0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=f(x)=f(x_0)+f%5Cprime(x_0)(x-x_0)+%5Calpha_1(x)(x-x_0)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Calpha_1(x)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Calpha_1(x)=%5Calpha_1(x_0)+%5Calpha_1%5Cprime(x_0)(x-x_0)+%5Calpha_2(x)(x-x_0)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Calpha_1(x_0)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x_0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Calpha_1(x_0)=0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Calpha_1(x)=%5Calpha_1%5Cprime(x_0)(x-x_0)+%5Calpha_2(x)(x-x_0)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cfrac%7Bf(x)-f(x_0)%7D%7Bx-x_0%7D=f%5Cprime(x_0)+%5Calpha_1(x)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Calpha_1(x)=%5Cfrac%7Bf(x)-f(x_0)%7D%7Bx-x_0%7D-f%5Cprime(x_0)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Calpha_1%5Cprime+(x)=%5Clim_%7Bx+%5Cto+x_0%7D%5Cfrac%7B%5Calpha_1(x)-%5Calpha_1(x_0)%7D%7Bx-x_0%7D=%5Clim_%7Bx+%5Cto+x_0%7D%5Cfrac%7B%5Calpha_1(x)%7D%7Bx-x_0%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Calpha_1(x)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Clim_%7Bx+%5Cto+x_0%7D%5Cfrac%7B%5Calpha_1(x)%7D%7Bx-x_0%7D=%5Clim_%7Bx+%5Cto+x_0%7D%5Cfrac%7B%5Cfrac%7Bf(x)-f(x_0)-f%5Cprime+(x_0)(x-x_0)%7D%7Bx-x_0%7D%7D%7Bx-x_0%7D=%5Clim_%7Bx+%5Cto+x_0%7D%5Cfrac%7Bf(x)-f(x_0)-f%5Cprime+(x_0)(x-x_0)%7D%7B(x-x_0)%5E2%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cfrac%7B0%7D%7B0%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Clim_%7Bx+%5Cto+x_0%7D%5Cfrac%7Bf(x)-f(x_0)-f%5Cprime+(x_0)(x-x_0)%7D%7B(x-x_0)%5E2%7D=%5Clim_%7Bx+%5Cto+x_0%7D%5Cfrac%7Bf%5Cprime(x)-0-f%5Cprime(x_0)%5Ccdot+1%7D%7B2(x-x_0)%5Ccdot+1%7D=%5Cfrac%7Bf%5Cprime%5Cprime(x)-0%7D%7B2-0%7D=%5Cfrac%7Bf%5Cprime%5Cprime(x)%7D%7B2%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Calpha_1(x)=%5Calpha_1%5Cprime(x_0)(x-x_0)+%5Calpha_2(x)(x-x_0)=%5Cfrac%7Bf%5Cprime%5Cprime(x)%7D%7B2%7D(x-x_0)+%5Calpha_2(x)(x-x_0)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=f(x)=f(x_0)+f%5Cprime(x_0)(x-x_0)+%5Cfrac%7Bf%5Cprime%5Cprime(x)%7D%7B2%7D(x-x_0)%5E2+%5Calpha_2(x)(x-x_0)%5E2">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-221da1249e652432145f34f02fe2f9fb_r.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Calpha_2(x),%5Calpha_3(x)...">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x_0">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-900bcb5e775bba2f0c306465228781ef_r.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=f(x)=%5Cfrac%7Bf(x_0)%7D%7B0!%7D+%5Cfrac%7Bf%5Cprime(x_0)%7D%7B1!%7D(x-x_0)+%5Cfrac%7Bf%5Cprime%5Cprime(x)%7D%7B2!%7D(x-x_0)%5E2+...+%5Cfrac%7Bf%5E%7B(n)%7D(x)%7D%7Bn!%7D(x-x_0)%5En+%5Calpha_%7Bn+1%7D(x)(x-x_0)%5E%7Bn+1%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=u_n=f_n(x)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Csum_%7Bn%7D%5E%7B%5Cinfty%7Du_n(x)=u_1(x)+u_2(x)+...u_n(x)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=u_n(x)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x%5Cin+I%5C!R">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Csum_%7Bn%7D%5E%7B%5Cinfty%7Da_n(x-x_0)%5En=a_0+a_1(x-x_0)+a_2(x-x_0)%5E2+...+a_n(x-x_0)%5En">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Clim_%7Bn+%5Cto+%5Cinfty%7D%5Cvert%5Cfrac%7Bu_%7Bn+1%7D(x)%7D%7Bu_n(x)%7D%5Cvert=%5Clim_%7Bn+%5Cto+%5Cinfty%7D%5Cvert+%5Cfrac%7Ba_%7Bn+1%7D(x-x_0)%5E%7Bn+1%7D%7D%7Ba_n(x-x_0)%5En%7D+%5Cvert=%5Clim_%7Bn+%5Cto+%5Cinfty%7D%5Cvert+%5Cfrac%7Ba_%7Bn+1%7D%7D%7Ba_n%7D(x-x_0)++%5Cvert">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x_0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=0%3C%5Cvert+x-x_0%5Cvert%3C%5Csigma,%5Csigma%3E0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Csigma">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho=%5Clim_%7Bn+%5Cto+%5Cinfty%7D%5Cvert+%5Cfrac%7Ba_%7Bn+1%7D%7D%7Ba_n%7D+%5Cvert">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho%5Ccdot+%5Csigma">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho+%5Ccdot+%5Csigma+%3C+1">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho%5Ccdot+%5Csigma%3E1">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho+%5Ccdot+%5Csigma=1">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho=0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho%5Ccdot+%5Csigma+%5Cequiv0+%3C1">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Csigma">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=0%3C%5Crho%3C+%5Cinfty">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho+%5Ccdot+%5Csigma%3C1">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Csigma%3C%5Cfrac%7B1%7D%7B%5Crho%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho=+%5Cinfty">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho+%5Ccdot+%5Csigma%3C1">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=0%3C%5Crho%3C+%5Cinfty">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Csigma=%5Cfrac%7B1%7D%7B%5Crho%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=(x_0-%5Csigma,+x_0+%5Csigma)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x_0-%5Csigma">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x_0+%5Csigma">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Csigma">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho=0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=+%5Cinfty">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho=+%5Cinfty">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x_0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=0%3C%5Crho%3C+%5Cinfty">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cfrac%7B1%7D%7B%5Crho%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=(x_0-%5Cfrac%7B1%7D%7B%5Crho%7D,x_0+%5Cfrac%7B1%7D%7B%5Crho%7D)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=(-%5Cinfty,+x_0-%5Cfrac%7B1%7D%7B%5Crho%7D),(x_0+%5Cfrac%7B1%7D%7B%5Crho%7D,+%5Cinfty)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x_0-%5Cfrac%7B1%7D%7B%5Crho%7D,x_0+%5Cfrac%7B1%7D%7B%5Crho%7D">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-98099080849ac47c3c460fb88847d4d7_r.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=f(x)=%5Cfrac%7Bf(x_0)%7D%7B0!%7D+%5Cfrac%7Bf%5Cprime(x_0)%7D%7B1!%7D(x-x_0)+%5Cfrac%7Bf%5Cprime%5Cprime(x)%7D%7B2!%7D(x-x_0)%5E2+...+%5Cfrac%7Bf%5E%7B(n)%7D(x)%7D%7Bn!%7D(x-x_0)%5En+...">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x_0=0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=f(0)+f%5Cprime(0)x+%5Cfrac%7Bf%5Cprime%5Cprime(0)%7D%7B2!%7Dx%5E2+...+%5Cfrac%7Bf%5E%7B(n)%7D(0)%7D%7Bn!%7Dx%5En+...">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Csin+x+%5Csim+x,x+%5Cto+0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Csin+x">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Csin+x=%5Csin+0+%5Ccos+0%5Ccdot+x+%5Cfrac%7B-%5Csin+0%7D%7B2!%7D+x%5E2+%5Cfrac%7B-%5Ccos+0%7D%7B3!%7Dx%5E3+...=x-%5Cfrac%7Bx%5E3%7D%7B3!%7D+%5Cfrac%7Bx%5E5%7D%7B5!%7D+...">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cpi">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=e,%5Cpi">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Carctan+x">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Carctan+x=x-%5Cfrac%7Bx%5E3%7D%7B3%7D+%5Cfrac%7Bx%5E5%7D%7B5%7D+...+(-1)%5E%7Bn+1%7D%5Cfrac%7Bx%5E%7B2n-1%7D%7D%7B2n-1%7D+...">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Crho=%5Clim_%7Bn+%5Cto+%5Cinfty%7D%5Cvert+%5Cfrac%7Ba_%7Bn+1%7D%7D%7Ba_n%7D+%5Cvert=%5Clim_%7Bn+%5Cto+%5Cinfty%7D%5Cvert+%5Cfrac%7B(-1)%5E%7B2n-3%7D(2n-3)%7D%7B(-1)%5E%7B2n-1%7D(2n-1)%7D+%5Cvert=%5Clim_%7Bn+%5Cto+%5Cinfty%7D%5Cvert+%5Cfrac%7B2n-3%7D%7B2n-1%7D+%5Cvert=1">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=r=%5Cfrac%7B1%7D%7B%5Crho%7D=1">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=-1%3C+x%3C1">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x=-1,x=1">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cvert+x+%5Cvert=1">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5C%7Bu_n%5C%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cfrac%7B1%7D%7B2n-1%7D%3C%5Cfrac%7B1%7D%7B2n-3%7D%5Cimplies+u_%7Bn-1%7D%3Cu_n">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Clim_%7Bn+%5Cto+%5Cinfty%7Du_n=%5Clim_%7Bn+%5Cto+%5Cinfty%7D%5Cfrac%7B1%7D%7B2n-1%7D=0">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Carctan+x">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x%5Cin%5B-1,1%5D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Carctan+1=%5Cfrac%7B%5Cpi%7D%7B4%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Carctan+1=%5Cfrac%7B%5Cpi%7D%7B4%7D=1-%5Cfrac%7B1%7D%7B3%7D+%5Cfrac%7B1%7D%7B5%7D+...">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cpi=4(1-%5Cfrac%7B1%7D%7B3%7D+%5Cfrac%7B1%7D%7B5%7D+...)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cpi=4(1-%5Cfrac%7B1%7D%7B3%7D)=2.%5Cdot%7B6%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cpi=4(1-%5Cfrac%7B1%7D%7B3%7D+%5Cfrac%7B1%7D%7B5%7D)=3.4%5Cdot%7B6%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cpi=4(1-%5Cfrac%7B1%7D%7B3%7D+%5Cfrac%7B1%7D%7B5%7D-%5Cfrac%7B1%7D%7B7%7D)=2.89523%5Cdot%7B8%7D0952%5Cdot%7B3%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Carctan+x">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cpi">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cpi">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=F(x)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ciff">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=f(x)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ciff">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=f%5Cprime(x)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Ciff">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=f%5E%7B(2+)%7D(x)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=f(x)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=f%5Cprime(x)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=F(x)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=f%5Cprime%5Cprime(x),f%5Cprime%5Cprime(x)...">
+<meta property="article:published_time" content="2021-04-22T12:24:44.000Z">
+<meta property="article:modified_time" content="2022-01-04T13:49:04.695Z">
+<meta property="article:author" content="齐雨争">
+<meta property="article:tag" content="java leetcode mysql hexo Deemo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.zhihu.com/equation?tex=T=%5Cfrac%7B90%7D%7B10%7D+%5Cfrac%7B9%7D%7B10%7D+%5Cfrac%7B0.9%7D%7B10%7D+...">
+  
+  
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+  
+  
+<link rel="stylesheet" href="../../../../css/typing.css">
 
   
-    <meta property="og:image" content=""/>
-  
+<link rel="stylesheet" href="../../../../css/donate.css">
 
   
   
-    <link href="/favicon.png" rel="icon">
+<link rel="stylesheet" href="../../../../https:/cdn.jsdelivr.net/npm/fork-awesome@1/css/fork-awesome.min.css">
+
   
   
-  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    
+<link rel="stylesheet" href="../../../../https:/cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
-  <script src="/js/jquery-2.0.3.min.js"></script>
-
-  <!-- analytics -->
   
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-70812759-1', 'auto');
-  ga('send', 'pageview');
-</script>
-
-
-
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?cb5448498d7169c668b07c2b255d62c1";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-
 <meta name="generator" content="Hexo 5.4.0"></head>
 
- <body>  
-  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-		<span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-	  <a class="navbar-brand" href="/">齐雨争 / Chingmy</a>
-      <div class="collapse navbar-collapse nav-menu">
-		<ul class="nav navbar-nav">
-		  
-		  <li>
-			<a href="/archives" title="All the articles.">
-			  <i class=""></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class=""></i>Categories
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/tags" title="All the tags.">
-			  <i class=""></i>Tags
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/about" title="About me.">
-			  <i class=""></i>About
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/atom.xml" title="Subscribe me.">
-			  <i class=""></i>RSS
-			</a>
-		  </li>
-		  
-		</ul>
-      </div>
-    </div> <!-- container -->
-</nav>
-<div class="clearfix"></div>
-
-  <div class="container">
-  	<div class="content">
-    	 
-
-
+  
+    
+      <body class="dark">
+    
+  
+      <div id="container" class="container">
+        <article id="post-“幂级数的本质”" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <header id="header" class="header">
+  <nav class="mobile-nav">
+    <h1 class="nickname">QI YU ZHENG</h1>
+    <ul class="mobile-nav-menu">
+      <label for="mobile-menu-toggle"><a id="menu-button">&#9776; Menu</a></label>
+      <input type="checkbox" id="mobile-menu-toggle"/>
+      <ul class="mobile-nav-link">
+        
+        <a href="../index.html">Home</a>
+        
+        <a href="../archives">Archives</a>
+        
+        <a href="../about">About</a>
+        
+      </ul>
+    </ul>
+  </nav>
 	
-		<div class="page-header">
-			<h1> 幂级数的本质</h1>
-		</div>
+		<nav id="main-nav" class="main-nav">
 	
-
-
-
-<div class="row post">
-	<!-- cols -->
 	
-	<div id="top_meta"></div>
-	<div class="col-md-9">
+	  <a class="main-nav-link" href="../index.html">Home</a>
 	
+	  <a class="main-nav-link" href="../archives">Archives</a>
+	
+	  <a class="main-nav-link" href="../about">About</a>
+	
+  </nav>
+</header>
 
-	<!-- content -->
-	<div class="mypage">		
-	  		
+  <hr/>
+  <div class="article-inner">
+    
 
-	  <h1 id="级数（幂级数）"><a href="#级数（幂级数）" class="headerlink" title="级数（幂级数）"></a>级数（幂级数）</h1><h2 id="回到梦开始的地方"><a href="#回到梦开始的地方" class="headerlink" title="回到梦开始的地方"></a>回到梦开始的地方</h2><p>在一元函数微积分的世界中，我们沿着极限、导数、微分、积分的路已经走出了一段路。 <span id="more"></span></p>
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      幂级数的本质
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry typo" itemprop="articleBody">
+      
+        <h1 id="级数（幂级数）"><a href="#级数（幂级数）" class="headerlink" title="级数（幂级数）"></a>级数（幂级数）</h1><h2 id="回到梦开始的地方"><a href="#回到梦开始的地方" class="headerlink" title="回到梦开始的地方"></a>回到梦开始的地方</h2><p>在一元函数微积分的世界中，我们沿着极限、导数、微分、积分的路已经走出了一段路。 <span id="more"></span></p>
 <p>这时候回头看我们在第一篇《从极限开始》中介绍的芝诺悖论，你是否还记得计算阿喀琉斯追赶上乌龟所需要的时间的表达式：</p>
 <p><img src="https://www.zhihu.com/equation?tex=T=%5Cfrac%7B90%7D%7B10%7D+%5Cfrac%7B9%7D%7B10%7D+%5Cfrac%7B0.9%7D%7B10%7D+..." alt="[公式]"></p>
 <p>显而易见的，这个求和算式中的每一项所组成的，是一个首项为9，公比为0.1的等比数列，其通项可写为：</p>
@@ -324,131 +452,135 @@ var _hmt = _hmt || [];
 <p>以幂级数展开联系高阶导函数 <img src="https://www.zhihu.com/equation?tex=f%5Cprime%5Cprime(x),f%5Cprime%5Cprime(x)..." alt="[公式]"></p>
 <p>从下一篇文章开始，在将微积分从一元函数向二元、三元推广之前，我准备先转入线性代数的学习。</p>
 <p>这其中的原因，我也将会在之后学习线性代数的过程中，以及在开始学习多元函数微积分前，予以说明。</p>
-	  
-	</div>
 
-	<div>
-  	<center>
-	<div class="pagination">
-
-    
-    
-    <a href="/2021/04/24/“计算机文件系统”/" type="button" class="btn btn-default"><i
-                class="fa fa-arrow-circle-o-left"></i> Prev</a>
-    
-
-    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
-    
-    <a href="/2021/04/16/“坂本龙一先生对我的影响”/" type="button" class="btn btn-default ">Next<i
-                class="fa fa-arrow-circle-o-right"></i></a>
-    
-
-    
-</div>
-
-    </center>
-	</div>
-	
-	<!-- comment -->
-	
-<section id="comment">
-    <h2 class="title">Comments</h2>
-
-    
-</section>
-
-
-	</div> <!-- col-md-9/col-md-12 -->
-		
-	
-	<div id="side_meta">
-		<div class="col-md-3" id="post_meta"> 
-
-	<!-- date -->
-	
-	<div class="meta-widget">
-	<i class="fa fa-clock-o"></i>
-	2021-04-22 
-	</div>
-	
-
-	<!-- categories -->
-    
-	<div class="meta-widget">
-	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
-    <ul id="categorys" class="tag_box list-unstyled collapse in">
-          
-  <li>
-    <li><a href="/categories/高等数学/">高等数学<span>3</span></a></li>
-  </li>
-
-    </ul>
-	</div>
-	
-
-	<!-- tags -->
-		
-
-	<!-- toc -->
-	<div class="meta-widget">
-	
-	</div>
-	
-    <hr>
-	
-</div><!-- col-md-3 -->
-
-	</div>
-		
-
-</div><!-- row -->
-
-
-
-	</div>
-  </div>
-  <div class="container-narrow">
-  <footer> <p>
-  &copy; 2022 齐雨争
-  
-      with help from <a href="http://hexo.io/" target="_blank">Hexo</a>,<a target="_blank" rel="noopener" href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>,<a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a> and <a href="http://getbootstrap.com/" target="_blank">BOOTSTRA.386</a>. 
-     <br> Theme by <a target="_blank" rel="noopener" href="http://github.com/wzpan/hexo-theme-freemind/">Freemind.386</a>.    
-</p>
- </footer>
-</div> <!-- container-narrow -->
-  
-
-
-  
-<a id="gotop" href="#">   
-  <span>⬆︎TOP</span>
+      
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="" class="article-date">
+  <time class="dt-published" datetime="2021-04-22T12:24:44.000Z" itemprop="datePublished">2021-04-22</time>
 </a>
 
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/main.js"></script>
-<script src="/js/search.js"></script> 
+        </li>
+        
+          <li>
+            <span class="label">Category:</span>
+            
+  <div class="article-category">
+    <a class="article-category-link" href="../../../../categories/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/">高等数学</a>
+  </div>
 
 
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
-</script>
+          </li>
+        
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="../../24/%E2%80%9C%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E2%80%9D/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          计算机文件系统
+        
+      </div>
+    </a>
+  
+  
+    <a href="../../16/%E2%80%9C%E5%9D%82%E6%9C%AC%E9%BE%99%E4%B8%80%E5%85%88%E7%94%9F%E5%AF%B9%E6%88%91%E7%9A%84%E5%BD%B1%E5%93%8D%E2%80%9D/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">坂本龙一先生对我的影响</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
 
 
 
-   <script type="text/javascript">      
-     var search_path = "search.xml";
-	 if (search_path.length == 0) {
-	 	search_path = "search.xml";
-	 }
-	 var path = "/" + search_path;
-     searchFunc(path, 'local-search-input', 'local-search-result');
-   </script>
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
-   </html>
+
+
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+        <ul class="footer-links">
+          
+            <li><a href="../../../../archives/"><span class="fa fa-book"></span></a></li>
+          
+            <li><a href="../../../../https:/github.com/geekplux/hexo-theme-typing"><span class="fa fa-globe"></span></a></li>
+          
+            <li><a href="../../../../https:/twitter.com/"><span class="fa fa-twitter"></span></a></li>
+          
+            <li><a href="../../../../https:/github.com/"><span class="fa fa-github-alt"></span></a></li>
+          
+            <li><a href="../../../../https:/www.youtube.com/"><span class="fa fa-youtube-play"></span></a></li>
+          
+            <li><a href="../../../../https:/stackoverflow.com/"><span class="fa fa-stack-overflow"></span></a></li>
+          
+            <li><a href="../../../../https:/plus.google.com/"><span class="fa fa-google-plus"></span></a></li>
+          
+            <li><a href="../../../../atom.xml"><span class="fa fa-rss"></span></a></li>
+          
+        </ul>
+	    
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>ipsum dolor sit amet, <strong>consectetur adipiscing elit.</strong> Fusce eget urna vitae velit <em>eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque</em> penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+
+
+
+
+
+
+
+<script src="../../../../https:/cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+
+
+<script src="../../../../https:/cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+
+
+  
+<script src="../../../../https:/cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="../../../../js/typing.js"></script>
+
+<!--[if lt IE 9]>
+<script src="../../../../https:/cdn.jsdelivr.net/npm/html5shiv@3/dist/html5shiv.min.js"></script>
+<![endif]-->
+
+
+
+
+
+
+
+    </div>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

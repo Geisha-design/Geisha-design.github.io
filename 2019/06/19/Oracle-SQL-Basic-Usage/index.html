@@ -1,277 +1,240 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="pragma" content="no-cache">
-  <meta http-equiv="cache-control" content="no-cache">
-  <meta http-equiv="expires" content="0">
   
-  <title>Oracle SQL Basic Usage | 齐雨争 / Chingmy</title>
-  <meta name="author" content="齐雨争">
-  
-  <meta name="description" content="就是一个单纯的小男孩罢了">
-  
-  
+  <title>Oracle SQL Basic Usage | / Chingmy /</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <meta property="og:title" content="Oracle SQL Basic Usage"/>
-  <meta property="og:site_name" content="齐雨争 / Chingmy"/>
+  <meta name="description" content="Oracle SQL 复习笔记（进行中放弃了…）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oracle SQL Basic Usage">
+<meta property="og:url" content="http://example.com/2019/06/19/Oracle-SQL-Basic-Usage/index.html">
+<meta property="og:site_name" content="&#x2F; Chingmy &#x2F;">
+<meta property="og:description" content="Oracle SQL 复习笔记（进行中放弃了…）">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-06-19T12:00:00.000Z">
+<meta property="article:modified_time" content="2019-06-19T12:00:00.000Z">
+<meta property="article:author" content="齐雨争">
+<meta property="article:tag" content="Oracle">
+<meta property="article:tag" content="SQL">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+  
+  
+<link rel="stylesheet" href="../../../../css/typing.css">
 
   
-    <meta property="og:image" content=""/>
-  
+<link rel="stylesheet" href="../../../../css/donate.css">
 
   
   
-    <link href="/favicon.png" rel="icon">
+<link rel="stylesheet" href="../../../../https:/cdn.jsdelivr.net/npm/fork-awesome@1/css/fork-awesome.min.css">
+
   
   
-  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    
+<link rel="stylesheet" href="../../../../https:/cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
-  <script src="/js/jquery-2.0.3.min.js"></script>
-
-  <!-- analytics -->
   
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-70812759-1', 'auto');
-  ga('send', 'pageview');
-</script>
-
-
-
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?cb5448498d7169c668b07c2b255d62c1";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-
 <meta name="generator" content="Hexo 5.4.0"></head>
 
- <body>  
-  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-		<span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-	  <a class="navbar-brand" href="/">齐雨争 / Chingmy</a>
-      <div class="collapse navbar-collapse nav-menu">
-		<ul class="nav navbar-nav">
-		  
-		  <li>
-			<a href="/archives" title="All the articles.">
-			  <i class=""></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class=""></i>Categories
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/tags" title="All the tags.">
-			  <i class=""></i>Tags
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/about" title="About me.">
-			  <i class=""></i>About
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/atom.xml" title="Subscribe me.">
-			  <i class=""></i>RSS
-			</a>
-		  </li>
-		  
-		</ul>
-      </div>
-    </div> <!-- container -->
-</nav>
-<div class="clearfix"></div>
-
-  <div class="container">
-  	<div class="content">
-    	 
-
-
+  
+    
+      <body class="dark">
+    
+  
+      <div id="container" class="container">
+        <article id="post-Oracle-SQL-Basic-Usage" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <header id="header" class="header">
+  <nav class="mobile-nav">
+    <h1 class="nickname">QI YU ZHENG</h1>
+    <ul class="mobile-nav-menu">
+      <label for="mobile-menu-toggle"><a id="menu-button">&#9776; Menu</a></label>
+      <input type="checkbox" id="mobile-menu-toggle"/>
+      <ul class="mobile-nav-link">
+        
+        <a href="../index.html">Home</a>
+        
+        <a href="../archives">Archives</a>
+        
+        <a href="../about">About</a>
+        
+      </ul>
+    </ul>
+  </nav>
 	
-		<div class="page-header">
-			<h1> Oracle SQL Basic Usage</h1>
-		</div>
+		<nav id="main-nav" class="main-nav">
 	
-
-
-
-<div class="row post">
-	<!-- cols -->
 	
-	<div id="top_meta"></div>
-	<div class="col-md-9">
+	  <a class="main-nav-link" href="../index.html">Home</a>
 	
+	  <a class="main-nav-link" href="../archives">Archives</a>
+	
+	  <a class="main-nav-link" href="../about">About</a>
+	
+  </nav>
+</header>
 
-	<!-- content -->
-	<div class="mypage">		
-	  		
+  <hr/>
+  <div class="article-inner">
+    
 
-	  <p>Oracle SQL 复习笔记（<del>进行中</del>放弃了…）</p>
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Oracle SQL Basic Usage
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry typo" itemprop="articleBody">
+      
+        <p>Oracle SQL 复习笔记（<del>进行中</del>放弃了…）</p>
 <span id="more"></span>
 
 <h1 id="笔记-Cheat-Sheet"><a href="#笔记-Cheat-Sheet" class="headerlink" title="笔记 / Cheat Sheet"></a>笔记 / Cheat Sheet</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">concat(field<span class="operator">/</span>string, field<span class="operator">/</span>string, field<span class="operator">/</span>string...)</span><br><span class="line">length(field<span class="operator">/</span>string)</span><br><span class="line">round(number, [<span class="type">integer</span>])</span><br><span class="line"><span class="keyword">in</span>(string, string...)</span><br><span class="line"><span class="keyword">left</span>(field<span class="operator">/</span>string, unsignedInteger) <span class="operator">=</span><span class="operator">&gt;</span> js <span class="operator">=</span><span class="operator">&gt;</span> field<span class="operator">/</span>string.<span class="built_in">substring</span>(<span class="number">0</span>, unsignedInteger)</span><br><span class="line">replace(field<span class="operator">/</span>string, searchString, replacementString)</span><br><span class="line"><span class="keyword">where</span>, <span class="keyword">or</span>, xor, <span class="keyword">and</span>, <span class="operator">!=</span> (<span class="operator">&lt;&gt;</span>), <span class="keyword">like</span>, <span class="string">&#x27;_%&#x27;</span>, <span class="keyword">between</span> ?number <span class="keyword">and</span> ?number (<span class="keyword">both</span> number inclusive), <span class="keyword">not</span> ?operator</span><br><span class="line"><span class="built_in">sum</span>(field)</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> field <span class="operator">=</span><span class="operator">&gt;</span> non<span class="operator">-</span>repeated<span class="operator">/</span><span class="keyword">unique</span> <span class="keyword">value</span></span><br><span class="line"><span class="comment">-- inline comment, a space after --</span></span><br><span class="line"><span class="comment">/* mutiple-line comment, a space at the very beginning and ending */</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span></span><br><span class="line"><span class="keyword">all</span>(<span class="keyword">table</span>) <span class="operator">=</span><span class="operator">&gt;</span> <span class="keyword">where</span> field <span class="operator">&gt;</span> <span class="keyword">all</span>(<span class="keyword">select</span> num <span class="keyword">from</span> nums) <span class="comment">-- find something with a field&#x27;s number larger than all the num from nums</span></span><br><span class="line"><span class="built_in">count</span>(field)</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> field</span><br><span class="line"><span class="keyword">having</span> <span class="comment">-- must only be used after &#x27;group by&#x27; that can use sum(), count(), etc.</span></span><br></pre></td></tr></table></figure>
-	  
-	</div>
 
-	<div>
-  	<center>
-	<div class="pagination">
-
-    
-    
-    <a href="/2019/12/02/Markdown-Basic-Syntax/" type="button" class="btn btn-default"><i
-                class="fa fa-arrow-circle-o-left"></i> Prev</a>
-    
-
-    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
-    
-    <a href="/2019/02/21/旧版日记仿markdown编译代码/" type="button" class="btn btn-default ">Next<i
-                class="fa fa-arrow-circle-o-right"></i></a>
-    
-
-    
-</div>
-
-    </center>
-	</div>
-	
-	<!-- comment -->
-	
-<section id="comment">
-    <h2 class="title">Comments</h2>
-
-    
-</section>
-
-
-	</div> <!-- col-md-9/col-md-12 -->
-		
-	
-	<div id="side_meta">
-		<div class="col-md-3" id="post_meta"> 
-
-	<!-- date -->
-	
-	<div class="meta-widget">
-	<i class="fa fa-clock-o"></i>
-	2019-06-19 
-	</div>
-	
-
-	<!-- categories -->
-    
-	<div class="meta-widget">
-	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
-    <ul id="categorys" class="tag_box list-unstyled collapse in">
-          
-  <li>
-    <li><a href="/categories/Note/">Note<span>2</span></a></li> <li><a href="/categories/Note/SQL/">SQL<span>1</span></a></li>
-  </li>
-
-    </ul>
-	</div>
-	
-
-	<!-- tags -->
-	
-	<div class="meta-widget">
-	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
-    <ul id="tags" class="tag_box list-unstyled collapse in">	  
-	    
-  <li><a href="/tags/Oracle/">Oracle<span>1</span></a></li> <li><a href="/tags/SQL/">SQL<span>1</span></a></li>
-    </ul>
-	</div>
-		
-
-	<!-- toc -->
-	<div class="meta-widget">
-	
-	</div>
-	
-    <hr>
-	
-</div><!-- col-md-3 -->
-
-	</div>
-		
-
-</div><!-- row -->
-
-
-
-	</div>
-  </div>
-  <div class="container-narrow">
-  <footer> <p>
-  &copy; 2022 齐雨争
-  
-      with help from <a href="http://hexo.io/" target="_blank">Hexo</a>,<a target="_blank" rel="noopener" href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>,<a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a> and <a href="http://getbootstrap.com/" target="_blank">BOOTSTRA.386</a>. 
-     <br> Theme by <a target="_blank" rel="noopener" href="http://github.com/wzpan/hexo-theme-freemind/">Freemind.386</a>.    
-</p>
- </footer>
-</div> <!-- container-narrow -->
-  
-
-
-  
-<a id="gotop" href="#">   
-  <span>⬆︎TOP</span>
+      
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="" class="article-date">
+  <time class="dt-published" datetime="2019-06-19T12:00:00.000Z" itemprop="datePublished">2019-06-19</time>
 </a>
 
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/main.js"></script>
-<script src="/js/search.js"></script> 
+        </li>
+        
+          <li>
+            <span class="label">Category:</span>
+            
+  <div class="article-category">
+    <a class="article-category-link" href="../../../../categories/Note/">Note</a>/<a class="article-category-link" href="../../../../categories/Note/SQL/">SQL</a>
+  </div>
 
 
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
-</script>
+          </li>
+        
+        
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/Oracle/" rel="tag">Oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../../../tags/SQL/" rel="tag">SQL</a></li></ul>
+
+
+          </li>
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="../../../12/02/Markdown-Basic-Syntax/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Markdown Basic Syntax
+        
+      </div>
+    </a>
+  
+  
+    <a href="../../../02/21/%E6%97%A7%E7%89%88%E6%97%A5%E8%AE%B0%E4%BB%BFmarkdown%E7%BC%96%E8%AF%91%E4%BB%A3%E7%A0%81/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">旧版日记仿markdown编译代码</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
 
 
 
-   <script type="text/javascript">      
-     var search_path = "search.xml";
-	 if (search_path.length == 0) {
-	 	search_path = "search.xml";
-	 }
-	 var path = "/" + search_path;
-     searchFunc(path, 'local-search-input', 'local-search-result');
-   </script>
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
-   </html>
+
+
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+        <ul class="footer-links">
+          
+            <li><a href="../../../../archives/"><span class="fa fa-book"></span></a></li>
+          
+            <li><a href="../../../../https:/github.com/geekplux/hexo-theme-typing"><span class="fa fa-globe"></span></a></li>
+          
+            <li><a href="../../../../https:/twitter.com/"><span class="fa fa-twitter"></span></a></li>
+          
+            <li><a href="../../../../https:/github.com/"><span class="fa fa-github-alt"></span></a></li>
+          
+            <li><a href="../../../../https:/www.youtube.com/"><span class="fa fa-youtube-play"></span></a></li>
+          
+            <li><a href="../../../../https:/stackoverflow.com/"><span class="fa fa-stack-overflow"></span></a></li>
+          
+            <li><a href="../../../../https:/plus.google.com/"><span class="fa fa-google-plus"></span></a></li>
+          
+            <li><a href="../../../../atom.xml"><span class="fa fa-rss"></span></a></li>
+          
+        </ul>
+	    
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>ipsum dolor sit amet, <strong>consectetur adipiscing elit.</strong> Fusce eget urna vitae velit <em>eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque</em> penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+
+
+
+
+
+
+
+<script src="../../../../https:/cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+
+
+<script src="../../../../https:/cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+
+
+  
+<script src="../../../../https:/cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="../../../../js/typing.js"></script>
+
+<!--[if lt IE 9]>
+<script src="../../../../https:/cdn.jsdelivr.net/npm/html5shiv@3/dist/html5shiv.min.js"></script>
+<![endif]-->
+
+
+
+
+
+
+
+    </div>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

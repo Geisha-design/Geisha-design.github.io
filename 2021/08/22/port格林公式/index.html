@@ -1,141 +1,138 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="pragma" content="no-cache">
-  <meta http-equiv="cache-control" content="no-cache">
-  <meta http-equiv="expires" content="0">
   
-  <title>格林公式 | 齐雨争 / Chingmy</title>
-  <meta name="author" content="齐雨争">
-  
-  <meta name="description" content="就是一个单纯的小男孩罢了">
-  
-  
+  <title>格林公式 | / Chingmy /</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <meta property="og:title" content="格林公式"/>
-  <meta property="og:site_name" content="齐雨争 / Chingmy"/>
+  <meta name="description" content="众所周知，格林公式作为KO与路径无关的第二类曲线积分的杀招，是秀的。但至于为什么适用于路径无关的情况、路径无关的判据为什么是  ，为什么线积分能够等效成一个二重积分。很多人一脸黑人问号。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="格林公式">
+<meta property="og:url" content="http://example.com/2021/08/22/port%E6%A0%BC%E6%9E%97%E5%85%AC%E5%BC%8F/index.html">
+<meta property="og:site_name" content="&#x2F; Chingmy &#x2F;">
+<meta property="og:description" content="众所周知，格林公式作为KO与路径无关的第二类曲线积分的杀招，是秀的。但至于为什么适用于路径无关的情况、路径无关的判据为什么是  ，为什么线积分能够等效成一个二重积分。很多人一脸黑人问号。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cfrac+%7B%5Cpartial+Q%7D%7B%5Cpartial+X%7D=%5Cfrac+%7B%5Cpartial+P%7D%7B%5Cpartial+Y%7D++">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-9f93f53a70b68691567ff3aee9f3eb98_1440w.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-077e73d374f5f2bcac1f35003a79267a_1440w.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=+F=%5Ccfrac%7BGMm%7D%7Br%5E2%7D+">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=r%5E2=x%5E2+y%5E2+">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=F=%5Ccfrac%7BGMm%7D%7Bx%5E2+y%5E2%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=+Fsin%5Ctheta=F_%7BX%7D+">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=Fcos%5Ctheta=F_%7BY%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=W_%7BL%7D=%5Cint_%7BL%7DFsin%5Ctheta+dx+Fcos%5Ctheta+dy">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=W_%7BL%7D=%5Cint_%7BL%7DPdx+Qdy">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=P=Fsin%5Ctheta=%5Ccfrac%7BGMmx%7D%7B%7B%5Cleft(+x%5E2+y%5E2+%5Cright)%7D%5E%7B%5Cfrac%7B3%7D%7B2%7D%7D%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=Q=Fcos%5Ctheta=%5Ccfrac%7BGMmy%7D%7B%7B%5Cleft(+x%5E2+y%5E2+%5Cright)%7D%5E%7B%5Cfrac%7B3%7D%7B2%7D%7D%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=sin%5Ctheta=%5Cfrac%7Bx%7D%7B%5Csqrt%7Bx%5E2+y%5E2%7D%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=cos%5Ctheta=%5Cfrac%7By%7D%7B%5Csqrt%7Bx%5E2+y%5E2%7D%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cfrac+%7B%5Cpartial+P%7D%7B%5Cpartial+Y%7D++">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cfrac+%7B%5Cpartial+Q%7D%7B%5Cpartial+X%7D">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-d33207ca31f956093be6a87a4a5ab300_1440w.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-bdf0fc027e36156f6c69215dd8639d90_1440w.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-18dc2d9fbb7b4c3673ff15961a28981f_1440w.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-9de83db33fce010c7aa4b0d1554600f3_1440w.png">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-b1ca3718675bd3757a053f6029edf152_1440w.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-f6abecdc4f4e20502687c41fc194c5d4_1440w.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-5cd78bb4c8bcd4b109537287251367e8_1440w.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=W_%7BL_1%7D=%5Cint_%7Ba_1%7D%5E%7Ba_2%7DP(x,b_1)dx">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=W_%7BL_2%7D=%5Cint_%7Bb_1%7D%5E%7Bb_2%7DQ(a_2,y)dy">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=W_%7BL_3%7D=%5Cint_%7Ba_2%7D%5E%7Ba_1%7DP(x,b_2)dx">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=W_%7BL_4%7D=%5Cint_%7Bb_2%7D%5E%7Bb_1%7DQ(a_1,y)dy">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=W=%5Cint_%7Ba_1%7D%5E%7Ba_2%7D%5BP(x,b_1)-P(x,b_2)%5Ddx+%5Cint_%7Bb_1%7D%5E%7Bb_2%7D%5BQ(a_2,y)-Q(a_1,y)%5Ddy">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Clim_%7Bx%5Cto%7Bx_0%7D%7D+%5Cfrac%7Bf(x,y_0)-f(x_0,y_0)%7D+%7Bx-x_%7B0%7D%7D=f%27(x_%7B0%7D,y_%7B0%7D)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=b1-b2%5Crightarrow+%7B0%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=P(x,b_1)-P(x,b_2)=%5Cint_%7Bb_2%7D%5E%7Bb_1%7DP%27_y(x,y)dy=%5Cint_%7Bb_2%7D%5E%7Bb_1%7D%7B%5Cfrac+%7B%5Cpartial+P%7D%7B%5Cpartial+Y%7D%7Ddy">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=Q(a_2,y)-Q(a_1,y)=%5Cint_%7Ba_1%7D%5E%7Ba_2%7DQ%27_x(x,y)dy=%5Cint_%7Ba_1%7D%5E%7Ba_2%7D%7B%5Cfrac+%7B%5Cpartial+Q%7D%7B%5Cpartial+X%7D%7Ddx">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=W=%5Cint_%7Ba_1%7D%5E%7Ba_2%7D%5Cint_%7Bb_2%7D%5E%7Bb_1%7D%5Cfrac+%7B%5Cpartial+P%7D%7B%5Cpartial+Y%7Ddxdy+%5Cint_%7Ba_1%7D%5E%7Ba_2%7D%5Cint_%7Bb_1%7D%5E%7Bb_2%7D%5Cfrac+%7B%5Cpartial+Q%7D%7B%5Cpartial+X%7Ddxdy">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=W=%5Cint_%7Ba_1%7D%5E%7Ba_2%7D%5Cint_%7Bb_1%7D%5E%7Bb_2%7D%5B%5Cfrac+%7B%5Cpartial+Q%7D%7B%5Cpartial+X%7D-%5Cfrac+%7B%5Cpartial+P%7D%7B%5Cpartial+Y%7D%5Ddxdy=%5Ciint_%7BD_1%7D%5B%5Cfrac+%7B%5Cpartial+Q%7D%7B%5Cpartial+X%7D-%5Cfrac+%7B%5Cpartial+P%7D%7B%5Cpartial+Y%7D%5Dd%5Csigma">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Coint_%7BL%7DPdx+Qdy=%5Ciint_D%5B%5Cfrac+%7B%5Cpartial+Q%7D%7B%5Cpartial+X%7D-%5Cfrac+%7B%5Cpartial+P%7D%7B%5Cpartial+Y%7D%5Dd%5Csigma">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cfrac+%7B%5Cpartial+Q%7D%7B%5Cpartial+X%7D=%5Cfrac+%7B%5Cpartial+P%7D%7B%5Cpartial+Y%7D+">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cfrac+%7B%5Cpartial+Q%7D%7B%5Cpartial+X%7D=%5Cfrac+%7B%5Cpartial+P%7D%7B%5Cpartial+Y%7D+">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-411574e554c30da628a107c271e75fd6_1440w.jpg">
+<meta property="article:published_time" content="2021-08-22T07:08:03.000Z">
+<meta property="article:modified_time" content="2022-01-04T13:49:04.691Z">
+<meta property="article:author" content="齐雨争">
+<meta property="article:tag" content="java leetcode mysql hexo Deemo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.zhihu.com/equation?tex=%5Cfrac+%7B%5Cpartial+Q%7D%7B%5Cpartial+X%7D=%5Cfrac+%7B%5Cpartial+P%7D%7B%5Cpartial+Y%7D++">
+  
+  
+    <link rel="shortcut icon" href="../../../../favicon.ico">
+  
+  
+<link rel="stylesheet" href="../../../../css/typing.css">
 
   
-    <meta property="og:image" content=""/>
-  
+<link rel="stylesheet" href="../../../../css/donate.css">
 
   
   
-    <link href="/favicon.png" rel="icon">
+<link rel="stylesheet" href="../../../../https:/cdn.jsdelivr.net/npm/fork-awesome@1/css/fork-awesome.min.css">
+
   
   
-  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    
+<link rel="stylesheet" href="../../../../https:/cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
-  <script src="/js/jquery-2.0.3.min.js"></script>
-
-  <!-- analytics -->
   
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-70812759-1', 'auto');
-  ga('send', 'pageview');
-</script>
-
-
-
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?cb5448498d7169c668b07c2b255d62c1";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-
 <meta name="generator" content="Hexo 5.4.0"></head>
 
- <body>  
-  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-		<span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-	  <a class="navbar-brand" href="/">齐雨争 / Chingmy</a>
-      <div class="collapse navbar-collapse nav-menu">
-		<ul class="nav navbar-nav">
-		  
-		  <li>
-			<a href="/archives" title="All the articles.">
-			  <i class=""></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class=""></i>Categories
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/tags" title="All the tags.">
-			  <i class=""></i>Tags
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/about" title="About me.">
-			  <i class=""></i>About
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/atom.xml" title="Subscribe me.">
-			  <i class=""></i>RSS
-			</a>
-		  </li>
-		  
-		</ul>
-      </div>
-    </div> <!-- container -->
-</nav>
-<div class="clearfix"></div>
-
-  <div class="container">
-  	<div class="content">
-    	 
-
-
+  
+    
+      <body class="dark">
+    
+  
+      <div id="container" class="container">
+        <article id="post-port格林公式" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <header id="header" class="header">
+  <nav class="mobile-nav">
+    <h1 class="nickname">QI YU ZHENG</h1>
+    <ul class="mobile-nav-menu">
+      <label for="mobile-menu-toggle"><a id="menu-button">&#9776; Menu</a></label>
+      <input type="checkbox" id="mobile-menu-toggle"/>
+      <ul class="mobile-nav-link">
+        
+        <a href="../index.html">Home</a>
+        
+        <a href="../archives">Archives</a>
+        
+        <a href="../about">About</a>
+        
+      </ul>
+    </ul>
+  </nav>
 	
-		<div class="page-header">
-			<h1> 格林公式</h1>
-		</div>
+		<nav id="main-nav" class="main-nav">
 	
-
-
-
-<div class="row post">
-	<!-- cols -->
 	
-	<div id="top_meta"></div>
-	<div class="col-md-9">
+	  <a class="main-nav-link" href="../index.html">Home</a>
 	
+	  <a class="main-nav-link" href="../archives">Archives</a>
+	
+	  <a class="main-nav-link" href="../about">About</a>
+	
+  </nav>
+</header>
 
-	<!-- content -->
-	<div class="mypage">		
-	  		
+  <hr/>
+  <div class="article-inner">
+    
 
-	  <p>众所周知，格林公式作为KO与路径无关的第二类曲线积分的杀招，是秀的。但至于<strong>为什么适用于路径无关的情况、路径无关的判据为什么是 <img src="https://www.zhihu.com/equation?tex=%5Cfrac+%7B%5Cpartial+Q%7D%7B%5Cpartial+X%7D=%5Cfrac+%7B%5Cpartial+P%7D%7B%5Cpartial+Y%7D++" alt="[公式]"> ，为什么线积分能够等效成一个二重积分</strong>。很多人一脸黑人问号。<span id="more"></span></p>
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      格林公式
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry typo" itemprop="articleBody">
+      
+        <p>众所周知，格林公式作为KO与路径无关的第二类曲线积分的杀招，是秀的。但至于<strong>为什么适用于路径无关的情况、路径无关的判据为什么是 <img src="https://www.zhihu.com/equation?tex=%5Cfrac+%7B%5Cpartial+Q%7D%7B%5Cpartial+X%7D=%5Cfrac+%7B%5Cpartial+P%7D%7B%5Cpartial+Y%7D++" alt="[公式]"> ，为什么线积分能够等效成一个二重积分</strong>。很多人一脸黑人问号。<span id="more"></span></p>
 <p><strong>煜神学长（考研数学148分天赋选手）和Kaysen学长</strong>收到了此类SOS信息，<strong>故作本文精讲格林公式的适用条件，从物理本质上吃透该知识点，达到小周天境界。</strong></p>
 <p><img src="https://pic1.zhimg.com/80/v2-9f93f53a70b68691567ff3aee9f3eb98_1440w.jpg" alt="img"></p>
 <p><strong>在讲格林公式的路径无关前，先引入一个重力场</strong>，假设在屋顶（a点）玩竹蜻蜓的大雄被妈妈喊回去写作业（b点），情况1，竹蜻蜓不好使了，大雄一屁股径直掉到地上，情况2，隔壁的静香在洗澡，害大雄拐了个弯，情况3，风来了，大雄被18级大风吹走了，绕地球转了一圈，<strong>不管大雄是哪种路径，只要a,b固定，重力这家伙对大雄做的功都是一毛一样。</strong></p>
@@ -190,131 +187,135 @@ var _hmt = _hmt || [];
 <p>4，对问题3进行延伸，既然格林公式能把线积分转化成二重积分，<strong>闭曲线内的区域用无数个小方块分割，小方块是可以cover无定义点的，那么只需要计算小方块四条边上的功，不就完美把无定义点的干扰排除了么？那为什么还需要挖洞呢？</strong></p>
 <p><strong>希望本文能够启发大家的数学反思，针对数学考点的反思步骤为：</strong></p>
 <p><strong>运用公式的本质是？有哪些条件？为什么需要这些条件？条件为什么成立？使用这些条件时有哪些技巧？一步步深挖，将数学彻底建立在反思之上，才能够达到深度理解，解题才能才能得心应手！加油！</strong></p>
-	  
-	</div>
 
-	<div>
-  	<center>
-	<div class="pagination">
-
-    
-    
-    <a href="/2021/08/22/port“深入理解全微分”/" type="button" class="btn btn-default"><i
-                class="fa fa-arrow-circle-o-left"></i> Prev</a>
-    
-
-    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
-    
-    <a href="/2021/08/21/port“字体”/" type="button" class="btn btn-default ">Next<i
-                class="fa fa-arrow-circle-o-right"></i></a>
-    
-
-    
-</div>
-
-    </center>
-	</div>
-	
-	<!-- comment -->
-	
-<section id="comment">
-    <h2 class="title">Comments</h2>
-
-    
-</section>
-
-
-	</div> <!-- col-md-9/col-md-12 -->
-		
-	
-	<div id="side_meta">
-		<div class="col-md-3" id="post_meta"> 
-
-	<!-- date -->
-	
-	<div class="meta-widget">
-	<i class="fa fa-clock-o"></i>
-	2021-08-22 
-	</div>
-	
-
-	<!-- categories -->
-    
-	<div class="meta-widget">
-	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
-    <ul id="categorys" class="tag_box list-unstyled collapse in">
-          
-  <li>
-    <li><a href="/categories/高等数学/">高等数学<span>3</span></a></li>
-  </li>
-
-    </ul>
-	</div>
-	
-
-	<!-- tags -->
-		
-
-	<!-- toc -->
-	<div class="meta-widget">
-	
-	</div>
-	
-    <hr>
-	
-</div><!-- col-md-3 -->
-
-	</div>
-		
-
-</div><!-- row -->
-
-
-
-	</div>
-  </div>
-  <div class="container-narrow">
-  <footer> <p>
-  &copy; 2022 齐雨争
-  
-      with help from <a href="http://hexo.io/" target="_blank">Hexo</a>,<a target="_blank" rel="noopener" href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>,<a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a> and <a href="http://getbootstrap.com/" target="_blank">BOOTSTRA.386</a>. 
-     <br> Theme by <a target="_blank" rel="noopener" href="http://github.com/wzpan/hexo-theme-freemind/">Freemind.386</a>.    
-</p>
- </footer>
-</div> <!-- container-narrow -->
-  
-
-
-  
-<a id="gotop" href="#">   
-  <span>⬆︎TOP</span>
+      
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="" class="article-date">
+  <time class="dt-published" datetime="2021-08-22T07:08:03.000Z" itemprop="datePublished">2021-08-22</time>
 </a>
 
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/main.js"></script>
-<script src="/js/search.js"></script> 
+        </li>
+        
+          <li>
+            <span class="label">Category:</span>
+            
+  <div class="article-category">
+    <a class="article-category-link" href="../../../../categories/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/">高等数学</a>
+  </div>
 
 
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
-</script>
+          </li>
+        
+        
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <a href="../port%E2%80%9C%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%85%A8%E5%BE%AE%E5%88%86%E2%80%9D/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          深入理解全微分
+        
+      </div>
+    </a>
+  
+  
+    <a href="../../21/port%E2%80%9C%E5%AD%97%E4%BD%93%E2%80%9D/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">主题字体的修改</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
 
 
 
-   <script type="text/javascript">      
-     var search_path = "search.xml";
-	 if (search_path.length == 0) {
-	 	search_path = "search.xml";
-	 }
-	 var path = "/" + search_path;
-     searchFunc(path, 'local-search-input', 'local-search-result');
-   </script>
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
-   </html>
+
+
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+        <ul class="footer-links">
+          
+            <li><a href="../../../../archives/"><span class="fa fa-book"></span></a></li>
+          
+            <li><a href="../../../../https:/github.com/geekplux/hexo-theme-typing"><span class="fa fa-globe"></span></a></li>
+          
+            <li><a href="../../../../https:/twitter.com/"><span class="fa fa-twitter"></span></a></li>
+          
+            <li><a href="../../../../https:/github.com/"><span class="fa fa-github-alt"></span></a></li>
+          
+            <li><a href="../../../../https:/www.youtube.com/"><span class="fa fa-youtube-play"></span></a></li>
+          
+            <li><a href="../../../../https:/stackoverflow.com/"><span class="fa fa-stack-overflow"></span></a></li>
+          
+            <li><a href="../../../../https:/plus.google.com/"><span class="fa fa-google-plus"></span></a></li>
+          
+            <li><a href="../../../../atom.xml"><span class="fa fa-rss"></span></a></li>
+          
+        </ul>
+	    
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>ipsum dolor sit amet, <strong>consectetur adipiscing elit.</strong> Fusce eget urna vitae velit <em>eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque</em> penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+
+
+
+
+
+
+
+<script src="../../../../https:/cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+
+
+<script src="../../../../https:/cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+
+
+  
+<script src="../../../../https:/cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="../../../../js/typing.js"></script>
+
+<!--[if lt IE 9]>
+<script src="../../../../https:/cdn.jsdelivr.net/npm/html5shiv@3/dist/html5shiv.min.js"></script>
+<![endif]-->
+
+
+
+
+
+
+
+    </div>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
