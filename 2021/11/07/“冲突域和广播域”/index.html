@@ -1,136 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
-    <!DOCTYPE html>
 <html>
 
+
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=426342234&auto=1&height=66"></iframe>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script> 
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_click.js"></script>
+
+
+
+  <!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   
   <title>冲突域和广播域 - / Chingmy /</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   
-    <link rel="shortcut icon" href="../../../../favicon.png">
+  <meta name="keywords" content=计算机网络>
   
-  
-    <link rel='manifest' href='/manifest.json'>
-  
-
-  
-<link rel="stylesheet" href="../../../../css/var.css">
-
-  
-<link rel="stylesheet" href="../../../../css/main.css">
-
-  
-<link rel="stylesheet" href="../../../../css/typography.css">
-
-  
-<link rel="stylesheet" href="../../../../css/code-highlighting.css">
-
-  
-<link rel="stylesheet" href="../../../../css/components.css">
-
-  
-<link rel="stylesheet" href="../../../../css/nav.css">
-
-  
-<link rel="stylesheet" href="../../../../css/paginator.css">
-
-  
-<link rel="stylesheet" href="../../../../css/footer.css">
-
-  
-<link rel="stylesheet" href="../../../../css/post-list.css">
-
-  
-<link rel="stylesheet" href="../../../../css/waline.css">
-
+    <meta name="description" content="就是一个单纯的小男孩罢了">
   
   
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.02">
   
-<link rel="stylesheet" href="../../../../css/post.css">
-
+  
+    <link rel="alternate" href="../../../../atom.xml " title="/ Chingmy /" type="application/atom+xml">
   
 
   
+<link rel="stylesheet" href="../../../../css/style.css">
+
 <meta name="generator" content="Hexo 5.4.0"></head>
-    <script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
 
-<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script>
 
-    <body>
-        <nav id="theme-nav">
-    <div class="inner">
-        <a class="title" href="/">帅哥的博客</a>
-        <div class="nav-arrow"></div>
-        <div class="nav-items">
-            <a class="nav-item nav-item-home" href="/">Home</a>
-            
-            
-            <a class="nav-item" href="../../../../archives">文章</a>
-            
-            
-            
-            <a class="nav-item" href="../../../../friends">朋友们的友链</a>
-            
-            
-            
-            <a class="nav-item" href="../../../../examples">维护的大家</a>
-            
-            
-            
-            <a class="nav-item" href="../../../../https:/github.com/Geisha-design">开源项目</a>
-            
-            
-            
-            <a class="nav-item" href="../../../../about">关于我</a>
-            
-            
-            
-            <a class="nav-item nav-item-github nav-item-icon" href="../../../../https:/github.com/Geisha-design" target="_blank">&nbsp;</a>
-            
-            
-            
-            <a class="nav-item nav-item-codepen nav-item-icon" href="../../../../https:/codepen.io/mrwillcom" target="_blank">&nbsp;</a>
-            
-            
-            
-            <a class="nav-item nav-item-patreon nav-item-icon" href="../../../../https:/www.patreon.com/MrWillCom" target="_blank">&nbsp;</a>
-            
-            
-        </div>
-    </div>
-</nav>
-        <article class="post">
-    <div class="meta">
-        
-        <div class="date" id="date">
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            <span>November</span>
-            
-            
-            <span>7,</span>
-            <span>2021</span>
-        </div>
-        
 
-        <h2 class="title">冲突域和广播域</h2>
-    </div>
-
-    <div class="divider"></div>
-
-    <div class="content">
-        <p>形象比喻：局域网好比一栋大楼，每个人（好比主机）有自己的房间（房间就好比网卡，房号就是物理地址，即MAC地址），里面的人（主机）人手一个对讲机，由于工作在同一频道，所以一个人说话，其他人都能听到，这就是广播（向所有主机发送信息包），只有目标才会回应，其他人虽然听见但是不理（丢弃包），而这些能听到广播的所有对讲机设备就够成了一个广播域。而这些对讲机就是集线器（HUB），每个对讲机都像是集线器上的端口，大家都知道对讲机在说话时是不能收听的，必须松开对讲键才能收听，这种同一时刻只能收或者发的工作模式就是半双工。而且对讲机同一时刻只能有一个人说话才能听清楚，如果两个或者更多的人一起说就会产生冲突，都没法听清楚，所以这就构成了一个冲突域。</p>
+  <body>
+    <div class="container">
+      <header class="header">
+  <div class="blog-title">
+    <a href="../../../../index.html" class="logo">/ Chingmy /</a>
+    <div class="subtitle">穿梭时间的画面的钟，从反方向开始移动</div>
+  </div>
+  <nav class="navbar">
+    <ul class="menu">
+      
+        <li class="menu-item">
+          <a href="../../../../index.html" class="menu-item-link">Home</a>
+        </li>
+      
+        <li class="menu-item">
+          <a href="../../../../archives" class="menu-item-link">Archives</a>
+        </li>
+      
+        <li class="menu-item">
+          <a href="../../../../about" class="menu-item-link">About</a>
+        </li>
+      
+        <li class="menu-item">
+          <a href="../../../../life" class="menu-item-link">life</a>
+        </li>
+      
+    </ul>
+  </nav>
+</header>
+<article class="post">
+  <div class="post-title">
+    <h1 class="article-title">冲突域和广播域</h1>
+  </div>
+   <div class="post-meta">
+    <span class="post-time">2021-11-07</span>
+  </div>
+  <div class="post-content">
+    <p>形象比喻：局域网好比一栋大楼，每个人（好比主机）有自己的房间（房间就好比网卡，房号就是物理地址，即MAC地址），里面的人（主机）人手一个对讲机，由于工作在同一频道，所以一个人说话，其他人都能听到，这就是广播（向所有主机发送信息包），只有目标才会回应，其他人虽然听见但是不理（丢弃包），而这些能听到广播的所有对讲机设备就够成了一个广播域。而这些对讲机就是集线器（HUB），每个对讲机都像是集线器上的端口，大家都知道对讲机在说话时是不能收听的，必须松开对讲键才能收听，这种同一时刻只能收或者发的工作模式就是半双工。而且对讲机同一时刻只能有一个人说话才能听清楚，如果两个或者更多的人一起说就会产生冲突，都没法听清楚，所以这就构成了一个冲突域。</p>
  <span id="more"></span>
 
 <p>冲突域<br>      冲突域就是连接在同一导线上的所有工作站的集合，或者说是同一物理网段上所有节点的集合，或以太网上竞争同一带宽的节点集合.</p>
@@ -163,76 +114,35 @@
 <p>第二层设备（网桥、第二层交换机）能划分冲突域，不能划分广播域。</p>
 <p>第三层设备（路由器）既能划分冲突域，又能划分广播域。</p>
 
-    </div>
-
-    <div class="about">
-        <h1>About this Post</h1>
-        <p>This post is written by 齐雨争, licensed under <a
-                target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a>.</p>
-    </div>
-
+  </div>
+  <div class="post-footer">
     
-        
+      <ul class="post-tag-list" itemprop="keywords"><li class="post-tag-list-item"><a class="post-tag-list-link" href="../../../../tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
     
+
+    <a href="#top" class="top">Back to Top</a>
+  </div>
 </article>
-        <footer>
-    <div class="inner">
-        <div class="links">
-            
-            <div class="group">
-                <h4 class="title">Blog</h4>
-                
-                <a href="/" class="item" target="_blank">Blog</a>
-                
-                <a href="/archives" class="item" target="_blank">Archives</a>
-                
-                <a href="/friends" class="item" target="_blank">Friends</a>
-                
-                <a href="/projects" class="item" target="_blank">Projects</a>
-                
-                <a href="/resume" class="item" target="_blank">Resume</a>
-                
-                <a href="/about" class="item" target="_blank">About</a>
-                
-                <a href="/atom.xml" class="item" target="_blank">RSS</a>
-                
-            </div>
-            
-            <div class="group">
-                <h4 class="title">Projects</h4>
-                
-                <a href="https://github.com/transmister" class="item" target="_blank">Transmister</a>
-                
-                <a href="https://github.com/MrWillCom/css-and-js-windows-uwp-xaml-controls" class="item" target="_blank">CSS&amp;JS Windows UWP XAML Controls</a>
-                
-                <a href="https://github.com/MrWillCom/hexo-theme-cupertino" class="item" target="_blank">Theme Cupertino</a>
-                
-                <a href="https://github.com/MrWillCom/github-dark-mode" class="item" target="_blank">GitHub Dark Mode</a>
-                
-            </div>
-            
-            <div class="group">
-                <h4 class="title">Me</h4>
-                
-                <a href="https://github.com/MrWillCom" class="item" target="_blank">GitHub</a>
-                
-                <a href="https://codepen.io/mrwillcom" class="item" target="_blank">CodePen</a>
-                
-                <a href="https://www.patreon.com/MrWillCom" class="item" target="_blank">Patreon</a>
-                
-                <a href="mailto:mr.will.com@outlook.com" class="item" target="_blank">Email</a>
-                
-            </div>
-            
-        </div>
-        &copy; 2022 齐雨争<br />
-        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
+<footer>
+  &copy; 2022
+  <span class="author">
+    齐雨争
+  </span>
 </footer>
+    </div>
 
-        
-<script src="../../../../js/main.js"></script>
 
-        
-    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+
+
+
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+
+
+
+
+
 </html>

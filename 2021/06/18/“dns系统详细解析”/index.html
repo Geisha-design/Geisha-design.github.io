@@ -1,136 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
-    <!DOCTYPE html>
 <html>
 
+
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=426342234&auto=1&height=66"></iframe>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script> 
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_click.js"></script>
+
+
+
+  <!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   
   <title>DNS系统详细解析 - / Chingmy /</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   
-    <link rel="shortcut icon" href="../../../../favicon.png">
+  <meta name="keywords" content=计算机网络>
   
-  
-    <link rel='manifest' href='/manifest.json'>
-  
-
-  
-<link rel="stylesheet" href="../../../../css/var.css">
-
-  
-<link rel="stylesheet" href="../../../../css/main.css">
-
-  
-<link rel="stylesheet" href="../../../../css/typography.css">
-
-  
-<link rel="stylesheet" href="../../../../css/code-highlighting.css">
-
-  
-<link rel="stylesheet" href="../../../../css/components.css">
-
-  
-<link rel="stylesheet" href="../../../../css/nav.css">
-
-  
-<link rel="stylesheet" href="../../../../css/paginator.css">
-
-  
-<link rel="stylesheet" href="../../../../css/footer.css">
-
-  
-<link rel="stylesheet" href="../../../../css/post-list.css">
-
-  
-<link rel="stylesheet" href="../../../../css/waline.css">
-
+    <meta name="description" content="就是一个单纯的小男孩罢了">
   
   
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.02">
   
-<link rel="stylesheet" href="../../../../css/post.css">
-
+  
+    <link rel="alternate" href="../../../../atom.xml " title="/ Chingmy /" type="application/atom+xml">
   
 
   
+<link rel="stylesheet" href="../../../../css/style.css">
+
 <meta name="generator" content="Hexo 5.4.0"></head>
-    <script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
 
-<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script>
 
-    <body>
-        <nav id="theme-nav">
-    <div class="inner">
-        <a class="title" href="/">帅哥的博客</a>
-        <div class="nav-arrow"></div>
-        <div class="nav-items">
-            <a class="nav-item nav-item-home" href="/">Home</a>
-            
-            
-            <a class="nav-item" href="../../../../archives">文章</a>
-            
-            
-            
-            <a class="nav-item" href="../../../../friends">朋友们的友链</a>
-            
-            
-            
-            <a class="nav-item" href="../../../../examples">维护的大家</a>
-            
-            
-            
-            <a class="nav-item" href="../../../../https:/github.com/Geisha-design">开源项目</a>
-            
-            
-            
-            <a class="nav-item" href="../../../../about">关于我</a>
-            
-            
-            
-            <a class="nav-item nav-item-github nav-item-icon" href="../../../../https:/github.com/Geisha-design" target="_blank">&nbsp;</a>
-            
-            
-            
-            <a class="nav-item nav-item-codepen nav-item-icon" href="../../../../https:/codepen.io/mrwillcom" target="_blank">&nbsp;</a>
-            
-            
-            
-            <a class="nav-item nav-item-patreon nav-item-icon" href="../../../../https:/www.patreon.com/MrWillCom" target="_blank">&nbsp;</a>
-            
-            
-        </div>
-    </div>
-</nav>
-        <article class="post">
-    <div class="meta">
-        
-        <div class="date" id="date">
-            
-            
-            
-            
-            
-            
-            <span>June</span>
-            
-            
-            
-            
-            
-            
-            
-            <span>18,</span>
-            <span>2021</span>
-        </div>
-        
 
-        <h2 class="title">DNS系统详细解析</h2>
-    </div>
-
-    <div class="divider"></div>
-
-    <div class="content">
-        <p>DNS系统概述：域名系统DNS（domain name system）是因特网使用的命名系统，用来把便于人们记忆的含有特定含义的主机名转换为便于机器处理的IP地址，值得注意的是，DNS系统采用C/S架构，其协议运行在UDP之上，使用53号端口。DNS分为三个部分，层次域名空间，域名服务器和解析器。层次域名空间：因特网采用层次树状结构的命名方法。任何一个连接在因特网上的主机或者路由器，都有一个唯一的层次结构的名字，即域名（Domain。<span id="more"></span> name）域是名字空间中一个可以被管理的划分。域还可以被分为子域，而子域还可以继续划分为子域的子域，这样就形成了顶级域，二级域，三级域等。每一个域名都是由标号序列组成，各标号之间用点“.“”隔开。<br>举个例子：<a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a> 其中com是顶级域名，cskaoyan是二级域名，www是三级域名。<br>关于域名中的标号有以下几点值得注意：<br>1.英文不区分大小写。<br>2.标号中除了连字符-之外不能使用其他的标点符号。<br>3.每一个标号不超过63个字符，多标号组成的完整域名最长不超过255字符。<br>4.级别最低的域名写在最左边，级别最高的顶级域名写在最右边。</p>
+  <body>
+    <div class="container">
+      <header class="header">
+  <div class="blog-title">
+    <a href="../../../../index.html" class="logo">/ Chingmy /</a>
+    <div class="subtitle">穿梭时间的画面的钟，从反方向开始移动</div>
+  </div>
+  <nav class="navbar">
+    <ul class="menu">
+      
+        <li class="menu-item">
+          <a href="../../../../index.html" class="menu-item-link">Home</a>
+        </li>
+      
+        <li class="menu-item">
+          <a href="../../../../archives" class="menu-item-link">Archives</a>
+        </li>
+      
+        <li class="menu-item">
+          <a href="../../../../about" class="menu-item-link">About</a>
+        </li>
+      
+        <li class="menu-item">
+          <a href="../../../../life" class="menu-item-link">life</a>
+        </li>
+      
+    </ul>
+  </nav>
+</header>
+<article class="post">
+  <div class="post-title">
+    <h1 class="article-title">DNS系统详细解析</h1>
+  </div>
+   <div class="post-meta">
+    <span class="post-time">2021-06-18</span>
+  </div>
+  <div class="post-content">
+    <p>DNS系统概述：域名系统DNS（domain name system）是因特网使用的命名系统，用来把便于人们记忆的含有特定含义的主机名转换为便于机器处理的IP地址，值得注意的是，DNS系统采用C/S架构，其协议运行在UDP之上，使用53号端口。DNS分为三个部分，层次域名空间，域名服务器和解析器。层次域名空间：因特网采用层次树状结构的命名方法。任何一个连接在因特网上的主机或者路由器，都有一个唯一的层次结构的名字，即域名（Domain。<span id="more"></span> name）域是名字空间中一个可以被管理的划分。域还可以被分为子域，而子域还可以继续划分为子域的子域，这样就形成了顶级域，二级域，三级域等。每一个域名都是由标号序列组成，各标号之间用点“.“”隔开。<br>举个例子：<a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a> 其中com是顶级域名，cskaoyan是二级域名，www是三级域名。<br>关于域名中的标号有以下几点值得注意：<br>1.英文不区分大小写。<br>2.标号中除了连字符-之外不能使用其他的标点符号。<br>3.每一个标号不超过63个字符，多标号组成的完整域名最长不超过255字符。<br>4.级别最低的域名写在最左边，级别最高的顶级域名写在最右边。</p>
 <p>顶级域名（Top name domain TLD）：有以下大三类<br>1.国家级顶级域名nTLD，国家和某些地区的域名，如“.cn”表示中国，“.us”表示美国，“.uk”表示英国，“.hk”表示中国香港特区。<br>2.通用顶级域名gTLD.常见的有“.com”（公司企业）“.net”（网络服务机构）“.org”（非营利性的组织）“.gov”（美国的政府部门）等。<br>3.基础结构域名。这种顶级域名只有一个，即arga，用于反向域名解析，因此又称为反向域名。<br>国家顶级域名注册的二级域名均由国家自行确定。下图是域名空间的结构<img src="https://img-blog.csdnimg.cn/20181227145035233.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2FhMTkyODk5Mjc3Mg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <p>在域名系统中，每个域分别由不同的组织进</p>
 <p>在域名系统中，每个域分别由不同的组织进行管理，每个组织都可以将它的域再分成一定数目的子域，并将这些子域委托给其他组织去管理。例如，管理CN域的中国将EDU.CN子域授权给中国教育和科研计算机网CERNET来管理。<br>域名服务器</p>
@@ -149,76 +100,35 @@
 <p>（2）本地域名服务器向根域名服务器的查询采用迭代查询。<br>当根域名服务器收到本地域名服务器发出的迭代查询请求报文时，要么给出所要查询的IP地址，要么告诉本地域名服务器“下一步应当向哪一个顶级域名服务器进行查询”然后让本地域名服务器向这个顶级域名服务器进行后续的查询。同样，顶级域名服务器收到查询报文后，要么给出所要查询的IP地址，要么告诉本地域名服务器下一步应当向哪一个权限域名服务器查询。最后返还结果。</p>
 <p>举个例子：<br>某主机希望获得y.abc.com的主机的IP地址，域名解析过程如下（共使用八个UDP报文）<br>1.客户机向本地域名服务器发出DNS请求报文。<br>2.本地域名服务器收到请求后，查询本地缓存，假设没有该记录，则以DNS客户的身份向根域名服务器发出解析请求。<br>3.根域名服务器收到请求后，判断该域名属于.com域，将对应的顶级域名服务器dns.com的IP地址返回给本地域名服务器。<br>4.本地域名服务器向顶级域名服务器dns.com发出解析请求报文<br>5.顶级域名服务器dns.com收到请求后，判断该域名属于abc.com域，故将对应的授权域名服务器dns.abc.com的IP地址返回给本地域名服务器。<br>6.本地域名服务器想授权域名服务器发起解析请求报文。<br>7.授权域名服务器dns.abc.com收到请求后，将查询结果返回给本地域名服务器。<br>8.本地域名服务器将查询结果保存到本地缓存，同时返回给客户机。<br>为了提供DNS的查询效率，减少因特网上的DNS查询报文数量，在域名服务器中广泛地使用了高速缓存，当一个DNS服务器接收到DNS查询结果是，它能将该DNS信息缓存在高速缓存中。这样，当另一个相同的域名查询到大概DNS服务器是，该服务器就能够直接提供所要求的IP地址，而不需要再去向其他DNS服务器询问了，因为主机名和IP地址之间的映射不是永久的，所以DNS服务器将在一段时间后丢弃高速缓存中的信息。</p>
 
-    </div>
-
-    <div class="about">
-        <h1>About this Post</h1>
-        <p>This post is written by 齐雨争, licensed under <a
-                target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a>.</p>
-    </div>
-
+  </div>
+  <div class="post-footer">
     
-        
+      <ul class="post-tag-list" itemprop="keywords"><li class="post-tag-list-item"><a class="post-tag-list-link" href="../../../../tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
     
+
+    <a href="#top" class="top">Back to Top</a>
+  </div>
 </article>
-        <footer>
-    <div class="inner">
-        <div class="links">
-            
-            <div class="group">
-                <h4 class="title">Blog</h4>
-                
-                <a href="/" class="item" target="_blank">Blog</a>
-                
-                <a href="/archives" class="item" target="_blank">Archives</a>
-                
-                <a href="/friends" class="item" target="_blank">Friends</a>
-                
-                <a href="/projects" class="item" target="_blank">Projects</a>
-                
-                <a href="/resume" class="item" target="_blank">Resume</a>
-                
-                <a href="/about" class="item" target="_blank">About</a>
-                
-                <a href="/atom.xml" class="item" target="_blank">RSS</a>
-                
-            </div>
-            
-            <div class="group">
-                <h4 class="title">Projects</h4>
-                
-                <a href="https://github.com/transmister" class="item" target="_blank">Transmister</a>
-                
-                <a href="https://github.com/MrWillCom/css-and-js-windows-uwp-xaml-controls" class="item" target="_blank">CSS&amp;JS Windows UWP XAML Controls</a>
-                
-                <a href="https://github.com/MrWillCom/hexo-theme-cupertino" class="item" target="_blank">Theme Cupertino</a>
-                
-                <a href="https://github.com/MrWillCom/github-dark-mode" class="item" target="_blank">GitHub Dark Mode</a>
-                
-            </div>
-            
-            <div class="group">
-                <h4 class="title">Me</h4>
-                
-                <a href="https://github.com/MrWillCom" class="item" target="_blank">GitHub</a>
-                
-                <a href="https://codepen.io/mrwillcom" class="item" target="_blank">CodePen</a>
-                
-                <a href="https://www.patreon.com/MrWillCom" class="item" target="_blank">Patreon</a>
-                
-                <a href="mailto:mr.will.com@outlook.com" class="item" target="_blank">Email</a>
-                
-            </div>
-            
-        </div>
-        &copy; 2022 齐雨争<br />
-        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
+<footer>
+  &copy; 2022
+  <span class="author">
+    齐雨争
+  </span>
 </footer>
+    </div>
 
-        
-<script src="../../../../js/main.js"></script>
 
-        
-    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+
+
+
+
+
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+
+
+
+
+
 </html>
