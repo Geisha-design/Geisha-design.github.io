@@ -1,122 +1,307 @@
 <!DOCTYPE html>
-<html>
-
-
-
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=426342234&auto=1&height=66"></iframe>
-
-
-
-
-<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
-
-
-
-<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script> 
-<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_click.js"></script>
-
-
-
-  <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-  
-  <title>测试区2048JS代码 - / Chingmy /</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  
-  <meta name="keywords" content=2048,JavaScript>
-  
-    <meta name="description" content="就是一个单纯的小男孩罢了">
-  
-  
-    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.02">
-  
-  
-    <link rel="alternate" href="../../../../atom.xml " title="/ Chingmy /" type="application/atom+xml">
-  
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
 
-  
-<link rel="stylesheet" href="../../../../css/style.css">
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
 
-  <body>
-    <div class="container">
-      <header class="header">
-  <div class="blog-title">
-    <a href="../../../../index.html" class="logo">/ Chingmy /</a>
-    <div class="subtitle">穿梭时间的画面的钟，从反方向开始移动</div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="测试区2048JS代码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="测试区2048JS代码">
+<meta property="og:url" content="http://example.com/2019/01/17/%E6%B5%8B%E8%AF%95%E5%8C%BA2048JS%E4%BB%A3%E7%A0%81/index.html">
+<meta property="og:site_name" content="cherry-sakura">
+<meta property="og:description" content="测试区2048JS代码">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/.com//yao2048-0.jpg">
+<meta property="article:published_time" content="2019-01-17T10:00:00.000Z">
+<meta property="article:modified_time" content="2019-01-17T10:00:00.000Z">
+<meta property="article:author" content="齐雨争">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="2048">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/.com//yao2048-0.jpg">
+
+
+<link rel="canonical" href="http://example.com/2019/01/17/%E6%B5%8B%E8%AF%95%E5%8C%BA2048JS%E4%BB%A3%E7%A0%81/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2019/01/17/%E6%B5%8B%E8%AF%95%E5%8C%BA2048JS%E4%BB%A3%E7%A0%81/","path":"2019/01/17/测试区2048JS代码/","title":"测试区2048JS代码"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>测试区2048JS代码 | cherry-sakura</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="cherry-sakura" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
   </div>
-  <nav class="navbar">
-    <ul class="menu">
-      
-        <li class="menu-item">
-          <a href="../../../../index.html" class="menu-item-link">Home</a>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">cherry-sakura</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">穿梭时间的画面的钟，从反方向开始移动</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
         </li>
-      
-        <li class="menu-item">
-          <a href="../../../../archives" class="menu-item-link">Archives</a>
+        <li class="sidebar-nav-overview">
+          Overview
         </li>
-      
-        <li class="menu-item">
-          <a href="../../../../about" class="menu-item-link">About</a>
-        </li>
-      
-        <li class="menu-item">
-          <a href="../../../../life" class="menu-item-link">life</a>
-        </li>
-      
-    </ul>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">使用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS%E5%85%A8%E4%BB%A3%E7%A0%81"><span class="nav-number">2.</span> <span class="nav-text">JS全代码</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">齐雨争</p>
+  <div class="site-description" itemprop="description">就是一个单纯的小男孩罢了</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
   </nav>
-</header>
-<article class="post">
-  <div class="post-title">
-    <h1 class="article-title">测试区2048JS代码</h1>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
   </div>
-   <div class="post-meta">
-    <span class="post-time">2019-01-17</span>
-  </div>
-  <div class="post-content">
-    <p><img src="/.com//yao2048-0.jpg" alt="测试区Yao2048截图"><br>测试区2048JS代码</p>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2019/01/17/%E6%B5%8B%E8%AF%95%E5%8C%BA2048JS%E4%BB%A3%E7%A0%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="齐雨争">
+      <meta itemprop="description" content="就是一个单纯的小男孩罢了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="cherry-sakura">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          测试区2048JS代码
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2019-01-17 18:00:00" itemprop="dateCreated datePublished" datetime="2019-01-17T18:00:00+08:00">2019-01-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Blog/" itemprop="url" rel="index"><span itemprop="name">Blog</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Blog/Plugin/" itemprop="url" rel="index"><span itemprop="name">Plugin</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img src="/.com//yao2048-0.jpg" alt="测试区Yao2048截图"><br>测试区2048JS代码</p>
 <span id="more"></span>
 
 <h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> _2048 = <span class="keyword">new</span> Yao2048(<span class="built_in">document</span>.body);</span><br><span class="line">_2048.show();</span><br></pre></td></tr></table></figure>
 
 <h2 id="JS全代码"><a href="#JS全代码" class="headerlink" title="JS全代码"></a>JS全代码</h2>
 
-  </div>
-  <div class="post-footer">
-    
-      <ul class="post-tag-list" itemprop="keywords"><li class="post-tag-list-item"><a class="post-tag-list-link" href="../../../../tags/2048/" rel="tag">2048</a></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="../../../../tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
-    
-
-    <a href="#top" class="top">Back to Top</a>
-  </div>
-</article>
-<footer>
-  &copy; 2022
-  <span class="author">
-    齐雨争
-  </span>
-</footer>
     </div>
 
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+              <a href="/tags/2048/" rel="tag"># 2048</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2018/12/05/Helpful-Links/" rel="prev" title="Helpful Links">
+                  <i class="fa fa-chevron-left"></i> Helpful Links
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/01/17/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E6%AD%8C%E5%8D%95JS%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8JS%E4%BB%A3%E7%A0%81/" rel="next" title="网易云音乐歌单JS音乐播放器JS代码">
+                  网易云音乐歌单JS音乐播放器JS代码 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
 
 
 
 
 
 
+</div>
+  </main>
 
-  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">齐雨争</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
 
 
 
 
 
+  
 
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

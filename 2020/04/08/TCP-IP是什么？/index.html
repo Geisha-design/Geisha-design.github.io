@@ -1,87 +1,237 @@
 <!DOCTYPE html>
-<html>
-
-
-
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=426342234&auto=1&height=66"></iframe>
-
-
-
-
-<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>
-
-
-
-<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script> 
-<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_click.js"></script>
-
-
-
-  <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-  
-  <title>TCP/IP是什么？ - / Chingmy /</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  
-  <meta name="keywords" content=TCP/IP,MAC,IPv6,IPv4>
-  
-    <meta name="description" content="就是一个单纯的小男孩罢了">
-  
-  
-    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.ico?v=1.02">
-  
-  
-    <link rel="alternate" href="../../../../atom.xml " title="/ Chingmy /" type="application/atom+xml">
-  
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
 
-  
-<link rel="stylesheet" href="../../../../css/style.css">
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
 
-  <body>
-    <div class="container">
-      <header class="header">
-  <div class="blog-title">
-    <a href="../../../../index.html" class="logo">/ Chingmy /</a>
-    <div class="subtitle">穿梭时间的画面的钟，从反方向开始移动</div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="本文大半内容都不对，弃了弃了~ 自计算机和互联网出现，大多数计算机都被用于上网、发邮件或者只是通过网路使用一下网络共享打印机。计算机网络^1可以连接各种功能不一样的电子设备，例如笔记本电脑、平板电脑、智能手机、服务器、打印机、扫描仪、路由器等设备。如果说以上设备连上网络后都算是“传统”节点，那在现在的物联网时代，各种计算机新品种就可以算作“非传统”节点了吧，毕竟现在能连网的设备真的是五花八门。再说">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TCP&#x2F;IP是什么？">
+<meta property="og:url" content="http://example.com/2020/04/08/TCP-IP%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/index.html">
+<meta property="og:site_name" content="cherry-sakura">
+<meta property="og:description" content="本文大半内容都不对，弃了弃了~ 自计算机和互联网出现，大多数计算机都被用于上网、发邮件或者只是通过网路使用一下网络共享打印机。计算机网络^1可以连接各种功能不一样的电子设备，例如笔记本电脑、平板电脑、智能手机、服务器、打印机、扫描仪、路由器等设备。如果说以上设备连上网络后都算是“传统”节点，那在现在的物联网时代，各种计算机新品种就可以算作“非传统”节点了吧，毕竟现在能连网的设备真的是五花八门。再说">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/.com//tcp-ip-ipv6-prefix.jpg">
+<meta property="og:image" content="http://example.com/.com//tcp-ip-router-network.jpg">
+<meta property="og:image" content="http://example.com/.com//tcp-ip-router-subnet.jpg">
+<meta property="article:published_time" content="2020-04-08T11:27:20.000Z">
+<meta property="article:modified_time" content="2020-06-09T11:27:20.000Z">
+<meta property="article:author" content="齐雨争">
+<meta property="article:tag" content="TCP&#x2F;IP">
+<meta property="article:tag" content="MAC">
+<meta property="article:tag" content="IPv6">
+<meta property="article:tag" content="IPv4">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/.com//tcp-ip-ipv6-prefix.jpg">
+
+
+<link rel="canonical" href="http://example.com/2020/04/08/TCP-IP%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2020/04/08/TCP-IP%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/","path":"2020/04/08/TCP-IP是什么？/","title":"TCP/IP是什么？"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>TCP/IP是什么？ | cherry-sakura</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="cherry-sakura" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
   </div>
-  <nav class="navbar">
-    <ul class="menu">
-      
-        <li class="menu-item">
-          <a href="../../../../index.html" class="menu-item-link">Home</a>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">cherry-sakura</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">穿梭时间的画面的钟，从反方向开始移动</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
         </li>
-      
-        <li class="menu-item">
-          <a href="../../../../archives" class="menu-item-link">Archives</a>
+        <li class="sidebar-nav-overview">
+          Overview
         </li>
-      
-        <li class="menu-item">
-          <a href="../../../../about" class="menu-item-link">About</a>
-        </li>
-      
-        <li class="menu-item">
-          <a href="../../../../life" class="menu-item-link">life</a>
-        </li>
-      
-    </ul>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP-IP%E5%8D%8F%E8%AE%AE%E5%85%A8%E5%AE%B6%E6%A1%B6"><span class="nav-number">1.</span> <span class="nav-text">TCP&#x2F;IP协议全家桶</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84OSI%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.1.</span> <span class="nav-text">网络体系结构OSI七层模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IP%E5%8D%8F%E8%AE%AE"><span class="nav-number">2.</span> <span class="nav-text">IP协议</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IPv4%E6%A0%BC%E5%BC%8F"><span class="nav-number">2.1.</span> <span class="nav-text">IPv4格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IPv6%E6%A0%BC%E5%BC%8F"><span class="nav-number">2.2.</span> <span class="nav-text">IPv6格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%AF%E7%94%B1%E5%99%A8"><span class="nav-number">2.3.</span> <span class="nav-text">路由器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MAC%E5%9C%B0%E5%9D%80"><span class="nav-number">2.4.</span> <span class="nav-text">MAC地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ARP%E5%8D%8F%E8%AE%AE"><span class="nav-number">2.5.</span> <span class="nav-text">ARP协议</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">齐雨争</p>
+  <div class="site-description" itemprop="description">就是一个单纯的小男孩罢了</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
   </nav>
-</header>
-<article class="post">
-  <div class="post-title">
-    <h1 class="article-title">TCP/IP是什么？</h1>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
   </div>
-   <div class="post-meta">
-    <span class="post-time">2020-04-08</span>
-  </div>
-  <div class="post-content">
-    <p><strong>本文大半内容都不对，弃了弃了~</strong></p>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/04/08/TCP-IP%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="齐雨争">
+      <meta itemprop="description" content="就是一个单纯的小男孩罢了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="cherry-sakura">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          TCP/IP是什么？
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-04-08 19:27:20" itemprop="dateCreated datePublished" datetime="2020-04-08T19:27:20+08:00">2020-04-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2020-06-09 19:27:20" itemprop="dateModified" datetime="2020-06-09T19:27:20+08:00">2020-06-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">网络</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><strong>本文大半内容都不对，弃了弃了~</strong></p>
 <p>自计算机和互联网出现，大多数计算机都被用于上网、发邮件或者只是通过网路使用一下网络共享打印机。计算机网络<a href="%E9%80%9A%E8%BF%87%E8%BD%AF%E7%A1%AC%E4%BB%B6%E6%8A%80%E6%9C%AF%E6%94%AF%E6%8C%81%E5%85%81%E8%AE%B8%E5%A4%9A%E5%8F%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B9%8B%E9%97%B4%E4%BA%A4%E6%B5%81%E5%92%8C%E5%85%B1%E4%BA%AB%E8%B5%84%E6%BA%90">^1</a>可以连接各种功能不一样的电子设备，例如笔记本电脑、平板电脑、智能手机、服务器、打印机、扫描仪、路由器等设备。如果说以上设备连上网络后都算是“传统”节点，那在现在的物联网时代，各种计算机新品种就可以算作“非传统”节点了吧，毕竟现在能连网的设备真的是五花八门。再说征服王“互联网”现在真的可以说已经征服世界的情况下，计算机网络类型都可以分成5种：</p>
 <ul>
 <li>PAN - 个人网络，一台电脑配打印机等设备</li>
@@ -197,35 +347,79 @@
 <h2 id="ARP协议"><a href="#ARP协议" class="headerlink" title="ARP协议"></a>ARP协议</h2><p>ARP协议让路由器记录下哪个IP地址对应哪个MAC地址。因为IP地址多数为动态，一个设备说不定某天就移民了，所以路由器一般都有一个ARP表记录和分配IP地址给底下的子民；要是有的子民刚移民过来没有记录在案，在有数据传送过来路由找不到人的情况下会发广播，以这样的操作令底下子民回应，之后强制记录在案。</p>
 <p><strong><em>更多可以百度TCP/IP全家桶各种协议，比较重要的还有数据包结构、DHCP<a href="%E4%B8%BA%E7%BD%91%E5%85%B3%E8%8A%82%E7%82%B9%E7%AE%A1%E7%90%86%E4%B8%8B%E7%9A%84%E4%B8%BB%E6%9C%BA%E8%BF%9B%E8%A1%8C%E5%8A%A8%E6%80%81IP%E5%9C%B0%E5%9D%80%E7%9A%84%E5%88%86%E9%85%8D%EF%BC%9B%E6%9C%89%E6%95%88%E9%98%B2%E6%AD%A2%E4%BA%BA%E5%B7%A5%E6%93%8D%E4%BD%9C%E7%9A%84%E5%A4%B1%E8%AF%AF%EF%BC%9B%E6%9C%89%E4%B8%BB%E6%9C%BA%E8%A2%AB%E8%BF%81%E7%A7%BB%E6%88%96%E6%9B%B4%E6%9B%BF%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E8%83%BD%E5%A4%9F%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E9%85%8D%E7%BD%AE">^4</a>和DNS<a href="%E5%9F%9F%E5%90%8D%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%83%BD%E5%A4%9F%E5%B8%AE%E5%8A%A9%E8%A7%A3%E6%9E%90%E5%9F%9F%E5%90%8D%E5%88%B0%E5%AF%B9%E5%BA%94IP%E5%9C%B0%E5%9D%80">^5</a>。</em></strong></p>
 
-  </div>
-  <div class="post-footer">
-    
-      <ul class="post-tag-list" itemprop="keywords"><li class="post-tag-list-item"><a class="post-tag-list-link" href="../../../../tags/IPv4/" rel="tag">IPv4</a></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="../../../../tags/IPv6/" rel="tag">IPv6</a></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="../../../../tags/MAC/" rel="tag">MAC</a></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="../../../../tags/TCP-IP/" rel="tag">TCP/IP</a></li></ul>
-    
-
-    <a href="#top" class="top">Back to Top</a>
-  </div>
-</article>
-<footer>
-  &copy; 2022
-  <span class="author">
-    齐雨争
-  </span>
-</footer>
     </div>
 
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/TCP-IP/" rel="tag"># TCP/IP</a>
+              <a href="/tags/MAC/" rel="tag"># MAC</a>
+              <a href="/tags/IPv6/" rel="tag"># IPv6</a>
+              <a href="/tags/IPv4/" rel="tag"># IPv4</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/02/22/Gallery-Post-Not-Supported/" rel="prev" title="Gallery Post Not Supported">
+                  <i class="fa fa-chevron-left"></i> Gallery Post Not Supported
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/04/10/HTTP%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/" rel="next" title="HTTP是什么？">
+                  HTTP是什么？ <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
 
 
 
 
 
 
+</div>
+  </main>
 
-  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">齐雨争</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
 
 
 
 
 
+  
 
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
