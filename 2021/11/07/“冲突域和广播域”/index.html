@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"apiKey":"<API_KEY>","indexName":"<INDEX_NAME>","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"apiKey":"<API_KEY>","indexName":"<INDEX_NAME>","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="形象比喻：局域网好比一栋大楼，每个人（好比主机）有自己的房间（房间就好比网卡，房号就是物理地址，即MAC地址），里面的人（主机）人手一个对讲机，由于工作在同一频道，所以一个人说话，其他人都能听到，这就是广播（向所有主机发送信息包），只有目标才会回应，其他人虽然听见但是不理（丢弃包），而这些能听到广播的所有对讲机设备就够成了一个广播域。而这些对讲机就是集线器（HUB），每个对讲机都像是集线器上的端口">
@@ -527,8 +527,8 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       el         : '#valine-comments',
       verify     : true,
       notify     : true,
-      appId      : 'hqy7d9WxtqgEG5dYWsTA0Rf5-gzGzoHsz# Your leancloud application appid',
-      appKey     : 'IHzTrb3l5Ew2FqQ53I4ISpPV# Your leancloud application appkey',
+      appId      : 'hqy7d9WxtqgEG5dYWsTA0Rf5-gzGzoHsz',
+      appKey     : 'IHzTrb3l5Ew2FqQ53I4ISpPV',
       placeholder: "Just go go",
       avatar     : 'mm',
       meta       : guest,
