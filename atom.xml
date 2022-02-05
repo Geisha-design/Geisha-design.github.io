@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-01-04T13:49:04.688Z</updated>
+  <updated>2022-02-05T08:07:23.837Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>咖啡设备新体验-星粒咖啡杯</title>
+    <link href="http://example.com/2022/02/05/port%E5%92%96%E5%95%A1%E8%AE%BE%E5%A4%87%E6%96%B0%E4%BD%93%E9%AA%8C-%E6%98%9F%E7%B2%92%E5%92%96%E5%95%A1%E6%9D%AF/"/>
+    <id>http://example.com/2022/02/05/port%E5%92%96%E5%95%A1%E8%AE%BE%E5%A4%87%E6%96%B0%E4%BD%93%E9%AA%8C-%E6%98%9F%E7%B2%92%E5%92%96%E5%95%A1%E6%9D%AF/</id>
+    <published>2022-02-05T08:05:21.000Z</published>
+    <updated>2022-02-05T08:07:23.837Z</updated>
+    
+    
+    
+    
+    <category term="coffee" scheme="http://example.com/categories/coffee/"/>
+    
+    
+    <category term="coffee" scheme="http://example.com/tags/coffee/"/>
+    
+  </entry>
   
   <entry>
     <title>不从游戏设计谈谈DEEMO</title>
@@ -383,30 +400,6 @@
     <category term="基础" scheme="http://example.com/tags/%E5%9F%BA%E7%A1%80/"/>
     
     <category term="抽象数据类" scheme="http://example.com/tags/%E6%8A%BD%E8%B1%A1%E6%95%B0%E6%8D%AE%E7%B1%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo主题Mustom使用指南（对应主题1.0版）</title>
-    <link href="http://example.com/2020/04/15/Hexo%E4%B8%BB%E9%A2%98Mustom%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
-    <id>http://example.com/2020/04/15/Hexo%E4%B8%BB%E9%A2%98Mustom%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</id>
-    <published>2020-04-15T05:56:45.000Z</published>
-    <updated>2020-04-15T05:56:45.000Z</updated>
-    
-    
-    <summary type="html">&lt;ul&gt;
-&lt;li&gt;本主题&lt;a href=&quot;//github.com/jinyaoMa/hexo-theme-mustom&quot;&gt;Mustom&lt;/a&gt;是我参考了卡片式和窗口展示的样式设计的Hexo主题。&lt;/li&gt;
-&lt;li&gt;本主题通过大量的replaceWith函数和PJAX来加载，而且用了Live2D的插件，初始加载时回流特别厉害。&lt;/li&gt;
-&lt;li&gt;本主题可以衍生一个CSS的框架，但是作者本人目前还是在给每个组件都弄一个单独的样式表。&lt;/li&gt;
-&lt;li&gt;本主题把各类资源文件都分门别类了，在以后添加内容方面应该还是较方便的。&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="Hexo" scheme="http://example.com/categories/Hexo/"/>
-    
-    
-    <category term="Mustom" scheme="http://example.com/tags/Mustom/"/>
     
   </entry>
   
