@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-02-16T10:54:47.468Z</updated>
+  <updated>2022-02-16T12:40:03.927Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>“hexo-next添加网易云音乐外链”</title>
+    <link href="http://example.com/2022/02/16/%E2%80%9Chexo-next%E6%B7%BB%E5%8A%A0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E5%A4%96%E9%93%BE%E2%80%9D/"/>
+    <id>http://example.com/2022/02/16/%E2%80%9Chexo-next%E6%B7%BB%E5%8A%A0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E5%A4%96%E9%93%BE%E2%80%9D/</id>
+    <published>2022-02-16T12:38:59.000Z</published>
+    <updated>2022-02-16T12:40:03.927Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;添加网易云音乐&quot;&gt;&lt;a href=&quot;#添加网易云音乐&quot; class=&quot;headerlink&quot; title=&quot;添加网易云音乐&quot;&gt;&lt;/a&gt;添加网易云音乐&lt;/h2&gt;&lt;h3 id=&quot;生成外链&quot;&gt;&lt;a href=&quot;#生成外链&quot; class=&quot;headerlink&quot; title=&quot;生成外链&quot;&gt;&lt;/a&gt;生成外链&lt;/h3&gt;</summary>
+    
+    
+    
+    
+    <category term="hexo" scheme="http://example.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>与混沌武士”</title>
+    <link href="http://example.com/2022/02/16/%E4%B8%8E%E6%B7%B7%E6%B2%8C%E6%AD%A6%E5%A3%AB%E2%80%9D/"/>
+    <id>http://example.com/2022/02/16/%E4%B8%8E%E6%B7%B7%E6%B2%8C%E6%AD%A6%E5%A3%AB%E2%80%9D/</id>
+    <published>2022-02-16T12:16:47.000Z</published>
+    <updated>2022-02-16T12:16:47.780Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>爵士嘻哈「JAZZ HIPHOP」今夜的星空因Nujabes而浪漫</title>
@@ -369,42 +399,6 @@
     
     <category term="计算机常识" scheme="http://example.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B8%B8%E8%AF%86/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>幂级数的本质</title>
-    <link href="http://example.com/2021/04/22/%E2%80%9C%E5%B9%82%E7%BA%A7%E6%95%B0%E7%9A%84%E6%9C%AC%E8%B4%A8%E2%80%9D/"/>
-    <id>http://example.com/2021/04/22/%E2%80%9C%E5%B9%82%E7%BA%A7%E6%95%B0%E7%9A%84%E6%9C%AC%E8%B4%A8%E2%80%9D/</id>
-    <published>2021-04-22T12:24:44.000Z</published>
-    <updated>2022-01-04T13:49:04.695Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;级数（幂级数）&quot;&gt;&lt;a href=&quot;#级数（幂级数）&quot; class=&quot;headerlink&quot; title=&quot;级数（幂级数）&quot;&gt;&lt;/a&gt;级数（幂级数）&lt;/h1&gt;&lt;h2 id=&quot;回到梦开始的地方&quot;&gt;&lt;a href=&quot;#回到梦开始的地方&quot; class=&quot;headerlink&quot; title=&quot;回到梦开始的地方&quot;&gt;&lt;/a&gt;回到梦开始的地方&lt;/h2&gt;&lt;p&gt;在一元函数微积分的世界中，我们沿着极限、导数、微分、积分的路已经走出了一段路。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="高等数学" scheme="http://example.com/categories/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>坂本龙一先生对我的影响</title>
-    <link href="http://example.com/2021/04/16/%E2%80%9C%E5%9D%82%E6%9C%AC%E9%BE%99%E4%B8%80%E5%85%88%E7%94%9F%E5%AF%B9%E6%88%91%E7%9A%84%E5%BD%B1%E5%93%8D%E2%80%9D/"/>
-    <id>http://example.com/2021/04/16/%E2%80%9C%E5%9D%82%E6%9C%AC%E9%BE%99%E4%B8%80%E5%85%88%E7%94%9F%E5%AF%B9%E6%88%91%E7%9A%84%E5%BD%B1%E5%93%8D%E2%80%9D/</id>
-    <published>2021-04-16T15:40:31.000Z</published>
-    <updated>2022-01-04T13:49:04.695Z</updated>
-    
-    
-    <summary type="html">揭开狂热的自我之象，你我放的瞥见真我。</summary>
-    
-    
-    
-    <category term="生活" scheme="http://example.com/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-    <category term="艺术家" scheme="http://example.com/tags/%E8%89%BA%E6%9C%AF%E5%AE%B6/"/>
     
   </entry>
   
