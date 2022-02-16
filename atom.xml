@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-02-16T12:40:03.927Z</updated>
+  <updated>2022-02-16T12:41:19.393Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,10 +21,10 @@
     <link href="http://example.com/2022/02/16/%E2%80%9Chexo-next%E6%B7%BB%E5%8A%A0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E5%A4%96%E9%93%BE%E2%80%9D/"/>
     <id>http://example.com/2022/02/16/%E2%80%9Chexo-next%E6%B7%BB%E5%8A%A0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E5%A4%96%E9%93%BE%E2%80%9D/</id>
     <published>2022-02-16T12:38:59.000Z</published>
-    <updated>2022-02-16T12:40:03.927Z</updated>
+    <updated>2022-02-16T12:41:19.393Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;添加网易云音乐&quot;&gt;&lt;a href=&quot;#添加网易云音乐&quot; class=&quot;headerlink&quot; title=&quot;添加网易云音乐&quot;&gt;&lt;/a&gt;添加网易云音乐&lt;/h2&gt;&lt;h3 id=&quot;生成外链&quot;&gt;&lt;a href=&quot;#生成外链&quot; class=&quot;headerlink&quot; title=&quot;生成外链&quot;&gt;&lt;/a&gt;生成外链&lt;/h3&gt;</summary>
+    <summary type="html">&lt;h2 id=&quot;添加网易云音乐&quot;&gt;&lt;a href=&quot;#添加网易云音乐&quot; class=&quot;headerlink&quot; title=&quot;添加网易云音乐&quot;&gt;&lt;/a&gt;添加网易云音乐&lt;/h2&gt;&lt;h3 id=&quot;生成外链&quot;&gt;&lt;a href=&quot;#生成外链&quot; class=&quot;headerlink&quot; title=&quot;生成外链&quot;&gt;&lt;/a&gt;生成外链&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDcvMTcvNWQyZTc1MDFkZmJlZDUyMTIxLnBuZw&quot; alt=&quot;img&quot;&gt;&lt;br&gt;&lt;img src=&quot;https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDcvMTcvNWQyZTc1MzRjYmZhYTU2MDYwLnBuZw&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;</summary>
     
     
     
@@ -34,15 +34,26 @@
   </entry>
   
   <entry>
-    <title>与混沌武士”</title>
-    <link href="http://example.com/2022/02/16/%E4%B8%8E%E6%B7%B7%E6%B2%8C%E6%AD%A6%E5%A3%AB%E2%80%9D/"/>
-    <id>http://example.com/2022/02/16/%E4%B8%8E%E6%B7%B7%E6%B2%8C%E6%AD%A6%E5%A3%AB%E2%80%9D/</id>
+    <title>如何让百度收录 GitHub Pages 个人博客</title>
+    <link href="http://example.com/2022/02/16/%E6%94%B6%E5%BD%95%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://example.com/2022/02/16/%E6%94%B6%E5%BD%95%E5%8D%9A%E5%AE%A2/</id>
     <published>2022-02-16T12:16:47.000Z</published>
-    <updated>2022-02-16T12:16:47.780Z</updated>
+    <updated>2022-02-16T12:53:12.987Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://pic3.zhimg.com/v2-144289f0a59dcb1fdad0703780a27860_1440w.jpg?source=172ae18b&quot; alt=&quot;如何让百度收录 GitHub Pages 个人博客&quot;&gt;&lt;/p&gt;
+&lt;h1</summary>
+        
+      
     
     
     
     
+    <category term="hexo" scheme="http://example.com/tags/hexo/"/>
     
   </entry>
   
