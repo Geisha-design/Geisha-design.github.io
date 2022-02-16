@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-02-16T12:41:19.393Z</updated>
+  <updated>2022-02-16T13:01:12.802Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,14 +17,17 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>“hexo-next添加网易云音乐外链”</title>
-    <link href="http://example.com/2022/02/16/%E2%80%9Chexo-next%E6%B7%BB%E5%8A%A0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E5%A4%96%E9%93%BE%E2%80%9D/"/>
-    <id>http://example.com/2022/02/16/%E2%80%9Chexo-next%E6%B7%BB%E5%8A%A0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E5%A4%96%E9%93%BE%E2%80%9D/</id>
-    <published>2022-02-16T12:38:59.000Z</published>
-    <updated>2022-02-16T12:41:19.393Z</updated>
+    <title>论百度对gitpage文章的收录</title>
+    <link href="http://example.com/2022/02/16/%E8%AE%BA%E7%99%BE%E5%BA%A6%E5%AF%B9gitpage%E6%96%87%E7%AB%A0%E7%9A%84%E6%94%B6%E5%BD%95/"/>
+    <id>http://example.com/2022/02/16/%E8%AE%BA%E7%99%BE%E5%BA%A6%E5%AF%B9gitpage%E6%96%87%E7%AB%A0%E7%9A%84%E6%94%B6%E5%BD%95/</id>
+    <published>2022-02-16T13:00:02.000Z</published>
+    <updated>2022-02-16T13:01:12.802Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;添加网易云音乐&quot;&gt;&lt;a href=&quot;#添加网易云音乐&quot; class=&quot;headerlink&quot; title=&quot;添加网易云音乐&quot;&gt;&lt;/a&gt;添加网易云音乐&lt;/h2&gt;&lt;h3 id=&quot;生成外链&quot;&gt;&lt;a href=&quot;#生成外链&quot; class=&quot;headerlink&quot; title=&quot;生成外链&quot;&gt;&lt;/a&gt;生成外链&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDcvMTcvNWQyZTc1MDFkZmJlZDUyMTIxLnBuZw&quot; alt=&quot;img&quot;&gt;&lt;br&gt;&lt;img src=&quot;https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDcvMTcvNWQyZTc1MzRjYmZhYTU2MDYwLnBuZw&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://pic3.zhimg.com/v2-144289f0a59dcb1fdad0703780a27860_1440w.jpg?source=172ae18b&quot; alt=&quot;如何让百度收录 GitHub Pages 个人博客&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;如何让百度收录-GitHub-Pages-个人博客&quot;&gt;&lt;a href=&quot;#如何让百度收录-GitHub-Pages-个人博客&quot; class=&quot;headerlink&quot; title=&quot;如何让百度收录 GitHub Pages 个人博客&quot;&gt;&lt;/a&gt;如何让百度收录 GitHub Pages 个人博客&lt;/h1&gt;&lt;p&gt;很多程序员朋友都有在 GitHub Pages 上搭建自己的个人博客，对于个人博客，没有被搜索引擎收录的话，别人基本是是看不到的，再好的技术文无法被分享也是白搭。&lt;/p&gt;
+&lt;p&gt;基于 GitHub Pages 的个人博客， Google 收录非常及时全面。然而，到目前为止，GitHub 还是拒绝百度爬虫的访问，直接返回 403。&lt;/p&gt;
+&lt;p&gt;官方给出原因是，百度爬虫爬得太狠，影响了 Github Pages 服务的正常使用。这就导致了，但凡在 Github Pages 搭建的个人博客，都无法被百度收录&lt;/p&gt;</summary>
     
     
     
@@ -34,17 +37,14 @@
   </entry>
   
   <entry>
-    <title>如何让百度收录 GitHub Pages 个人博客</title>
-    <link href="http://example.com/2022/02/16/%E6%94%B6%E5%BD%95%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://example.com/2022/02/16/%E6%94%B6%E5%BD%95%E5%8D%9A%E5%AE%A2/</id>
-    <published>2022-02-16T12:16:47.000Z</published>
-    <updated>2022-02-16T12:58:33.658Z</updated>
+    <title>“hexo-next添加网易云音乐外链”</title>
+    <link href="http://example.com/2022/02/16/%E2%80%9Chexo-next%E6%B7%BB%E5%8A%A0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E5%A4%96%E9%93%BE%E2%80%9D/"/>
+    <id>http://example.com/2022/02/16/%E2%80%9Chexo-next%E6%B7%BB%E5%8A%A0%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E5%A4%96%E9%93%BE%E2%80%9D/</id>
+    <published>2022-02-16T12:38:59.000Z</published>
+    <updated>2022-02-16T12:41:19.393Z</updated>
     
     
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://pic3.zhimg.com/v2-144289f0a59dcb1fdad0703780a27860_1440w.jpg?source=172ae18b&quot; alt=&quot;如何让百度收录 GitHub Pages 个人博客&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;如何让百度收录-GitHub-Pages-个人博客&quot;&gt;&lt;a href=&quot;#如何让百度收录-GitHub-Pages-个人博客&quot; class=&quot;headerlink&quot; title=&quot;如何让百度收录 GitHub Pages 个人博客&quot;&gt;&lt;/a&gt;如何让百度收录 GitHub Pages 个人博客&lt;/h1&gt;&lt;p&gt;很多程序员朋友都有在 GitHub Pages 上搭建自己的个人博客，对于个人博客，没有被搜索引擎收录的话，别人基本是是看不到的，再好的技术文无法被分享也是白搭。&lt;/p&gt;
-&lt;p&gt;基于 GitHub Pages 的个人博客， Google 收录非常及时全面。然而，到目前为止，GitHub 还是拒绝百度爬虫的访问，直接返回 403。&lt;/p&gt;
-&lt;p&gt;官方给出原因是，百度爬虫爬得太狠，影响了 Github Pages 服务的正常使用。这就导致了，但凡在 Github Pages 搭建的个人博客，都无法被百度收录&lt;/p&gt;</summary>
+    <summary type="html">&lt;h2 id=&quot;添加网易云音乐&quot;&gt;&lt;a href=&quot;#添加网易云音乐&quot; class=&quot;headerlink&quot; title=&quot;添加网易云音乐&quot;&gt;&lt;/a&gt;添加网易云音乐&lt;/h2&gt;&lt;h3 id=&quot;生成外链&quot;&gt;&lt;a href=&quot;#生成外链&quot; class=&quot;headerlink&quot; title=&quot;生成外链&quot;&gt;&lt;/a&gt;生成外链&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDcvMTcvNWQyZTc1MDFkZmJlZDUyMTIxLnBuZw&quot; alt=&quot;img&quot;&gt;&lt;br&gt;&lt;img src=&quot;https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDcvMTcvNWQyZTc1MzRjYmZhYTU2MDYwLnBuZw&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;</summary>
     
     
     
