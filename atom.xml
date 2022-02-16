@@ -38,17 +38,13 @@
     <link href="http://example.com/2022/02/16/%E6%94%B6%E5%BD%95%E5%8D%9A%E5%AE%A2/"/>
     <id>http://example.com/2022/02/16/%E6%94%B6%E5%BD%95%E5%8D%9A%E5%AE%A2/</id>
     <published>2022-02-16T12:16:47.000Z</published>
-    <updated>2022-02-16T12:53:12.987Z</updated>
+    <updated>2022-02-16T12:58:33.658Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;p&gt;&lt;img src=&quot;https://pic3.zhimg.com/v2-144289f0a59dcb1fdad0703780a27860_1440w.jpg?source=172ae18b&quot; alt=&quot;如何让百度收录 GitHub Pages 个人博客&quot;&gt;&lt;/p&gt;
-&lt;h1</summary>
-        
-      
+&lt;h1 id=&quot;如何让百度收录-GitHub-Pages-个人博客&quot;&gt;&lt;a href=&quot;#如何让百度收录-GitHub-Pages-个人博客&quot; class=&quot;headerlink&quot; title=&quot;如何让百度收录 GitHub Pages 个人博客&quot;&gt;&lt;/a&gt;如何让百度收录 GitHub Pages 个人博客&lt;/h1&gt;&lt;p&gt;很多程序员朋友都有在 GitHub Pages 上搭建自己的个人博客，对于个人博客，没有被搜索引擎收录的话，别人基本是是看不到的，再好的技术文无法被分享也是白搭。&lt;/p&gt;
+&lt;p&gt;基于 GitHub Pages 的个人博客， Google 收录非常及时全面。然而，到目前为止，GitHub 还是拒绝百度爬虫的访问，直接返回 403。&lt;/p&gt;
+&lt;p&gt;官方给出原因是，百度爬虫爬得太狠，影响了 Github Pages 服务的正常使用。这就导致了，但凡在 Github Pages 搭建的个人博客，都无法被百度收录&lt;/p&gt;</summary>
     
     
     
