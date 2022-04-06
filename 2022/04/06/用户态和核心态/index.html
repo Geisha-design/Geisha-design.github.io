@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../../images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../../images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../../images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="../../../../images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="../../../../css/main.css">
+
+
+<link rel="stylesheet" href="../../../../xxw/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"apiKey":"<API_KEY>","indexName":"<INDEX_NAME>","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="什么是用户态、内核态 一般的操作系统对执行权限进行分级，分别为用保护态和内核态。用户态相较于内核态有较低的执行权限，很多操作是不被操作系统允许的，原因简单来说就是用户态出现问题（自己写的bug），也不能让操作系统崩溃呀。  内核态相当于一个介于硬件与应用之间的层，内核有ring 0的权限，可以执行任何cpu指令，也可以引用任何内存地址，包括外围设备, 例如硬盘, 网卡，权限等级最高。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用户态和核心态">
+<meta property="og:url" content="http://example.com/2022/04/06/%E7%94%A8%E6%88%B7%E6%80%81%E5%92%8C%E6%A0%B8%E5%BF%83%E6%80%81/index.html">
+<meta property="og:site_name" content="SAKUPRESSO">
+<meta property="og:description" content="什么是用户态、内核态 一般的操作系统对执行权限进行分级，分别为用保护态和内核态。用户态相较于内核态有较低的执行权限，很多操作是不被操作系统允许的，原因简单来说就是用户态出现问题（自己写的bug），也不能让操作系统崩溃呀。  内核态相当于一个介于硬件与应用之间的层，内核有ring 0的权限，可以执行任何cpu指令，也可以引用任何内存地址，包括外围设备, 例如硬盘, 网卡，权限等级最高。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/14029139-efd524942836c9e0.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/960/format/webp">
+<meta property="article:published_time" content="2022-04-06T06:18:14.000Z">
+<meta property="article:modified_time" content="2022-04-06T06:21:32.330Z">
+<meta property="article:author" content="齐雨争">
+<meta property="article:tag" content="计算机技术">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/14029139-efd524942836c9e0.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/960/format/webp">
+
+<link rel="canonical" href="http://example.com/2022/04/06/%E7%94%A8%E6%88%B7%E6%80%81%E5%92%8C%E6%A0%B8%E5%BF%83%E6%80%81/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>用户态和核心态 | SAKUPRESSO</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="atom.xml" title="SAKUPRESSO" type="application/atom+xml">
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}</style></head>
+
+
+
+
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+
+
+
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">SAKUPRESSO</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">穿梭时间的画面的钟，从反方向开始移动</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-主页">
+
+    <a href="../../../../index.html" rel="section"><i class="fa fa-home fa-fw"></i>主页</a>
+
+  </li>
+        <li class="menu-item menu-item-关于我">
+
+    <a href="../../../../about/" rel="section"><i class="fa fa-user fa-fw"></i>关于我</a>
+
+  </li>
+        <li class="menu-item menu-item-标签">
+
+    <a href="../../../../tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-目录">
+
+    <a href="../../../../categories/" rel="section"><i class="fa fa-th fa-fw"></i>目录</a>
+
+  </li>
+        <li class="menu-item menu-item-文章">
+
+    <a href="../../../../archives/" rel="section"><i class="fa fa-archive fa-fw"></i>文章</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="../../../../schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="../../../../sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="../../../../404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>Commonweal 404</a>
+
+  </li>
+        <li class="menu-item menu-item-photos">
+
+    <a href="../../../../photos" rel="section"><i class="fas fa-camera-retro fa-fw"></i>摄影</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/06/%E7%94%A8%E6%88%B7%E6%80%81%E5%92%8C%E6%A0%B8%E5%BF%83%E6%80%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="../../../../images/avatar.jpg">
+      <meta itemprop="name" content="齐雨争">
+      <meta itemprop="description" content="就是一个帅气的小男孩罢了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SAKUPRESSO">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          用户态和核心态
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-04-06 14:18:14 / Modified: 14:21:32" itemprop="dateCreated datePublished" datetime="2022-04-06T14:18:14+08:00">2022-04-06</time>
+            </span>
+
+          
+            <span id="" class="post-meta-item leancloud_visitors" data-flag-title="用户态和核心态" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <img src="https://upload-images.jianshu.io/upload_images/14029139-efd524942836c9e0.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/960/format/webp" alt="img" style="zoom:77%;">
+
+<ol>
+<li>什么是用户态、内核态<br> 一般的操作系统对执行权限进行分级，分别为用保护态和内核态。用户态相较于内核态有较低的执行权限，很多操作是不被操作系统允许的，原因简单来说就是用户态出现问题（自己写的bug），也不能让操作系统崩溃呀。</li>
+</ol>
+<p>内核态相当于一个介于硬件与应用之间的层，内核有ring 0的权限，可以执行任何cpu指令，也可以引用任何内存地址，包括外围设备, 例如硬盘, 网卡，权限等级最高。 <span id="more"></span></p>
+<p>用户态则权利有限，例如在内存分配中，有一部分内存是仅为内核态使用的，用户态code则不允许访问那些内存地址，每个进程只允许访问自己申请到的内存。而且不允许访问外围设备。另外在执行cpu指令的时候也可以被高优先级抢占。<br> 大多数时间各类程序都是执行在用户态下，毕竟内核就是基础而已。</p>
+<ol>
+<li>状态转换<br> 用户程序跑在用户态下，但是如果需要执行一些操作例如申请内存，网络读写时，自己的权限不够，就需要转换到内核态去让内核的code帮忙干一些事情。下面三个方式是<br> a. 系统调用<br> 这是用户态进程主动要求切换到内核态的一种方式，用户态进程通过系统调用申请使 用操作系统提供的服务程序完成工作，比如前例中fork()实际上就是执行了一个创建新进程的系统调用。而系统调用的机制其核心还是使用了操作系统为用户 特别开放的一个中断来实现，例如Linux的int 80h中断。<br> b. 异常<br> 当CPU在执行运行在用户态下的程序时，发生了某些事先不可知的异常，这时会触发由当前运行进程切换到处理此异常的内核相关程序中，也就转到了内核态，比如缺页异常。<br> c. 外围设备的中断<br> 当外围设备完成用户请求的操作后，会向CPU发出相应的中断信号，这时CPU会 暂停执行下一条即将要执行的指令转而去执行与中断信号对应的处理程序，如果先前执行的指令是用户态下的程序，那么这个转换的过程自然也就发生了由用户态到 内核态的切换。比如硬盘读写操作完成，系统会切换到硬盘读写的中断处理程序中执行后续操作等。</li>
+</ol>
+<p>很多博客都提到了一个状态转换的例子：c语言在malloc的时候需要涉及到从用户态到内核态的转换，malloc是个函数，所以算作系统调用，是用户态的主动申请转换。但是在实际实现中，未必一定需要进入内核态拿到新的内存，详细看这个博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zdy0_2004/article/details/47787631">https://blog.csdn.net/zdy0_2004/article/details/47787631</a></p>
+<p>3.为什么两者切换耗时<br> linux下每个进程的栈有两个，一个是用户态栈，一个是内核态栈。在需要从用户态栈切换到内核的时候，需要进行执行栈的转换，保存用户态的状态，包括寄存器状态，然后执行内核态操作，操作完成后要恢复现场，切换到用户态，这个过程是耗时的。当然这里有很多细节，但是我不懂，只了解宏观上的原因。</p>
+<p>很多人都说mutex加锁解锁很慢，为什么呢，因为他也是需要从用户态到内核态的切换，因此有一些无锁技巧例如CAS(Compare and swap)，还有spin lock这种停等不作context切换的锁。<br> 这个博客说的挺好，介绍了mutex咋切换的细节，反正我是写不出来：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/5725db8f07dc">https://www.jianshu.com/p/5725db8f07dc</a></p>
+<p>3.一些讨论<br> <a target="_blank" rel="noopener" href="https://blog.codinghorror.com/understanding-user-and-kernel-mode/">https://blog.codinghorror.com/understanding-user-and-kernel-mode/</a><br> 这个博客在介绍user mode和kernel mode，但是评论里都在争论各类语言在处理exception的时候是否切换到了内核态，跑偏了🤣。这个exception不知那种缺页的系统异常，那个异常无疑是内核态来解决。这里讨论的是语言里定义的哪些异常，其中我觉得这个参考了文档的说的可能好一些（第二个评论）：<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/28384931/do-exceptions-explicitly-caught-and-handled-cause-switch-to-kernel-mode">https://stackoverflow.com/questions/28384931/do-exceptions-explicitly-caught-and-handled-cause-switch-to-kernel-mode</a><br> 我也觉得是depends on implement，异常处理要查看栈信息，可能是直接拽出来系统的栈，这种方法铁铁的需要进入内核态。如果是JVM这种自己维护了这样的栈呢？那其实就不需要去内核态拿栈。但是不管怎么说，异常处理是极其耗时的这点不会错。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="../../../../tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/" rel="tag"># 计算机技术</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="../../../02/16/%E8%AE%BA%E7%99%BE%E5%BA%A6%E5%AF%B9gitpage%E6%96%87%E7%AB%A0%E7%9A%84%E6%94%B6%E5%BD%95/" rel="prev" title="论百度对gitpage文章的收录">
+      <i class="fa fa-chevron-left"></i> 论百度对gitpage文章的收录
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="齐雨争"
+      src="../../../../images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">齐雨争</p>
+  <div class="site-description" itemprop="description">就是一个帅气的小男孩罢了</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="../../../../archives">
+          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="../../../../categories/">
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="../../../../tags/">
+        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="../../../../https:/github.com/yourname" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="../../../../mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="../../../../https:/weibo.com/yourname" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="../../../../https:/plus.google.com/yourname" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="../../../../https:/twitter.com/yourname" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="../../../../https:/www.facebook.com/yourname" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="../../../../https:/stackoverflow.com/yourname" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="../../../../https:/youtube.com/yourname" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="../../../../https:/instagram.com/yourname" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="../../../../skype:yourname?call%7Cchat" title="Skype → skype:yourname?call|chat" rel="noopener" target="_blank"><i class="fab fa-skype fa-fw"></i>Skype</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=464647370&auto=1&height=66"></iframe>
+
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">齐雨争</span>
+</div>
+  <div class="powered-by">Powered by <a href="../../../../https:/hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="../../../../https:/pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="true"></script>
+  <script src="../../../../xxw/anime.min.js"></script>
+  <script src="../../../../xxw/velocity/velocity.min.js"></script>
+  <script src="../../../../xxw/velocity/velocity.ui.min.js"></script>
+
+<script src="../../../../js/utils.js"></script>
+
+<script src="../../../../js/motion.js"></script>
+
+
+<script src="../../../../js/schemes/pisces.js"></script>
+
+
+<script src="../../../../js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="../../../../js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: 'unset',
+  left: '32px',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: false,
+  label: '🌓',
+  autoMatchOsTheme: false
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+if (window.darkmode && !window.darkmode.isActivated()) {
+  window.darkmode.toggle();
+  var toggleButtons = document.getElementsByClassName("darkmode-toggle");
+  for (i = 0; i < toggleButtons.length; i++) {
+    toggleButtons[i].classList.add("darkmode-toggle--white");
+  }
+}
+</script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : true,
+      notify     : true,
+      appId      : 'hqy7d9WxtqgEG5dYWsTA0Rf5-gzGzoHsz',
+      appKey     : 'IHzTrb3l5Ew2FqQ53I4ISpPV',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

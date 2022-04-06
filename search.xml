@@ -2646,4 +2646,26 @@
         <tag>hexo</tag>
       </tags>
   </entry>
+  <entry>
+    <title>用户态和核心态</title>
+    <url>/2022/04/06/%E7%94%A8%E6%88%B7%E6%80%81%E5%92%8C%E6%A0%B8%E5%BF%83%E6%80%81/</url>
+    <content><![CDATA[<img src="https://upload-images.jianshu.io/upload_images/14029139-efd524942836c9e0.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/960/format/webp" alt="img" style="zoom:77%;">
+
+<ol>
+<li>什么是用户态、内核态<br> 一般的操作系统对执行权限进行分级，分别为用保护态和内核态。用户态相较于内核态有较低的执行权限，很多操作是不被操作系统允许的，原因简单来说就是用户态出现问题（自己写的bug），也不能让操作系统崩溃呀。</li>
+</ol>
+<p>内核态相当于一个介于硬件与应用之间的层，内核有ring 0的权限，可以执行任何cpu指令，也可以引用任何内存地址，包括外围设备, 例如硬盘, 网卡，权限等级最高。 <span id="more"></span></p>
+<p>用户态则权利有限，例如在内存分配中，有一部分内存是仅为内核态使用的，用户态code则不允许访问那些内存地址，每个进程只允许访问自己申请到的内存。而且不允许访问外围设备。另外在执行cpu指令的时候也可以被高优先级抢占。<br> 大多数时间各类程序都是执行在用户态下，毕竟内核就是基础而已。</p>
+<ol>
+<li>状态转换<br> 用户程序跑在用户态下，但是如果需要执行一些操作例如申请内存，网络读写时，自己的权限不够，就需要转换到内核态去让内核的code帮忙干一些事情。下面三个方式是<br> a. 系统调用<br> 这是用户态进程主动要求切换到内核态的一种方式，用户态进程通过系统调用申请使 用操作系统提供的服务程序完成工作，比如前例中fork()实际上就是执行了一个创建新进程的系统调用。而系统调用的机制其核心还是使用了操作系统为用户 特别开放的一个中断来实现，例如Linux的int 80h中断。<br> b. 异常<br> 当CPU在执行运行在用户态下的程序时，发生了某些事先不可知的异常，这时会触发由当前运行进程切换到处理此异常的内核相关程序中，也就转到了内核态，比如缺页异常。<br> c. 外围设备的中断<br> 当外围设备完成用户请求的操作后，会向CPU发出相应的中断信号，这时CPU会 暂停执行下一条即将要执行的指令转而去执行与中断信号对应的处理程序，如果先前执行的指令是用户态下的程序，那么这个转换的过程自然也就发生了由用户态到 内核态的切换。比如硬盘读写操作完成，系统会切换到硬盘读写的中断处理程序中执行后续操作等。</li>
+</ol>
+<p>很多博客都提到了一个状态转换的例子：c语言在malloc的时候需要涉及到从用户态到内核态的转换，malloc是个函数，所以算作系统调用，是用户态的主动申请转换。但是在实际实现中，未必一定需要进入内核态拿到新的内存，详细看这个博客：<a href="https://blog.csdn.net/zdy0_2004/article/details/47787631">https://blog.csdn.net/zdy0_2004/article/details/47787631</a></p>
+<p>3.为什么两者切换耗时<br> linux下每个进程的栈有两个，一个是用户态栈，一个是内核态栈。在需要从用户态栈切换到内核的时候，需要进行执行栈的转换，保存用户态的状态，包括寄存器状态，然后执行内核态操作，操作完成后要恢复现场，切换到用户态，这个过程是耗时的。当然这里有很多细节，但是我不懂，只了解宏观上的原因。</p>
+<p>很多人都说mutex加锁解锁很慢，为什么呢，因为他也是需要从用户态到内核态的切换，因此有一些无锁技巧例如CAS(Compare and swap)，还有spin lock这种停等不作context切换的锁。<br> 这个博客说的挺好，介绍了mutex咋切换的细节，反正我是写不出来：<a href="https://www.jianshu.com/p/5725db8f07dc">https://www.jianshu.com/p/5725db8f07dc</a></p>
+<p>3.一些讨论<br> <a href="https://blog.codinghorror.com/understanding-user-and-kernel-mode/">https://blog.codinghorror.com/understanding-user-and-kernel-mode/</a><br> 这个博客在介绍user mode和kernel mode，但是评论里都在争论各类语言在处理exception的时候是否切换到了内核态，跑偏了🤣。这个exception不知那种缺页的系统异常，那个异常无疑是内核态来解决。这里讨论的是语言里定义的哪些异常，其中我觉得这个参考了文档的说的可能好一些（第二个评论）：<a href="https://stackoverflow.com/questions/28384931/do-exceptions-explicitly-caught-and-handled-cause-switch-to-kernel-mode">https://stackoverflow.com/questions/28384931/do-exceptions-explicitly-caught-and-handled-cause-switch-to-kernel-mode</a><br> 我也觉得是depends on implement，异常处理要查看栈信息，可能是直接拽出来系统的栈，这种方法铁铁的需要进入内核态。如果是JVM这种自己维护了这样的栈呢？那其实就不需要去内核态拿栈。但是不管怎么说，异常处理是极其耗时的这点不会错。</p>
+]]></content>
+      <tags>
+        <tag>计算机技术</tag>
+      </tags>
+  </entry>
 </search>
