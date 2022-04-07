@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-04-07T07:55:58.504Z</updated>
+  <updated>2022-04-07T08:07:37.380Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>内网穿透</title>
+    <link href="http://example.com/2022/04/07/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
+    <id>http://example.com/2022/04/07/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</id>
+    <published>2022-04-07T08:06:21.000Z</published>
+    <updated>2022-04-07T08:07:37.380Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1、在互联网主干道上，大家都是用的公网IP来标识自己。知道这个IP，就可以直接定位连接。&lt;/p&gt;
+&lt;p&gt;2、IP有两种，IPV4、IPV6；只有IPV4会有内网穿透的情况&lt;/p&gt;
+&lt;p&gt;3、鉴于IPV4的数量，不可能让所有设备都在主干道上标识自己的且是不重复的唯一IP&lt;/p</summary>
+        
+      
+    
+    
+    
+    
+    <category term="计算机技术" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>用户态和核心态</title>
@@ -390,23 +415,6 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>DNS系统详细解析</title>
-    <link href="http://example.com/2021/06/18/%E2%80%9Cdns%E7%B3%BB%E7%BB%9F%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90%E2%80%9D/"/>
-    <id>http://example.com/2021/06/18/%E2%80%9Cdns%E7%B3%BB%E7%BB%9F%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90%E2%80%9D/</id>
-    <published>2021-06-18T12:47:07.000Z</published>
-    <updated>2022-01-04T13:49:04.693Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;DNS系统概述：域名系统DNS（domain name system）是因特网使用的命名系统，用来把便于人们记忆的含有特定含义的主机名转换为便于机器处理的IP地址，值得注意的是，DNS系统采用C/S架构，其协议运行在UDP之上，使用53号端口。DNS分为三个部分，层次域名空间，域名服务器和解析器。层次域名空间：因特网采用层次树状结构的命名方法。任何一个连接在因特网上的主机或者路由器，都有一个唯一的层次结构的名字，即域名（Domain。&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="计算机网络" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
