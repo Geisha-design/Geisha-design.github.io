@@ -2673,7 +2673,7 @@
 <p>2、IP有两种，IPV4、IPV6；只有IPV4会有内网穿透的情况</p>
 <p>3、鉴于IPV4的数量，不可能让所有设备都在主干道上标识自己的且是不重复的唯一IP</p>
 <p>4、所以就想了个办法，把一个区域内的所有设备连在一起并统一和主干道上其他区域设备联系，对外只共用一个公网IP来标识自己，对内则分配一些够用的私有地址。简称NAT</p>
-<p>5、设备与设备之间的连接除了物理存在的端口外，还有软件层面的端口，要产生连接必须要有个端口给你把数据传进去。</p>
+<p>5、设备与设备之间的连接除了物理存在的端口外，还有软件层面的端口，要产生连接必须要有个端口给你把数据传进去。<span id="more"></span></p>
 <p>6、所以NAT就干了这么一件事：私有IP+端口《–》公网IP+端口  从而实现某台内网机器的上网</p>
 <p>7、而当自己所能操作的范围内没有公网ip，就不能实现自己想要的内网穿透。但实际上只要你能上网，对外而言你就一定有一个公网ip，只是你操作不到！比如小区局域网、城域局域网</p>
 <p>8、而内网穿透，本质就是对公网IP或者端口做文章，从而实现自定义访问。</p>
@@ -2695,6 +2695,19 @@
 ]]></content>
       <tags>
         <tag>计算机技术</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mac在终端中写入mysql配置</title>
+    <url>/2022/04/07/mac%E5%9C%A8%E7%BB%88%E7%AB%AF%E4%B8%AD%E5%86%99%E5%85%A5mysql%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>mac 配置mysql 环境变量<br>解决：安装mysql后，在终端输入mysql提示 Mac -bash: mysql: command not found问题</p>
+<p>下载安装mysql<br>mysql v8.0.12 <a href="https://dev.mysql.com/downloads/mysql/">https://dev.mysql.com/downloads/mysql/</a><br>配置mysql时使用user legacy password encryption （兼容性好些）</p>
+<p>配置环境变量<br>打开终端，输入：<br>sudo vim /etc/profile<br>注：(同JDK环境变量配置目录)<br>在profile文件最后写入：<br>export PATH=$PATH:/usr/local/mysql/bin</p>
+<p>退出vim并保存 :wq!<br>输入 source /etc/profile 更新配置<br>这样环境变量就配置好了，下面是进入 mysql：<br>确定mysql已经开启：</p>
+<p>输入 mysql -u root -p<br>输入之前配置的 mysql 密码</p>
+]]></content>
+      <tags>
+        <tag>计算机知识</tag>
       </tags>
   </entry>
 </search>

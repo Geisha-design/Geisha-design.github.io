@@ -28,7 +28,7 @@
 <meta property="og:description" content="1、在互联网主干道上，大家都是用的公网IP来标识自己。知道这个IP，就可以直接定位连接。 2、IP有两种，IPV4、IPV6；只有IPV4会有内网穿透的情况 3、鉴于IPV4的数量，不可能让所有设备都在主干道上标识自己的且是不重复的唯一IP 4、所以就想了个办法，把一个区域内的所有设备连在一起并统一和主干道上其他区域设备联系，对外只共用一个公网IP来标识自己，对内则分配一些够用的私有地址。简称NA">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-04-07T08:06:21.000Z">
-<meta property="article:modified_time" content="2022-04-07T08:07:37.380Z">
+<meta property="article:modified_time" content="2022-04-07T08:09:08.305Z">
 <meta property="article:author" content="齐雨争">
 <meta property="article:tag" content="计算机技术">
 <meta name="twitter:card" content="summary">
@@ -251,7 +251,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-04-07 16:06:21 / Modified: 16:07:37" itemprop="dateCreated datePublished" datetime="2022-04-07T16:06:21+08:00">2022-04-07</time>
+              <time title="Created: 2022-04-07 16:06:21 / Modified: 16:09:08" itemprop="dateCreated datePublished" datetime="2022-04-07T16:06:21+08:00">2022-04-07</time>
             </span>
 
           
@@ -290,7 +290,7 @@
 <p>2、IP有两种，IPV4、IPV6；只有IPV4会有内网穿透的情况</p>
 <p>3、鉴于IPV4的数量，不可能让所有设备都在主干道上标识自己的且是不重复的唯一IP</p>
 <p>4、所以就想了个办法，把一个区域内的所有设备连在一起并统一和主干道上其他区域设备联系，对外只共用一个公网IP来标识自己，对内则分配一些够用的私有地址。简称NAT</p>
-<p>5、设备与设备之间的连接除了物理存在的端口外，还有软件层面的端口，要产生连接必须要有个端口给你把数据传进去。</p>
+<p>5、设备与设备之间的连接除了物理存在的端口外，还有软件层面的端口，要产生连接必须要有个端口给你把数据传进去。<span id="more"></span></p>
 <p>6、所以NAT就干了这么一件事：私有IP+端口《–》公网IP+端口  从而实现某台内网机器的上网</p>
 <p>7、而当自己所能操作的范围内没有公网ip，就不能实现自己想要的内网穿透。但实际上只要你能上网，对外而言你就一定有一个公网ip，只是你操作不到！比如小区局域网、城域局域网</p>
 <p>8、而内网穿透，本质就是对公网IP或者端口做文章，从而实现自定义访问。</p>
@@ -330,7 +330,10 @@
     <a href="../../06/%E7%94%A8%E6%88%B7%E6%80%81%E5%92%8C%E6%A0%B8%E5%BF%83%E6%80%81/" rel="prev" title="用户态和核心态">
       <i class="fa fa-chevron-left"></i> 用户态和核心态
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="../mac%E5%9C%A8%E7%BB%88%E7%AB%AF%E4%B8%AD%E5%86%99%E5%85%A5mysql%E9%85%8D%E7%BD%AE/" rel="next" title="mac在终端中写入mysql配置">
+      mac在终端中写入mysql配置 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -404,7 +407,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="../../../../archives">
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">43</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -415,7 +418,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="../../../../tags/">
-        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-count">38</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

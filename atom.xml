@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-04-07T08:07:37.380Z</updated>
+  <updated>2022-04-07T09:30:31.468Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,22 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>mac在终端中写入mysql配置</title>
+    <link href="http://example.com/2022/04/07/mac%E5%9C%A8%E7%BB%88%E7%AB%AF%E4%B8%AD%E5%86%99%E5%85%A5mysql%E9%85%8D%E7%BD%AE/"/>
+    <id>http://example.com/2022/04/07/mac%E5%9C%A8%E7%BB%88%E7%AB%AF%E4%B8%AD%E5%86%99%E5%85%A5mysql%E9%85%8D%E7%BD%AE/</id>
+    <published>2022-04-07T09:29:35.000Z</published>
+    <updated>2022-04-07T09:30:31.468Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;mac 配置mysql 环境变量&lt;br&gt;解决：安装mysql后，在终端输入mysql提示 Mac -bash: mysql: command not found问题&lt;/p&gt;
+&lt;p&gt;下载安装mysql&lt;br&gt;mysql v8.0.12 &lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="计算机知识" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>内网穿透</title>
     <link href="http://example.com/2022/04/07/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
     <id>http://example.com/2022/04/07/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</id>
     <published>2022-04-07T08:06:21.000Z</published>
-    <updated>2022-04-07T08:07:37.380Z</updated>
+    <updated>2022-04-07T08:09:08.305Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;p&gt;1、在互联网主干道上，大家都是用的公网IP来标识自己。知道这个IP，就可以直接定位连接。&lt;/p&gt;
 &lt;p&gt;2、IP有两种，IPV4、IPV6；只有IPV4会有内网穿透的情况&lt;/p&gt;
-&lt;p&gt;3、鉴于IPV4的数量，不可能让所有设备都在主干道上标识自己的且是不重复的唯一IP&lt;/p</summary>
-        
-      
+&lt;p&gt;3、鉴于IPV4的数量，不可能让所有设备都在主干道上标识自己的且是不重复的唯一IP&lt;/p&gt;
+&lt;p&gt;4、所以就想了个办法，把一个区域内的所有设备连在一起并统一和主干道上其他区域设备联系，对外只共用一个公网IP来标识自己，对内则分配一些够用的私有地址。简称NAT&lt;/p&gt;
+&lt;p&gt;5、设备与设备之间的连接除了物理存在的端口外，还有软件层面的端口，要产生连接必须要有个端口给你把数据传进去。&lt;/p&gt;</summary>
     
     
     
@@ -399,21 +419,6 @@
     
     
     <category term="高等数学" scheme="http://example.com/categories/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>主题字体的修改</title>
-    <link href="http://example.com/2021/08/21/port%E2%80%9C%E5%AD%97%E4%BD%93%E2%80%9D/"/>
-    <id>http://example.com/2021/08/21/port%E2%80%9C%E5%AD%97%E4%BD%93%E2%80%9D/</id>
-    <published>2021-08-21T13:30:30.000Z</published>
-    <updated>2022-01-04T13:49:04.690Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;起因：思源宋体真的很好看&lt;br&gt;需求：将 blog 的标题与正文修改为思源宋体&lt;br&gt;tips：每一步的目的都是猜的，用词对不对我也不知道，大概理会中心思想就好&lt;/p&gt;</summary>
-    
-    
     
     
   </entry>
