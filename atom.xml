@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-05-06T05:07:33.796Z</updated>
+  <updated>2022-06-02T16:55:32.971Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,20 +17,14 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>port基于DOM的Web信息提取方法</title>
+    <title>基于DOM的Web信息提取方法</title>
     <link href="http://example.com/2022/05/06/port%E5%9F%BA%E4%BA%8EDOM%E7%9A%84Web%E4%BF%A1%E6%81%AF%E6%8F%90%E5%8F%96%E6%96%B9%E6%B3%95/"/>
     <id>http://example.com/2022/05/06/port%E5%9F%BA%E4%BA%8EDOM%E7%9A%84Web%E4%BF%A1%E6%81%AF%E6%8F%90%E5%8F%96%E6%96%B9%E6%B3%95/</id>
     <published>2022-05-06T05:06:06.000Z</published>
-    <updated>2022-05-06T05:07:33.796Z</updated>
+    <updated>2022-06-02T16:55:32.971Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;文章目录&lt;br&gt;一、什么是DOM？&lt;br&gt;DOM树：&lt;br&gt;1.文档：&lt;br&gt;2.元素：&lt;br&gt;3.节点：&lt;br&gt;二、获取页面中的元素的几种方法：&lt;br&gt;1.根据 id</summary>
-        
-      
+    <summary type="html">&lt;p&gt;文章目录&lt;br&gt;一、什么是DOM？&lt;br&gt;DOM树：&lt;br&gt;1.文档：&lt;br&gt;2.元素：&lt;br&gt;3.节点：&lt;br&gt;二、获取页面中的元素的几种方法：&lt;br&gt;1.根据 id 获取元素&lt;br&gt;2.根据标签名获取元素&lt;br&gt;3.通过HTML5新增的方法获取元素&lt;br&gt;4.根据特殊元素获取元素&lt;br&gt;一、什么是DOM？&lt;br&gt;DOM简称：文档对象模型，是一种处理可扩展编程语言的标准编程接口，我们通过这些接口来改变网页的内容、结构和样式。&lt;/p&gt;</summary>
     
     
     

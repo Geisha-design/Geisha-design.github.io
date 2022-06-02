@@ -2716,9 +2716,9 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>port基于DOM的Web信息提取方法</title>
+    <title>基于DOM的Web信息提取方法</title>
     <url>/2022/05/06/port%E5%9F%BA%E4%BA%8EDOM%E7%9A%84Web%E4%BF%A1%E6%81%AF%E6%8F%90%E5%8F%96%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<p>文章目录<br>一、什么是DOM？<br>DOM树：<br>1.文档：<br>2.元素：<br>3.节点：<br>二、获取页面中的元素的几种方法：<br>1.根据 id 获取元素<br>2.根据标签名获取元素<br>3.通过HTML5新增的方法获取元素<br>4.根据特殊元素获取元素<br>一、什么是DOM？<br>DOM简称：文档对象模型，是一种处理可扩展编程语言的标准编程接口，我们通过这些接口来改变网页的内容、结构和样式。</p>
+    <content><![CDATA[<p>文章目录<br>一、什么是DOM？<br>DOM树：<br>1.文档：<br>2.元素：<br>3.节点：<br>二、获取页面中的元素的几种方法：<br>1.根据 id 获取元素<br>2.根据标签名获取元素<br>3.通过HTML5新增的方法获取元素<br>4.根据特殊元素获取元素<br>一、什么是DOM？<br>DOM简称：文档对象模型，是一种处理可扩展编程语言的标准编程接口，我们通过这些接口来改变网页的内容、结构和样式。<span id="more"></span></p>
 <p>DOM树：</p>
 <p>1.文档：<br>一个网页就是一个文档，DOM中使用document表示</p>
 <p>2.元素：<br>页面中的所有标签都是元素，DOM中使用element表示</p>

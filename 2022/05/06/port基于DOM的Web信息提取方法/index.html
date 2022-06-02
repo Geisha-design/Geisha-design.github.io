@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"apiKey":"<API_KEY>","indexName":"<INDEX_NAME>","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="文章目录一、什么是DOM？DOM树：1.文档：2.元素：3.节点：二、获取页面中的元素的几种方法：1.根据 id 获取元素2.根据标签名获取元素3.通过HTML5新增的方法获取元素4.根据特殊元素获取元素一、什么是DOM？DOM简称：文档对象模型，是一种处理可扩展编程语言的标准编程接口，我们通过这些接口来改变网页的内容、结构和样式。 DOM树： 1.文档：一个网页就是一个文档，DOM中使用docu">
+  <meta name="description" content="文章目录一、什么是DOM？DOM树：1.文档：2.元素：3.节点：二、获取页面中的元素的几种方法：1.根据 id 获取元素2.根据标签名获取元素3.通过HTML5新增的方法获取元素4.根据特殊元素获取元素一、什么是DOM？DOM简称：文档对象模型，是一种处理可扩展编程语言的标准编程接口，我们通过这些接口来改变网页的内容、结构和样式。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="port基于DOM的Web信息提取方法">
+<meta property="og:title" content="基于DOM的Web信息提取方法">
 <meta property="og:url" content="http://example.com/2022/05/06/port%E5%9F%BA%E4%BA%8EDOM%E7%9A%84Web%E4%BF%A1%E6%81%AF%E6%8F%90%E5%8F%96%E6%96%B9%E6%B3%95/index.html">
 <meta property="og:site_name" content="SAKUPRESSO">
-<meta property="og:description" content="文章目录一、什么是DOM？DOM树：1.文档：2.元素：3.节点：二、获取页面中的元素的几种方法：1.根据 id 获取元素2.根据标签名获取元素3.通过HTML5新增的方法获取元素4.根据特殊元素获取元素一、什么是DOM？DOM简称：文档对象模型，是一种处理可扩展编程语言的标准编程接口，我们通过这些接口来改变网页的内容、结构和样式。 DOM树： 1.文档：一个网页就是一个文档，DOM中使用docu">
+<meta property="og:description" content="文章目录一、什么是DOM？DOM树：1.文档：2.元素：3.节点：二、获取页面中的元素的几种方法：1.根据 id 获取元素2.根据标签名获取元素3.通过HTML5新增的方法获取元素4.根据特殊元素获取元素一、什么是DOM？DOM简称：文档对象模型，是一种处理可扩展编程语言的标准编程接口，我们通过这些接口来改变网页的内容、结构和样式。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-05-06T05:06:06.000Z">
-<meta property="article:modified_time" content="2022-05-06T05:07:33.796Z">
+<meta property="article:modified_time" content="2022-06-02T16:55:32.971Z">
 <meta property="article:author" content="齐雨争">
 <meta property="article:tag" content="java leetcode mysql hexo Deemo">
 <meta name="twitter:card" content="summary">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>port基于DOM的Web信息提取方法 | SAKUPRESSO</title>
+  <title>基于DOM的Web信息提取方法 | SAKUPRESSO</title>
   
 
 
@@ -240,7 +240,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          port基于DOM的Web信息提取方法
+          基于DOM的Web信息提取方法
         </h1>
 
         <div class="post-meta">
@@ -249,13 +249,19 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-05-06 13:06:06 / Modified: 13:07:33" itemprop="dateCreated datePublished" datetime="2022-05-06T13:06:06+08:00">2022-05-06</time>
+              <time title="Created: 2022-05-06 13:06:06" itemprop="dateCreated datePublished" datetime="2022-05-06T13:06:06+08:00">2022-05-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-03 00:55:32" itemprop="dateModified" datetime="2022-06-03T00:55:32+08:00">2022-06-03</time>
+              </span>
 
           
-            <span id="" class="post-meta-item leancloud_visitors" data-flag-title="port基于DOM的Web信息提取方法" title="Views">
+            <span id="" class="post-meta-item leancloud_visitors" data-flag-title="基于DOM的Web信息提取方法" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -286,7 +292,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>文章目录<br>一、什么是DOM？<br>DOM树：<br>1.文档：<br>2.元素：<br>3.节点：<br>二、获取页面中的元素的几种方法：<br>1.根据 id 获取元素<br>2.根据标签名获取元素<br>3.通过HTML5新增的方法获取元素<br>4.根据特殊元素获取元素<br>一、什么是DOM？<br>DOM简称：文档对象模型，是一种处理可扩展编程语言的标准编程接口，我们通过这些接口来改变网页的内容、结构和样式。</p>
+        <p>文章目录<br>一、什么是DOM？<br>DOM树：<br>1.文档：<br>2.元素：<br>3.节点：<br>二、获取页面中的元素的几种方法：<br>1.根据 id 获取元素<br>2.根据标签名获取元素<br>3.通过HTML5新增的方法获取元素<br>4.根据特殊元素获取元素<br>一、什么是DOM？<br>DOM简称：文档对象模型，是一种处理可扩展编程语言的标准编程接口，我们通过这些接口来改变网页的内容、结构和样式。<span id="more"></span></p>
 <p>DOM树：</p>
 <p>1.文档：<br>一个网页就是一个文档，DOM中使用document表示</p>
 <p>2.元素：<br>页面中的所有标签都是元素，DOM中使用element表示</p>
